@@ -1,0 +1,67 @@
+@font-face {
+  font-family: GeosansLight;
+  src: url("../fonts/GeosansLight.woff");
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 1.5vw;
+}
+
+#nav {
+  background-color: #6ACF13;
+}
+
+#nav ul {
+  font-family: GeosansLight;
+  color: white;
+  list-style-type: none;
+  margin: 0px;
+  padding: 0;
+  text-align: center;
+}
+
+#nav li {
+  display: inline-block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#nav a {
+  padding: 10px;
+  border: 1px solid red;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#nav a:hover {
+  background-color: white;
+  color: black;
+}
+@media only screen and (min-width: 1024px) {
+  #container {
+    margin-left: 20%;
+    margin-right: 20%;
+    width: auto;
+  }
+  #header {
+    font-family: GeosansLight;
+    color: white;
+    text-align: center;
+    font-size: 4vw;
+    background-image: url("../img/background_header.jpg");
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  #header h1 {
+    font-size: 6vw;
+  }
+  #header h2 {
+    font-size: 2vw;
+  }
+}
