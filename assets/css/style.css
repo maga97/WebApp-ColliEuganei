@@ -21,19 +21,7 @@
   text-align: center;
 }
 
-#nav li {
-  display: inline-block;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
 
-#nav a {
-  padding: 10px;
-  border: 1px solid red;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
 
 #nav a:hover {
   background-color: white;
@@ -63,5 +51,22 @@
   }
   #header h2 {
     font-size: 2vw;
+  }
+  #nav li {
+    display: inline-block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  #nav a {
+    padding: 10px;
+    border: 1px solid red;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  #content {
+    background-color: #a1f700;
+    background-image: url("../img/textured-paper.png")
   }
 }
