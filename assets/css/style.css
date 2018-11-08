@@ -21,12 +21,11 @@
   text-align: center;
 }
 
-
-
 #nav a:hover {
   background-color: white;
   color: black;
 }
+
 @media only screen and (min-width: 1024px) {
   #container {
     margin-left: 20%;
@@ -60,7 +59,7 @@
 
   #nav a {
     padding: 10px;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     color: white;
     text-decoration: none;
     font-weight: bold;
@@ -68,5 +67,16 @@
   #content {
     background-color: #a1f700;
     background-image: url("../img/textured-paper.png")
+  }
+
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+  }
+  figure figcaption {
+    font-size: 1vw;
+    text-align: center;
   }
 }
