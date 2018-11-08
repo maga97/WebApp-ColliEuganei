@@ -54,10 +54,13 @@ body {
     background-repeat: no-repeat;
   }
   #header h1 {
+    background: rgba(255, 255, 255, 0.2);
     font-size: 6vw;
+    text-shadow: 3px 3px #121709;
   }
   #header h2 {
     font-size: 2vw;
+    text-shadow: 2px 2px #121709;
   }
   #nav li {
     display: inline-block;
@@ -77,7 +80,7 @@ body {
     padding: 2%;
   }
 
-  img {
+  .center-image {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -86,5 +89,15 @@ body {
   figure figcaption {
     font-size: 1vw;
     text-align: center;
+  }
+  #content {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+  }
+  #content > p {
+    text-align: justify;
+  }
+  #mappa_colli {
+    float: left;
+    margin: 0.4em;
   }
 }
