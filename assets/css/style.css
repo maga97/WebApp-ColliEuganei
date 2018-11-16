@@ -23,7 +23,7 @@ body {
 	-o-background-size: cover;
 	background-size: cover;
 	background-repeat: no-repeat;
-	height: 300px !important;
+  height: 8em;
 }
 
 .footer {
@@ -43,27 +43,24 @@ body {
 .header-title {
   font-family: Helvetica;
   position: absolute;
-	background-color: #00000080 !important;
+	background-color: #00000080;
   width: 100%;
-	bottom: 0;
+  bottom: 0px;
 }
 
-.header-title h1,  .header-title h2{
-  padding: 1%;
-  padding-top: 0;
-  padding-bottom: 0;
-  font-size: 3em;
-  margin: 0.25%;
-
-  max-width: 1024px;
-  margin-left: auto;
-  margin-right: auto;
+.header-title h1,  .header-title h2 {
+  text-align: center;
 }
 
-.header-title h2{
+.header-title h1 {
+    font-size: 3em;
+}
+
+.header-title h2 {
 	font-size: 1.5em;
+  line-height: 200%;
 }
-
+/* NON SI USA IL PADDING NEGLI H1 e H2 MARCO IGNORANTE DEL CAZZO */
 /*Add an active class to highlight the current page  #4CAF50; */
 .active {
     background-color: #2EAD0EFF;
@@ -77,29 +74,32 @@ body {
   margin-right: auto;
 }
 
-.welcome {
-	font-size: 1.5em;
+.content h1 {
+	font-size: 2em;
+  font-variant: small-caps;
 }
 
-.text {
-	margin: 1%;
-  line-height: 1.5;
+.content h2 {
+  font-size: 1.5em;
+}
+.content p {
+  font-size: 1.25em;
+  text-align: justify;
+  text-justify: inter-word;
+  line-height: 2em;
 }
 
-.title {
-  font-size: 1.3em;
+.f-left {
+  float: left;
+}
+.m-right {
+  margin-right: 1em;
 }
 
-.section {
-  margin-top: 1%;
-  margin-bottom: 1%;
-}
+#mappa_colli {
+  border: 4px solid white;
 
-.pic {
-  height: auto;
-  max-width: 100%;
 }
-
 a:link {
   text-decoration: none;
   color: #000000FF;
@@ -126,6 +126,7 @@ a:active {
 .topnav-bar {
     background-color: #000;
 }
+
 /* Remove margins and padding from the list, and add a black background color */
 ul.topnav {
   list-style-type: none;
