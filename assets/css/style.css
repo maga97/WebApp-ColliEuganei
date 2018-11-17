@@ -36,6 +36,7 @@ body {
   background-position: center;
   background-size: cover;
   background-color: #000000FF;
+
   max-width: 1024px;
   margin-left: auto;
   margin-right: auto;
@@ -67,33 +68,42 @@ body {
 
 /*Add an active class to highlight the current page  #4CAF50; */
 .active {
-    background-color: #2EAD0EFF;
+    background-color: #009033;
     color: white;
 }
 
 .content {
-	padding: 1%;
+	padding: 2.5%;
   max-width: 1024px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .welcome {
-	font-size: 1.5em;
+	font-size: 2em;
 }
 
 .text {
-	margin: 1%;
-  line-height: 1.5;
+  font-size: 1.2em;
+	margin-top: 1%;
+  margin-bottom: 4%;
+  line-height: 2;
 }
 
 .title {
-  font-size: 1.3em;
+  font-size: 1.5em;
 }
 
 .section {
   margin-top: 1%;
   margin-bottom: 1%;
+}
+
+.portal {
+  height: auto;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .place {
@@ -130,6 +140,12 @@ a:active {
     color: #000;
 }
 
+.sidepic {
+  width: 40%;
+  float: right;
+  padding-left: 2%;
+}
+
 .topnav-bar {
     background-color: #000;
 }
@@ -160,25 +176,21 @@ ul.topnav li a {
 }
 
 /* Change background color of links on hover */
-ul.topnav li a:hover {background-color: #454545;}
+ul.topnav li a:hover {background-color: #555555;}
 
 /* Hide the list item that contains the link that should open and close the topnav on small screens */
 ul.topnav li.icon {display: none;}
 
 /* When the screen is less than 680 pixels wide, hide all list items, except for the first one ("Home"). Show the list item that contains the link to open and close the topnav (li.icon) */
-@media screen and (max-width:680px) {
-  .place { margin-left: 0;
-  /*.header-title h1,  .header-title h2{ padding-left: 2%; }*/
+@media screen and (max-width:600px) {
+  .place { margin-left: 0;}
   ul.topnav li:not(:first-child) {display: none;}
   ul.topnav li.icon {
     float: right;
     display: inline-block;
     font-size: 0.9em;
   }
-}
 
-/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens */
-@media screen and (max-width:680px) {
   ul.topnav.responsive {position: relative;}
   ul.topnav.responsive li.icon {
     position: absolute;
