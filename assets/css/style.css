@@ -3,6 +3,7 @@
   margin: 0;
   font-family: Arial;
   font-size: 1em;
+  text-align: justify;
 }
 
 body {
@@ -95,19 +96,26 @@ body {
   margin-bottom: 1%;
 }
 
+.place {
+  margin-left: 10%;
+  margin-top: 4%;
+}
+
 .pic {
   height: auto;
   max-width: 100%;
+  vertical-align: middle;
+  margin-bottom: 1%;
 }
 
 a:link {
   text-decoration: none;
-  color: #000000FF;
+  color: #000;
 }
 
 a:visited {
   text-decoration: none;
-  color: 000000FF;
+  color: #000;
 }
 
 a:hover {
@@ -115,12 +123,11 @@ a:hover {
   color: #2EAD0EFF;
   opacity: 0.5;
   filter: alpha(opacity=50%);
-
 }
 
 a:active {
     text-decoration: none;
-    color: 000000FF;
+    color: #000;
 }
 
 .topnav-bar {
@@ -160,6 +167,7 @@ ul.topnav li.icon {display: none;}
 
 /* When the screen is less than 680 pixels wide, hide all list items, except for the first one ("Home"). Show the list item that contains the link to open and close the topnav (li.icon) */
 @media screen and (max-width:680px) {
+  .place { margin-left: 0;
   /*.header-title h1,  .header-title h2{ padding-left: 2%; }*/
   ul.topnav li:not(:first-child) {display: none;}
   ul.topnav li.icon {
