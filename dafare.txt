@@ -1,4 +1,5 @@
 1- nell'html mettere lettere accentate con il sistema &grave
+2- le foto non sono responsive
 3- clima rimpicciolire foto, aggiungere spazietto tra foto e testo
 4- luoghi, fare la pagine dei 2 Luoghi
 5- + luoghi
