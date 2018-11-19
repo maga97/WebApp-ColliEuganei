@@ -1,0 +1,6 @@
+1- nell'html mettere lettere accentate con il sistema &grave
+2- in geografia, cambiare foto flora, sistemare posizione foto, rimpicciolire gufo
+3- clima rimpicciolire foto, aggiungere spazietto tra foto e testo
+4- luoghi, fare la pagine dei 2 Luoghi
+5- + luoghi
+6- piu' avanti, il footer
