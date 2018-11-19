@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css" media="all">
+		<style type="text/css">
+		label {
+    display: inline-block;
+    float: left;
+    clear: both;
+    text-align: center;
+	}
+	input {
+	  display: inline-block;
+	  float: left;
+	}
+		</style>
+		<script src="script.js"></script>
+		<title>Home - Colli Digitali</title>
+	</head>
+	<body>
+
+		<div class="header">
+			<div class="header-picture"></div>
+			<div class="header-title">
+				<h1>Colli Euganei</h1>
+				<h2>Natura e storia in digitale</h2>
+			</div>
+		</div>
+
+		<div class="topnav-bar">
+			<ul class="topnav">
+		  	<li><a href="#home" class="active">Home</a></li>
+		  	<li><a href="luoghi.html">Luoghi</a></li>
+		  	<li><a href="#gite">Gite</a></li>
+		  	<li><a href="#about">About</a></li>
+			  	<li class="icon">
+						<a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
+					</li>
+			</ul>
+		</div>
+
+		<div class="content">
+			<form name="auth" id="autenticazione" method="post">
+				<fieldset>
+					<legend>Autenticazione</legend>
+					<div>
+						<label for="email">Indirizzo email</label>
+						<input type="text" required="required" id="email" name="nemail" placeholder="pincopallino@domain.it"/>
+					</div>
+					<div>
+						<label for="password">Password</label>
+						<input type="password" required="required" id="password" name="npassword"/>
+					</div>
+					<input type="submit" name="submit" value="Entra">
+				</fieldset>
+			</form>
+			</div>
+			<div class="footer"></div>
+
+		</div>
+	</body>
+</html>
