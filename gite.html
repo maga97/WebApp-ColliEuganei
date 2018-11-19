@@ -5,16 +5,15 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<link rel="stylesheet" type="text/css" href="assets/css/style.css" media="all">
 		<style type="text/css">
-		label {
-    display: inline-block;
-    float: left;
-    clear: both;
-    text-align: center;
-	}
-	input {
-	  display: inline-block;
-	  float: left;
-	}
+		.row {
+			display: table-row;
+		}
+		form {
+			display: table;
+		}
+		input, label {
+			display: table-cell;
+		}
 		</style>
 		<script src="script.js"></script>
 		<title>Home - Colli Digitali</title>
@@ -45,11 +44,11 @@
 			<form name="auth" id="autenticazione" method="post">
 				<fieldset>
 					<legend>Autenticazione</legend>
-					<div>
+					<div class="row">
 						<label for="email">Indirizzo email</label>
 						<input type="text" required="required" id="email" name="nemail" placeholder="pincopallino@domain.it"/>
 					</div>
-					<div>
+					<div class="row">
 						<label for="password">Password</label>
 						<input type="password" required="required" id="password" name="npassword"/>
 					</div>
