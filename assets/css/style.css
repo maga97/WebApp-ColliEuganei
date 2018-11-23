@@ -25,26 +25,29 @@ body {
 	height: 20em;
 }
 
-.footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  color: white;
-  background-position: center;
-  background-size: cover;
-  background-color: #000000FF;
-
-  max-width: 1024px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .header-title {
   position: absolute;
 	background-color: #00000080 !important;
   width: 100%;
 	bottom: 0;
+}
+
+.footer{
+  position: relative;
+  margin-bottom: -15%;
+  background-size: cover;
+	background-repeat: no-repeat;
+  background-color: #ddd;
+  height: 15em;
+}
+
+.footercontent{
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10%;
 }
 
 .header-title h1,  .header-title h2{
