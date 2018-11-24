@@ -22,7 +22,7 @@ body {
 	-o-background-size: cover;
 	background-size: cover;
 	background-repeat: no-repeat;
-	height: 20em;
+	height: 15em;
 }
 
 .header-title {
@@ -32,23 +32,21 @@ body {
 	bottom: 0;
 }
 
-.footer{
+.footer {
   position: relative;
-  margin-bottom: -15%;
-  background-size: cover;
-	background-repeat: no-repeat;
+  text-align: center;
+  bottom: 0;
+  left: 0;
+  height: 3em;
+  width: 100%;
+  padding: 4%;
   background-color: #ddd;
-  height: 15em;
 }
-
-.footercontent{
-  max-width: 1024px;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  justify-content: space-between;
-  padding-top: 10%;
+.footer > div {
+  border: solid 1px red;
+  display: inline-block;
 }
+.footer:first
 
 .header-title h1,  .header-title h2{
   padding: 1%;
