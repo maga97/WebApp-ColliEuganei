@@ -46,9 +46,8 @@ class database {
 	}
 
 	public function user_login($email, $password) {
-		$query = $this->pdo->prepare('SELECT Password FROM Utenti WHERE '.
-		'Email = "'.$email.'"');
-		$query->execute();
+		$query = $this->pdo->prepare('SELECT Password FROM Utenti WHERE Email = ?');
+		$query->execute(array($email));
 		$pass=$query->fetch();
 		return password_verify($password, $pass[0]);
 
