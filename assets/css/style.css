@@ -106,9 +106,14 @@ body {
   margin-bottom: 1%;
 }
 
+#storia {
+  max-width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .gallery {
   display: flex;
-
 }
 
 .galleryframe {
@@ -116,16 +121,10 @@ body {
   padding: 0.25em;
 }
 
-#civetta {
-  max-height: 55.5%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-#storia {
-  max-width: 75%;
-  margin-left: auto;
-  margin-right: auto;
+.floatright{
+  position: relative;
+  float: right;
+  padding-left: 2%;
 }
 
 .place {
@@ -138,12 +137,6 @@ body {
   vertical-align: middle;
   max-width: 100%;
   margin-bottom: 1%;
-}
-
-.sidepic {
-  width: 40%;
-  float: right;
-  padding-left: 2%;
 }
 
 a:link {
@@ -167,8 +160,6 @@ a:active {
     text-decoration: none;
     color: #000;
 }
-
-
 
 .topnav-bar {
     background-color: #000;
@@ -205,9 +196,24 @@ ul.topnav li a:hover {background-color: #555555;}
 /* Hide the list item that contains the link that should open and close the topnav on small screens */
 ul.topnav li.icon {display: none;}
 
-/* When the screen is less than 680 pixels wide, hide all list items, except for the first one ("Home"). Show the list item that contains the link to open and close the topnav (li.icon) */
-@media screen and (max-width:600px) {
+/* When the screen is less than 600 pixels wide, hide all list items, except for the first one ("Home"). Show the list item that contains the link to open and close the topnav (li.icon) */
+
+@media screen and (max-width:728px) {
+
+  .content{
+    text-align: justify;
+  }
+
   .place { margin-left: 0;}
+
+  .floatright{
+    float: none;
+    padding-left: 0;
+  }
+}
+
+@media screen and (max-width:600px) {
+
   ul.topnav li:not(:first-child) {display: none;}
   ul.topnav li.icon {
     float: right;
