@@ -35,18 +35,25 @@ body {
 .footer {
   position: relative;
   text-align: center;
+  color: white;
+  font-size: 1em;
+  padding-top: 1em;
   bottom: 0;
   left: 0;
   height: 3em;
   width: 100%;
-  padding: 4%;
-  background-color: #ddd;
+  background-color: rgba(0, 0, 0, 0.7);
 }
-.footer > div {
-  border: solid 1px red;
-  display: inline-block;
+#copyright {
+  width: 33.3%;
+  float: left;
 }
-.footer:first
+
+#fast-link {
+  width: 33.3%;
+  float: right;
+  color: white;
+}
 
 .header-title h1,  .header-title h2{
   padding: 1%;
