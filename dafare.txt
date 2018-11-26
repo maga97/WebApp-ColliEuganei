@@ -2,4 +2,4 @@
 5- + luoghi
 6- footer non funziona bene in gite, e in certi casi nemmeno in home
 7- breaking point, responsivita'
-8- sostituire foto eregeologiche con tabella (lo fa fra)
+8- sostituire foto eregeologiche con tabella

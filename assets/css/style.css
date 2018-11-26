@@ -126,7 +126,7 @@ body {
 .floatright{
   position: relative;
   float: right;
-  padding-top: 2%;
+  padding-top: 0%;
   padding-left: 2%;
 }
 
@@ -138,7 +138,7 @@ body {
 .pic {
   height: auto;
   max-width: 100%;
-  margin-bottom: 1%;
+  margin-bottom: 0%;
 }
 
 .storiapic{
@@ -147,6 +147,10 @@ body {
 
 .climapic{
   width: 28em;
+}
+
+#santuario{
+  padding-top: 0%;
 }
 
 a:link {
