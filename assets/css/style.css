@@ -5,6 +5,7 @@
 }
 
 body {
+  text-align: justify;
   font-size: 100%;
   background-color: white;
 }
@@ -44,6 +45,7 @@ body {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.7);
 }
+
 #copyright {
   width: 33.3%;
   float: left;
@@ -87,7 +89,7 @@ body {
   margin-right: auto;
 }
 
-.welcome {
+.content > h1 {
 	font-size: 2em;
 }
 
@@ -124,6 +126,7 @@ body {
 .floatright{
   position: relative;
   float: right;
+  padding-top: 2%;
   padding-left: 2%;
 }
 
@@ -134,9 +137,16 @@ body {
 
 .pic {
   height: auto;
-  vertical-align: middle;
   max-width: 100%;
   margin-bottom: 1%;
+}
+
+.storiapic{
+  width: 20em;
+}
+
+.climapic{
+  width: 28em;
 }
 
 a:link {
@@ -199,10 +209,6 @@ ul.topnav li.icon {display: none;}
 /* When the screen is less than 600 pixels wide, hide all list items, except for the first one ("Home"). Show the list item that contains the link to open and close the topnav (li.icon) */
 
 @media screen and (max-width:728px) {
-
-  .content{
-    text-align: justify;
-  }
 
   .place { margin-left: 0;}
 
