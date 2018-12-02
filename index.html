@@ -5,6 +5,14 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<link rel="stylesheet" type="text/css" href="assets/css/style.css" media="all">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script>
+			$(document).ready(function() {
+				$('.galleryframe').click(function() {
+					window.location.href = $(this).find("a").attr("href");
+				});
+			});
+		</script>
 		<script src="script.js"></script>
 		<title>Home - Colli Digitali</title>
 	</head>
@@ -38,28 +46,27 @@
 				delle 7 chiesette. Visita i colli euganei, scopri come natura, storia e cultura possono fondersi e dar vita ad un magnifico territorio.
 				</p>
 			</div>
-
-			<div id="storia">
-				<a href="storia.html">
-					<img class="pic" src="assets/img/storia.jpg" alt="" />
-					<h1 class="title">&#10097; Storia</h1>
-				</a>
-				<p class="text">Scopri la storia, la cultura e l'arte del territorio.</p>
-			</div>
 			<div class="gallery">
 				<div class="galleryframe">
-					<a href="geografia.html">
-						<img class="pic" src="assets/img/geog.jpg" alt="" />
-						<h1 class="title">&#10097; Geografia</h1>
-					</a>
-					<p class="text">Scopri la geografia del territorio e come si &egrave formato.</p>
+					<ul>
+						<li><img class="picture" src="assets/img/geog.jpg" alt="" /></li>
+						<li class="fa fa-chevron-right"><a class="gallery-title" href="clima.html">Geografia</a></li>
+						<li>Scopri la geografia del territorio e come si &egrave; formato.</li>
+					</ul>
 				</div>
 				<div class="galleryframe">
-					<a href="clima.html">
-						<img class="pic" src="assets/img/clima.jpg" alt="" />
-						<h1 class="title">&#10097; Clima</h1>
-					</a>
-					<p class="text">Scopri come il territorio si presenta nel corso dell'anno.</p>
+					<ul>
+						<li><img class="picture" src="assets/img/clima.jpg" alt="" /></li>
+						<li class="fa fa-chevron-right"><a class="gallery-title" href="clima.html">Clima</a></li>
+						<li>Scopri come il territorio si presenta nel corso dell'anno.</li>
+					</ul>
+				</div>
+				<div class="galleryframe">
+					<ul>
+						<li><img class="picture" src="assets/img/storia.jpg" alt="Immagine Rocca di Monselice" /></li>
+						<li class="fa fa-chevron-right"><a class="gallery-title" href="storia.html">Storia</a></li>
+						<li>Scopri la storia, la cultura e l'arte del territorio</li>
+					</ul>
 				</div>
 			</div>
 		</div>
