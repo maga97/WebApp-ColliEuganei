@@ -50,7 +50,36 @@ class database {
 		$query->execute(array($email));
 		$pass=$query->fetch();
 		return password_verify($password, $pass[0]);
-
+	}
+	public function GetName($email) {
+		$query = $this->pdo->prepare('SELECT Nome FROM Utenti WHERE Email = ?');
+		$query->execute(array($email));
+		$Name=$query->fetch();
+		return $Name[0];
+	}
+	public function GetSurname($email){
+		$query = $this->pdo->prepare('SELECT Cognome FROM Utenti WHERE Email = ?');
+		$query->execute(array($email));
+		$Surname=$query->fetch();
+		return $Surname[0];
+	}
+	public function GetAddress($email){
+		$query = $this->pdo->prepare('SELECT Indirizzo FROM Utenti WHERE Email = ?');
+		$query->execute(array($email));
+		$Address=$query->fetch();
+		return $Address[0];
+	}
+	public function GetCAP($email){
+		$query = $this->pdo->prepare('SELECT CAP FROM Utenti WHERE Email = ?');
+		$query->execute(array($email));
+		$CAP=$query->fetch();
+		return $CAP[0];
+	}
+	public function GetCivico($email){
+		$query = $this->pdo->prepare('SELECT Civico FROM Utenti WHERE Email = ?');
+		$query->execute(array($email));
+		$Civico=$query->fetch();
+		return $Civico[0];
 	}
 
 }

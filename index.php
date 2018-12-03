@@ -1,9 +1,13 @@
+
+<?php
+if (session_status() == PHP_SESSION_NONE) { session_start(); }
+ ?>
+
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
 		<link rel="stylesheet" type="text/css" href="assets/css/style.css" media="all">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -19,45 +23,11 @@
 	</head>
 	<body>
 
-		<div class="header">
-			<div class="header-picture"></div>
-			<div class="header-title">
-				<h1>Colli Euganei</h1>
-				<h2>Natura e storia in digitale</h2>
-			</div>
-		</div>
 
-		<div class="topnav-bar">
-			<ul class="topnav">
-			<li class="dropdown"><a href="index.html" class="active">Home</a>
-				<ul class="dropdown-content">
-					<li><a href="geografia.html">Geografia</a></li>
-					<li><a href="clima.html">Clima</a></li>
-					<li><a href="storia.html">Storia</a></li>
-				</ul>
-			</li>
-		  	<li class="dropdown"><a href="luoghi.html">Luoghi</a>
-				<ul class="dropdown-content">
-					<li><a href="chiesette.html">7 Chiesette</a></li>
-					<li><a href="catajo.html">Castello del Catajo</a></li>
-					<li><a href="praglia.html">Abbazia di Praglia</a></li>
-					<li><a href="carrareseeste.html">Castello carrarese di Este</a></li>
-					<li><a href="lispida.html">Castello di Lispida</a></li>
-					<li><a href="pelagio.html">Castello San Pelagio</a></li>
-				</ul>
-			</li>
-		  	<li><a href="gite.html">Gite</a></li>
-		  	<li><a href="#about">About</a></li>
-			  	<li class="icon">
-						<a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
-					</li>
-			</ul>
-		</div>
+	<?php
 
-		<ul class="breadcrumb">
-	   <li><a href="luoghi.html">Home</a></li>
-	   <li>Benvenuto nei Colli Euganei</li>
-	 </ul>
+	include_once('menu.php') ?>
+
 
 		<div class="content">
 			<h1>Benvenuto nei Colli Euganei</h1>
@@ -71,7 +41,7 @@
 				<div class="galleryframe">
 					<ul>
 						<li><img class="picture" src="assets/img/geog.jpg" alt="" /></li>
-						<li class="fa fa-chevron-right"><a class="gallery-title" href="geografia.html">Geografia</a></li>
+						<li class="fa fa-chevron-right"><a class="gallery-title" href="clima.html">Geografia</a></li>
 						<li>Scopri la geografia del territorio e come si &egrave; formato.</li>
 					</ul>
 				</div>

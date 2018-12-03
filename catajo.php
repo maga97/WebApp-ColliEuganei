@@ -1,3 +1,6 @@
+<?php
+if (session_status() == PHP_SESSION_NONE) { session_start(); }
+ ?>
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
@@ -11,51 +14,15 @@
 
 <body>
 
-  <div class="header">
-		<div class="header-picture"></div>
-		<div class="header-title">
-			<h1>Colli Euganei</h1>
-			<h2>Natura e storia in digitale</h2>
-		</div>
-	</div>
+  <?php  include_once('menu.php') ?>
 
-	<div class="topnav-bar">
-		<ul class="topnav">
-      <li class="dropdown"><a href="index.html">Home</a>
-        <ul class="dropdown-content">
-          <li><a href="geografia.html">Geografia</a></li>
-          <li><a href="clima.html">Clima</a></li>
-          <li><a href="storia.html">Storia</a></li>
-        </ul>
-      </li>
-      <li class="dropdown"><a href="luoghi.html" class="active">Luoghi</a>
-        <ul class="dropdown-content">
-          <li><a href="chiesette.html">7 Chiesette</a></li>
-          <li><a href="catajo.html" class="active">Castello del Catajo</a></li>
-          <li><a href="praglia.html">Abbazia di Praglia</a></li>
-          <li><a href="carrareseeste.html">Castello carrarese di Este</a></li>
-          <li><a href="lispida.html">Castello di Lispida</a></li>
-          <li><a href="pelagio.html">Castello San Pelagio</a></li>
-        </ul>
-      </li>
-			<li><a href="gite.html">Gite</a></li>
-			<li><a href="#about">About</a></li>
-				<li class="icon">
-					<a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
-				</li>
-		</ul>
-	</div>
 
-	<ul class="breadcrumb">
-   <li><a href="luoghi.html">Luoghi</a></li>
-   <li>Il Castello del Catajo</li>
- </ul>
 
   <div class="content">
     <div class="section">
       <h1>Il Castello del Catajo</h1>
       <div class="floatright">
-          <img class="picture storiapic" src="assets/img/catajo-XVIIIsec.jpg" alt=""/>
+          <img class="pic storiapic" src="assets/img/catajo-XVIIIsec.jpg" alt="Il Castello nel XVIII secolo"/>
       </div>
       <p class="text">
         Il castello del Catajo, situato nei pressi di Battaglia Terme, è un imponente palazzo cinquecentesco, oggi aperto al pubblico.
@@ -71,7 +38,7 @@
         </p>
         <h1 class="title">Descrizione</h1>
         <div class="floatright">
-            <img class="picture storiapic" src="assets/img/affreschi2.jpg" alt=""/>
+            <img class="pic storiapic" src="assets/img/affreschi2.jpg" alt="Il Castello nel XVIII secolo"/>
         </div>
         <p class="text">
         La villa con le sue 350 stanze, ha l'aspetto del castello, con alte mura caratterizzate da merletti, nonostante ciò non fu mai usato come un forte, al contrario,
