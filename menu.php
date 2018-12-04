@@ -26,9 +26,8 @@
 		<li><a href="login.php">Accedi</a></li>
     <li><a href="Registrazione.php">Registrati</a></li>
 	<?php endif; ?>
-
-      <li class="icon">
-        <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
-      </li>
+  <li class="icon">
+    <a href="javascript:void(0);" onclick="menuMobile()">&#9776;</a>
+  </li>
   </ul>
 </div>
