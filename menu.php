@@ -20,8 +20,6 @@
         <li><a href="gite.php">luogo1</a></li>
       </ul>
     <li><a href="gite.php">Gite</a></li>
-    <li><a href="#about">About</a></li>
-
   <?php if(isset($_SESSION['username'])): ?>
 		<li><a href="view-account.php">Account</a></li>
 	<?php else: ?>
