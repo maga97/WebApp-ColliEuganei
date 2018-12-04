@@ -1,9 +1,10 @@
-
 <?php
+header('Content-Type: application/xml'); //Dev'essere la prima istruzione dello script
 if (session_status() == PHP_SESSION_NONE) { session_start(); }
- ?>
+echo '<?xml version="1.0" encoding="UTF-8"?>';
+?>
 
-<?xml version="1.0" encoding="UTF-8"?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 	<head>
@@ -26,7 +27,8 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 
 	<?php
 
-	include_once('menu.php') ?>
+	include_once('menu.php');
+	?>
 
 
 		<div class="content">
