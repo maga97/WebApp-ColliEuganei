@@ -22,19 +22,12 @@
     <li><a href="gite.php">Gite</a></li>
     <li><a href="#about">About</a></li>
 
-    <?php
-	   if(isset($_SESSION['username'])) {
-	  ?>
-		<li><a href="view-account.php">Account</li>
-	<?php
-	}
-	else {
-		?>
-		<li><a href="login.php">Accedi</li>
-    <li><a href="Registrazione.php">Registrati</li>
-		<?php
-	}
-	?>
+  <?php if(isset($_SESSION['username'])): ?>
+		<li><a href="view-account.php">Account</a></li>
+	<?php else: ?>
+		<li><a href="login.php">Accedi</a></li>
+    <li><a href="Registrazione.php">Registrati</a></li>
+	<?php endif; ?>
 
       <li class="icon">
         <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
