@@ -1,5 +1,5 @@
 <?php
-header('Content-Type: application/xml'); //Dev'essere la prima istruzione dello script
+//header('Content-Type: application/xml'); //Dev'essere la prima istruzione dello script
 if (session_status() == PHP_SESSION_NONE) { session_start(); }
 echo '<?xml version="1.0" encoding="UTF-8"?>';
 ?>
