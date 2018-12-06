@@ -13,7 +13,51 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 </head>
 <body>
 
-	<?php  include_once('menu.php') ?>
+		<div class="header">
+	  <div class="header-picture">
+	  <div class="header-title">
+	    <h1>Colli Euganei</h1>
+	    <h2>Natura e storia in digitale</h2>
+	  </div>
+	  </div>
+	</div>
+
+	<div class="topnav-bar">
+	      <ul class="topnav">
+	      <li class="dropdown"><a href="index.php" class="active">Home</a>
+	        <ul class="dropdown-content">
+	          <li><a href="geografia.php">Geografia</a></li>
+	          <li><a href="clima.php">Clima</a></li>
+	          <li><a href="storia.php" class="active">Storia</a></li>
+	        </ul>
+	      </li>
+	        <li class="dropdown"><a href="luoghi.php">Luoghi</a>
+	        <ul class="dropdown-content">
+	          <li><a href="chiesette.php">7 Chiesette</a></li>
+	          <li><a href="catajo.php">Castello del Catajo</a></li>
+	          <li><a href="praglia.php">Abbazia di Praglia</a></li>
+	          <li><a href="carrareseeste.php">Castello carrarese di Este</a></li>
+	          <li><a href="lispida.php">Castello di Lispida</a></li>
+	          <li><a href="pelagio.php">Castello San Pelagio</a></li>
+	        </ul>
+	      </li>
+	        <li><a href="gite.php">Gite</a></li>
+	  <?php if(isset($_SESSION['username'])): ?>
+	    <li><a href="view-account.php">Account</a></li>
+	  <?php else: ?>
+	    <li><a href="login.php">Accedi</a></li>
+	    <li><a href="Registrazione.php">Registrati</a></li>
+	  <?php endif; ?>
+	  <li class="icon">
+	    <a href="javascript:void(0);" onclick="menuMobile()">&#9776;</a>
+	  </li>
+	  </ul>
+	</div>
+
+	<ul class="breadcrumb">
+      <li><a href="index.php">Home</a></li>
+      <li>Storia</li>
+    </ul>
 
 	<div class="content">
 		<div class="section">
@@ -57,15 +101,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 		</div>
 	</div>
 
-	<div class="footer">
-					<span id="copyright"> &copy; 2018 Colli Digitali </span>
-				<span id="social">
-					<a href="#"><i class="fa fa-facebook-official"></i></a>
-					<a href="#"><i class="fa fa-youtube"></i></a>
-					<a href="#"><i class="fa fa-twitter"></i></a>
-				</span>
-			<span id="fast-link"><p>About | Ciao</p></span>
-	</div>
+		<?php include_once('footer.php')?> 
 
 </body>
 </html>

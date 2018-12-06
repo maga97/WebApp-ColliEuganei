@@ -8,18 +8,25 @@
 </div>
 
 <div class="topnav-bar">
-  <ul class="topnav">
-    <li><a href="index.php" class="active">Home</a></li>
-    <li class="dropdown"><a href="luoghi.php" class="active">Luoghi</a>
-      <ul class="dropdown-content">
-        <li><a href="gite.php">luogo1</a></li>
-        <li><a href="gite.php">luogo1</a></li>
-        <li><a href="gite.php">luogo1</a></li>
-        <li><a href="gite.php">luogo1</a></li>
-        <li><a href="gite.php">luogo1</a></li>
-        <li><a href="gite.php">luogo1</a></li>
-      </ul>
-    <li><a href="gite.php">Gite</a></li>
+      <ul class="topnav">
+      <li class="dropdown"><a href="index.html" class="active">Home</a>
+        <ul class="dropdown-content">
+          <li><a href="geografia.html">Geografia</a></li>
+          <li><a href="clima.html">Clima</a></li>
+          <li><a href="storia.html">Storia</a></li>
+        </ul>
+      </li>
+        <li class="dropdown"><a href="luoghi.html">Luoghi</a>
+        <ul class="dropdown-content">
+          <li><a href="chiesette.html">7 Chiesette</a></li>
+          <li><a href="catajo.html">Castello del Catajo</a></li>
+          <li><a href="praglia.html">Abbazia di Praglia</a></li>
+          <li><a href="carrareseeste.html">Castello carrarese di Este</a></li>
+          <li><a href="lispida.html">Castello di Lispida</a></li>
+          <li><a href="pelagio.html">Castello San Pelagio</a></li>
+        </ul>
+      </li>
+        <li><a href="gite.html">Gite</a></li>
   <?php if(isset($_SESSION['username'])): ?>
 		<li><a href="view-account.php">Account</a></li>
 	<?php else: ?>
