@@ -1,0 +1,43 @@
+.row {
+  padding: 1em;
+}
+fieldset {
+  border: 3px solid #f1f1f1;
+}
+legend {
+  font-size: 1.5em;
+}
+label {
+  font-size: 1.2em;
+}
+input {
+  font-size: 1.1em;
+}
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+
+  .buttom-form {
+    color: white;
+    padding: 14px 20px;
+    margin: 1% 0;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    width: 35%;
+    font-size: 1.1rem;
+  }
+input[type=submit] {
+    background-color: #4CAF50;
+    margin-left: 5%;
+  }
+  input[type=reset] {
+    background-color: #f44336;
+    float: right;
+    margin-right: 5%;
+  }

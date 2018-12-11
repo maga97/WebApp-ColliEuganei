@@ -21,21 +21,15 @@ else{
 $dbConnection->Close();
 ?>
 
-<?xml version="1.0" encoding="UTF-8"?>
+<?php echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"; ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<link rel="stylesheet" type="text/css" href="assets/css/style.css" media="all">
+    <link rel="stylesheet" type="text/css" href="assets/css/form.css" media="all">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<script>
-			$(document).ready(function() {
-				$('.galleryframe').click(function() {
-					window.location.href = $(this).find("a").attr("href");
-				});
-			});
-		</script>
 		<script src="script.js"></script>
 		<title>Home - Colli Digitali</title>
 	</head>
@@ -83,7 +77,7 @@ $dbConnection->Close();
     </div>
 
     <ul class="breadcrumb">
-      <li><a href="login.php">Login</a></li>
+      <li><a href="index.php">Home</a></li>
       <li>Login</li>
     </ul>
     <?php
@@ -95,14 +89,25 @@ $dbConnection->Close();
         <fieldset>
           <legend>Autenticazione</legend>
           <div class="row">
-            <label for="email">Indirizzo email</label>
+            <div class="col-2">
+              <label for="email">Indirizzo email</label>
+            </div>
+            <div class="col-2">
             <input type="text" required="required" id="email" name="email" placeholder="pincopallino@domain.it"/>
+            </div>            
           </div>
           <div class="row">
-            <label for="password">Password</label>
-            <input type="password" required="required" id="password" name="password"/>
+            <div class="col-2">
+              <label for="password">Password</label>
+            </div>
+            <div class="col-2">
+              <input type="password" required="required" id="password" name="password"/>
+            </div>
           </div>
-          <input type="submit" name="submit" value="Entra">
+            <div class="row">
+              <input class="buttom-form" type="submit" name="submit" value="Entra"/>
+              <input class="buttom-form" type="reset" value="Resetta"/>
+            </div>
         </fieldset>
       </form>
     </div>
