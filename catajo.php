@@ -1,6 +1,6 @@
 <?php
 if (session_status() == PHP_SESSION_NONE) { session_start(); }
- ?>
+?>
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
@@ -11,19 +11,16 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 	<script src="script.js"></script>
 	<title>Il Castello del Catajo</title>
 </head>
-
 <body>
-  
-<div class="header">
-  <div class="header-picture"></div>
-  <div class="header-title">
-    <h1>Colli Euganei</h1>
-    <h2>Natura e storia in digitale</h2>
+  <div class="header">
+    <div class="header-picture"></div>
+    <div class="header-title">
+      <h1>Colli Euganei</h1>
+      <h2>Natura e storia in digitale</h2>
+    </div>
   </div>
-</div>
-
-<div class="topnav-bar">
-      <ul class="topnav">
+  <div class="topnav-bar">
+    <ul class="topnav">
       <li class="dropdown"><a href="index.php">Home</a>
         <ul class="dropdown-content">
           <li><a href="geografia.php">Geografia</a></li>
@@ -31,7 +28,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
           <li><a href="storia.php">Storia</a></li>
         </ul>
       </li>
-        <li class="dropdown"><a href="luoghi.php" class="active">Luoghi</a>
+      <li class="dropdown"><a href="luoghi.php" class="active">Luoghi</a>
         <ul class="dropdown-content">
           <li><a href="chiesette.php">7 Chiesette</a></li>
           <li><a href="catajo.php" class="active">Castello del Catajo</a></li>
@@ -41,55 +38,53 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
           <li><a href="pelagio.php">Castello San Pelagio</a></li>
         </ul>
       </li>
-        <li><a href="gite.php">Gite</a></li>
-  <?php if(isset($_SESSION['username'])): ?>
-    <li><a href="view-account.php">Account</a></li>
-  <?php else: ?>
-    <li><a href="login.php">Accedi</a></li>
-    <li><a href="Registrazione.php">Registrati</a></li>
-  <?php endif; ?>
-  <li class="icon">
-    <a href="javascript:void(0);" onclick="menuMobile()">&#9776;</a>
-  </li>
-  </ul>
-</div>
+      <li><a href="gite.php">Gite</a></li>
+      <?php if(isset($_SESSION['username'])): ?>
+        <li><a href="view-account.php">Account</a></li>
+        <?php else: ?>
+          <li><a href="login.php">Accedi</a></li>
+          <li><a href="Registrazione.php">Registrati</a></li>
+        <?php endif; ?>
+        <li class="icon">
+          <a href="javascript:void(0);" onclick="menuMobile()">&#9776;</a>
+        </li>
+      </ul>
+    </div>
     <ul class="breadcrumb">
       <li><a href="luoghi.php">Luoghi</a></li>
       <li>Il Castello del Catajo</li>
     </ul>
-
-  <div class="content">
-    <div class="section">
-      <h1>Il Castello del Catajo</h1>
-      <div class="floatright">
+    <div class="content">
+      <div class="section">
+        <h1>Il Castello del Catajo</h1>
+        <div class="floatright">
           <img class="pic storiapic" src="assets/img/catajo-XVIIIsec.jpg" alt="Il Castello nel XVIII secolo"/>
-      </div>
-      <p class="text">
-        Il castello del Catajo, situato nei pressi di Battaglia Terme, è un imponente palazzo cinquecentesco, oggi aperto al pubblico.
-        Inizialmente una semplice villa, venne esteso largamente dal marchese Pio Enea I degli Obizzi dal 1570 in poi che affidò il progetto
-        all'architetto Andrea Da Valle.
-        Sebbene gran parte dei lavori di espansione avvennero in pochi anni, gli ampliamenti proseguirono fino a metà del XIX secolo.
-        L'edificio sta a metà tra il castello militare e la villa principesca, indubbiamente per volere stesso del committente, che pensò
+        </div>
+        <p class="text">
+          Il castello del Catajo, situato nei pressi di Battaglia Terme, è un imponente palazzo cinquecentesco, oggi aperto al pubblico.
+          Inizialmente una semplice villa, venne esteso largamente dal marchese Pio Enea I degli Obizzi dal 1570 in poi che affidò il progetto
+          all'architetto Andrea Da Valle.
+          Sebbene gran parte dei lavori di espansione avvennero in pochi anni, gli ampliamenti proseguirono fino a metà del XIX secolo.
+          L'edificio sta a metà tra il castello militare e la villa principesca, indubbiamente per volere stesso del committente, che pensò
         il Catajo come una grande macchina di rappresentanza dove intrattenere ospiti da tutta Europa con feste, balli e rappresentazioni teatrali</p>
         <h1 class="title">L'origine del nome</h1>
         <p class="text">
-        L'origine del nome è incerta: mentre alcune fonti attribuiscono l'origine del nome al luogo in cui fu costruito (vicino ad un canale), altre fanno riferimento
-        a come veniva indicata la Cina nel medioevo: "catai" e vedrebbero Pio Enea ispirato da "Il Milione" di Marco Polo.
+          L'origine del nome è incerta: mentre alcune fonti attribuiscono l'origine del nome al luogo in cui fu costruito (vicino ad un canale), altre fanno riferimento
+          a come veniva indicata la Cina nel medioevo: "catai" e vedrebbero Pio Enea ispirato da "Il Milione" di Marco Polo.
         </p>
         <h1 class="title">Descrizione</h1>
         <div class="floatright">
-            <img class="pic storiapic" src="assets/img/affreschi2.jpg" alt="Il Castello nel XVIII secolo"/>
+          <img class="pic storiapic" src="assets/img/affreschi2.jpg" alt="Il Castello nel XVIII secolo"/>
         </div>
         <p class="text">
-        La villa con le sue 350 stanze, ha l'aspetto del castello, con alte mura caratterizzate da merletti, nonostante ciò non fu mai usato come un forte, al contrario,
-        l'edificio doveva rappresentare il potere e il prestigio della famiglia, che teneva feste e riceveva ospiti da tutta europa.
-        Il piano nobile conserva uno dei più importanti esempi di pittura autocelebrativa del nord Italia, opera di Giovanni Battista Zelotti.
-        Nel grande salone affrescato spicca l'albero genealogico della famiglia Obizzi, dal capostipite Obicio I fino al costruttore del castello Pio Enea I.
-        Alle pareti sono dipinte varie battaglie, terrestri e navali: sono illustrate le crociate, cui parteciparono i membri della famiglia.
-      </p>
+          La villa con le sue 350 stanze, ha l'aspetto del castello, con alte mura caratterizzate da merletti, nonostante ciò non fu mai usato come un forte, al contrario,
+          l'edificio doveva rappresentare il potere e il prestigio della famiglia, che teneva feste e riceveva ospiti da tutta europa.
+          Il piano nobile conserva uno dei più importanti esempi di pittura autocelebrativa del nord Italia, opera di Giovanni Battista Zelotti.
+          Nel grande salone affrescato spicca l'albero genealogico della famiglia Obizzi, dal capostipite Obicio I fino al costruttore del castello Pio Enea I.
+          Alle pareti sono dipinte varie battaglie, terrestri e navali: sono illustrate le crociate, cui parteciparono i membri della famiglia.
+        </p>
+      </div>
     </div>
-  </div>
-
     <?php include_once('footer.php')?> 
-</body>
-</html>
+  </body>
+  </html>

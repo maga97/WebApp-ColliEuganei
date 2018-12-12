@@ -1,6 +1,6 @@
 <?php
 if (session_status() == PHP_SESSION_NONE) { session_start(); }
- ?>
+?>
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
@@ -12,101 +12,97 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 	<title>Geografia - Colli Digitali</title>
 </head>
 <body>
-
 	<div class="header">
-  <div class="header-picture">
-  <div class="header-title">
-    <h1>Colli Euganei</h1>
-    <h2>Natura e storia in digitale</h2>
-  </div>
-  </div>
-</div>
-
-<div class="topnav-bar">
-      <ul class="topnav">
-      <li class="dropdown"><a href="index.php" class="active">Home</a>
-        <ul class="dropdown-content">
-          <li><a href="geografia.php" class="active">Geografia</a></li>
-          <li><a href="clima.php">Clima</a></li>
-          <li><a href="storia.php">Storia</a></li>
-        </ul>
-      </li>
-        <li class="dropdown"><a href="luoghi.php">Luoghi</a>
-        <ul class="dropdown-content">
-          <li><a href="chiesette.php">7 Chiesette</a></li>
-          <li><a href="catajo.php">Castello del Catajo</a></li>
-          <li><a href="praglia.php">Abbazia di Praglia</a></li>
-          <li><a href="carrareseeste.php">Castello carrarese di Este</a></li>
-          <li><a href="lispida.php">Castello di Lispida</a></li>
-          <li><a href="pelagio.php">Castello San Pelagio</a></li>
-        </ul>
-      </li>
-        <li><a href="gite.php">Gite</a></li>
-  <?php if(isset($_SESSION['username'])): ?>
-    <li><a href="view-account.php">Account</a></li>
-  <?php else: ?>
-    <li><a href="login.php">Accedi</a></li>
-    <li><a href="Registrazione.php">Registrati</a></li>
-  <?php endif; ?>
-  <li class="icon">
-    <a href="javascript:void(0);" onclick="menuMobile()">&#9776;</a>
-  </li>
-  </ul>
-</div>
-
-	<ul class="breadcrumb">
-   <li><a href="index.php">Home</a></li>
-   <li>Geografia</li>
- </ul>
-
-	<div class="content">
-		<div class="section">
-			<h1>Geografia e Geologia dei colli</h1>
-			<p class="text">I colli euganei sono un gruppo di rilievi di altezza che varia tra i 300 e i 600 metri,
-				situati a sud ovest di padova. I colli catturano particolarmente l'attenzione poich&egrave si stagliano
-				isolati nel cuore della pianura veneta. Per proteggere il territorio e valorizzarne le qualit&agrave turistiche, fu istituito nel 1989 il parco regionale dei colli euganei, il primo della regione Veneto.
-			</p>
-			<h1 class="title">Origine dei colli</h1>
-			<div class="floatright" id="geotab">
-				<table class="tg">
-				  <tr>
-				    <th class="tg-jp7n">Periodo</th>
-				    <th class="tg-jp7n">Rocce</th>
-				  </tr>
-				  <tr>
-				    <td class="tg-ai30">Oligocene</td>
-				    <td class="tg-2fdn">Vulcaniti differenziate</td>
-				  </tr>
-				  <tr>
-				    <td class="tg-aphi" rowspan="2">Eocene</td>
-				    <td class="tg-107g">Marne euganee<br></td>
-				  </tr>
-				  <tr>
-				    <td class="tg-2fdn">Vulcaniti basaltiche</td>
-				  </tr>
-				  <tr>
-				    <td class="tg-hd3d" rowspan="2">Cretaceo</td>
-				    <td class="tg-2fdn">Scaglia rossa</td>
-				  </tr>
-				  <tr>
-				    <td class="tg-2fdn">Biancone</td>
-				  </tr>
-				  <tr>
-				    <td class="tg-bqpl" rowspan="2"><br>Giurassico</td>
-				    <td class="tg-2fdn">Rosso ammonitico</td>
-				  </tr>
-				  <tr>
-				    <td class="tg-2fdn">Calcari grigi</td>
-				  </tr>
-				  <tr>
-				    <td class="tg-ue2u" rowspan="2">Triassico</td>
-				    <td class="tg-2fdn">Dolomia principale</td>
-				  </tr>
-				  <tr>
-				    <td class="tg-2fdn">Vulcaniti basiche</td>
-				  </tr>
-				</table>
+		<div class="header-picture">
+			<div class="header-title">
+				<h1>Colli Euganei</h1>
+				<h2>Natura e storia in digitale</h2>
 			</div>
+		</div>
+	</div>
+	<div class="topnav-bar">
+		<ul class="topnav">
+			<li class="dropdown"><a href="index.php" class="active">Home</a>
+				<ul class="dropdown-content">
+					<li><a href="geografia.php" class="active">Geografia</a></li>
+					<li><a href="clima.php">Clima</a></li>
+					<li><a href="storia.php">Storia</a></li>
+				</ul>
+			</li>
+			<li class="dropdown"><a href="luoghi.php">Luoghi</a>
+				<ul class="dropdown-content">
+					<li><a href="chiesette.php">7 Chiesette</a></li>
+					<li><a href="catajo.php">Castello del Catajo</a></li>
+					<li><a href="praglia.php">Abbazia di Praglia</a></li>
+					<li><a href="carrareseeste.php">Castello carrarese di Este</a></li>
+					<li><a href="lispida.php">Castello di Lispida</a></li>
+					<li><a href="pelagio.php">Castello San Pelagio</a></li>
+				</ul>
+			</li>
+			<li><a href="gite.php">Gite</a></li>
+			<?php if(isset($_SESSION['username'])): ?>
+				<li><a href="view-account.php">Account</a></li>
+				<?php else: ?>
+					<li><a href="login.php">Accedi</a></li>
+					<li><a href="Registrazione.php">Registrati</a></li>
+				<?php endif; ?>
+				<li class="icon">
+					<a href="javascript:void(0);" onclick="menuMobile()">&#9776;</a>
+				</li>
+			</ul>
+		</div>
+		<ul class="breadcrumb">
+			<li><a href="index.php">Home</a></li>
+			<li>Geografia</li>
+		</ul>
+		<div class="content">
+			<div class="section">
+				<h1>Geografia e Geologia dei colli</h1>
+				<p class="text">I colli euganei sono un gruppo di rilievi di altezza che varia tra i 300 e i 600 metri,
+					situati a sud ovest di padova. I colli catturano particolarmente l'attenzione poich&egrave si stagliano
+					isolati nel cuore della pianura veneta. Per proteggere il territorio e valorizzarne le qualit&agrave turistiche, fu istituito nel 1989 il parco regionale dei colli euganei, il primo della regione Veneto.
+				</p>
+				<h1 class="title">Origine dei colli</h1>
+				<div class="floatright" id="geotab">
+					<table class="tg">
+						<tr>
+							<th class="tg-jp7n">Periodo</th>
+							<th class="tg-jp7n">Rocce</th>
+						</tr>
+						<tr>
+							<td class="tg-ai30">Oligocene</td>
+							<td class="tg-2fdn">Vulcaniti differenziate</td>
+						</tr>
+						<tr>
+							<td class="tg-aphi" rowspan="2">Eocene</td>
+							<td class="tg-107g">Marne euganee<br></td>
+						</tr>
+						<tr>
+							<td class="tg-2fdn">Vulcaniti basaltiche</td>
+						</tr>
+						<tr>
+							<td class="tg-hd3d" rowspan="2">Cretaceo</td>
+							<td class="tg-2fdn">Scaglia rossa</td>
+						</tr>
+						<tr>
+							<td class="tg-2fdn">Biancone</td>
+						</tr>
+						<tr>
+							<td class="tg-bqpl" rowspan="2"><br>Giurassico</td>
+							<td class="tg-2fdn">Rosso ammonitico</td>
+						</tr>
+						<tr>
+							<td class="tg-2fdn">Calcari grigi</td>
+						</tr>
+						<tr>
+							<td class="tg-ue2u" rowspan="2">Triassico</td>
+							<td class="tg-2fdn">Dolomia principale</td>
+						</tr>
+						<tr>
+							<td class="tg-2fdn">Vulcaniti basiche</td>
+						</tr>
+					</table>
+				</div>
 				<p class="text">
 					I colli sono di origine vulcanica: circa 30 milioni di anni fa il territorio che oggi costituisce la pianura padana era
 					un fondale marino. In questo contesto i colli sono nati in seguito ad eruzioni sottomarine che hanno depositato lava sul fondale marino.
@@ -114,8 +110,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 					essa i colli. A testimonianza di questi eventi, ancora oggi &egrave possibile trovare in una fenditura del Monte Resino fossili di ammoniti, animali
 					marini dotati di conchiglia esterna a forma di spirale.
 				</p>
-
-			<h1 class="title">Geologia</h1>
+				<h1 class="title">Geologia</h1>
 				<p class="text">
 					Le roccie che si incontrano percorrendo i sentieri dei colli sono di fondamental importanza per comprenderne la storia.
 					Le roccie pi&ugrave chiare sono di natura calcarea, si tratta di roccie sedimentarie databili a quando la pianura padana giaceva sul fondale marino.
@@ -126,7 +121,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 					Risalente fino a 55 milioni di anni fa troviamo la Scaglia rossa, che &egrave sempre un tipo di roccia calcarea che per&ograve presenta un abbondanza di fossili di ricci di mare e denti di squalo.
 					Infine il pi&ugrave recente strato di roccia formatosi &egrave di colore verde-grigiastro e prende il nome di Marna euganea.
 				</p>
-			<h1 class="title">Flora & Fauna</h1>
+				<h1 class="title">Flora & Fauna</h1>
 				<p class="text">
 					Il terreno ha un enorme influenza sulla flora del parco, pertanto in base al terreno incontreremo vegetazione diversa.
 					Mentre la parte meridionale dei colli &egrave caratterizzata da zone prative e boschi di querce, il lato nord dei colli &egrave caratterizzato da
@@ -135,11 +130,9 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 					La presenza di piccoli mammiferi come lepri ed altri roditori offre una nicchia ecologica ad uccelli rapaci come falchi e civette.
 					Infine vi &egrave un abbondanza di anfibi e rettili tra cui il ramarro, una splendida lucertola lunga fino a 45 cm di colore verde per eccezione del mento che &egrave di colore blu acceso e la rara
 					testugine dei colli euganei, un adattamento particolare ai colli della testugine palustre europea.
-			</p>
+				</p>
+			</div>
 		</div>
-	</div>
-
-		<?php include_once('footer.php')?> 
-
-</body>
-</html>
+		<?php include_once('footer.php'); ?> 
+	</body>
+	</html>

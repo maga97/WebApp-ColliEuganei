@@ -2,3 +2,8 @@
 function menuMobile() {
     document.getElementsByClassName("topnav")[0].classList.toggle("responsive");
 }
+$(document).ready(function() {
+	$('.galleryframe').click(function() {
+		window.location.href = $(this).find("a").attr("href");
+	});
+});
