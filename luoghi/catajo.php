@@ -56,7 +56,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
     </ul>
     <div class="content">
       <div class="section">
-        <h1>Il Castello del Catajo</h1>
+        <h2>Il Castello del Catajo</h2>
         <div class="floatright">
           <img class="pic storiapic" src="../assets/img/catajo-XVIIIsec.jpg" alt="Il Castello nel XVIII secolo"/>
         </div>
@@ -67,12 +67,12 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
           Sebbene gran parte dei lavori di espansione avvennero in pochi anni, gli ampliamenti proseguirono fino a metà del XIX secolo.
           L'edificio sta a metà tra il castello militare e la villa principesca, indubbiamente per volere stesso del committente, che pensò
         il Catajo come una grande macchina di rappresentanza dove intrattenere ospiti da tutta Europa con feste, balli e rappresentazioni teatrali</p>
-        <h1 class="title">L'origine del nome</h1>
+        <h2>L'origine del nome</h2>
         <p class="text">
           L'origine del nome è incerta: mentre alcune fonti attribuiscono l'origine del nome al luogo in cui fu costruito (vicino ad un canale), altre fanno riferimento
           a come veniva indicata la Cina nel medioevo: "catai" e vedrebbero Pio Enea ispirato da "Il Milione" di Marco Polo.
         </p>
-        <h1 class="title">Descrizione</h1>
+        <h2>Descrizione</h2>
         <div class="floatright">
           <img class="pic storiapic" src="../assets/img/affreschi2.jpg" alt="Il Castello nel XVIII secolo"/>
         </div>

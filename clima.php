@@ -62,14 +62,14 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 
 	<div class="content">
 		<div class="section">
-			<h1>Il Clima</h1>
+			<h2>Il Clima</h2>
 			<p class="text">I colli euganei, trovandosi nel cuore della pianura padana, godono di un clima di tipo continentale,
 			con inverni freddi ed estati calde ed umide. La presenza delle colline per&ograve da luogo a fenomeni interessanti e particolari
 			e a panorami di rara bellezza.
 			<div class="floatright">
 				<img class="pic climapic" id="invernopic"src="assets/img/inverno.jpg" alt="" width="512" height="332">
 			</div>
-			<h1 class="title">Autunno e Inverno</h1>
+			<h2>Autunno e Inverno</h2>
 			<p class="text">
 				L'autunno e l'inverno dei colli euganei sono caratterizzati dalla nebbia. Poich&egrave la nebbia raramente supera i 200 metri sul livello del mare
 				spesso le cime dei colli ne sono al di sopra dando luogo a paesaggi mozzafiato. L'esposizione al sole inoltre fa si che le cime delle colline
@@ -80,7 +80,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 			<div class="floatright">
 				<img class="pic climapic" src="assets/img/primavera.jpg" alt="" width="512" height="332">
 			</div>
-			<h1 class="title">Primavera ed Estate</h1>
+			<h2>Primavera ed Estate</h2>
 			<p class="text">
 				In primavera i colli si riempiono di colori: i boschi di robinia, le piante di ginestra e le rute padovane contribuiscono con i colori bianco, arancione e giallo
 				insieme ai prati e alle chiome degli alberi verdi a formare un quadro allegro e vitale.

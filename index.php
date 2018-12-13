@@ -58,7 +58,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 			<li><a href="index.php">Home</a></li>
 		</ul>
 		<div class="content">
-			<h1>Benvenuto nei Colli Euganei</h1>
+			<h2>Benvenuto nei Colli Euganei</h2>
 			<div class="section">
 				<p class="text">
 					Percorri uno dei sentieri del parco regionale, ammira antiche ville come il castello del Catajo o luoghi di pellegrinaggio come il viale

@@ -57,7 +57,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
     </ul>
     <div class="content">
       <div class="section">
-        <h1>Il Castello di Lispida</h1>
+        <h2>Il Castello di Lispida</h2>
         <div class="floatright">
           <img class="pic storiapic" src="../assets/img/lispida1.jpg" alt=""/>
         </div>
@@ -68,12 +68,12 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
           con travi in legno a vista. Alcuni appartamenti vantano arredi classici, un caminetto o un tavolo da biliardo.
           Il Castello di Lispida ospita una propria cantina, dove potrete dedicarvi a una degustazione di vini (su richiesta e senza costi aggiuntivi) per poi eventualmente acquistarli.
         Questa grande struttura dispone di attrezzature per barbecue, ampi giardini e sale per eventi e conferenze. </p>
-        <h1 class="title">I dintorni</h1>
+        <h2>I dintorni</h2>
         <p class="text">
           A 4 km troverete la stazione ferroviaria e il castello di Monselice, mentre con un tragitto di 2 km raggiungerete la più vicina fermata dell'autobus pubblico.
           Il personale può organizzare escursioni e gite in bicicletta nel parco.
         </p>
-        <h1 class="title">Descrizione</h1>
+        <h2>Descrizione</h2>
         <div class="floatright">
           <img class="pic storiapic" src="../assets/img/lispida2.jpg" alt=""/>
         </div>

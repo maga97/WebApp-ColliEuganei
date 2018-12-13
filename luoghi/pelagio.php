@@ -57,7 +57,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
     </ul>
     <div class="content">
       <div class="section">
-        <h1>Il Castello di San Pelagio</h1>
+        <h2>Il Castello di San Pelagio</h2>
         <div class="floatright">
           <img class="pic storiapic" src="../assets/img/pelagio1.jpg" alt=""/>
         </div>
@@ -67,7 +67,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
           Nelle stanze del poeta tutto è rimasto come allora perché voi possiate rivivere quei momenti e ripercorrere la storia del volo umano in un Museo unico in Europa.
           Dal 2018, nel centenario del Volo su Vienna, isole multimediali immersive rendono la visita un’esperienza "emozionale"!
         </p>
-        <h1 class="title">Il giardino</h1>
+        <h2>Il giardino</h2>
         <p class="text">
          Il giardino storico del Castello è un luogo incantevole tutto da vivere e visitare, passeggiando tra le rose e i suoi labirinti.
          Dal 1970 il Parco è stato oggetto di un accurato restauro con il censimento di tutte le specie botaniche tutt’ora presenti; i due giardini della villa, nelle loro differenti tipologie,
@@ -76,7 +76,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
          Nel 2000 è stato creato un labirinto verde di 1200 mq, per raccontare il mito del volo di Icaro, senza dimenticare la funzione dei labirinti delle ville venete.
          Nel 2007 è sorto il labirinto del “Forse che Si Forse che No” per sottolineare il concetto dannunziano di doppio.
        </p>
-       <h1 class="title">Il museo</h1>
+       <h2>Il museo</h2>
        <div class="floatright">
         <img class="pic storiapic" src="../assets/img/pelagio2.jpg" alt=""/>
       </div>

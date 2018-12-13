@@ -57,12 +57,12 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 		</ul>
 		<div class="content">
 			<div class="section">
-				<h1>Geografia e Geologia dei colli</h1>
+				<h2>Geografia e Geologia dei colli</h2>
 				<p class="text">I colli euganei sono un gruppo di rilievi di altezza che varia tra i 300 e i 600 metri,
 					situati a sud ovest di padova. I colli catturano particolarmente l'attenzione poich&egrave si stagliano
 					isolati nel cuore della pianura veneta. Per proteggere il territorio e valorizzarne le qualit&agrave turistiche, fu istituito nel 1989 il parco regionale dei colli euganei, il primo della regione Veneto.
 				</p>
-				<h1 class="title">Origine dei colli</h1>
+				<h2>Origine dei colli</h2>
 				<div class="floatright" id="geotab">
 					<table class="tg">
 						<tr>
@@ -110,7 +110,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 					essa i colli. A testimonianza di questi eventi, ancora oggi &egrave possibile trovare in una fenditura del Monte Resino fossili di ammoniti, animali
 					marini dotati di conchiglia esterna a forma di spirale.
 				</p>
-				<h1 class="title">Geologia</h1>
+				<h2>Geologia</h2>
 				<p class="text">
 					Le roccie che si incontrano percorrendo i sentieri dei colli sono di fondamental importanza per comprenderne la storia.
 					Le roccie pi&ugrave chiare sono di natura calcarea, si tratta di roccie sedimentarie databili a quando la pianura padana giaceva sul fondale marino.
@@ -121,7 +121,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 					Risalente fino a 55 milioni di anni fa troviamo la Scaglia rossa, che &egrave sempre un tipo di roccia calcarea che per&ograve presenta un abbondanza di fossili di ricci di mare e denti di squalo.
 					Infine il pi&ugrave recente strato di roccia formatosi &egrave di colore verde-grigiastro e prende il nome di Marna euganea.
 				</p>
-				<h1 class="title">Flora & Fauna</h1>
+				<h2>Flora & Fauna</h2>
 				<p class="text">
 					Il terreno ha un enorme influenza sulla flora del parco, pertanto in base al terreno incontreremo vegetazione diversa.
 					Mentre la parte meridionale dei colli &egrave caratterizzata da zone prative e boschi di querce, il lato nord dei colli &egrave caratterizzato da

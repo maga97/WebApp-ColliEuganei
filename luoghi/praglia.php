@@ -57,7 +57,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
     </ul>
     <div class="content">
       <div class="section">
-        <h1>L'Abbazia di Praglia</h1>
+        <h2>L'Abbazia di Praglia</h2>
         <div class="floatright">
           <img class="pic storiapic" src="../assets/img/praglia1.jpg" alt=""/>
         </div>
@@ -68,16 +68,16 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
           e si rifà probabilmente alla grande opera di bonifica e di messa a coltura di terre paludose della zona avviata proprio dai Benedettini nel Medioevo.
           L'intera abbazia fu ricostruita a partire dal 1469 e nel 1490 i benedettini vi aggiunsero la "chiesa dell'Assunta", realizzata su disegno di Tullio Lombardo (poi radicalmente trasformata da Andrea Moroni).
           L'abbazia è divenuta un centro di eccellenza nel settore del restauro dei libri antichi.  </p>
-        <h1 class="title">I chiostri</h1>
+        <h2>I chiostri</h2>
+        <div class="floatright">
+          <img class="pic storiapic" src="../assets/img/praglia2.jpg" alt=""/>
+        </div>
         <p class="text">
           All'interno della cinta muraria il monastero si divide in quattro chiostri: doppio, detto anche della clausura, botanico, pensile e rustico (nel quale si depositavano gli attrezzi agricoli).
           Alla seconda metà del XV secolo risalgono il chiostro botanico, un tempo destinato alla coltivazione delle piante medicinali e oggi elegante giardino, il chiostro doppio circondato dalle celle dei monaci e il chiostro pensile
           o “del Paradiso”, collocato al primo piano e caratterizzato da colonne e capitelli finemente lavorati. Più tardo il chiostro rustico su cui affacciano la foresteria e il centro per conferenze e attività culturali.
         </p>
-        <h1 class="title">L'abbazia oggi</h1>
-        <div class="floatright">
-          <img class="pic storiapic" src="../assets/img/praglia2.jpg" alt=""/>
-        </div>
+        <h2>L'abbazia oggi</h2>
         <p class="text">
           L'Abbazia di Praglia, ancora oggi abitata da monaci benedettini e meta di un costante turismo religioso, ospita al suo interno anche una Biblioteca Monumentale Nazionale, che contiene circa 100.000 volumi.
           La sala al piano superiore è impreziosita da 17 tele di G.B. Zelotti, pittore del tardo Cinquecento, inserite negli scomparti del soffitto in legno.

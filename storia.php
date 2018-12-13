@@ -61,11 +61,11 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 
 	<div class="content">
 		<div class="section">
-			<h1>Una commistione di storia, arte e cultura.</h1>
+			<h2>Una commistione di storia, arte e cultura.</h2>
 			<p class="text">I colli prendono il nome dal primo popolo che in epoca preistorica visse in Veneto: gli euganei.
 			La storia millenaria dei colli ci dona oggi siti archeologici, antichi palazzi, musei e monumenti dal valore inestimabile.
 			</p>
-			<h1 class="title">Storia di popoli</h1>
+			<h2>Storia di popoli</h2>
 			<div class="floatright">
 				<img class="pic storiapic" src="assets/img/atestino.jpg" alt=""/>
 			</div>
@@ -78,7 +78,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 					Giungendo ai giorni nostri, l'incremento dello sfruttamento del territorio ha indotto la regione a creare nel 1989 il parco regionale dei colli euganei
 					con lo scopo di preservare il territorio e valorizzarne le qualit&agrave, dai reperti, ai castelli, alle maestose ville, alla natura incontaminata.
 				</p>
-			<h1 class="title">Il patrimonio culturale</h1>
+			<h2>Il patrimonio culturale</h2>
 				<p class="text">
 					I centri storici pi&ugrave importanti come Este culla della civilt&agrave
 					Paleoveneta, Arqu&agrave Petrarca incantevole borgo medievale e Monselice
@@ -88,7 +88,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 					Rua, dove il tempo sembra si sia fermato per offrire ai visitatori momenti di profonda
 					pace spirituale.
 				</p>
-				<h1 class="title">L'arte</h1>
+				<h2>L'arte</h2>
 				<div class="floatright">
 					<img class="pic storiapic" src="assets/img/filmfestival.jpg" alt="" />
 				</div>

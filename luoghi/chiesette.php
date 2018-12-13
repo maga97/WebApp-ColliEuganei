@@ -56,7 +56,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
     </ul>
     <div class="content">
       <div class="section">
-        <h1>La via delle 7 chiesette</h1>
+        <h2>La via delle 7 chiesette</h2>
         <div class="floatright">
           <img class="pic storiapic" src="../assets/img/7chiesette.jpg" alt="Il Castello nel XVIII secolo"/>
         </div>
@@ -64,7 +64,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
           La via delle sette chiesette è un breve percorso e meta di pellegrinaggio in quel di Monselice.
           Il viale, in leggera salita, è affiancato da 6 cappellette, ognuna dedicata ad una chiesa romana.
         </p>
-        <h1 class="title">Le chiesette</h1>
+        <h2>Le chiesette</h2>
         <p class="text">
           Ognuna delle cappellette, ha al suo interno una pala d'altare dipinta da Jacopo Palma il Giovane
           raffigurante la basilica romana a cui è dedicata. La settima chiesa è il Santuario di San Giorgio nel quale si
@@ -73,7 +73,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
         <div class="floatright">
           <img class="pic storiapic" src="../assets/img/santuario2.jpg" alt="Il Castello nel XVIII secolo"/>
         </div>
-        <h1 class="title">Villa Duodo e il Mastio Federiciano</h1>
+        <h2>Villa Duodo e il Mastio Federiciano</h2>
         <p class="text">
          Al termine del percorso si trova la villa Duodo, appartenuta a Pietro Duodo, nobile di origini Veneziane, il quale fece costruire
          le 6 cappellette per complementare la cappella privata della villa.

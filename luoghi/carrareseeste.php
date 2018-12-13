@@ -11,7 +11,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 	<script src="../script.js"></script>
 	<title>Il Castello Carrarese di Este</title>
 </head>
-<body>
+<body class="este">
   <div class="header">
     <div class="header-picture"></div>
     <div class="header-title">
@@ -56,7 +56,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
     </ul>
     <div class="content">
       <div class="section">
-        <h1>Il Castello Carrarese di Este</h1>
+        <h2>Il Castello Carrarese di Este</h2>
         <div class="floatright">
           <img class="pic storiapic" src="../assets/img/este1.jpg" alt=""/>
         </div>
@@ -67,13 +67,14 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
           Il mastio è sito sul colle, in posizione di controllo sull’intero abitato; culmina con una torre quadrata e presenta a nord-est un castelletto o Rocca del Soccorso, che originariamente costituiva l’accesso alla fortezza.
           Lo spazio compreso all’interno della cinta muraria è oggi adibito a giardino pubblico.
         </p>
+        <h2>L'evoluzione del Castello</h2>
+        <div class="floatright">
+          <img class="pic storiapic" src="../assets/img/este2.jpg" alt=""/>
+        </div>
         <p class="text">
           Il Castello fu utilizzato a fini difensivi fino alla spontanea dedizione della città alla Repubblica di Venezia, quando l’intera struttura fu venduta ai Mocenigo: furono questi ultimi a far costruire verso la fine del Cinquecento il Palazzetto,
           dove attualmente ha sede il Museo Nazionale Atestino.
         </p>
-        <div class="floatright">
-          <img class="pic storiapic" src="../assets/img/este2.jpg" alt=""/>
-        </div>
         <p class="text">
           Persa la sua valenza militare, nel 1570 circa, il castello venne acquistato dalla ricca e potente famiglia veneziana dei Mocenigo,
           che iniziarono i lavori di costruzione del proprio palazzo sul lato meridionale della fortificazione carrarese.
