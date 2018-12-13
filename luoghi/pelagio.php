@@ -6,9 +6,9 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-	<script src="script.js"></script>
+	<script src="../script.js"></script>
 	<title>Il Castello di San Pelagio</title>
 </head>
 <body>
@@ -22,14 +22,14 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
   </div>
   <div class="topnav-bar">
     <ul class="topnav">
-      <li class="dropdown"><a href="index.php">Home</a>
+      <li class="dropdown"><a href="../index.php">Home</a>
         <ul class="dropdown-content">
-          <li><a href="geografia.php">Geografia</a></li>
-          <li><a href="clima.php">Clima</a></li>
-          <li><a href="storia.php">Storia</a></li>
+          <li><a href="../geografia.php">Geografia</a></li>
+          <li><a href="../clima.php">Clima</a></li>
+          <li><a href="../storia.php">Storia</a></li>
         </ul>
       </li>
-      <li class="dropdown"><a href="luoghi.php" class="active">Luoghi</a>
+      <li class="dropdown"><a href="../luoghi.php" class="active">Luoghi</a>
         <ul class="dropdown-content">
           <li><a href="chiesette.php">7 Chiesette</a></li>
           <li><a href="catajo.php">Castello del Catajo</a></li>
@@ -39,12 +39,12 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
           <li><a href="pelagio.php" class="active">Castello San Pelagio</a></li>
         </ul>
       </li>
-      <li><a href="gite.php">Gite</a></li>
+      <li><a href="../gite.php">Gite</a></li>
       <?php if(isset($_SESSION['username'])): ?>
         <li><a href="view-account.php">Account</a></li>
         <?php else: ?>
-          <li><a href="login.php">Accedi</a></li>
-          <li><a href="Registrazione.php">Registrati</a></li>
+          <li><a href="../login.php">Accedi</a></li>
+          <li><a href="../Registrazione.php">Registrati</a></li>
         <?php endif; ?>
         <li class="icon">
           <a href="javascript:void(0);" onclick="menuMobile()">&#9776;</a>
@@ -52,14 +52,14 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
       </ul>
     </div>
     <ul class="breadcrumb">
-      <li><a href="luoghi.php">Luoghi</a></li>
+      <li><a href="../luoghi.php">Luoghi</a></li>
       <li>Il Castello di San Pelagio</li>
     </ul>
     <div class="content">
       <div class="section">
         <h1>Il Castello di San Pelagio</h1>
         <div class="floatright">
-          <img class="pic storiapic" src="assets/img/pelagio1.jpg" alt=""/>
+          <img class="pic storiapic" src="../assets/img/pelagio1.jpg" alt=""/>
         </div>
         <p class="text">
           Il Castello di San Pelagio ha origini medievali (XIV sec.) come testimonia la torre costruita dai Da Carrara, Signori di Padova, nella prima metà del Trecento. L’imponente torre merlata, aveva una funzione di prima difesa nei numerosi attacchi da parte degli Scaligeri, Signori di Verona. Nella metà del Settecento la proprietà passa ai Conti Zaborra che ampliano notevolmente l’edificio, rimodernano l’ala padronale per adattarla a residenza signorile e realizzano le barchesse a uso agricolo. Da allora la famiglia dei Conti Zaborra abita il Castello ricco di memorie private e storiche.
@@ -78,7 +78,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
        </p>
        <h1 class="title">Il museo</h1>
        <div class="floatright">
-        <img class="pic storiapic" src="assets/img/pelagio2.jpg" alt=""/>
+        <img class="pic storiapic" src="../assets/img/pelagio2.jpg" alt=""/>
       </div>
       <p class="text">
        Dal 1970 la villa è stata oggetto di accurati restauri e ripensata nelle funzioni attuali principalmente come Museo del Volo. Inaugurato nel 1980, ripercorre l’intera storia del volo umano facendo perno sull’impresa dannunziana; a tale volo è dedicata la parte principale del Museo con le stanze abitate dal poeta nel periodo 1917-1919. Completano il percorso museale le sale dedicate a Leonardo, ai Montgolfier, ai Wright, a Ferrarin, a Lindbergh, a Nobile, a Balbo, a Forlanini, a Gagarin e Armstrong… tanti protagonisti per ripercorrere la più straordinaria impresa umana: il volo!
@@ -86,6 +86,6 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
      </p>
    </div>
  </div>
- <?php include_once('footer.php')?> 
+ <?php include_once('../footer.php')?> 
 </body>
 </html>

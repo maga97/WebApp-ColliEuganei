@@ -6,9 +6,9 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-	<script src="script.js"></script>
+	<script src="../script.js"></script>
 	<title>Il Castello Carrarese di Este</title>
 </head>
 <body>
@@ -21,14 +21,14 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
   </div>
   <div class="topnav-bar">
     <ul class="topnav">
-      <li class="dropdown"><a href="index.php">Home</a>
+      <li class="dropdown"><a href="../index.php">Home</a>
         <ul class="dropdown-content">
-          <li><a href="geografia.php">Geografia</a></li>
-          <li><a href="clima.php">Clima</a></li>
-          <li><a href="storia.php">Storia</a></li>
+          <li><a href="../geografia.php">Geografia</a></li>
+          <li><a href="../clima.php">Clima</a></li>
+          <li><a href="../storia.php">Storia</a></li>
         </ul>
       </li>
-      <li class="dropdown"><a href="luoghi.php" class="active">Luoghi</a>
+      <li class="dropdown"><a href="../luoghi.php" class="active">Luoghi</a>
         <ul class="dropdown-content">
           <li><a href="chiesette.php">7 Chiesette</a></li>
           <li><a href="catajo.php">Castello del Catajo</a></li>
@@ -38,12 +38,12 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
           <li><a href="pelagio.php">Castello San Pelagio</a></li>
         </ul>
       </li>
-      <li><a href="gite.php">Gite</a></li>
+      <li><a href="../gite.php">Gite</a></li>
       <?php if(isset($_SESSION['username'])): ?>
         <li><a href="view-account.php">Account</a></li>
         <?php else: ?>
-          <li><a href="login.php">Accedi</a></li>
-          <li><a href="Registrazione.php">Registrati</a></li>
+          <li><a href="../login.php">Accedi</a></li>
+          <li><a href="../Registrazione.php">Registrati</a></li>
         <?php endif; ?>
         <li class="icon">
           <a href="javascript:void(0);" onclick="menuMobile()">&#9776;</a>
@@ -51,14 +51,14 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
       </ul>
     </div>
     <ul class="breadcrumb">
-      <li><a href="luoghi.php">Luoghi</a></li>
+      <li><a href="../luoghi.php">Luoghi</a></li>
       <li>Il Castello Carrarese di Este</li>
     </ul>
     <div class="content">
       <div class="section">
         <h1>Il Castello Carrarese di Este</h1>
         <div class="floatright">
-          <img class="pic storiapic" src="assets/img/este1.jpg" alt=""/>
+          <img class="pic storiapic" src="../assets/img/este1.jpg" alt=""/>
         </div>
         <p class="text">
           Il castello di Este è stato costruito circa nel 1340, per iniziativa del signore di Padova Ubertino da Carrara.
@@ -72,7 +72,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
           dove attualmente ha sede il Museo Nazionale Atestino.
         </p>
         <div class="floatright">
-          <img class="pic storiapic" src="assets/img/este2.jpg" alt=""/>
+          <img class="pic storiapic" src="../assets/img/este2.jpg" alt=""/>
         </div>
         <p class="text">
           Persa la sua valenza militare, nel 1570 circa, il castello venne acquistato dalla ricca e potente famiglia veneziana dei Mocenigo,
@@ -81,6 +81,6 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
         </p>
       </div>
     </div>
-    <?php include_once('footer.php'); ?> 
+    <?php include_once('../footer.php'); ?> 
   </body>
   </html>

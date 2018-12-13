@@ -16,12 +16,12 @@
     </li>
     <li class="dropdown"><a href="luoghi.html">Luoghi</a>
       <ul class="dropdown-content">
-        <li><a href="chiesette.html">7 Chiesette</a></li>
-        <li><a href="catajo.html">Castello del Catajo</a></li>
-        <li><a href="praglia.html">Abbazia di Praglia</a></li>
-        <li><a href="carrareseeste.html">Castello carrarese di Este</a></li>
-        <li><a href="lispida.html">Castello di Lispida</a></li>
-        <li><a href="pelagio.html">Castello San Pelagio</a></li>
+        <li><a href="luoghi/chiesette.html">7 Chiesette</a></li>
+        <li><a href="luoghi/catajo.html">Castello del Catajo</a></li>
+        <li><a href="luoghi/praglia.html">Abbazia di Praglia</a></li>
+        <li><a href="luoghi/carrareseeste.html">Castello carrarese di Este</a></li>
+        <li><a href="luoghi/lispida.html">Castello di Lispida</a></li>
+        <li><a href="luoghi/pelagio.html">Castello San Pelagio</a></li>
       </ul>
     </li>
     <li><a href="gite.html">Gite</a></li>

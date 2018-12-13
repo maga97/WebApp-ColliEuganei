@@ -31,12 +31,12 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 			</li>
 			<li class="dropdown"><a href="luoghi.php" class="active">Luoghi</a>
 				<ul class="dropdown-content">
-					<li><a href="chiesette.php">7 Chiesette</a></li>
-					<li><a href="catajo.php">Castello del Catajo</a></li>
-					<li><a href="praglia.php">Abbazia di Praglia</a></li>
-					<li><a href="carrareseeste.php">Castello carrarese di Este</a></li>
-					<li><a href="lispida.php">Castello di Lispida</a></li>
-					<li><a href="pelagio.php">Castello San Pelagio</a></li>
+					<li><a href="luoghi/chiesette.php">7 Chiesette</a></li>
+					<li><a href="luoghi/catajo.php">Castello del Catajo</a></li>
+					<li><a href="luoghi/praglia.php">Abbazia di Praglia</a></li>
+					<li><a href="luoghi/carrareseeste.php">Castello carrarese di Este</a></li>
+					<li><a href="luoghi/lispida.php">Castello di Lispida</a></li>
+					<li><a href="luoghi/pelagio.php">Castello San Pelagio</a></li>
 				</ul>
 			</li>
 			<li><a href="gite.php">Gite</a></li>
@@ -63,15 +63,15 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 				<div class="gallery">
 					<div class="galleryframe">
 						<ul>
-							<li><a class="gallery-title" href="chiesette.php"><img class="pic-luoghi" src="assets/img/chiesette.jpg" alt="" /></li>
-								<li class="fa fa-chevron-right"><a class="gallery-title" href="chiesette.php">Le 7 chiesette</a></li>
+							<li><a class="gallery-title" href="luoghi/chiesette.php"><img class="pic-luoghi" src="assets/img/chiesette.jpg" alt="" /></li>
+								<li class="fa fa-chevron-right"><a class="gallery-title" href="luoghi/chiesette.php">Le 7 chiesette</a></li>
 								<li>Un viale fiancheggiato da 7 chiesette.</li>
 							</ul>
 						</div>
 						<div class="galleryframe">
 							<ul>
-								<li> <a class="gallery-title" href="catajo.php"> <img class="pic-luoghi" src="assets/img/catajo.jpg" alt="" /></li>
-									<li class="fa fa-chevron-right"><a class="gallery-title" href="catajo.php">Il castello del Catajo</a></li>
+								<li> <a class="gallery-title" href="luoghi/catajo.php"> <img class="pic-luoghi" src="assets/img/catajo.jpg" alt="" /></li>
+									<li class="fa fa-chevron-right"><a class="gallery-title" href="luoghi/catajo.php">Il castello del Catajo</a></li>
 									<li>Un palazzo a met&agrave tra la reggia e il forte.</li>
 								</ul>
 							</div>
@@ -79,15 +79,15 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 						<div class="gallery">
 							<div class="galleryframe">
 								<ul>
-									<li><a class="gallery-title" href="praglia.php"><img class="pic-luoghi" src="assets/img/praglia.jpg" alt="" /></li>
-										<li class="fa fa-chevron-right"><a class="gallery-title" href="praglia.php">L'abbazia di Praglia</a></li>
+									<li><a class="gallery-title" href="luoghi/praglia.php"><img class="pic-luoghi" src="assets/img/praglia.jpg" alt="" /></li>
+										<li class="fa fa-chevron-right"><a class="gallery-title" href="luoghi/praglia.php">L'abbazia di Praglia</a></li>
 										<li>Un magnifico monastero benedettino.</li>
 									</ul>
 								</div>
 								<div class="galleryframe">
 									<ul>
-										<li><a class="gallery-title" href="este.php"><img class="pic-luoghi" src="assets/img/este.jpg" alt="" /></li>
-											<li class="fa fa-chevron-right"><a class="gallery-title" href="este.php">Il castello carrarese di Este</a></li>
+										<li><a class="gallery-title" href="luoghi/carrareseeste.php"><img class="pic-luoghi" src="assets/img/este.jpg" alt="" /></li>
+											<li class="fa fa-chevron-right"><a class="gallery-title" href="luoghi/carrareseeste.php">Il castello carrarese di Este</a></li>
 											<li>Un antico Castello difensivo.</li>
 										</ul>
 									</div>
@@ -95,15 +95,15 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 								<div class="gallery">
 									<div class="galleryframe">
 										<ul>
-											<li><a class="gallery-title" href="lispida.php"><img class="pic-luoghi" src="assets/img/lispida.jpg" alt="" /></li>
-												<li class="fa fa-chevron-right"><a class="gallery-title" href="lispida.php">Il castello di Lispida</a></li>
+											<li><a class="gallery-title" href="luoghi/lispida.php"><img class="pic-luoghi" src="assets/img/lispida.jpg" alt="" /></li>
+												<li class="fa fa-chevron-right"><a class="gallery-title" href="luoghi/lispida.php">Il castello di Lispida</a></li>
 												<li>Uno storico castello oggi meta turistica di lusso.</li>
 											</ul>
 										</div>
 										<div class="galleryframe">
 											<ul>
-												<li><a class="gallery-title" href="pelagio.php"><img class="pic-luoghi" src="assets/img/pelagio.jpg" alt="" /></li>
-													<li class="fa fa-chevron-right"><a class="gallery-title" href="pelagio.php">Il castello di San Pelagio</a></li>
+												<li><a class="gallery-title" href="luoghi/pelagio.php"><img class="pic-luoghi" src="assets/img/pelagio.jpg" alt="" /></li>
+													<li class="fa fa-chevron-right"><a class="gallery-title" href="luoghi/pelagio.php">Il castello di San Pelagio</a></li>
 													<li>Un antico castello, oggi parco e museo.</li>
 												</ul>
 											</div>

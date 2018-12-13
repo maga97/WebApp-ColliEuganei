@@ -31,12 +31,12 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 			</li>
 			<li class="dropdown"><a href="luoghi.php">Luoghi</a>
 				<ul class="dropdown-content">
-					<li><a href="chiesette.php">7 Chiesette</a></li>
-					<li><a href="catajo.php">Castello del Catajo</a></li>
-					<li><a href="praglia.php">Abbazia di Praglia</a></li>
-					<li><a href="carrareseeste.php">Castello carrarese di Este</a></li>
-					<li><a href="lispida.php">Castello di Lispida</a></li>
-					<li><a href="pelagio.php">Castello San Pelagio</a></li>
+					<li><a href="luoghi/chiesette.php">7 Chiesette</a></li>
+					<li><a href="luoghi/catajo.php">Castello del Catajo</a></li>
+					<li><a href="luoghi/praglia.php">Abbazia di Praglia</a></li>
+					<li><a href="luoghi/carrareseeste.php">Castello carrarese di Este</a></li>
+					<li><a href="luoghi/lispida.php">Castello di Lispida</a></li>
+					<li><a href="luoghi/pelagio.php">Castello San Pelagio</a></li>
 				</ul>
 			</li>
 			<li><a href="gite.php">Gite</a></li>
