@@ -15,6 +15,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 	<title>Home - Colli Digitali</title>
 </head>
 <body>
+	<div id="container">
 	<div class="header">
 		<div class="header-picture">
 			<div class="header-title">
@@ -54,10 +55,10 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 				</li>
 			</ul>
 		</div>
-		<ul class="breadcrumb">
-			<li><a href="index.php">Home</a></li>
-		</ul>
 		<div class="content">
+			<ul class="breadcrumb">
+				<li><a href="index.php">Home</a></li>
+			</ul>
 			<h2>Benvenuto nei Colli Euganei</h2>
 			<div class="section">
 				<p class="text">
@@ -90,5 +91,6 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 			</div>
 		</div>
 		<?php include_once('footer.php'); ?> 
+	</div>
 	</body>
 	</html>
