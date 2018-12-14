@@ -1,4 +1,4 @@
-<?php require_once __DIR__.DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR."DBConnection.php";
+../<?php require_once __DIR__.DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR."DBConnection.php";
 
 if(session_status() == PHP_SESSION_NONE) {
  session_start();
@@ -25,11 +25,11 @@ if(isset($_POST['email']) && isset($_POST['password']))
   <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css" media="all">
-    <link rel="stylesheet" type="text/css" href="assets/css/form.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../assets/css/form.css" media="all">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="script.js"></script>
+    <script src="../script.js"></script>
     <title>Login - Colli Digitali</title>
   </head>
   <body>
@@ -43,13 +43,10 @@ if(isset($_POST['email']) && isset($_POST['password']))
     </div>
     <div class="topnav-bar">
       <ul class="topnav">
-        <li class="dropdown"><a href="index.php">Home</a>
-          <ul class="dropdown-content">
-            <li><a href="geografia.php">Geografia</a></li>
-            <li><a href="clima.php">Clima</a></li>
-            <li><a href="storia.php">Storia</a></li>
-          </ul>
-        </li>
+        <li><a href="index.php">Home</a>
+        <li><a href="geografia.php">Geografia</a></li>
+        <li><a href="clima.php">Clima</a></li>
+        <li><a href="storia.php">Storia</a></li>
         <li class="dropdown"><a href="luoghi.php">Luoghi</a>
           <ul class="dropdown-content">
             <li><a href="luoghi/chiesette.php">7 Chiesette</a></li>

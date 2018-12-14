@@ -1,9 +1,8 @@
 /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
 function menuMobile() {
     document.getElementsByClassName("topnav")[0].classList.toggle("responsive");
+
 }
 $(document).ready(function() {
-	$('.galleryframe').click(function() {
-		window.location.href = $(this).find("a").attr("href");
-	});
+
 });
