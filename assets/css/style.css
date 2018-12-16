@@ -5,6 +5,7 @@ html, body {
  height: 100%;
  font-size: 1em;
  font-family: 'Raleway', sans-serif;
+ text-align: justify;
 }
 
 #container {
@@ -51,9 +52,6 @@ html, body {
   display: table-cell;
 }
 
-.hide {
-  display: none;
-}
 
 .header-title h1,  .header-title h2 {
   padding: 1%;
@@ -91,10 +89,10 @@ ul.breadcrumb li:first-child::before {
 
 
 ul.breadcrumb li+li:before {
-  content: "\002771  ";
+  content: " > ";
 }
 
-.content {
+#content {
   padding-left: : 1.5%;
   padding-right: 1.5%;
   padding-top: 1.5%;
@@ -106,7 +104,7 @@ ul.breadcrumb li+li:before {
   margin-right: auto;
 }
 
-.content > h1 {
+#content > h1 {
 	font-size: 2em;
 }
 
@@ -135,10 +133,9 @@ ul.breadcrumb li+li:before {
   display: block;
   flex: auto;
   padding: 2%;
-  transition: opacity 1s ease-in-out;
 }
 
-.floatright{
+.float-right{
   position: relative;
   float: right;
   padding-top: 0%;
@@ -153,7 +150,6 @@ ul.breadcrumb li+li:before {
 .pic {
   height: auto;
   max-width: 100%;
-  margin-bottom: 0%;
 }
 
 .pic-luoghi {
@@ -217,6 +213,16 @@ a:visited {
     cursor: pointer;
 }
 */
+.find-more {
+  color: white;
+  padding: 0.3em 0.4em;
+  margin: 1% 0;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  font-size: 1.1rem;
+  background: #32B232;
+}
 
 
 .galleryframe li:first-of-type, .galleryframe a {
@@ -240,6 +246,26 @@ ul.topnav {
   margin-left: auto;
   margin-right: auto;
 }
+
+#top {
+  display: hidden;
+}
+
+ #scroll-top-btn { 
+  position: fixed;
+  bottom: 65px; 
+  right: 30px; 
+  z-index: 99; 
+  border: none; 
+  outline: none; 
+  background-color: red;
+  color: white; 
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 10px; 
+  font-size: 18px; 
+}
+
 
 /* Float the list items side by side */
 ul.topnav li {
@@ -328,11 +354,6 @@ ul.dropdown-content li a {
 
   #geotab {
     display:none;
-  }
-
-  .floatright {
-    float: none;
-    padding-left: 0;
   }
 
   /*
@@ -425,7 +446,7 @@ h2 {
   page-break-after: avoid;
 }
 
-.topnav-bar, .footer {
+.topnav-bar, #footer {
   display: none;
 }
 
@@ -447,7 +468,10 @@ h2 {
 }
 }
 
-.tg  {border-collapse:collapse;border-spacing:0;}
+.tg  {
+  border-collapse:collapse;
+  border-spacing:0;
+}
 .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
 .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
 .tg .tg-107g{border-color:#9b9b9b;text-align:left}

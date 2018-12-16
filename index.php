@@ -12,18 +12,11 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="script.js"></script>
-	<script type="text/javascript">
-	function clx(str, obj) {
-		let variable = "#" + str + "-text";
-		$('.hide').not(variable).hide();
-		$(obj).addClass("galleryframe-active");
-		$(variable).fadeToggle("slow");
-	}
-	</script>
 	<title>Home - Colli Digitali</title>
 </head>
 <body>
 	<div id="container">
+		<a id="top"></a>
 		<div class="header">
 			<div class="header-picture">
 				<div class="header-title">
@@ -35,17 +28,14 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 		<div class="topnav-bar">
 			<ul class="topnav">
 				<li><a href="index.php" class="active">Home</a></li>
-				<li><a href="geografia.php">Geografia</a></li>
-				<li><a href="clima.php">Clima</a></li>
-				<li><a href="storia.php">Storia</a></li>
 				<li class="dropdown"><a href="luoghi.php">Luoghi</a>
 					<ul class="dropdown-content">
-						<li><a href="luoghi/chiesette.php">7 Chiesette</a></li>
-						<li><a href="luoghi/catajo.php">Castello del Catajo</a></li>
-						<li><a href="luoghi/praglia.php">Abbazia di Praglia</a></li>
-						<li><a href="luoghi/carrareseeste.php">Castello carrarese di Este</a></li>
-						<li><a href="luoghi/lispida.php">Castello di Lispida</a></li>
-						<li><a href="luoghi/pelagio.php">Castello San Pelagio</a></li>
+						<li><a href="pages/luoghi/chiesette.php">Sette Chiesette</a></li>
+						<li><a href="pages/luoghi/catajo.php">Castello del Catajo</a></li>
+						<li><a href="pages/luoghi/praglia.php">Abbazia di Praglia</a></li>
+						<li><a href="pages/luoghi/carrareseeste.php">Castello carrarese di Este</a></li>
+						<li><a href="pages/luoghi/lispida.php">Castello di Lispida</a></li>
+						<li><a href="pages/luoghi/pelagio.php">Castello San Pelagio</a></li>
 					</ul>
 				</li>
 				<li><a href="gite.php">Gite</a></li>
@@ -60,7 +50,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 					</li>
 				</ul>
 			</div>
-			<div class="content">
+			<div id="content">
 				<ul class="breadcrumb">
 					<li><a href="index.php">Home</a></li>
 				</ul>
@@ -75,23 +65,32 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 					<div class="galleryframe">
 						<ul>
 							<li><img class="pic" src="assets/img/geog.jpg" alt="" /></li>
-							<li><a class="gallery-title" href="javascript:void(0)" onclick="clx('geografia')">Geografia</a></li>
+							<li>Geografia</li>
 							<li>Scopri la geografia del territorio e come si &egrave; formato.</li>
 						</ul>
+						<form>
+							<button type="button" class="find-more" onclick="clx('geografia')" >Scopri di più</button>
+						</form>
 					</div>
 					<div class="galleryframe">
 						<ul>
 							<li><img class="pic" src="assets/img/clima.jpg" alt="" /></li>
-							<li><a class="gallery-title" href="javascript:void(0)" onclick="clx('clima')">Clima</a></li>
+							<li>Clima</li>
 							<li>Scopri come il territorio si presenta nel corso dell'anno.</li>
 						</ul>
+						<form>
+							<button type="button" class="find-more" onclick="clx('clima')">Scopri di più</button>
+						</form>
 					</div>
-					<div class="galleryframe" onclick="clx('storia', this)">
+					<div class="galleryframe">
 						<ul>
 							<li><img class="pic" src="assets/img/storia.jpg" alt="Immagine Rocca di Monselice" /></li>
-							<li><a class="gallery-title" href="javascript:void(0)" >Storia</a></li>
+							<li>Storia</li>
 							<li>Scopri la storia, la cultura e l'arte del territorio</li>
 						</ul>
+						<form>
+							<button type="button" class="find-more" onclick="clx('storia')">Scopri di più</button>
+						</form>
 					</div>
 				</div>
 				<div id="clima-text" class="hide">
@@ -99,10 +98,10 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 					<p class="text">I colli euganei, trovandosi nel cuore della pianura padana, godono di un clima di tipo continentale,
 						con inverni freddi ed estati calde ed umide. La presenza delle colline per&ograve da luogo a fenomeni interessanti e particolari
 						e a panorami di rara bellezza.
-						<div class="floatright">
-							<img class="pic climapic" id="invernopic"src="assets/img/inverno.jpg" alt="" width="512" height="332">
+						<div class="float-right climapic">
+							<img class="pic" src="assets/img/inverno.jpg" alt="Monte Ceva">
 						</div>
-						<h2>Autunno e Inverno</h2>
+						<h3>Autunno e Inverno</h3>
 						<p class="text">
 							L'autunno e l'inverno dei colli euganei sono caratterizzati dalla nebbia. Poich&egrave la nebbia raramente supera i 200 metri sul livello del mare
 							spesso le cime dei colli ne sono al di sopra dando luogo a paesaggi mozzafiato. L'esposizione al sole inoltre fa si che le cime delle colline
@@ -110,10 +109,10 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 							che risultano ancora pi&ugrave accoglienti e confortevoli.
 						</p>
 
-						<div class="floatright">
-							<img class="pic climapic" src="assets/img/primavera.jpg" alt="" width="512" height="332">
+						<div class="float-right climapic">
+							<img class="pic" src="assets/img/primavera.jpg" alt="">
 						</div>
-						<h2>Primavera ed Estate</h2>
+						<h3>Primavera ed Estate</h3>
 						<p class="text">
 							In primavera i colli si riempiono di colori: i boschi di robinia, le piante di ginestra e le rute padovane contribuiscono con i colori bianco, arancione e giallo
 							insieme ai prati e alle chiome degli alberi verdi a formare un quadro allegro e vitale.
@@ -126,8 +125,8 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 							situati a sud ovest di padova. I colli catturano particolarmente l'attenzione poich&egrave si stagliano
 							isolati nel cuore della pianura veneta. Per proteggere il territorio e valorizzarne le qualit&agrave turistiche, fu istituito nel 1989 il parco regionale dei colli euganei, il primo della regione Veneto.
 						</p>
-						<h2>Origine dei colli</h2>
-						<div class="floatright" id="geotab">
+						<h3>Origine dei colli</h3>
+						<div class="float-right" id="geotab">
 							<table class="tg">
 								<tr>
 									<th class="tg-jp7n">Periodo</th>
@@ -174,7 +173,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 							essa i colli. A testimonianza di questi eventi, ancora oggi &egrave possibile trovare in una fenditura del Monte Resino fossili di ammoniti, animali
 							marini dotati di conchiglia esterna a forma di spirale.
 						</p>
-						<h2>Geologia</h2>
+						<h3>Geologia</h3>
 						<p class="text">
 							Le roccie che si incontrano percorrendo i sentieri dei colli sono di fondamental importanza per comprenderne la storia.
 							Le roccie pi&ugrave chiare sono di natura calcarea, si tratta di roccie sedimentarie databili a quando la pianura padana giaceva sul fondale marino.
@@ -185,7 +184,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 							Risalente fino a 55 milioni di anni fa troviamo la Scaglia rossa, che &egrave sempre un tipo di roccia calcarea che per&ograve presenta un abbondanza di fossili di ricci di mare e denti di squalo.
 							Infine il pi&ugrave recente strato di roccia formatosi &egrave di colore verde-grigiastro e prende il nome di Marna euganea.
 						</p>
-						<h2>Flora & Fauna</h2>
+						<h3>Flora & Fauna</h3>
 						<p class="text">
 							Il terreno ha un enorme influenza sulla flora del parco, pertanto in base al terreno incontreremo vegetazione diversa.
 							Mentre la parte meridionale dei colli &egrave caratterizzata da zone prative e boschi di querce, il lato nord dei colli &egrave caratterizzato da
@@ -201,8 +200,8 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 						<p class="text">I colli prendono il nome dal primo popolo che in epoca preistorica visse in Veneto: gli euganei.
 							La storia millenaria dei colli ci dona oggi siti archeologici, antichi palazzi, musei e monumenti dal valore inestimabile.
 						</p>
-						<h2>Storia di popoli</h2>
-						<div class="floatright">
+						<h3>Storia di popoli</h3>
+						<div class="float-right">
 							<img class="pic storiapic" src="assets/img/atestino.jpg" alt=""/>
 						</div>
 						<p class="text">
@@ -214,9 +213,9 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 							Giungendo ai giorni nostri, l'incremento dello sfruttamento del territorio ha indotto la regione a creare nel 1989 il parco regionale dei colli euganei
 							con lo scopo di preservare il territorio e valorizzarne le qualit&agrave, dai reperti, ai castelli, alle maestose ville, alla natura incontaminata.
 						</p>
-						<h2>Il patrimonio culturale</h2>
+						<h3>Il patrimonio culturale</h3>
 						<p class="text">
-							I centri storici pi&ugrave importanti come Este culla della civilt&agrave
+							I centri storici pi&ugrave; importanti come Este culla della civilt&agrave
 							Paleoveneta, Arqu&agrave Petrarca incantevole borgo medievale e Monselice
 							scenografica citt&agrave murata offrono mete imperdibili per gli appasionati di storia ed arte.
 							Oltre ai centri storici meravigliose sono le ville venete  come Villa Vescovi a Torreglia
@@ -224,8 +223,8 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 							Rua, dove il tempo sembra si sia fermato per offrire ai visitatori momenti di profonda
 							pace spirituale.
 						</p>
-						<h2>L'arte</h2>
-						<div class="floatright">
+						<h3>L'arte</h3>
+						<div class="float-right">
 							<img class="pic storiapic" src="assets/img/filmfestival.jpg" alt="" />
 						</div>
 						<p class="text">
@@ -236,6 +235,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 						</p>
 					</div>
 				</div>
+				<a id="scroll-top-btn" href="#top">Torna in alto</a>
 				<?php include_once('footer.php'); ?> 
 			</div>
 		</body>
