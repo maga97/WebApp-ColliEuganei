@@ -26,7 +26,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 		<div class="topnav-bar">
 			<ul class="topnav">
 				<li><a href="index.php" class="active">Home</a></li>
-				<li class="dropdown"><a href="pages/luoghi.php">Luoghi</a>
+				<li class="dropdown"><a>Luoghi</a>
 					<ul class="dropdown-content">
 						<li><a href="pages/luoghi/chiesette.php">Sette Chiesette</a></li>
 						<li><a href="pages/luoghi/catajo.php">Castello del Catajo</a></li>
@@ -242,6 +242,6 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 				</div>
 				<a id="scroll-top-btn" href="#top">Torna in alto</a>
 				<?php include_once('footer.php'); ?>
-			</div>
-		</body>
-		</html>
+		</div>
+	</body>
+</html>
