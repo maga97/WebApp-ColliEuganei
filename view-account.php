@@ -31,6 +31,7 @@ if(isset($_GET['logout']) && $_GET['logout'] == "true"){
 </head>
 <body>
   <?php
+  include_once("header.php");
   include_once('menu.php');
   ?>
   <center>

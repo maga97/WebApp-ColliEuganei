@@ -1,5 +1,5 @@
 <?php
-if (session_status() == PHP_SESSION_NONE) { session_start(); }
+if (session_status() == PHP_SESSION_NONE) { session_start();}
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -14,40 +14,10 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 </head>
 <body>
 	<div id="container">
-		<a id="top"></a>
-		<div class="header">
-			<div class="header-picture">
-				<div class="header-title">
-					<h1>Colli Euganei</h1>
-					<h2>Natura e storia in digitale</h2>
-				</div>
-			</div>
-		</div>
-		<div class="topnav-bar">
-			<ul class="topnav">
-				<li><a href="index.php" class="active">Home</a></li>
-				<li class="dropdown"><a>Luoghi</a>
-					<ul class="dropdown-content">
-						<li><a href="pages/luoghi/chiesette.php">Sette Chiesette</a></li>
-						<li><a href="pages/luoghi/catajo.php">Castello del Catajo</a></li>
-						<li><a href="pages/luoghi/praglia.php">Abbazia di Praglia</a></li>
-						<li><a href="pages/luoghi/carrareseeste.php">Castello carrarese di Este</a></li>
-						<li><a href="pages/luoghi/lispida.php">Castello di Lispida</a></li>
-						<li><a href="pages/luoghi/pelagio.php">Castello San Pelagio</a></li>
-					</ul>
-				</li>
-				<li><a href="pages/gite.php">Gite</a></li>
-				<?php if(isset($_SESSION['username'])): ?>
-					<li><a href="view-account.php">Account</a></li>
-					<?php else: ?>
-						<li><a href="pages/login.php">Accedi</a></li>
-						<li><a href="Registrazione.php">Registrati</a></li>
-					<?php endif; ?>
-					<li class="icon">
-						<a href="javascript:void(0);" onclick="menuMobile()">&#9776;</a>
-					</li>
-				</ul>
-			</div>
+		<?php include_once('header.php');
+					include_once('menu.php');
+		?>
+
 			<div id="content">
 				<ul class="breadcrumb">
 					<li><a href="index.php">Home</a></li>

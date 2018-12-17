@@ -13,42 +13,9 @@ echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" . PHP_EOL;
 	<title>L'Abbazia di Praglia</title>
 </head>
 <body>
-  <div id="container">
-    <a id="top"></a>
-    <div class="header">
-      <div class="header-picture">
-        <div class="header-title">
-          <h1>Colli Euganei</h1>
-          <h2>Natura e storia in digitale</h2>
-        </div>
-      </div>
-    </div>
-    <div class="topnav-bar">
-      <ul class="topnav">
-        <li><a href="../../index.php">Home</a>
-        </li>
-        <li class="dropdown"><a href="../luoghi.php" class="active">Luoghi</a>
-          <ul class="dropdown-content">
-            <li><a href="chiesette.php">7 Chiesette</a></li>
-            <li><a href="catajo.php">Castello del Catajo</a></li>
-            <li><a href="praglia.php" class="active">Abbazia di Praglia</a></li>
-            <li><a href="carrareseeste.php">Castello carrarese di Este</a></li>
-            <li><a href="lispida.php">Castello di Lispida</a></li>
-            <li><a href="pelagio.php">Castello San Pelagio</a></li>
-          </ul>
-        </li>
-        <li><a href="../gite.php">Gite</a></li>
-        <?php if(isset($_SESSION['username'])): ?>
-          <li><a href="view-account.php">Account</a></li>
-          <?php else: ?>
-            <li><a href="../login.php">Accedi</a></li>
-            <li><a href="../../Registrazione.php">Registrati</a></li>
-          <?php endif; ?>
-          <li class="icon">
-            <a href="javascript:void(0);" onclick="menuMobile()">&#9776;</a>
-          </li>
-        </ul>
-      </div>
+	<?php include_once('../../header.php');
+				include_once('../../menu.php');
+	?>
       <div id="content">
         <ul class="breadcrumb">
           <li><a href="../luoghi.php">Luoghi</a></li>
@@ -85,7 +52,7 @@ echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" . PHP_EOL;
         </div>
       </div>
       <a id="scroll-top-btn" href="#top">Torna in alto</a>
-      <?php include_once('../../footer.php')?> 
+      <?php include_once('../../footer.php')?>
     </div>
   </body>
   </html>

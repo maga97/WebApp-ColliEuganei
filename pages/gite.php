@@ -1,5 +1,6 @@
 <?php
-if (session_status() == PHP_SESSION_NONE) { session_start(); }
+if (session_status() == PHP_SESSION_NONE) { session_start();}
+echo $_SERVER['DOCUMENT_ROOT'];
 ?>
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -12,42 +13,9 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
   <title>Home - Colli Digitali</title>
 </head>
 <body>
-  <div class="header">
-    <div class="header-picture">
-      <div class="header-title">
-        <h1>Colli Euganei</h1>
-        <h2>Natura e storia in digitale</h2>
-      </div>
-    </div>
-  </div>
-  <div class="topnav-bar">
-    <ul class="topnav">
-      <li class="dropdown"><a href="../index.php">Home</a></li>
-      <li class="dropdown"><a href="luoghi.php">Luoghi</a>
-        <ul class="dropdown-content">
-          <li><a href="luoghi/chiesette.php">7 Chiesette</a></li>
-          <li><a href="luoghi/catajo.php">Castello del Catajo</a></li>
-          <li><a href="luoghi/praglia.php">Abbazia di Praglia</a></li>
-          <li><a href="luoghi/carrareseeste.php">Castello carrarese di Este</a></li>
-          <li><a href="luoghi/lispida.php">Castello di Lispida</a></li>
-          <li><a href="luoghi/pelagio.php">Castello San Pelagio</a></li>
-        </ul>
-      </li>
-      <li><a href="gite.php" class="active">Gite</a></li>
-      <?php if(isset($_SESSION['username'])): ?>
-        <li><a href="view-account.php">Account</a></li>
-        <?php else: ?>
-          <li><a href="login.php">Accedi</a></li>
-          <li><a href="../Registrazione.php">Registrati</a></li>
-        <?php endif; ?>
-        <li class="icon">
-          <a href="javascript:void(0);" onclick="menuMobile()">&#9776;</a>
-        </li>
-      </ul>
-    </div>
-    <ul class="breadcrumb">
-      <li><a href="gite.php">Gite</a></li>
-    </ul>
-    <?php include_once('../footer.php')?> 
+  <?php include_once('../header.php');
+        include_once('../menu.php');
+  ?>
+    <?php include_once('../footer.php')?>
   </body>
   </html>
