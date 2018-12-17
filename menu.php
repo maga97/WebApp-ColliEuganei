@@ -2,7 +2,7 @@
   <ul class="topnav">
     <?php $nomepagina=basename($_SERVER['PHP_SELF']); ?>
   <?php if($nomepagina=="index.php"):?>
-    <li><a href="<?php echo $_SERVER['DOCUMENT_ROOT'].'/index.php'; ?>" class="active">Home</a></li>
+    <li><a href="/index.php" class="active">Home</a></li>
   <?php else: ?>
     <li><a href="/index.php">Home</a></li>
   <?php endif; ?>
