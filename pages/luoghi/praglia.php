@@ -42,7 +42,7 @@ echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" . PHP_EOL;
           <li><a href="view-account.php">Account</a></li>
           <?php else: ?>
             <li><a href="../login.php">Accedi</a></li>
-            <li><a href="../Registrazione.php">Registrati</a></li>
+            <li><a href="../../Registrazione.php">Registrati</a></li>
           <?php endif; ?>
           <li class="icon">
             <a href="javascript:void(0);" onclick="menuMobile()">&#9776;</a>

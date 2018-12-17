@@ -28,7 +28,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 		<div class="topnav-bar">
 			<ul class="topnav">
 				<li><a href="index.php" class="active">Home</a></li>
-				<li class="dropdown"><a href="luoghi.php">Luoghi</a>
+				<li class="dropdown"><a href="pages/luoghi.php">Luoghi</a>
 					<ul class="dropdown-content">
 						<li><a href="pages/luoghi/chiesette.php">Sette Chiesette</a></li>
 						<li><a href="pages/luoghi/catajo.php">Castello del Catajo</a></li>
@@ -38,11 +38,11 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 						<li><a href="pages/luoghi/pelagio.php">Castello San Pelagio</a></li>
 					</ul>
 				</li>
-				<li><a href="gite.php">Gite</a></li>
+				<li><a href="pages/gite.php">Gite</a></li>
 				<?php if(isset($_SESSION['username'])): ?>
 					<li><a href="view-account.php">Account</a></li>
 					<?php else: ?>
-						<li><a href="login.php">Accedi</a></li>
+						<li><a href="pages/login.php">Accedi</a></li>
 						<li><a href="Registrazione.php">Registrati</a></li>
 					<?php endif; ?>
 					<li class="icon">
