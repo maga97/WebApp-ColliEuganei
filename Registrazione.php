@@ -64,21 +64,21 @@ $dbConnection->Close();
           <li><a href="storia.php">Storia</a></li>
         </ul>
       </li>
-      <li class="dropdown"><a href="luoghi.php">Luoghi</a>
+      <li class="dropdown"><a href="pages/luoghi.php">Luoghi</a>
         <ul class="dropdown-content">
-          <li><a href="luoghi/chiesette.php">7 Chiesette</a></li>
-          <li><a href="luoghi/catajo.php" class="active">Castello del Catajo</a></li>
-          <li><a href="luoghi/praglia.php">Abbazia di Praglia</a></li>
-          <li><a href="luoghi/carrareseeste.php">Castello carrarese di Este</a></li>
-          <li><a href="luoghi/lispida.php">Castello di Lispida</a></li>
-          <li><a href="luoghi/pelagio.php">Castello San Pelagio</a></li>
+          <li><a href="pages/luoghi/chiesette.php">7 Chiesette</a></li>
+          <li><a href="pages/luoghi/catajo.php" class="active">Castello del Catajo</a></li>
+          <li><a href="pages/luoghi/praglia.php">Abbazia di Praglia</a></li>
+          <li><a href="pages/luoghi/carrareseeste.php">Castello carrarese di Este</a></li>
+          <li><a href="pages/luoghi/lispida.php">Castello di Lispida</a></li>
+          <li><a href="pages/luoghi/pelagio.php">Castello San Pelagio</a></li>
         </ul>
       </li>
-      <li><a href="gite.php">Gite</a></li>
+      <li><a href="pages/gite.php">Gite</a></li>
       <?php if(isset($_SESSION['username'])): ?>
         <li><a href="view-account.php">Account</a></li>
         <?php else: ?>
-          <li><a href="login.php">Accedi</a></li>
+          <li><a href="pages/login.php">Accedi</a></li>
           <li><a href="Registrazione.php" class="active">Registrati</a></li>
         <?php endif; ?>
         <li class="icon">
