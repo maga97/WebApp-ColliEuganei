@@ -1,17 +1,20 @@
 <?php
 if (session_status() == PHP_SESSION_NONE) { session_start(); }
+echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" . PHP_EOL;
 ?>
-<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="../../assets/css/style.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-	<script src="../script.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="../../script.js"></script>
 	<title>Il Castello di San Pelagio</title>
 </head>
 <body>
+  <div id="container">
+  <a id="top"></a>
   <div class="header">
     <div class="header-picture">
       <div class="header-title">
@@ -22,13 +25,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
   </div>
   <div class="topnav-bar">
     <ul class="topnav">
-      <li class="dropdown"><a href="../index.php">Home</a>
-        <ul class="dropdown-content">
-          <li><a href="../geografia.php">Geografia</a></li>
-          <li><a href="../clima.php">Clima</a></li>
-          <li><a href="../storia.php">Storia</a></li>
-        </ul>
-      </li>
+      <li><a href="../../index.php">Home</a></li>
       <li class="dropdown"><a href="../luoghi.php" class="active">Luoghi</a>
         <ul class="dropdown-content">
           <li><a href="chiesette.php">7 Chiesette</a></li>
@@ -51,15 +48,15 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
         </li>
       </ul>
     </div>
-    <ul class="breadcrumb">
-      <li><a href="../luoghi.php">Luoghi</a></li>
-      <li>Il Castello di San Pelagio</li>
-    </ul>
-    <div class="content">
+    <div id="content">
+      <ul class="breadcrumb">
+        <li><a href="../luoghi.php">Luoghi</a></li>
+        <li>Il Castello di San Pelagio</li>
+      </ul>
       <div class="section">
         <h2>Il Castello di San Pelagio</h2>
-        <div class="floatright">
-          <img class="pic storiapic" src="../assets/img/pelagio1.jpg" alt=""/>
+        <div class="float-right">
+          <img class="pic storiapic" src="../../assets/img/pelagio1.jpg" alt=""/>
         </div>
         <p class="text">
           Il Castello di San Pelagio ha origini medievali (XIV sec.) come testimonia la torre costruita dai Da Carrara, Signori di Padova, nella prima metà del Trecento. L’imponente torre merlata, aveva una funzione di prima difesa nei numerosi attacchi da parte degli Scaligeri, Signori di Verona. Nella metà del Settecento la proprietà passa ai Conti Zaborra che ampliano notevolmente l’edificio, rimodernano l’ala padronale per adattarla a residenza signorile e realizzano le barchesse a uso agricolo. Da allora la famiglia dei Conti Zaborra abita il Castello ricco di memorie private e storiche.
@@ -77,8 +74,8 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
          Nel 2007 è sorto il labirinto del “Forse che Si Forse che No” per sottolineare il concetto dannunziano di doppio.
        </p>
        <h2>Il museo</h2>
-       <div class="floatright">
-        <img class="pic storiapic" src="../assets/img/pelagio2.jpg" alt=""/>
+       <div class="float-right">
+        <img class="pic storiapic" src="../../assets/img/pelagio2.jpg" alt=""/>
       </div>
       <p class="text">
        Dal 1970 la villa è stata oggetto di accurati restauri e ripensata nelle funzioni attuali principalmente come Museo del Volo. Inaugurato nel 1980, ripercorre l’intera storia del volo umano facendo perno sull’impresa dannunziana; a tale volo è dedicata la parte principale del Museo con le stanze abitate dal poeta nel periodo 1917-1919. Completano il percorso museale le sale dedicate a Leonardo, ai Montgolfier, ai Wright, a Ferrarin, a Lindbergh, a Nobile, a Balbo, a Forlanini, a Gagarin e Armstrong… tanti protagonisti per ripercorrere la più straordinaria impresa umana: il volo!
@@ -86,6 +83,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
      </p>
    </div>
  </div>
- <?php include_once('../footer.php')?> 
+ <a id="scroll-top-btn" href="#top">Torna in alto</a>
+ <?php include_once('../../footer.php')?> 
 </body>
 </html>

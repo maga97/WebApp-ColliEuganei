@@ -53,7 +53,7 @@ html, body {
 }
 
 
-.header-title h1,  .header-title h2 {
+.header-title h1, .header-title h2 {
   padding: 1%;
   padding-top: 0.5%;
   padding-bottom: 0;
@@ -244,6 +244,7 @@ ul.topnav {
   overflow: hidden;
   max-width: 1024px;
   margin-left: auto;
+  font-weight: bold;
   margin-right: auto;
 }
 

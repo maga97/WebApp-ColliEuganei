@@ -1,91 +1,91 @@
 <?php
 if (session_status() == PHP_SESSION_NONE) { session_start(); }
+echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" . PHP_EOL;
 ?>
-<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="../../assets/css/style.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-	<script src="../script.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="../../script.js"></script>
 	<title>L'Abbazia di Praglia</title>
 </head>
 <body>
-  <div class="header">
-    <div class="header-picture">
-      <div class="header-title">
-        <h1>Colli Euganei</h1>
-        <h2>Natura e storia in digitale</h2>
+  <div id="container">
+    <a id="top"></a>
+    <div class="header">
+      <div class="header-picture">
+        <div class="header-title">
+          <h1>Colli Euganei</h1>
+          <h2>Natura e storia in digitale</h2>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="topnav-bar">
-    <ul class="topnav">
-      <li class="dropdown"><a href="../index.php">Home</a>
-        <ul class="dropdown-content">
-          <li><a href="../geografia.php">Geografia</a></li>
-          <li><a href="../clima.php">Clima</a></li>
-          <li><a href="../storia.php">Storia</a></li>
-        </ul>
-      </li>
-      <li class="dropdown"><a href="../luoghi.php" class="active">Luoghi</a>
-        <ul class="dropdown-content">
-          <li><a href="chiesette.php">7 Chiesette</a></li>
-          <li><a href="catajo.php">Castello del Catajo</a></li>
-          <li><a href="praglia.php" class="active">Abbazia di Praglia</a></li>
-          <li><a href="carrareseeste.php">Castello carrarese di Este</a></li>
-          <li><a href="lispida.php">Castello di Lispida</a></li>
-          <li><a href="pelagio.php">Castello San Pelagio</a></li>
-        </ul>
-      </li>
-      <li><a href="../gite.php">Gite</a></li>
-      <?php if(isset($_SESSION['username'])): ?>
-        <li><a href="view-account.php">Account</a></li>
-        <?php else: ?>
-          <li><a href="../login.php">Accedi</a></li>
-          <li><a href="../Registrazione.php">Registrati</a></li>
-        <?php endif; ?>
-        <li class="icon">
-          <a href="javascript:void(0);" onclick="menuMobile()">&#9776;</a>
+    <div class="topnav-bar">
+      <ul class="topnav">
+        <li><a href="../../index.php">Home</a>
         </li>
-      </ul>
-    </div>
-    <ul class="breadcrumb">
-      <li><a href="../luoghi.php">Luoghi</a></li>
-      <li>L'Abbazia di Praglia</li>
-    </ul>
-    <div class="content">
-      <div class="section">
-        <h2>L'Abbazia di Praglia</h2>
-        <div class="floatright">
-          <img class="pic storiapic" src="../assets/img/praglia1.jpg" alt=""/>
-        </div>
-        <p class="text">
-          L'abbazia di Praglia è un monastero benedettino situato nel comune di Teolo, in prossimità di Abano Terme. Ospita attualmente la Biblioteca nazionale, che è un monumento nazionale italiano.
-          È attualmente retta dall'abate dom. Norberto Villa e la comunità conta 49 monaci.
-          Si tratta di un monastero benedettino molto antico, fondato nell’XI secolo per iniziativa della nobile famiglia vicentina dei Maltraversi. Il suo nome deriva dal termine medievale “pratalea” (località tenuta a prati)
-          e si rifà probabilmente alla grande opera di bonifica e di messa a coltura di terre paludose della zona avviata proprio dai Benedettini nel Medioevo.
-          L'intera abbazia fu ricostruita a partire dal 1469 e nel 1490 i benedettini vi aggiunsero la "chiesa dell'Assunta", realizzata su disegno di Tullio Lombardo (poi radicalmente trasformata da Andrea Moroni).
-          L'abbazia è divenuta un centro di eccellenza nel settore del restauro dei libri antichi.  </p>
-        <h2>I chiostri</h2>
-        <div class="floatright">
-          <img class="pic storiapic" src="../assets/img/praglia2.jpg" alt=""/>
-        </div>
-        <p class="text">
-          All'interno della cinta muraria il monastero si divide in quattro chiostri: doppio, detto anche della clausura, botanico, pensile e rustico (nel quale si depositavano gli attrezzi agricoli).
-          Alla seconda metà del XV secolo risalgono il chiostro botanico, un tempo destinato alla coltivazione delle piante medicinali e oggi elegante giardino, il chiostro doppio circondato dalle celle dei monaci e il chiostro pensile
-          o “del Paradiso”, collocato al primo piano e caratterizzato da colonne e capitelli finemente lavorati. Più tardo il chiostro rustico su cui affacciano la foresteria e il centro per conferenze e attività culturali.
-        </p>
-        <h2>L'abbazia oggi</h2>
-        <p class="text">
-          L'Abbazia di Praglia, ancora oggi abitata da monaci benedettini e meta di un costante turismo religioso, ospita al suo interno anche una Biblioteca Monumentale Nazionale, che contiene circa 100.000 volumi.
-          La sala al piano superiore è impreziosita da 17 tele di G.B. Zelotti, pittore del tardo Cinquecento, inserite negli scomparti del soffitto in legno.
-          Altre tele dello stesso artista, con temi biblici, si trovano ora nel refettorio.
-          Il laboratorio di restauro dei libri e codici antichi è un altro fiore all’occhiello dell’Abbazia.
-        </p>
+        <li class="dropdown"><a href="../luoghi.php" class="active">Luoghi</a>
+          <ul class="dropdown-content">
+            <li><a href="chiesette.php">7 Chiesette</a></li>
+            <li><a href="catajo.php">Castello del Catajo</a></li>
+            <li><a href="praglia.php" class="active">Abbazia di Praglia</a></li>
+            <li><a href="carrareseeste.php">Castello carrarese di Este</a></li>
+            <li><a href="lispida.php">Castello di Lispida</a></li>
+            <li><a href="pelagio.php">Castello San Pelagio</a></li>
+          </ul>
+        </li>
+        <li><a href="../gite.php">Gite</a></li>
+        <?php if(isset($_SESSION['username'])): ?>
+          <li><a href="view-account.php">Account</a></li>
+          <?php else: ?>
+            <li><a href="../login.php">Accedi</a></li>
+            <li><a href="../Registrazione.php">Registrati</a></li>
+          <?php endif; ?>
+          <li class="icon">
+            <a href="javascript:void(0);" onclick="menuMobile()">&#9776;</a>
+          </li>
+        </ul>
       </div>
+      <div id="content">
+        <ul class="breadcrumb">
+          <li><a href="../luoghi.php">Luoghi</a></li>
+          <li>L'Abbazia di Praglia</li>
+        </ul>
+        <div class="section">
+          <h2>L'Abbazia di Praglia</h2>
+          <div class="float-right">
+            <img class="pic storiapic" src="../../assets/img/praglia1.jpg" alt=""/>
+          </div>
+          <p class="text">
+            L'abbazia di Praglia è un monastero benedettino situato nel comune di Teolo, in prossimità di Abano Terme. Ospita attualmente la Biblioteca nazionale, che è un monumento nazionale italiano.
+            È attualmente retta dall'abate dom. Norberto Villa e la comunità conta 49 monaci.
+            Si tratta di un monastero benedettino molto antico, fondato nell’XI secolo per iniziativa della nobile famiglia vicentina dei Maltraversi. Il suo nome deriva dal termine medievale “pratalea” (località tenuta a prati)
+            e si rifà probabilmente alla grande opera di bonifica e di messa a coltura di terre paludose della zona avviata proprio dai Benedettini nel Medioevo.
+            L'intera abbazia fu ricostruita a partire dal 1469 e nel 1490 i benedettini vi aggiunsero la "chiesa dell'Assunta", realizzata su disegno di Tullio Lombardo (poi radicalmente trasformata da Andrea Moroni).
+          L'abbazia è divenuta un centro di eccellenza nel settore del restauro dei libri antichi.  </p>
+          <h2>I chiostri</h2>
+          <div class="float-right">
+            <img class="pic storiapic" src="../../assets/img/praglia2.jpg" alt=""/>
+          </div>
+          <p class="text">
+            All'interno della cinta muraria il monastero si divide in quattro chiostri: doppio, detto anche della clausura, botanico, pensile e rustico (nel quale si depositavano gli attrezzi agricoli).
+            Alla seconda metà del XV secolo risalgono il chiostro botanico, un tempo destinato alla coltivazione delle piante medicinali e oggi elegante giardino, il chiostro doppio circondato dalle celle dei monaci e il chiostro pensile
+            o “del Paradiso”, collocato al primo piano e caratterizzato da colonne e capitelli finemente lavorati. Più tardo il chiostro rustico su cui affacciano la foresteria e il centro per conferenze e attività culturali.
+          </p>
+          <h2>L'abbazia oggi</h2>
+          <p class="text">
+            L'Abbazia di Praglia, ancora oggi abitata da monaci benedettini e meta di un costante turismo religioso, ospita al suo interno anche una Biblioteca Monumentale Nazionale, che contiene circa 100.000 volumi.
+            La sala al piano superiore è impreziosita da 17 tele di G.B. Zelotti, pittore del tardo Cinquecento, inserite negli scomparti del soffitto in legno.
+            Altre tele dello stesso artista, con temi biblici, si trovano ora nel refettorio.
+            Il laboratorio di restauro dei libri e codici antichi è un altro fiore all’occhiello dell’Abbazia.
+          </p>
+        </div>
+      </div>
+      <a id="scroll-top-btn" href="#top">Torna in alto</a>
+      <?php include_once('../../footer.php')?> 
     </div>
-    <?php include_once('../footer.php')?> 
   </body>
   </html>
