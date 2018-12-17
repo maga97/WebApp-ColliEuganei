@@ -1,17 +1,15 @@
-
 <?php
 if (session_status() == PHP_SESSION_NONE) { session_start(); }
 ?>
 
-<?php echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" . PHP_EOL; ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css" media="all">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="script.js"></script>
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="application/javascript" ></script>
+	<script src="script.js" type="application/javascript"></script>
 	<title>Home - Colli Digitali</title>
 </head>
 <body>
@@ -68,8 +66,10 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 							<li>Geografia</li>
 							<li>Scopri la geografia del territorio e come si &egrave; formato.</li>
 						</ul>
-						<form>
-							<button type="button" class="find-more" onclick="clx('geografia')" >Scopri di più</button>
+						<form action="">
+							<div>
+								<button type="button" class="find-more" onclick="clx('geografia')" >Scopri di più</button>
+							</div>
 						</form>
 					</div>
 					<div class="galleryframe">
@@ -78,8 +78,10 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 							<li>Clima</li>
 							<li>Scopri come il territorio si presenta nel corso dell'anno.</li>
 						</ul>
-						<form>
-							<button type="button" class="find-more" onclick="clx('clima')">Scopri di più</button>
+						<form action="">
+							<div>
+								<button type="button" class="find-more" onclick="clx('clima')">Scopri di più</button>
+							</div>
 						</form>
 					</div>
 					<div class="galleryframe">
@@ -88,113 +90,116 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 							<li>Storia</li>
 							<li>Scopri la storia, la cultura e l'arte del territorio</li>
 						</ul>
-						<form>
-							<button type="button" class="find-more" onclick="clx('storia')">Scopri di più</button>
+						<form action="">
+							<div>
+								<button type="button" class="find-more" onclick="clx('storia')">Scopri di più</button>
+							</div>
 						</form>
 					</div>
 				</div>
 				<div id="clima-text" class="hide">
 					<h2>Il Clima</h2>
 					<p class="text">I colli euganei, trovandosi nel cuore della pianura padana, godono di un clima di tipo continentale,
-						con inverni freddi ed estati calde ed umide. La presenza delle colline per&ograve da luogo a fenomeni interessanti e particolari
+						con inverni freddi ed estati calde ed umide. La presenza delle colline per&ograve; da luogo a fenomeni interessanti e particolari
 						e a panorami di rara bellezza.
-						<div class="float-right climapic">
-							<img class="pic" src="assets/img/inverno.jpg" alt="Monte Ceva">
-						</div>
-						<h3>Autunno e Inverno</h3>
-						<p class="text">
-							L'autunno e l'inverno dei colli euganei sono caratterizzati dalla nebbia. Poich&egrave la nebbia raramente supera i 200 metri sul livello del mare
-							spesso le cime dei colli ne sono al di sopra dando luogo a paesaggi mozzafiato. L'esposizione al sole inoltre fa si che le cime delle colline
-							presentino temperature pi&ugrave alte rispetto alla pianura immersa nella nebbia. D'inverno la neve contrasta con gli interni caldi di trattorie e case
-							che risultano ancora pi&ugrave accoglienti e confortevoli.
-						</p>
+					</p>
+					<div class="float-right climapic">
+						<img class="pic" src="assets/img/inverno.jpg" alt="Monte Ceva" />
+					</div>
+					<h3>Autunno e Inverno</h3>
+					<p class="text">
+						L'autunno e l'inverno dei colli euganei sono caratterizzati dalla nebbia. Poich&egrave; la nebbia raramente supera i 200 metri sul livello del mare
+						spesso le cime dei colli ne sono al di sopra dando luogo a paesaggi mozzafiato. L'esposizione al sole inoltre fa si che le cime delle colline
+						presentino temperature pi&ugrave; alte rispetto alla pianura immersa nella nebbia. D'inverno la neve contrasta con gli interni caldi di trattorie e case
+						che risultano ancora pi&ugrave; accoglienti e confortevoli.
+					</p>
 
-						<div class="float-right climapic">
-							<img class="pic" src="assets/img/primavera.jpg" alt="">
-						</div>
-						<h3>Primavera ed Estate</h3>
-						<p class="text">
-							In primavera i colli si riempiono di colori: i boschi di robinia, le piante di ginestra e le rute padovane contribuiscono con i colori bianco, arancione e giallo
-							insieme ai prati e alle chiome degli alberi verdi a formare un quadro allegro e vitale.
-							D'estate le colline offrono ombra e vento contro le temperature e l'umidit&agrave tipiche della pianura padana.
-						</p>
+					<div class="float-right climapic">
+						<img class="pic" src="assets/img/primavera.jpg" alt="" />
 					</div>
-					<div id="geografia-text" class="hide">
-						<h2>Geografia e Geologia dei colli</h2>
-						<p class="text">I colli euganei sono un gruppo di rilievi di altezza che varia tra i 300 e i 600 metri,
-							situati a sud ovest di padova. I colli catturano particolarmente l'attenzione poich&egrave si stagliano
-							isolati nel cuore della pianura veneta. Per proteggere il territorio e valorizzarne le qualit&agrave turistiche, fu istituito nel 1989 il parco regionale dei colli euganei, il primo della regione Veneto.
-						</p>
-						<h3>Origine dei colli</h3>
-						<div class="float-right" id="geotab">
-							<table class="tg">
-								<tr>
-									<th class="tg-jp7n">Periodo</th>
-									<th class="tg-jp7n">Rocce</th>
-								</tr>
-								<tr>
-									<td class="tg-ai30">Oligocene</td>
-									<td class="tg-2fdn">Vulcaniti differenziate</td>
-								</tr>
-								<tr>
-									<td class="tg-aphi" rowspan="2">Eocene</td>
-									<td class="tg-107g">Marne euganee<br></td>
-								</tr>
-								<tr>
-									<td class="tg-2fdn">Vulcaniti basaltiche</td>
-								</tr>
-								<tr>
-									<td class="tg-hd3d" rowspan="2">Cretaceo</td>
-									<td class="tg-2fdn">Scaglia rossa</td>
-								</tr>
-								<tr>
-									<td class="tg-2fdn">Biancone</td>
-								</tr>
-								<tr>
-									<td class="tg-bqpl" rowspan="2"><br>Giurassico</td>
-									<td class="tg-2fdn">Rosso ammonitico</td>
-								</tr>
-								<tr>
-									<td class="tg-2fdn">Calcari grigi</td>
-								</tr>
-								<tr>
-									<td class="tg-ue2u" rowspan="2">Triassico</td>
-									<td class="tg-2fdn">Dolomia principale</td>
-								</tr>
-								<tr>
-									<td class="tg-2fdn">Vulcaniti basiche</td>
-								</tr>
-							</table>
-						</div>
-						<p class="text">
-							I colli sono di origine vulcanica: circa 30 milioni di anni fa il territorio che oggi costituisce la pianura padana era
-							un fondale marino. In questo contesto i colli sono nati in seguito ad eruzioni sottomarine che hanno depositato lava sul fondale marino.
-							In seguito, le stesse tensioni nelle crosta terrestre che hanno innalzato la catena montuosa delle alpi ha sollevato la pianura veneta e con
-							essa i colli. A testimonianza di questi eventi, ancora oggi &egrave possibile trovare in una fenditura del Monte Resino fossili di ammoniti, animali
-							marini dotati di conchiglia esterna a forma di spirale.
-						</p>
-						<h3>Geologia</h3>
-						<p class="text">
-							Le roccie che si incontrano percorrendo i sentieri dei colli sono di fondamental importanza per comprenderne la storia.
-							Le roccie pi&ugrave chiare sono di natura calcarea, si tratta di roccie sedimentarie databili a quando la pianura padana giaceva sul fondale marino.
-							Il pi&ugrave antico tipo di roccia trovato sui colli euganei &egrave chiamato Rosso ammonitico per via del suo colore e perch&egrave contiene al suo interno fossili di ammoniti.
-							Questa roccia risale al periodo che va dai 150 ai 135 milioni di anni fa.
-							Pi&ugrave recente &egrave invece la roccia chiamata Biancone per via del colore bianco, che risale fino ai 90 milioni di anni fa.
-							Il calcare contenuto in queste roccie ha origine nei gusci di minuscoli microorganismi che sono visibili al microscopio.
-							Risalente fino a 55 milioni di anni fa troviamo la Scaglia rossa, che &egrave sempre un tipo di roccia calcarea che per&ograve presenta un abbondanza di fossili di ricci di mare e denti di squalo.
-							Infine il pi&ugrave recente strato di roccia formatosi &egrave di colore verde-grigiastro e prende il nome di Marna euganea.
-						</p>
-						<h3>Flora & Fauna</h3>
-						<p class="text">
-							Il terreno ha un enorme influenza sulla flora del parco, pertanto in base al terreno incontreremo vegetazione diversa.
-							Mentre la parte meridionale dei colli &egrave caratterizzata da zone prative e boschi di querce, il lato nord dei colli &egrave caratterizzato da
-							vegetazione della macchia mediterranea. Altri alberi comuni sui colli sono il castagno e la robinia.
-							Prevalentemente la fauna dei colli euganei &egrave composta da piccoli mammiferi come lepri, cinghiali, volpi, tassi e faine.
-							La presenza di piccoli mammiferi come lepri ed altri roditori offre una nicchia ecologica ad uccelli rapaci come falchi e civette.
-							Infine vi &egrave un abbondanza di anfibi e rettili tra cui il ramarro, una splendida lucertola lunga fino a 45 cm di colore verde per eccezione del mento che &egrave di colore blu acceso e la rara
-							testugine dei colli euganei, un adattamento particolare ai colli della testugine palustre europea.
-						</p>
+					<h3>Primavera ed Estate</h3>
+					<p class="text">
+						In primavera i colli si riempiono di colori: i boschi di robinia, le piante di ginestra e le rute padovane contribuiscono con i colori bianco, arancione e giallo
+						insieme ai prati e alle chiome degli alberi verdi a formare un quadro allegro e vitale.
+						D'estate le colline offrono ombra e vento contro le temperature e l'umidit&agrave; tipiche della pianura padana.
+					</p>
+				</div>
+				<div id="geografia-text" class="hide">
+					<h2>Geografia e Geologia dei colli</h2>
+					<p class="text">I colli euganei sono un gruppo di rilievi di altezza che varia tra i 300 e i 600 metri,
+						situati a sud ovest di padova. I colli catturano particolarmente l'attenzione poich&egrave; si stagliano
+						isolati nel cuore della pianura veneta. Per proteggere il territorio e valorizzarne le qualit&agrave; turistiche, fu istituito nel 1989 il parco regionale dei colli euganei, il primo della regione Veneto.
+					</p>
+					<h3>Origine dei colli</h3>
+					<div class="float-right" id="geotab">
+						<table class="tg">
+							<tr>
+								<th class="tg-jp7n">Periodo</th>
+								<th class="tg-jp7n">Rocce</th>
+							</tr>
+							<tr>
+								<td class="tg-ai30">Oligocene</td>
+								<td class="tg-2fdn">Vulcaniti differenziate</td>
+							</tr>
+							<tr>
+								<td class="tg-aphi" rowspan="2">Eocene</td>
+								<td class="tg-107g">Marne euganee<br/></td>
+							</tr>
+							<tr>
+								<td class="tg-2fdn">Vulcaniti basaltiche</td>
+							</tr>
+							<tr>
+								<td class="tg-hd3d" rowspan="2">Cretaceo</td>
+								<td class="tg-2fdn">Scaglia rossa</td>
+							</tr>
+							<tr>
+								<td class="tg-2fdn">Biancone</td>
+							</tr>
+							<tr>
+								<td class="tg-bqpl" rowspan="2"><br/>Giurassico</td>
+								<td class="tg-2fdn">Rosso ammonitico</td>
+							</tr>
+							<tr>
+								<td class="tg-2fdn">Calcari grigi</td>
+							</tr>
+							<tr>
+								<td class="tg-ue2u" rowspan="2">Triassico</td>
+								<td class="tg-2fdn">Dolomia principale</td>
+							</tr>
+							<tr>
+								<td class="tg-2fdn">Vulcaniti basiche</td>
+							</tr>
+						</table>
 					</div>
+					<p class="text">
+						I colli sono di origine vulcanica: circa 30 milioni di anni fa il territorio che oggi costituisce la pianura padana era
+						un fondale marino. In questo contesto i colli sono nati in seguito ad eruzioni sottomarine che hanno depositato lava sul fondale marino.
+						In seguito, le stesse tensioni nelle crosta terrestre che hanno innalzato la catena montuosa delle alpi ha sollevato la pianura veneta e con
+						essa i colli. A testimonianza di questi eventi, ancora oggi &egrave; possibile trovare in una fenditura del Monte Resino fossili di ammoniti, animali
+						marini dotati di conchiglia esterna a forma di spirale.
+					</p>
+					<h3>Geologia</h3>
+					<p class="text">
+						Le roccie che si incontrano percorrendo i sentieri dei colli sono di fondamental importanza per comprenderne la storia.
+						Le roccie pi&ugrave; chiare sono di natura calcarea, si tratta di roccie sedimentarie databili a quando la pianura padana giaceva sul fondale marino.
+						Il pi&ugrave; antico tipo di roccia trovato sui colli euganei &egrave; chiamato Rosso ammonitico per via del suo colore e perch&egrave; contiene al suo interno fossili di ammoniti.
+						Questa roccia risale al periodo che va dai 150 ai 135 milioni di anni fa.
+						Pi&ugrave; recente &egrave; invece la roccia chiamata Biancone per via del colore bianco, che risale fino ai 90 milioni di anni fa.
+						Il calcare contenuto in queste roccie ha origine nei gusci di minuscoli microorganismi che sono visibili al microscopio.
+						Risalente fino a 55 milioni di anni fa troviamo la Scaglia rossa, che &egrave; sempre un tipo di roccia calcarea che per&ograve; presenta un abbondanza di fossili di ricci di mare e denti di squalo.
+						Infine il pi&ugrave; recente strato di roccia formatosi &egrave; di colore verde-grigiastro e prende il nome di Marna euganea.
+					</p>
+					<h3>Flora &amp; Fauna</h3>
+					<p class="text">
+						Il terreno ha un enorme influenza sulla flora del parco, pertanto in base al terreno incontreremo vegetazione diversa.
+						Mentre la parte meridionale dei colli &egrave; caratterizzata da zone prative e boschi di querce, il lato nord dei colli &egrave; caratterizzato da
+						vegetazione della macchia mediterranea. Altri alberi comuni sui colli sono il castagno e la robinia.
+						Prevalentemente la fauna dei colli euganei &egrave; composta da piccoli mammiferi come lepri, cinghiali, volpi, tassi e faine.
+						La presenza di piccoli mammiferi come lepri ed altri roditori offre una nicchia ecologica ad uccelli rapaci come falchi e civette.
+						Infine vi &egrave; un abbondanza di anfibi e rettili tra cui il ramarro, una splendida lucertola lunga fino a 45 cm di colore verde per eccezione del mento che &egrave; di colore blu acceso e la rara
+						testugine dei colli euganei, un adattamento particolare ai colli della testugine palustre europea.
+					</p>
+				</div>
 					<div id="storia-text" class="hide">
 						<h2>Una commistione di storia, arte e cultura.</h2>
 						<p class="text">I colli prendono il nome dal primo popolo che in epoca preistorica visse in Veneto: gli euganei.
@@ -205,19 +210,19 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 							<img class="pic storiapic" src="assets/img/atestino.jpg" alt=""/>
 						</div>
 						<p class="text">
-							Dopo gli antichi Euganei, primi abitanti della zona, fu la volta dei Veneti le cui testimonianze &egrave possibile ammirare
-							sotto forma di reperti nel Museo Nazionale Atestino di Este, che ospita reperti tra cui vestiti, utensili ed armi risalenti dalla preistoria fino all'et&agrave Romana.
-							E proprio all'et&agrave Romana risalgono i primi paesi, preceduti da un villagio palustre sul lago della Costa.
+							Dopo gli antichi Euganei, primi abitanti della zona, fu la volta dei Veneti le cui testimonianze &egrave; possibile ammirare
+							sotto forma di reperti nel Museo Nazionale Atestino di Este, che ospita reperti tra cui vestiti, utensili ed armi risalenti dalla preistoria fino all'et&agrave; Romana.
+							E proprio all'et&agrave; Romana risalgono i primi paesi, preceduti da un villagio palustre sul lago della Costa.
 							Con il medioevo la posizione strategica dei colli venne sfruttata per la costruzione di castelli, mura, fortificazioni che ancora oggi sono apprezzabili nella
 							loro imponenza. Le ville venete invece risalgono al quindicesimo secolo, quando la Serenissima, repubblica di venezia, assunse il controllo del territorio.
 							Giungendo ai giorni nostri, l'incremento dello sfruttamento del territorio ha indotto la regione a creare nel 1989 il parco regionale dei colli euganei
-							con lo scopo di preservare il territorio e valorizzarne le qualit&agrave, dai reperti, ai castelli, alle maestose ville, alla natura incontaminata.
+							con lo scopo di preservare il territorio e valorizzarne le qualit&agrave;, dai reperti, ai castelli, alle maestose ville, alla natura incontaminata.
 						</p>
 						<h3>Il patrimonio culturale</h3>
 						<p class="text">
-							I centri storici pi&ugrave; importanti come Este culla della civilt&agrave
-							Paleoveneta, Arqu&agrave Petrarca incantevole borgo medievale e Monselice
-							scenografica citt&agrave murata offrono mete imperdibili per gli appasionati di storia ed arte.
+							I centri storici pi&ugrave; importanti come Este culla della civilt&agrave;
+							Paleoveneta, Arqu&agrave; Petrarca incantevole borgo medievale e Monselice
+							scenografica citt&agrave; murata offrono mete imperdibili per gli appasionati di storia ed arte.
 							Oltre ai centri storici meravigliose sono le ville venete  come Villa Vescovi a Torreglia
 							e Villa Barbarigo a Galzignano, e i suggestivi monasteri di Praglia e del
 							Rua, dove il tempo sembra si sia fermato per offrire ai visitatori momenti di profonda
@@ -228,15 +233,15 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 							<img class="pic storiapic" src="assets/img/filmfestival.jpg" alt="" />
 						</div>
 						<p class="text">
-							Per gli amanti dell'arte, mete imperdibili sono i musei come il gi&agrave citato Museo Nazionale Atestino di Este, ma soprattutto le ville
+							Per gli amanti dell'arte, mete imperdibili sono i musei come il gi&agrave; citato Museo Nazionale Atestino di Este, ma soprattutto le ville
 							come il castello del Catajo, che con i loro affreschi e l'architettura costituiscono un patrimonio dal valore inestimabile.
-							I colli per&ograve non offrono soltanto occasioni di apprezzare l'arte dell'antichit&agrave ma anche di ammirare nuove opere d'arte:
+							I colli per&ograve; non offrono soltanto occasioni di apprezzare l'arte dell'antichit&agrave; ma anche di ammirare nuove opere d'arte:
 							dall'Euganea Film Festival, al festival della land art, i colli euganei continuano ad ospitare ed ispirare artisti anche oggi.
 						</p>
 					</div>
 				</div>
 				<a id="scroll-top-btn" href="#top">Torna in alto</a>
-				<?php include_once('footer.php'); ?> 
+				<?php include_once('footer.php'); ?>
 			</div>
 		</body>
 		</html>
