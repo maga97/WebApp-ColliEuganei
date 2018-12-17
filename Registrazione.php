@@ -85,9 +85,9 @@ $dbConnection->Close();
           <a href="javascript:void(0);" onclick="menuMobile()">&#9776;</a>
         </li>
       </ul>
-    </div>    
+    </div>
     <ul class="breadcrumb">
-      <li><a href="registrazione.php">Registrazione</a></li>
+      <li><a href="Registrazione.php">Registrazione</a></li>
     </ul>
     <?php
     if($alreadyExist)
@@ -139,6 +139,6 @@ $dbConnection->Close();
         </fieldset>
       </form>
     </div>
-    <?php include_once('footer.php')?> 
+    <?php include_once('footer.php')?>
   </body>
   </html>
