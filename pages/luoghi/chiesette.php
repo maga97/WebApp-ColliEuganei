@@ -19,7 +19,7 @@ echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" . PHP_EOL;
 		?>
       <div id="content">
         <ul class="breadcrumb">
-          <li><a href="../luoghi.php">Luoghi</a></li>
+          <li>Luoghi</li>
           <li>Le 7 Chiesette</li>
         </ul>
         <div class="section">
