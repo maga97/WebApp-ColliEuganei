@@ -2,7 +2,7 @@
 class database {
 	private $host = "localhost";
 	private $user = "root";
-	private $passwd = "";
+	private $passwd = "rootroot";
 	private $db = "ColliDigitali";
 	private $pdo;
 	private $bConnected = false;
@@ -11,13 +11,12 @@ class database {
 		global $settings;
 		$dsn = 'mysql:dbname='.$this->db.';host='.$this->host;
 		try {
-			$this->pdo = new PDO($dsn, $this->user, $this->passwd);
+			$this->pdo = new PDO($dsn, $this->user, $this->passwd,array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
 			$this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			$this->bConnected = true;
 		}
 		catch (PDOException $e) {
-			//echo $this->ExceptionLog($e->getMessage());
-			echo $e->getMessage();
+			echo $this->ExceptionLog($e->getMessage());
 			die();
 		}
 	}

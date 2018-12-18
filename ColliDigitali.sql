@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.6.6deb5
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Dec 17, 2018 at 09:14 PM
--- Server version: 10.1.37-MariaDB
--- PHP Version: 7.3.0
+-- Host: localhost:3306
+-- Generation Time: Nov 17, 2018 at 01:03 PM
+-- Server version: 5.7.23-0ubuntu0.18.04.1
+-- PHP Version: 7.2.10-0ubuntu0.18.04.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -62,19 +60,11 @@ CREATE TABLE `Utenti` (
   `Nome` varchar(255) NOT NULL,
   `Cognome` varchar(255) NOT NULL,
   `Email` varchar(255) NOT NULL,
-  `Password` varchar(256) NOT NULL,
   `Indirizzo` varchar(255) NOT NULL,
   `Civico` int(11) NOT NULL,
   `CAP` int(11) NOT NULL,
   `Tipo` enum('Admin','Utente') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `Utenti`
---
-
-INSERT INTO `Utenti` (`ID`, `Nome`, `Cognome`, `Email`, `Password`, `Indirizzo`, `Civico`, `CAP`, `Tipo`) VALUES
-(1, 'mario', 'c', 'marioconiglio@inwind.it', '$2y$10$LmvbkoRDyLhKK5aatb7BKOys3HVIADc9VEqjQbLztw7ZgzC4LdbVe', 'm', 12, 12, 'Admin');
 
 --
 -- Indexes for dumped tables
@@ -98,23 +88,8 @@ ALTER TABLE `Prenotazioni`
 -- Indexes for table `Utenti`
 --
 ALTER TABLE `Utenti`
-  ADD PRIMARY KEY (`ID`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `Attivita`
---
-ALTER TABLE `Attivita`
-  MODIFY `ID_Attivita` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `Utenti`
---
-ALTER TABLE `Utenti`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  ADD PRIMARY KEY (`ID`),
+  ADD UNIQUE KEY `Email` (`Email`);
 
 --
 -- Constraints for dumped tables
@@ -124,9 +99,8 @@ ALTER TABLE `Utenti`
 -- Constraints for table `Prenotazioni`
 --
 ALTER TABLE `Prenotazioni`
-  ADD CONSTRAINT `Prenotazioni_ibfk_1` FOREIGN KEY (`ID_Utenti`) REFERENCES `Utenti` (`ID`),
-  ADD CONSTRAINT `Prenotazioni_ibfk_2` FOREIGN KEY (`ID_Attivita`) REFERENCES `Attivita` (`ID_Attivita`);
-COMMIT;
+  ADD CONSTRAINT `Prenotazioni_ibfk_1` FOREIGN KEY (`ID_Attivita`) REFERENCES `Attivita` (`ID_Attivita`),
+  ADD CONSTRAINT `Prenotazioni_ibfk_2` FOREIGN KEY (`ID_Utenti`) REFERENCES `Utenti` (`ID`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
