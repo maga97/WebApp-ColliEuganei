@@ -62,6 +62,7 @@ Civico: <?php echo $db->GetCivico($_SESSION['username'])?></br>
         <dd><?php echo $node['Data']; ?></dd>
         <dd><?php echo $node['Ora']; ?></dd>
       </dl>
+      <button 
     </div>
     <?php endforeach; ?>
   </div>
