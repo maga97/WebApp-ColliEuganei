@@ -107,9 +107,8 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 						presentino temperature pi&ugrave; alte rispetto alla pianura immersa nella nebbia. D'inverno la neve contrasta con gli interni caldi di trattorie e case
 						che risultano ancora pi&ugrave; accoglienti e confortevoli.
 					</p>
-
 					<div class="float-right climapic">
-						<img class="pic" src="assets/img/primavera.jpg" alt="Primavera nel colli Euganei">
+						<img class="pic"src="assets/img/primavera.jpg" alt="Primavera nel colli Euganei">
 					</div>
 					<h3>Primavera ed Estate</h3>
 					<p class="text">
@@ -179,6 +178,8 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 						Il pi&ugrave; antico tipo di roccia trovato sui colli euganei &egrave; chiamato Rosso ammonitico per via del suo colore e perch&egrave; contiene al suo interno fossili di ammoniti.
 						Questa roccia risale al periodo che va dai 150 ai 135 milioni di anni fa.
 						Pi&ugrave; recente &egrave; invece la roccia chiamata Biancone per via del colore bianco, che risale fino ai 90 milioni di anni fa.
+					</p>
+					<p class="text">
 						Il calcare contenuto in queste roccie ha origine nei gusci di minuscoli microorganismi che sono visibili al microscopio.
 						Risalente fino a 55 milioni di anni fa troviamo la Scaglia rossa, che &egrave; sempre un tipo di roccia calcarea che per&ograve; presenta un abbondanza di fossili di ricci di mare e denti di squalo.
 						Infine il pi&ugrave; recente strato di roccia formatosi &egrave; di colore verde-grigiastro e prende il nome di Marna euganea.
