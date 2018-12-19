@@ -96,7 +96,7 @@ ul.breadcrumb li+li:before {
   padding-left: : 1.5%;
   padding-right: 1.5%;
   padding-top: 1.5%;
-  padding-bottom: 60px;
+  padding-bottom: 3.75em;
   line-height: 2em;
   word-spacing: 0;
   max-width: 1024px;
@@ -263,9 +263,9 @@ ul.topnav {
   font-weight: bold;
   color: white;
   cursor: pointer;
-  padding: 15px;
-  border-radius: 10px;
-  font-size: 18px;
+  padding: 0.9375em;
+  border-radius: 0.625em;
+  font-size: 1.125em;
 }
 
 
@@ -279,7 +279,7 @@ ul.topnav li a {
  display: inline-block;
  color: #f2f2f2;
  text-align: center;
- padding: 14px 16px;
+ padding: 0.875em 1em;
  text-decoration: none;
  transition: 0.3s;
  font-size: 1.1em;
@@ -299,7 +299,7 @@ ul.topnav li.icon {display: none;}
   margin: 0;
   position: absolute;
   background-color: #ffffff;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0em 0.5em 1em 0em rgba(0,0,0,0.2);
   z-index: 1;
 }
 
@@ -427,7 +427,7 @@ ul.dropdown-content li a {
 
   h1 {
     font-size: 18pt;
-    margin-top: 5px;
+    margin-top: 0.3125em;
   }
 
   h2 {
@@ -451,10 +451,10 @@ ul.dropdown-content li a {
 
   #geotab{
     page-break-inside: avoid;
-    padding-bottom: 1em; 
+    padding-bottom: 1em;
     padding-left: 3em;
     padding-right: 2em;
-    padding-top: 1em; 
+    padding-top: 1em;
   }
 
   .pic {
@@ -469,8 +469,8 @@ ul.dropdown-content li a {
   border-collapse:collapse;
   border-spacing:0;
 }
-.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
-.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg td{font-family:Arial, sans-serif;font-size:0.875em;padding:0.625em 0.3125em;border-style:solid;border-width:0.0625em;overflow:hidden;word-break:normal;border-color:black;}
+.tg th{font-family:Arial, sans-serif;font-size:0.875em;font-weight:normal;padding:0.625em 0.3125em;border-style:solid;border-width:0.0625em;overflow:hidden;word-break:normal;border-color:black;}
 .tg .tg-107g{border-color:#9b9b9b;text-align:left}
 .tg .tg-aphi{background-color:#ffcc67;border-color:#9b9b9b;text-align:center}
 .tg .tg-jp7n{background-color:#cdcdcd;border-color:#9b9b9b;text-align:center;vertical-align:top}
