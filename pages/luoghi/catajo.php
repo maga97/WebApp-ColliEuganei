@@ -63,6 +63,8 @@ echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" . PHP_EOL;
           Inizialmente una semplice villa, venne esteso largamente dal marchese Pio Enea I degli Obizzi dal 1570 in poi che affidò il progetto
           all'architetto Andrea Da Valle.
           Sebbene gran parte dei lavori di espansione avvennero in pochi anni, gli ampliamenti proseguirono fino a metà del XIX secolo.
+      </p>
+      <p class="text">
           L'edificio sta a metà tra il castello militare e la villa principesca, indubbiamente per volere stesso del committente, che pensò
         il Catajo come una grande macchina di rappresentanza dove intrattenere ospiti da tutta Europa con feste, balli e rappresentazioni teatrali</p>
         <h2>L'origine del nome</h2>
@@ -78,6 +80,8 @@ echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" . PHP_EOL;
           La villa con le sue 350 stanze, ha l'aspetto del castello, con alte mura caratterizzate da merletti, nonostante ciò non fu mai usato come un forte, al contrario,
           l'edificio doveva rappresentare il potere e il prestigio della famiglia, che teneva feste e riceveva ospiti da tutta europa.
           Il piano nobile conserva uno dei più importanti esempi di pittura autocelebrativa del nord Italia, opera di Giovanni Battista Zelotti.
+      </p>
+      <p class="text">
           Nel grande salone affrescato spicca l'albero genealogico della famiglia Obizzi, dal capostipite Obicio I fino al costruttore del castello Pio Enea I.
           Alle pareti sono dipinte varie battaglie, terrestri e navali: sono illustrate le crociate, cui parteciparono i membri della famiglia.
         </p>

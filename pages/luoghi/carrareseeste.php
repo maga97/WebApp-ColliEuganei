@@ -61,6 +61,8 @@ echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" . PHP_EOL;
           Il castello di Este è stato costruito circa nel 1340, per iniziativa del signore di Padova Ubertino da Carrara.
           La costruzione è a pianta quadrata, circondata da una poderosa muraglia intervallata da dodici torresini, questo fortilizio ha di fatto soppiantato il primo castello, quello dei marchesi d’Este,
           sorto sull’area collinare fin dal XI secolo e gravemente danneggiato dalle guerre del ‘200 e del ‘300.
+        </p>
+        <p class="text">
           Il mastio è sito sul colle, in posizione di controllo sull’intero abitato; culmina con una torre quadrata e presenta a nord-est un castelletto o Rocca del Soccorso, che originariamente costituiva l’accesso alla fortezza.
           Lo spazio compreso all’interno della cinta muraria è oggi adibito a giardino pubblico.
         </p>
