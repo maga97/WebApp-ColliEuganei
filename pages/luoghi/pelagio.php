@@ -26,7 +26,7 @@ echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" . PHP_EOL;
   <div class="topnav-bar">
     <ul class="topnav">
       <li><a href="../../index.php">Home</a></li>
-      <li class="dropdown"><a href="../luoghi.php" class="active">Luoghi</a>
+      <li class="dropdown"><a class="active">Luoghi</a>
         <ul class="dropdown-content">
           <li><a href="chiesette.php">7 Chiesette</a></li>
           <li><a href="catajo.php">Castello del Catajo</a></li>
@@ -50,8 +50,8 @@ echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" . PHP_EOL;
     </div>
     <div id="content">
       <ul class="breadcrumb">
-        <li><a href="../luoghi.php">Luoghi</a></li>
-        <li>Il Castello di San Pelagio</li>
+        <li>Luoghi</li>
+        <li><a href="pelagio.php">Il Castello di San Pelagio</a></li>
       </ul>
       <div class="section">
         <h2>Il Castello di San Pelagio</h2>
