@@ -2,8 +2,8 @@
 if (session_status() == PHP_SESSION_NONE) { session_start(); }
 ?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
+<!DOCTYPE html>
+<html lang="it">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css" media="all" />
@@ -62,15 +62,13 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 				<div class="gallery">
 					<div class="galleryframe">
 						<ul>
-							<li><img class="pic" src="assets/img/geog.jpg" alt="" /></li>
+							<li><img class="pic" src="assets/img/geog.jpg" alt="Geografia del territorio"></li>
 							<li>Geografia</li>
 							<li>Scopri la geografia del territorio e come si &egrave; formato.</li>
 						</ul>
-						<form action="">
 							<div>
 								<button type="button" class="find-more" onclick="clx('geografia')" >Scopri di più</button>
 							</div>
-						</form>
 					</div>
 					<div class="galleryframe">
 						<ul>
@@ -78,23 +76,19 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 							<li>Clima</li>
 							<li>Scopri come il territorio si presenta nel corso dell'anno.</li>
 						</ul>
-						<form action="">
 							<div>
 								<button type="button" class="find-more" onclick="clx('clima')">Scopri di più</button>
 							</div>
-						</form>
 					</div>
 					<div class="galleryframe">
 						<ul>
-							<li><img class="pic" src="assets/img/storia.jpg" alt="Immagine Rocca di Monselice" /></li>
+							<li><img class="pic" src="assets/img/storia.jpg" alt="Immagine Rocca di Monselice"></li>
 							<li>Storia</li>
 							<li>Scopri la storia, la cultura e l'arte del territorio</li>
 						</ul>
-						<form action="">
 							<div>
 								<button type="button" class="find-more" onclick="clx('storia')">Scopri di più</button>
 							</div>
-						</form>
 					</div>
 				</div>
 				<div id="clima-text" class="hide">
@@ -104,7 +98,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 						e a panorami di rara bellezza.
 					</p>
 					<div class="float-right climapic">
-						<img class="pic" src="assets/img/inverno.jpg" alt="Monte Ceva" />
+						<img class="pic" src="assets/img/inverno.jpg" alt="Monte Ceva">
 					</div>
 					<h3>Autunno e Inverno</h3>
 					<p class="text">
@@ -115,7 +109,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 					</p>
 
 					<div class="float-right climapic">
-						<img class="pic" src="assets/img/primavera.jpg" alt="" />
+						<img class="pic" src="assets/img/primavera.jpg" alt="Primavera nel colli Euganei">
 					</div>
 					<h3>Primavera ed Estate</h3>
 					<p class="text">
@@ -207,7 +201,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 						</p>
 						<h3>Storia di popoli</h3>
 						<div class="float-right">
-							<img class="pic storiapic" src="assets/img/atestino.jpg" alt=""/>
+							<img class="pic storiapic" src="assets/img/atestino.jpg" alt="Immagine Atestino" >
 						</div>
 						<p class="text">
 							Dopo gli antichi Euganei, primi abitanti della zona, fu la volta dei Veneti le cui testimonianze &egrave; possibile ammirare
@@ -230,7 +224,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 						</p>
 						<h3>L'arte</h3>
 						<div class="float-right">
-							<img class="pic storiapic" src="assets/img/filmfestival.jpg" alt="" />
+							<img class="pic storiapic" src="assets/img/filmfestival.jpg" alt="Festival dei film all'anfiteatro del Venda" >
 						</div>
 						<p class="text">
 							Per gli amanti dell'arte, mete imperdibili sono i musei come il gi&agrave; citato Museo Nazionale Atestino di Este, ma soprattutto le ville
