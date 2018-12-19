@@ -50,11 +50,11 @@ Civico: <?php echo $db->GetCivico($_SESSION['username'])?></br>
   <div id="content">
     <h3>Benvenuto Recchia Recchione</h3>
     <p>Pronto per prenotare la tua prossima gita?</p>
-    <div class="galleryframe">
+    <div class="gallery">
     <?php
       $list = $db->GetListaAttivita();
       foreach ($list as $node): ?>
-      <div class="gallery">
+  <div class="galleryframe">
       <dl>
         <dt><?php echo $node['Nome']; ?></dt>
         <dd><?php echo $node['Descrizione']; ?></dd>
