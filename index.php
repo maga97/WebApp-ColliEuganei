@@ -61,31 +61,31 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 				</div>
 				<div class="gallery">
 					<div class="galleryframe">
-						<ul>
-							<li><img class="pic" src="assets/img/geog.jpg" alt="Geografia del territorio"></li>
-							<li>Geografia</li>
-							<li>Scopri la geografia del territorio e come si &egrave; formato.</li>
-						</ul>
+						<img class="pic" src="assets/img/geog.jpg" alt="Geografia del territorio">
+						<dl>
+							<dt>Geografia</dt>
+							<dd>Scopri la geografia del territorio e come si &egrave; formato.</dd>
+						</dl>
 							<div>
 								<button type="button" class="find-more" onclick="clx('geografia')" >Scopri di più</button>
 							</div>
 					</div>
 					<div class="galleryframe">
-						<ul>
-							<li><img class="pic" src="assets/img/clima.jpg" alt="" /></li>
-							<li>Clima</li>
-							<li>Scopri come il territorio si presenta nel corso dell'anno.</li>
-						</ul>
+						<img class="pic" src="assets/img/clima.jpg" alt="" />
+						<dl>
+							<dt>Clima</dt>
+							<dd>Scopri come il territorio si presenta nel corso dell'anno.</dd>
+						</dl>
 							<div>
 								<button type="button" class="find-more" onclick="clx('clima')">Scopri di più</button>
 							</div>
 					</div>
 					<div class="galleryframe">
-						<ul>
-							<li><img class="pic" src="assets/img/storia.jpg" alt="Immagine Rocca di Monselice"></li>
-							<li>Storia</li>
-							<li>Scopri la storia, la cultura e l'arte del territorio</li>
-						</ul>
+						<img class="pic" src="assets/img/storia.jpg" alt="Immagine Rocca di Monselice">
+						<dl>
+							<dt>Storia</dt>
+							<dd>Scopri la storia, la cultura e l'arte del territorio</dd>
+						</dl>
 							<div>
 								<button type="button" class="find-more" onclick="clx('storia')">Scopri di più</button>
 							</div>
