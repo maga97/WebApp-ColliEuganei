@@ -57,14 +57,8 @@ $dbConnection->Close();
   </div>
   <div class="topnav-bar">
     <ul class="topnav">
-      <li class="dropdown"><a href="index.php">Home</a>
-        <ul class="dropdown-content">
-          <li><a href="geografia.php">Geografia</a></li>
-          <li><a href="clima.php">Clima</a></li>
-          <li><a href="storia.php">Storia</a></li>
-        </ul>
-      </li>
-      <li class="dropdown"><a href="pages/luoghi.php">Luoghi</a>
+      <li class="dropdown"><a href="index.php">Home</a></li>
+      <li class="dropdown"><a>Luoghi</a>
         <ul class="dropdown-content">
           <li><a href="pages/luoghi/chiesette.php">7 Chiesette</a></li>
           <li><a href="pages/luoghi/catajo.php" class="active">Castello del Catajo</a></li>
@@ -86,9 +80,11 @@ $dbConnection->Close();
         </li>
       </ul>
     </div>    
-    <ul class="breadcrumb">
-      <li><a href="registrazione.php">Registrazione</a></li>
-    </ul>
+    <div id="content">
+      <ul class="breadcrumb">
+        <li><a href="Registrazione.php">Registrazione</a></li>
+      </ul>
+    </div>
     <?php
     if($alreadyExist)
       echo ("utente già esistente");

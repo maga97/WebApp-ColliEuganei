@@ -46,7 +46,7 @@ if(isset($_POST['email']) && isset($_POST['password']))
         <li><a href="geografia.php">Geografia</a></li>
         <li><a href="clima.php">Clima</a></li>
         <li><a href="storia.php">Storia</a></li>
-        <li class="dropdown"><a href="luoghi.php">Luoghi</a>
+        <li class="dropdown"><a>Luoghi</a>
           <ul class="dropdown-content">
             <li><a href="luoghi/chiesette.php">7 Chiesette</a></li>
             <li><a href="luoghi/catajo.php">Castello del Catajo</a></li>

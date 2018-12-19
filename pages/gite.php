@@ -23,7 +23,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
   <div class="topnav-bar">
     <ul class="topnav">
       <li class="dropdown"><a href="../index.php">Home</a></li>
-      <li class="dropdown"><a href="luoghi.php">Luoghi</a>
+      <li class="dropdown"><a>Luoghi</a>
         <ul class="dropdown-content">
           <li><a href="luoghi/chiesette.php">7 Chiesette</a></li>
           <li><a href="luoghi/catajo.php">Castello del Catajo</a></li>

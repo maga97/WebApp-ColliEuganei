@@ -2,7 +2,7 @@
   padding: 1em;
 }
 fieldset {
-  border: 3px solid #f1f1f1;
+  border: 0.1875em solid #f1f1f1;
 }
 legend {
   font-size: 1.5em;
@@ -16,16 +16,16 @@ input {
 }
 input[type=text], input[type=password] {
     width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
+    padding: 0.75em 1.25em;
+    margin: 0.5em 0;
     display: inline-block;
-    border: 1px solid #ccc;
+    border: 0.0625em solid #ccc;
     box-sizing: border-box;
   }
 
   .buttom-form {
     color: white;
-    padding: 14px 20px;
+    padding: 0.875em 1.25em;
     margin: 1% 0;
     border: none;
     cursor: pointer;
