@@ -13,7 +13,7 @@ $(document).ready(function() {
 	$("#scroll-top-btn").css("display", "none");
 	$('.hide').css("display", "none");
 	$(window).scroll(function(){
-		if ($(this).scrollTop() > 20) {
+		if ($(window).width() > 600 && $(this).scrollTop() > 20) {
 			$('#scroll-top-btn').fadeIn();
 		} else {
 			$('#scroll-top-btn').fadeOut();

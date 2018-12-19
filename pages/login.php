@@ -1,4 +1,4 @@
-../<?php require_once __DIR__.DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR."DBConnection.php";
+<?php (require_once "../DBConnection.php") or die("Impossibile connettersi al database");
 
 if(session_status() == PHP_SESSION_NONE) {
  session_start();
