@@ -278,6 +278,10 @@ ul.topnav li a:hover, {background-color: #555555;}
 
 ul.topnav li.icon {display: none;}
 
+ul.topnav li:nth-last-child(-n+2) {
+  float: right;
+}
+
 /* When the screen is less than 600 pixels wide, hide all list items, except for the first one ("Home"). Show the list item that contains the link to open and close the topnav (li.icon) */
 
 .dropdown-content {
@@ -381,7 +385,7 @@ ul.dropdown-content li a {
   ul.topnav.responsive {
     position: relative;
   }
-  
+
   ul.topnav.responsive li.icon {
     position: absolute;
     right: 0;

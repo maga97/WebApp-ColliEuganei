@@ -5,9 +5,8 @@ if(session_status() == PHP_SESSION_NONE) {
 }
 $dbConnection = new database();
 $dbConnection->Connect();
-//$dbConnection->insert_user('giulio', 'p', 'ciaociao', 'c', 'a', '3', '3');
 $wronglogin = false;
-$wrongloginmessage = '<div>Dati errati!</div>';
+$wrongloginmessage = "<span id=\"error\">Dati errati!</span>";
 
 if(isset($_POST['email']) && isset($_POST['password']))
 	if($dbConnection->user_login( $_POST['email'], $_POST['password'])) {
@@ -20,7 +19,6 @@ if(isset($_POST['email']) && isset($_POST['password']))
   }
   $dbConnection->Close();
   ?>
-  <?php echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"; ?>
   <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
   <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
   <head>
@@ -33,6 +31,7 @@ if(isset($_POST['email']) && isset($_POST['password']))
     <title>Login - Colli Digitali</title>
   </head>
   <body>
+    <div id="container">
     <div class="header">
       <div class="header-picture">
         <div class="header-title">
@@ -69,11 +68,11 @@ if(isset($_POST['email']) && isset($_POST['password']))
           </li>
         </ul>
       </div>
-      <ul class="breadcrumb">
-        <li><a href="index.php">Home</a></li>
-        <li>Login</li>
-      </ul>
-      <div class="content">
+      <div id="content">
+        <ul class="breadcrumb">
+          <li><a href="index.php">Home</a></li>
+          <li>Login</li>
+        </ul>
         <?php if($wronglogin) echo("<span class=\"error_form\">$wrongloginmessage</span>"); ?>
         <form name="auth" id="autenticazione" method="post" action="login.php">
           <fieldset>
@@ -84,7 +83,7 @@ if(isset($_POST['email']) && isset($_POST['password']))
               </div>
               <div class="col-2">
                 <input type="text" required="required" id="email" name="email" placeholder="pincopallino@domain.it"/>
-              </div>            
+              </div>
             </div>
             <div class="row">
               <div class="col-2">
@@ -101,6 +100,7 @@ if(isset($_POST['email']) && isset($_POST['password']))
           </fieldset>
         </form>
       </div>
-      <?php include_once('footer.php')?> 
+      <?php include_once('../footer.php')?>
+    </div>
     </body>
     </html>

@@ -2,8 +2,8 @@
 class database {
 	private $host = "localhost";
 	private $user = "root";
-	private $passwd = "rootroot";
-	private $db = "ColliDigitali";
+	private $passwd = "root";
+	private $db = "ColliEuganei";
 	private $pdo;
 	private $bConnected = false;
 
@@ -80,6 +80,12 @@ class database {
 		$query->execute(array($email));
 		$Civico=$query->fetch();
 		return $Civico[0];
+	}
+
+	public function GetListaAttivita() {
+		$query = $this->pdo->prepare('SELECT * FROM Attivita');
+		$query->execute();
+		return $query->fetchAll(PDO::FETCH_ASSOC);
 	}
 
 }
