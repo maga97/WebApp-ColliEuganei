@@ -42,26 +42,23 @@ if(isset($_POST['email']) && isset($_POST['password']))
     </div>
     <div class="topnav-bar">
       <ul class="topnav">
-        <li><a href="index.php">Home</a>
-        <li><a href="geografia.php">Geografia</a></li>
-        <li><a href="clima.php">Clima</a></li>
-        <li><a href="storia.php">Storia</a></li>
-        <li class="dropdown"><a>Luoghi</a>
-          <ul class="dropdown-content">
-            <li><a href="luoghi/chiesette.php">7 Chiesette</a></li>
-            <li><a href="luoghi/catajo.php">Castello del Catajo</a></li>
-            <li><a href="luoghi/praglia.php">Abbazia di Praglia</a></li>
-            <li><a href="luoghi/carrareseeste.php">Castello carrarese di Este</a></li>
-            <li><a href="luoghi/lispida.php">Castello di Lispida</a></li>
-            <li><a href="luoghi/pelagio.php">Castello San Pelagio</a></li>
-          </ul>
-        </li>
+		<li><a href="index.php">Home</a></li>
+				<li class="dropdown"><a>Luoghi</a>
+					<ul class="dropdown-content">
+						<li><a href="luoghi/chiesette.php">Sette Chiesette</a></li>
+						<li><a href="luoghi/catajo.php">Castello del Catajo</a></li>
+						<li><a href="luoghi/praglia.php">Abbazia di Praglia</a></li>
+						<li><a href="luoghi/carrareseeste.php">Castello carrarese di Este</a></li>
+						<li><a href="luoghi/lispida.php">Castello di Lispida</a></li>
+						<li><a href="luoghi/pelagio.php">Castello San Pelagio</a></li>
+					</ul>
+				</li>
         <li><a href="gite.php">Gite</a></li>
         <?php if(isset($_SESSION['username'])): ?>
           <li><a href="view-account.php">Account</a></li>
           <?php else: ?>
             <li><a href="login.php" class="active">Accedi</a></li>
-            <li><a href="Registrazione.php">Registrati</a></li>
+            <li><a href="../Registrazione.php">Registrati</a></li>
           <?php endif; ?>
           <li class="icon">
             <a href="javascript:void(0);" onclick="menuMobile()">&#9776;</a>
@@ -122,7 +119,7 @@ if(isset($_POST['email']) && isset($_POST['password']))
                     <input type="password" id="password" name="password" placeholder="Password..">
                 </div>
                 <div class="button-holder"><input type="submit" value="Login" class="btn btn-primary" ></div>
-                <p id="not-registered">Non sei ancora registrato? <a href="Registrazione.php" id="reg-sistema">Registrati</a></p>
+                <p id="not-registered">Non sei ancora registrato? <a href="../Registrazione.php" id="reg-sistema">Registrati</a></p>
             </form>
         </div>
     </div>

@@ -61,7 +61,7 @@ $dbConnection->Close();
       <li class="dropdown"><a>Luoghi</a>
         <ul class="dropdown-content">
           <li><a href="pages/luoghi/chiesette.php">7 Chiesette</a></li>
-          <li><a href="pages/luoghi/catajo.php" class="active">Castello del Catajo</a></li>
+          <li><a href="pages/luoghi/catajo.php">Castello del Catajo</a></li>
           <li><a href="pages/luoghi/praglia.php">Abbazia di Praglia</a></li>
           <li><a href="pages/luoghi/carrareseeste.php">Castello carrarese di Este</a></li>
           <li><a href="pages/luoghi/lispida.php">Castello di Lispida</a></li>

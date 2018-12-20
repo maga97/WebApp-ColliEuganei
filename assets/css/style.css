@@ -439,9 +439,9 @@ ul.dropdown-content li a {
   #geotab{
     page-break-inside: avoid;
     padding-bottom: 1em;
-    padding-left: 3em;
-    padding-right: 2em;
-    padding-top: 1em;
+    padding-left: 2em;
+    padding-right: 1em;
+    padding-top: 4em;
   }
 
   .pic {
