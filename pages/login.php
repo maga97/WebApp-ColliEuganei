@@ -73,8 +73,9 @@ if(isset($_POST['email']) && isset($_POST['password']))
           <li><a href="index.php">Home</a></li>
           <li>Login</li>
         </ul>
-        <?php if($wronglogin) echo("<span class=\"error_form\">$wrongloginmessage</span>"); ?>
-        <form name="auth" id="autenticazione" method="post" action="login.php">
+        
+
+      <!--  <form name="auth" id="autenticazione" method="post" action="login.php">
           <fieldset>
             <legend>Autenticazione</legend>
             <div class="row">
@@ -99,7 +100,32 @@ if(isset($_POST['email']) && isset($_POST['password']))
             </div>
           </fieldset>
         </form>
-      </div>
+      </div> -->
+        <div class="form">
+            <form method="POST" action="login.php" class="log-form">
+                <?php
+                    if($wronglogin):
+                        echo '
+                        <div class="alert errore" aria-live="assertive" role="alert" aria-atomic="true">Si è verificato un errore:
+                          <span lang="en">username</span> o <span lang="en">password</span> non corretti</div>';
+
+                    endif;
+                ?>
+
+                <h1>Accedi</h1>
+                <div class="log-field-container">
+                    <label for="username" class="log-label">Nome utente: </label>
+                    <input type="text" id="username" name="email" placeholder="Nome utente..">
+                </div>
+                <div class="log-field-container">
+                    <label for="password" lang="en" class="log-label">Password: </label>
+                    <input type="password" id="password" name="password" placeholder="Password..">
+                </div>
+                <div class="button-holder"><input type="submit" value="Login" class="btn btn-primary" ></div>
+                <p id="not-registered">Non sei ancora registrato? <a href="Registrazione.php" id="reg-sistema">Registrati</a></p>
+            </form>
+        </div>
+    </div>
       <?php include_once('../footer.php')?>
     </div>
     </body>

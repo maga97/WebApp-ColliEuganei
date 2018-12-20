@@ -38,7 +38,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 				</li>
 				<li><a href="pages/gite.php">Gite</a></li>
 				<?php if(isset($_SESSION['username'])): ?>
-					<li><a href="view-account.php">Account</a></li>
+					<li><a href="pages/view-account.php">Account</a></li>
 					<?php else: ?>
 						<li><a href="pages/login.php">Accedi</a></li>
 						<li><a href="Registrazione.php">Registrati</a></li>

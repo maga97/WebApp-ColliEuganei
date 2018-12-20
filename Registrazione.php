@@ -27,7 +27,7 @@ if(isset($_POST["Nome"]) && isset($_POST["Cognome"]) && isset($_POST["Email"])
     $_POST["Password"],$_POST["Indirizzo"],$_POST["Civico"],$_POST["CAP"])){
     $_SESSION["username"]=$_POST["Email"];
   $_SESSION["login"]=true;
-  header("Location: view-account.php");
+  header("Location: pages/view-account.php");
 }
 else
   $failedSignUp=true;
@@ -70,7 +70,7 @@ $dbConnection->Close();
       </li>
       <li><a href="pages/gite.php">Gite</a></li>
       <?php if(isset($_SESSION['username'])): ?>
-        <li><a href="view-account.php">Account</a></li>
+        <li><a href="pages/view-account.php">Account</a></li>
         <?php else: ?>
           <li><a href="pages/login.php">Accedi</a></li>
           <li><a href="Registrazione.php" class="active">Registrati</a></li>
@@ -79,7 +79,7 @@ $dbConnection->Close();
           <a href="javascript:void(0);" onclick="menuMobile()">&#9776;</a>
         </li>
       </ul>
-    </div>    
+    </div>
     <div id="content">
       <ul class="breadcrumb">
         <li><a href="Registrazione.php">Registrazione</a></li>
@@ -135,6 +135,6 @@ $dbConnection->Close();
         </fieldset>
       </form>
     </div>
-    <?php include_once('footer.php')?> 
+    <?php include_once('footer.php')?>
   </body>
   </html>

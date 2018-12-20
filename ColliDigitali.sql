@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.6deb5
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Nov 17, 2018 at 01:03 PM
--- Server version: 5.7.23-0ubuntu0.18.04.1
--- PHP Version: 7.2.10-0ubuntu0.18.04.1
+-- Host: localhost
+-- Generation Time: Dec 20, 2018 at 11:26 AM
+-- Server version: 10.1.37-MariaDB
+-- PHP Version: 7.3.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -28,10 +30,10 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `Attivita` (
   `ID_Attivita` int(11) NOT NULL,
-  `Descrizione` varchar(255) NOT NULL,
-  `Nome` varchar(255) NOT NULL,
-  `Prezzo` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `Descrizione` varchar(512) COLLATE latin1_bin NOT NULL,
+  `Nome` varchar(40) COLLATE latin1_bin NOT NULL,
+  `Prezzo` double NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
 
 -- --------------------------------------------------------
 
@@ -44,10 +46,9 @@ CREATE TABLE `Prenotazioni` (
   `ID_Attivita` int(11) NOT NULL,
   `ID_Utenti` int(11) NOT NULL,
   `Giorno` date NOT NULL,
-  `Posti_Prenotati` int(10) NOT NULL,
-  `Pagamento` varchar(20) NOT NULL,
-  `Valutazione` enum('Insufficiente','Quasi insufficiente','Sufficiente','Buono','Ottimo') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `Pagamento` varchar(28) COLLATE latin1_bin NOT NULL,
+  `Valutazione` varchar(512) COLLATE latin1_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
 
 -- --------------------------------------------------------
 
@@ -56,15 +57,23 @@ CREATE TABLE `Prenotazioni` (
 --
 
 CREATE TABLE `Utenti` (
-  `ID` int(11) NOT NULL,
-  `Nome` varchar(255) NOT NULL,
-  `Cognome` varchar(255) NOT NULL,
-  `Email` varchar(255) NOT NULL,
-  `Indirizzo` varchar(255) NOT NULL,
+  `ID_Utente` int(11) NOT NULL,
+  `Nome` varchar(28) COLLATE latin1_bin NOT NULL,
+  `Cognome` varchar(28) COLLATE latin1_bin NOT NULL,
+  `Email` varchar(28) COLLATE latin1_bin NOT NULL,
+  `Password` varchar(256) COLLATE latin1_bin NOT NULL,
+  `Indirizzo` varchar(28) COLLATE latin1_bin NOT NULL,
   `Civico` int(11) NOT NULL,
   `CAP` int(11) NOT NULL,
-  `Tipo` enum('Admin','Utente') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `Tipo` enum('utente','amministratore') COLLATE latin1_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
+
+--
+-- Dumping data for table `Utenti`
+--
+
+INSERT INTO `Utenti` (`ID_Utente`, `Nome`, `Cognome`, `Email`, `Password`, `Indirizzo`, `Civico`, `CAP`, `Tipo`) VALUES
+(1, 'Mario', 'Coniglio', 'ciao@gmail.com', '$2y$10$Zhowx9JH0PEQn/BzHMXJO.GdkV0xlMzIe21/PONIvCZ1/Uz2vg84q', 'ciso', 12, 12, 'utente');
 
 --
 -- Indexes for dumped tables
@@ -88,8 +97,30 @@ ALTER TABLE `Prenotazioni`
 -- Indexes for table `Utenti`
 --
 ALTER TABLE `Utenti`
-  ADD PRIMARY KEY (`ID`),
+  ADD PRIMARY KEY (`ID_Utente`),
   ADD UNIQUE KEY `Email` (`Email`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `Attivita`
+--
+ALTER TABLE `Attivita`
+  MODIFY `ID_Attivita` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `Prenotazioni`
+--
+ALTER TABLE `Prenotazioni`
+  MODIFY `ID_Prenotazione` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `Utenti`
+--
+ALTER TABLE `Utenti`
+  MODIFY `ID_Utente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables
@@ -100,7 +131,8 @@ ALTER TABLE `Utenti`
 --
 ALTER TABLE `Prenotazioni`
   ADD CONSTRAINT `Prenotazioni_ibfk_1` FOREIGN KEY (`ID_Attivita`) REFERENCES `Attivita` (`ID_Attivita`),
-  ADD CONSTRAINT `Prenotazioni_ibfk_2` FOREIGN KEY (`ID_Utenti`) REFERENCES `Utenti` (`ID`);
+  ADD CONSTRAINT `Prenotazioni_ibfk_2` FOREIGN KEY (`ID_Utenti`) REFERENCES `Utenti` (`ID_Utente`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

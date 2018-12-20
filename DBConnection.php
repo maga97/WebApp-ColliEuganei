@@ -2,8 +2,8 @@
 class database {
 	private $host = "localhost";
 	private $user = "root";
-	private $passwd = "root";
-	private $db = "ColliEuganei";
+	private $passwd = "";
+	private $db = "ColliDigitali";
 	private $pdo;
 	private $bConnected = false;
 
@@ -16,7 +16,7 @@ class database {
 			$this->bConnected = true;
 		}
 		catch (PDOException $e) {
-			echo $this->ExceptionLog($e->getMessage());
+			echo $e->getMessage();
 			die();
 		}
 	}

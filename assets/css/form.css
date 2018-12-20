@@ -1,27 +1,97 @@
 .row {
   padding: 1em;
 }
+
+.form{
+    width: 350px;
+    margin: 4% auto auto auto;
+    padding: 2em;
+    background: white;
+    color: black;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+
+.log-form{
+    width: 100%;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    border-radius: 4px ;
+}
+.log-label {
+    display: block;
+    padding-bottom: 0.3em;
+}
+
+.log-field-container {
+    margin-top:1em;
+}
+
+.button-holder{
+    margin-top:2em;
+    padding-bottom:1em;
+    text-align: center;
+}
+
+.btn {
+    outline: none;
+    margin: 0;
+    cursor: pointer;
+    line-height: 100%;
+    text-decoration: none;
+    font-weight: bolder;
+    padding: 0.8em 1em;
+    color: black;
+    background: white;
+    border:0.2em solid transparent;
+    border-bottom: 0.2em solid #808080;
+    text-transform: uppercase;
+}
+.btn.btn-primary {
+  margin:auto;
+  color: white;
+  background-color: #0067c8;
+  border-bottom-color: #0000c6;
+}
+
+div.alert {
+    margin: 0;
+    line-height: 1.2em;
+    padding: 0.5em 1em;
+    display: block;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+div.alert.errore {
+    background: #ac1911;
+}
+
+.alert.errore {
+    color:white;
+    text-align: left;
+    font-weight: bold;
+}
+
+div.alert.errore p{
+    color: white;
+    font-weight: bold;
+}
+
 fieldset {
   border: 0.1875em solid #f1f1f1;
 }
 legend {
   font-size: 1.5em;
 }
-label {
-  font-size: 1.2em;
-  text-align: left;
-}
-input {
-  font-size: 1.1em;
-}
-input[type=text], input[type=password] {
+
+input[type=text], input[type=password], input[type=number] {
     width: 100%;
-    padding: 0.75em 1.25em;
-    margin: 0.5em 0;
-    display: inline-block;
-    border: 0.0625em solid #ccc;
-    box-sizing: border-box;
-  }
+    height: 25pt;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px solid silver;
+    outline: none;
+}
 
   .buttom-form {
     color: white;
@@ -32,6 +102,7 @@ input[type=text], input[type=password] {
     width: 35%;
     font-size: 1.1rem;
   }
+
 input[type=submit] {
     background-color: #4CAF50;
     margin-left: 5%;
