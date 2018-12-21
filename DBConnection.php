@@ -25,24 +25,25 @@ class database {
 		$this->pdo = null;
 	}
 
+	public function user_already_exists($email){
+		$query = $this->pdo->prepare('SELECT * FROM Utenti WHERE Email = ?');
+		$query->execute(array($email));
+		return $query->fetch() ? true:false;
+	}
 
-	public function insert_user($nome, $cognome, $email, $password, $indirizzo, $civico, $cap) {
-		$query = $this->pdo->prepare('SELECT * FROM Utenti WHERE Email= "'.$email.'"');
-		$query->execute();
-		if(!$query->fetch()) {
-			$insert = $this->pdo->prepare('INSERT INTO Utenti (Nome, Cognome, Email, Password, Indirizzo, Civico, CAP) VALUES ("'.
+	public function insert_user($nome, $cognome, $email, $password, $indirizzo, $citta, $civico, $cap) {
+				$insert = $this->pdo->prepare('INSERT INTO Utenti (Nome, Cognome, Email, Password, Indirizzo, Civico, Citta, CAP) VALUES ("'.
 				$nome.'", "'.
 				$cognome.'", "'.
 				$email.'", "'.
 				password_hash($password, PASSWORD_DEFAULT).'", "'.
 				$indirizzo.'", "'.
 				$civico.'", "'.
+				$citta.'", "'.
 				$cap.'")');
-			if($insert->execute())
-				return true;
-			return false;
-		}
-		return false;
+				if($insert->execute())
+					return true;
+				return false;
 	}
 
 	public function user_login($email, $password) {

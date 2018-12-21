@@ -1,3 +1,7 @@
+.mobile-align {
+    text-align: right;
+}
+
 .row {
   padding: 1em;
 }
@@ -9,6 +13,37 @@
     background: white;
     color: black;
     box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+
+.container_form {
+    width: 700px;
+    margin-bottom: 60px;
+}
+
+#sectionPersonalData {
+   width: 330px;
+   float: left;
+   margin-right: 0;
+}
+#sectionAccountData {
+    width: 330px;
+    margin-left:350px;
+    margin-top: 2em;
+}
+
+#indirizzo-container,#citta-container {
+    float:left;
+    width: 78%;
+}
+
+#civico-container, #cap-container {
+    text-align: right;
+}
+
+#civico-container input,
+#cap-container input {
+    width: 4em;
+    text-align: right;
 }
 
 .log-form{
@@ -57,7 +92,7 @@ div.alert {
     margin: 0;
     line-height: 1.2em;
     padding: 0.5em 1em;
-    display: block;
+    display: none;
     text-align: center;
     margin-bottom: 1em;
 }
@@ -75,6 +110,10 @@ div.alert.errore {
 div.alert.errore p{
     color: white;
     font-weight: bold;
+}
+
+#reg-sistema{
+    color: #0057A8;
 }
 
 fieldset {
@@ -113,6 +152,9 @@ input[type=submit] {
     margin-right: 5%;
   }
 
+  input.error {
+    border-bottom-color: red;
+  }
   #error {
     color: white;
     background-color: red;

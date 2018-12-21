@@ -1,52 +1,24 @@
-<?php
-require_once __DIR__.DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR."DBConnection.php";
+
+<?php require_once __DIR__.DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR."DBConnection.php";
 if(session_status() == PHP_SESSION_NONE) {
  session_start();
-}
-$dbConnection = new database();
-$dbConnection->Connect();
-$IsDifferentpasswords=false;
-$isInvalidEmail=false;
-$alreadyExist=false;
-$failedSignUp=false;
-if(isset($_POST["Nome"]) && isset($_POST["Cognome"]) && isset($_POST["Email"])
-  && isset($_POST["Password"]) && isset($_POST["RPassword"])&&
-  isset($_POST["Indirizzo"]) && isset($_POST["Civico"]) && isset($_POST["CAP"])){
-  if(!filter_var($_POST["Email"], FILTER_VALIDATE_EMAIL)){
-    $isInvalidEmail=true;
-  }
-  else if(($_POST["Password"])!=($_POST["RPassword"])){
-    $IsDifferentpasswords=true;
-
-  }
-  else if($dbConnection->user_login($_POST["Email"],$_POST["Password"])){
-    $alreadyExist=true;
-
-  }
-  else if($dbConnection->insert_user($_POST["Nome"],$_POST["Cognome"],$_POST["Email"],
-    $_POST["Password"],$_POST["Indirizzo"],$_POST["Civico"],$_POST["CAP"])){
-    $_SESSION["username"]=$_POST["Email"];
-  $_SESSION["login"]=true;
-  header("Location: pages/view-account.php");
-}
-else
-  $failedSignUp=true;
-
-}
-$dbConnection->Close();
-?>
+} ?>
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <link rel="stylesheet" type="text/css" href="assets/css/style.css" media="all">
+  <link rel="stylesheet" type="text/css" href="assets/css/form.css" media="all">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="script.js"></script>
+  <!-- <script src="js/registrazione.js"></script> -->
+  <script src="js/global.js"></script>
   <title>Home - Colli Digitali</title>
 </head>
 <body>
+  <div id="container">
   <div class="header">
     <div class="header-picture">
       <div class="header-title">
@@ -80,61 +52,65 @@ $dbConnection->Close();
         </li>
       </ul>
     </div>
-    <div id="content">
+
+    <div id="content" >
       <ul class="breadcrumb">
         <li><a href="Registrazione.php">Registrazione</a></li>
       </ul>
+      <div class="form container_form" >
+
+          <form action="RegistrazioneAction.php" method="POST" class="log-form" onsubmit="return validaFormUtente(true,$('.alert.errore'),$('form'))">
+              <!-- <div class="alert successo" aria-live="assertive" role="alert" aria-atomic="true">Registrazione effettuata con successo. Clicca <a href="login.php">qua</a> per andare al <span lang="en">login</span>.</div>
+              -->
+              <h1>Crea <span lang="en">account</span></h1>
+              <div class="alert errore" aria-live="assertive" role="alert" aria-atomic="true"><p class="intestazione-alert">Errore:</p></div>
+              <div id="sectionPersonalData">
+                  <div class="log-field-container">
+                      <label for="nome">Nome: (obbligatorio)</label>
+                      <input type="text" id="nome" name="nome" placeholder="Inserisci il tuo nome">
+                  </div>
+                  <div class="log-field-container">
+                      <label for="cognome" class="log-label">Cognome: (obbligatorio)</label>
+                      <input type="text" id="cognome" name="cognome" placeholder="Inserisci il tuo cognome">
+                  </div>
+                  <div class="log-field-container" id="indirizzo-container">
+                      <label for="indirizzo" class="log-label">Indirizzo: </label>
+                      <input type="text" id="indirizzo" name="indirizzo" placeholder="Inserisci il tuo indirizzo di residenza">
+                  </div>
+                  <div class="log-field-container" id="civico-container">
+                      <label for="civico" class="log-label mobile-align">Civico: </label>
+                      <input type="text"  size="4" id="civico" name="civico" placeholder="N.">
+                  </div>
+
+                  <div class="log-field-container" id="citta-container">
+                      <label for="citta" class="log-label">Citt&agrave;: </label>
+                      <input type="text" id="citta" name="citta" placeholder="Inserisci la tua città di residenza">
+                  </div>
+                  <div class="log-field-container" id="cap-container">
+                      <label for="CAP" class="log-label mobile-align"> <abbr title="Codice di avviamento postale">CAP</abbr>: </label>
+                      <input type="text"  size="4" id="CAP" name="CAP" placeholder="CAP...">
+                  </div>
+              </div>
+              <div id="sectionAccountData">
+                  <div class="field-container">
+                      <label for="email" lang="en" class="log-label">Email: (obbligatorio)</label>
+                      <input type="text" id="email" name="email" placeholder="Inserisci email">
+                  </div>
+                  <div class="log-field-container">
+                      <label for="password" class="log-label"><span lang="en">Password</span>: (obbligatorio)</label>
+                      <input type="password" id="password" name="password" placeholder="Password...">
+                  </div>
+                  <div class="log-field-container">
+                      <label for="password2" class="log-label">Ripeti <span lang="en">password</span>: (obbligatorio)</label>
+                      <input type="password" id="password2" name="password2" placeholder="Ripeti password..">
+                  </div>
+              </div>
+              <div class="button-holder">  <input type="submit" value="Registrati" name="registrazione" class="btn btn-primary"></div>
+          </form>
+      </div>
     </div>
-    <?php
-    if($alreadyExist)
-      echo ("utente già esistente");
-    else if($isInvalidEmail)
-      echo ("Email non valida");
-    else if($IsDifferentpasswords)
-      echo ("Le due password non coincidono");
-    else if($failedSignUp)
-      echo ("La registrazione ha fallito");
-    ?>
-    <div class="content">
-      <form name="auth" id="autenticazione" method="post" action="Registrazione.php">
-        <fieldset>
-          <legend>Autenticazione</legend>
-          <div class="row">
-            <label for="Nome">Nome</label>
-            <input value="<?php echo isset($_POST['Nome']) ? $_POST['Nome'] : '' ?>" type="text" required="required" id="nome" name="Nome" placeholder="Mario"/>
-          </div>
-          <div class="row">
-            <label for="Cognome">Cognome</label>
-            <input value="<?php echo isset($_POST['Cognome']) ? $_POST['Cognome'] : '' ?>" type="text" required="required" id="cognome" name="Cognome" placeholder="Rossi"/>
-          </div>
-          <div class="row">
-            <label for="email">Indirizzo email</label>
-            <input value="<?php echo isset($_POST['Email']) ? $_POST['Email'] : '' ?>" type="text" required="required" id="email" name="Email" placeholder="pincopallino@domain.it"/>
-          </div>
-          <div class="row">
-            <label for="password">Password</label>
-            <input type="password" required="required" id="password" name="Password"/>
-          </div>
-          <div class="row">
-            <label for="RepeatPassword">Ripeti password</label>
-            <input type="password" required="required" id="rpassword" name="RPassword" />
-          </div>
-          <div class="row">
-            <label for="Indirizzo">Indirizzo</label>
-            <input value="<?php echo isset($_POST['Indirizzo']) ? $_POST['Indirizzo'] : '' ?>" type="text" required="required" id="indirizzo" name="Indirizzo" />
-          </div>
-          <div class="row">
-            <label for="Civico">Civico</label>
-            <input value="<?php echo isset($_POST['Civico']) ? $_POST['Civico'] : '' ?>" type="text" required="required" id="Civico" name="Civico" />
-          </div>
-          <div class="row">
-            <label for="CAP">CAP</label>
-            <input value="<?php echo isset($_POST['CAP']) ? $_POST['CAP'] : '' ?>" type="text" required="required" id="cap" name="CAP" />
-          </div>
-          <input type="submit" name="submit" value="Registrati">
-        </fieldset>
-      </form>
-    </div>
-    <?php include_once('footer.php')?>
+<?php include_once('footer.php')?>
+  </div>
+
   </body>
   </html>

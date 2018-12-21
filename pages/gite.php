@@ -48,6 +48,6 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
     <ul class="breadcrumb">
       <li><a href="gite.php">Gite</a></li>
     </ul>
-    <?php include_once('../footer.php')?> 
+    <?php include_once('../footer.php')?>
   </body>
   </html>

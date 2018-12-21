@@ -70,34 +70,6 @@ if(isset($_POST['email']) && isset($_POST['password']))
           <li><a href="index.php">Home</a></li>
           <li>Login</li>
         </ul>
-        
-
-      <!--  <form name="auth" id="autenticazione" method="post" action="login.php">
-          <fieldset>
-            <legend>Autenticazione</legend>
-            <div class="row">
-              <div class="col-2">
-                <label for="email">Indirizzo email</label>
-              </div>
-              <div class="col-2">
-                <input type="text" required="required" id="email" name="email" placeholder="pincopallino@domain.it"/>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-2">
-                <label for="password">Password</label>
-              </div>
-              <div class="col-2">
-                <input type="password" required="required" id="password" name="password"/>
-              </div>
-            </div>
-            <div class="row">
-              <input class="buttom-form" type="submit" name="submit" value="Entra"/>
-              <input class="buttom-form" type="reset" value="Resetta"/>
-            </div>
-          </fieldset>
-        </form>
-      </div> -->
         <div class="form">
             <form method="POST" action="login.php" class="log-form">
                 <?php

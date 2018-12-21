@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 20, 2018 at 11:26 AM
+-- Generation Time: Dec 21, 2018 at 01:33 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.0
 
@@ -62,9 +62,10 @@ CREATE TABLE `Utenti` (
   `Cognome` varchar(28) COLLATE latin1_bin NOT NULL,
   `Email` varchar(28) COLLATE latin1_bin NOT NULL,
   `Password` varchar(256) COLLATE latin1_bin NOT NULL,
-  `Indirizzo` varchar(28) COLLATE latin1_bin NOT NULL,
-  `Civico` int(11) NOT NULL,
-  `CAP` int(11) NOT NULL,
+  `Indirizzo` varchar(28) COLLATE latin1_bin DEFAULT NULL,
+  `Civico` int(11) DEFAULT NULL,
+  `Citta` varchar(28) COLLATE latin1_bin DEFAULT NULL,
+  `CAP` int(11) DEFAULT NULL,
   `Tipo` enum('utente','amministratore') COLLATE latin1_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
 
@@ -72,8 +73,11 @@ CREATE TABLE `Utenti` (
 -- Dumping data for table `Utenti`
 --
 
-INSERT INTO `Utenti` (`ID_Utente`, `Nome`, `Cognome`, `Email`, `Password`, `Indirizzo`, `Civico`, `CAP`, `Tipo`) VALUES
-(1, 'Mario', 'Coniglio', 'ciao@gmail.com', '$2y$10$Zhowx9JH0PEQn/BzHMXJO.GdkV0xlMzIe21/PONIvCZ1/Uz2vg84q', 'ciso', 12, 12, 'utente');
+INSERT INTO `Utenti` (`ID_Utente`, `Nome`, `Cognome`, `Email`, `Password`, `Indirizzo`, `Civico`, `Citta`, `CAP`, `Tipo`) VALUES
+(1, 'Mario', 'Coniglio', 'ciao@gmail.com', '$2y$10$Zhowx9JH0PEQn/BzHMXJO.GdkV0xlMzIe21/PONIvCZ1/Uz2vg84q', 'ciso', 12, '', 12, 'utente'),
+(2, 'Giulio', 'Piva', 'GiulioPiva@outlook.it', '$2y$10$Ys5pFBEiS2YFplU3vQBfku3wWzpHzghoV3G2mGHLSpGPiBAVIS8t6', 'via dei salici', 12, '', 12, 'utente'),
+(3, 'Giulio', 'Piva', 'tonyeffe@gmail.com', '$2y$10$kvT9FV3OisphW1jySmYCDuC3uHQIOySFK1GWoLXRXBDfE252j4KX2', 'via dei lupi', 0, '12', 35026, 'utente'),
+(4, 'Giannizzero', 'bottoni', 'cico@gmail.com', '$2y$10$KRnwPb7E8MpYR3OR5.2dmeGI8M6u8wsW.6Y6X8PtDkispQhLQeJQK', '', 0, '', 0, 'utente');
 
 --
 -- Indexes for dumped tables
@@ -120,7 +124,7 @@ ALTER TABLE `Prenotazioni`
 -- AUTO_INCREMENT for table `Utenti`
 --
 ALTER TABLE `Utenti`
-  MODIFY `ID_Utente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID_Utente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables
