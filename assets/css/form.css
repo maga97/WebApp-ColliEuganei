@@ -97,6 +97,10 @@ div.alert {
     margin-bottom: 1em;
 }
 
+div.alert.errore.login{
+  display: block;
+}
+
 div.alert.errore {
     background: #ac1911;
 }

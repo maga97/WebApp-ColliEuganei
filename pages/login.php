@@ -75,7 +75,7 @@ if(isset($_POST['email']) && isset($_POST['password']))
                 <?php
                     if($wronglogin):
                         echo '
-                        <div class="alert errore" aria-live="assertive" role="alert" aria-atomic="true">Si è verificato un errore:
+                        <div class="alert errore login" aria-live="assertive" role="alert" aria-atomic="true">Si è verificato un errore:
                           <span lang="en">username</span> o <span lang="en">password</span> non corretti</div>';
 
                     endif;
