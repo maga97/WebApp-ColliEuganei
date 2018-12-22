@@ -7,27 +7,27 @@
 }
 
 .form{
-    width: 350px;
+    width: 21.875em;
     margin: 4% auto auto auto;
     padding: 2em;
     background: white;
     color: black;
-    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    box-shadow: 0 1.1875em 2.375em rgba(0,0,0,0.30), 0 0.9375em 0.9375em rgba(0,0,0,0.22);
 }
 
 .container_form {
-    width: 700px;
-    margin-bottom: 60px;
+    width: 43.75em;
+    margin-bottom: 3.75em;
 }
 
 #sectionPersonalData {
-   width: 330px;
+   width: 20.625em;
    float: left;
    margin-right: 0;
 }
 #sectionAccountData {
-    width: 330px;
-    margin-left:350px;
+    width: 20.625em;
+    margin-left:21.875em;
     margin-top: 2em;
 }
 
@@ -50,7 +50,7 @@
     width: 100%;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
-    border-radius: 4px ;
+    border-radius: 0.25em;
 }
 .log-label {
     display: block;
@@ -132,7 +132,7 @@ input[type=text], input[type=password], input[type=number] {
     height: 25pt;
     background-color: transparent;
     border: 0;
-    border-bottom: 2px solid silver;
+    border-bottom: 0.125em solid silver;
     outline: none;
 }
 
