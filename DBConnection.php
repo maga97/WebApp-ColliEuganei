@@ -19,7 +19,7 @@ class database {
 			echo $e->getMessage();
 			die();
 		}
-	}
+	}$_SESSION['username']
 
 	public function Close() {
 		$this->pdo = null;
@@ -87,6 +87,14 @@ class database {
 		$query = $this->pdo->prepare('SELECT * FROM Attivita');
 		$query->execute();
 		return $query->fetchAll(PDO::FETCH_ASSOC);
+	}
+
+	public function AggiornaPWDUtente($email, $new_pwd) {
+		$pwd_hashed = password_hash($new_pwd, PASSWORD_DEFAULT);
+		$query = $this->pdo->prepare('UPDATE Utenti SET Password = :pwd WHERE Email = :email');
+		$query->bindParam(':pwd', $pwd_hashed, PDO::PARAM_STR);
+		$query->bindParam(':email', $email, PDO::PARAM_STR, 256);
+		return $query->execute();
 	}
 
 }
