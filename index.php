@@ -39,13 +39,13 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 				<li><a href="pages/gite.php">Gite</a></li>
 				<?php if(isset($_SESSION['username'])): ?>
 					<li><a href="pages/view-account.php">Account</a></li>
-					<?php else: ?>
-						<li><a href="pages/login.php">Accedi</a></li>
-						<li><a href="Registrazione.php">Registrati</a></li>
-					<?php endif; ?>
-					<li class="icon">
-						<a href="javascript:void(0);" onclick="menuMobile()">&#9776;</a>
-					</li>
+				<?php else: ?>
+					<li><a href="pages/login.php">Accedi</a></li>
+					<li><a href="Registrazione.php">Registrati</a></li>
+				<?php endif; ?>
+				<li class="icon">
+					<a href="javascript:void(0);" onclick="menuMobile()">&#9776;</a>
+				</li>
 				</ul>
 			</div>
 			<div id="content">
@@ -66,9 +66,9 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 							<dt>Geografia</dt>
 							<dd>Scopri la geografia del territorio e come si &egrave; formato.</dd>
 						</dl>
-							<div>
-								<button type="button" class="find-more" onclick="clx('geografia')" >Scopri di più</button>
-							</div>
+						<div>
+							<button type="button" class="find-more" onclick="clx('geografia')" >Scopri di più</button>
+						</div>
 					</div>
 					<div class="galleryframe">
 						<img class="pic" src="assets/img/clima.jpg" alt="" />
@@ -76,9 +76,9 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 							<dt>Clima</dt>
 							<dd>Scopri come il territorio si presenta nel corso dell'anno.</dd>
 						</dl>
-							<div>
-								<button type="button" class="find-more" onclick="clx('clima')">Scopri di più</button>
-							</div>
+						<div>
+							<button type="button" class="find-more" onclick="clx('clima')">Scopri di più</button>
+						</div>
 					</div>
 					<div class="galleryframe">
 						<img class="pic" src="assets/img/storia.jpg" alt="Immagine Rocca di Monselice">
@@ -86,9 +86,9 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 							<dt>Storia</dt>
 							<dd>Scopri la storia, la cultura e l'arte del territorio</dd>
 						</dl>
-							<div>
-								<button type="button" class="find-more" onclick="clx('storia')">Scopri di più</button>
-							</div>
+						<div>
+							<button type="button" class="find-more" onclick="clx('storia')">Scopri di più</button>
+						</div>
 					</div>
 				</div>
 				<div id="clima-text" class="hide">
@@ -195,48 +195,48 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 						testugine dei colli euganei, un adattamento particolare ai colli della testugine palustre europea.
 					</p>
 				</div>
-					<div id="storia-text" class="hide">
-						<h2>Una commistione di storia, arte e cultura.</h2>
-						<p class="text">I colli prendono il nome dal primo popolo che in epoca preistorica visse in Veneto: gli euganei.
-							La storia millenaria dei colli ci dona oggi siti archeologici, antichi palazzi, musei e monumenti dal valore inestimabile.
-						</p>
-						<h3>Storia di popoli</h3>
-						<div class="float-right">
-							<img class="pic storiapic" src="assets/img/atestino.jpg" alt="Immagine Atestino" >
-						</div>
-						<p class="text">
-							Dopo gli antichi Euganei, primi abitanti della zona, fu la volta dei Veneti le cui testimonianze &egrave; possibile ammirare
-							sotto forma di reperti nel Museo Nazionale Atestino di Este, che ospita reperti tra cui vestiti, utensili ed armi risalenti dalla preistoria fino all'et&agrave; Romana.
-							E proprio all'et&agrave; Romana risalgono i primi paesi, preceduti da un villagio palustre sul lago della Costa.
-							Con il medioevo la posizione strategica dei colli venne sfruttata per la costruzione di castelli, mura, fortificazioni che ancora oggi sono apprezzabili nella
-							loro imponenza. Le ville venete invece risalgono al quindicesimo secolo, quando la Serenissima, repubblica di venezia, assunse il controllo del territorio.
-							Giungendo ai giorni nostri, l'incremento dello sfruttamento del territorio ha indotto la regione a creare nel 1989 il parco regionale dei colli euganei
-							con lo scopo di preservare il territorio e valorizzarne le qualit&agrave;, dai reperti, ai castelli, alle maestose ville, alla natura incontaminata.
-						</p>
-						<h3>Il patrimonio culturale</h3>
-						<p class="text">
-							I centri storici pi&ugrave; importanti come Este culla della civilt&agrave;
-							Paleoveneta, Arqu&agrave; Petrarca incantevole borgo medievale e Monselice
-							scenografica citt&agrave; murata offrono mete imperdibili per gli appasionati di storia ed arte.
-							Oltre ai centri storici meravigliose sono le ville venete  come Villa Vescovi a Torreglia
-							e Villa Barbarigo a Galzignano, e i suggestivi monasteri di Praglia e del
-							Rua, dove il tempo sembra si sia fermato per offrire ai visitatori momenti di profonda
-							pace spirituale.
-						</p>
-						<h3>L'arte</h3>
-						<div class="float-right">
-							<img class="pic storiapic" src="assets/img/filmfestival.jpg" alt="Festival dei film all'anfiteatro del Venda" >
-						</div>
-						<p class="text">
-							Per gli amanti dell'arte, mete imperdibili sono i musei come il gi&agrave; citato Museo Nazionale Atestino di Este, ma soprattutto le ville
-							come il castello del Catajo, che con i loro affreschi e l'architettura costituiscono un patrimonio dal valore inestimabile.
-							I colli per&ograve; non offrono soltanto occasioni di apprezzare l'arte dell'antichit&agrave; ma anche di ammirare nuove opere d'arte:
-							dall'Euganea Film Festival, al festival della land art, i colli euganei continuano ad ospitare ed ispirare artisti anche oggi.
-						</p>
+				<div id="storia-text" class="hide">
+					<h2>Una commistione di storia, arte e cultura.</h2>
+					<p class="text">I colli prendono il nome dal primo popolo che in epoca preistorica visse in Veneto: gli euganei.
+						La storia millenaria dei colli ci dona oggi siti archeologici, antichi palazzi, musei e monumenti dal valore inestimabile.
+					</p>
+					<h3>Storia di popoli</h3>
+					<div class="float-right">
+						<img class="pic storiapic" src="assets/img/atestino.jpg" alt="Immagine Atestino" >
 					</div>
+					<p class="text">
+						Dopo gli antichi Euganei, primi abitanti della zona, fu la volta dei Veneti le cui testimonianze &egrave; possibile ammirare
+						sotto forma di reperti nel Museo Nazionale Atestino di Este, che ospita reperti tra cui vestiti, utensili ed armi risalenti dalla preistoria fino all'et&agrave; Romana.
+						E proprio all'et&agrave; Romana risalgono i primi paesi, preceduti da un villagio palustre sul lago della Costa.
+						Con il medioevo la posizione strategica dei colli venne sfruttata per la costruzione di castelli, mura, fortificazioni che ancora oggi sono apprezzabili nella
+						loro imponenza. Le ville venete invece risalgono al quindicesimo secolo, quando la Serenissima, repubblica di venezia, assunse il controllo del territorio.
+						Giungendo ai giorni nostri, l'incremento dello sfruttamento del territorio ha indotto la regione a creare nel 1989 il parco regionale dei colli euganei
+						con lo scopo di preservare il territorio e valorizzarne le qualit&agrave;, dai reperti, ai castelli, alle maestose ville, alla natura incontaminata.
+					</p>
+					<h3>Il patrimonio culturale</h3>
+					<p class="text">
+						I centri storici pi&ugrave; importanti come Este culla della civilt&agrave;
+						Paleoveneta, Arqu&agrave; Petrarca incantevole borgo medievale e Monselice
+						scenografica citt&agrave; murata offrono mete imperdibili per gli appasionati di storia ed arte.
+						Oltre ai centri storici meravigliose sono le ville venete  come Villa Vescovi a Torreglia
+						e Villa Barbarigo a Galzignano, e i suggestivi monasteri di Praglia e del
+						Rua, dove il tempo sembra si sia fermato per offrire ai visitatori momenti di profonda
+						pace spirituale.
+					</p>
+					<h3>L'arte</h3>
+					<div class="float-right">
+						<img class="pic storiapic" src="assets/img/filmfestival.jpg" alt="Festival dei film all'anfiteatro del Venda" >
+					</div>
+					<p class="text">
+						Per gli amanti dell'arte, mete imperdibili sono i musei come il gi&agrave; citato Museo Nazionale Atestino di Este, ma soprattutto le ville
+						come il castello del Catajo, che con i loro affreschi e l'architettura costituiscono un patrimonio dal valore inestimabile.
+						I colli per&ograve; non offrono soltanto occasioni di apprezzare l'arte dell'antichit&agrave; ma anche di ammirare nuove opere d'arte:
+						dall'Euganea Film Festival, al festival della land art, i colli euganei continuano ad ospitare ed ispirare artisti anche oggi.
+					</p>
 				</div>
-				<a id="scroll-top-btn" href="#top">Torna in alto</a>
-				<?php include_once('footer.php'); ?>
+			</div>
+			<a id="scroll-top-btn" href="#top">Torna in alto</a>
+			<?php include_once('footer.php'); ?>
 		</div>
 	</body>
 </html>
