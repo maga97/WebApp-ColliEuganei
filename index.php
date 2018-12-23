@@ -8,8 +8,8 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css" media="all" />
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" />
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="application/javascript" ></script>
-	<script src="script.js" type="application/javascript"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="script.js"></script>
 	<title>Home - Colli Digitali</title>
 </head>
 <body>
@@ -108,7 +108,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 						che risultano ancora pi&ugrave; accoglienti e confortevoli.
 					</p>
 					<div class="float-right climapic">
-						<img class="pic"src="assets/img/primavera.jpg" alt="Primavera nel colli Euganei">
+						<img class="pic" src="assets/img/primavera.jpg" alt="Primavera nel colli Euganei">
 					</div>
 					<h3>Primavera ed Estate</h3>
 					<p class="text">
