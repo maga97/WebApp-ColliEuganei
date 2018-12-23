@@ -1,8 +1,7 @@
 <?php
 if (session_status() == PHP_SESSION_NONE) { session_start(); }
-echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" . PHP_EOL;
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -82,7 +81,7 @@ echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" . PHP_EOL;
       </div>
     </div>
     <a id="scroll-top-btn" href="#top">Torna in alto</a>
-    <?php include_once('../../footer.php'); ?> 
+    <?php include_once('../../footer.php'); ?>
   </div>
   </body>
   </html>

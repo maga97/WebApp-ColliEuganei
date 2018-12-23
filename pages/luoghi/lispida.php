@@ -1,8 +1,7 @@
 <?php
 if (session_status() == PHP_SESSION_NONE) { session_start(); }
-echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" . PHP_EOL;
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -78,10 +77,10 @@ echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" . PHP_EOL;
           Custodita nel cuore del Parco Naturale dei Colli Euganei, la Tenuta di Lispida ricomprende un lago termale con sorgenti calde e si estende per 90 ettari fra boschi, vigneti e uliveti.
           ll castello, complesso monumentale eretto nel medioevo e riedificato nel XIX secolo, ospita l’azienda vinicola, gli antichi edifici con appartamenti dalla sobria eleganza e i granai dagli
           ampi spazi per feste ed eventi.
-          Papa Eugenio III nel 1150  conferma all’ordine monastico di Sant’Agostino il possesso del colle e di una chiesa dedicata a S.Maria di Ispida. 
+          Papa Eugenio III nel 1150  conferma all’ordine monastico di Sant’Agostino il possesso del colle e di una chiesa dedicata a S.Maria di Ispida.
         </p>
         <p class="text">
-          Il monastero di Lispida, sorto in posizione isolata e tranquilla, fu sempre un luogo ricco di fascino, oltre che un ambiente ideale per la coltivazione della vite e dell’olivo. Nel 1485 il Doge della Repubblica di Venezia Giovanni Mocenigo confisca ai monaci la proprietà : “affinché le vigne, gli olivi e i campi non siano abbandonati, siano seminati e coltivati nella giusta stagione, e la pietra del colle ci venga mandata con regolarità”. La storia monastica di Lispida si interrompe nel 1792. 
+          Il monastero di Lispida, sorto in posizione isolata e tranquilla, fu sempre un luogo ricco di fascino, oltre che un ambiente ideale per la coltivazione della vite e dell’olivo. Nel 1485 il Doge della Repubblica di Venezia Giovanni Mocenigo confisca ai monaci la proprietà : “affinché le vigne, gli olivi e i campi non siano abbandonati, siano seminati e coltivati nella giusta stagione, e la pietra del colle ci venga mandata con regolarità”. La storia monastica di Lispida si interrompe nel 1792.
         </p>
         <div class="float-right">
           <img class="pic storiapic" src="../../assets/img/lispida3.jpg" alt=""/>
@@ -92,7 +91,7 @@ echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" . PHP_EOL;
       </div>
     </div>
     <a id="scroll-top-btn" href="#top">Torna in alto</a>
-    <?php include_once('../../footer.php'); ?> 
+    <?php include_once('../../footer.php'); ?>
   </div>
   </body>
   </html>
