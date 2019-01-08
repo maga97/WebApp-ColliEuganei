@@ -40,8 +40,8 @@ if(isset($_POST['email']) && isset($_POST['password']))
           </div>
         </div>
       </div>
-      <div class="topnav-bar">
-        <ul class="topnav">
+      <div id="menuprincipale-bar">
+        <ul id="menuprincipale">
           <li><a href="index.php">Home</a></li>
           <li class="dropdown"><a>Luoghi</a></li>
             <ul class="dropdown-content">

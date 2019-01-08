@@ -37,8 +37,8 @@ Civico: <?php echo $db->GetCivico($_SESSION['username'])?></br>
           </div>
         </div>
       </div>
-      <div class="topnav-bar">
-        <ul class="topnav">
+      <div id="menuprincipale-bar">
+        <ul id="menuprincipale">
           <li><a href="index.php">Home</a></li>
           <li><a href="geografia.php">Geografia</a></li>
           <li><a href="clima.php">Clima</a></li>

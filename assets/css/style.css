@@ -213,11 +213,11 @@ a:active {
   color: #000;
 }
 
-.topnav-bar {
+#menuprincipale-bar {
   background-color: #000;
 }
 /* Remove margins and padding from the list, and add a black background color */
-ul.topnav {
+ul#menuprincipale {
   list-style-type: none;
   padding: 0;
   margin: 0;
@@ -245,12 +245,12 @@ ul.topnav {
   text-decoration: underline;
 }
 
-ul.topnav li {
+ul#menuprincipale li {
   float: left;
 }
 
 /* Style the links inside the list items */
-ul.topnav li a {
+ul#menuprincipale li a {
  display: inline-block;
  color: #f2f2f2;
  text-align: center;
@@ -260,13 +260,13 @@ ul.topnav li a {
  font-size: 1.1em;
 }
 
-ul.topnav li a:hover {background-color: #555555;}
+ul#menuprincipale li a:hover {background-color: #555555;}
 
-ul.topnav li.icon {
+ul#menuprincipale li.icon {
   display: none;
 }
 
-ul.topnav li:nth-last-child(-n+2) {
+ul#menuprincipale li:nth-last-child(-n+2) {
   float: right;
 }
 
@@ -282,7 +282,7 @@ ul.topnav li:nth-last-child(-n+2) {
   z-index: 1;
 }
 
-.topnav a:hover, .dropdown a:hover {
+#menuprincipale a:hover, .dropdown a:hover {
   background-color: #555;
   color: white;
 }
@@ -333,25 +333,25 @@ ul.dropdown-content li a {
     display:none;
   }
 
-  .topnav a.icon {
+  #menuprincipale a.icon {
     float: right;
     display: block;
   }
 
-  .topnav.responsive {position: relative;}
-  .topnav.responsive a.icon {
+  #menuprincipale.responsive {position: relative;}
+  #menuprincipale.responsive a.icon {
     position: absolute;
     right: 0;
     top: 0;
   }
-  .topnav.responsive a {
+  #menuprincipale.responsive a {
     float: none;
     display: block;
     text-align: left;
   }
-  .topnav.responsive .dropdown {float: none;}
-  .topnav.responsive .dropdown-content {position: relative;}
-  .topnav.responsive .dropdown .dropbtn {
+  #menuprincipale.responsive .dropdown {float: none;}
+  #menuprincipale.responsive .dropdown-content {position: relative;}
+  #menuprincipale.responsive .dropdown .dropbtn {
     display: block;
     width: 100%;
     text-align: left;
@@ -361,29 +361,29 @@ ul.dropdown-content li a {
 
 @media screen and (max-width:480px) {
 
-  ul.topnav li:not(:first-child) {
+  ul#menuprincipale li:not(:first-child) {
     display: none;
   }
-  ul.topnav li.icon {
+  ul#menuprincipale li.icon {
     float: right;
     display: inline-block;
     font-size: 0.9em;
   }
 
-  ul.topnav.responsive {
+  ul#menuprincipale.responsive {
     position: relative;
   }
 
-  ul.topnav.responsive li.icon {
+  ul#menuprincipale.responsive li.icon {
     position: absolute;
     right: 0;
     top: 0;
   }
-  ul.topnav.responsive li {
+  ul#menuprincipale.responsive li {
     float: none;
     display: inline;
   }
-  ul.topnav.responsive li a {
+  ul#menuprincipale.responsive li a {
     display: block;
     text-align: left;
   }
@@ -418,7 +418,7 @@ ul.dropdown-content li a {
     page-break-after: avoid;
   }
 
-  .topnav-bar, #footer, #scroll-top-btn, .find-more, .breadcrumb, .galleryframe{
+  #menuprincipale-bar, #footer, #scroll-top-btn, .find-more, .breadcrumb, .galleryframe{
     display: none;
   }
 

@@ -21,8 +21,8 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
           <h2>Natura e storia in digitale</h2>
         </div>
       </div>
-      <div class="topnav-bar">
-        <ul class="topnav">
+      <div id="menuprincipale-bar">
+        <ul id="menuprincipale">
           <li><a href="../../index.php">Home</a></li>
           <li class="dropdown"><a class="active">Luoghi</a>
             <ul class="dropdown-content">

@@ -19,8 +19,8 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
         </div>
       </div>
     </div>
-    <div class="topnav-bar">
-      <ul class="topnav">
+    <div id="menuprincipale-bar">
+      <ul id="menuprincipale">
         <li class="dropdown"><a href="../index.php">Home</a></li>
         <li class="dropdown"><a>Luoghi</a>
           <ul class="dropdown-content">
