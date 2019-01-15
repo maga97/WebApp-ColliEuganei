@@ -19,7 +19,7 @@ class database {
 			echo $e->getMessage();
 			die();
 		}
-	}$_SESSION['username']
+	}
 
 	public function Close() {
 		$this->pdo = null;

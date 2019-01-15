@@ -50,7 +50,7 @@ if($isSetNome && $isSetEmail && $isSetCognome && $isSetPassword && $isSetPasswor
   && !$wrongEmail && !$wrongNome && !$wrongCognome && !$userAlreadyExist && !$passwordsNotEquals
 ){
   if($dbConnection->insert_user($_POST["nome"],$_POST["cognome"],$_POST["email"],
-     $_POST["password"],$_POST["indirizzo"],$_POST["civico"],$_POST["citta"],$_POST["CAP"]))
+     $_POST["password"],$_POST["indirizzo"],$_POST["citta"],$_POST["civico"],$_POST["CAP"]))
     {
           $_SESSION["username"]=$_POST["Email"];
           $_SESSION["login"]=true;

@@ -3,20 +3,12 @@ require_once "../DBConnection.php";
 if (session_status() == PHP_SESSION_NONE) { session_start(); }
 $db = new database();
 $db->connect();
-/*
 if(isset($_GET['logout']) && $_GET['logout'] == "true"){
   session_unset();
   session_destroy();
   header("Location: login.php");
   exit();
 }
-
-Nome: <?php echo $db->GetName($_SESSION['username'])?> <br>
-Cognome: <?php echo $db->GetSurname($_SESSION['username'])?></br>
-Indirizzo: <?php echo $db->GetAddress($_SESSION['username'])?></br>
-Civico: <?php echo $db->GetCivico($_SESSION['username'])?></br>
-
-}*/
  ?>
 <html>
   <head>
@@ -53,6 +45,9 @@ Civico: <?php echo $db->GetCivico($_SESSION['username'])?></br>
         <div class="gallery">
         <?php
           $list = $db->GetListaAttivita();
+          if(sizeof($list) == 0) {
+            echo "<h3>Nessuna gita da visualizzare</h3>" . PHP_EOL;
+          }
           foreach ($list as $node): ?>
         <div class="galleryframe">
           <dl>

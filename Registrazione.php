@@ -76,7 +76,7 @@ if(session_status() == PHP_SESSION_NONE) {
                 </div>
                 <div class="log-field-container" id="civico-container">
                   <label for="civico" class="log-label mobile-align">Civico: </label>
-                  <input type="text"  size="4" id="civico" name="civico" placeholder="N.">
+                  <input type="number"  size="4" id="civico" name="civico" placeholder="N.">
               </div>
                 <div class="log-field-container" id="citta-container">
                   <label for="citta" class="log-label">Citt&agrave;: </label>
@@ -84,7 +84,7 @@ if(session_status() == PHP_SESSION_NONE) {
                 </div>
                 <div class="log-field-container" id="cap-container">
                   <label for="CAP" class="log-label mobile-align"> <abbr title="Codice di avviamento postale">CAP</abbr>: </label>
-                  <input type="text"  size="4" id="CAP" name="CAP" placeholder="CAP...">
+                  <input type="number" size="4" id="CAP" name="CAP" placeholder="CAP...">
                 </div>
               </div>
               <div id="sectionAccountData">
