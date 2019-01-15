@@ -178,8 +178,19 @@ a:visited {
 }
 
 .galleryframe dl > dt {
-  font-size: 1.3em;
   font-display: fallback;
+  font-weight: bold;
+}
+
+.galleryframe dl > dd:first-child {
+  font-display: fallback;
+  font-weight: bold;
+  font-size: 1.3em;
+  text-align: center;
+}
+
+.galleryframe dl > dt:not(:first-child)::after {
+  content: ":";
 }
 
 .galleryframe dl > dd {

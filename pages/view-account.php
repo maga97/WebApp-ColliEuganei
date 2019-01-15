@@ -10,7 +10,7 @@ if(isset($_GET['logout']) && $_GET['logout'] == "true"){
   exit();
 }
  ?>
-<html>
+<html lang="it">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" type="text/css" href="../assets/css/style.css" media="all">
@@ -40,27 +40,45 @@ if(isset($_GET['logout']) && $_GET['logout'] == "true"){
         </ul>
       </div>
       <div id="content">
-        <h3>Benvenuto Recchia Recchione</h3>
+        <h3>Benvenuto <?php echo $_SESSION['username']; ?></h3>
         <p>Pronto per prenotare la tua prossima gita?</p>
-        <div class="gallery">
         <?php
           $list = $db->GetListaAttivita();
-          if(sizeof($list) == 0) {
+          $size = sizeof($list);
+          if($size == 0) {
             echo "<h3>Nessuna gita da visualizzare</h3>" . PHP_EOL;
-          }
-          foreach ($list as $node): ?>
+          } 
+          $x = 0;
+          foreach ($list as $node): 
+            if($x == 3):
+              echo "<div class=\"gallery\">" . PHP_EOL;
+            endif;
+          $data = explode("-", $node['Data']);
+          $node['Ora'] = substr($node['Ora'], 0, 5);
+          $node['Data'] = $data[2] . "/" . $data[1] . "/" . $data[0];
+        ?>
         <div class="galleryframe">
           <dl>
-            <dt><?php echo $node['Nome']; ?></dt>
+            <dd><?php echo $node['Nome']; ?></dd>
+            <dt>Descrizione</dt>
             <dd><?php echo $node['Descrizione']; ?></dd>
+            <dt>Prezzo</dt>
             <dd><?php echo $node['Prezzo']; ?> &euro;</dd>
+            <dt>Data</dt>
             <dd><?php echo $node['Data']; ?></dd>
-            <dd><?php echo $node['Ora']; ?></dd>
+            <dt>Ore</dt>
+            <dd><?php echo $node['Ora']?></dd>
           </dl>
-          <button
         </div>
-        <?php endforeach; ?>
-        </div>
+        <?php
+        if($x == 3) {
+          echo "</div>" . PHP_EOL;
+          $x = 0;
+        }
+        else {
+          $x++;
+        }
+        endforeach; ?>
       </div>
       <?php echo include_once("../footer.php"); ?>
     </div>
