@@ -3,12 +3,6 @@ require_once "../DBConnection.php";
 if (session_status() == PHP_SESSION_NONE) { session_start(); }
 $db = new database();
 $db->connect();
-if(isset($_GET['logout']) && $_GET['logout'] == "true"){
-  session_unset();
-  session_destroy();
-  header("Location: login.php");
-  exit();
-}
  ?>
 <html lang="it">
   <head>
@@ -48,17 +42,13 @@ if(isset($_GET['logout']) && $_GET['logout'] == "true"){
           if($size == 0) {
             echo "<h3>Nessuna gita da visualizzare</h3>" . PHP_EOL;
           }
-          $x = 0;
-          <div class="gallery">
+          echo "<div class=\"gridcontainer\">" . PHP_EOL;
           foreach ($list as $node):
-            if($x == 3):
-              echo "<div class=\"gallery\">" . PHP_EOL;
-            endif;
           $data = explode("-", $node['Data']);
           $node['Ora'] = substr($node['Ora'], 0, 5);
           $node['Data'] = $data[2] . "/" . $data[1] . "/" . $data[0];
         ?>
-        <div class="galleryframe">
+        <div class="griditem">
           <dl>
             <dd><?php echo $node['Nome']; ?></dd>
             <dt>Descrizione</dt>
@@ -72,16 +62,9 @@ if(isset($_GET['logout']) && $_GET['logout'] == "true"){
           </dl>
         </div>
         <?php
-        if($x == 3) {
-          echo "</div>" . PHP_EOL;
-          $x = 0;
-        }
-        else {
-          $x++;
-        }
         endforeach; ?>
       </div>
-      </div>
+    </div>
       <?php echo include_once("../footer.php"); ?>
     </div>
   </body>

@@ -439,6 +439,14 @@ ul.dropdown-content li a {
     widows: 3;
   }
 
+.gridcontainer {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+.griditem {
+  color: red;
+  text-align: center;
+}
   #content > #clima-text > div:nth-of-type(2){
     page-break-before: always;
   }
