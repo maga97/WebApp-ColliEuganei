@@ -2,7 +2,7 @@
 class database {
 	private $host = "localhost";
 	private $user = "root";
-	private $passwd = "";
+	private $passwd = "root";
 	private $db = "ColliDigitali";
 	private $pdo;
 	private $bConnected = false;
@@ -28,7 +28,7 @@ class database {
 	public function user_already_exists($email){
 		$query = $this->pdo->prepare('SELECT * FROM Utenti WHERE Email = ?');
 		$query->execute(array($email));
-		return $query->fetch() ? true:false;
+		return $query->fetch() ? true : false;
 	}
 
 	public function insert_user($nome, $cognome, $email, $password, $indirizzo, $citta, $civico, $cap) {

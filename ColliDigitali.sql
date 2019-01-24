@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.6.6deb4
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Dec 21, 2018 at 01:33 AM
--- Server version: 10.1.37-MariaDB
--- PHP Version: 7.3.0
+-- Host: localhost:3306
+-- Creato il: Gen 24, 2019 alle 14:15
+-- Versione del server: 10.1.37-MariaDB-0+deb9u1
+-- Versione PHP: 7.0.33-0+deb9u1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -25,20 +23,22 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Attivita`
+-- Struttura della tabella `Attivita`
 --
 
 CREATE TABLE `Attivita` (
   `ID_Attivita` int(11) NOT NULL,
   `Descrizione` varchar(512) COLLATE latin1_bin NOT NULL,
   `Nome` varchar(40) COLLATE latin1_bin NOT NULL,
-  `Prezzo` double NOT NULL
+  `Prezzo` double NOT NULL,
+  `Data` date NOT NULL,
+  `Ore` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Prenotazioni`
+-- Struttura della tabella `Prenotazioni`
 --
 
 CREATE TABLE `Prenotazioni` (
@@ -53,7 +53,7 @@ CREATE TABLE `Prenotazioni` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Utenti`
+-- Struttura della tabella `Utenti`
 --
 
 CREATE TABLE `Utenti` (
@@ -70,27 +70,28 @@ CREATE TABLE `Utenti` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
 
 --
--- Dumping data for table `Utenti`
+-- Dump dei dati per la tabella `Utenti`
 --
 
 INSERT INTO `Utenti` (`ID_Utente`, `Nome`, `Cognome`, `Email`, `Password`, `Indirizzo`, `Civico`, `Citta`, `CAP`, `Tipo`) VALUES
 (1, 'Mario', 'Coniglio', 'ciao@gmail.com', '$2y$10$Zhowx9JH0PEQn/BzHMXJO.GdkV0xlMzIe21/PONIvCZ1/Uz2vg84q', 'ciso', 12, '', 12, 'utente'),
 (2, 'Giulio', 'Piva', 'GiulioPiva@outlook.it', '$2y$10$Ys5pFBEiS2YFplU3vQBfku3wWzpHzghoV3G2mGHLSpGPiBAVIS8t6', 'via dei salici', 12, '', 12, 'utente'),
 (3, 'Giulio', 'Piva', 'tonyeffe@gmail.com', '$2y$10$kvT9FV3OisphW1jySmYCDuC3uHQIOySFK1GWoLXRXBDfE252j4KX2', 'via dei lupi', 0, '12', 35026, 'utente'),
-(4, 'Giannizzero', 'bottoni', 'cico@gmail.com', '$2y$10$KRnwPb7E8MpYR3OR5.2dmeGI8M6u8wsW.6Y6X8PtDkispQhLQeJQK', '', 0, '', 0, 'utente');
+(4, 'Giannizzero', 'bottoni', 'cico@gmail.com', '$2y$10$KRnwPb7E8MpYR3OR5.2dmeGI8M6u8wsW.6Y6X8PtDkispQhLQeJQK', '', 0, '', 0, 'utente'),
+(5, 'AAA', 'BBB', 'a@a.a', '$2y$10$SoMy6Dyby3JGATdzvU293.cr..JjH31CLp9xc/GQgInv0layn5bCS', 'BBBB', 111, 'AAAA', 0, 'utente');
 
 --
--- Indexes for dumped tables
+-- Indici per le tabelle scaricate
 --
 
 --
--- Indexes for table `Attivita`
+-- Indici per le tabelle `Attivita`
 --
 ALTER TABLE `Attivita`
   ADD PRIMARY KEY (`ID_Attivita`);
 
 --
--- Indexes for table `Prenotazioni`
+-- Indici per le tabelle `Prenotazioni`
 --
 ALTER TABLE `Prenotazioni`
   ADD PRIMARY KEY (`ID_Prenotazione`),
@@ -98,45 +99,41 @@ ALTER TABLE `Prenotazioni`
   ADD KEY `ID_Utenti` (`ID_Utenti`);
 
 --
--- Indexes for table `Utenti`
+-- Indici per le tabelle `Utenti`
 --
 ALTER TABLE `Utenti`
   ADD PRIMARY KEY (`ID_Utente`),
   ADD UNIQUE KEY `Email` (`Email`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT per le tabelle scaricate
 --
 
 --
--- AUTO_INCREMENT for table `Attivita`
+-- AUTO_INCREMENT per la tabella `Attivita`
 --
 ALTER TABLE `Attivita`
   MODIFY `ID_Attivita` int(11) NOT NULL AUTO_INCREMENT;
-
 --
--- AUTO_INCREMENT for table `Prenotazioni`
+-- AUTO_INCREMENT per la tabella `Prenotazioni`
 --
 ALTER TABLE `Prenotazioni`
   MODIFY `ID_Prenotazione` int(11) NOT NULL AUTO_INCREMENT;
-
 --
--- AUTO_INCREMENT for table `Utenti`
+-- AUTO_INCREMENT per la tabella `Utenti`
 --
 ALTER TABLE `Utenti`
-  MODIFY `ID_Utente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ID_Utente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
+-- Limiti per le tabelle scaricate
+--
 
 --
--- Constraints for dumped tables
---
-
---
--- Constraints for table `Prenotazioni`
+-- Limiti per la tabella `Prenotazioni`
 --
 ALTER TABLE `Prenotazioni`
   ADD CONSTRAINT `Prenotazioni_ibfk_1` FOREIGN KEY (`ID_Attivita`) REFERENCES `Attivita` (`ID_Attivita`),
   ADD CONSTRAINT `Prenotazioni_ibfk_2` FOREIGN KEY (`ID_Utenti`) REFERENCES `Utenti` (`ID_Utente`);
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

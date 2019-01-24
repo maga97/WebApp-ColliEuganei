@@ -47,9 +47,10 @@ if(isset($_GET['logout']) && $_GET['logout'] == "true"){
           $size = sizeof($list);
           if($size == 0) {
             echo "<h3>Nessuna gita da visualizzare</h3>" . PHP_EOL;
-          } 
+          }
           $x = 0;
-          foreach ($list as $node): 
+          <div class="gallery">
+          foreach ($list as $node):
             if($x == 3):
               echo "<div class=\"gallery\">" . PHP_EOL;
             endif;
@@ -79,6 +80,7 @@ if(isset($_GET['logout']) && $_GET['logout'] == "true"){
           $x++;
         }
         endforeach; ?>
+      </div>
       </div>
       <?php echo include_once("../footer.php"); ?>
     </div>
