@@ -1,5 +1,10 @@
 <?php
+(require_once "../DBConnection.php") or die("Impossibile connettersi al database");
 if (session_status() == PHP_SESSION_NONE) { session_start(); }
+
+$dbConnection = new database();
+$dbConnection->Connect();
+
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
@@ -47,6 +52,30 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
     <ul class="breadcrumb">
       <li><a href="gite.php">Gite</a></li>
     </ul>
+    <div id="container">
+    <div id="content">
+      <?php $attivita=$dbConnection->get_attivita();
+        foreach ($attivita as $row) {
+          echo '<h2> '.$row['Nome'].' </h2>
+          <div class="attivita">
+              <p class="attivita">
+                '.$row['Descrizione'].'
+              </p>
+              <span class="attivita">
+                &#8364; '.$row['Prezzo'].' (a testa)
+              </span>
+              <div class="attivita-login">
+                EFFETTUA IL <a href=login.php>LOGIN</a> OPPURE <a href=../Registrazione.php> REGISTRATI </a> PER POTER PRENOTARE
+              </div>
+          </div>';
+        }
+      ?>
+
+    </div>
     <?php include_once('../footer.php')?>
+
+</div>
+
+
   </body>
 </html>

@@ -54,7 +54,6 @@ html, body {
   display: table-cell;
 }
 
-
 .header-title h1, .header-title h2 {
   padding: 1%;
   padding-top: 0.5%;
@@ -481,3 +480,35 @@ ul.dropdown-content li a {
 .tg .tg-hd3d{background-color:#fffe65;border-color:#9b9b9b;text-align:center}
 .tg .tg-bqpl{background-color:#67c748;border-color:#9b9b9b;text-align:center;vertical-align:top}
 .tg .tg-ue2u{background-color:#68cbd0;border-color:#9b9b9b;text-align:center}
+
+  div.attivita {
+    border-left: .3em solid #008BC6;
+    margin-top: .3em;
+    line-height: 1.2;
+    padding-left: .8em;
+    text-align: justify;
+  }
+
+  span.attivita {
+    font-size: 1.2em;
+    font-weight:bolder;
+  }
+
+  .attivita-login{
+    border-bottom: .1em solid red;
+    margin-top: .6em;
+    margin-left: .5em;
+    padding-left: .5em;
+    margin-right: 3em;
+    padding-bottom: .3em;
+  }
+  .corpo-attivita{
+
+  }
+  div.attivita img{
+    float:left;
+    max-width:100%;
+    margin-left: .2em;
+    margin-right: .4em;
+    margin-bottom: .2em;
+  }

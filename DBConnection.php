@@ -2,7 +2,7 @@
 class database {
 	private $host = "localhost";
 	private $user = "root";
-	private $passwd = "root";
+	private $passwd = "";
 	private $db = "ColliDigitali";
 	private $pdo;
 	private $bConnected = false;
@@ -29,6 +29,13 @@ class database {
 		$query = $this->pdo->prepare('SELECT * FROM Utenti WHERE Email = ?');
 		$query->execute(array($email));
 		return $query->fetch() ? true : false;
+	}
+
+	public function get_attivita(){
+		$query = $this->pdo->prepare('SELECT * FROM Attivita');
+		$query->execute();
+		$ris=$query->fetchAll();
+		return $ris;
 	}
 
 	public function insert_user($nome, $cognome, $email, $password, $indirizzo, $citta, $civico, $cap) {
