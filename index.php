@@ -25,7 +25,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 		</div>
 		<div id="menuprincipale-bar">
 			<ul id="menuprincipale">
-				<li><a href="index.php" class="active">Home</a></li>
+				<li><a href="index.php" class="active" tabindex="1">Home</a></li>
 				<li class="dropdown"><a>Luoghi</a>
 					<ul class="dropdown-content">
 						<li><a href="pages/luoghi/chiesette.php">Sette Chiesette</a></li>
@@ -36,12 +36,12 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 						<li><a href="pages/luoghi/pelagio.php">Castello San Pelagio</a></li>
 					</ul>
 				</li>
-				<li><a href="pages/gite.php">Gite</a></li>
+				<li><a href="pages/gite.php" tabindex="2">Gite</a></li>
 				<?php if(isset($_SESSION['username'])): ?>
 					<li><a href="pages/view-account.php">Account</a></li>
 				<?php else: ?>
-					<li><a href="pages/login.php">Accedi</a></li>
-					<li><a href="Registrazione.php">Registrati</a></li>
+					<li><a href="pages/login.php" tabindex="3">Accedi</a></li>
+					<li><a href="Registrazione.php" tabindex="4">Registrati</a></li>
 				<?php endif; ?>
 				<li class="icon">
 					<a href="javascript:void(0);" onclick="menuMobile()">&#9776;</a>
@@ -67,7 +67,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 							<dd>Scopri la geografia del territorio e come si &egrave; formato.</dd>
 						</dl>
 						<div>
-							<button type="button" class="find-more" onclick="clx('geografia')" >Scopri di più</button>
+							<button type="button" class="find-more" onclick="clx('geografia')">Scopri di più</button>
 						</div>
 					</div>
 					<div class="galleryframe">
@@ -126,6 +126,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 					<h3>Origine dei colli</h3>
 					<div class="float-right" id="geotab">
 						<table class="tg">
+							<caption> Periodo di origine delle rocce </caption>
 							<tr>
 								<th class="tg-jp7n">Periodo</th>
 								<th class="tg-jp7n">Rocce</th>

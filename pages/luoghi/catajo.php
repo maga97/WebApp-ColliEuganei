@@ -23,7 +23,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 		  </div>
 		  <div id="menuprincipale-bar">
 		    <ul id="menuprincipale">
-		      <li><a href="../../index.php">Home</a>
+		      <li><a href="../../index.php" tabindex="1">Home</a>
 		      </li>
 		      <li class="dropdown"><a class="active">Luoghi</a>
 		        <ul class="dropdown-content">
@@ -35,12 +35,12 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 		          <li><a href="pelagio.php">Castello San Pelagio</a></li>
 		        </ul>
 		      </li>
-		      <li><a href="../gite.php">Gite</a></li>
+		      <li><a href="../gite.php" tabindex="2">Gite</a></li>
 		      <?php if(isset($_SESSION['username'])): ?>
 		        <li><a href="view-account.php">Account</a></li>
 		      <?php else: ?>
-		        <li><a href="../login.php">Accedi</a></li>
-		        <li><a href="../../Registrazione.php">Registrati</a></li>
+		        <li><a href="../login.php" tabindex="3">Accedi</a></li>
+		        <li><a href="../../Registrazione.php" tabindex="4">Registrati</a></li>
 		      <?php endif; ?>
 		        <li class="icon">
 		          <a href="javascript:void(0);" onclick="menuMobile()">&#9776;</a>

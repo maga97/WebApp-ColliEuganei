@@ -56,7 +56,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
         <div class="section">
           <h2>L'Abbazia di Praglia</h2>
           <div class="float-right">
-            <img class="pic storiapic" src="../../assets/img/praglia1.jpg" alt=""/>
+            <img class="pic storiapic" src="../../assets/img/praglia1.jpg" alt="Abbazia di Praglia"/>
           </div>
           <p class="text">
             L'abbazia di Praglia è un monastero benedettino situato nel comune di Teolo, in prossimità di Abano Terme. Ospita attualmente la Biblioteca nazionale, che è un monumento nazionale italiano.
@@ -67,7 +67,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
           L'abbazia è divenuta un centro di eccellenza nel settore del restauro dei libri antichi.  </p>
           <h2>I chiostri</h2>
           <div class="float-right">
-            <img class="pic storiapic" src="../../assets/img/praglia2.jpg" alt=""/>
+            <img class="pic storiapic" src="../../assets/img/praglia2.jpg" alt="Il monastero dall'interno"/>
           </div>
           <p class="text">
             All'interno della cinta muraria il monastero si divide in quattro chiostri: doppio, detto anche della clausura, botanico, pensile e rustico (nel quale si depositavano gli attrezzi agricoli).

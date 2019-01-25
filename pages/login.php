@@ -42,8 +42,8 @@ if(isset($_POST['email']) && isset($_POST['password']))
       </div>
       <div id="menuprincipale-bar">
         <ul id="menuprincipale">
-          <li><a href="index.php">Home</a></li>
-          <li class="dropdown"><a>Luoghi</a></li>
+          <li><a href="index.php" tabindex="1">Home</a></li>
+          <li class="dropdown" ><a>Luoghi</a></li>
             <ul class="dropdown-content">
               <li><a href="luoghi/chiesette.php">Sette Chiesette</a></li>
               <li><a href="luoghi/catajo.php">Castello del Catajo</a></li>
@@ -53,12 +53,12 @@ if(isset($_POST['email']) && isset($_POST['password']))
               <li><a href="luoghi/pelagio.php">Castello San Pelagio</a></li>
             </ul>
           </li>
-          <li><a href="gite.php">Gite</a></li>
+          <li><a href="gite.php" tabindex="2">Gite</a></li>
           <?php if(isset($_SESSION['username'])): ?>
             <li><a href="view-account.php">Account</a></li>
           <?php else: ?>
-            <li><a href="login.php" class="active">Accedi</a></li>
-            <li><a href="../Registrazione.php">Registrati</a></li>
+            <li><a href="login.php" class="active" tabindex="3">Accedi</a></li>
+            <li><a href="../Registrazione.php" tabindex="4">Registrati</a></li>
           <?php endif; ?>
           <li class="icon">
             <a href="javascript:void(0);" onclick="menuMobile()">&#9776;</a>
@@ -82,13 +82,13 @@ if(isset($_POST['email']) && isset($_POST['password']))
               <h1>Accedi</h1>
               <div class="log-field-container">
                   <label for="username" class="log-label">Nome utente: </label>
-                  <input type="text" id="username" name="email" placeholder="Nome utente..">
+                  <input type="text" id="username" name="email" placeholder="Nome utente.." accesskey="n">
               </div>
               <div class="log-field-container">
                   <label for="password" lang="en" class="log-label">Password: </label>
-                  <input type="password" id="password" name="password" placeholder="Password..">
+                  <input type="password" id="password" name="password" placeholder="Password.." accesskey="p">
               </div>
-              <div class="button-holder"><input type="submit" value="Login" class="btn btn-primary" ></div>
+              <div class="button-holder"><input type="submit" value="Login" class="btn btn-primary"></div>
               <p id="not-registered">Non sei ancora registrato? <a href="../Registrazione.php" id="reg-sistema">Registrati</a></p>
             </form>
           </div>

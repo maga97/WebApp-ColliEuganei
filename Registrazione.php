@@ -28,7 +28,7 @@ if(session_status() == PHP_SESSION_NONE) {
       </div>
       <div id="menuprincipale-bar">
         <ul id="menuprincipale">
-          <li class="dropdown"><a href="index.php">Home</a></li>
+          <li class="dropdown"><a href="index.php" tabindex="1">Home</a></li>
           <li class="dropdown"><a>Luoghi</a>
             <ul class="dropdown-content">
               <li><a href="pages/luoghi/chiesette.php">7 Chiesette</a></li>
@@ -39,12 +39,12 @@ if(session_status() == PHP_SESSION_NONE) {
               <li><a href="pages/luoghi/pelagio.php">Castello San Pelagio</a></li>
             </ul>
           </li>
-          <li><a href="pages/gite.php">Gite</a></li>
+          <li><a href="pages/gite.php" tabindex="2">Gite</a></li>
           <?php if(isset($_SESSION['username'])): ?>
             <li><a href="pages/view-account.php">Account</a></li>
             <?php else: ?>
-              <li><a href="pages/login.php">Accedi</a></li>
-              <li><a href="Registrazione.php" class="active">Registrati</a></li>
+              <li><a href="pages/login.php" tabindex="3">Accedi</a></li>
+              <li><a href="Registrazione.php" class="active" tabindex="4">Registrati</a></li>
             <?php endif; ?>
             <li class="icon">
               <a href="javascript:void(0);" onclick="menuMobile()">&#9776;</a>
@@ -64,41 +64,41 @@ if(session_status() == PHP_SESSION_NONE) {
               <div id="sectionPersonalData">
                 <div class="log-field-container">
                   <label for="nome">Nome: (obbligatorio)</label>
-                  <input type="text" id="nome" name="nome" placeholder="Inserisci il tuo nome">
+                  <input type="text" id="nome" name="nome" placeholder="Inserisci il tuo nome" accesskey="n">
                 </div>
                 <div class="log-field-container">
                   <label for="cognome" class="log-label">Cognome: (obbligatorio)</label>
-                  <input type="text" id="cognome" name="cognome" placeholder="Inserisci il tuo cognome">
+                  <input type="text" id="cognome" name="cognome" placeholder="Inserisci il tuo cognome" accesskey="c">
                 </div>
                 <div class="log-field-container" id="indirizzo-container">
                   <label for="indirizzo" class="log-label">Indirizzo: </label>
-                  <input type="text" id="indirizzo" name="indirizzo" placeholder="Inserisci il tuo indirizzo di residenza">
+                  <input type="text" id="indirizzo" name="indirizzo" placeholder="Inserisci il tuo indirizzo di residenza" accesskey="i">
                 </div>
                 <div class="log-field-container" id="civico-container">
                   <label for="civico" class="log-label mobile-align">Civico: </label>
-                  <input type="number"  size="4" id="civico" name="civico" placeholder="N.">
+                  <input type="number"  size="4" id="civico" name="civico" placeholder="N." accesskey="c">
               </div>
                 <div class="log-field-container" id="citta-container">
                   <label for="citta" class="log-label">Citt&agrave;: </label>
-                  <input type="text" id="citta" name="citta" placeholder="Inserisci la tua città di residenza">
+                  <input type="text" id="citta" name="citta" placeholder="Inserisci la tua città di residenza" accesskey="c">
                 </div>
                 <div class="log-field-container" id="cap-container">
                   <label for="CAP" class="log-label mobile-align"> <abbr title="Codice di avviamento postale">CAP</abbr>: </label>
-                  <input type="number" size="4" id="CAP" name="CAP" placeholder="CAP...">
+                  <input type="number" size="4" id="CAP" name="CAP" placeholder="CAP..." accesskey="c">
                 </div>
               </div>
               <div id="sectionAccountData">
                 <div class="field-container">
                   <label for="email" lang="en" class="log-label">Email: (obbligatorio)</label>
-                  <input type="text" id="email" name="email" placeholder="Inserisci email">
+                  <input type="text" id="email" name="email" placeholder="Inserisci email" accesskey="e">
                 </div>
                 <div class="log-field-container">
                   <label for="password" class="log-label"><span lang="en">Password</span>: (obbligatorio)</label>
-                  <input type="password" id="password" name="password" placeholder="Password...">
+                  <input type="password" id="password" name="password" placeholder="Password..." accesskey="p">
                 </div>
                 <div class="log-field-container">
                   <label for="password2" class="log-label">Ripeti <span lang="en">password</span>: (obbligatorio)</label>
-                  <input type="password" id="password2" name="password2" placeholder="Ripeti password..">
+                  <input type="password" id="password2" name="password2" placeholder="Ripeti password.." accesskey="p">
                 </div>
               </div>
               <div class="button-holder">  <input type="submit" value="Registrati" name="registrazione" class="btn btn-primary"></div>

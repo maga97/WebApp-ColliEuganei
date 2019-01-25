@@ -55,7 +55,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 	      <div class="section">
 	        <h2>Il Castello di San Pelagio</h2>
 	        <div class="float-right">
-	          <img class="pic storiapic" src="../../assets/img/pelagio1.jpg" alt=""/>
+	          <img class="pic storiapic" src="../../assets/img/pelagio1.jpg" alt="Entrata del Castello di San Pelagio"/>
 	        </div>
 	        <p class="text">
 	          Il Castello di San Pelagio ha origini medievali (XIV sec.) come testimonia la torre costruita dai Da Carrara, Signori di Padova, nella prima metà del Trecento. L’imponente torre merlata, aveva una funzione di prima difesa nei numerosi attacchi da parte degli Scaligeri, Signori di Verona. Nella metà del Settecento la proprietà passa ai Conti Zaborra che ampliano notevolmente l’edificio, rimodernano l’ala padronale per adattarla a residenza signorile e realizzano le barchesse a uso agricolo. Da allora la famiglia dei Conti Zaborra abita il Castello ricco di memorie private e storiche.
@@ -76,7 +76,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 	       </p>
 	       <h2>Il museo</h2>
 	       <div class="float-right">
-	        <img class="pic storiapic" src="../../assets/img/pelagio2.jpg" alt=""/>
+	        <img class="pic storiapic" src="../../assets/img/pelagio2.jpg" alt="Museo del volo nel Castello di San Pelagio"/>
 	      </div>
 	      <p class="text">
 	       Dal 1970 la villa è stata oggetto di accurati restauri e ripensata nelle funzioni attuali principalmente come Museo del Volo. Inaugurato nel 1980, ripercorre l’intera storia del volo umano facendo perno sull’impresa dannunziana; a tale volo è dedicata la parte principale del Museo con le stanze abitate dal poeta nel periodo 1917-1919. Completano il percorso museale le sale dedicate a Leonardo, ai Montgolfier, ai Wright, a Ferrarin, a Lindbergh, a Nobile, a Balbo, a Forlanini, a Gagarin e Armstrong… tanti protagonisti per ripercorrere la più straordinaria impresa umana: il volo!
