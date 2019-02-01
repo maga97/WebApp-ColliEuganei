@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Creato il: Gen 24, 2019 alle 14:15
+-- Creato il: Feb 01, 2019 alle 17:30
 -- Versione del server: 10.1.37-MariaDB-0+deb9u1
 -- Versione PHP: 7.0.33-0+deb9u1
 
@@ -34,6 +34,14 @@ CREATE TABLE `Attivita` (
   `Data` date NOT NULL,
   `Ore` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
+
+--
+-- Dump dei dati per la tabella `Attivita`
+--
+
+INSERT INTO `Attivita` (`ID_Attivita`, `Descrizione`, `Nome`, `Prezzo`, `Data`, `Ore`) VALUES
+(1, 'aaaa', 'AAA', 10, '2019-02-20', '10:00:00'),
+(2, 'bbbb', 'BBB', 15, '2019-03-19', '16:00:00');
 
 -- --------------------------------------------------------
 
@@ -78,7 +86,8 @@ INSERT INTO `Utenti` (`ID_Utente`, `Nome`, `Cognome`, `Email`, `Password`, `Indi
 (2, 'Giulio', 'Piva', 'GiulioPiva@outlook.it', '$2y$10$Ys5pFBEiS2YFplU3vQBfku3wWzpHzghoV3G2mGHLSpGPiBAVIS8t6', 'via dei salici', 12, '', 12, 'utente'),
 (3, 'Giulio', 'Piva', 'tonyeffe@gmail.com', '$2y$10$kvT9FV3OisphW1jySmYCDuC3uHQIOySFK1GWoLXRXBDfE252j4KX2', 'via dei lupi', 0, '12', 35026, 'utente'),
 (4, 'Giannizzero', 'bottoni', 'cico@gmail.com', '$2y$10$KRnwPb7E8MpYR3OR5.2dmeGI8M6u8wsW.6Y6X8PtDkispQhLQeJQK', '', 0, '', 0, 'utente'),
-(5, 'AAA', 'BBB', 'a@a.a', '$2y$10$SoMy6Dyby3JGATdzvU293.cr..JjH31CLp9xc/GQgInv0layn5bCS', 'BBBB', 111, 'AAAA', 0, 'utente');
+(5, 'AAA', 'BBB', 'a@a.a', '$2y$10$SoMy6Dyby3JGATdzvU293.cr..JjH31CLp9xc/GQgInv0layn5bCS', 'BBBB', 111, 'AAAA', 0, 'utente'),
+(6, 'AAAA', 'AAAA', 'aaa@aaa.it', '$2y$10$fO9pidwSwaovVRSdSigNMuFK8VK8biWXKsoQH/CwcMrWgmVBs20I2', '', 0, '', 0, 'utente');
 
 --
 -- Indici per le tabelle scaricate
@@ -113,7 +122,7 @@ ALTER TABLE `Utenti`
 -- AUTO_INCREMENT per la tabella `Attivita`
 --
 ALTER TABLE `Attivita`
-  MODIFY `ID_Attivita` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_Attivita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT per la tabella `Prenotazioni`
 --
@@ -123,7 +132,7 @@ ALTER TABLE `Prenotazioni`
 -- AUTO_INCREMENT per la tabella `Utenti`
 --
 ALTER TABLE `Utenti`
-  MODIFY `ID_Utente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ID_Utente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- Limiti per le tabelle scaricate
 --
