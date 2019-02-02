@@ -40,7 +40,7 @@ $db->connect();
         </ul>
       </div>
       <div id="content">
-        <form action="add-trip-script.php" id="add-trip">
+        <form action="add-trip-script.php" id="add-trip" method="POST">
           <fieldset>
           <div class="formrow">
             <legend>Aggiunta nuova gita</legend>
@@ -56,7 +56,7 @@ $db->connect();
           <?php $today = getdate();
           $today = $today["year"] . "-" . $today["mon"] . "-" . $today["mday"];
           ?>
-          <input type="date" name="data" required="required" min="<?php echo $today; ?>" />
+          <input type="date" name="data" required min="<?php echo $today; ?>" />
           </div>
           <div class="formrow">
             <label for="ora">Ora</label>
@@ -64,7 +64,7 @@ $db->connect();
           </div>
           <div class="formrow">
             <label for="prezzo">Prezzo</label>
-            <input type="number" min="0" name="prezzo" required />
+            <input type="number" min="0" name="prezzo" step=".10" required />
           </div>
           <input type="submit" value="Inserisci" name="confermainserimento">
           <input type="reset" value="Cancella dati" name="cancelladati">
