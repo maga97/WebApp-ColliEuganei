@@ -1,4 +1,4 @@
-<?php (require_once "../DBConnection.php") or die("Impossibile connettersi al database");
+<?php (require_once "DataBase/DBConnection.php") or die("Impossibile connettersi al database");
 
 if(session_status() == PHP_SESSION_NONE) {
  session_start();
@@ -23,8 +23,8 @@ if(isset($_POST['email']) && isset($_POST['password']))
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" type="text/css" href="../assets/css/style.css" media="all">
-    <link rel="stylesheet" type="text/css" href="../assets/css/form.css" media="all">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" media="all">
+    <link rel="stylesheet" type="text/css" href="assets/css/form.css" media="all">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="../script.js"></script>
@@ -58,7 +58,7 @@ if(isset($_POST['email']) && isset($_POST['password']))
             <li><a href="view-account.php">Account</a></li>
           <?php else: ?>
             <li><a href="login.php" class="active" tabindex="3">Accedi</a></li>
-            <li><a href="../Registrazione.php" tabindex="4">Registrati</a></li>
+            <li><a href="Registrazione.php" tabindex="4">Registrati</a></li>
           <?php endif; ?>
           <li class="icon">
             <a href="javascript:void(0);" onclick="menuMobile()">&#9776;</a>

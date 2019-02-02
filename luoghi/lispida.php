@@ -5,10 +5,10 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<link rel="stylesheet" type="text/css" href="../../assets/css/style.css">
+		<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<script src="../../script.js"></script>
+		<script src="../script.js"></script>
 		<title>Il Castello di Lispida</title>
 	</head>
 	<body>
@@ -24,7 +24,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 		</div>
 		<div id="menuprincipale-bar">
 			<ul id="menuprincipale">
-				<li class="dropdown"><a href="../../index.php">Home</a></li>
+				<li class="dropdown"><a href="../index.php">Home</a></li>
 				<li class="dropdown"><a class="active">Luoghi</a>
 					<ul class="dropdown-content">
 						<li><a href="chiesette.php">7 Chiesette</a></li>
@@ -40,7 +40,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 					<li><a href="view-account.php">Account</a></li>
 				<?php else: ?>
 					<li><a href="../login.php">Accedi</a></li>
-					<li><a href="../../Registrazione.php">Registrati</a></li>
+					<li><a href="../Registrazione.php">Registrati</a></li>
 				<?php endif; ?>
 				<li class="icon">
 					<a href="javascript:void(0);" onclick="menuMobile()">&#9776;</a>
@@ -55,7 +55,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 				<div class="section">
 					<h2>Il Castello di Lispida</h2>
 					<div class="float-right">
-						<img class="pic storiapic" src="../../assets/img/lispida1.jpg" alt="Castello di Lispida dall'alto"/>
+						<img class="pic storiapic" src="../assets/img/lispida1.jpg" alt="Castello di Lispida dall'alto"/>
 					</div>
 					<p class="text">
 					Il castello di Lispida, situato nei pressi di Monselice, nel cuore del Parco Regionale dei Colli Euganei,
@@ -71,7 +71,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 					</p>
 					<h2>Descrizione</h2>
 					<div class="float-right">
-						<img class="pic storiapic" src="../../assets/img/lispida2.jpg" alt="Giardino del Castello di Lispida"/>
+						<img class="pic storiapic" src="../assets/img/lispida2.jpg" alt="Giardino del Castello di Lispida"/>
 					</div>
 					<p class="text">
 					Custodita nel cuore del Parco Naturale dei Colli Euganei, la Tenuta di Lispida ricomprende un lago termale con sorgenti calde e si estende per 90 ettari fra boschi, vigneti e uliveti.
@@ -83,7 +83,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 					Il monastero di Lispida, sorto in posizione isolata e tranquilla, fu sempre un luogo ricco di fascino, oltre che un ambiente ideale per la coltivazione della vite e dell’olivo. Nel 1485 il Doge della Repubblica di Venezia Giovanni Mocenigo confisca ai monaci la proprietà : “affinché le vigne, gli olivi e i campi non siano abbandonati, siano seminati e coltivati nella giusta stagione, e la pietra del colle ci venga mandata con regolarità”. La storia monastica di Lispida si interrompe nel 1792.
 					</p>
 					<div class="float-right">
-						<img class="pic storiapic" src="../../assets/img/lispida3.jpg" alt="Vigneti del Castello di Lispida"/>
+						<img class="pic storiapic" src="../assets/img/lispida3.jpg" alt="Vigneti del Castello di Lispida"/>
 					</div>
 					<p class="text">
 					La proprietà viene in seguito acquistata dai conti Corinaldi, i quali sui resti del vetusto monastero edificano le costruzioni che oggi vediamo, le dotano di cantine imponenti e iniziano la produzione di vini rinomati in tutta Europa. Durante la prima guerra mondiale il Castello di Lispida ospita il quartier generale del re Vittorio Emanuele III°.  Alla fine degli anni ‘50 , con l’impianto di nuovi vigneti e con programmi di vinificazione legati ai tradizionali processi produttivi preindustriali, l’azienda riprende la sua vocazione vitivinicola.
@@ -91,7 +91,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 				</div>
 			</div>
 			<a id="scroll-top-btn" href="#top">Torna in alto</a>
-			<?php include_once('../../footer.php'); ?>
+			<?php include_once('../footer.php'); ?>
 		</div>
 	</body>
 </html>

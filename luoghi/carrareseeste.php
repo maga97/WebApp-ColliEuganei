@@ -5,7 +5,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<link rel="stylesheet" type="text/css" href="../../assets/css/style.css">
+		<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="../../script.js"></script>
@@ -23,7 +23,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 			</div>
 			<div id="menuprincipale-bar">
 				<ul id="menuprincipale">
-					<li><a href="../../index.php" tabindex="1">Home</a></li>
+					<li><a href="../index.php" tabindex="1">Home</a></li>
 					<li class="dropdown"><a class="active">Luoghi</a>
 						<ul class="dropdown-content">
 							<li><a href="chiesette.php">7 Chiesette</a></li>
@@ -39,7 +39,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 						<li><a href="view-account.php">Account</a></li>
 					<?php else: ?>
 						<li><a href="../login.php" tabindex="3">Accedi</a></li>
-						<li><a href="../../Registrazione.php" tabindex="4">Registrati</a></li>
+						<li><a href="../Registrazione.php" tabindex="4">Registrati</a></li>
 					<?php endif; ?>
 					<li class="icon">
 						<a href="javascript:void(0);" onclick="menuMobile()">&#9776;</a>
@@ -54,7 +54,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 				<div class="section">
 					<h2>Il Castello Carrarese di Este</h2>
 					<div class="float-right">
-						<img class="pic storiapic" src="../../assets/img/este1.jpg" alt="Castello Carrarese di Este"/>
+						<img class="pic storiapic" src="../assets/img/este1.jpg" alt="Castello Carrarese di Este"/>
 					</div>
 					<p class="text">
 					Il castello di Este è stato costruito circa nel 1340, per iniziativa del signore di Padova Ubertino da Carrara.
@@ -67,7 +67,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 					</p>
 					<h2>L'evoluzione del Castello</h2>
 					<div class="float-right">
-						<img class="pic storiapic" src="../../assets/img/este2.jpg" alt="Parco del Castello Carrarese di Este"/>
+						<img class="pic storiapic" src="../assets/img/este2.jpg" alt="Parco del Castello Carrarese di Este"/>
 					</div>
 					<p class="text">
 					Il Castello fu utilizzato a fini difensivi fino alla spontanea dedizione della città alla Repubblica di Venezia, quando l’intera struttura fu venduta ai Mocenigo: furono questi ultimi a far costruire verso la fine del Cinquecento il Palazzetto,
@@ -81,7 +81,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 				</div>
 			</div>
 			<a id="scroll-top-btn" href="#top">Torna in alto</a>
-			<?php include_once('../../footer.php'); ?>
+			<?php include_once('../footer.php'); ?>
 		</div>
 	</body>
 </html>

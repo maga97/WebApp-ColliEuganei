@@ -81,8 +81,8 @@ $db->connect();
 			<label for="prezzo">Prezzo</label>
 			<input type="number" min="0" name="prezzo" step=".10" required />
 		</div>
-		  <div class="button-holder"> 
-			  <input type="reset" value="Cancella dati" name="cancelladati" class="btn btn-tripCancel"> 
+		  <div class="button-holder">
+			  <input type="reset" value="Cancella dati" name="cancelladati" class="btn btn-tripCancel">
 			  <input type="submit" value="Inserisci" name="aggiungiGita" class="btn btn-tripInsert">
 		  </div>
 		  </fieldset>

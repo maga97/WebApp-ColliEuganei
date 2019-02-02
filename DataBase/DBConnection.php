@@ -2,7 +2,7 @@
 class database {
 	private $host = "localhost";
 	private $user = "root";
-	private $passwd = "root";
+	private $passwd = "";
 	private $db = "ColliDigitali";
 	private $pdo;
 	private $bConnected = false;

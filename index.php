@@ -28,17 +28,18 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 				<li><a href="index.php" class="active" tabindex="1">Home</a></li>
 				<li class="dropdown"><a>Luoghi</a>
 					<ul class="dropdown-content">
-						<li><a href="pages/luoghi/chiesette.php">Sette Chiesette</a></li>
-						<li><a href="pages/luoghi/catajo.php">Castello del Catajo</a></li>
-						<li><a href="pages/luoghi/praglia.php">Abbazia di Praglia</a></li>
-						<li><a href="pages/luoghi/carrareseeste.php">Castello carrarese di Este</a></li>
-						<li><a href="pages/luoghi/lispida.php">Castello di Lispida</a></li>
-						<li><a href="pages/luoghi/pelagio.php">Castello San Pelagio</a></li>
+						<li><a href="luoghi/chiesette.php">Sette Chiesette</a></li>
+						<li><a href="luoghi/catajo.php">Castello del Catajo</a></li>
+						<li><a href="luoghi/praglia.php">Abbazia di Praglia</a></li>
+						<li><a href="luoghi/carrareseeste.php">Castello carrarese di Este</a></li>
+						<li><a href="luoghi/lispida.php">Castello di Lispida</a></li>
+						<li><a href="luoghi/pelagio.php">Castello San Pelagio</a></li>
 					</ul>
 				</li>
-				<li><a href="pages/gite.php" tabindex="2">Gite</a></li>
+				<li><a href="gite.php" tabindex="2">Gite</a></li>
 				<?php if(isset($_SESSION['username'])): ?>
-					<li><a href="pages/view-account.php">Account</a></li>
+					<li><a href="logout.php">Logout</a></li>
+					<li><a href="view-account.php">Account</a></li>
 				<?php else: ?>
 					<li><a href="pages/login.php" tabindex="3">Accedi</a></li>
 					<li><a href="Registrazione.php" tabindex="4">Registrati</a></li>

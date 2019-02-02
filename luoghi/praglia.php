@@ -5,10 +5,10 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<link rel="stylesheet" type="text/css" href="../../assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="../../script.js"></script>
+	<script src="../script.js"></script>
 	<title>L'Abbazia di Praglia</title>
 </head>
 <body>
@@ -24,7 +24,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
     </div>
     <div id="menuprincipale-bar">
       <ul id="menuprincipale">
-        <li><a href="../../index.php">Home</a>
+        <li><a href="../index.php">Home</a>
         </li>
         <li class="dropdown"><a class="active">Luoghi</a>
           <ul class="dropdown-content">
@@ -41,7 +41,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
           <li><a href="view-account.php">Account</a></li>
           <?php else: ?>
             <li><a href="../login.php">Accedi</a></li>
-            <li><a href="../../Registrazione.php">Registrati</a></li>
+            <li><a href="../Registrazione.php">Registrati</a></li>
           <?php endif; ?>
           <li class="icon">
             <a href="javascript:void(0);" onclick="menuMobile()">&#9776;</a>
@@ -56,7 +56,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
         <div class="section">
           <h2>L'Abbazia di Praglia</h2>
           <div class="float-right">
-            <img class="pic storiapic" src="../../assets/img/praglia1.jpg" alt="Abbazia di Praglia"/>
+            <img class="pic storiapic" src="../assets/img/praglia1.jpg" alt="Abbazia di Praglia"/>
           </div>
           <p class="text">
             L'abbazia di Praglia è un monastero benedettino situato nel comune di Teolo, in prossimità di Abano Terme. Ospita attualmente la Biblioteca nazionale, che è un monumento nazionale italiano.
@@ -67,7 +67,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
           L'abbazia è divenuta un centro di eccellenza nel settore del restauro dei libri antichi.  </p>
           <h2>I chiostri</h2>
           <div class="float-right">
-            <img class="pic storiapic" src="../../assets/img/praglia2.jpg" alt="Il monastero dall'interno"/>
+            <img class="pic storiapic" src="../assets/img/praglia2.jpg" alt="Il monastero dall'interno"/>
           </div>
           <p class="text">
             All'interno della cinta muraria il monastero si divide in quattro chiostri: doppio, detto anche della clausura, botanico, pensile e rustico (nel quale si depositavano gli attrezzi agricoli).
@@ -84,7 +84,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
         </div>
       </div>
       <a id="scroll-top-btn" href="#top">Torna in alto</a>
-      <?php include_once('../../footer.php')?>
+      <?php include_once('../footer.php')?>
     </div>
   </body>
 </html>
