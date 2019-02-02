@@ -54,7 +54,7 @@ if($isSetNome && $isSetEmail && $isSetCognome && $isSetPassword && $isSetPasswor
     {
           $_SESSION["username"]=$_POST["Email"];
           $_SESSION["login"]=true;
-          header("Location: pages/gite.php");
+          header("Location: pages/view-account.php");
     }
     else {
       echo "fallito  vecio";

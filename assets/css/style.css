@@ -493,7 +493,7 @@ ul.dropdown-content li a {
     font-size: 1.2em;
     font-weight:bolder;
   }
-  
+
   .attivita-login{
     border-bottom: .1em solid red;
     margin-top: .6em;
@@ -505,7 +505,6 @@ ul.dropdown-content li a {
   .corpo-attivita{
 
   }
-  
   div.attivita img{
     float:left;
     max-width:100%;
