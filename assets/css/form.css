@@ -67,6 +67,7 @@
     text-align: center;
 }
 
+
 .btn {
     outline: none;
     margin: 0;
@@ -82,11 +83,28 @@
     text-transform: uppercase;
 }
 .btn.btn-primary {
-  margin:auto;
-  color: white;
-  background-color: #0067c8;
-  border-bottom-color: #0000c6;
+	margin:auto;
+	color: white;
+	background-color: #0067c8;
+	border-bottom-color: #0000c6;
 }
+
+.btn.btn-tripInsert {
+	float: left;
+	margin:auto;
+	color: white;
+	background-color: #008000;
+	border-bottom-color: #008000;
+}
+
+.btn.btn-tripCancel {
+	float: right;
+	margin:auto;
+	color: white;
+	background-color: #FF0000;
+	border-bottom-color: #FF0000;
+}
+
 
 div.alert {
     margin: 0;
@@ -124,7 +142,9 @@ fieldset {
   border: 0.1875em solid #f1f1f1;
 }
 legend {
+  text-align: center;
   font-size: 1.5em;
+  margin-bottom: 1em;
 }
 
 input[type=text], input[type=password], input[type=number] {

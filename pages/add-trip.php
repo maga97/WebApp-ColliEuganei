@@ -31,44 +31,61 @@ $db->connect();
       </div>
       <div id="menuprincipale-bar">
         <ul id="menuprincipale">
-          <li><a href="index.php">Home</a></li>
-          <li><a href="geografia.php">Geografia</a></li>
-          <li><a href="clima.php">Clima</a></li>
-          <li><a href="storia.php">Storia</a></li>
-          <li><a href="">Impostazioni</a></li>
-          <li><a href="view-account.php?logout=true" xml:lang="en">Logout</a></li>
-        </ul>
-      </div>
-      <div id="content">
-        <form action="add-trip-script.php" id="add-trip" method="POST">
-          <fieldset>
-          <div class="formrow">
-            <legend>Aggiunta nuova gita</legend>
-            <label for="nomegita">Titolo gita</label>
-            <input type="text" name="nomegita" id="idnomegita" placeholder="Gita al castello del Catajo" required="required" />
-          </div>
-          <div class="formrow">
-            <label for="descrizione">Descrizione</label>
-            <textarea name="descrizione" required="required"></textarea>
-          </div>
-          <div class="formrow">
-          <label for="data">Data</label>
-          <?php $today = getdate();
-          $today = $today["year"] . "-" . $today["mon"] . "-" . $today["mday"];
-          ?>
-          <input type="date" name="data" required min="<?php echo $today; ?>" />
-          </div>
-          <div class="formrow">
-            <label for="ora">Ora</label>
-            <input type="time" name="ora" required />
-          </div>
-          <div class="formrow">
-            <label for="prezzo">Prezzo</label>
-            <input type="number" min="0" name="prezzo" step=".10" required />
-          </div>
-          <input type="submit" value="Inserisci" name="confermainserimento">
-          <input type="reset" value="Cancella dati" name="cancelladati">
-          </fieldset>
+          <li class="dropdown"><a href="index.php" tabindex="1">Home</a></li>
+          <li class="dropdown"><a>Luoghi</a>
+            <ul class="dropdown-content">
+              <li><a href="pages/luoghi/chiesette.php">7 Chiesette</a></li>
+              <li><a href="pages/luoghi/catajo.php">Castello del Catajo</a></li>
+              <li><a href="pages/luoghi/praglia.php">Abbazia di Praglia</a></li>
+              <li><a href="pages/luoghi/carrareseeste.php">Castello carrarese di Este</a></li>
+              <li><a href="pages/luoghi/lispida.php">Castello di Lispida</a></li>
+              <li><a href="pages/luoghi/pelagio.php">Castello San Pelagio</a></li>
+            </ul>
+          </li>
+          <li><a href="pages/gite.php" tabindex="2">Gite</a></li>
+          <?php if(isset($_SESSION['username'])): ?>
+            <li><a href="pages/view-account.php">Account</a></li>
+            <li><a href="" class="active">Impostazioni</a></li>
+			<li><a href="view-account.php?logout=true" xml:lang="en">Logout</a></li>
+            <?php else: ?>
+              <li><a href="pages/login.php" tabindex="3">Accedi</a></li>
+              <li><a href="Registrazione.php" tabindex="4">Registrati</a></li>
+            <?php endif; ?>
+            <li class="icon">
+              <a href="javascript:void(0);" onclick="menuMobile()">&#9776;</a>
+            </li>
+          </ul>
+        </div>
+      <div class="form">
+		<div class="log-field-container">
+			<legend>Aggiungi nuova gita</legend>
+			<label for="nomegita">Titolo</label>
+			<input type="text" name="nomegita" id="idnomegita" placeholder="Gita al castello del Catajo" required="required" />
+		</div>
+		<div class="log-field-container">
+			<label for="descrizione">Descrizione</label>
+			<textarea rows="5" cols="40" name="descrizione" required="required"></textarea>
+		</div>
+		<div class="log-field-container">
+		  <label for="data">Data</label>
+		  <?php $today = getdate();
+		  $today = $today["year"] . "-" . $today["mon"] . "-" . $today["mday"];
+		  ?>
+		  <input type="date" name="data" required="required" min="<?php echo $today; ?>" />
+		</div>
+		<div class="log-field-container">
+			<label for="ora">Ora</label>
+			<input type="time" name="ora" required />
+		</div>
+		<div class="log-field-container">
+			<label for="prezzo">Prezzo</label>
+			<input type="number" min="0" name="prezzo" step=".10" required />
+		</div>
+		  <div class="button-holder"> 
+			  <input type="reset" value="Cancella dati" name="cancelladati" class="btn btn-tripCancel"> 
+			  <input type="submit" value="Inserisci" name="aggiungiGita" class="btn btn-tripInsert">
+		  </div>
+		  </fieldset>
         </form>
       </div>
       <?php echo include_once("../footer.php"); ?>

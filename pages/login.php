@@ -12,7 +12,7 @@ if(isset($_POST['email']) && isset($_POST['password']))
 	if($dbConnection->user_login( $_POST['email'], $_POST['password'])) {
 		$_SESSION['login'] = true;
 		$_SESSION['username'] = $_POST['email'];
-    header("Location: view-account.php");
+    header("Location: gite.php");
   }
   else{
     $wronglogin = true;
@@ -81,7 +81,7 @@ if(isset($_POST['email']) && isset($_POST['password']))
               ?>
               <h1>Accedi</h1>
               <div class="log-field-container">
-                  <label for="username" class="log-label">Nome utente: </label>
+                  <label for="username" class="log-label">Email: </label>
                   <input type="text" id="username" name="email" placeholder="Nome utente.." accesskey="n">
               </div>
               <div class="log-field-container">
