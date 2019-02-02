@@ -41,7 +41,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 					<li><a href="logout.php">Logout</a></li>
 					<li><a href="view-account.php">Account</a></li>
 				<?php else: ?>
-					<li><a href="pages/login.php" tabindex="3">Accedi</a></li>
+					<li><a href="login.php" tabindex="3">Accedi</a></li>
 					<li><a href="Registrazione.php" tabindex="4">Registrati</a></li>
 				<?php endif; ?>
 				<li class="icon">

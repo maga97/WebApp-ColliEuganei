@@ -3,6 +3,11 @@
 if(session_status() == PHP_SESSION_NONE) {
  session_start();
 }
+if(isset($_SESSION["username"])) //se apro la pagina del login ma ho già effettuato l'accesso mi porta al pannello utente
+  header("Location: view-account.php");
+if(!isset($_SESSION['current_page']))// per fare in modo di tornare alla pagina da cui ho schiacciato Login
+  $_SESSION['current_page'] = $_SERVER['HTTP_REFERER'];
+
 $dbConnection = new database();
 $dbConnection->Connect();
 $wronglogin = false;
@@ -12,7 +17,8 @@ if(isset($_POST['email']) && isset($_POST['password']))
 	if($dbConnection->user_login( $_POST['email'], $_POST['password'])) {
 		$_SESSION['login'] = true;
 		$_SESSION['username'] = $_POST['email'];
-    header("Location: gite.php");
+    unset_session($_SESSION['current_page']);
+    header("Location:".$_SESSION['current_page']);
   }
   else{
     $wronglogin = true;
