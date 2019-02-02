@@ -50,13 +50,11 @@ $db->connect();
           </ul>
         </div>
       <div id="content">
-        <h3>Benvenuto <?php echo $_SESSION['username']; ?></h3>
-        <p>Pronto per prenotare la tua prossima gita?</p>
         <?php
           $list = $db->GetListaAttivita();
           $size = sizeof($list);
           if($size == 0) {
-            echo "<h3>Nessuna gita da visualizzare</h3>" . PHP_EOL;
+            echo "<h3>Momentaneamente non sono disponibili gite</h3>" . PHP_EOL;
           }
           foreach ($list as $node):
           $data = explode("-", $node['Data']);
@@ -76,7 +74,11 @@ $db->connect();
             <dt>Ore</dt>
             <dd><?php echo $node['Ore']?></dd>
           </dl>
+          <?php if(isset($_SESSION['username'])):?>
           <span><a class="btn" href="#">Prenota la gita</a></span>
+        <?php else: ?>
+          <a href="../Registrazione.php">Registrati</a> oppure effettua il <a href="login.php">login</a> per poter prenotare
+        <?php endif ?>
         </div>
         </div>
         <?php

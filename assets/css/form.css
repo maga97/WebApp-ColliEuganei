@@ -114,16 +114,24 @@ div.alert {
     text-align: center;
     margin-bottom: 1em;
 }
+div.alertnojs{
+    margin: 0;
+    line-height: 1.2em;
+    padding: 0.5em 1em;
+    display: block;
+    text-align: center;
+    margin-bottom: 1em;
+}
 
 div.alert.errore.login{
   display: block;
 }
 
-div.alert.errore {
+div.alert.errore, div.alertnojs.errore{
     background: #ac1911;
 }
 
-.alert.errore {
+.alert.errore, .alert.errore{
     color:white;
     text-align: left;
     font-weight: bold;
@@ -134,6 +142,10 @@ div.alert.errore p{
     font-weight: bold;
 }
 
+div.alertnojs.errore p{
+    color: white;
+    font-weight: bold;
+}
 #reg-sistema{
     color: #0057A8;
 }

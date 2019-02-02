@@ -1,7 +1,9 @@
 <?php require_once __DIR__.DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR."DBConnection.php";
 if(session_status() == PHP_SESSION_NONE) {
  session_start();
-} ?>
+}
+$errore="";
+?>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
@@ -55,12 +57,44 @@ if(session_status() == PHP_SESSION_NONE) {
           <ul class="breadcrumb">
             <li><a href="Registrazione.php">Registrazione</a></li>
           </ul>
+          <?php if(isset($_SESSION["ErroreForm"]) && $_SESSION["ErroreForm"]){
+                  $errore="<div class='alertnojs errore' aria-live='assertive' role='alert' aria-atomic='true'><p class='intestazione-alert'>Errore:</p>";
+                  if(isset($_SESSION["ErroreCampiVuoti"]) && $_SESSION["ErroreCampiVuoti"])
+                    $errore.="<p>Alcuni campi obbligatori non sono stati inseriti</p>";
+                  else{
+                    if(isset($_SESSION["ErroreNome"]) && $_SESSION["ErroreNome"])
+                      $errore.="<p>Ricontrollare il nome</p>";
+                    if(isset($_SESSION["ErroreCognome"]) && $_SESSION["ErroreCognome"])
+                      $errore.="<p>Ricontrollare il cognome</p>";
+                    if(isset($_SESSION["ErroreEmail"]) && $_SESSION["ErroreEmail"])
+                      $errore.="<p>Inserire un email valida</p>";
+                    if(isset($_SESSION["ErrorePasswordDiverse"]) && $_SESSION["ErroreEmail"])
+                      $errore.="<p>Le password non combaciano</p>";
+                  }
+                  $errore.="</div>";
+                }
+                else if(isset($_SESSION["ErroreInserimento"]) && $_SESSION["ErroreInserimento"])
+                  $errore="
+                  <div class='alertnojs errore' aria-live='assertive' role='alert' aria-atomic='true'>
+                    <p class='intestazione-alert'>Abbiamo dei problemi interni.
+                      Ti preghiamo di riprovare più avanti.
+                    </p>
+                  </div>";
+
+
+          ?>
           <div class="form container_form" >
             <form action="RegistrazioneAction.php" method="POST" class="log-form" onsubmit="return validaFormUtente(true,$('.alert.errore'),$('form'))">
-              <!-- <div class="alert successo" aria-live="assertive" role="alert" aria-atomic="true">Registrazione effettuata con successo. Clicca <a href="login.php">qua</a> per andare al <span lang="en">login</span>.</div>
-              -->
+
               <h1>Crea <span lang="en">account</span></h1>
+              <?php if($errore!=""):
+                      echo $errore;
+                    else:
+              ?>
               <div class="alert errore" aria-live="assertive" role="alert" aria-atomic="true"><p class="intestazione-alert">Errore:</p></div>
+              <?php
+                    endif;
+              ?>
               <div id="sectionPersonalData">
                 <div class="log-field-container">
                   <label for="nome">Nome: (obbligatorio)</label>
@@ -104,8 +138,14 @@ if(session_status() == PHP_SESSION_NONE) {
               <div class="button-holder">  <input type="submit" value="Registrati" name="registrazione" class="btn btn-primary"></div>
             </form>
           </div>
+
         </div>
         <?php include_once('footer.php')?>
     </div>
   </body>
 </html>
+<?php
+$errore="";
+unset($_SESSION["ErroreForm"]);
+unset($_SESSION["ErroreInserimento"]);
+ ?>
