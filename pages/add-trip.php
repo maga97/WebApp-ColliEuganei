@@ -1,6 +1,11 @@
 <?php
 require_once "../DBConnection.php";
-if (session_status() == PHP_SESSION_NONE) { session_start(); }
+if (session_status() == PHP_SESSION_NONE) {
+   session_start();
+  }
+if(!isset($_SESSION['login']) || $_SESSION['login'] == false) {
+  header("Location: login.php");
+}
 $db = new database();
 $db->connect();
  ?>
@@ -57,6 +62,12 @@ $db->connect();
             <label for="ora">Ora</label>
             <input type="time" name="ora" required />
           </div>
+          <div class="formrow">
+            <label for="prezzo">Prezzo</label>
+            <input type="number" min="0" name="prezzo" required />
+          </div>
+          <input type="submit" value="Inserisci" name="confermainserimento">
+          <input type="reset" value="Cancella dati" name="cancelladati">
           </fieldset>
         </form>
       </div>
