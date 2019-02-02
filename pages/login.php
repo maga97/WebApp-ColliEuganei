@@ -11,7 +11,8 @@ $wrongloginmessage = "<span id=\"error\">Dati errati!</span>";
 if(isset($_POST['email']) && isset($_POST['password']))
 	if($dbConnection->user_login( $_POST['email'], $_POST['password'])) {
 		$_SESSION['login'] = true;
-		$_SESSION['username'] = $_POST['email'];
+    $_SESSION['username'] = $_POST['email'];
+    $_SESSION['role'] = isAmministratore($_POST['email']);
     header("Location: view-account.php");
   }
   else{

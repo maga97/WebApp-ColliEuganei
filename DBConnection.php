@@ -89,6 +89,13 @@ class database {
 		return $query->fetchAll(PDO::FETCH_ASSOC);
 	}
 
+	public function isAmministratore($email) {
+		$query = $this->pdo->prepare('SELECT Tipo FROM Utenti WHERE Email = ?');
+		$query->execute(array($email));
+		$Tipo=$query->fetch();
+		return ($Tipo[0] == "amministratore") ? true : false;
+	}
+
 	public function AggiornaPWDUtente($email, $new_pwd) {
 		$pwd_hashed = password_hash($new_pwd, PASSWORD_DEFAULT);
 		$query = $this->pdo->prepare('UPDATE Utenti SET Password = :pwd WHERE Email = :email');
