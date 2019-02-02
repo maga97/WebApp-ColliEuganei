@@ -2,7 +2,7 @@
 class database {
 	private $host = "localhost";
 	private $user = "root";
-	private $passwd = "";
+	private $passwd = "root";
 	private $db = "ColliDigitali";
 	private $pdo;
 	private $bConnected = false;
@@ -29,13 +29,6 @@ class database {
 		$query = $this->pdo->prepare('SELECT * FROM Utenti WHERE Email = ?');
 		$query->execute(array($email));
 		return $query->fetch() ? true : false;
-	}
-
-	public function get_attivita(){
-		$query = $this->pdo->prepare('SELECT * FROM Attivita');
-		$query->execute();
-		$ris=$query->fetchAll();
-		return $ris;
 	}
 
 	public function insert_user($nome, $cognome, $email, $password, $indirizzo, $citta, $civico, $cap) {
@@ -101,6 +94,17 @@ class database {
 		$query = $this->pdo->prepare('UPDATE Utenti SET Password = :pwd WHERE Email = :email');
 		$query->bindParam(':pwd', $pwd_hashed, PDO::PARAM_STR);
 		$query->bindParam(':email', $email, PDO::PARAM_STR, 256);
+		return $query->execute();
+	}
+
+	public function AggiungiGita($nomegita, $descrizione, $data, $ora, $prezzo) {
+		$query = $this->pdo->prepare('INSERT INTO Attivita (Nome, Descrizione, Data, Ore, Prezzo) VALUES (
+			"'. $nomegita .'", "' . $descrizione .'", "'. $data . '", "' . $ore . '", "' . $prezzo . '")');
+		/*$query->bindParam(':nome', $nomegita, PDO::PARAM_STR);
+		$query->bindParam(':desc', $descrizione, PDO::PARAM_STR, 512);
+		$query->bindParam(':data', $data, PDO::PARAM_STR);
+		$query->bindParam(':ore', $ore, PDO::PARAM_STR);
+		$query->bindParam(':prezzo', $prezzo, PDO::PARAM_STR);*/
 		return $query->execute();
 	}
 
