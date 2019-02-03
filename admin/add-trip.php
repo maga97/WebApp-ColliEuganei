@@ -1,5 +1,5 @@
 <?php
-require_once "../DBConnection.php";
+require_once "../DataBase/DBConnection.php";
 if (session_status() == PHP_SESSION_NONE) {
    session_start();
   }
@@ -17,7 +17,7 @@ $db->connect();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="../js/script.js"></script>
-    <title>Pannello Utente - Colli Digitali</title>
+    <title>Aggiungi gita - Colli Digitali</title>
   </head>
   <body>
     <div id="container">
@@ -32,20 +32,10 @@ $db->connect();
       <div id="menuprincipale-bar">
         <ul id="menuprincipale">
           <li class="dropdown"><a href="index.php" tabindex="1">Home</a></li>
-          <li class="dropdown"><a>Luoghi</a>
-            <ul class="dropdown-content">
-              <li><a href="pages/luoghi/chiesette.php">7 Chiesette</a></li>
-              <li><a href="pages/luoghi/catajo.php">Castello del Catajo</a></li>
-              <li><a href="pages/luoghi/praglia.php">Abbazia di Praglia</a></li>
-              <li><a href="pages/luoghi/carrareseeste.php">Castello carrarese di Este</a></li>
-              <li><a href="pages/luoghi/lispida.php">Castello di Lispida</a></li>
-              <li><a href="pages/luoghi/pelagio.php">Castello San Pelagio</a></li>
-            </ul>
-          </li>
-          <li><a href="pages/gite.php" tabindex="2">Gite</a></li>
+          <li><a href="pages/gite.php" class="active" tabindex="2">Aggiungi gita</a></li>
           <?php if(isset($_SESSION['username'])): ?>
             <li><a href="pages/view-account.php">Account</a></li>
-            <li><a href="" class="active">Impostazioni</a></li>
+            <li><a href="" >Impostazioni</a></li>
 			<li><a href="view-account.php?logout=true" xml:lang="en">Logout</a></li>
             <?php else: ?>
               <li><a href="pages/login.php" tabindex="3">Accedi</a></li>
@@ -56,7 +46,17 @@ $db->connect();
             </li>
           </ul>
         </div>
-      <div class="form">
+    <div id="content">
+    <div class="form">
+    <?php 
+      if($_GET["done"] == true) {
+        echo "<div class=\"alertnojs success\">Inserimento avvenuto correttamente</div>" . PHP_EOL;
+      }
+      if(isset($_GET["error"])) {
+        echo "<div class=\"alertnojs errore login\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\"><p>Errore: " . $_GET["error"] . "</p></div>" . PHP_EOL;
+      }
+    ?>
+    <form action="add-trip-script.php" name="form-add-trip" method="POST">
 		<div class="log-field-container">
 			<legend>Aggiungi nuova gita</legend>
 			<label for="nomegita">Titolo</label>
@@ -86,7 +86,8 @@ $db->connect();
 			  <input type="submit" value="Inserisci" name="aggiungiGita" class="btn btn-tripInsert">
 		  </div>
 		  </fieldset>
-        </form>
+    </form>
+    </div>
       </div>
       <?php echo include_once("../footer.php"); ?>
     </div>
