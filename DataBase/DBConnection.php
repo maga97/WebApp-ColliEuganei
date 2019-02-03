@@ -136,6 +136,11 @@ class database {
 		return $query->execute();
 	}
 
+	public function RimuoviGita($id) {
+		$query = $this->pdo->prepare('DELETE FROM Attivita WHERE ID_Attivita = "' . $id . '"');
+		return $query->execute();
+	}
+
 }
 
 

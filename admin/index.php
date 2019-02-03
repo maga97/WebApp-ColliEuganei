@@ -47,8 +47,12 @@ if(!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
 				<ul class="breadcrumb">
 					<li><a href="index.php">Amministrazione</a></li>
 				</ul>
-				
-				</div>
+				<div>
+				 <h3>Aggiunta di una nuova gita</h3>
+				 <p>Permette di inserire all'interno del sistema una nuova attivita o gita disponibile agli utenti.</p>
+				 <p>Per far ciò selezionare la voce del menu "Aggiunta gita".</p>
+				</div>				
+			</div>
 			</div>
 			<a id="scroll-top-btn" href="#top">Torna in alto</a>
 			<?php include_once('footer.php'); ?>

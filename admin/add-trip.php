@@ -3,9 +3,9 @@ require_once "../DataBase/DBConnection.php";
 if (session_status() == PHP_SESSION_NONE) {
    session_start();
   }
-if(!isset($_SESSION['login']) || $_SESSION['login'] == false) {
-  header("Location: login.php");
-}
+if(!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
+    header("Location: ../index.php");
+  }
 $db = new database();
 $db->connect();
  ?>
@@ -31,7 +31,7 @@ $db->connect();
       </div>
       <div id="menuprincipale-bar">
         <ul id="menuprincipale">
-          <li class="dropdown"><a href="index.php" tabindex="1">Home</a></li>
+          <li class="dropdown"><a href="index.php" tabindex="1">Amministrazione</a></li>
           <li><a href="pages/gite.php" class="active" tabindex="2">Aggiungi gita</a></li>
           <?php if(isset($_SESSION['username'])): ?>
             <li><a href="pages/view-account.php">Account</a></li>
@@ -47,6 +47,10 @@ $db->connect();
           </ul>
         </div>
     <div id="content">
+    <ul class="breadcrumb">
+					<li><a href="index.php">Amministrazione</a></li>
+          <li><a href="add-trip.php">Aggiunta gita</a></li>
+		</ul>
     <div class="form">
     <?php 
       if($_GET["done"] == true) {
