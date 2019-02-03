@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__.DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR."DBConnection.php";
+require_once "DataBase/DBConnection.php";
 if(session_status() == PHP_SESSION_NONE) {
  session_start();
 }
@@ -50,7 +50,7 @@ if($Email && $Nome && $Cognome && $Password && $Password2){
     { // provo ad inserire i dati nel db
       $_SESSION["username"]=$_POST["Email"];
       $_SESSION["login"]=true;
-      header("Location: pages/view-account.php");
+      header("Location: view-account.php");
       exit;
     }
     else {
