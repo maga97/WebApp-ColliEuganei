@@ -9,13 +9,14 @@ if(!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
         $db = new database();
         $db->connect();
         $esito = $db->RimuoviGita($_GET["id"]);
-        echo $esito;
-        // if(esito == 1) {
-        //     header("Location: remove-trip.php?done=true");
-        // }
-        // else {
-        //     header("Location: remove-trip.php?error=Cancellazione+non+riuscita");
-        // }
+        if($esito == true) {
+            echo "OK";
+            header("Location: remove-trip.php?done=true");
+        }
+        else {
+            echo "NO";
+            header("Location: remove-trip.php?error=Cancellazione+non+riuscita");
+        }
     else:
         header("Location: index.php");
     endif;
