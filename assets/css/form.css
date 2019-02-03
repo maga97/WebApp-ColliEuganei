@@ -82,6 +82,7 @@
     border-bottom: 0.2em solid #808080;
     text-transform: uppercase;
 }
+
 .btn.btn-primary {
 	margin:auto;
 	color: white;
@@ -104,7 +105,6 @@
 	background-color: #FF0000;
 	border-bottom-color: #FF0000;
 }
-
 
 div.alert {
     margin: 0;

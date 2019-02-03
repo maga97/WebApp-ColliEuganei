@@ -483,33 +483,40 @@ ul.dropdown-content li a {
 .tg .tg-ue2u{background-color:#68cbd0;border-color:#9b9b9b;text-align:center}
 
   div.attivita {
-    border-left: .3em solid #008BC6;
     margin-top: .3em;
     line-height: 1.2;
     padding-left: .8em;
     text-align: justify;
+    padding-bottom: 0.8em;
+    border-bottom: 0.1em solid black;
+    border-color: #000000;
+  }
+  
+  dl {
+	border: 0.1em solid transparent;
+  }
+  
+  dd {
+	margin-top: .3em;
+	margin-bottom: .3em;
   }
 
-  span.attivita {
+  .btnTrip {
     font-size: 1.2em;
-    font-weight:bolder;
+    border: 0.1em solid transparent;
+    color: black;
+  }
+  
+  .btnTrip > a {
+	color: red;
+	text-transform: uppercase;
+	text-decoration: underline;
+  }
+  
+  .btnTrip > a:hover {
+	color: red;
+	font-weight: bolder;
+	text-decoration: underline;
   }
 
-  .attivita-login{
-    border-bottom: .1em solid red;
-    margin-top: .6em;
-    margin-left: .5em;
-    padding-left: .5em;
-    margin-right: 3em;
-    padding-bottom: .3em;
-  }
-  .corpo-attivita{
 
-  }
-  div.attivita img{
-    float:left;
-    max-width:100%;
-    margin-left: .2em;
-    margin-right: .4em;
-    margin-bottom: .2em;
-  }

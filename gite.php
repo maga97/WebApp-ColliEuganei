@@ -50,6 +50,9 @@ $db->connect();
   				</ul>
   			</div>
       <div id="content">
+		<ul class="breadcrumb">
+			<li><a href="gite.php">Gite</a></li>
+		</ul>
         <?php
           $list = $db->GetListaAttivita();
           $size = sizeof($list);
@@ -61,11 +64,9 @@ $db->connect();
           $node['Ore'] = substr($node['Ore'], 0, 5);
           $node['Data'] = $data[2] . "/" . $data[1] . "/" . $data[0];
         ?>
-        <div style="float: left">
         <h2><?php echo $node['Nome']; ?></h2>
         <div class="attivita">
           <dl>
-
             <dt>Descrizione</dt>
             <dd><?php echo $node['Descrizione']; ?></dd>
             <dt>Prezzo</dt>
@@ -77,12 +78,11 @@ $db->connect();
           </dl>
           <?php if(isset($_SESSION['username'])):?>
           <?php
-            echo"<span><a class='btn' href='Prenotazione.php?id=".$node["ID_Attivita"]."'>Prenota la gita</a></span>";
+            echo"<span class='btnTrip'><a href='Prenotazione.php?id=".$node["ID_Attivita"]."'>Prenota la gita</a></span>";
           ?>
         <?php else: ?>
-        <span class="btn"><a href="Registrazione.php">Registrati</a> oppure effettua il <a href="login.php">login</a> per poter prenotare</btn>
+			<span class="btnTrip"><a href="Registrazione.php">Registrati</a> oppure effettua il <a href="login.php">login</a> per poter prenotare</span>
         <?php endif ?>
-        </div>
         </div>
         <?php
         endforeach; ?>
