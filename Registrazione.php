@@ -30,32 +30,6 @@ $errore="";
         </div>
       </div>
       <div id="menuprincipale-bar">
-<<<<<<< HEAD
-        <ul id="menuprincipale">
-          <li class="dropdown"><a href="index.php" tabindex="1">Home</a></li>
-			<li class="dropdown"><a>Luoghi</a>
-				<ul class="dropdown-content">
-					<li><a href="luoghi/chiesette.php">Sette Chiesette</a></li>
-					<li><a href="luoghi/catajo.php">Castello del Catajo</a></li>
-					<li><a href="luoghi/praglia.php">Abbazia di Praglia</a></li>
-					<li><a href="luoghi/carrareseeste.php">Castello carrarese di Este</a></li>
-					<li><a href="luoghi/lispida.php">Castello di Lispida</a></li>
-					<li><a href="luoghi/pelagio.php">Castello San Pelagio</a></li>
-				</ul>
-			</li>
-          <li><a href="gite.php" tabindex="2">Gite</a></li>
-          <?php if(isset($_SESSION['username'])): ?>
-            <li><a href="view-account.php">Account</a></li>
-            <?php else: ?>
-              <li><a href="login.php" tabindex="3">Accedi</a></li>
-              <li><a href="Registrazione.php" class="active" tabindex="4">Registrati</a></li>
-            <?php endif; ?>
-            <li class="icon">
-              <a href="javascript:void(0);" onclick="menuMobile()">&#9776;</a>
-            </li>
-          </ul>
-        </div>
-=======
   			<ul id="menuprincipale">
   				<li><a href="index.php" tabindex="1">Home</a></li>
   				<li class="dropdown"><a>Luoghi</a>
@@ -87,7 +61,6 @@ $errore="";
   				</li>
   				</ul>
   			</div>
->>>>>>> sistemato menu
         <div id="content" >
           <ul class="breadcrumb">
             <li><a href="Registrazione.php">Registrazione</a></li>
