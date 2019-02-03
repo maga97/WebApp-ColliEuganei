@@ -226,6 +226,10 @@ a:active {
 #menuprincipale-bar {
   background-color: #000;
 }
+
+ul#menuprincipale li.button-right {
+  float: right;
+}
 /* Remove margins and padding from the list, and add a black background color */
 ul#menuprincipale {
   list-style-type: none;
@@ -276,10 +280,6 @@ ul#menuprincipale li.icon {
   display: none;
 }
 
-ul#menuprincipale li:nth-last-child(-n+2) {
-  float: right;
-}
-
 /* When the screen is less than 600 pixels wide, hide all list items, except for the first one ("Home"). Show the list item that contains the link to open and close the topnav (li.icon) */
 
 .dropdown-content {
@@ -296,6 +296,8 @@ ul#menuprincipale li:nth-last-child(-n+2) {
   background-color: #555;
   color: white;
 }
+
+
 
 .dropdown:hover .dropdown-content {
   display: block;
@@ -491,11 +493,11 @@ ul.dropdown-content li a {
     border-bottom: 0.1em solid black;
     border-color: #000000;
   }
-  
+
   dl {
 	border: 0.1em solid transparent;
   }
-  
+
   dd {
 	margin-top: .3em;
 	margin-bottom: .3em;
@@ -506,17 +508,15 @@ ul.dropdown-content li a {
     border: 0.1em solid transparent;
     color: black;
   }
-  
+
   .btnTrip > a {
 	color: red;
 	text-transform: uppercase;
 	text-decoration: underline;
   }
-  
+
   .btnTrip > a:hover {
 	color: red;
 	font-weight: bolder;
 	text-decoration: underline;
   }
-
-

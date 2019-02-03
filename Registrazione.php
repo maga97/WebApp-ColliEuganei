@@ -16,7 +16,7 @@ $errore="";
     <script src="js/script.js"></script>
     <!-- <script src="js/registrazione.js"></script> -->
     <script src="js/global.js"></script>
-	
+
     <title>Registrazione - Colli Digitali</title>
   </head>
   <body>
@@ -30,6 +30,7 @@ $errore="";
         </div>
       </div>
       <div id="menuprincipale-bar">
+<<<<<<< HEAD
         <ul id="menuprincipale">
           <li class="dropdown"><a href="index.php" tabindex="1">Home</a></li>
 			<li class="dropdown"><a>Luoghi</a>
@@ -54,6 +55,39 @@ $errore="";
             </li>
           </ul>
         </div>
+=======
+  			<ul id="menuprincipale">
+  				<li><a href="index.php" tabindex="1">Home</a></li>
+  				<li class="dropdown"><a>Luoghi</a>
+  					<ul class="dropdown-content button-right">
+  						<li><a href="luoghi/chiesette.php">Sette Chiesette</a></li>
+  						<li><a href="luoghi/catajo.php">Castello del Catajo</a></li>
+  						<li><a href="luoghi/praglia.php">Abbazia di Praglia</a></li>
+  						<li><a href="luoghi/carrareseeste.php">Castello carrarese di Este</a></li>
+  						<li><a href="luoghi/lispida.php">Castello di Lispida</a></li>
+  						<li><a href="luoghi/pelagio.php">Castello San Pelagio</a></li>
+  					</ul>
+  				</li>
+  				<li><a href="gite.php" tabindex="2">Gite</a></li>
+  				<?php if(isset($_SESSION['username'])): ?>
+  					<li class="dropdown button-right"><a>Account</a>
+  						<ul class="dropdown-content">
+  						<li><a href="logout.php">Logout</a></li>
+  						<li><a href="view-account.php">Impostazioni</a></li>
+  						<li>Le mie gite</li>
+  						</ul>
+  					</li>
+
+  				<?php else: ?>
+  					<li class="button-right"><a href="login.php" tabindex="3">Accedi</a></li>
+  					<li class="button-right"><a class="active"href="Registrazione.php" tabindex="4">Registrati</a></li>
+  				<?php endif; ?>
+  				<li class="icon">
+  					<a href="#" id="mobile">&#9776;</a>
+  				</li>
+  				</ul>
+  			</div>
+>>>>>>> sistemato menu
         <div id="content" >
           <ul class="breadcrumb">
             <li><a href="Registrazione.php">Registrazione</a></li>
