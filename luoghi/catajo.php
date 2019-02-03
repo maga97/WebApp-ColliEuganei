@@ -8,8 +8,8 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 		<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<script src="../../script.js"></script>
-		<title>Il Castello del Catajo</title>
+		<script src="../js/script.js"></script>
+		<title>Il Castello del Catajo - Colli Euganei</title>
 	</head>
 	<body>
 	  <div id="container">

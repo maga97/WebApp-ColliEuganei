@@ -1,5 +1,5 @@
 function menuMobile() {
-	document.getElementsByClassName("topnav")[0].classList.toggle("responsive");
+	document.getElementById("menuprincipale").classList.toggle("responsive");
 }
 
 function clx(str, obj) {
@@ -11,6 +11,10 @@ function clx(str, obj) {
 
 $(document).ready(function() {
 	$("#scroll-top-btn").css("display", "none");
+	$("#mobile").click(function(e) {
+		e.preventDefault();
+		menuMobile();
+	});
 	$('.hide').css("display", "none");
 	$(window).scroll(function(){
 		if ($(window).width() > 600 && $(this).scrollTop() > 20) {

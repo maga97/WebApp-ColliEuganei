@@ -8,8 +8,8 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 		<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<script src="../script.js"></script>
-		<title>Il Castello di San Pelagio</title>
+		<script src="../js/script.js"></script>
+		<title>Il Castello di San Pelagio - Colli Euganei</title>
 	</head>
 	<body>
 	  <div id="container">
@@ -43,7 +43,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 	          <li><a href="../Registrazione.php">Registrati</a></li>
 	        <?php endif; ?>
 	        <li class="icon">
-	          <a href="javascript:void(0);" onclick="menuMobile()">&#9776;</a>
+	          <a href="#" id="mobile">&#9776;</a>
 	        </li>
 	      </ul>
 	    </div>

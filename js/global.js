@@ -1,7 +1,3 @@
-
-
-
-
 function notificaErrore(targetNode, testo, divAlert, formErr) {
     divAlert.append("<p>"+testo+"</p>");
     divAlert.show();

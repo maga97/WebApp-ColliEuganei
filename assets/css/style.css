@@ -358,6 +358,7 @@ ul.dropdown-content li a {
     float: none;
     display: block;
     text-align: left;
+    margin: 0 0 0 0;
   }
   #menuprincipale.responsive .dropdown {float: none;}
   #menuprincipale.responsive .dropdown-content {position: relative;}

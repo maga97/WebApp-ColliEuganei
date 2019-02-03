@@ -5,11 +5,11 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 <!DOCTYPE html>
 <html lang="it">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css" media="all" />
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="script.js"></script>
+	<script src="js/script.js" type="text/javascript"></script>
 	<title>Home - Colli Digitali</title>
 </head>
 <body>
@@ -45,7 +45,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 					<li><a href="Registrazione.php" tabindex="4">Registrati</a></li>
 				<?php endif; ?>
 				<li class="icon">
-					<a href="javascript:void(0);" onclick="menuMobile()">&#9776;</a>
+					<a href="#" id="mobile">&#9776;</a>
 				</li>
 				</ul>
 			</div>
