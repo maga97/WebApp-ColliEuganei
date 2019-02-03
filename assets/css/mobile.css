@@ -1,0 +1,82 @@
+@media screen and (max-width:600px) {
+
+  #storia {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .gallery {
+    display: block;
+  }
+
+  .galleryframe {
+    flex: none;
+    padding: 0.25em;
+  }
+
+  .place { margin-left: 0;}
+
+  #geotab {
+    display:none;
+  }
+
+  #menuprincipale a.icon {
+    float: right;
+    display: block;
+  }
+
+  #menuprincipale.responsive {position: relative;}
+  #menuprincipale.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  #menuprincipale.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+    margin: 0 0 0 0;
+  }
+  #menuprincipale.responsive .dropdown {float: none;}
+  #menuprincipale.responsive .dropdown-content {position: relative;}
+  #menuprincipale.responsive .dropdown .dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+
+}
+
+@media screen and (max-width:480px) {
+
+  ul#menuprincipale li:not(:first-child) {
+    display: none;
+  }
+  ul#menuprincipale li.icon {
+    float: right;
+    display: inline-block;
+    font-size: 0.9em;
+  }
+
+  ul#menuprincipale.responsive {
+    position: relative;
+  }
+
+  ul#menuprincipale.responsive li.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  ul#menuprincipale.responsive li {
+    float: none;
+    display: inline;
+  }
+  ul#menuprincipale.responsive li a {
+    display: block;
+    text-align: left;
+  }
+  #scroll-top-btn {
+    display: none;
+  }
+}
