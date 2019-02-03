@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.6deb4
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Creato il: Feb 01, 2019 alle 17:30
--- Versione del server: 10.1.37-MariaDB-0+deb9u1
--- Versione PHP: 7.0.33-0+deb9u1
+-- Host: localhost
+-- Generation Time: Feb 03, 2019 at 01:15 AM
+-- Server version: 10.1.37-MariaDB
+-- PHP Version: 7.3.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -23,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `Attivita`
+-- Table structure for table `Attivita`
 --
 
 CREATE TABLE `Attivita` (
@@ -36,7 +38,7 @@ CREATE TABLE `Attivita` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
 
 --
--- Dump dei dati per la tabella `Attivita`
+-- Dumping data for table `Attivita`
 --
 
 INSERT INTO `Attivita` (`ID_Attivita`, `Descrizione`, `Nome`, `Prezzo`, `Data`, `Ore`) VALUES
@@ -46,7 +48,7 @@ INSERT INTO `Attivita` (`ID_Attivita`, `Descrizione`, `Nome`, `Prezzo`, `Data`, 
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `Prenotazioni`
+-- Table structure for table `Prenotazioni`
 --
 
 CREATE TABLE `Prenotazioni` (
@@ -54,14 +56,21 @@ CREATE TABLE `Prenotazioni` (
   `ID_Attivita` int(11) NOT NULL,
   `ID_Utenti` int(11) NOT NULL,
   `Giorno` date NOT NULL,
-  `Pagamento` varchar(28) COLLATE latin1_bin NOT NULL,
-  `Valutazione` varchar(512) COLLATE latin1_bin NOT NULL
+  `Ore` int(11) NOT NULL,
+  `NumPostiPrenotati` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
+
+--
+-- Dumping data for table `Prenotazioni`
+--
+
+INSERT INTO `Prenotazioni` (`ID_Prenotazione`, `ID_Attivita`, `ID_Utenti`, `Giorno`, `Ore`, `NumPostiPrenotati`) VALUES
+(12, 1, 7, '2019-02-20', 10, 2);
 
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `Utenti`
+-- Table structure for table `Utenti`
 --
 
 CREATE TABLE `Utenti` (
@@ -78,7 +87,7 @@ CREATE TABLE `Utenti` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
 
 --
--- Dump dei dati per la tabella `Utenti`
+-- Dumping data for table `Utenti`
 --
 
 INSERT INTO `Utenti` (`ID_Utente`, `Nome`, `Cognome`, `Email`, `Password`, `Indirizzo`, `Civico`, `Citta`, `CAP`, `Tipo`) VALUES
@@ -87,20 +96,22 @@ INSERT INTO `Utenti` (`ID_Utente`, `Nome`, `Cognome`, `Email`, `Password`, `Indi
 (3, 'Giulio', 'Piva', 'tonyeffe@gmail.com', '$2y$10$kvT9FV3OisphW1jySmYCDuC3uHQIOySFK1GWoLXRXBDfE252j4KX2', 'via dei lupi', 0, '12', 35026, 'utente'),
 (4, 'Giannizzero', 'bottoni', 'cico@gmail.com', '$2y$10$KRnwPb7E8MpYR3OR5.2dmeGI8M6u8wsW.6Y6X8PtDkispQhLQeJQK', '', 0, '', 0, 'utente'),
 (5, 'AAA', 'BBB', 'a@a.a', '$2y$10$SoMy6Dyby3JGATdzvU293.cr..JjH31CLp9xc/GQgInv0layn5bCS', 'BBBB', 111, 'AAAA', 0, 'utente'),
-(6, 'AAAA', 'AAAA', 'aaa@aaa.it', '$2y$10$fO9pidwSwaovVRSdSigNMuFK8VK8biWXKsoQH/CwcMrWgmVBs20I2', '', 0, '', 0, 'utente');
+(6, 'AAAA', 'AAAA', 'aaa@aaa.it', '$2y$10$fO9pidwSwaovVRSdSigNMuFK8VK8biWXKsoQH/CwcMrWgmVBs20I2', '', 0, '', 0, 'utente'),
+(7, 'Giulio', 'Piv', 'gp@ciao.com', '$2y$10$BL1JmX5t7r3rSGrVU9v6UOSIMShwgx/1yk486zbc4iwJ4HD2EE46G', 'via dei lupi', 2, '12', 2, 'utente'),
+(8, 'c', 'c', 'cc@ciao.com', '$2y$10$CipRqECkEHCMQfWL/40XmeVBcKNteZodN7dFIdSmHtbBuTK2lKIi.', 'c', 1, 'c', 1, 'utente');
 
 --
--- Indici per le tabelle scaricate
+-- Indexes for dumped tables
 --
 
 --
--- Indici per le tabelle `Attivita`
+-- Indexes for table `Attivita`
 --
 ALTER TABLE `Attivita`
   ADD PRIMARY KEY (`ID_Attivita`);
 
 --
--- Indici per le tabelle `Prenotazioni`
+-- Indexes for table `Prenotazioni`
 --
 ALTER TABLE `Prenotazioni`
   ADD PRIMARY KEY (`ID_Prenotazione`),
@@ -108,41 +119,45 @@ ALTER TABLE `Prenotazioni`
   ADD KEY `ID_Utenti` (`ID_Utenti`);
 
 --
--- Indici per le tabelle `Utenti`
+-- Indexes for table `Utenti`
 --
 ALTER TABLE `Utenti`
   ADD PRIMARY KEY (`ID_Utente`),
   ADD UNIQUE KEY `Email` (`Email`);
 
 --
--- AUTO_INCREMENT per le tabelle scaricate
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT per la tabella `Attivita`
+-- AUTO_INCREMENT for table `Attivita`
 --
 ALTER TABLE `Attivita`
   MODIFY `ID_Attivita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
--- AUTO_INCREMENT per la tabella `Prenotazioni`
+-- AUTO_INCREMENT for table `Prenotazioni`
 --
 ALTER TABLE `Prenotazioni`
-  MODIFY `ID_Prenotazione` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_Prenotazione` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
 --
--- AUTO_INCREMENT per la tabella `Utenti`
+-- AUTO_INCREMENT for table `Utenti`
 --
 ALTER TABLE `Utenti`
-  MODIFY `ID_Utente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `ID_Utente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
 --
--- Limiti per le tabelle scaricate
+-- Constraints for dumped tables
 --
 
 --
--- Limiti per la tabella `Prenotazioni`
+-- Constraints for table `Prenotazioni`
 --
 ALTER TABLE `Prenotazioni`
   ADD CONSTRAINT `Prenotazioni_ibfk_1` FOREIGN KEY (`ID_Attivita`) REFERENCES `Attivita` (`ID_Attivita`),
   ADD CONSTRAINT `Prenotazioni_ibfk_2` FOREIGN KEY (`ID_Utenti`) REFERENCES `Utenti` (`ID_Utente`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

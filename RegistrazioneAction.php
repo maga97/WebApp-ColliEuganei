@@ -51,15 +51,18 @@ if($Email && $Nome && $Cognome && $Password && $Password2){
       $_SESSION["username"]=$_POST["Email"];
       $_SESSION["login"]=true;
       header("Location: pages/view-account.php");
+      exit;
     }
     else {
       $_SESSION["ErroreInserimento"]=true;
       header("Location: Registrazione.php");
+      exit;
     }
   }
   else {
     $_SESSION["ErroreForm"]=true;
     header("Location: Registrazione.php");
+    exit;
   }
 }
 else{

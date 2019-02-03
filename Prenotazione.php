@@ -1,30 +1,9 @@
 <?php (require_once "DataBase/DBConnection.php") or die("Impossibile connettersi al database");
-
 if(session_status() == PHP_SESSION_NONE) {
  session_start();
 }
-if(isset($_SESSION["username"])) //se apro la pagina del login ma ho già effettuato l'accesso mi porta al pannello utente
-  header("Location: view-account.php");
-if(!isset($_SESSION['current_page']))// per fare in modo di tornare alla pagina da cui ho schiacciato Login
-  $_SESSION['current_page'] = $_SERVER['HTTP_REFERER'];
-
 $dbConnection = new database();
 $dbConnection->Connect();
-$wronglogin = false;
-$wrongloginmessage = "<span id=\"error\">Dati errati!</span>";
-
-if(isset($_POST['email']) && isset($_POST['password']))
-	if($dbConnection->user_login( $_POST['email'], $_POST['password'])) {
-		$_SESSION['login'] = true;
-		$_SESSION['username'] = $_POST['email'];
-    header("Location:".$_SESSION['current_page']);
-    unset_session($_SESSION['current_page']);
-    exit;
-  }
-  else{
-    $wronglogin = true;
-  }
-  $dbConnection->Close();
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
@@ -34,7 +13,7 @@ if(isset($_POST['email']) && isset($_POST['password']))
     <link rel="stylesheet" type="text/css" href="assets/css/form.css" media="all">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="../script.js"></script>
+    <script src="script.js"></script>
     <title>Login - Colli Digitali</title>
   </head>
   <body>
@@ -60,11 +39,11 @@ if(isset($_POST['email']) && isset($_POST['password']))
               <li><a href="luoghi/pelagio.php">Castello San Pelagio</a></li>
             </ul>
           </li>
-          <li><a href="gite.php" tabindex="2">Gite</a></li>
+          <li><a href="gite.php" class="active" tabindex="2">Gite</a></li>
           <?php if(isset($_SESSION['username'])): ?>
             <li><a href="view-account.php">Account</a></li>
           <?php else: ?>
-            <li><a href="login.php" class="active" tabindex="3">Accedi</a></li>
+            <li><a href="login.php" tabindex="3">Accedi</a></li>
             <li><a href="Registrazione.php" tabindex="4">Registrati</a></li>
           <?php endif; ?>
           <li class="icon">
@@ -74,32 +53,43 @@ if(isset($_POST['email']) && isset($_POST['password']))
         </div>
         <div id="content">
           <ul class="breadcrumb">
-            <li><a href="index.php">Home</a></li>
-            <li>Login</li>
+            <li><a href="Gite.php">Gite</a></li>
+            <li>Prenotazione</li>
           </ul>
-          <div class="form">
-            <form method="POST" action="login.php" class="log-form">
-              <?php
-                if($wronglogin):
-                  echo '
-                  <div class="alert errore login" aria-live="assertive" role="alert" aria-atomic="true">Si è verificato un errore:
-                  <span lang="en">username</span> o <span lang="en">password</span> non corretti</div>';
-                endif;
-              ?>
-              <h1>Accedi</h1>
-              <div class="log-field-container">
-                  <label for="username" class="log-label">Email: </label>
-                  <input type="text" id="username" name="email" placeholder="Nome utente.." accesskey="n">
-              </div>
-              <div class="log-field-container">
-                  <label for="password" lang="en" class="log-label">Password: </label>
-                  <input type="password" id="password" name="password" placeholder="Password.." accesskey="p">
-              </div>
-              <div class="button-holder"><input type="submit" value="Login" class="btn btn-primary"></div>
-              <p id="not-registered">Non sei ancora registrato? <a href="../Registrazione.php" id="reg-sistema">Registrati</a></p>
-            </form>
-          </div>
+
+          <?php
+          if(!isset($_GET['id']) || $_GET['id']=="" ):
+            echo "Si è verificato un errore. Torna alla pagina delle gite per effettuare la prenotazione";
+          else:
+          $attivita=$dbConnection->GetAttivita($_GET["id"]);?>
+
+         <form action="PrenotazioneAction.php" method="POST">
+           <?php echo "<input type='hidden' name='ID' value='".$_GET["id"]."'>"; ?>
+
+           <div class="field-container">
+             <label for="Descrizione" lang="it" class="log-label">Descrizione dell'attività</label>
+             <?php echo"<input type='text' id='descrizione' name='descrizione' value='".$attivita["Descrizione"]."' accesskey='d' readonly>";?>
+           </div>
+           <div class="field-container">
+             <label for="Prezzo" lang="it" class="log-label">Prezzo(per persona)</label>
+             <?php echo"<input type='text' id='prezzo' name='prezzo' value='".$attivita["Prezzo"]." Euro' accesskey='p' readonly>";?>
+           </div>
+           <div class="field-container">
+             <label for="Data" lang="it" class="log-label">Data</label>
+             <?php echo"<input type='text' id='data' name='data' value='".$attivita["Data"]."' accesskey='d' readonly>";?>
+           </div>
+           <div class="field-container">
+             <label for="Ora" lang="it" class="log-label">Orario</label>
+             <?php echo"<input type='text' id='ora' name='ora' value='".$attivita["Ore"]."' accesskey='p' readonly>";?>
+           </div>
+           <div class="field-container">
+             <label for="Posti" lang="it" class="log-label">Scegli il numero di posti</label>
+             <input type='number' id='posti' name='posti'  accesskey='d' >
+           </div>
+          <div class="button-holder">  <input type="submit" value="Andiamo!" name="registrazione" class="btn btn-primary"></div>
+         </form>
       </div>
+    <?php endif;?>
       <?php include_once('footer.php')?>
     </div>
   </body>

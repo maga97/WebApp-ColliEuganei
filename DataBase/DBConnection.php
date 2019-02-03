@@ -52,6 +52,12 @@ class database {
 		$pass=$query->fetch();
 		return password_verify($password, $pass[0]);
 	}
+	public function GetIDUtente($email) {
+		$query = $this->pdo->prepare('SELECT ID_Utente FROM Utenti WHERE Email = ?');
+		$query->execute(array($email));
+		$ID=$query->fetch();
+		return $ID[0];
+	}
 	public function GetName($email) {
 		$query = $this->pdo->prepare('SELECT Nome FROM Utenti WHERE Email = ?');
 		$query->execute(array($email));
@@ -82,7 +88,11 @@ class database {
 		$Civico=$query->fetch();
 		return $Civico[0];
 	}
-
+	public function GetAttivita($id){
+		$query = $this->pdo->prepare('SELECT * FROM Attivita WHERE ID_Attivita = ?');
+		$query->execute(array($id));
+		return $query->fetch();
+	}
 	public function GetListaAttivita() {
 		$query = $this->pdo->prepare('SELECT * FROM Attivita');
 		$query->execute();
@@ -96,6 +106,17 @@ class database {
 		return ($Tipo[0] == "amministratore") ? true : false;
 	}
 
+	public function addPrenotazione($id_attivita,$id_Utente,$giorno,$ore,$posti){
+		$query = $this->pdo->prepare('INSERT INTO Prenotazioni (ID_Attivita, ID_Utenti, Giorno, Ore, NumPostiPrenotati) VALUES ("'.
+		$id_attivita.'", "'.
+		$id_Utente.'", "'.
+		$giorno.'", "'.
+		$ore.'", "'.
+		$posti.'")');
+		if($query->execute())
+			return true;
+		return false;
+	}
 	public function AggiornaPWDUtente($email, $new_pwd) {
 		$pwd_hashed = password_hash($new_pwd, PASSWORD_DEFAULT);
 		$query = $this->pdo->prepare('UPDATE Utenti SET Password = :pwd WHERE Email = :email');

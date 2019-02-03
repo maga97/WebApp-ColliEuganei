@@ -65,6 +65,7 @@ $db->connect();
         <h2><?php echo $node['Nome']; ?></h2>
         <div class="attivita">
           <dl>
+
             <dt>Descrizione</dt>
             <dd><?php echo $node['Descrizione']; ?></dd>
             <dt>Prezzo</dt>
@@ -75,7 +76,9 @@ $db->connect();
             <dd><?php echo $node['Ore']?></dd>
           </dl>
           <?php if(isset($_SESSION['username'])):?>
-          <span><a class="btn" href="#">Prenota la gita</a></span>
+          <?php
+            echo"<span><a class='btn' href='Prenotazione.php?id=".$node["ID_Attivita"]."'>Prenota la gita</a></span>";
+          ?>
         <?php else: ?>
         <span class="btn"><a href="Registrazione.php">Registrati</a> oppure effettua il <a href="login.php">login</a> per poter prenotare</btn>
         <?php endif ?>
