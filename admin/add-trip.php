@@ -83,11 +83,11 @@ $db->connect();
 		</div>
 		<div class="log-field-container">
 			<label for="prezzo">Prezzo</label>
-			<input type="number" min="0" name="prezzo" step=".10" required />
+			<input type="number" min="0" id="prezzoAddTrip" name="prezzo" step=".10" required="required" />
 		</div>
 		  <div class="button-holder">
-			  <input type="reset" value="Cancella dati" name="cancelladati" class="btn btn-tripCancel">
-			  <input type="submit" value="Inserisci" name="aggiungiGita" class="btn btn-tripInsert">
+			  <input type="reset" value="Cancella dati" name="cancelladati" class="btn btn-tripCancel" />
+			  <input type="submit" value="Inserisci" name="aggiungiGita" class="btn btn-tripInsert" />
 		  </div>
 		  </fieldset>
     </form>

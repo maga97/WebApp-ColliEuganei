@@ -93,9 +93,9 @@ $dbConnection->Connect();
            </div>
            <div class="field-container">
              <label for="Posti" lang="it" class="log-label">Scegli il numero di posti</label>
-             <input type='number' id='posti' name='posti'  accesskey='d' >
+             <input type='number' id='reservePosti' name='posti'  min="0" accesskey='d' />
            </div>
-          <div class="button-holder">  <input type="submit" value="Andiamo!" name="registrazione" class="btn btn-primary"></div>
+          <div class="button-holder">  <input type="submit" value="Andiamo!" name="registrazione" class="btn btn-primary" /></div>
          </form>
       </div>
     <?php endif;?>

@@ -52,7 +52,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 			<div id="content">
 				<ul class="breadcrumb">
 					<li>Luoghi</li>
-					<li><a href="lispida.php">Villa Lispida</a></li>
+					<li><a href="lispida.php">Castello di Lispida</a></li>
 				</ul>
 				<div class="section">
 					<h2>Il Castello di Lispida</h2>

@@ -373,3 +373,7 @@ ul.dropdown-content li a {
 	font-weight: bolder;
 	text-decoration: underline;
   }
+
+  #reservePosti {
+    width: 4em;
+  }

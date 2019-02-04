@@ -108,44 +108,44 @@ $errore="";
               <div id="sectionPersonalData">
                 <div class="log-field-container">
                   <label for="nome">Nome: (obbligatorio)</label>
-                  <input type="text" id="nome" name="nome" placeholder="Inserisci il tuo nome" accesskey="n">
+                  <input type="text" id="nome" name="nome" placeholder="Inserisci il tuo nome" accesskey="n" />
                 </div>
                 <div class="log-field-container">
                   <label for="cognome" class="log-label">Cognome: (obbligatorio)</label>
-                  <input type="text" id="cognome" name="cognome" placeholder="Inserisci il tuo cognome" accesskey="c">
+                  <input type="text" id="cognome" name="cognome" placeholder="Inserisci il tuo cognome" accesskey="c" />
                 </div>
                 <div class="log-field-container" id="indirizzo-container">
                   <label for="indirizzo" class="log-label">Indirizzo: </label>
-                  <input type="text" id="indirizzo" name="indirizzo" placeholder="Inserisci il tuo indirizzo di residenza" accesskey="i">
+                  <input type="text" id="indirizzo" name="indirizzo" placeholder="Inserisci il tuo indirizzo di residenza" accesskey="i" />
                 </div>
                 <div class="log-field-container" id="civico-container">
                   <label for="civico" class="log-label mobile-align">Civico: </label>
-                  <input type="number"  size="4" id="civico" name="civico" placeholder="N." accesskey="c">
+                  <input type="number" size="4" id="civico" name="civico" placeholder="N." accesskey="c" />
               </div>
                 <div class="log-field-container" id="citta-container">
                   <label for="citta" class="log-label">Citt&agrave;: </label>
-                  <input type="text" id="citta" name="citta" placeholder="Inserisci la tua città di residenza" accesskey="c">
+                  <input type="text" id="citta" name="citta" placeholder="Inserisci la tua città di residenza" accesskey="c" />
                 </div>
                 <div class="log-field-container" id="cap-container">
                   <label for="CAP" class="log-label mobile-align"> <abbr title="Codice di avviamento postale">CAP</abbr>: </label>
-                  <input type="number" size="4" id="CAP" name="CAP" placeholder="CAP..." accesskey="c">
+                  <input type="number" size="4" id="CAP" name="CAP" placeholder="CAP..." accesskey="c" />
                 </div>
               </div>
               <div id="sectionAccountData">
                 <div class="field-container">
                   <label for="email" lang="en" class="log-label">Email: (obbligatorio)</label>
-                  <input type="text" id="email" name="email" placeholder="Inserisci email" accesskey="e">
+                  <input type="text" id="email" name="email" placeholder="Inserisci email" accesskey="e" />
                 </div>
                 <div class="log-field-container">
                   <label for="password" class="log-label"><span lang="en">Password</span>: (obbligatorio)</label>
-                  <input type="password" id="password" name="password" placeholder="Password..." accesskey="p">
+                  <input type="password" id="password" name="password" placeholder="Password..." accesskey="p" />
                 </div>
                 <div class="log-field-container">
                   <label for="password2" class="log-label">Ripeti <span lang="en">password</span>: (obbligatorio)</label>
-                  <input type="password" id="password2" name="password2" placeholder="Ripeti password.." accesskey="p">
+                  <input type="password" id="password2" name="password2" placeholder="Ripeti password.." accesskey="p" />
                 </div>
               </div>
-              <div class="button-holder">  <input type="submit" value="Registrati" name="registrazione" class="btn btn-primary"></div>
+              <div class="button-holder">  <input type="submit" value="Registrati" name="registrazione" class="btn btn-primary" /></div>
             </form>
           </div>
 
