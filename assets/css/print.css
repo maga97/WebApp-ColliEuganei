@@ -24,7 +24,7 @@
     page-break-after: avoid;
   }
 
-  #menuprincipale-bar, #footer, #scroll-top-btn, .find-more, .breadcrumb, .galleryframe, {
+  #menuprincipale-bar, #footer, #scroll-top-btn, .find-more, .breadcrumb, .galleryframe {
     display: none;
   }
 
