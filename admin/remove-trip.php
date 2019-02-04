@@ -77,7 +77,7 @@ $db->connect();
         <?php
         endforeach; ?>
       </div>
-      <?php echo include_once("footer.php"); ?>
+      <?php echo include_once("../footer.php"); ?>
     </div>
   </body>
 </html>

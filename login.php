@@ -3,8 +3,10 @@
 if(session_status() == PHP_SESSION_NONE) {
  session_start();
 }
-if(isset($_SESSION["username"])) //se apro la pagina del login ma ho già effettuato l'accesso mi porta al pannello utente
+if(isset($_SESSION["username"])){ //se apro la pagina del login ma ho già effettuato l'accesso mi porta al pannello utente
   header("Location: view-account.php");
+  exit;
+}
 if(!isset($_SESSION['current_page']))// per fare in modo di tornare alla pagina da cui ho schiacciato Login
   $_SESSION['current_page'] = $_SERVER['HTTP_REFERER'];
 

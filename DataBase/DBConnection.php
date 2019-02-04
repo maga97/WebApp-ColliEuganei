@@ -137,7 +137,7 @@ class database {
 	}
 
 	public function RimuoviGita($id) {
-		$query = $this->pdo->prepare("DELETE FROM `Attivita` WHERE `ID_Attivita` = $id");
+		$query = $this->pdo->prepare('DELETE FROM Attivita WHERE ID_Attivita ="'.$id.'"');
 		return $query->execute();
 	}
 
