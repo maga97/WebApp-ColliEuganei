@@ -3,15 +3,15 @@
   body{
    font: 10pt Georgia, "Times New Roman", Times, serif;
    line-height: 1.3;
-   color:#666;
+   color: #666;
    margin-right: 0.5cm;
    margin-left: 0.5cm;
  }
 
- .content {
-  width: 100%;
-  margin: 0;
-  float: none;
+  .content {
+    width: 100%;
+    margin: 0;
+    float: none;
   }
 
   h1 {
@@ -24,8 +24,12 @@
     page-break-after: avoid;
   }
 
-  #menuprincipale-bar, #footer, #scroll-top-btn, .find-more, .breadcrumb, .galleryframe{
+  #menuprincipale-bar, #footer, #scroll-top-btn, .find-more, .breadcrumb, .galleryframe, {
     display: none;
+  }
+
+  a:link, a:visited {
+  	color: #000;
   }
 
   .text {
@@ -34,14 +38,15 @@
     widows: 3;
   }
 
-.gridcontainer {
-  display: grid;
-  grid-template-columns: auto auto auto;
-}
-.griditem {
-  color: red;
-  text-align: center;
-}
+  .gridcontainer {
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
+  .griditem {
+    color: red;
+    text-align: center;
+  }
+
   #content > #clima-text > div:nth-of-type(2){
     page-break-before: always;
   }

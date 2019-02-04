@@ -7,10 +7,10 @@ $db->connect();
 <html lang="it">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css" media="all">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="assets/css/print.css" media="all">
     <link rel="stylesheet" type="text/css" href="assets/css/mobile.css" media="all">
-    <link rel="stylesheet" type="text/css" href="assets/css/form.css" media="all">
+    <link rel="stylesheet" type="text/css" href="assets/css/form.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/script.js"></script>
@@ -28,7 +28,7 @@ $db->connect();
       </div>
       <div id="menuprincipale-bar">
         <ul id="menuprincipale">
-          <li><a href="index.php"  tabindex="1">Home</a></li>
+          <li><a href="index.php" tabindex="1">Home</a></li>
           <li class="dropdown"><a>Luoghi</a>
             <ul class="dropdown-content button-right">
               <li><a href="luoghi/chiesette.php">Sette Chiesette</a></li>
@@ -43,9 +43,9 @@ $db->connect();
           <?php if(isset($_SESSION['username'])): ?>
             <li class="dropdown button-right"><a>Account</a>
               <ul class="dropdown-content">
-              <li><a href="logout.php">Logout</a></li>
-              <li><a href="view-account.php">Impostazioni</a></li>
-              <li>Le mie gite</li>
+                <li><a href="logout.php">Logout</a></li>
+                <li><a href="view-account.php">Impostazioni</a></li>
+                <li>Le mie gite</li>
               </ul>
             </li>
 
@@ -56,12 +56,12 @@ $db->connect();
           <li class="icon">
             <a href="#" id="mobile">&#9776;</a>
           </li>
-          </ul>
-        </div>
+        </ul>
+      </div>
       <div id="content">
-		<ul class="breadcrumb">
-			<li><a href="gite.php">Gite</a></li>
-		</ul>
+    		<ul class="breadcrumb">
+    			<li><a href="gite.php">Gite</a></li>
+    		</ul>
         <?php
           $list = $db->GetListaAttivita();
           $size = sizeof($list);
@@ -90,13 +90,13 @@ $db->connect();
             echo"<span class='btnTrip'><a href='Prenotazione.php?id=".$node["ID_Attivita"]."'>Prenota la gita</a></span>";
           ?>
         <?php else: ?>
-			<span class="btnTrip"><a href="Registrazione.php">Registrati</a> oppure effettua il <a href="login.php">login</a> per poter prenotare</span>
+			    <span class="btnTrip"><a href="Registrazione.php">Registrati</a> oppure effettua il <a href="login.php">login</a> per poter prenotare</span>
         <?php endif ?>
         </div>
         <?php
         endforeach; ?>
       </div>
-      <?php echo include_once("footer.php"); ?>
+      <?php include_once("footer.php"); ?>
     </div>
   </body>
 </html>
