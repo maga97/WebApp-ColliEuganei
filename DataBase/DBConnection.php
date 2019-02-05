@@ -137,14 +137,22 @@ class database {
 	}
 
 	public function AggiungiGita($nomegita, $descrizione, $data, $ora, $prezzo) {
-		$query = $this->pdo->prepare('INSERT INTO Attivita (Nome, Descrizione, Data, Ore, Prezzo) VALUES (
-			"'. $nomegita .'", "' . $descrizione .'", "'. $data . '", "' . $ore . '", "' . $prezzo . '")');
+		$sql = "INSERT INTO `Attivita` (`ID_Attivita`, `Descrizione`, `Nome`, `Prezzo`, `Data`, `Ore`) 
+		VALUES (NULL, ?, ?, ?, ?, ?)";
+		$query = $this->pdo->prepare($sql);
 		/*$query->bindParam(':nome', $nomegita, PDO::PARAM_STR);
 		$query->bindParam(':desc', $descrizione, PDO::PARAM_STR, 512);
 		$query->bindParam(':data', $data, PDO::PARAM_STR);
 		$query->bindParam(':ore', $ore, PDO::PARAM_STR);
 		$query->bindParam(':prezzo', $prezzo, PDO::PARAM_STR);*/
-		return $query->execute();
+		return $query->execute(array($descrizione, $nomegita, $prezzo, $data, $ora . ":00"));
+	}
+
+	public function ModificaGita($id, $nomegita, $descrizione, $data, $ora, $prezzo) {
+		$sql = "UPDATE Attivita SET Nome = ?, Descrizione = ?, Data = ?, Ore = ?, Prezzo = ?
+		WHERE ID_Attivita = ?";
+		$query = $this->pdo->prepare($sql);
+		return $query->execute(array($nomegita, $descrizione, $data, $ora, $prezzo, $id));
 	}
 
 	public function RimuoviGita($id) {
@@ -152,6 +160,11 @@ class database {
 		return $query->execute();
 	}
 
+	public function GetGita($id) {
+		 $query = $this->pdo->prepare("SELECT * FROM Attivita WHERE ID_Attivita = ?");
+		 $query->execute(array($id));
+		 return $query->fetchAll(PDO::FETCH_ASSOC);
+	}
 }
 
 

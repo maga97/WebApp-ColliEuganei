@@ -3,10 +3,10 @@ require_once "../DataBase/DBConnection.php";
 if (session_status() == PHP_SESSION_NONE) {
    session_start();
   }
-if(!isset($_SESSION['login']) || $_SESSION['login'] == false || $_SESSION['admin'] != 1) {
+if(!isset($_SESSION['login']) || $_SESSION['login'] == false || $_SESSION['admin'] != 1)  {
     header("Location: ../login.php");
   }
-//add-trip-script.php
+$id = $_POST["id"];
 $nomegita = $_POST["nomegita"];
 $descrizione = $_POST["descrizione"];
 $data = date('Y-m-d', strtotime(str_replace('-', '/', $_POST["data"])));
@@ -24,9 +24,9 @@ if(empty($prezzo))
     header("Location: add-trip.php?error=Prezzo+gita+non+definito");
 $db = new database();
 $db->connect();
-$esito = $db->AggiungiGita($nomegita, $descrizione, $data, $ora, $prezzo);
+$esito = $db->ModificaGita($id, $nomegita, $descrizione, $data, $ora, $prezzo);
 if($esito)
-    header("Location: add-trip.php?done=true"); 
+    header("Location: select-trip-modify.php?done=true"); 
 else
-    header("Location: add-trip.php?error=Inserimento+fallito");
+    header("Location: select-trip-modify.php?error=Modifica+fallita");
 ?>
