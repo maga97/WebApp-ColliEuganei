@@ -45,6 +45,11 @@ class database {
 					return true;
 				return false;
 	}
+	public function update_user($nome,$cognome,$email,$indirizzo,$citta,$civico,$CAP,$oldemail){
+		$update= $this->pdo->prepare('UPDATE Utenti SET Nome=?, Cognome=?, Email=?, Indirizzo=?, Citta=?, Civico=?, CAP=? WHERE Email="'.$oldemail.'"');
+		return $update->execute(array($nome,$cognome,$email,$indirizzo,$citta,$civico,$CAP));
+
+	}
 
 	public function user_login($email, $password) {
 		$query = $this->pdo->prepare('SELECT Password FROM Utenti WHERE Email = ?');
@@ -87,6 +92,12 @@ class database {
 		$query->execute(array($email));
 		$Civico=$query->fetch();
 		return $Civico[0];
+	}
+	public function GetCity($email){
+		$query = $this->pdo->prepare('SELECT Citta FROM Utenti WHERE Email = ?');
+		$query->execute(array($email));
+		$Citta=$query->fetch();
+		return $Citta[0];
 	}
 	public function GetAttivita($id){
 		$query = $this->pdo->prepare('SELECT * FROM Attivita WHERE ID_Attivita = ?');

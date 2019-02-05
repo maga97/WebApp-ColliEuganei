@@ -7,6 +7,7 @@
 }
 
 .form {
+  line-height: normal;
   width: 21.875em;
   margin: 4% auto auto auto;
   padding: 2em;
@@ -19,6 +20,17 @@
 .container_form {
   width: 43.75em;
   margin-bottom: 3.75em;
+}
+
+.input-container{
+    margin-left:27%;
+    width: 70%;
+}
+
+.disabilita:disabled {
+  color: #706f6e;
+    border:0;
+    border-bottom: 2px solid transparent;
 }
 
 #sectionPersonalData {
@@ -167,7 +179,7 @@ legend {
 input[type="text"],
 input[type="password"],
 input[type="number"],
-input[type="date"], 
+input[type="date"],
 input[type="time"],
 textarea {
   width: 100%;
@@ -207,4 +219,42 @@ input.error {
   background-color: red;
   font-weight: bold;
   border-radius: 0.5em;
+}
+
+.titolo-form {
+    width:100%;
+}
+
+#mod-pwd-form label {
+	margin-top: 0;
+  width: 25%;
+  float:left;
+  text-align: right;
+}
+
+#btn-wrapper {
+    float:right;
+    margin-top: 1em;
+}
+
+#modifica {
+    color:#F3F3F3;
+    background-color: #16BFFF;
+    border:2px solid #1C1C1C;
+    padding: 0.2em 0.5em;
+    cursor:pointer;
+}
+
+.tabcontent {
+    padding: 6px 12px;
+    border-top: none;
+}
+
+#dati-utente label, .imp-label{
+    float:left;
+    margin-top: 0.5em;
+    font-weight: bold;
+    width: 25%;
+    padding-bottom: 0;
+    text-align: right;
 }

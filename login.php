@@ -13,7 +13,6 @@ if(!isset($_SESSION['current_page']))// per fare in modo di tornare alla pagina 
 $dbConnection = new database();
 $dbConnection->Connect();
 $wronglogin = false;
-$wrongloginmessage = "<span id=\"error\">Dati errati!</span>";
 
 if(isset($_POST['email']) && isset($_POST['password']))
 	if($dbConnection->user_login( $_POST['email'], $_POST['password'])) {

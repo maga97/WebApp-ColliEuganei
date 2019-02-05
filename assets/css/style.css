@@ -377,3 +377,15 @@ ul.dropdown-content li a {
   #reservePosti {
     width: 4em;
   }
+
+  .tabcontent {
+    display: block;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+  }
+
+  .container_form{
+    width: 700px;
+    margin-bottom:60px;
+  }
