@@ -13,18 +13,16 @@ function validaCampo($campo) {
 $db = new database();
 $db->connect();
 if(isset($_POST["conferma_modifica"])){
-
-$errore="";
-$ErroreEmail=false;
-$ErroreNome=false;
-$ErroreCognome=false;
-$ErroreCampiVuoti=false;
-$ErroreForm=false;
-$ErroreUtenteEsistente=false;
-$Errorecambiamento=false;
-$Email=validaCampo($_POST["email"]);
-$Nome=validaCampo($_POST["nome"]);
-$Cognome=validaCampo($_POST["cognome"]);
+    $ErroreEmail=false;
+    $ErroreNome=false;
+    $ErroreCognome=false;
+    $ErroreCampiVuoti=false;
+    $ErroreForm=false;
+    $ErroreUtenteEsistente=false;
+    $Errorecambiamento=false;
+    $Email=validaCampo($_POST["email"]);
+    $Nome=validaCampo($_POST["nome"]);
+    $Cognome=validaCampo($_POST["cognome"]);
     if($Email && $Nome && $Cognome ){
      if(strlen(filter_var($_POST["nome"], FILTER_SANITIZE_NUMBER_INT))>0) // controllo che il nome non contenga numeri
        $ErroreNome=true;
@@ -38,7 +36,6 @@ $Cognome=validaCampo($_POST["cognome"]);
        if($db->update_user($_POST["nome"],$_POST["cognome"],$_POST["email"],$_POST["indirizzo"],$_POST["citta"],
                                      $_POST["civico"],$_POST["CAP"],$_SESSION['username']))
        { // provo ad aggiornare i dati nel db
-
          $_SESSION["username"]=$_POST["email"];
          $_SESSION["login"]=true;
        }
@@ -51,6 +48,27 @@ $Cognome=validaCampo($_POST["cognome"]);
      $ErroreForm=true;
      $ErroreCampiVuoti=true;
    }
+}
+else if(isset($_POST["modifica_password"])){
+      $pwd=validaCampo($_POST["vecchia-password"]);
+      $newpwd=validaCampo($_POST["password"]);
+      $newpwd2=validaCampo($_POST["password2"]);
+      $pwdempty=false;
+      $pwderror=false;
+      $pwdNotEquals=false;
+      if($pwd && $newpwd && $newpwd2){
+        if($db->user_login($_SESSION["username"],$_POST["vecchia-password"])){
+          if($_POST["password"]==$_POST["password2"])
+            $db->AggiornaPWDUtente($_SESSION["username"],$_POST["password"]);
+          else
+            $pwdNotEquals=true;
+        }
+        else
+          $pwderror=true;
+      }
+      else{
+        $pwdempty=true;
+      }
 }
  ?>
 <!DOCTYPE html>
@@ -116,8 +134,27 @@ $Cognome=validaCampo($_POST["cognome"]);
               <div class="titolo-form">
                   <h1 id="titolo">Riepilogo dati <span lang="en">account</span></h1>
               </div>
+              <?php
+                    $errore="";
+                    if(isset($_POST["modifica_password"])){
+                      if($pwderror || $pwdempty || $pwdNotEquals){
+                        $errore="<div class='alertnojs errore' aria-live='assertive' role='alert' aria-atomic='true'><p class='intestazione-alert'>Errore:</p>";
+                        if($pwdempty){
+                          $errore.="<p> Hai lasciato il campo password vuoto</p>";
+                        }
+                        else if($pwderror){
+                          $errore.="<p> La password inserita non è giusta</p>";
+                        }
+                        else if($pwdNotEquals){
+                          $errore.="<p> Le due password non combaciano</p>";
+                        }
+                        $errore.="</div>";
+                      }
+                    }
 
+              ?>
               <form id="dati-utente" method="POST">
+                <?php if($errore!="") echo $errore; ?>
                 <div class="log-field-container">
                         <label for="email" lang="en">Email: </label>
                         <div class="input-container">
@@ -217,7 +254,7 @@ $Cognome=validaCampo($_POST["cognome"]);
               <div class="titolo-form">
                         <h2>Modifica <span lang="en">password</span></h2>
                     </div>
-                    <form id="mod-pwd-form">
+                    <form id="mod-pwd-form" method="POST">
                         <div class="log-field-container">
                             <label for="vecchia-password" >Password corrente: (obbligatorio)</label>
                             <div class="input-container">
@@ -237,7 +274,7 @@ $Cognome=validaCampo($_POST["cognome"]);
                             </div>
                         </div>
                         <div class="button-holder" >
-                            <button id="bottone-modifica-password" name="modifica" class="btn btn-primary">Modifica <span lang="en">password</span></button>
+                            <button type="submit" id="bottone-modifica-password" name="modifica_password" class="btn btn-primary">Modifica <span lang="en">password</span></button>
 
                         </div>
                     </form>

@@ -51,7 +51,6 @@ if($Email && $Nome && $Cognome && $Password && $Password2){
                                   $_POST["password"],$_POST["indirizzo"],$_POST["citta"],
                                   $_POST["civico"],$_POST["CAP"]))
     { // provo ad inserire i dati nel db
-      session_destroy();
       $_SESSION["username"]=$_POST["Email"];
       $_SESSION["login"]=true;
       header("Location: view-account.php");

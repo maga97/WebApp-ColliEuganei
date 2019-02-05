@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Feb 04, 2019 at 12:17 PM
+-- Generation Time: Feb 05, 2019 at 01:21 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.0
 
@@ -76,18 +76,7 @@ CREATE TABLE `Utenti` (
 --
 
 INSERT INTO `Utenti` (`ID_Utente`, `Nome`, `Cognome`, `Email`, `Password`, `Indirizzo`, `Civico`, `Citta`, `CAP`, `Tipo`) VALUES
-(1, 'Mario', 'Coniglio', 'ciao@gmail.com', '$2y$10$Zhowx9JH0PEQn/BzHMXJO.GdkV0xlMzIe21/PONIvCZ1/Uz2vg84q', 'ciso', 12, '', 12, 'utente'),
-(2, 'Giulio', 'Piva', 'GiulioPiva@outlook.it', '$2y$10$Ys5pFBEiS2YFplU3vQBfku3wWzpHzghoV3G2mGHLSpGPiBAVIS8t6', 'via dei salici', 12, '', 12, 'utente'),
-(3, 'Giulio', 'Piva', 'tonyeffe@gmail.com', '$2y$10$kvT9FV3OisphW1jySmYCDuC3uHQIOySFK1GWoLXRXBDfE252j4KX2', 'via dei lupi', 0, '12', 35026, 'utente'),
-(4, 'Giannizzero', 'bottoni', 'cico@gmail.com', '$2y$10$KRnwPb7E8MpYR3OR5.2dmeGI8M6u8wsW.6Y6X8PtDkispQhLQeJQK', '', 0, '', 0, 'utente'),
-(5, 'AAA', 'BBB', 'a@a.a', '$2y$10$SoMy6Dyby3JGATdzvU293.cr..JjH31CLp9xc/GQgInv0layn5bCS', 'BBBB', 111, 'AAAA', 0, 'utente'),
-(6, 'AAAA', 'AAAA', 'aaa@aaa.it', '$2y$10$fO9pidwSwaovVRSdSigNMuFK8VK8biWXKsoQH/CwcMrWgmVBs20I2', '', 0, '', 0, 'utente'),
-(7, 'Giulio', 'Piv', 'gp@ciao.com', '$2y$10$BL1JmX5t7r3rSGrVU9v6UOSIMShwgx/1yk486zbc4iwJ4HD2EE46G', 'via dei lupi', 2, '12', 2, 'utente'),
-(8, 'c', 'c', 'cc@ciao.com', '$2y$10$CipRqECkEHCMQfWL/40XmeVBcKNteZodN7dFIdSmHtbBuTK2lKIi.', 'c', 1, 'c', 1, 'utente'),
-(9, 'z', 'z', 'z@z.com', '$2y$10$Qf7ogCvZGlrsUraRBDncvu4EOH/aYGDpIYgu3TsaNdOE1aIOBP8Iq', 'z', 1, 'z', 1, 'utente'),
-(10, 'z', 'z', 'zi@ciao.com', '$2y$10$KT4UyLeFTgqTY0hHa8KWhu4.lpNWKUfdD./nAOy7MBwBfA0h6drAO', 'via', 12, 'z', 12, 'utente'),
-(11, 'z', 'z', 'o@o.com', '$2y$10$QVC7Ot1I3lAyBU4fAFMXueRcPnLkZY2Yvpy1uP7YOTieX6IRogLji', 'zi', 12, 'ci', 12, 'utente'),
-(12, 'admin', 'admin', 'admin@admin.com', '$2y$10$eWC9R/Kgw22/ey1by4jALeno3P6dpXhtHiM.n2rViVdQRParB.uSK', NULL, NULL, NULL, NULL, 'amministratore');
+(1, 'Mario', 'Coniglio', 'ciao@gmail.com', '$2y$10$Zhowx9JH0PEQn/BzHMXJO.GdkV0xlMzIe21/PONIvCZ1/Uz2vg84q', 'ciso', 12, '', 12, 'utente');
 
 --
 -- Indexes for dumped tables
@@ -134,7 +123,7 @@ ALTER TABLE `Prenotazioni`
 -- AUTO_INCREMENT for table `Utenti`
 --
 ALTER TABLE `Utenti`
-  MODIFY `ID_Utente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `ID_Utente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Constraints for dumped tables
@@ -144,8 +133,8 @@ ALTER TABLE `Utenti`
 -- Constraints for table `Prenotazioni`
 --
 ALTER TABLE `Prenotazioni`
-  ADD CONSTRAINT `Prenotazioni_ibfk_1` FOREIGN KEY (`ID_Attivita`) REFERENCES `Attivita` (`ID_Attivita`) ON DELETE CASCADE,
-  ADD CONSTRAINT `Prenotazioni_ibfk_2` FOREIGN KEY (`ID_Utenti`) REFERENCES `Utenti` (`ID_Utente`) ON DELETE CASCADE;
+  ADD CONSTRAINT `Prenotazioni_ibfk_1` FOREIGN KEY (`ID_Attivita`) REFERENCES `Attivita` (`ID_Attivita`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `Prenotazioni_ibfk_2` FOREIGN KEY (`ID_Utenti`) REFERENCES `Utenti` (`ID_Utente`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

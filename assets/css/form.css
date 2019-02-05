@@ -147,7 +147,7 @@ div.alert.errore.login {
   display: block;
 }
 
-.alert.errore, .alertnodejs.errore {
+.alert.errore, .alertnojs.errore {
   color: white;
   background: #ac1911;
   text-align: left;
