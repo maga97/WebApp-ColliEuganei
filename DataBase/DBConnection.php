@@ -175,6 +175,12 @@ class database {
 		 $query->execute(array($id));
 		 return $query->fetchAll(PDO::FETCH_ASSOC);
 	}
+
+	public function GetUsers() {
+		$query = $this->pdo->prepare("SELECT ID_Utente, Nome, Cognome, Email, Tipo FROM Utenti");
+		$query->execute();
+		return $query->fetchAll(PDO::FETCH_ASSOC);
+	}
 }
 
 
