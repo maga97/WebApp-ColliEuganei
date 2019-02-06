@@ -32,16 +32,17 @@ if(isset($_POST["conferma_modifica"])){
        $ErroreEmail=true;
      if($_POST["email"]!=$_SESSION["username"] && $db->user_already_exists($_POST["email"])) // controllo che l'utente non sia già registrato con quell'email
        $ErroreUtenteEsistente=true;
-     if(!$ErroreNome && !$ErroreCognome && !$ErroreEmail && !$ErroreUtenteEsistente){ // se i campi non contengono errori
-       if($db->update_user($_POST["nome"],$_POST["cognome"],$_POST["email"],$_POST["indirizzo"],$_POST["citta"],
-                                     $_POST["civico"],$_POST["CAP"],$_SESSION['username']))
-       { // provo ad aggiornare i dati nel db
-         $_SESSION["username"]=$_POST["email"];
-         $_SESSION["login"]=true;
-       }
-       else {
-         $Errorecambiamento=true;
-       }
+     if(!$ErroreUtenteEsistente){
+        if(!$ErroreNome && !$ErroreCognome && !$ErroreEmail && !$ErroreUtenteEsistente){ // se i campi non contengono errori
+          if($db->update_user($_POST["nome"],$_POST["cognome"],$_POST["email"],$_POST["indirizzo"],$_POST["citta"],
+                                        $_POST["civico"],$_POST["CAP"],$_SESSION['username']))
+          { // provo ad aggiornare i dati nel db
+            $_SESSION["username"]=$_POST["email"];
+          }
+          else {
+            $Errorecambiamento=true;
+          }
+        }
      }
    }
    else{
@@ -136,14 +137,26 @@ else if(isset($_POST["modifica_password"])){
               </div>
               <?php
                     $errore="";
+                    if(isset($_POST["conferma_modifica"])){
+                      if($ErroreUtenteEsistente){
+                        $errore="<div class='alertnojs errore' aria-live='assertive' role='alert' aria-atomic='true'>
+                                    <p class='intestazione-alert'>La mail che stai provando ad inserire appartiene ad un'altro utente</p>
+                                </div>";
+                      }
+                      else if($ErroreCampiVuoti){
+                        $errore="<div class='alertnojs errore' aria-live='assertive' role='alert' aria-atomic='true'>
+                                    <p class='intestazione-alert'>hai lasciato dei campi obbligatori vuoti</p>
+                                </div>";
+                      }
+                    }
                     if(isset($_POST["modifica_password"])){
                       if($pwderror || $pwdempty || $pwdNotEquals){
                         $errore="<div class='alertnojs errore' aria-live='assertive' role='alert' aria-atomic='true'><p class='intestazione-alert'>Errore:</p>";
                         if($pwdempty){
-                          $errore.="<p> Hai lasciato il campo password vuoto</p>";
+                          $errore.="<p> Non hai compilato tutti i campi necessari alla modifica della password</p>";
                         }
                         else if($pwderror){
-                          $errore.="<p> La password inserita non è giusta</p>";
+                          $errore.="<p> La password corrente inserita è sbagliata</p>";
                         }
                         else if($pwdNotEquals){
                           $errore.="<p> Le due password non combaciano</p>";

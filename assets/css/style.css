@@ -450,3 +450,12 @@ dd {
     width: 700px;
     margin-bottom: 60px;
 }
+
+#riepilogo {
+    text-align: left;
+}
+
+.log-label-riep {
+    font-weight: bolder;
+}
+

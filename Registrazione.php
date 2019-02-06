@@ -81,7 +81,7 @@ $errore = "";
           <?php
           if (isset($_SESSION["ErroreUtenteEsistente"]))
               $errore = "<div id='errore-form' class='alertnojs errore' aria-live='assertive' role='alert' aria-atomic='true'>
-                            <p class='intestazione-alert'>Abbiamo dei problemi interni.
+                            <p class='intestazione-alert'>
                               l'email che stai provando ad inserire appartiene ad un'altro utente
                             </p>
                           </div>";
