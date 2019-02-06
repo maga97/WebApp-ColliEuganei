@@ -170,12 +170,10 @@ else if(isset($_POST["modifica_password"])){
                     <div class="log-field-container">
                         <label for="nome" >Nome: </label>
                         <div class="input-container">
-                          <input type="text" class="disabilita"
                           <?php if(isset($_POST["modifica_dati"])): ?>
-                            id="nome" name="nome" value="<?php echo $db->GetName($_SESSION['username']);?>" >
+                            <input type="text" class="disabilita" id="nome" name="nome" value="<?php echo $db->GetName($_SESSION['username']);?>" >
                             <?php else:?>
-
-                             disabled="disabled" id="nome" name="nome" value="<?php echo $db->GetName($_SESSION['username']);?>" >
+                            <input type="text" class="disabilita" disabled="disabled" id="nome" name="nome" value="<?php echo $db->GetName($_SESSION['username']);?>" >
                            <?php endif; ?>
                         </div>
                     </div>
