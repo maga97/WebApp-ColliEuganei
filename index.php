@@ -2,8 +2,9 @@
 if (session_status() == PHP_SESSION_NONE) { session_start(); }
 ?>
 
-<!DOCTYPE html>
-<html lang="it">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+ARIA 1.0//EN" 
+  "http://www.w3.org/WAI/ARIA/schemata/xhtml-aria-1.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
@@ -77,7 +78,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 							<dd>Scopri la geografia del territorio e come si &egrave; formato.</dd>
 						</dl>
 						<div>
-							<button type="button" class="find-more" onclick="clx('geografia')">Scopri di più</button>
+							<a href="javascript:clx('geografia')" class="find-more">Scopri di più</a>
 						</div>
 					</div>
 					<div class="galleryframe">
@@ -87,7 +88,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 							<dd>Scopri come il territorio si presenta nel corso dell'anno.</dd>
 						</dl>
 						<div>
-							<button type="button" class="find-more" onclick="clx('clima')">Scopri di più</button>
+							<a href="javascript:clx('clima')" class="find-more">Scopri di più</a>
 						</div>
 					</div>
 					<div class="galleryframe">
@@ -96,9 +97,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 							<dt>Storia</dt>
 							<dd>Scopri la storia, la cultura e l'arte del territorio</dd>
 						</dl>
-						<div>
-							<button type="button" class="find-more" onclick="clx('storia')">Scopri di più</button>
-						</div>
+							<a href="javascript:clx('storia')" class="find-more">Scopri di più</a>
 					</div>
 				</div>
 				<div id="clima-text" class="hide">
