@@ -50,11 +50,11 @@ if($Email && $Nome && $Cognome && $Password && $Password2){
                                           $_POST["password"],$_POST["indirizzo"],$_POST["citta"],
                                           $_POST["civico"],$_POST["CAP"]))
             { // provo ad inserire i dati nel db
-              session_destroy();
-              $_SESSION["username"]=$_POST["Email"];
+              session_destroy(); // per cancellare tutte le variabili per gli errori del form di regitrazione
+              session_start();   // faccio ripartire la sessione per far loggare l'utente
+              $_SESSION["username"]=$_POST["email"];
               $_SESSION["login"]=true;
               header("Location: view-account.php");
-              exit;
             }
             else {
               $_SESSION["ErroreInserimento"]=true;
