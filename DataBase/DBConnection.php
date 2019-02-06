@@ -176,12 +176,15 @@ class database {
 		 return $query->fetchAll(PDO::FETCH_ASSOC);
 	}
 
-	public function GetUsers() {
-		$query = $this->pdo->prepare("SELECT ID_Utente, Nome, Cognome, Email, Tipo FROM Utenti");
+	public function GetUsers($type) {
+		$query = $this->pdo->prepare("SELECT ID_Utente, Nome, Cognome, Email, Tipo FROM Utenti WHERE Tipo = '" . $type . "'");
 		$query->execute();
 		return $query->fetchAll(PDO::FETCH_ASSOC);
 	}
+
+	public function UpdateUserRole($id, $type) {
+		$query = $this->pdo->prepare("UPDATE Utenti SET Tipo = ? WHERE ID_Utente = ?");
+		return $query->execute(array($type, $id));
+	}
 }
-
-
 ?>

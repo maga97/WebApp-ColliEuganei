@@ -1,17 +1,17 @@
 <?php require_once("../DataBase/DBConnection.php"); 
 if (session_status() == PHP_SESSION_NONE) {
-   session_start();
-  }
+  session_start();
+ }
 if(!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
-    header("Location: ../index.php");
-  }
+   header("Location: ../index.php");
+ }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+ARIA 1.0//EN" 
   "http://www.w3.org/WAI/ARIA/schemata/xhtml-aria-1.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
   <head>
-      <meta charset="UTF-8" />
-    <title>Aggiunta amministratore - Colli Digitali</title>
+    <meta charset="UTF-8" />
+    <title>Rimozione amministratore - Colli Digitali</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="../assets/css/style.css" media="all">
     <link rel="stylesheet" type="text/css" href="../assets/css/form.css" media="all">
@@ -48,7 +48,7 @@ if(!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
         </div>
       <div id="content">
       <table class="zebra" id="admin-table">
-      <caption>Elenco utenti</caption>
+      <caption>Elenco amministratori</caption>
           <thead>
               <tr>
                   <th>Nome</th>
@@ -62,9 +62,9 @@ if(!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
     <?php 
         $db = new database();
         $db->connect();
-        $users = $db->GetUsers("utente");
+        $users = $db->GetUsers("amministratore");
         if(sizeof($users) == 0):
-        echo '<tr><td colspan="5">Nessun utente che pu&ograve; diventare amministratore.</td></tr>' . PHP_EOL;
+        echo '<tr><td colspan="5">Nessun amministratore presente!</td></tr>' . PHP_EOL;
         endif;
         foreach($users as $user): 
     ?>
@@ -76,7 +76,12 @@ if(!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
                 <?php
                  $id = $user["ID_Utente"];
                 ?>
-                <td><a aria-label="Aggiungi <?php echo $user["Nome"] . " " . $user["Cognome"]; ?> come amministratore" href="edit-user-role.php?action=promote&id=<?php echo $id; ?>">Aggiungi amministratore</a></td>
+                <td>
+                  <?php if(sizeof($users) >  1): ?>
+                  <a aria-label="Rimuovi <?php echo $user["Nome"] . " " . $user["Cognome"]; ?> dal ruolo di amministratore" href="edit-user-role.php?action=remove&id=<?php echo $id; ?>">Rimuovi amministratore</a></td>
+                  <?php else: ?>
+                  Deve esserci almeno un amministratore.
+                  <?php endif; ?>
             </tr>
     <?php endforeach; ?>
     <tfoot>
