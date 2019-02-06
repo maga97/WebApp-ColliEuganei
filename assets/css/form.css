@@ -126,6 +126,21 @@
   border-bottom-color: #ff0000;
 }
 
+.btn.btn-riepConferma {
+  float: left;
+  margin: auto;
+  color: white;
+  background-color: #008000;
+  border-bottom-color: #008000;
+}
+
+.btn.btn-riepCancella {
+  margin-right: 57em;
+  color: white;
+  background-color: #ff0000;
+  border-bottom-color: #ff0000;
+}
+
 div.alert {
   margin: 0;
   line-height: 1.2em;

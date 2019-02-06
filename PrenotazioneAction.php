@@ -66,8 +66,39 @@ $PrenotazioneOk=$dbConnection->addPrenotazione($_POST["ID"],$dbConnection->GetID
         <div id="content">
           <ul class="breadcrumb">
             <li><a href="Gite.php">Gite</a></li>
-            <li>Prenotazione</li>
+            <li>Riepilogo prenotazione</li>
           </ul>
+          <div id="riepilogo">
+            <h2> Riepilogo prenotazione </h2>
+            <div class="field-container">
+               <label for="Nome" lang="it" class="log-label-riep">ATTIVIT&Agrave; </label> 
+               <p> Gita al castello del catajo </p>
+            </div>
+            <div class="field-container">
+               <label for="Descrizione" lang="it" class="log-label-riep">DESCRIZIONE </label> 
+               <p> Alla scoperta del Castello del Catajo, il Castello imponente vicino casa di Francesco. </p>
+            </div>
+            <div class="field-container">
+               <label for="Data" lang="it" class="log-label-riep">DATA </label>
+               <p> 19/05/2019 </p>
+            </div>
+            <div class="field-container">
+               <label for="Ora" lang="it" class="log-label-riep">ORA </label> 
+               <p> 14:30:00 </p>
+            </div>
+            <div class="field-container">
+               <label for="Prezzo" lang="it" class="log-label-riep">PREZZO TOTALE </label>
+               <p> 140&euro; </p>
+            </div>
+              <div class="button-holder"> 
+                <form action="" method="POST">
+                  <input type="submit" value="Conferma" name="confermaPrenotazione" class="btn btn-riepConferma" />
+                </form>
+                <form action="" method="POST">
+                  <input type="submit" value="Cancella" name="cancellaPrenotazione" class="btn btn-riepCancella" />
+                </form>
+              </div>
+            </div>
           <?php
             if($PrenotazioneOk){
               echo "La prenotazione è andata a buon fine!";
