@@ -43,33 +43,36 @@ if($Email && $Nome && $Cognome && $Password && $Password2){
     $_SESSION["ErrorePasswordDiverse"]=true;
   if($dbConnection->user_already_exists($_POST["email"])) // controllo che l'utente non sia già registrato con quell'email
     $_SESSION["ErroreUtenteEsistente"]=true;
-
-  if(!$_SESSION["ErroreNome"] && !$_SESSION["ErroreCognome"] &&
-    !$_SESSION["ErroreEmail"] && !$_SESSION["ErrorePasswordDiverse"] &&
-    !$_SESSION["ErroreUtenteEsistente"]){ // se i campi non contengono errori
-    if($dbConnection->insert_user($_POST["nome"],$_POST["cognome"],$_POST["email"],
-                                  $_POST["password"],$_POST["indirizzo"],$_POST["citta"],
-                                  $_POST["civico"],$_POST["CAP"]))
-    { // provo ad inserire i dati nel db
-      $_SESSION["username"]=$_POST["Email"];
-      $_SESSION["login"]=true;
-      header("Location: view-account.php");
-      exit;
+  if(!$_SESSION["ErroreUtenteEsistente"]){
+    if(!$_SESSION["ErroreNome"] && !$_SESSION["ErroreCognome"] &&
+       !$_SESSION["ErroreEmail"] && !$_SESSION["ErrorePasswordDiverse"]){ // se i campi non contengono errori
+            if($dbConnection->insert_user($_POST["nome"],$_POST["cognome"],$_POST["email"],
+                                          $_POST["password"],$_POST["indirizzo"],$_POST["citta"],
+                                          $_POST["civico"],$_POST["CAP"]))
+            { // provo ad inserire i dati nel db
+              session_destroy();
+              $_SESSION["username"]=$_POST["Email"];
+              $_SESSION["login"]=true;
+              header("Location: view-account.php");
+              exit;
+            }
+            else {
+              $_SESSION["ErroreInserimento"]=true;
+              header("Location: Registrazione.php");
+              exit;
+            }
     }
     else {
-      $_SESSION["ErroreInserimento"]=true;
+      $_SESSION["ErroreForm"]=true;
       header("Location: Registrazione.php");
       exit;
     }
   }
   else {
-    $_SESSION["ErroreForm"]=true;
     header("Location: Registrazione.php");
-    exit;
   }
 }
 else{
-
   $_SESSION["ErroreForm"]=true;
   $_SESSION["ErroreCampiVuoti"]=true;
   header("Location: Registrazione.php");

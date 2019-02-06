@@ -1,14 +1,15 @@
-<?php "DataBase/DBConnection.php";
-if(session_status() == PHP_SESSION_NONE) {
- session_start();
-}
-if(isset($_SESSION["username"])){
-  header("Location: index.php");
-  exit;
-}
-$errore="";
-?>
 
+<?php
+"DataBase/DBConnection.php";
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+if (isset($_SESSION["username"])) {
+    header("Location: index.php");
+    exit;
+}
+$errore = "";
+?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
   <head>
@@ -36,79 +37,86 @@ $errore="";
         </div>
       </div>
       <div id="menuprincipale-bar">
-  			<ul id="menuprincipale">
-  				<li><a href="index.php" tabindex="1">Home</a></li>
-  				<li class="dropdown"><a>Luoghi</a>
-  					<ul class="dropdown-content button-right">
-  						<li><a href="luoghi/chiesette.php">Sette Chiesette</a></li>
-  						<li><a href="luoghi/catajo.php">Castello del Catajo</a></li>
-  						<li><a href="luoghi/praglia.php">Abbazia di Praglia</a></li>
-  						<li><a href="luoghi/carrareseeste.php">Castello carrarese di Este</a></li>
-  						<li><a href="luoghi/lispida.php">Castello di Lispida</a></li>
-  						<li><a href="luoghi/pelagio.php">Castello San Pelagio</a></li>
-  					</ul>
-  				</li>
-  				<li><a href="gite.php" tabindex="2">Gite</a></li>
-  				<?php if(isset($_SESSION['username'])): ?>
-  					<li class="dropdown button-right"><a>Account</a>
-  						<ul class="dropdown-content">
-  						<li><a href="logout.php">Logout</a></li>
-  						<li><a href="view-account.php">Impostazioni</a></li>
-  						<li>Le mie gite</li>
-  						</ul>
-  					</li>
+              <ul id="menuprincipale">
+                  <li><a href="index.php" tabindex="1">Home</a></li>
+                  <li class="dropdown"><a>Luoghi</a>
+                      <ul class="dropdown-content button-right">
+                          <li><a href="luoghi/chiesette.php">Sette Chiesette</a></li>
+                          <li><a href="luoghi/catajo.php">Castello del Catajo</a></li>
+                          <li><a href="luoghi/praglia.php">Abbazia di Praglia</a></li>
+                          <li><a href="luoghi/carrareseeste.php">Castello carrarese di Este</a></li>
+                          <li><a href="luoghi/lispida.php">Castello di Lispida</a></li>
+                          <li><a href="luoghi/pelagio.php">Castello San Pelagio</a></li>
+                      </ul>
+                  </li>
+                  <li><a href="gite.php" tabindex="2">Gite</a></li>
+                  <?php
+                  if (isset($_SESSION['username'])):
+                  ?>
+                     <li class="dropdown button-right"><a>Account</a>
+                          <ul class="dropdown-content">
+                          <li><a href="logout.php">Logout</a></li>
+                          <li><a href="view-account.php">Impostazioni</a></li>
+                          <li>Le mie gite</li>
+                          </ul>
+                      </li>
 
-  				<?php else: ?>
-  					<li class="button-right"><a href="login.php" tabindex="3">Accedi</a></li>
-  					<li class="button-right"><a class="active"href="Registrazione.php" tabindex="4">Registrati</a></li>
-  				<?php endif; ?>
-  				<li class="icon">
-  					<a href="#" id="mobile">&#9776;</a>
-  				</li>
-  				</ul>
-  			</div>
+                  <?php
+                  else:
+                  ?>
+                     <li class="button-right"><a href="login.php" tabindex="3">Accedi</a></li>
+                     <li class="button-right"><a class="active"href="Registrazione.php" tabindex="4">Registrati</a></li>
+                  <?php
+                  endif;
+                  ?>
+                 <li class="icon">
+                      <a href="#" id="mobile">&#9776;</a>
+                  </li>
+              </ul>
+      </div>
         <div id="content" >
           <ul class="breadcrumb">
             <li><a href="Registrazione.php">Registrazione</a></li>
           </ul>
-          <?php if(isset($_SESSION["ErroreForm"]) && $_SESSION["ErroreForm"]){
-                  $errore="<div class='alertnojs errore' aria-live='assertive' role='alert' aria-atomic='true'><p class='intestazione-alert'>Errore:</p>";
-                  if(isset($_SESSION["ErroreCampiVuoti"]) && $_SESSION["ErroreCampiVuoti"])
-                    $errore.="<p>Alcuni campi obbligatori non sono stati inseriti</p>";
-                  else{
-                    if(isset($_SESSION["ErroreNome"]) && $_SESSION["ErroreNome"])
-                      $errore.="<p>Ricontrollare il nome</p>";
-                    if(isset($_SESSION["ErroreCognome"]) && $_SESSION["ErroreCognome"])
-                      $errore.="<p>Ricontrollare il cognome</p>";
-                    if(isset($_SESSION["ErroreEmail"]) && $_SESSION["ErroreEmail"])
-                      $errore.="<p>Inserire un email valida</p>";
-                    if(isset($_SESSION["ErrorePasswordDiverse"]) && $_SESSION["ErroreEmail"])
-                      $errore.="<p>Le password non combaciano</p>";
-                  }
-                  $errore.="</div>";
-                }
-                else if(isset($_SESSION["ErroreInserimento"]) && $_SESSION["ErroreInserimento"])
-                  $errore="
-                  <div class='alertnojs errore' aria-live='assertive' role='alert' aria-atomic='true'>
-                    <p class='intestazione-alert'>Abbiamo dei problemi interni.
-                      Ti preghiamo di riprovare più avanti.
-                    </p>
-                  </div>";
-
-
-          ?>
-          <div class="form container_form" >
+          <?php
+          if (isset($_SESSION["ErroreUtenteEsistente"]))
+              $errore = "<div id='errore-form' class='alertnojs errore' aria-live='assertive' role='alert' aria-atomic='true'>
+                            <p class='intestazione-alert'>Abbiamo dei problemi interni.
+                              l'email che stai provando ad inserire appartiene ad un'altro utente
+                            </p>
+                          </div>";
+          else if (isset($_SESSION["ErroreForm"]) && $_SESSION["ErroreForm"]) {
+              $errore = "<div id='errore-form'class='alertnojs errore' aria-live='assertive' role='alert' aria-atomic='true'><p class='intestazione-alert'>Errore:</p>";
+              if (isset($_SESSION["ErroreCampiVuoti"]) && $_SESSION["ErroreCampiVuoti"])
+                  $errore .= "<p>Alcuni campi obbligatori non sono stati inseriti</p>";
+              else {
+                  if (isset($_SESSION["ErroreNome"]) && $_SESSION["ErroreNome"])
+                      $errore .= "<p>Ricontrollare il nome</p>";
+                  if (isset($_SESSION["ErroreCognome"]) && $_SESSION["ErroreCognome"])
+                      $errore .= "<p>Ricontrollare il cognome</p>";
+                  if (isset($_SESSION["ErroreEmail"]) && $_SESSION["ErroreEmail"])
+                      $errore .= "<p>Inserire un email valida</p>";
+                  if (isset($_SESSION["ErrorePasswordDiverse"]) && $_SESSION["ErroreEmail"])
+                      $errore .= "<p>Le password non combaciano</p>";
+              }
+              $errore .= "</div>";
+          } else if (isset($_SESSION["ErroreInserimento"]) && $_SESSION["ErroreInserimento"])
+              $errore = "<div id='errore-form' class='alertnojs errore' aria-live='assertive' role='alert' aria-atomic='true'>
+                              <p class='intestazione-alert'>Abbiamo dei problemi interni.
+                                Ti preghiamo di riprovare più avanti
+                              </p>
+                        </div>";
+         ?>
+         <div class="form container_form" >
             <form action="RegistrazioneAction.php" method="POST" class="log-form" onsubmit="return validaFormUtente(true,$('.alert.errore'),$('form'))">
 
-              <h1>Crea <span lang="en">account</span></h1>
-              <?php if($errore!=""):
-                      echo $errore;
-                    else:
-              ?>
-              <div class="alert errore" aria-live="assertive" role="alert" aria-atomic="true"><p class="intestazione-alert">Errore:</p></div>
-              <?php
-                    endif;
-              ?>
+             <h1>Crea <span lang="en">account</span></h1>
+             <?php
+             if ($errore != ""):
+               echo $errore;
+             endif;
+             ?>
+             <div class="alert errore" aria-live="assertive" role="alert" aria-atomic="true"><p class="intestazione-alert">Errore:</p></div>
               <div id="sectionPersonalData">
                 <div class="log-field-container">
                   <label for="nome">Nome: (obbligatorio)</label>
@@ -154,12 +162,13 @@ $errore="";
           </div>
 
         </div>
-        <?php include_once('footer.php')?>
-    </div>
+        <?php
+        include_once('footer.php');
+        ?>
+   </div>
   </body>
 </html>
 <?php
-$errore="";
-unset($_SESSION["ErroreForm"]);
-unset($_SESSION["ErroreInserimento"]);
- ?>
+$errore = "";
+session_destroy();
+?>

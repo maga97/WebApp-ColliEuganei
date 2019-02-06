@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Creato il: Feb 05, 2019 alle 13:23
--- Versione del server: 10.1.37-MariaDB-0+deb9u1
--- Versione PHP: 7.0.33-0+deb9u1
+-- Generation Time: Feb 06, 2019 at 12:08 AM
+-- Server version: 10.1.37-MariaDB
+-- PHP Version: 7.3.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `Attivita`
+-- Table structure for table `Attivita`
 --
 
 CREATE TABLE `Attivita` (
@@ -38,7 +38,7 @@ CREATE TABLE `Attivita` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
 
 --
--- Dump dei dati per la tabella `Attivita`
+-- Dumping data for table `Attivita`
 --
 
 INSERT INTO `Attivita` (`ID_Attivita`, `Descrizione`, `Nome`, `Prezzo`, `Data`, `Ore`) VALUES
@@ -51,7 +51,7 @@ INSERT INTO `Attivita` (`ID_Attivita`, `Descrizione`, `Nome`, `Prezzo`, `Data`, 
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `Prenotazioni`
+-- Table structure for table `Prenotazioni`
 --
 
 CREATE TABLE `Prenotazioni` (
@@ -66,7 +66,7 @@ CREATE TABLE `Prenotazioni` (
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `Utenti`
+-- Table structure for table `Utenti`
 --
 
 CREATE TABLE `Utenti` (
@@ -83,25 +83,26 @@ CREATE TABLE `Utenti` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
 
 --
--- Dump dei dati per la tabella `Utenti`
+-- Dumping data for table `Utenti`
 --
 
 INSERT INTO `Utenti` (`ID_Utente`, `Nome`, `Cognome`, `Email`, `Password`, `Indirizzo`, `Civico`, `Citta`, `CAP`, `Tipo`) VALUES
 (1, 'Mario', 'Coniglio', 'ciao@gmail.com', '$2y$10$Zhowx9JH0PEQn/BzHMXJO.GdkV0xlMzIe21/PONIvCZ1/Uz2vg84q', 'ciso', 12, '', 12, 'utente'),
-(16, 'AAA', 'AAA', 'aaa@aaa.it', '$2y$10$43opLpbmqyyzFELyEKwo7.CJZhlVRi07ZD67UTXhlRX.mtMSMGeLS', '', 0, '', 0, 'amministratore');
+(16, 'AAA', 'AAA', 'aaa@aaa.it', '$2y$10$43opLpbmqyyzFELyEKwo7.CJZhlVRi07ZD67UTXhlRX.mtMSMGeLS', '', 0, '', 0, 'amministratore'),
+(17, 'Giulio', 'a', 'ciso@gmail.com', '$2y$10$yTQWS4g8EnFv7c2.SF9emOqatOfPiXI51HTvAab3B24ZCDWf6919y', '', 0, '', 0, 'utente');
 
 --
--- Indici per le tabelle scaricate
+-- Indexes for dumped tables
 --
 
 --
--- Indici per le tabelle `Attivita`
+-- Indexes for table `Attivita`
 --
 ALTER TABLE `Attivita`
   ADD PRIMARY KEY (`ID_Attivita`);
 
 --
--- Indici per le tabelle `Prenotazioni`
+-- Indexes for table `Prenotazioni`
 --
 ALTER TABLE `Prenotazioni`
   ADD PRIMARY KEY (`ID_Prenotazione`),
@@ -109,40 +110,40 @@ ALTER TABLE `Prenotazioni`
   ADD KEY `ID_Utenti` (`ID_Utenti`);
 
 --
--- Indici per le tabelle `Utenti`
+-- Indexes for table `Utenti`
 --
 ALTER TABLE `Utenti`
   ADD PRIMARY KEY (`ID_Utente`),
   ADD UNIQUE KEY `Email` (`Email`);
 
 --
--- AUTO_INCREMENT per le tabelle scaricate
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT per la tabella `Attivita`
+-- AUTO_INCREMENT for table `Attivita`
 --
 ALTER TABLE `Attivita`
   MODIFY `ID_Attivita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT per la tabella `Prenotazioni`
+-- AUTO_INCREMENT for table `Prenotazioni`
 --
 ALTER TABLE `Prenotazioni`
   MODIFY `ID_Prenotazione` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT per la tabella `Utenti`
+-- AUTO_INCREMENT for table `Utenti`
 --
 ALTER TABLE `Utenti`
-  MODIFY `ID_Utente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `ID_Utente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- Limiti per le tabelle scaricate
+-- Constraints for dumped tables
 --
 
 --
--- Limiti per la tabella `Prenotazioni`
+-- Constraints for table `Prenotazioni`
 --
 ALTER TABLE `Prenotazioni`
   ADD CONSTRAINT `Prenotazioni_ibfk_1` FOREIGN KEY (`ID_Attivita`) REFERENCES `Attivita` (`ID_Attivita`) ON DELETE CASCADE ON UPDATE CASCADE,

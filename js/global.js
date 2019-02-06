@@ -5,7 +5,7 @@ function notificaErrore(targetNode, testo, divAlert, formErr) {
     if(formErr != null) formErr.find(".error").first().focus();
 }
 
-function pulisciErrori(divAlert, formErr) {
+function pulisciErrori(divAlert,formErr) {
     divAlert.find("p").not(".intestazione-alert").remove();
     divAlert.hide();
     if(formErr != null) formErr.find("input").removeClass("error");

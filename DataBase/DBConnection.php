@@ -128,6 +128,16 @@ class database {
 			return true;
 		return false;
 	}
+	public function getListaPrenotazioni($email){
+		$query = $this->pdo->prepare('SELECT Attivita.Nome As nome,Attivita.Data AS data,
+																				 Attivita.Ore AS ore,Prenotazioni.NumPostiPrenotati AS posti,
+																				 Prenotazioni.ID_Prenotazione AS id
+																	FROM Utenti JOIN Prenotazioni ON Utenti.ID_Utente=Prenotazioni.ID_Utenti
+																							JOIN Attivita ON Prenotazioni.ID_Attivita=Attivita.ID_Attivita
+			 														WHERE Utenti.Email = ?');
+		$query->execute(array($email));
+		return $query->fetchAll(PDO::FETCH_ASSOC);
+	}
 	public function AggiornaPWDUtente($email, $new_pwd) {
 		$pwd_hashed = password_hash($new_pwd, PASSWORD_DEFAULT);
 		$query = $this->pdo->prepare('UPDATE Utenti SET Password = :pwd WHERE Email = :email');
@@ -137,7 +147,7 @@ class database {
 	}
 
 	public function AggiungiGita($nomegita, $descrizione, $data, $ora, $prezzo) {
-		$sql = "INSERT INTO `Attivita` (`ID_Attivita`, `Descrizione`, `Nome`, `Prezzo`, `Data`, `Ore`) 
+		$sql = "INSERT INTO `Attivita` (`ID_Attivita`, `Descrizione`, `Nome`, `Prezzo`, `Data`, `Ore`)
 		VALUES (NULL, ?, ?, ?, ?, ?)";
 		$query = $this->pdo->prepare($sql);
 		/*$query->bindParam(':nome', $nomegita, PDO::PARAM_STR);
