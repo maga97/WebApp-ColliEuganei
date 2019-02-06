@@ -98,6 +98,7 @@ $PrenotazioneOk=$dbConnection->addPrenotazione($_POST["ID"],$dbConnection->GetID
                   <input type="submit" value="Cancella" name="cancellaPrenotazione" class="btn btn-riepCancella" />
                 </form>
               </div>
+              <div class="success"> La prenotazione &egrave; stata confermata. </div>
             </div>
           <?php
             if($PrenotazioneOk){

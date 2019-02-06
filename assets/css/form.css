@@ -110,6 +110,14 @@
     color: white;
 }
 
+/* CSS BELLO PER ALERT DI SUCCESSO
+.success {
+    color: #4F8A10;
+    background-color: #DFF2BF;
+    margin: 10px 0px;
+    padding:12px;
+} */
+
 .btn.btn-tripInsert {
   float: left;
   margin: auto;
@@ -149,6 +157,7 @@ div.alert {
   text-align: center;
   margin-bottom: 1em;
 }
+
 div.alertnojs {
   margin: 0;
   line-height: 1.2em;
