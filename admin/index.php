@@ -5,8 +5,9 @@ if(!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="it">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+ARIA 1.0//EN"
+  "http://www.w3.org/WAI/ARIA/schemata/xhtml-aria-1.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
@@ -51,7 +52,7 @@ if(!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
 				 <h3>Aggiunta di una nuova gita</h3>
 				 <p>Permette di inserire all'interno del sistema una nuova attivita o gita disponibile agli utenti.</p>
 				 <p>Per far ciò selezionare la voce del menu "Aggiunta gita".</p>
-				</div>				
+				</div>
 			</div>
 			</div>
 			<a id="scroll-top-btn" href="#top">Torna in alto</a>

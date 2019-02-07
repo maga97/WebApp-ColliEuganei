@@ -1,7 +1,8 @@
 <?php
 if (session_status() == PHP_SESSION_NONE) { session_start(); }
 ?>
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+ARIA 1.0//EN"
+  "http://www.w3.org/WAI/ARIA/schemata/xhtml-aria-1.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />

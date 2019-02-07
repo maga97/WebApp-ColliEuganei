@@ -8,7 +8,8 @@ $PrenotazioneOk=$dbConnection->addPrenotazione($_POST["ID"],$dbConnection->GetID
                                                $_POST["data"],$_POST["ora"],$_POST["posti"]
                                              );
 ?>
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+ARIA 1.0//EN"
+  "http://www.w3.org/WAI/ARIA/schemata/xhtml-aria-1.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -71,11 +72,11 @@ $PrenotazioneOk=$dbConnection->addPrenotazione($_POST["ID"],$dbConnection->GetID
           <div id="riepilogo">
             <h2> Riepilogo prenotazione </h2>
             <div class="field-container">
-               <label for="Nome" lang="it" class="log-label-riep">ATTIVIT&Agrave; </label> 
+               <label for="Nome" lang="it" class="log-label-riep">ATTIVIT&Agrave; </label>
                <p> Gita al castello del catajo </p>
             </div>
             <div class="field-container">
-               <label for="Descrizione" lang="it" class="log-label-riep">DESCRIZIONE </label> 
+               <label for="Descrizione" lang="it" class="log-label-riep">DESCRIZIONE </label>
                <p> Alla scoperta del Castello del Catajo, il Castello imponente vicino casa di Francesco. </p>
             </div>
             <div class="field-container">
@@ -83,14 +84,14 @@ $PrenotazioneOk=$dbConnection->addPrenotazione($_POST["ID"],$dbConnection->GetID
                <p> 19/05/2019 </p>
             </div>
             <div class="field-container">
-               <label for="Ora" lang="it" class="log-label-riep">ORA </label> 
+               <label for="Ora" lang="it" class="log-label-riep">ORA </label>
                <p> 14:30:00 </p>
             </div>
             <div class="field-container">
                <label for="Prezzo" lang="it" class="log-label-riep">PREZZO TOTALE </label>
                <p> 140&euro; </p>
             </div>
-              <div class="button-holder"> 
+              <div class="button-holder">
                 <form action="" method="POST">
                   <input type="submit" value="Conferma" name="confermaPrenotazione" class="btn btn-riepConferma" />
                 </form>
