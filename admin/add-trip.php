@@ -74,18 +74,15 @@ $db->connect();
 		</div>
 		<div class="log-field-container">
 		  <label for="data">Data</label>
-		  <?php $today = getdate();
-		  $today = $today["year"] . "-" . $today["mon"] . "-" . $today["mday"];
-		  ?>
-		  <input type="date" name="data" required="required" min="<?php echo $today; ?>" />
+		  <input type="text" name="data" required="required" placeholder="gg/MM/AA" />
 		</div>
 		<div class="log-field-container">
 			<label for="ora">Ora</label>
-			<input type="time" name="ora" required />
+			<input type="text" name="ora" required="required" placeholder="HH/mm" />
 		</div>
 		<div class="log-field-container">
 			<label for="prezzo">Prezzo</label>
-			<input type="number" min="0" id="prezzoAddTrip" name="prezzo" step=".10" required="required" />
+			<input type="text" min="0" id="prezzoAddTrip" name="prezzo" required="required" placeholder="10.50" />
 		</div>
 		  <div class="button-holder">
 			  <input type="reset" value="Cancella dati" name="cancelladati" class="btn btn-tripCancel" />

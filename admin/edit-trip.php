@@ -17,7 +17,7 @@ $prezzo = $gita[0]["Prezzo"];
 $ora = $gita[0]["Ore"];
 $data = $gita[0]["Data"];
  ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+ARIA 1.0//EN" 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+ARIA 1.0//EN"
  "http://www.w3.org/WAI/ARIA/schemata/xhtml-aria-1.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
   <head>
@@ -76,22 +76,19 @@ $data = $gita[0]["Data"];
 		</div>
 		<div class="log-field-container">
 		  <label for="data">Data</label>
-		  <?php $today = getdate();
-		  $today = $today["year"] . "-" . $today["mon"] . "-" . $today["mday"];
-		  ?>
-		  <input type="date" name="data" required min="<?php echo $today; ?>"  value="<?php echo $data; ?>" />
+		  <input type="text" name="data" placeholder="gg/MM/AA" required="required" value="<?php echo $data; ?>" />
 		</div>
 		<div class="log-field-container">
 			<label for="ora">Ora</label>
-			<input type="time" name="ora" required value="<?php echo $ora; ?>" />
+			<input type="text" name="ora" placeholder="HH/mm" required="required" value="<?php echo $ora; ?>" />
 		</div>
 		<div class="log-field-container">
 			<label for="prezzo">Prezzo</label>
-			<input type="number" min="0" id="prezzoAddTrip" name="prezzo" step=".10" required="required" value="<?php echo $prezzo; ?>" />
+			<input type="text" min="0" id="prezzoAddTrip" name="prezzo" required="required" placeholder="10.50" value="<?php echo $prezzo; ?>" />
 		</div>
 		  <div class="button-holder">
 			  <input type="reset" value="Cancella dati" name="cancelladati" class="btn btn-tripCancel" />
-			  <input type="submit" value="Modifica" name="modificaiGita" class="btn btn-tripInsert" />
+			  <input type="submit" value="Modifica" name="modificaGita" class="btn btn-tripInsert" />
 		  </div>
 		  </fieldset>
     </form>
