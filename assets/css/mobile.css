@@ -46,6 +46,22 @@
     text-align: left;
   }
 
+  #annulla_modifica{
+    margin-top:0.25em;
+  }
+
+  #sectionAccountData {
+    float:left;
+    padding-top:2em;
+    margin-left:0;
+    margin-top: auto;
+  }
+
+  div.form{
+    width:auto;
+    min-width: 19em;
+  }
+
 }
 
 @media screen and (max-width:480px) {
@@ -86,15 +102,6 @@
   #sectionPersonalData , #sectionAccountData {
       float:none;
       width: 100%;
-      margin:0;
-  }
-
-  #sectionAccountData {
-    padding-top: 1em;
-  }
-
-  div.form{
-    width:auto;
-
+      margin:200;
   }
 }

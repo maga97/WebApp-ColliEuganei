@@ -1,4 +1,4 @@
-<?php require_once("../DataBase/DBConnection.php"); 
+<?php require_once("../DataBase/DBConnection.php");
 if (session_status() == PHP_SESSION_NONE) {
    session_start();
   }
@@ -6,13 +6,14 @@ if(!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
     header("Location: ../index.php");
   }
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+ARIA 1.0//EN" 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+ARIA 1.0//EN"
   "http://www.w3.org/WAI/ARIA/schemata/xhtml-aria-1.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
   <head>
       <meta charset="UTF-8" />
     <title>Aggiunta amministratore - Colli Digitali</title>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../assets/css/style.css" media="all">
     <link rel="stylesheet" type="text/css" href="../assets/css/form.css" media="all">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
@@ -59,14 +60,14 @@ if(!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
               </tr>
           </thead>
           <tbody>
-    <?php 
+    <?php
         $db = new database();
         $db->connect();
         $users = $db->GetUsers("utente");
         if(sizeof($users) == 0):
         echo '<tr><td colspan="5">Nessun utente che pu&ograve; diventare amministratore.</td></tr>' . PHP_EOL;
         endif;
-        foreach($users as $user): 
+        foreach($users as $user):
     ?>
             <tr>
                 <td><?php echo $user["Nome"] ?></td>

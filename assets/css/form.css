@@ -38,6 +38,7 @@
   float: left;
   margin-right: 0;
 }
+
 #sectionAccountData {
   width: 20.625em;
   margin-left: 21.875em;
@@ -110,7 +111,7 @@
     color: white;
 }
 
-/* CSS BELLO PER ALERT DI SUCCESSO
+/*CSS BELLO PER ALERT DI SUCCESSO
 .success {
     color: #4F8A10;
     background-color: #DFF2BF;
