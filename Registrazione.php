@@ -38,36 +38,36 @@ $errore = "";
           </div>
         </div>
       </div>
-      <div id="menuprincipale-bar">
+      <div id="menuprincipale-bar" role="menuBar">
               <ul id="menuprincipale">
-                  <li><a href="index.php" tabindex="1">Home</a></li>
-                  <li class="dropdown"><a>Luoghi</a>
-                      <ul class="dropdown-content button-right">
-                          <li><a href="luoghi/chiesette.php">Sette Chiesette</a></li>
-                          <li><a href="luoghi/catajo.php">Castello del Catajo</a></li>
-                          <li><a href="luoghi/praglia.php">Abbazia di Praglia</a></li>
-                          <li><a href="luoghi/carrareseeste.php">Castello carrarese di Este</a></li>
-                          <li><a href="luoghi/lispida.php">Castello di Lispida</a></li>
-                          <li><a href="luoghi/pelagio.php">Castello San Pelagio</a></li>
+                  <li><a href="index.php" tabindex="0">Home</a></li>
+                  <li class="dropdown" ><a aria-haspopup="true" aria-expanded="false" tabindex="0">Luoghi</a>
+                      <ul class="dropdown-content button-right" role="menu">
+                          <li role="none"><a href="luoghi/chiesette.php" tabindex="-1" role="menuitem">Sette Chiesette</a></li>
+                          <li role="none"><a href="luoghi/catajo.php" tabindex="-1" role="menuitem">Castello del Catajo</a></li>
+                          <li role="none"><a href="luoghi/praglia.php" tabindex="-1" role="menuitem">Abbazia di Praglia</a></li>
+                          <li role="none"><a href="luoghi/carrareseeste.php" tabindex="-1" role="menuitem">Castello carrarese di Este</a></li>
+                          <li role="none"><a href="luoghi/lispida.php" tabindex="-1" role="menuitem">Castello di Lispida</a></li>
+                          <li role="none"><a href="luoghi/pelagio.php" tabindex="-1" role="menuitem">Castello San Pelagio</a></li>
                       </ul>
                   </li>
-                  <li><a href="gite.php" tabindex="2">Gite</a></li>
+                  <li><a href="gite.php" tabindex="0">Gite</a></li>
                   <?php
                   if (isset($_SESSION['username'])):
                   ?>
-                     <li class="dropdown button-right"><a>Account</a>
-                          <ul class="dropdown-content">
-                          <li><a href="logout.php">Logout</a></li>
-                          <li><a href="view-account.php">Impostazioni</a></li>
-                          <li>Le mie gite</li>
+                     <li class="dropdown button-right"><a aria-haspopup="true" aria-expanded="false" tabindex="0">Account</a>
+                          <ul class="dropdown-content" role="menu">
+	                          <li><a href="logout.php" tabindex="-1" role="menuitem">Logout</a></li>
+	                          <li><a href="view-account.php" tabindex="-1" role="menuitem">Impostazioni</a></li>
+	                          <li><a href="view-my-trip.php" tabindex="-1" role="menuitem">Le mie gite</a></li>
                           </ul>
                       </li>
 
                   <?php
                   else:
                   ?>
-                     <li class="button-right"><a href="login.php" tabindex="3">Accedi</a></li>
-                     <li class="button-right"><a class="active"href="Registrazione.php" tabindex="4">Registrati</a></li>
+                     <li class="button-right"><a href="login.php" tabindex="0">Accedi</a></li>
+                     <li class="button-right"><a class="active" href="Registrazione.php" tabindex="0">Registrati</a></li>
                   <?php
                   endif;
                   ?>
@@ -118,51 +118,52 @@ $errore = "";
                echo $errore;
              endif;
              ?>
-             <div class="alert errore" aria-live="assertive" role="alert" aria-atomic="true"><p class="intestazione-alert">Errore:</p></div>
-              <div id="sectionPersonalData">
+             <div class="alert errore" aria-live="assertive" role="alert" aria-atomic="true" aria-relevant="all"><p class="intestazione-alert">Errore:</p></div>
+              <div id="sectionPersonalData" role="registration">
                 <div class="log-field-container">
                   <label for="nome">Nome: (obbligatorio)</label>
-                  <input type="text" id="nome" name="nome" placeholder="Inserisci il tuo nome" accesskey="n" />
+                  <input type="text" id="nome" name="nome" placeholder="Inserisci il tuo nome" accesskey="n" aria-required="true" aria-label="nome"/>
                 </div>
                 <div class="log-field-container">
                   <label for="cognome" class="log-label">Cognome: (obbligatorio)</label>
-                  <input type="text" id="cognome" name="cognome" placeholder="Inserisci il tuo cognome" accesskey="c" />
+                  <input type="text" id="cognome" name="cognome" placeholder="Inserisci il tuo cognome" accesskey="c" aria-required="true" aria-label="cognome"/>
                 </div>
                 <div class="log-field-container" id="indirizzo-container">
                   <label for="indirizzo" class="log-label">Indirizzo: </label>
-                  <input type="text" id="indirizzo" name="indirizzo" placeholder="Inserisci il tuo indirizzo di residenza" accesskey="i" />
+                  <input type="text" id="indirizzo" name="indirizzo" placeholder="Inserisci il tuo indirizzo di residenza" accesskey="i" aria-required="false" aria-label="indirizzo"/>
                 </div>
                 <div class="log-field-container" id="civico-container">
                   <label for="civico" class="log-label mobile-align">Civico: </label>
-                  <input type="text" size="4" id="civico" name="civico" placeholder="N." accesskey="c" />
+                  <input type="text" size="4" id="civico" name="civico" placeholder="N." accesskey="c" aria-required="false" aria-label="civico"/>
               </div>
                 <div class="log-field-container" id="citta-container">
                   <label for="citta" class="log-label">Citt&agrave;: </label>
-                  <input type="text" id="citta" name="citta" placeholder="Inserisci la tua città di residenza" accesskey="c" />
+                  <input type="text" id="citta" name="citta" placeholder="Inserisci la tua città di residenza" accesskey="c" aria-required="false" aria-label="citt&agrave;"/>
                 </div>
                 <div class="log-field-container" id="cap-container">
                   <label for="CAP" class="log-label mobile-align"> <abbr title="Codice di avviamento postale">CAP</abbr>: </label>
-                  <input type="text" size="4" id="CAP" name="CAP" placeholder="CAP..." accesskey="c" />
+                  <input type="text" size="4" id="CAP" name="CAP" placeholder="CAP..." accesskey="c" aria-required="false" aria-label="codive avviamento postale"/>
                 </div>
               </div>
               <div id="sectionAccountData">
                 <div class="field-container">
                   <label for="email" lang="en" class="log-label">Email: (obbligatorio)</label>
-                  <input type="text" id="email" name="email" placeholder="Inserisci email" accesskey="e" />
+                  <input type="text" id="email" name="email" placeholder="Inserisci email" accesskey="e" aria-required="true" aria-label="email"/>
                 </div>
                 <div class="log-field-container">
                   <label for="password" class="log-label"><span lang="en">Password</span>: (obbligatorio)</label>
-                  <input type="password" id="password" name="password" placeholder="Password..." accesskey="p" />
+                  <input type="password" id="password" name="password" placeholder="Password..." accesskey="p" aria-required="true" aria-label="password"/>
                 </div>
                 <div class="log-field-container">
                   <label for="password2" class="log-label">Ripeti <span lang="en">password</span>: (obbligatorio)</label>
-                  <input type="password" id="password2" name="password2" placeholder="Ripeti password.." accesskey="p" />
+                  <input type="password" id="password2" name="password2" placeholder="Ripeti password.." accesskey="p" aria-required="true" aria-label="ripeti password"/>
                 </div>
               </div>
-              <div class="button-holder">  <input type="submit" value="Registrati" name="registrazione" class="btn btn-primary" /></div>
+              <div class="button-holder">  
+              	<input type="submit" value="Registrati" name="registrazione" class="btn btn-primary" aria-label="Bottone per confermare i dati inseriti e completare la registrazione."/>
+              </div>
             </form>
           </div>
-
         </div>
         <?php
         include_once('footer.php');

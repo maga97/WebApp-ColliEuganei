@@ -27,38 +27,44 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 				</div>
 			</div>
 		</div>
-		<div id="menuprincipale-bar">
-			<ul id="menuprincipale">
-				<li><a href="index.php" class="active" tabindex="1">Home</a></li>
-				<li class="dropdown"><a>Luoghi</a>
-					<ul class="dropdown-content button-right">
-						<li><a href="luoghi/chiesette.php">Sette Chiesette</a></li>
-						<li><a href="luoghi/catajo.php">Castello del Catajo</a></li>
-						<li><a href="luoghi/praglia.php">Abbazia di Praglia</a></li>
-						<li><a href="luoghi/carrareseeste.php">Castello carrarese di Este</a></li>
-						<li><a href="luoghi/lispida.php">Castello di Lispida</a></li>
-						<li><a href="luoghi/pelagio.php">Castello San Pelagio</a></li>
-					</ul>
-				</li>
-				<li><a href="gite.php" tabindex="2">Gite</a></li>
-				<?php if(isset($_SESSION['username'])): ?>
-					<li class="dropdown button-right"><a>Account</a>
-						<ul class="dropdown-content">
-						<li><a href="logout.php">Logout</a></li>
-						<li><a href="view-account.php">Impostazioni</a></li>
-						<li>Le mie gite</li>
-						</ul>
-					</li>
+		    <div id="menuprincipale-bar" role="menuBar">
+              <ul id="menuprincipale">
+                  <li><a href="index.php" class="active" tabindex="0">Home</a></li>
+                  <li class="dropdown" ><a tabindex="0" aria-haspopup="true" aria-expanded="false">Luoghi</a>
+                      <ul class="dropdown-content button-right" role="menu">
+                          <li role="none"><a href="luoghi/chiesette.php" tabindex="-1" role="menuitem">Sette Chiesette</a></li>
+                          <li role="none"><a href="luoghi/catajo.php" tabindex="-1" role="menuitem">Castello del Catajo</a></li>
+                          <li role="none"><a href="luoghi/praglia.php" tabindex="-1" role="menuitem">Abbazia di Praglia</a></li>
+                          <li role="none"><a href="luoghi/carrareseeste.php" tabindex="-1" role="menuitem">Castello carrarese di Este</a></li>
+                          <li role="none"><a href="luoghi/lispida.php" tabindex="-1" role="menuitem">Castello di Lispida</a></li>
+                          <li role="none"><a href="luoghi/pelagio.php" tabindex="-1" role="menuitem">Castello San Pelagio</a></li>
+                      </ul>
+                  </li>
+                  <li><a href="gite.php" tabindex="0">Gite</a></li>
+                  <?php
+                  if (isset($_SESSION['username'])):
+                  ?>
+                     <li class="dropdown button-right"><a aria-haspopup="true" aria-expanded="false" tabindex="0">Account</a>
+                          <ul class="dropdown-content" role="menu">
+	                          <li><a href="logout.php" tabindex="-1" role="menuitem">Logout</a></li>
+	                          <li><a href="view-account.php" tabindex="-1" role="menuitem">Impostazioni</a></li>
+	                          <li><a href="view-my-trip.php" tabindex="-1" role="menuitem">Le mie gite</a></li>
+                          </ul>
+                      </li>
 
-				<?php else: ?>
-					<li class="button-right"><a href="login.php" tabindex="3">Accedi</a></li>
-					<li class="button-right"><a href="Registrazione.php" tabindex="4">Registrati</a></li>
-				<?php endif; ?>
-				<li class="icon">
-					<a href="#" id="mobile">&#9776;</a>
-				</li>
-				</ul>
-			</div>
+                  <?php
+                  else:
+                  ?>
+                     <li class="button-right"><a href="login.php" tabindex="0">Accedi</a></li>
+                     <li class="button-right"><a href="Registrazione.php" tabindex="0">Registrati</a></li>
+                  <?php
+                  endif;
+                  ?>
+                 <li class="icon">
+                      <a href="#" id="mobile">&#9776;</a>
+                  </li>
+              </ul>
+      		</div>
 			<div id="content">
 				<ul class="breadcrumb">
 					<li><a href="index.php">Home</a></li>
@@ -78,7 +84,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 							<dd>Scopri la geografia del territorio e come si &egrave; formato.</dd>
 						</dl>
 						<div>
-							<a href="javascript:clx('geografia')" class="find-more">Scopri di più</a>
+							<a href="javascript:clx('geografia')" class="find-more" aria-label="Scopri di pi&ugrave; sulla geografia del territorio">Scopri di più</a>
 						</div>
 					</div>
 					<div class="galleryframe">
@@ -88,7 +94,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 							<dd>Scopri come il territorio si presenta nel corso dell'anno.</dd>
 						</dl>
 						<div>
-							<a href="javascript:clx('clima')" class="find-more">Scopri di più</a>
+							<a href="javascript:clx('clima')" class="find-more" aria-label="Scopri di pi&ugrave; sul clima">Scopri di più</a>
 						</div>
 					</div>
 					<div class="galleryframe">
@@ -97,7 +103,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 							<dt>Storia</dt>
 							<dd>Scopri la storia, la cultura e l'arte del territorio</dd>
 						</dl>
-							<a href="javascript:clx('storia')" class="find-more">Scopri di più</a>
+							<a href="javascript:clx('storia')" class="find-more" aria-label="Scopri di pi&ugrave; sulla storia, la cultura e l'arte di questo territorio">Scopri di più</a>
 					</div>
 				</div>
 				<div id="clima-text" class="hide">
@@ -133,9 +139,9 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 						isolati nel cuore della pianura veneta. Per proteggere il territorio e valorizzarne le qualit&agrave; turistiche, fu istituito nel 1989 il parco regionale dei colli euganei, il primo della regione Veneto.
 					</p>
 					<h3>Origine dei colli</h3>
-					<div class="float-right" id="geotab">
-						<table class="tg">
-							<caption> Periodo di origine delle rocce </caption>
+					<div class="float-right" id="geotab" aria-hidden="true">
+						<table class="tg" aria-describedby="capTabella">
+							<caption id="capTabella"> Periodo di origine delle rocce </caption>
 							<tr>
 								<th class="tg-jp7n">Periodo</th>
 								<th class="tg-jp7n">Rocce</th>

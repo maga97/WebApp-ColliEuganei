@@ -269,10 +269,6 @@ ul#menuprincipale li a {
     font-size: 1.1em;
 }
 
-ul#menuprincipale li a:hover {
-    background-color: #555555;
-}
-
 ul#menuprincipale li.icon {
     display: none;
 }
@@ -287,14 +283,13 @@ ul#menuprincipale li.icon {
     z-index: 1;
 }
 
-#menuprincipale a:hover,
-.dropdown a:hover {
+#menuprincipale li:hover, .dropdown li:hover {
     background-color: #555;
-    color: white;
+    color: white; 
 }
 
 .dropdown:hover .dropdown-content {
-    display: block;
+    display: grid;
 }
 
 ul.dropdown-content {

@@ -53,44 +53,50 @@ if(isset($_POST['email']) && isset($_POST['password']))
           </div>
         </div>
       </div>
-      <div id="menuprincipale-bar">
-  			<ul id="menuprincipale">
-  				<li><a href="index.php"  tabindex="1">Home</a></li>
-  				<li class="dropdown"><a>Luoghi</a>
-  					<ul class="dropdown-content button-right">
-  						<li><a href="luoghi/chiesette.php">Sette Chiesette</a></li>
-  						<li><a href="luoghi/catajo.php">Castello del Catajo</a></li>
-  						<li><a href="luoghi/praglia.php">Abbazia di Praglia</a></li>
-  						<li><a href="luoghi/carrareseeste.php">Castello carrarese di Este</a></li>
-  						<li><a href="luoghi/lispida.php">Castello di Lispida</a></li>
-  						<li><a href="luoghi/pelagio.php">Castello San Pelagio</a></li>
-  					</ul>
-  				</li>
-  				<li><a href="gite.php" tabindex="2">Gite</a></li>
-  				<?php if(isset($_SESSION['username'])): ?>
-  					<li class="dropdown button-right"><a>Account</a>
-  						<ul class="dropdown-content">
-  						<li><a href="logout.php">Logout</a></li>
-  						<li><a href="view-account.php">Impostazioni</a></li>
-  						<li>Le mie gite</li>
-  						</ul>
-  					</li>
+      <div id="menuprincipale-bar" role="menuBar">
+              <ul id="menuprincipale">
+                  <li><a href="index.php" tabindex="0">Home</a></li>
+                  <li class="dropdown" aria-haspopup="true" aria-expanded="false"><a tabindex="0">Luoghi</a>
+                      <ul class="dropdown-content button-right" role="menu">
+                          <li role="none"><a href="luoghi/chiesette.php" tabindex="-1" role="menuitem">Sette Chiesette</a></li>
+                          <li role="none"><a href="luoghi/catajo.php" tabindex="-1" role="menuitem">Castello del Catajo</a></li>
+                          <li role="none"><a href="luoghi/praglia.php" tabindex="-1" role="menuitem">Abbazia di Praglia</a></li>
+                          <li role="none"><a href="luoghi/carrareseeste.php" tabindex="-1" role="menuitem">Castello carrarese di Este</a></li>
+                          <li role="none"><a href="luoghi/lispida.php" tabindex="-1" role="menuitem">Castello di Lispida</a></li>
+                          <li role="none"><a href="luoghi/pelagio.php" tabindex="-1" role="menuitem">Castello San Pelagio</a></li>
+                      </ul>
+                  </li>
+                  <li><a href="gite.php" tabindex="0">Gite</a></li>
+                  <?php
+                  if (isset($_SESSION['username'])):
+                  ?>
+                     <li class="dropdown button-right" aria-haspopup="true" aria-expanded="false" tabindex="0"><a>Account</a>
+                          <ul class="dropdown-content" role="menu">
+                            <li><a href="logout.php" tabindex="-1" role="menuitem">Logout</a></li>
+                            <li><a href="view-account.php" tabindex="-1" role="menuitem">Impostazioni</a></li>
+                            <li><a href="view-my-trip.php" tabindex="-1" role="menuitem">Le mie gite</a></li>
+                          </ul>
+                      </li>
 
-  				<?php else: ?>
-  					<li class="button-right"><a class="active" href="login.php" tabindex="3">Accedi</a></li>
-  					<li class="button-right"><a href="Registrazione.php" tabindex="4">Registrati</a></li>
-  				<?php endif; ?>
-  				<li class="icon">
-  					<a href="#" id="mobile">&#9776;</a>
-  				</li>
-  				</ul>
-  			</div>
+                  <?php
+                  else:
+                  ?>
+                     <li class="button-right"><a href="login.php" class="active" tabindex="0">Accedi</a></li>
+                     <li class="button-right"><a href="Registrazione.php" tabindex="0">Registrati</a></li>
+                  <?php
+                  endif;
+                  ?>
+                 <li class="icon">
+                      <a href="#" id="mobile">&#9776;</a>
+                  </li>
+              </ul>
+      </div>
         <div id="content">
           <ul class="breadcrumb">
             <li><a href="index.php">Home</a></li>
             <li>Login</li>
           </ul>
-          <div class="form">
+          <div class="form" role="login">
             <form method="POST" action="login.php" class="log-form">
               <?php
                 if($wronglogin):
@@ -102,11 +108,11 @@ if(isset($_POST['email']) && isset($_POST['password']))
               <h1>Accedi</h1>
               <div class="log-field-container">
                   <label for="username" class="log-label">Email: </label>
-                  <input type="text" id="username" name="email" placeholder="Nome utente.." accesskey="n">
+                  <input type="text" id="username" name="email" placeholder="Nome utente.." accesskey="n" aria-required="true" aria-label="email">
               </div>
               <div class="log-field-container">
                   <label for="password" lang="en" class="log-label">Password: </label>
-                  <input type="password" id="password" name="password" placeholder="Password.." accesskey="p">
+                  <input type="password" id="password" name="password" placeholder="Password.." accesskey="p" aria-required="true" aria-label="password">
               </div>
               <div class="button-holder"><input type="submit" value="Login" class="btn btn-primary"></div>
               <p id="not-registered">Non sei ancora registrato? <a href="../Registrazione.php" id="reg-sistema">Registrati</a></p>

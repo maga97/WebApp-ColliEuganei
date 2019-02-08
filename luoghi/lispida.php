@@ -26,31 +26,44 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 					</div>
 				</div>
 		</div>
-		<div id="menuprincipale-bar">
-			<ul id="menuprincipale">
-				<li class="dropdown"><a href="../index.php">Home</a></li>
-				<li class="dropdown"><a class="active">Luoghi</a>
-					<ul class="dropdown-content">
-						<li><a href="chiesette.php">7 Chiesette</a></li>
-						<li><a href="catajo.php">Castello del Catajo</a></li>
-						<li><a href="praglia.php">Abbazia di Praglia</a></li>
-						<li><a href="carrareseeste.php">Castello carrarese di Este</a></li>
-						<li><a href="lispida.php" class="active">Castello di Lispida</a></li>
-						<li><a href="pelagio.php">Castello San Pelagio</a></li>
-					</ul>
-				</li>
-				<li><a href="../gite.php">Gite</a></li>
-				<?php if(isset($_SESSION['username'])): ?>
-					<li><a href="view-account.php">Account</a></li>
-				<?php else: ?>
-					<li><a href="../login.php">Accedi</a></li>
-					<li><a href="../Registrazione.php">Registrati</a></li>
-				<?php endif; ?>
-				<li class="icon">
-					<a href="#" id="mobile">&#9776;</a>
-				</li>
-			</ul>
-		</div>
+		      <div id="menuprincipale-bar" role="menuBar">
+              <ul id="menuprincipale">
+                  <li><a href="../index.php" tabindex="0">Home</a></li>
+                  <li class="dropdown"><a tabindex="0" class="active" aria-haspopup="true" aria-expanded="false">Luoghi</a>
+                      <ul class="dropdown-content button-right" role="menu">
+                          <li role="none"><a href="chiesette.php" tabindex="-1" role="menuitem">Sette Chiesette</a></li>
+                          <li role="none"><a href="catajo.php" tabindex="-1" role="menuitem">Castello del Catajo</a></li>
+                          <li role="none"><a href="praglia.php" tabindex="-1"  role="menuitem">Abbazia di Praglia</a></li>
+                          <li role="none"><a href="carrareseeste.php" tabindex="-1" role="menuitem">Castello carrarese di Este</a></li>
+                          <li role="none" class="active" ><a href="lispida.php" tabindex="-1" role="menuitem">Castello di Lispida</a></li>
+                          <li role="none"><a href="pelagio.php" tabindex="-1" role="menuitem">Castello San Pelagio</a></li>
+                      </ul>
+                  </li>
+                  <li><a href="../gite.php" tabindex="0">Gite</a></li>
+                  <?php
+                  if (isset($_SESSION['username'])):
+                  ?>
+                     <li class="dropdown button-right"><a aria-haspopup="true" aria-expanded="false" tabindex="0">Account</a>
+                          <ul class="dropdown-content" role="menu">
+                            <li><a href="../logout.php" tabindex="-1" role="menuitem">Logout</a></li>
+                            <li><a href="../view-account.php" tabindex="-1" role="menuitem">Impostazioni</a></li>
+                            <li><a href="../view-my-trip.php" tabindex="-1" role="menuitem">Le mie gite</a></li>
+                          </ul>
+                      </li>
+
+                  <?php
+                  else:
+                  ?>
+                     <li class="button-right"><a href="../login.php" tabindex="0">Accedi</a></li>
+                     <li class="button-right"><a  href="../Registrazione.php" tabindex="0">Registrati</a></li>
+                  <?php
+                  endif;
+                  ?>
+                 <li class="icon">
+                      <a href="#" id="mobile">&#9776;</a>
+                  </li>
+              </ul>
+      </div>
 			<div id="content">
 				<ul class="breadcrumb">
 					<li>Luoghi</li>
