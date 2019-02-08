@@ -95,6 +95,10 @@ $PrenotazioneOk=$dbConnection->addPrenotazione($_POST["ID"],$dbConnection->GetID
                <p> 14:30:00 </p>
             </div>
             <div class="field-container">
+               <label for="Posti" lang="it" class="log-label-riep">POSTI </label>
+               <p> 5 </p>
+            </div>
+            <div class="field-container">
                <label for="Prezzo" lang="it" class="log-label-riep">PREZZO TOTALE </label>
                <p> 140&euro; </p>
             </div>

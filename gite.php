@@ -99,7 +99,7 @@ $db->connect();
             echo"<span class='btnTrip'><a href='Prenotazione.php?id=".$node["ID_Attivita"]."'>Prenota la gita</a></span>";
           ?>
         <?php else: ?>
-			    <span class="btnTrip"><a href="Registrazione.php">Registrati</a> oppure effettua il <a href="login.php">login</a> per poter prenotare</span>
+			    <span class="btnTrip"><a href="login.php" aria-label="Accedi per prenotare la gita">Accedi</a> per poter prenotare</span>
         <?php endif ?>
         </div>
         <?php
