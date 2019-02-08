@@ -128,6 +128,10 @@ class database {
 			return true;
 		return false;
 	}
+	public function deletePrenotazione($id_prenotazione){
+		$query = $this->pdo->prepare('DELETE FROM Prenotazioni WHERE ID_Prenotazione = ?');
+		return $query->execute(array($id_prenotazione));
+	}
 	public function getListaPrenotazioni($email){
 		$query = $this->pdo->prepare('SELECT Attivita.Nome As nome,Attivita.Data AS data,
 																				 Attivita.Ore AS ore,Prenotazioni.NumPostiPrenotati AS posti,

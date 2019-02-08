@@ -6,7 +6,7 @@ $dbConnection = new database();
 $dbConnection->Connect();
 $PrenotazioneOk=$dbConnection->addPrenotazione($_POST["ID"],$dbConnection->GetIDUtente($_SESSION["username"]),
                                                $_POST["data"],$_POST["ora"],$_POST["posti"]
-                                             );
+                                              );
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+ARIA 1.0//EN"
   "http://www.w3.org/WAI/ARIA/schemata/xhtml-aria-1.dtd">
@@ -102,14 +102,6 @@ $PrenotazioneOk=$dbConnection->addPrenotazione($_POST["ID"],$dbConnection->GetID
               </div>
               <div class="success"> La prenotazione &egrave; stata confermata. </div>
             </div>
-          <?php
-            if($PrenotazioneOk){
-              echo "La prenotazione è andata a buon fine!";
-            }
-            else{
-              echo "c'è stato un errore";
-            }
-          ?>
       </div>
       <?php include_once('footer.php')?>
     </div>

@@ -104,11 +104,14 @@
   background-color: #0067c8;
   border-bottom-color: #0000c6;
 }
-.btn.red {
+
+  a.btn.red {
+    
   margin: auto;
   color: white;
   background-color: #ff0000;
   border-bottom-color: #ff0000;
+  margin-bottom: 2em;
 }
 
 .success {
