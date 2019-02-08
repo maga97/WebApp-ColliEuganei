@@ -285,7 +285,7 @@ ul#menuprincipale li.icon {
 
 #menuprincipale li:hover, .dropdown li:hover {
     background-color: #666;
-    color: white; 
+    color: white;
 }
 
 .dropdown:hover .dropdown-content {

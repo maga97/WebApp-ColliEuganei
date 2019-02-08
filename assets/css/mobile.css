@@ -1,5 +1,4 @@
 @media screen and (max-width:600px) {
-
   #storia {
     max-width: 100%;
     margin-left: auto;
@@ -61,6 +60,30 @@
   div.form{
     width:auto;
     min-width: 19em;
+  }
+
+  #dati-utente label , #mod-pwd-form label{
+    text-align: left;
+    width: 40%;
+  }
+  .input-container {
+    margin-left:0;
+    width: 100%;
+  }
+
+
+  #container_form{
+      width:auto;
+  }
+
+  #sectionPersonalData , #sectionAccountData {
+    float:none;
+    width: 100%;
+    margin:0;
+  }
+
+  #sectionAccountData {
+    padding-top: 1em;
   }
 
 }
