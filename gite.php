@@ -82,16 +82,15 @@ $db->connect();
           $node['Ore'] = substr($node['Ore'], 0, 5);
           $node['Data'] = $data[2] . "/" . $data[1] . "/" . $data[0];
         ?>
-        <h2><?php echo $node['Nome']; ?></h2>
         <div class="attivita">
+          <h2><?php echo $node['Nome']; ?></h2>
+          <p> <?php echo $node['Descrizione']; ?> </p>
           <dl>
-            <dt>Descrizione</dt>
-            <dd><?php echo $node['Descrizione']; ?></dd>
-            <dt>Prezzo</dt>
+            <dt>Prezzo:</dt>
             <dd><?php echo $node['Prezzo']; ?> &euro;</dd>
-            <dt>Data</dt>
+            <dt>Data:</dt>
             <dd><?php echo $node['Data']; ?></dd>
-            <dt>Ore</dt>
+            <dt>Ora:</dt>
             <dd><?php echo $node['Ore']?></dd>
           </dl>
           <?php if(isset($_SESSION['username'])):?>

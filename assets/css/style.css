@@ -285,7 +285,7 @@ ul#menuprincipale li.icon {
 
 #menuprincipale li:hover, .dropdown li:hover {
     background-color: #666;
-    color: white; 
+    color: white;
 }
 
 .dropdown:hover .dropdown-content {
@@ -393,6 +393,31 @@ div.attivita {
     padding-bottom: 0.8em;
     border-bottom: 0.1em solid black;
     border-color: #000000;
+}
+
+.attivita h2 {
+  text-indent: -0.5em;
+  margin: 0;
+}
+
+.attivita p {
+  margin: 0;
+}
+
+.attivita dl{
+  margin: 0;
+}
+
+.attivita dt {
+  color: #666;
+  float: left;
+  clear: left;
+  margin-right: 0.4em;
+}
+
+.attivita dd {
+  font-weight: bold;
+  margin-top: 0;
 }
 
 dl {
