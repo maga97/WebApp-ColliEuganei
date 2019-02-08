@@ -40,7 +40,7 @@ if(isset($_POST['email']) && isset($_POST['password']))
     <link rel="stylesheet" type="text/css" href="assets/css/mobile.css" media="all">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="../js/script.js"></script>
+    <script src="js/script.js"></script>
     <title>Login - Colli Digitali</title>
   </head>
   <body>
@@ -53,10 +53,10 @@ if(isset($_POST['email']) && isset($_POST['password']))
           </div>
         </div>
       </div>
-      <div id="menuprincipale-bar" role="menuBar">
+		    <div id="menuprincipale-bar" role="menuBar">
               <ul id="menuprincipale">
-                  <li><a href="index.php" tabindex="0">Home</a></li>
-                  <li class="dropdown" aria-haspopup="true" aria-expanded="false"><a tabindex="0">Luoghi</a>
+                  <li><a href="index.php" class="active" tabindex="0">Home</a></li>
+                  <li class="dropdown" ><a tabindex="0" aria-haspopup="true" aria-expanded="false">Luoghi</a>
                       <ul class="dropdown-content button-right" role="menu">
                           <li role="none"><a href="luoghi/chiesette.php" tabindex="-1" role="menuitem">Sette Chiesette</a></li>
                           <li role="none"><a href="luoghi/catajo.php" tabindex="-1" role="menuitem">Castello del Catajo</a></li>
@@ -70,18 +70,18 @@ if(isset($_POST['email']) && isset($_POST['password']))
                   <?php
                   if (isset($_SESSION['username'])):
                   ?>
-                     <li class="dropdown button-right" aria-haspopup="true" aria-expanded="false" tabindex="0"><a>Account</a>
+                     <li class="dropdown button-right"><a aria-haspopup="true" aria-expanded="false" tabindex="0">Account</a>
                           <ul class="dropdown-content" role="menu">
-                            <li><a href="logout.php" tabindex="-1" role="menuitem">Logout</a></li>
-                            <li><a href="view-account.php" tabindex="-1" role="menuitem">Impostazioni</a></li>
-                            <li><a href="view-my-trip.php" tabindex="-1" role="menuitem">Le mie gite</a></li>
+	                          <li><a href="logout.php" tabindex="-1" role="menuitem">Logout</a></li>
+	                          <li><a href="view-account.php" tabindex="-1" role="menuitem">Impostazioni</a></li>
+	                          <li><a href="view-my-trip.php" tabindex="-1" role="menuitem">Le mie gite</a></li>
                           </ul>
                       </li>
 
                   <?php
                   else:
                   ?>
-                     <li class="button-right"><a href="login.php" class="active" tabindex="0">Accedi</a></li>
+                     <li class="button-right"><a href="login.php" tabindex="0">Accedi</a></li>
                      <li class="button-right"><a href="Registrazione.php" tabindex="0">Registrati</a></li>
                   <?php
                   endif;
@@ -90,7 +90,7 @@ if(isset($_POST['email']) && isset($_POST['password']))
                       <a href="#" id="mobile">&#9776;</a>
                   </li>
               </ul>
-      </div>
+      		</div>
         <div id="content">
           <ul class="breadcrumb">
             <li><a href="index.php">Home</a></li>
@@ -102,13 +102,13 @@ if(isset($_POST['email']) && isset($_POST['password']))
                 if($wronglogin):
                   echo '
                   <div class="alert errore login" aria-live="assertive" role="alert" aria-atomic="true">Si è verificato un errore:
-                  <span lang="en">username</span> o <span lang="en">password</span> non corretti</div>';
+                  <span lang="en">email</span> o <span lang="en">password</span> non corretti</div>';
                 endif;
               ?>
               <h1>Accedi</h1>
               <div class="log-field-container">
                   <label for="username" class="log-label">Email: </label>
-                  <input type="text" id="username" name="email" placeholder="Nome utente.." accesskey="n" aria-required="true" aria-label="email">
+                  <input type="text" id="username" name="email" placeholder="Email.." accesskey="n" aria-required="true" aria-label="email">
               </div>
               <div class="log-field-container">
                   <label for="password" lang="en" class="log-label">Password: </label>

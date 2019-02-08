@@ -40,6 +40,7 @@
   }
   #menuprincipale.responsive .dropdown {float: none;}
   #menuprincipale.responsive .dropdown-content {position: relative;}
+  #menuprincipale.responsive ul.dropdown-content li a{text-indent: 1em;}
   #menuprincipale.responsive .dropdown .dropbtn {
     display: block;
     width: 100%;
