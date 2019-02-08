@@ -88,9 +88,11 @@ $db->connect();
             <dt>Ore</dt>
             <dd><?php echo $node['Ore']?></dd>
           </dl>
+        <button class="btn red"><a href="delete-gita-Action.php">Voglio disdire questa prenotazione</a></button>
         </div>
         <?php
-        endforeach; ?>
+        endforeach;
+        ?>
 
       </div>
       <?php echo include_once("footer.php"); ?>

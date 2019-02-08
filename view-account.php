@@ -5,71 +5,65 @@ if(!isset($_SESSION["username"])){
   header("Location: login.php");
   exit;
 }
-
 function validaCampo($campo) {
     return strlen($campo) > 0;
 }
-
 $db = new database();
 $db->connect();
-if(isset($_POST["conferma_modifica"])){
-    $ErroreEmail=false;
-    $ErroreNome=false;
-    $ErroreCognome=false;
-    $ErroreCampiVuoti=false;
-    $ErroreForm=false;
-    $ErroreUtenteEsistente=false;
-    $Errorecambiamento=false;
+$ErroreEmail=false;
+$ErroreNome=false;
+$ErroreCognome=false;
+$ErroreCampiVuoti=false;
+$ErroreForm=false;
+$ErroreUtenteEsistente=false;
+$Errorecambiamento=false;
+$pwdempty=false;
+$pwderror=false;
+$pwdNotEquals=false;
+if(isset($_POST["conferma_modifica"])) {
     $Email=validaCampo($_POST["email"]);
     $Nome=validaCampo($_POST["nome"]);
     $Cognome=validaCampo($_POST["cognome"]);
     if($Email && $Nome && $Cognome ){
-     if(strlen(filter_var($_POST["nome"], FILTER_SANITIZE_NUMBER_INT))>0) // controllo che il nome non contenga numeri
-       $ErroreNome=true;
-     if(strlen(filter_var($_POST["cognome"], FILTER_SANITIZE_NUMBER_INT))>0) // controllo che il cognome non contenga numeri
-       $ErroreCognome=true;
-     if(!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) // controllo che l'email sia nel formato giusto
-       $ErroreEmail=true;
-     if($_POST["email"]!=$_SESSION["username"] && $db->user_already_exists($_POST["email"])) // controllo che l'utente non sia già registrato con quell'email
-       $ErroreUtenteEsistente=true;
-     if(!$ErroreUtenteEsistente){
-        if(!$ErroreNome && !$ErroreCognome && !$ErroreEmail && !$ErroreUtenteEsistente){ // se i campi non contengono errori
-          if($db->update_user($_POST["nome"],$_POST["cognome"],$_POST["email"],$_POST["indirizzo"],$_POST["citta"],
-                                        $_POST["civico"],$_POST["CAP"],$_SESSION['username']))
-          { // provo ad aggiornare i dati nel db
-            $_SESSION["username"]=$_POST["email"];
-          }
-          else {
-            $Errorecambiamento=true;
-          }
-        }
-     }
+       if(strlen(filter_var($_POST["nome"], FILTER_SANITIZE_NUMBER_INT))>0) // controllo che il nome non contenga numeri
+          $ErroreNome=true;
+       if(strlen(filter_var($_POST["cognome"], FILTER_SANITIZE_NUMBER_INT))>0) // controllo che il cognome non contenga numeri
+          $ErroreCognome=true;
+       if(!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) // controllo che l'email sia nel formato giusto
+          $ErroreEmail=true;
+       if($_POST["email"]!=$_SESSION["username"] && $db->user_already_exists($_POST["email"])) // controllo che l'utente non sia già registrato con quell'email
+          $ErroreUtenteEsistente=true;
+       if(!$ErroreUtenteEsistente) { // se l'utente è gia registrato => errore
+            if(!$ErroreNome && !$ErroreCognome && !$ErroreEmail && !$ErroreUtenteEsistente) {// se i campi obbligatori non contengono errori
+                 if($db->update_user($_POST["nome"],$_POST["cognome"],$_POST["email"],$_POST["indirizzo"],$_POST["citta"],
+                                     $_POST["civico"],$_POST["CAP"],$_SESSION['username']))// provo ad aggiornare i dati nel db
+                   $_SESSION["username"]=$_POST["email"];
+                 else
+                   $Errorecambiamento=true;
+            }
+       }
    }
    else{
      $ErroreForm=true;
      $ErroreCampiVuoti=true;
    }
 }
-else if(isset($_POST["modifica_password"])){
+else if(isset($_POST["modifica_password"])) {
       $pwd=validaCampo($_POST["vecchia-password"]);
       $newpwd=validaCampo($_POST["password"]);
       $newpwd2=validaCampo($_POST["password2"]);
-      $pwdempty=false;
-      $pwderror=false;
-      $pwdNotEquals=false;
-      if($pwd && $newpwd && $newpwd2){
-        if($db->user_login($_SESSION["username"],$_POST["vecchia-password"])){
-          if($_POST["password"]==$_POST["password2"])
-            $db->AggiornaPWDUtente($_SESSION["username"],$_POST["password"]);
+      if($pwd && $newpwd && $newpwd2) {
+          if($db->user_login($_SESSION["username"],$_POST["vecchia-password"])) {
+              if($_POST["password"]==$_POST["password2"])
+                $db->AggiornaPWDUtente($_SESSION["username"],$_POST["password"]);
+              else
+                $pwdNotEquals=true;
+          }
           else
-            $pwdNotEquals=true;
-        }
-        else
-          $pwderror=true;
+              $pwderror=true;
       }
-      else{
+      else
         $pwdempty=true;
-      }
 }
  ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+ARIA 1.0//EN"
@@ -169,23 +163,31 @@ else if(isset($_POST["modifica_password"])){
 
               ?>
               <form id="dati-utente" method="POST">
-                <?php if($errore!="") echo $errore; ?>
+                <?php
+                      if($errore=="" && isset($_POST["conferma_modifica"])){
+                        echo "<div class='alertnojs success' aria-live='assertive' role='alert' aria-atomic='true'>
+                                <p>Dati modificati con successo</p>
+                              </div>";
+                      }
+                      if($errore!="")
+                        echo $errore;
+
+                ?>
                 <div class="log-field-container">
                         <label for="email" lang="en">Email: </label>
                         <div class="input-container">
-                          <input type="text" class="disabilita"
-                          <?php if(isset($_POST["modifica_dati"])): ?>
-                            id="email" name="email" value="<?php echo $_SESSION['username'];?>">
+                          <input type="text"class="disabilita"
+                          <?php if(isset($_POST["modifica_dati"]) || $ErroreForm || $ErroreUtenteEsistente): ?>
+                            id="email" name="email" value="<?php echo isset($_POST['email']) ? $_POST['email']: $_SESSION['username'];?>">
                             <?php else:?>
-
-                             disabled="disabled" id="username" name="username" value="<?php echo $_SESSION['username'];?>" >
+                             disabled="disabled" id="email" name="email" value="<?php echo $_SESSION['username'];?>" >
                            <?php endif; ?>
                         </div>
                     </div>
                     <div class="log-field-container">
                         <label for="nome" >Nome: </label>
                         <div class="input-container">
-                          <?php if(isset($_POST["modifica_dati"])): ?>
+                          <?php if(isset($_POST["modifica_dati"]) || $ErroreForm || $ErroreUtenteEsistente): ?>
                             <input type="text" class="disabilita" id="nome" name="nome" value="<?php echo $db->GetName($_SESSION['username']);?>" >
                             <?php else:?>
                             <input type="text" class="disabilita" disabled="disabled" id="nome" name="nome" value="<?php echo $db->GetName($_SESSION['username']);?>" >
@@ -196,8 +198,8 @@ else if(isset($_POST["modifica_password"])){
                         <label for="cognome" >Cognome: </label>
                         <div class="input-container">
                           <input type="text" class="disabilita"
-                          <?php if(isset($_POST["modifica_dati"])): ?>
-                            id="cognome" name="cognome" value="<?php echo $db->GetSurname($_SESSION['username']);?>" >
+                          <?php if(isset($_POST["modifica_dati"]) || $ErroreForm || $ErroreUtenteEsistente): ?>
+                            id="cognome" name="cognome" value="<?php echo isset($_POST["cognome"]) ? $_POST["cognome"] :$db->GetSurname($_SESSION['username']);?>" >
                             <?php else:?>
 
                              disabled="disabled" id="cognome" name="cognome" value="<?php echo $db->GetSurname($_SESSION['username']);?>" >
@@ -208,8 +210,8 @@ else if(isset($_POST["modifica_password"])){
                         <label for="indirizzo" >Indirizzo: </label>
                         <div class="input-container">
                           <input type="text" class="disabilita"
-                          <?php if(isset($_POST["modifica_dati"])): ?>
-                            id="indirizzo" name="indirizzo" value="<?php echo $db->GetAddress($_SESSION['username']);?>" >
+                          <?php if(isset($_POST["modifica_dati"]) || $ErroreForm || $ErroreUtenteEsistente): ?>
+                            id="indirizzo" name="indirizzo" value="<?php echo isset($_POST["indirizzo"]) ? $_POST["indirizzo"] :$db->GetAddress($_SESSION['username']);?>" >
                             <?php else:?>
 
                              disabled="disabled" id="indirizzo" value="<?php echo $db->GetAddress($_SESSION['username']);?>" >
@@ -220,8 +222,8 @@ else if(isset($_POST["modifica_password"])){
                         <label for="civico" >Civico: </label>
                         <div class="input-container">
                           <input type="text" class="disabilita"
-                          <?php if(isset($_POST["modifica_dati"])): ?>
-                            id="civico" name="civico" value="<?php echo $db->GetCivico($_SESSION['username']);?>" >
+                          <?php if(isset($_POST["modifica_dati"]) || $ErroreForm || $ErroreUtenteEsistente): ?>
+                            id="civico" name="civico" value="<?php echo isset($_POST["civico"]) ? $_POST["civico"] :$db->GetCivico($_SESSION['username']);?>" >
                             <?php else:?>
 
                              disabled="disabled" id="civico" name="civico" value="<?php echo $db->GetCivico($_SESSION['username']);?>" >
@@ -232,8 +234,8 @@ else if(isset($_POST["modifica_password"])){
                         <label for="citta" >Citt&agrave;: </label>
                         <div class="input-container">
                           <input type="text" class="disabilita"
-                          <?php if(isset($_POST["modifica_dati"])): ?>
-                            id="citta" name="citta" value="<?php echo $db->GetCity($_SESSION['username']);?>" >
+                          <?php if(isset($_POST["modifica_dati"]) || $ErroreForm || $ErroreUtenteEsistente): ?>
+                            id="citta" name="citta" value="<?php echo isset($_POST["citta"]) ? $_POST["citta"] :$db->GetCity($_SESSION['username']);?>" >
                             <?php else:?>
                              disabled="disabled" id="citta" name="citta" value="<?php echo $db->GetCity($_SESSION['username']);?>" >
                            <?php endif; ?>
@@ -243,8 +245,8 @@ else if(isset($_POST["modifica_password"])){
                         <label for="CAP"><abbr title="Codice di avviamento postale">CAP</abbr>: </label>
                         <div class="input-container">
                           <input type="text" class="disabilita"
-                          <?php if(isset($_POST["modifica_dati"])): ?>
-                            id="CAP" name="CAP" value="<?php echo $db->GetCAP($_SESSION['username']);?>" >
+                          <?php if(isset($_POST["modifica_dati"]) || $ErroreForm || $ErroreUtenteEsistente ): ?>
+                            id="CAP" name="CAP" value="<?php echo isset($_POST["CAP"]) ? $_POST["CAP"] :$db->GetCAP($_SESSION['username']);?>" >
                             <?php else:?>
 
                              disabled="disabled" id="CAP" name="CAP" value="<?php echo $db->GetCAP($_SESSION['username']);?>" >
@@ -253,10 +255,10 @@ else if(isset($_POST["modifica_password"])){
                     </div>
                     <div class="button-holder" >
                         <?php
-                        if(isset($_POST["modifica_dati"])):
-                         ?>
+                        if(isset($_POST["modifica_dati"]) || $ErroreForm || $ErroreUtenteEsistente):
+                        ?>
                          <button type="submit" id="conferma_modifica" name="conferma_modifica" class="btn btn-primary">Conferma le modifiche</button>
-                         <button id="annulla_modifica" name="conferma_modifica" class="btn btn-primary">Annulla le modifiche e torna indietro</button>
+                         <button id="annulla_modifica" name="annulla_modifica" class="btn btn-primary">Annulla le modifiche e torna indietro</button>
                         <?php
                         else:
                         ?>
@@ -291,7 +293,6 @@ else if(isset($_POST["modifica_password"])){
 
                         </div>
                     </form>
-                    <button id="elimina-account" class="btn btn-red">Elimina <span lang="en">account</span></button>
           </div>
 
       </div>
