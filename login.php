@@ -4,6 +4,9 @@ if(session_status() == PHP_SESSION_NONE) {
  session_start();
 }
 if(isset($_SESSION["username"])){ //se apro la pagina del login ma ho già effettuato l'accesso mi porta al pannello utente
+  if($_SESSION["admin"] == true)
+  header("Location: admin/index.php");
+  else
   header("Location: view-account.php");
   exit;
 }
@@ -18,8 +21,11 @@ if(isset($_POST['email']) && isset($_POST['password']))
 	if($dbConnection->user_login( $_POST['email'], $_POST['password'])) {
 		$_SESSION['login'] = true;
 		$_SESSION['username'] = $_POST['email'];
-		$_SESSION['admin'] = $dbConnection->isAmministratore($_POST['email']);
-    header("Location:".$_SESSION['current_page']);
+    $_SESSION['admin'] = $dbConnection->isAmministratore($_POST['email']);
+    if($_SESSION['admin'] == true)
+      header("Location: admin/index.php");
+    else 
+      header("Location:".$_SESSION['current_page']);
     unset_session($_SESSION['current_page']);
     exit;
   }
