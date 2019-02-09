@@ -50,15 +50,10 @@ $db->connect();
 		<ul class="breadcrumb">
 			<li><a href="gite.php">Gite</a></li>
 		</ul>
-    <?php
-      if($_GET["done"] == true) {
-        echo "<div class=\"alertnojs success\">Modifica avvenuta correttamente</div>" . PHP_EOL;
-      }
-      if(isset($_GET["error"])) {
-        echo "<div class=\"alertnojs errore login\"><p>Errore: " . $_GET["error"] . "</p></div>" . PHP_EOL;
-      }
-    ?>
-        <?php
+    <?php 
+          if($_GET["done"] == true) {
+            echo "<div class=\"alertnojs success\">Modifica avvenuta correttamente</div>" . PHP_EOL;
+          }
           $list = $db->GetListaAttivita();
           $size = sizeof($list);
           if($size == 0) {

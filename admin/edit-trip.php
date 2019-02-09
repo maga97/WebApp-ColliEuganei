@@ -63,6 +63,11 @@ $data = $gita[0]["Data"];
 					<li><a href="index.php">Amministrazione</a></li>
           <li><a href="select-trip-modify.php">Modifica gita</a></li>
 		</ul>
+    <?php
+      if(isset($_GET["error"])) {
+        echo "<div class=\"alertnojs errore login\"><p>Errore: " . $_GET["error"] . "</p></div>" . PHP_EOL;
+      }
+    ?>
     <div class="form">
     <form action="edit-trip-script.php" name="form-modify-trip" method="POST">
 		<div class="log-field-container">
@@ -77,11 +82,11 @@ $data = $gita[0]["Data"];
 		</div>
 		<div class="log-field-container">
 		  <label for="data">Data</label>
-		  <input type="text" name="data" placeholder="gg/MM/AA" required="required" value="<?php echo $data; ?>" />
+		  <input type="text" name="data" placeholder="gg/mm/aaaa" required="required" value="<?php echo $data; ?>" />
 		</div>
 		<div class="log-field-container">
 			<label for="ora">Ora</label>
-			<input type="text" name="ora" placeholder="HH/mm" required="required" value="<?php echo $ora; ?>" />
+			<input type="text" name="ora" placeholder="hh:mm" required="required" value="<?php echo $ora; ?>" />
 		</div>
 		<div class="log-field-container">
 			<label for="prezzo">Prezzo</label>
