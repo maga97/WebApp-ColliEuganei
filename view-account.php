@@ -68,17 +68,17 @@ else if(isset($_POST["modifica_password"])) {
  ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+ARIA 1.0//EN"
  "http://www.w3.org/WAI/ARIA/schemata/xhtml-aria-1.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css" media="all">
-    <link rel="stylesheet" type="text/css" href="assets/css/print.css" media="all">
-    <link rel="stylesheet" type="text/css" href="assets/css/form.css" media="all">
-    <link rel="stylesheet" type="text/css" href="assets/css/mobile.css" media="all">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="js/script.js"></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" media="all"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/print.css" media="all"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/form.css" media="all"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/mobile.css" media="all" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
     <title>Pannello Utente - Colli Digitali</title>
   </head>
   <body>
@@ -165,7 +165,7 @@ else if(isset($_POST["modifica_password"])) {
                     }
 
               ?>
-              <form id="dati-utente" method="POST">
+              <form id="dati-utente" method="post">
                 <?php
                       if($errore=="" && isset($_POST["conferma_modifica"])){
                         echo "<div class='alertnojs success' aria-live='assertive' role='alert' aria-atomic='true'>
@@ -183,7 +183,7 @@ else if(isset($_POST["modifica_password"])) {
                           <?php if(isset($_POST["modifica_dati"]) || $ErroreForm || $ErroreUtenteEsistente): ?>
                             id="email" name="email" value="<?php echo isset($_POST['email']) ? $_POST['email']: $_SESSION['username'];?>">
                             <?php else:?>
-                             disabled="disabled" id="email" name="email" value="<?php echo $_SESSION['username'];?>" >
+                             disabled="disabled" id="email" name="email" value="<?php echo $_SESSION['username'];?>" />
                            <?php endif; ?>
                         </div>
                     </div>
@@ -191,9 +191,9 @@ else if(isset($_POST["modifica_password"])) {
                         <label for="nome" >Nome: </label>
                         <div class="input-container">
                           <?php if(isset($_POST["modifica_dati"]) || $ErroreForm || $ErroreUtenteEsistente): ?>
-                            <input type="text" class="disabilita" id="nome" name="nome" value="<?php echo $db->GetName($_SESSION['username']);?>" >
+                            <input type="text" class="disabilita" id="nome" name="nome" value="<?php echo $db->GetName($_SESSION['username']);?>" />
                             <?php else:?>
-                            <input type="text" class="disabilita" disabled="disabled" id="nome" name="nome" value="<?php echo $db->GetName($_SESSION['username']);?>" >
+                            <input type="text" class="disabilita" disabled="disabled" id="nome" name="nome" value="<?php echo $db->GetName($_SESSION['username']);?>" />
                            <?php endif; ?>
                         </div>
                     </div>
@@ -202,10 +202,10 @@ else if(isset($_POST["modifica_password"])) {
                         <div class="input-container">
                           <input type="text" class="disabilita"
                           <?php if(isset($_POST["modifica_dati"]) || $ErroreForm || $ErroreUtenteEsistente): ?>
-                            id="cognome" name="cognome" value="<?php echo isset($_POST["cognome"]) ? $_POST["cognome"] :$db->GetSurname($_SESSION['username']);?>" >
+                            id="cognome" name="cognome" value="<?php echo isset($_POST["cognome"]) ? $_POST["cognome"] :$db->GetSurname($_SESSION['username']);?>"/ >
                             <?php else:?>
 
-                             disabled="disabled" id="cognome" name="cognome" value="<?php echo $db->GetSurname($_SESSION['username']);?>" >
+                             disabled="disabled" id="cognome" name="cognome" value="<?php echo $db->GetSurname($_SESSION['username']);?>" />
                            <?php endif; ?>
                         </div>
                     </div>
@@ -272,23 +272,26 @@ else if(isset($_POST["modifica_password"])) {
               <div class="titolo-form">
                         <h2>Modifica <span lang="en">password</span></h2>
                     </div>
-                    <form id="mod-pwd-form" method="POST">
+                    <form id="mod-pwd-form" method="post">
                         <div class="log-field-container">
                             <label for="vecchia-password" >Password corrente: (obbligatorio)</label>
                             <div class="input-container">
-                                <input type="password" id="vecchia-password" name="vecchia-password" placeholder="Password corrente" class="disabilita">
+                                <input type="password" id="vecchia-password" name="vecchia-password" aria-labelledby="ph_pwcorrente" class="disabilita">
+                                <span id="ph_pwcorrente" tabindex="-1">Password corrente</span>
                             </div>
                         </div>
                         <div class="log-field-container">
                             <label for="password" >Nuova <span lang="en">password</span>: (obbligatorio)</label>
                             <div class="input-container">
-                                <input type="password" id="password" name="password" placeholder="Inserisci la nuova password" class="disabilita">
+                                <input type="password" id="password" name="password" aria-labelledby="ph_pwnuova" class="disabilita">
+                                <span id="ph_pwnuova" tabindex="-1">Inserisci la nuova password</span>
                             </div>
                         </div>
                         <div class="log-field-container">
                             <label for="password2">Ripeti nuova <span lang="en">password</span>: (obbligatorio)</label>
                             <div class="input-container">
-                                <input type="password" id="password2" name="password2" placeholder="Ripeti la nuova password" class="disabilita">
+                                <input type="password" id="password2" name="password2" aria-labelledby="ph_pwnuovaripeti" class="disabilita">
+                                <span id="ph_pwnuovaripeti" tabindex="-1">Ripeti la nuova password</span>
                             </div>
                         </div>
                         <div class="button-holder" >

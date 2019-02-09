@@ -2,18 +2,18 @@
 if (session_status() == PHP_SESSION_NONE) { session_start(); }
 ?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+ARIA 1.0//EN" 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+ARIA 1.0//EN"
   "http://www.w3.org/WAI/ARIA/schemata/xhtml-aria-1.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css" media="all" />
-	<link rel="stylesheet" type="text/css" href="assets/css/print.css" media="all">
-    <link rel="stylesheet" type="text/css" href="assets/css/mobile.css" media="all">
+	<link rel="stylesheet" type="text/css" href="assets/css/print.css" media="all" />
+  <link rel="stylesheet" type="text/css" href="assets/css/mobile.css" media="all" />
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" />
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="js/script.js" type="text/javascript"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
 	<title>Home - Colli Digitali</title>
 </head>
 <body>
@@ -78,7 +78,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 				</div>
 				<div class="gallery">
 					<div class="galleryframe">
-						<img class="pic" src="assets/img/geog.jpg" alt="Geografia del territorio">
+						<img class="pic" src="assets/img/geog.jpg" alt="Geografia del territorio" />
 						<dl>
 							<dt>Geografia</dt>
 							<dd>Scopri la geografia del territorio e come si &egrave; formato.</dd>
@@ -98,7 +98,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 						</div>
 					</div>
 					<div class="galleryframe">
-						<img class="pic" src="assets/img/storia.jpg" alt="Immagine Rocca di Monselice">
+						<img class="pic" src="assets/img/storia.jpg" alt="Immagine Rocca di Monselice" />
 						<dl>
 							<dt>Storia</dt>
 							<dd>Scopri la storia, la cultura e l'arte del territorio</dd>
@@ -113,7 +113,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 						e a panorami di rara bellezza.
 					</p>
 					<div class="float-right climapic">
-						<img class="pic" src="assets/img/inverno.jpg" alt="Monte Ceva">
+						<img class="pic" src="assets/img/inverno.jpg" alt="Monte Ceva" />
 					</div>
 					<h3>Autunno e Inverno</h3>
 					<p class="text">
@@ -123,7 +123,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 						che risultano ancora pi&ugrave; accoglienti e confortevoli.
 					</p>
 					<div class="float-right climapic">
-						<img class="pic" src="assets/img/primavera.jpg" alt="Primavera nel colli Euganei">
+						<img class="pic" src="assets/img/primavera.jpg" alt="Primavera nel colli Euganei" />
 					</div>
 					<h3>Primavera ed Estate</h3>
 					<p class="text">
@@ -218,7 +218,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 					</p>
 					<h3>Storia di popoli</h3>
 					<div class="float-right">
-						<img class="pic storiapic" src="assets/img/atestino.jpg" alt="Immagine Atestino" >
+						<img class="pic storiapic" src="assets/img/atestino.jpg" alt="Immagine Atestino" />
 					</div>
 					<p class="text">
 						Dopo gli antichi Euganei, primi abitanti della zona, fu la volta dei Veneti le cui testimonianze &egrave; possibile ammirare
@@ -241,7 +241,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 					</p>
 					<h3>L'arte</h3>
 					<div class="float-right">
-						<img class="pic storiapic" src="assets/img/filmfestival.jpg" alt="Festival dei film all'anfiteatro del Venda" >
+						<img class="pic storiapic" src="assets/img/filmfestival.jpg" alt="Festival dei film all'anfiteatro del Venda" />
 					</div>
 					<p class="text">
 						Per gli amanti dell'arte, mete imperdibili sono i musei come il gi&agrave; citato Museo Nazionale Atestino di Este, ma soprattutto le ville

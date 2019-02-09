@@ -30,17 +30,17 @@ if(isset($_POST['email']) && isset($_POST['password']))
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+ARIA 1.0//EN"
   "http://www.w3.org/WAI/ARIA/schemata/xhtml-aria-1.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css" media="all">
-    <link rel="stylesheet" type="text/css" href="assets/css/print.css" media="all">
-    <link rel="stylesheet" type="text/css" href="assets/css/form.css" media="all">
-    <link rel="stylesheet" type="text/css" href="assets/css/mobile.css" media="all">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="js/script.js"></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="assets/css/print.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="assets/css/form.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="assets/css/mobile.css" media="all" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
     <title>Login - Colli Digitali</title>
   </head>
   <body>
@@ -97,7 +97,7 @@ if(isset($_POST['email']) && isset($_POST['password']))
             <li>Login</li>
           </ul>
           <div class="form" role="login">
-            <form method="POST" action="login.php" class="log-form">
+            <form method="post" action="login.php" class="log-form">
               <?php
                 if($wronglogin):
                   echo '
@@ -108,13 +108,13 @@ if(isset($_POST['email']) && isset($_POST['password']))
               <h1>Accedi</h1>
               <div class="log-field-container">
                   <label for="username" class="log-label">Email: </label>
-                  <input type="text" id="username" name="email" placeholder="Email.." accesskey="n" aria-required="true" aria-label="email">
+                  <input type="text" id="username" name="email" placeholder="Email.." accesskey="n" aria-required="true" aria-label="email" />
               </div>
               <div class="log-field-container">
                   <label for="password" lang="en" class="log-label">Password: </label>
-                  <input type="password" id="password" name="password" placeholder="Password.." accesskey="p" aria-required="true" aria-label="password">
+                  <input type="password" id="password" name="password" placeholder="Password.." accesskey="p" aria-required="true" aria-label="password" />
               </div>
-              <div class="button-holder"><input type="submit" value="Login" class="btn btn-primary"></div>
+              <div class="button-holder"><input type="submit" value="Login" class="btn btn-primary" /></div>
               <p id="not-registered">Non sei ancora registrato? <a href="../Registrazione.php" id="reg-sistema">Registrati</a></p>
             </form>
           </div>

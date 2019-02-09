@@ -12,20 +12,19 @@ $errore = "";
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+ARIA 1.0//EN"
   "http://www.w3.org/WAI/ARIA/schemata/xhtml-aria-1.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css" media="all">
-    <link rel="stylesheet" type="text/css" href="assets/css/print.css" media="all">
-    <link rel="stylesheet" type="text/css" href="assets/css/form.css" media="all">
-    <link rel="stylesheet" type="text/css" href="assets/css/mobile.css" media="all">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="js/script.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" media="all"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/print.css" media="all"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/form.css" media="all"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/mobile.css" media="all"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
     <!-- <script src="js/registrazione.js"></script> -->
-    <script src="js/global.js"></script>
-
+    <script type="text/javascript" src="js/global.js"></script>
     <title>Registrazione - Colli Digitali</title>
   </head>
   <body>
@@ -110,7 +109,7 @@ $errore = "";
                         </div>";
          ?>
          <div class="form container_form" >
-            <form action="RegistrazioneAction.php" method="POST" class="log-form" onsubmit="return validaFormUtente(true,$('.alert.errore'),$('form'))">
+            <form action="RegistrazioneAction.php" method="post" class="log-form" onsubmit="return validaFormUtente(true,$('.alert.errore'),$('form'))">
 
              <h1>Crea <span lang="en">account</span></h1>
              <?php
@@ -159,7 +158,7 @@ $errore = "";
                   <input type="password" id="password2" name="password2" placeholder="Ripeti password.." accesskey="p" aria-required="true" aria-label="ripeti password"/>
                 </div>
               </div>
-              <div class="button-holder">  
+              <div class="button-holder">
               	<input type="submit" value="Registrati" name="registrazione" class="btn btn-primary" aria-label="Bottone per confermare i dati inseriti e completare la registrazione."/>
               </div>
             </form>
