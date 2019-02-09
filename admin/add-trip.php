@@ -75,11 +75,11 @@ $db->connect();
 		</div>
 		<div class="log-field-container">
 		  <label for="data">Data</label>
-		  <input type="text" name="data" required="required" placeholder="gg/MM/AA" />
+		  <input type="text" name="data" required="required" placeholder="gg/mm/aaaa" />
 		</div>
 		<div class="log-field-container">
 			<label for="ora">Ora</label>
-			<input type="text" name="ora" required="required" placeholder="HH/mm" />
+			<input type="text" name="ora" required="required" placeholder="hh:mm" />
 		</div>
 		<div class="log-field-container">
 			<label for="prezzo">Prezzo</label>
