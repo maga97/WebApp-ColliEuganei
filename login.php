@@ -102,17 +102,17 @@ if(isset($_POST['email']) && isset($_POST['password']))
                 if($wronglogin):
                   echo '
                   <div class="alert errore login" aria-live="assertive" role="alert" aria-atomic="true">Si è verificato un errore:
-                  <span lang="en">email</span> o <span lang="en">password</span> non corretti</div>';
+                  <span xml:lang="en">email</span> o <span xml:lang="en">password</span> non corretti</div>';
                 endif;
               ?>
               <h1>Accedi</h1>
               <div class="log-field-container">
                   <label for="username" class="log-label">Email: </label>
-                  <input type="text" id="username" name="email" placeholder="Email.." accesskey="n" aria-required="true" aria-label="email" />
+                  <input type="text" id="username" name="email" accesskey="n" aria-required="true" aria-label="email" />
               </div>
               <div class="log-field-container">
-                  <label for="password" lang="en" class="log-label">Password: </label>
-                  <input type="password" id="password" name="password" placeholder="Password.." accesskey="p" aria-required="true" aria-label="password" />
+                  <label for="password" xml:lang="en" class="log-label">Password: </label>
+                  <input type="password" id="password" name="password" accesskey="p" aria-required="true" aria-label="password" />
               </div>
               <div class="button-holder"><input type="submit" value="Login" class="btn btn-primary" /></div>
               <p id="not-registered">Non sei ancora registrato? <a href="../Registrazione.php" id="reg-sistema">Registrati</a></p>
