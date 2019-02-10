@@ -131,6 +131,6 @@
   #sectionPersonalData , #sectionAccountData {
       float:none;
       width: 100%;
-      margin:200;
+      margin:0;
   }
 }
