@@ -75,15 +75,18 @@ $db->connect();
 		</div>
 		<div class="log-field-container">
 		  <label for="data">Data</label>
-		  <input type="text" name="data" required="required" placeholder="gg/mm/aaaa" />
+		  <input type="text" name="data" required="required" aria-labelledby="datadesc" />
+      <span id="datadesc" tabindex="-1">gg/mm/aaaa</span>
 		</div>
 		<div class="log-field-container">
 			<label for="ora">Ora</label>
-			<input type="text" name="ora" required="required" placeholder="hh:mm" />
+			<input type="text" name="ora" required="required" aria-labelledby="oradesc" />
+      <span id="oradesc" tabindex="-1">hh:mm</span>
 		</div>
 		<div class="log-field-container">
 			<label for="prezzo">Prezzo</label>
-			<input type="text" min="0" id="prezzoAddTrip" name="prezzo" required="required" placeholder="10.50" />
+			<input type="text" min="0" id="prezzoAddTrip" name="prezzo" required="required" aria-labelledby="prezzodesc" />
+      <span id="prezzodesc" tabindex="-1">10.50</span>
 		</div>
 		  <div class="button-holder">
 			  <input type="reset" value="Cancella dati" name="cancelladati" class="btn btn-tripCancel" />

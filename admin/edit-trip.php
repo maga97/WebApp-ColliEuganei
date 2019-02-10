@@ -82,15 +82,18 @@ $data = $gita[0]["Data"];
 		</div>
 		<div class="log-field-container">
 		  <label for="data">Data</label>
-		  <input type="text" name="data" placeholder="gg/mm/aaaa" required="required" value="<?php echo $data; ?>" />
+		  <input type="text" name="data" aria-labelledby="datadesc" required="required" value="<?php echo $data; ?>" />
+      <span id="datadesc" tabindex="-1">gg/mm/aaaa</span>
 		</div>
 		<div class="log-field-container">
 			<label for="ora">Ora</label>
-			<input type="text" name="ora" placeholder="hh:mm" required="required" value="<?php echo $ora; ?>" />
+			<input type="text" name="ora" aria-labelledby="oradesc" required="required" value="<?php echo $ora; ?>" />
+      <span id="oradesc" tabindex="-1">hh:mm</span>
 		</div>
 		<div class="log-field-container">
 			<label for="prezzo">Prezzo</label>
-			<input type="text" min="0" id="prezzoAddTrip" name="prezzo" required="required" placeholder="10.50" value="<?php echo $prezzo; ?>" />
+			<input type="text" min="0" id="prezzoAddTrip" name="prezzo" required="required" aria-labelledby="prezzodesc" value="<?php echo $prezzo; ?>" />
+      <span id="prezzodesc" tabindex="-1">10.50</span>
 		</div>
 		  <div class="button-holder">
 			  <input type="reset" value="Cancella dati" name="cancelladati" class="btn btn-tripCancel" />
