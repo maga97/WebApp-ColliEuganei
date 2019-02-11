@@ -1,5 +1,5 @@
 <div id="footer">
   <div id="copyright"> &copy; 2018 Colli Digitali </div>
-  <div>Creato per il progetto di tecnologie web</div>
-	<div id="fast-link"><p> Terms</p></div>
+  <div><p>Creato per il progetto di Tecnologie Web</p></div>
+	<div id="fast-link"><p>Anno accademico 2018/2019</p></div>
 </div>
