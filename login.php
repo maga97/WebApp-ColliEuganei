@@ -64,7 +64,7 @@ if(isset($_POST['email']) && isset($_POST['password']))
       </div>
 		    <div id="menuprincipale-bar" role="menubar">
               <ul id="menuprincipale">
-                  <li><a href="index.php" class="active" tabindex="0">Home</a></li>
+                  <li><a href="index.php" tabindex="0">Home</a></li>
                   <li class="dropdown" ><a tabindex="0" aria-haspopup="true">Luoghi</a>
                       <ul class="dropdown-content button-right" role="menu">
                           <li role="none"><a href="luoghi/chiesette.php" tabindex="0" role="menuitem">Sette Chiesette</a></li>
@@ -90,7 +90,7 @@ if(isset($_POST['email']) && isset($_POST['password']))
                   <?php
                   else:
                   ?>
-                     <li class="button-right"><a href="login.php" tabindex="0">Accedi</a></li>
+                     <li class="button-right"><a href="login.php" class="active" tabindex="0">Accedi</a></li>
                      <li class="button-right"><a href="Registrazione.php" tabindex="0">Registrati</a></li>
                   <?php
                   endif;
@@ -102,7 +102,6 @@ if(isset($_POST['email']) && isset($_POST['password']))
       		</div>
         <div id="content">
           <ul class="breadcrumb">
-            <li><a href="index.php">Home</a></li>
             <li>Login</li>
           </ul>
           <div class="form" role="login">
