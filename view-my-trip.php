@@ -20,6 +20,7 @@ $db->connect();
     <title>Pannello Utente - Colli Digitali</title>
   </head>
   <body>
+    <a href="#content" class="skip">Vai al contenuto</a>
     <div id="container">
       <div class="header">
         <div class="header-picture">
@@ -34,12 +35,12 @@ $db->connect();
                   <li><a href="index.php" tabindex="0">Home</a></li>
                   <li class="dropdown"><a aria-haspopup="true" aria-expanded="false" tabindex="0">Luoghi</a>
                       <ul class="dropdown-content button-right" role="menu">
-                          <li role="none"><a href="luoghi/chiesette.php" tabindex="-1" role="menuitem">Sette Chiesette</a></li>
-                          <li role="none"><a href="luoghi/catajo.php" tabindex="-1" role="menuitem">Castello del Catajo</a></li>
-                          <li role="none"><a href="luoghi/praglia.php" tabindex="-1" role="menuitem">Abbazia di Praglia</a></li>
-                          <li role="none"><a href="luoghi/carrareseeste.php" tabindex="-1" role="menuitem">Castello carrarese di Este</a></li>
-                          <li role="none"><a href="luoghi/lispida.php" tabindex="-1" role="menuitem">Castello di Lispida</a></li>
-                          <li role="none"><a href="luoghi/pelagio.php" tabindex="-1" role="menuitem">Castello San Pelagio</a></li>
+                          <li role="none"><a href="luoghi/chiesette.php" tabindex="0" role="menuitem">Sette Chiesette</a></li>
+                          <li role="none"><a href="luoghi/catajo.php" tabindex="0" role="menuitem">Castello del Catajo</a></li>
+                          <li role="none"><a href="luoghi/praglia.php" tabindex="0" role="menuitem">Abbazia di Praglia</a></li>
+                          <li role="none"><a href="luoghi/carrareseeste.php" tabindex="0" role="menuitem">Castello carrarese di Este</a></li>
+                          <li role="none"><a href="luoghi/lispida.php" tabindex="0" role="menuitem">Castello di Lispida</a></li>
+                          <li role="none"><a href="luoghi/pelagio.php" tabindex="0" role="menuitem">Castello San Pelagio</a></li>
                       </ul>
                   </li>
                   <li><a href="gite.php" tabindex="0">Gite</a></li>
@@ -48,9 +49,9 @@ $db->connect();
                   ?>
                      <li class="dropdown button-right"><a aria-haspopup="true" aria-expanded="false" tabindex="0" class="active">Account</a>
                           <ul class="dropdown-content" role="menu">
-                            <li><a href="logout.php" tabindex="-1" role="menuitem">Logout</a></li>
-                            <li><a href="view-account.php" tabindex="-1" role="menuitem">Impostazioni</a></li>
-                            <li class="active"><a href="view-my-trip.php" tabindex="-1" class="active" role="menuitem">Le mie gite</a></li>
+                            <li><a href="logout.php" tabindex="0" role="menuitem">Logout</a></li>
+                            <li><a href="view-account.php" tabindex="0" role="menuitem">Impostazioni</a></li>
+                            <li class="active"><a href="view-my-trip.php" tabindex="0" class="active" role="menuitem">Le mie gite</a></li>
                           </ul>
                       </li>
 

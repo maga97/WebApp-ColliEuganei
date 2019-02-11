@@ -16,6 +16,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 		<title>Il Castello di Lispida - Colli Euganei</title>
 	</head>
 	<body>
+    <a href="#content" class="skip">Vai al contenuto</a>
 		<div id="container">
 			<a id="top"></a>
 			<div class="header">
@@ -26,17 +27,17 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 					</div>
 				</div>
 		</div>
-		      <div id="menuprincipale-bar" role="menuBar">
+		      <div id="menuprincipale-bar" role="menubar">
               <ul id="menuprincipale">
                   <li><a href="../index.php" tabindex="0">Home</a></li>
                   <li class="dropdown"><a tabindex="0" class="active" aria-haspopup="true" aria-expanded="false">Luoghi</a>
                       <ul class="dropdown-content button-right" role="menu">
-                          <li role="none"><a href="chiesette.php" tabindex="-1" role="menuitem">Sette Chiesette</a></li>
-                          <li role="none"><a href="catajo.php" tabindex="-1" role="menuitem">Castello del Catajo</a></li>
-                          <li role="none"><a href="praglia.php" tabindex="-1"  role="menuitem">Abbazia di Praglia</a></li>
-                          <li role="none"><a href="carrareseeste.php" tabindex="-1" role="menuitem">Castello carrarese di Este</a></li>
-                          <li role="none" class="active" ><a href="lispida.php" tabindex="-1" role="menuitem">Castello di Lispida</a></li>
-                          <li role="none"><a href="pelagio.php" tabindex="-1" role="menuitem">Castello San Pelagio</a></li>
+                          <li role="none"><a href="chiesette.php" tabindex="0" role="menuitem">Sette Chiesette</a></li>
+                          <li role="none"><a href="catajo.php" tabindex="0" role="menuitem">Castello del Catajo</a></li>
+                          <li role="none"><a href="praglia.php" tabindex="0"  role="menuitem">Abbazia di Praglia</a></li>
+                          <li role="none"><a href="carrareseeste.php" tabindex="0" role="menuitem">Castello carrarese di Este</a></li>
+                          <li role="none" class="active" ><a href="lispida.php" tabindex="0" role="menuitem">Castello di Lispida</a></li>
+                          <li role="none"><a href="pelagio.php" tabindex="0" role="menuitem">Castello San Pelagio</a></li>
                       </ul>
                   </li>
                   <li><a href="../gite.php" tabindex="0">Gite</a></li>
@@ -45,9 +46,9 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
                   ?>
                      <li class="dropdown button-right"><a aria-haspopup="true" aria-expanded="false" tabindex="0">Account</a>
                           <ul class="dropdown-content" role="menu">
-                            <li><a href="../logout.php" tabindex="-1" role="menuitem">Logout</a></li>
-                            <li><a href="../view-account.php" tabindex="-1" role="menuitem">Impostazioni</a></li>
-                            <li><a href="../view-my-trip.php" tabindex="-1" role="menuitem">Le mie gite</a></li>
+                            <li><a href="../logout.php" tabindex="0" role="menuitem">Logout</a></li>
+                            <li><a href="../view-account.php" tabindex="0" role="menuitem">Impostazioni</a></li>
+                            <li><a href="../view-my-trip.php" tabindex="0" role="menuitem">Le mie gite</a></li>
                           </ul>
                       </li>
 
