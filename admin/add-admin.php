@@ -72,11 +72,11 @@ if(!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
       <caption>Elenco utenti</caption>
           <thead>
               <tr>
-                  <th>Nome</th>
-                  <th>Cognome</th>
-                  <th>Email</th>
-                  <th>Tipo</th>
-                  <th>Cambio ruolo</th>
+                  <th scope="col">Nome</th>
+                  <th scope="col">Cognome</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Tipo</th>
+                  <th scope="col">Cambio ruolo</th>
               </tr>
           </thead>
           <tbody>
