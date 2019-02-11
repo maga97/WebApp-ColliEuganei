@@ -440,7 +440,7 @@ dd {
     color: black;
 }
 
-.btnTrip>a {
+.btnTrip > a {
     color: red;
     text-transform: uppercase;
     text-decoration: underline;
@@ -476,41 +476,6 @@ dd {
     font-weight: bolder;
 }
 
-/* Tabella admin */
-#admin-table {
-    width: 100%;
-}
-#admin-table caption {
-    font-size: 1.3em;
-}
-#admin-table thead {
-    text-align: center;
-}
-#admin-table thead th {
-    border-bottom: solid 1px black;
-}
-#admin-table tfoot td {
-    border-top: solid 1px black;
-}
-.zebra tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-#admin-table tr:hover {
-    background-color: #f5f5f5;
-}
-#admin-table a {
-    color: blue;
-    text-decoration: underline;
-}
-#admin-table tfoot {
-    text-align: center;
-    font-weight: bold;
-}
-#admin-table td:last-child {
-    max-width: 250px;
-    word-wrap: break-word;
-}
-
 .skip {
         position: absolute;
         top: -1000px;
@@ -529,4 +494,38 @@ dd {
         width: auto;
         height: auto;
         overflow: visible;
+    }
+
+    .flex-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .admin-div {
+        max-width: 320px;
+        margin: 0.5em;
+        padding: 1em;
+        background: #D3D3D3;
+        border-radius: 0.3em;
+    }
+    .admin-div a {
+        background: #4CAF50;
+        color: white;
+        padding: 0 0.5% 0 0.5%;
+        text-decoration: underline;
+        text-align: center;
+        font-weight: bold;
+        display: block;
+        line-height: normal;
+    }
+    .admin-div a:hover {
+        color: rebeccapurple;
+        text-decoration: underline;
+        text-align: center;
+    }
+    .admin-div ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
     }

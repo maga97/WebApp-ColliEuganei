@@ -69,48 +69,44 @@ if(!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
       <li>Gestione utente </li>
       <li>Aggiungi admin</li>
     </ul>
-      <table class="zebra" id="admin-table">
-      <caption>Elenco utenti</caption>
-          <thead>
-              <tr>
-                  <th scope="col">Nome</th>
-                  <th scope="col">Cognome</th>
-                  <th scope="col">Email</th>
-                  <th scope="col">Tipo</th>
-                  <th scope="col">Cambio ruolo</th>
-              </tr>
-          </thead>
-          <tfoot>
-        <tr>
-            <td>Nome</td>
-            <td>Cognome</td>
-            <td>Email</td>
-            <td>Tipo</td>
-            <td>Cambio ruolo</td>
-        </tr>
-    </tfoot>
-          <tbody>
-    <?php
+    <?php 
         $db = new database();
         $db->connect();
         $users = $db->GetUsers("utente");
         if(sizeof($users) == 0):
-        echo htmlspecialchars('<tr><td colspan="5">Nessun utente che pu&ograve; diventare amministratore.</td></tr>') . PHP_EOL;
+        echo htmlspecialchars('<span>Nessun utente che pu&ograve; diventare amministratore.<span>') . PHP_EOL;
         endif;
+        $i = 0;
+        $open = false;
         foreach($users as $user):
+        if($i%3 == 0):
+         echo '<div class="flex-container">' . PHP_EOL ;
+         $open = true;
+        endif;
+         $i = $i + 1;
     ?>
-            <tr>
-                <td><?php echo $user["Nome"] ?></td>
-                <td><?php echo $user["Cognome"] ?></td>
-                <td><?php echo $user["Email"] ?></td>
-                <td><?php echo $user["Tipo"] ?></td>
+    <div class="admin-div">
+        <ul>
+            <li><?php echo $user["Nome"] ?></li>
+            <li><?php echo $user["Cognome"] ?></li>
+            <li><?php echo $user["Email"] ?></li>
+            <li><?php echo $user["Tipo"] ?></li>
                 <?php
                  $id = $user["ID_Utente"];
                 ?>
-                <td><a aria-label="Aggiungi <?php echo $user["Nome"] . " " . $user["Cognome"]; ?> come amministratore" href="edit-user-role.php?action=promote&amp;id=<?php echo $id; ?>">Aggiungi amministratore</a></td>
-            </tr>
-    <?php endforeach; ?>
-    </table>
+            <li><a aria-label="Aggiungi <?php echo $user["Nome"] . " " . $user["Cognome"]; ?> come amministratore" href="edit-user-role.php?action=promote&amp;id=<?php echo $id; ?>">Aggiungi amministratore</a></li>
+        </ul>
+        </div>
+    <?php 
+    if($i%3 == 0):
+      echo "</div>" . PHP_EOL;
+      $open = false;
+    endif;
+    endforeach; 
+    if($open == true):
+      echo "</div>" . PHP_EOL;
+    endif;
+    ?>
     </div>
     <?php echo include_once("../footer.php"); ?>
   </div>
