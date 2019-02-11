@@ -140,47 +140,9 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 						isolati nel cuore della pianura veneta. Per proteggere il territorio e valorizzarne le qualit&agrave; turistiche, fu istituito nel 1989 il parco regionale dei colli euganei, il primo della regione Veneto.
 					</p>
 					<h3>Origine dei colli</h3>
-					<div class="float-right" id="geotab" aria-hidden="true">
-						<table class="tg" aria-describedby="capTabella">
-							<caption id="capTabella"> Periodo di origine delle rocce </caption>
-							<tr>
-								<th class="tg-jp7n">Periodo</th>
-								<th class="tg-jp7n">Rocce</th>
-							</tr>
-							<tr>
-								<td class="tg-ai30">Oligocene</td>
-								<td class="tg-2fdn">Vulcaniti differenziate</td>
-							</tr>
-							<tr>
-								<td class="tg-aphi" rowspan="2">Eocene</td>
-								<td class="tg-107g">Marne euganee<br/></td>
-							</tr>
-							<tr>
-								<td class="tg-2fdn">Vulcaniti basaltiche</td>
-							</tr>
-							<tr>
-								<td class="tg-hd3d" rowspan="2">Cretaceo</td>
-								<td class="tg-2fdn">Scaglia rossa</td>
-							</tr>
-							<tr>
-								<td class="tg-2fdn">Biancone</td>
-							</tr>
-							<tr>
-								<td class="tg-bqpl" rowspan="2"><br/>Giurassico</td>
-								<td class="tg-2fdn">Rosso ammonitico</td>
-							</tr>
-							<tr>
-								<td class="tg-2fdn">Calcari grigi</td>
-							</tr>
-							<tr>
-								<td class="tg-ue2u" rowspan="2">Triassico</td>
-								<td class="tg-2fdn">Dolomia principale</td>
-							</tr>
-							<tr>
-								<td class="tg-2fdn">Vulcaniti basiche</td>
-							</tr>
-						</table>
-					</div>
+          <div class="float-right" id="geotab" aria-hidden="true">
+              <img class="pic" src="assets/img/geotab.png" alt="Primavera nel colli Euganei" />
+          </div>
 					<p class="text">
 						I colli sono di origine vulcanica: circa 30 milioni di anni fa il territorio che oggi costituisce la pianura padana era
 						un fondale marino. In questo contesto i colli sono nati in seguito ad eruzioni sottomarine che hanno depositato lava sul fondale marino.
