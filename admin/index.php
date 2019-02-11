@@ -50,7 +50,7 @@ if(!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
 				<?php if(isset($_SESSION['username'])): ?>
 					<li class="dropdown button-right"><a aria-haspopup="true" tabindex="0">Account</a>
 	                  	<ul class="dropdown-content" role="menu">
-	                      <li><a href="../view-account.php" tabindex="0" role="menuitem">Impostazioni</a></li>
+	                      <li><a href="view-account-admin.php" tabindex="0" role="menuitem">Impostazioni</a></li>
 	                      <li><a href="../logout.php" tabindex="0" role="menuitem">Logout</a></li>
 	                  	</ul>
                     </li>
