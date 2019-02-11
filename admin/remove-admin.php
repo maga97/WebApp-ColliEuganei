@@ -1,10 +1,11 @@
-<?php require_once("../DataBase/DBConnection.php");
+<?php
+require_once("../DataBase/DBConnection.php");
 if (session_status() == PHP_SESSION_NONE) {
-  session_start();
- }
-if(!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
-   header("Location: ../index.php");
- }
+    session_start();
+}
+if (!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
+    header("Location: ../index.php");
+}
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+ARIA 1.0//EN"
   "http://www.w3.org/WAI/ARIA/schemata/xhtml-aria-1.dtd">
@@ -48,17 +49,23 @@ if(!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
                       <li class="active"><a href="remove-admin.php" tabindex="0" role="menuitem">Rimuovi admin</a></li>
                     </ul>
                 </li>
-                <?php if(isset($_SESSION['username'])): ?>
+                <?php
+if (isset($_SESSION['username'])):
+?>
                     <li class="dropdown button-right"><a aria-haspopup="true" tabindex="0">Account</a>
                       <ul class="dropdown-content" role="menu">
                         <li><a href="view-account-admin.php" tabindex="0" role="menuitem">Impostazioni</a></li>
                         <li><a href="../logout.php" tabindex="0" role="menuitem">Logout</a></li>
                       </ul>
                     </li>
-                <?php else: ?>
+                <?php
+else:
+?>
           <li><a href="../login.php" tabindex="0">Accedi</a></li>
           <li><a href="../Registrazione.php" tabindex="0">Registrati</a></li>
-        <?php endif; ?>
+        <?php
+endif;
+?>
         <li class="icon">
           <a href="#" id="mobile">&#9776;</a>
         </li>
@@ -73,40 +80,14 @@ if(!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
       <caption>Elenco amministratori</caption>
           <thead>
               <tr>
-                  <th>Nome</th>
-                  <th>Cognome</th>
-                  <th>Email</th>
-                  <th>Tipo</th>
-                  <th>Cambio ruolo</th>
+                  <th scope="col">Nome</th>
+                  <th scope="col">Cognome</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Tipo</th>
+                  <th scope="col">Cambio ruolo</th>
               </tr>
           </thead>
-          <tbody>
-    <?php
-        $db = new database();
-        $db->connect();
-        $users = $db->GetUsers("amministratore");
-        if(sizeof($users) == 0):
-        echo '<tr><td colspan="5">Nessun amministratore presente!</td></tr>' . PHP_EOL;
-        endif;
-        foreach($users as $user):
-    ?>
-            <tr>
-                <td><?php echo $user["Nome"] ?></td>
-                <td><?php echo $user["Cognome"] ?></td>
-                <td><?php echo $user["Email"] ?></td>
-                <td><?php echo $user["Tipo"] ?></td>
-                <?php
-                 $id = $user["ID_Utente"];
-                ?>
-                <td>
-                  <?php if(sizeof($users) >  1): ?>
-                  <a aria-label="Rimuovi <?php echo $user["Nome"] . " " . $user["Cognome"]; ?> dal ruolo di amministratore" href="edit-user-role.php?action=remove&id=<?php echo $id; ?>">Rimuovi amministratore</a></td>
-                  <?php else: ?>
-                  Deve esserci almeno un amministratore.
-                  <?php endif; ?>
-            </tr>
-    <?php endforeach; ?>
-    <tfoot>
+          <tfoot>
         <tr>
             <td>Nome</td>
             <td>Cognome</td>
@@ -115,9 +96,57 @@ if(!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
             <td>Cambio ruolo</td>
         </tr>
     </tfoot>
+          <tbody>
+    <?php
+$db = new database();
+$db->connect();
+$users = $db->GetUsers("amministratore");
+if (sizeof($users) == 0):
+    echo htmlspecialchars('<tr><td colspan="5">Nessun amministratore presente!</td></tr>') . PHP_EOL;
+endif;
+foreach ($users as $user):
+?>
+            <tr>
+                <td><?php
+    echo $user["Nome"];
+?></td>
+                <td><?php
+    echo $user["Cognome"];
+?></td>
+                <td><?php
+    echo $user["Email"];
+?></td>
+                <td><?php
+    echo $user["Tipo"];
+?></td>
+                <?php
+    $id = $user["ID_Utente"];
+?>
+                <td>
+                  <?php
+    if (sizeof($users) > 1):
+?>
+                  <a aria-label="Rimuovi <?php
+        echo $user["Nome"] . " " . $user["Cognome"];
+?> dal ruolo di amministratore" href="edit-user-role.php?action=remove&amp;id=<?php
+        echo $id;
+?>">Rimuovi amministratore</a></td>
+                  <?php
+    else:
+?>
+                  Deve esserci almeno un amministratore.
+                  <?php
+    endif;
+?>
+            </tr>
+    <?php
+endforeach;
+?>
     </table>
     </div>
-    <?php echo include_once("../footer.php"); ?>
+    <?php
+echo include_once("../footer.php");
+?>
     </div>
   </body>
 </html>
