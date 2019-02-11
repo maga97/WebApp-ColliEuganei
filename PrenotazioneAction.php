@@ -122,7 +122,7 @@ if(isset($_POST["cancellaPrenotazione"])){
               <div class="button-holder">
                 <form action="" method="POST">
                   <input type="submit" value="Conferma" name="confermaPrenotazione" class="btn btn-riepConferma" />
-                  <input type="submit" value="Cancella" name="cancellaPrenotazione" class="btn btn-riepCancella" />
+                  <input type="submit" value="Annulla" name="cancellaPrenotazione" class="btn btn-riepCancella" />
                 </form>
               </div>
             </div>
