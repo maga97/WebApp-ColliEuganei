@@ -10,19 +10,20 @@ if(!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
   "http://www.w3.org/WAI/ARIA/schemata/xhtml-aria-1.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
   <head>
-      <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css" media="all"/>
+    <link rel="stylesheet" type="text/css" href="../assets/css/form.css" media="all"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/script.js"></script>
     <title>Aggiunta amministratore - Colli Digitali</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="../assets/css/style.css" media="all">
-    <link rel="stylesheet" type="text/css" href="../assets/css/form.css" media="all">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="../js/script.js"></script>
   </head>
   <body>
-    <a href="#content" class="skip">Vai al contenuto</a>
-      <div id="container">
+    <div>
+      <a href="#content" class="skip">Vai al contenuto</a>
+    </div>
+    <div id="container">
       <div class="header">
         <div class="header-picture">
           <div class="header-title">
@@ -112,6 +113,6 @@ if(!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
     </table>
     </div>
     <?php echo include_once("../footer.php"); ?>
-    </div>
+  </div>
   </body>
 </html>

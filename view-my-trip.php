@@ -31,8 +31,8 @@ $db->connect();
             <h2>Natura e storia in digitale</h2>
           </div>
         </div>
-      </div> 
-            <div id="menuprincipale-bar" role="menuBar">
+      </div>
+            <div id="menuprincipale-bar" role="menubar">
               <ul id="menuprincipale">
                   <li><a href="index.php" tabindex="0">Home</a></li>
                   <li class="dropdown"><a aria-haspopup="true" tabindex="0">Luoghi</a>
@@ -69,7 +69,7 @@ $db->connect();
       </div>
       <div id="content">
         <?php
-          $list = $db->getListaPrenotazioni($_SESSION["username"]);
+          $list = $db->getListaPrenotazioni(isset($_SESSION["username"]));
           $size = sizeof($list);
           if($size == 0) {
             echo "<h3>Non hai nessuna gita in programma!</h3>" . PHP_EOL;
