@@ -80,13 +80,22 @@ if(!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
                   <th scope="col">Cambio ruolo</th>
               </tr>
           </thead>
+          <tfoot>
+        <tr>
+            <td>Nome</td>
+            <td>Cognome</td>
+            <td>Email</td>
+            <td>Tipo</td>
+            <td>Cambio ruolo</td>
+        </tr>
+    </tfoot>
           <tbody>
     <?php
         $db = new database();
         $db->connect();
         $users = $db->GetUsers("utente");
         if(sizeof($users) == 0):
-        echo '<tr><td colspan="5">Nessun utente che pu&ograve; diventare amministratore.</td></tr>' . PHP_EOL;
+        echo htmlspecialchars('<tr><td colspan="5">Nessun utente che pu&ograve; diventare amministratore.</td></tr>') . PHP_EOL;
         endif;
         foreach($users as $user):
     ?>
@@ -98,18 +107,9 @@ if(!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
                 <?php
                  $id = $user["ID_Utente"];
                 ?>
-                <td><a aria-label="Aggiungi <?php echo $user["Nome"] . " " . $user["Cognome"]; ?> come amministratore" href="edit-user-role.php?action=promote&id=<?php echo $id; ?>">Aggiungi amministratore</a></td>
+                <td><a aria-label="Aggiungi <?php echo $user["Nome"] . " " . $user["Cognome"]; ?> come amministratore" href="edit-user-role.php?action=promote&amp;id=<?php echo $id; ?>">Aggiungi amministratore</a></td>
             </tr>
     <?php endforeach; ?>
-    <tfoot>
-        <tr>
-            <td>Nome</td>
-            <td>Cognome</td>
-            <td>Email</td>
-            <td>Tipo</td>
-            <td>Cambio ruolo</td>
-        </tr>
-    </tfoot>
     </table>
     </div>
     <?php echo include_once("../footer.php"); ?>
