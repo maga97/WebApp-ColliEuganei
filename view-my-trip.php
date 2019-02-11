@@ -94,7 +94,7 @@ $db->connect();
             <dt>Ore</dt>
             <dd><?php echo $node['Ore']?></dd>
           </dl>
-        <?php echo "<a id='delete' class='btn red' href='delete-prenotazione.php?id=".$node['id']."'>Voglio disdire questa prenotazione</a>"?>
+        <?php echo "<a class='btn red' href='delete-prenotazione.php?id=".$node['id']."'>Voglio disdire questa prenotazione</a>"?>
         </div>
         <?php
         endforeach;
