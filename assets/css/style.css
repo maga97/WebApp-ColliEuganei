@@ -167,9 +167,6 @@ ul.breadcrumb li+li:before {
     width: 28em;
 }
 
-#geotab{
-  width: 15em;
-}
 
 a:link {
     text-decoration: none;
@@ -431,6 +428,10 @@ dl {
 dd {
     margin-top: .3em;
     margin-bottom: .3em;
+}
+
+#geotab {
+	width: 15em;
 }
 
 .btnTrip {
