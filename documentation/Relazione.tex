@@ -104,14 +104,47 @@
 
 	\section{Scelte tecniche}
 	\subsection{XHTML1.0}
-
-
+	\subsection{CSS3}
+	I file necessari alla formattazione dello stile del sito e per i vari dispositivi sono collocati nella cartella \texttt{assets/css} mentre le immagini sono collocate nella 
+	cartella \texttt{assets/img}.
+	Il sito utilizza un foglio di stile principale, denominato \texttt{style.css}, e 3 fogli di stile secondari: \begin{itemize}
+		\item mobile.css: utilizzato per adattare il sito a dispositivi più piccoli, quali tablet e smartphone
+		\item print.css: utilizzato per la stampa, rimuove tutti i contenuti non necessari e impagina le informazioni per meglio adattarle a un foglio A4.
+		\item form.css: è stato deciso di dedicare un file a parte per la grafica dei form, in modo da avantaggiarne lo sviluppo e la gestione.
+	\end{itemize}
 	\subsection{JavaScript}
-
+	 I file contenenti gli script sono collocati nella cartella \texttt{js/}.	
+	\subsection{PHP}
 	\section{Suddivisione di struttura, presentazione e comportamento}
+	I file relativi alla parte di amministrazione sono contenuti all'interno della cartella \texttt{admin/}, mentre i file relativi alla parte pubblica sono nella cartella principale del sito. Tuttavia alcuni file sono necessari per entrambi le parti, ed in questo
+	caso vi erano due alternative: duplicare i file e mantenere la massima indipendenza fra
+	le parti, oppure tenere un unico file che si adatta a seconda del percorso da cui è incluso
+	(ad esempio con un \texttt{<?php if ... ?>}). Abbiamo scelto di utilizzare l'una oppure l'altra strategia a seconda di quanto riteniamo probabile che una particolare funzionalità possa differire a seconda che sia utilizzata dall'amministratore, oppure da un utente standard: \begin{itemize}
+		\item Pagina di accesso: la pagina di accesso al pannello di amministrazione è una
+		pagina a parte perchè è volutamente non raggiungibile direttamente dal sito pubbli-
+		co. Questa scelta è stata fatta per ragioni di sicurezza e rende necessario navigare
+		all'indirizzo preciso per visualizzarla.
+		\item Ricerca e visualizzazione dei risultati: anche in questo caso riteniamo possibile
+		che vengano implementate funzionalità non utili ad entrambe le parti, ma solo ad
+		una delle due.
+		\item Menù di navigazione: il menù di navigazione per l'utente è diverso da quello dell'amministratore, e ciò viene gestito da	statement condizionali a cascata.
+	\end{itemize}
 	\subsection{Parte utente}
 	\subsubsection{Struttura}
-
+	Consiste nell'insieme delle pagine del sito accessibili a tutti gli utenti. \begin{itemize}
+		\item Home (index.php): contiene una sezione introduttiva che spiega in che tipo di
+		sito ci si trova e che tipo di informazioni contiene. Sono presenti inoltre 3 mini-sezioni, Storia Clima e Geografia, ampliabili attraverso i bottoni "Scopri di più" predisposti. 
+		\item Luoghi (luoghi/): contiene le pagine relative ai luoghi turistici più importanti dei Colli Euganei, appronfonditamente descritti ed accompagnati da immagini simboliche.
+		\item Gite (gite.php): è la pagina dedicata alla prenotazione delle gite. Tutte le gite hanno un nome, una descrizione, l'ora e il giorno della visita turistica e un costo. Solo un utente loggato (e quindi registrato) può effettuare la prenotazione. Se non si è loggati, la pagina rimanda l'utente al form di login attraverso un link ben segnalato. Un utente può prenotare più di una gita. 
+		\item Accedi (login.php): questa pagina contiene il form di login in cui ogni utente può accedere al proprio account per prenotare una gita. Anche gli amministratori possono effettuare l'accesso da questa pagina per il loro account utente.
+		\item Registrazione (Registrazione.php): se l'utente non è registrato al sito, attraverso il link presente alla fine del forum, viene reindirizzato alla pagina di registrazione.
+		\item Registrazione (Registrazione.php): qui un nuovo utente può registrarsi al sito.
+		\item Account: una volta loggato, qui l'utente può amministrare il suo account. \'E presente un dropdown menù con tre voci: \begin{itemize}
+			\item Impostazioni: questa pagina permette di modificare i dati del proprio account (view-account.php)
+			\item Le mie gite (view-my-trip.php): questa pagina permette di vedere le gite prenotate fino a quel momento 
+			\item Logout (logout.php): per effettuare il logout.
+		\end{itemize}
+	\end{itemize}
 	\subsubsection{Presentazione}
 
 
@@ -120,7 +153,16 @@
 	\subsection{Parte amministratore}
 
 	\subsubsection{Struttura}
-
+	\'E la sezione accessibile solamente agli utenti admin. Questi utenti possono aggiungere, rimuovere e modificare gite ed aggiungere e rimuovere utenti admin. Di seguito, una breve descrizione delle sezioni a cui ha accesso un amministratore del sito. \begin{itemize}
+		\item Home: schermata di benvenuto con sintetico riepilogo delle funzionalità offerte all'amministratore.
+		\item Gestione gite: è un dropdown menù con 3 voci:
+		\begin{itemize}
+			\item Aggiungi nuova gita: serve per inserire una nuova gita
+			\item Modifica dati gita: serve per modificare i dati di una determinata gita
+			\item Rimuovi gita: serve per rimuovere una gita
+		\end{itemize}
+		\item Account: come sopra descritto.
+	\end{itemize}
 	\subsubsection{Presentazione}
 
 	\subsubsection{Comportamento}
@@ -244,13 +286,15 @@
 	\begin{itemize}
 		\item ciao
 	\end{itemize}
-	\subsection{Marco Costantino - matricola}
+	\subsection{Marco Costantino - 1144120}
 	\begin{itemize}
-		\item ciao
+		\item Progettazione dell'aspetto visivo delle pagine: XHTML e CSS3 
+		\item Accessibilità del sito
 	\end{itemize}
-	\subsection{Davide Zilio- Matricola }
+	\subsection{Davide Zilio - 1149807 }
 	\begin{itemize}
-		\item ciao
+		\item Progettazione dell'aspetto visivo delle pagine: XHTML e CSS3 
+		\item Accessibilità del sito
 	\end{itemize}
 
 \end{document}
