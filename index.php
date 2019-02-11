@@ -47,9 +47,9 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
                   ?>
                      <li class="dropdown button-right"><a aria-haspopup="true" aria-expanded="false" tabindex="0">Account</a>
                           <ul class="dropdown-content" role="menu">
-	                          <li><a href="logout.php" tabindex="0" role="menuitem">Logout</a></li>
 	                          <li><a href="view-account.php" tabindex="0" role="menuitem">Impostazioni</a></li>
 	                          <li><a href="view-my-trip.php" tabindex="0" role="menuitem">Le mie gite</a></li>
+	                          <li><a href="logout.php" tabindex="0" role="menuitem">Logout</a></li>
                           </ul>
                       </li>
 

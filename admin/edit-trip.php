@@ -31,6 +31,7 @@ $data = $gita[0]["Data"];
     <title>Modifica gita - Colli Digitali</title>
   </head>
   <body>
+    <a href="#content" class="skip">Vai al contenuto</a>
     <div id="container">
       <div class="header">
         <div class="header-picture">
@@ -41,28 +42,43 @@ $data = $gita[0]["Data"];
         </div>
       </div>
       <div id="menuprincipale-bar">
-        <ul id="menuprincipale">
-          <li class="dropdown"><a href="index.php" tabindex="1">Amministrazione</a></li>
-          <li><a href="add-trip.php" tabindex="2">Aggiungi gita</a></li>
-          <li><a href="select-trip-modify.php" class="active" tabindex="3">Modifica gita</a></li>
-          <?php if(isset($_SESSION['username'])): ?>
-            <li><a href="pages/view-account.php">Account</a></li>
-            <li><a href="" >Impostazioni</a></li>
-			<li><a href="view-account.php?logout=true" tabindex="4" xml:lang="en">Logout</a></li>
-            <?php else: ?>
-              <li><a href="pages/login.php" tabindex="4">Accedi</a></li>
-              <li><a href="Registrazione.php" tabindex="5">Registrati</a></li>
-            <?php endif; ?>
-            <li class="icon">
-              <a href="#" id="mobile">&#9776;</a>
-            </li>
-          </ul>
-        </div>
+      <ul id="menuprincipale">
+        <li><a href="index.php" tabindex="0">Home</a></li>
+        <li class="dropdown"><a class="active" aria-haspopup="true" tabindex="0">Gestione gite</a>
+                    <ul class="dropdown-content" role="menu">
+                      <li><a href="add-trip.php" tabindex="0" role="menuitem">Aggiungi nuova gita</a></li>
+                      <li  class="active"><a href="select-trip-modify.php" tabindex="0" role="menuitem">Modifica dati gita</a></li>
+                      <li><a href="remove-trip.php" tabindex="0" role="menuitem">Rimuovi gita</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a aria-haspopup="true" tabindex="0">Gestione utente</a>
+                    <ul class="dropdown-content" role="menu">
+                      <li><a href="add-admin.php" tabindex="0" role="menuitem">Aggiungi admin</a></li>
+                      <li><a href="remove-admin.php" tabindex="0" role="menuitem">Rimuovi admin</a></li>
+                    </ul>
+                </li>
+                <?php if(isset($_SESSION['username'])): ?>
+          <li class="dropdown button-right"><a aria-haspopup="true" tabindex="0">Account</a>
+                      <ul class="dropdown-content" role="menu">
+                        <li><a href="../view-account.php" tabindex="0" role="menuitem">Impostazioni</a></li>
+                        <li><a href="../view-my-trip.php" tabindex="0" role="menuitem">Le mie gite</a></li>
+                        <li><a href="../logout.php" tabindex="0" role="menuitem">Logout</a></li>
+                      </ul>
+                    </li>
+        <?php else: ?>
+          <li><a href="../login.php" tabindex="0">Accedi</a></li>
+          <li><a href="../Registrazione.php" tabindex="0">Registrati</a></li>
+        <?php endif; ?>
+        <li class="icon">
+          <a href="#" id="mobile">&#9776;</a>
+        </li>
+        </ul>
+      </div>
     <div id="content">
     <ul class="breadcrumb">
-					<li><a href="index.php">Amministrazione</a></li>
-          <li><a href="select-trip-modify.php">Modifica gita</a></li>
-		</ul>
+      <li>Gestione gite </li>
+      <li>Modifica dati gita</li>
+    </ul>
     <?php
       if(isset($_GET["error"])) {
         echo "<div class=\"alertnojs errore login\"><p>Errore: " . $_GET["error"] . "</p></div>" . PHP_EOL;

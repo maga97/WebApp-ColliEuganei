@@ -18,6 +18,7 @@ if(!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
 	<title>Amministrazione - Colli Digitali</title>
 </head>
 <body>
+	<a href="#content" class="skip">Vai al contenuto</a>
 	<div id="container">
 		<a id="top"></a>
 		<div class="header">
@@ -30,14 +31,30 @@ if(!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
 		</div>
 		<div id="menuprincipale-bar">
 			<ul id="menuprincipale">
-				<li><a href="index.php" class="active" tabindex="1">Home</a></li>
-				<li><a href="add-trip.php" tabindex="2">Aggiungi gite</a></li>
+				<li><a href="index.php" class="active" tabindex="0">Home</a></li>
+				<li class="dropdown"><a aria-haspopup="true" tabindex="0">Gestione gite</a>
+                  	<ul class="dropdown-content" role="menu">
+                      <li><a href="add-trip.php" tabindex="0" role="menuitem">Aggiungi nuova gita</a></li>
+                      <li><a href="select-trip-modify.php" tabindex="0" role="menuitem">Modifica dati gita</a></li>
+                      <li><a href="remove-trip.php" tabindex="0" role="menuitem">Rimuovi gita</a></li>
+                  	</ul>
+                </li>
+                <li class="dropdown"><a aria-haspopup="true" tabindex="0">Gestione utente</a>
+                  	<ul class="dropdown-content" role="menu">
+                      <li><a href="add-admin.php" tabindex="0" role="menuitem">Aggiungi admin</a></li>
+                      <li><a href="remove-admin.php" tabindex="0" role="menuitem">Rimuovi admin</a></li>
+                  	</ul>
+                </li>
 				<?php if(isset($_SESSION['username'])): ?>
-					<li><a href="logout.php">Logout</a></li>
-					<li><a href="view-account.php">Account</a></li>
+					<li class="dropdown button-right"><a aria-haspopup="true" tabindex="0">Account</a>
+	                  	<ul class="dropdown-content" role="menu">
+	                      <li><a href="../view-account.php" tabindex="0" role="menuitem">Impostazioni</a></li>
+	                      <li><a href="../logout.php" tabindex="0" role="menuitem">Logout</a></li>
+	                  	</ul>
+                    </li>
 				<?php else: ?>
-					<li><a href="login.php" tabindex="3">Accedi</a></li>
-					<li><a href="Registrazione.php" tabindex="4">Registrati</a></li>
+					<li><a href="../login.php" tabindex="0">Accedi</a></li>
+					<li><a href="../Registrazione.php" tabindex="0">Registrati</a></li>
 				<?php endif; ?>
 				<li class="icon">
 					<a href="#" id="mobile">&#9776;</a>
@@ -46,12 +63,24 @@ if(!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
 			</div>
 			<div id="content">
 				<ul class="breadcrumb">
-					<li><a href="index.php">Amministrazione</a></li>
+					<li>Home</li>
 				</ul>
 				<div>
-				 <h3>Aggiunta di una nuova gita</h3>
-				 <p>Permette di inserire all'interno del sistema una nuova attivita o gita disponibile agli utenti.</p>
-				 <p>Per far ciò selezionare la voce del menu "Aggiunta gita".</p>
+				 <h3>Gestione gite</h3>
+				 <p>Permette di inserire all'interno del sistema una nuova attivit&agrave; o gita disponibile agli utenti, modificarne i dati oppure rimuoverla.</p>
+				 <p>Per far ci&ograve; selezionare la rispettiva del menu "Gestione gite".</p>
+				 <ul>
+				  <li>Aggiungi nuova gita</li>
+				  <li>Modifica i dati di una gita</li>
+				  <li>Rimuovi una gita</li>
+				</ul>
+				<h3>Gestione utente</h3>
+				 <p>Permette di inserire o rimuovere un admin.</p>
+				 <p>Per far ci&ograve; selezionare la rispettiva del menu "Gestione utente".</p>
+				 <ul>
+				  <li>Aggiungi admin</li>
+				  <li>Rimuovi admin</li>
+				</ul>
 				</div>
 			</div>
 			</div>

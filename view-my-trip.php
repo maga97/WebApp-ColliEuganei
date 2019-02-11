@@ -29,7 +29,7 @@ $db->connect();
             <h2>Natura e storia in digitale</h2>
           </div>
         </div>
-      </div>
+      </div> 
             <div id="menuprincipale-bar" role="menuBar">
               <ul id="menuprincipale">
                   <li><a href="index.php" tabindex="0">Home</a></li>
@@ -44,17 +44,14 @@ $db->connect();
                       </ul>
                   </li>
                   <li><a href="gite.php" tabindex="0">Gite</a></li>
-                  <?php
-                  if (isset($_SESSION['username'])):
-                  ?>
+                  <?php if(isset($_SESSION['username'])): ?>
                      <li class="dropdown button-right"><a aria-haspopup="true" aria-expanded="false" tabindex="0" class="active">Account</a>
                           <ul class="dropdown-content" role="menu">
-                            <li><a href="logout.php" tabindex="0" role="menuitem">Logout</a></li>
                             <li><a href="view-account.php" tabindex="0" role="menuitem">Impostazioni</a></li>
                             <li class="active"><a href="view-my-trip.php" tabindex="0" class="active" role="menuitem">Le mie gite</a></li>
+                            <li><a href="logout.php" tabindex="0" role="menuitem">Logout</a></li>
                           </ul>
                       </li>
-
                   <?php
                   else:
                   ?>
