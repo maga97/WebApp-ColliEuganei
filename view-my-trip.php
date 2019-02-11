@@ -69,7 +69,7 @@ $db->connect();
       </div>
       <div id="content">
         <?php
-          $list = $db->getListaPrenotazioni(isset($_SESSION["username"]));
+          $list = $db->getListaPrenotazioni($_SESSION["username"]);
           $size = sizeof($list);
           if($size == 0) {
             echo "<h3>Non hai nessuna gita in programma!</h3>" . PHP_EOL;

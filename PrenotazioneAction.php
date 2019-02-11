@@ -4,9 +4,19 @@ if(session_status() == PHP_SESSION_NONE) {
 }
 $dbConnection = new database();
 $dbConnection->Connect();
-$PrenotazioneOk=$dbConnection->addPrenotazione($_POST["ID"],$dbConnection->GetIDUtente($_SESSION["username"]),
-                                               $_POST["data"],$_POST["ora"],$_POST["posti"]
+$PrenotazioneOk=false;
+
+if(!isset($_SESSION["posti"]))
+  $_SESSION["posti"]=$_POST["posti"];
+if(isset($_POST["confermaPrenotazione"])) {
+$PrenotazioneOk=$dbConnection->addPrenotazione($_SESSION["ID"],$dbConnection->GetIDUtente($_SESSION["username"]),
+                                               $_SESSION["data"],$_SESSION["ora"],$_SESSION["posti"]
                                               );
+}
+if(isset($_POST["cancellaPrenotazione"])){
+  header("Location: gite.php");
+  exit;
+}
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+ARIA 1.0//EN"
   "http://www.w3.org/WAI/ARIA/schemata/xhtml-aria-1.dtd">
@@ -54,7 +64,7 @@ $PrenotazioneOk=$dbConnection->addPrenotazione($_POST["ID"],$dbConnection->GetID
                   if (isset($_SESSION['username'])):
                   ?>
                      <li class="dropdown button-right"><a aria-haspopup="true" aria-expanded="false" tabindex="0">Account</a>
-                          <ul class="dropdown-content" role="menu"> 
+                          <ul class="dropdown-content" role="menu">
                      <li class="dropdown button-right"><a aria-haspopup="true" tabindex="0">Account</a>
                           <ul class="dropdown-content" role="menu">
                             <li><a href="logout.php" tabindex="0" role="menuitem">Logout</a></li>
@@ -82,42 +92,44 @@ $PrenotazioneOk=$dbConnection->addPrenotazione($_POST["ID"],$dbConnection->GetID
             <li><a href="Gite.php">Gite</a></li>
             <li>Riepilogo prenotazione</li>
           </ul>
+          <?php if(!$PrenotazioneOk):?>
           <div id="riepilogo">
             <h2> Riepilogo prenotazione </h2>
             <div class="field-container">
                <label for="Nome" lang="it" class="log-label-riep">ATTIVIT&Agrave; </label>
-               <p> Gita al castello del catajo </p>
+               <p>  </p>
             </div>
             <div class="field-container">
                <label for="Descrizione" lang="it" class="log-label-riep">DESCRIZIONE </label>
-               <p> Alla scoperta del Castello del Catajo, il Castello imponente vicino casa di Francesco. </p>
+               <p> <?php  echo $_POST["descrizione"].PHP_EOL;?> </p>
             </div>
             <div class="field-container">
                <label for="Data" lang="it" class="log-label-riep">DATA </label>
-               <p> 19/05/2019 </p>
+               <p> <?php  echo $_POST["data"].PHP_EOL;?> </p>
             </div>
             <div class="field-container">
                <label for="Ora" lang="it" class="log-label-riep">ORA </label>
-               <p> 14:30:00 </p>
+               <p> <?php  echo $_POST["ora"].PHP_EOL;?> </p>
             </div>
             <div class="field-container">
                <label for="Posti" lang="it" class="log-label-riep">POSTI </label>
-               <p> 5 </p>
+               <p> <?php  echo $_POST["posti"].PHP_EOL;?> </p>
             </div>
             <div class="field-container">
                <label for="Prezzo" lang="it" class="log-label-riep">PREZZO TOTALE </label>
-               <p> 140&euro; </p>
+               <p> <?php  echo (float)$_SESSION["prezzo"]*(float)$_SESSION["posti"];?> </p>
             </div>
               <div class="button-holder">
                 <form action="" method="POST">
                   <input type="submit" value="Conferma" name="confermaPrenotazione" class="btn btn-riepConferma" />
-                </form>
-                <form action="" method="POST">
                   <input type="submit" value="Cancella" name="cancellaPrenotazione" class="btn btn-riepCancella" />
                 </form>
               </div>
-              <div class="success"> La prenotazione &egrave; stata confermata. </div>
             </div>
+            <?php else: echo "<div class='success'> La prenotazione &egrave; stata confermata. </div>";
+                  endif;
+            ?>
+
       </div>
       <?php include_once('footer.php')?>
     </div>
