@@ -74,7 +74,8 @@ if(intval($data_array[1]) > 12 || intval($data_array[1]) < 0) {
     exit;
 }
 if(intval($data_array[2]) < date("Y")) {
-    header("Location: add-trip.php?error=" .urlencode("Anno inserito minore rispetto all' anno attuale."));
+    header("Location: add-trip.php?error=" .urlencode("Anno inserito minore rispetto all' anno attuale."))
+    ;
     exit;
 }
 
