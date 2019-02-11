@@ -17,7 +17,9 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 	<title>Home - Colli Digitali</title>
 </head>
 <body>
-  <a href="#content" class="skip">Vai al contenuto</a>
+  <div>
+    <a href="#content" class="skip">Vai al contenuto</a>
+  </div>
 	<div id="container">
 		<a id="top"></a>
 		<div class="header">
@@ -45,7 +47,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
                   <?php
                   if (isset($_SESSION['username'])):
                   ?>
-                     <li class="dropdown button-right"><a aria-haspopup="true" aria-expanded="false" tabindex="0">Account</a>
+                     <li class="dropdown button-right"><a aria-haspopup="true" tabindex="0">Account</a>
                           <ul class="dropdown-content" role="menu">
 	                          <li><a href="logout.php" tabindex="0" role="menuitem">Logout</a></li>
 	                          <li><a href="view-account.php" tabindex="0" role="menuitem">Impostazioni</a></li>
@@ -89,7 +91,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 						</div>
 					</div>
 					<div class="galleryframe">
-						<img class="pic" src="assets/img/clima.jpg" alt="" />
+						<img class="pic" src="assets/img/clima.jpg" alt="Immagine dei colli euganei coperti di neve" />
 						<dl>
 							<dt>Clima</dt>
 							<dd>Scopri come il territorio si presenta nel corso dell'anno.</dd>
@@ -141,7 +143,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 					</p>
 					<h3>Origine dei colli</h3>
           <div class="float-right" id="geotab" aria-hidden="true">
-              <img class="pic" src="assets/img/geotab.png" alt="Primavera nel colli Euganei" />
+              <img class="pic" src="assets/img/geotab.png" alt="" />
           </div>
 					<p class="text">
 						I colli sono di origine vulcanica: circa 30 milioni di anni fa il territorio che oggi costituisce la pianura padana era
