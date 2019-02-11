@@ -13,6 +13,7 @@ if(!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <link rel="stylesheet" type="text/css" href="../assets/css/style.css" media="all"/>
+    <link rel="stylesheet" type="text/css" href="../assets/css/mobile.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="../assets/css/form.css" media="all"/>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css"/>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -70,11 +71,19 @@ if(!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
       <li>Aggiungi admin</li>
     </ul>
     <?php 
+        if(isset($_GET["done"]) && $_GET["done"] == true) {
+          echo '<div class="alert success" aria-live="assertive" role="alert" aria-atomic="true">Rimozione avvenuta correttamente</div>' . PHP_EOL;
+        }
+        if(isset($_GET["error"])):
+        ?>
+        <div class="alert errore" aria-live="assertive" role="alert" aria-atomic="true"><?php echo htmlspecialchars($_GET["error"]) ?></div> 
+        <?php
+        endif; 
         $db = new database();
         $db->connect();
         $users = $db->GetUsers("utente");
         if(sizeof($users) == 0):
-        echo htmlspecialchars('<span>Nessun utente che pu&ograve; diventare amministratore.<span>') . PHP_EOL;
+        echo '<div class="alert warning">Nessun utente che pu&ograve; diventare amministratore.<div>' . PHP_EOL;
         endif;
         $i = 0;
         $open = false;
@@ -94,8 +103,8 @@ if(!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
                 <?php
                  $id = $user["ID_Utente"];
                 ?>
-            <li><a aria-label="Aggiungi <?php echo $user["Nome"] . " " . $user["Cognome"]; ?> come amministratore" href="edit-user-role.php?action=promote&amp;id=<?php echo $id; ?>">Aggiungi amministratore</a></li>
         </ul>
+        <a aria-label="Aggiungi <?php echo $user["Nome"] . " " . $user["Cognome"]; ?> come amministratore" href="edit-user-role.php?action=promote&amp;id=<?php echo $id; ?>">Aggiungi amministratore</a>
         </div>
     <?php 
     if($i%3 == 0):

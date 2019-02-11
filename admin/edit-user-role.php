@@ -23,10 +23,10 @@ if(isset($_GET["action"], $_GET["id"])) {
         break;
         case "remove":
             if($db->UpdateUserRole($id, "utente")) {
-                header("Location: add-admin.php?done=true");
+                header("Location: remove-admin.php?done=true");
             }
             else {
-                header("Location: add-admin.php?error=Impossibile+completare+la+modifica");
+                header("Location: remove-admin.php?error=Impossibile+completare+la+modifica");
             }
         break;
     }

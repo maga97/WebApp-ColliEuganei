@@ -105,19 +105,12 @@
   border-bottom-color: #0000c6;
 }
 
-  a.btn.red {
-    
+a.btn.red {    
   margin: auto;
   color: white;
   background-color: #ff0000;
   border-bottom-color: #ff0000;
   margin-bottom: 2em;
-}
-
-.success {
-    border: 2px solid #008000;
-    background: #008000;
-    color: white;
 }
 
 /*CSS BELLO PER ALERT DI SUCCESSO
@@ -159,44 +152,7 @@
   border-bottom-color: #ff0000;
 }
 
-div.alert {
-  margin: 0;
-  line-height: 1.2em;
-  padding: 0.5em 1em;
-  display: none;
-  text-align: center;
-  margin-bottom: 1em;
-}
 
-div.alertnojs {
-  margin: 0;
-  line-height: 1.2em;
-  padding: 0.5em 1em;
-  display: block;
-  text-align: center;
-  margin-bottom: 1em;
-}
-
-div.alert.errore.login {
-  display: block;
-}
-
-.alert.errore, .alertnojs.errore {
-  color: white;
-  background: #ac1911;
-  text-align: left;
-  font-weight: bold;
-}
-
-div.alert.errore p {
-  color: white;
-  font-weight: bold;
-}
-
-div.alertnojs.errore p {
-  color: white;
-  font-weight: bold;
-}
 #reg-sistema {
   color: #0057a8;
 }

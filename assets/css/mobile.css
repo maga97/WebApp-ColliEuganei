@@ -1,4 +1,4 @@
-@media screen and (max-width:600px) {
+@media screen and (max-width:768px) /*ipad dim*/ {
   #storia {
     max-width: 100%;
     margin-left: auto;
@@ -90,7 +90,13 @@
     text-align: center;
     margin-top: 0;
 }
-
+.admin-div {
+  min-width: 100%;
+  margin: 0;
+}
+.admin-div a {
+  line-height: 2.5em;
+}
 }
 
 @media screen and (max-width:480px) {
@@ -132,5 +138,13 @@
       float:none;
       width: 100%;
       margin:0;
+  }
+ 
+  
+  .admin-div {
+    width: 100%;
+    margin: 0;
+    padding: 0.3em;
+    border-radius: 0;
   }
 }

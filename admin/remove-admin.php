@@ -15,6 +15,7 @@ if (!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
     <title>Rimozione amministratore - Colli Digitali</title>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <link rel="stylesheet" type="text/css" href="../assets/css/style.css" media="all"/>
+    <link rel="stylesheet" type="text/css" href="../assets/css/mobile.css" media="screen"/>
     <link rel="stylesheet" type="text/css" href="../assets/css/form.css" media="all"/>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css"/>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -76,73 +77,49 @@ endif;
       <li>Gestione utente </li>
       <li>Rimuovi admin</li>
     </ul>
-      <table class="zebra" id="admin-table">
-      <caption>Elenco amministratori</caption>
-          <thead>
-              <tr>
-                  <th scope="col">Nome</th>
-                  <th scope="col">Cognome</th>
-                  <th scope="col">Email</th>
-                  <th scope="col">Tipo</th>
-                  <th scope="col">Cambio ruolo</th>
-              </tr>
-          </thead>
-          <tfoot>
-        <tr>
-            <td>Nome</td>
-            <td>Cognome</td>
-            <td>Email</td>
-            <td>Tipo</td>
-            <td>Cambio ruolo</td>
-        </tr>
-    </tfoot>
-          <tbody>
     <?php
-$db = new database();
-$db->connect();
-$users = $db->GetUsers("amministratore");
-if (sizeof($users) == 0):
-    echo htmlspecialchars('<tr><td colspan="5">Nessun amministratore presente!</td></tr>') . PHP_EOL;
-endif;
-foreach ($users as $user):
-?>
-            <tr>
-                <td><?php
-    echo $user["Nome"];
-?></td>
-                <td><?php
-    echo $user["Cognome"];
-?></td>
-                <td><?php
-    echo $user["Email"];
-?></td>
-                <td><?php
-    echo $user["Tipo"];
-?></td>
-                <?php
-    $id = $user["ID_Utente"];
-?>
-                <td>
-                  <?php
-    if (sizeof($users) > 1):
-?>
-                  <a aria-label="Rimuovi <?php
-        echo $user["Nome"] . " " . $user["Cognome"];
-?> dal ruolo di amministratore" href="edit-user-role.php?action=remove&amp;id=<?php
+      if(isset($_GET["done"]) && $_GET["done"] == true) {
+        echo '<div class="alert success" aria-live="assertive" role="alert" aria-atomic="true">Rimozione avvenuta correttamente</div>' . PHP_EOL;
+      }
+      if(isset($_GET["error"])):
+      ?>
+      <div class="alert errore" aria-live="assertive" role="alert" aria-atomic="true"><?php echo htmlspecialchars($_GET["error"]) ?></div> 
+      <?php
+      endif; 
+      $db = new database();
+      $db->connect();
+      $users = $db->GetUsers("amministratore"); 
+      $i = 0;
+      $open = false;
+      foreach($users as $user):
+      if($i%3 == 0):
+      echo '<div class="flex-container">' . PHP_EOL ;
+      $open = true;
+      endif;
+      $i = $i + 1;
+    ?>
+    <div class="admin-div">
+        <ul>
+            <li><?php echo $user["Nome"] ?></li>
+            <li><?php echo $user["Cognome"] ?></li>
+            <li><?php echo $user["Email"] ?></li>
+            <li><?php echo $user["Tipo"] ?></li>
+            <?php
+              $id = $user["ID_Utente"];
+            ?>
+        </ul>
+    <?php if (sizeof($users) > 1): ?>
+    <a aria-label="Rimuovi <?php echo $user["Nome"] . " " . $user["Cognome"]; ?> dal ruolo di amministratore" href="edit-user-role.php?action=remove&amp;id=<?php
         echo $id;
 ?>">Rimuovi amministratore</a></td>
-                  <?php
-    else:
-?>
-                  Deve esserci almeno un amministratore.
-                  <?php
-    endif;
-?>
-            </tr>
-    <?php
-endforeach;
-?>
-    </table>
+  <?php else: ?>
+  <div class="warning">Deve esserci almeno un amministratore.</div>
+  <?php endif; ?>
+  </div>
+  <?php endforeach;
+  if($open == true)
+    echo "</div>" . PHP_EOL;
+  ?>
     </div>
     <?php
 echo include_once("../footer.php");
