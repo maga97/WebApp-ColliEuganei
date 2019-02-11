@@ -81,10 +81,15 @@ $dbConnection->Connect();
           if(!isset($_GET['id']) || $_GET['id']=="" ):
             echo "Si è verificato un errore. Torna alla pagina delle gite per effettuare la prenotazione";
           else:
-          $attivita=$dbConnection->GetAttivita($_GET["id"]);?>
+          $attivita=$dbConnection->GetAttivita($_GET["id"]);
+          $_SESSION["ID"]=$_GET["id"];
+          $_SESSION["prezzo"]=$attivita["Prezzo"];
+          $_SESSION["data"]=$attivita["Data"];
+          $_SESSION["ora"]=$attivita["Ore"];
+          ?>
 
          <form action="PrenotazioneAction.php" method="POST">
-           <?php echo "<input type='hidden' name='ID' value='".$_GET["id"]."'>"; ?>
+           <?php echo "<input type='hidden' name='ID' value='".$_GET["id"]."'>";?>
 
            <div class="field-container">
              <label for="Descrizione" lang="it" class="log-label">Descrizione dell'attività</label>
