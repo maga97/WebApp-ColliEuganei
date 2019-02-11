@@ -20,7 +20,9 @@ $db->connect();
     <title>Pannello Utente - Colli Digitali</title>
   </head>
   <body>
-    <a href="#content" class="skip">Vai al contenuto</a>
+    <div>
+      <a href="#content" class="skip">Vai al contenuto</a>
+    </div>
     <div id="container">
       <div class="header">
         <div class="header-picture">
@@ -33,7 +35,7 @@ $db->connect();
             <div id="menuprincipale-bar" role="menuBar">
               <ul id="menuprincipale">
                   <li><a href="index.php" tabindex="0">Home</a></li>
-                  <li class="dropdown"><a aria-haspopup="true" aria-expanded="false" tabindex="0">Luoghi</a>
+                  <li class="dropdown"><a aria-haspopup="true" tabindex="0">Luoghi</a>
                       <ul class="dropdown-content button-right" role="menu">
                           <li role="none"><a href="luoghi/chiesette.php" tabindex="0" role="menuitem">Sette Chiesette</a></li>
                           <li role="none"><a href="luoghi/catajo.php" tabindex="0" role="menuitem">Castello del Catajo</a></li>
@@ -46,6 +48,10 @@ $db->connect();
                   <li><a href="gite.php" tabindex="0">Gite</a></li>
                   <?php if(isset($_SESSION['username'])): ?>
                      <li class="dropdown button-right"><a aria-haspopup="true" aria-expanded="false" tabindex="0" class="active">Account</a>
+                  <?php
+                  if (isset($_SESSION['username'])):
+                  ?>
+                     <li class="dropdown button-right"><a aria-haspopup="true" tabindex="0" class="active">Account</a>
                           <ul class="dropdown-content" role="menu">
                             <li><a href="view-account.php" tabindex="0" role="menuitem">Impostazioni</a></li>
                             <li class="active"><a href="view-my-trip.php" tabindex="0" class="active" role="menuitem">Le mie gite</a></li>

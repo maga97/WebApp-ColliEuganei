@@ -20,7 +20,9 @@ $db->connect();
     <title>Gite - Colli Digitali</title>
   </head>
   <body>
-    <a href="#content" class="skip">Vai al contenuto</a>
+    <div>
+      <a href="#content" class="skip">Vai al contenuto</a>
+    </div>
     <div id="container">
       <div class="header">
         <div class="header-picture">
