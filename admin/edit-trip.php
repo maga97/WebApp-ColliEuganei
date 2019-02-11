@@ -21,17 +21,19 @@ $data = $gita[0]["Data"];
  "http://www.w3.org/WAI/ARIA/schemata/xhtml-aria-1.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
   <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../assets/css/style.css" media="all">
     <link rel="stylesheet" type="text/css" href="../assets/css/form.css" media="all">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="../js/script.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/script.js"></script>
     <title>Modifica gita - Colli Digitali</title>
   </head>
   <body>
-    <a href="#content" class="skip">Vai al contenuto</a>
+    <div>
+      <a href="#content" class="skip">Vai al contenuto</a>
+    <div>
     <div id="container">
       <div class="header">
         <div class="header-picture">
@@ -99,17 +101,17 @@ $data = $gita[0]["Data"];
 		<div class="log-field-container">
 		  <label for="data">Data</label>
 		  <input type="text" name="data" aria-labelledby="datadesc" required="required" value="<?php echo $data; ?>" />
-      <span id="datadesc" tabindex="-1">gg/mm/aaaa</span>
+      <span id="datadesc" tabindex="0">gg/mm/aaaa</span>
 		</div>
 		<div class="log-field-container">
 			<label for="ora">Ora</label>
 			<input type="text" name="ora" aria-labelledby="oradesc" required="required" value="<?php echo $ora; ?>" />
-      <span id="oradesc" tabindex="-1">hh:mm</span>
+      <span id="oradesc" tabindex="0">hh:mm</span>
 		</div>
 		<div class="log-field-container">
 			<label for="prezzo">Prezzo</label>
 			<input type="text" min="0" id="prezzoAddTrip" name="prezzo" required="required" aria-labelledby="prezzodesc" value="<?php echo $prezzo; ?>" />
-      <span id="prezzodesc" tabindex="-1">10.50</span>
+      <span id="prezzodesc" tabindex="0">10.50</span>
 		</div>
 		  <div class="button-holder">
 			  <input type="reset" value="Cancella dati" name="cancelladati" class="btn btn-tripCancel" />
