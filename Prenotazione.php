@@ -89,27 +89,27 @@ $dbConnection->Connect();
           ?>
 
          <form action="PrenotazioneAction.php" method="POST">
-           <?php echo "<input type='hidden' name='ID' value='".$_GET["id"]."'>";?>
+           <?php echo "<input type=\"hidden\" name=\"ID\" value=\"".$_GET["id"]."\">";?>
 
            <div class="field-container">
-             <label for="Descrizione" lang="it" class="log-label">Descrizione dell'attività</label>
-             <?php echo"<input type='text' id='descrizione' name='descrizione' value='".$attivita["Descrizione"]."' accesskey='d' readonly>";?>
+             <label for="descrizione" lang="it" class="log-label">Descrizione dell'attività</label>
+             <?php echo"<input type=\"text\" id=\"descrizione\" name=\"descrizione\" value=\"".$attivita["Descrizione"]."\" accesskey=\"d\" readonly>";?>
            </div>
            <div class="field-container">
-             <label for="Prezzo" lang="it" class="log-label">Prezzo(per persona)</label>
-             <?php echo"<input type='text' id='prezzo' name='prezzo' value='".$attivita["Prezzo"]." Euro' accesskey='p' readonly>";?>
+             <label for="prezzo" lang="it" class="log-label">Prezzo(per persona)</label>
+             <?php echo"<input type=\"text\" id=\"prezzo\" name=\"prezzo\" value=\"".$attivita["Prezzo"]." Euro\" accesskey=\"p\" readonly>";?>
            </div>
            <div class="field-container">
-             <label for="Data" lang="it" class="log-label">Data</label>
-             <?php echo"<input type='text' id='data' name='data' value='".$attivita["Data"]."' accesskey='d' readonly>";?>
+             <label for="data" lang="it" class="log-label">Data</label>
+             <?php echo"<input type=\"text\" id=\"data\" name=\"data\" value=\"".$attivita["Data"]."\" accesskey=\"d\" readonly>";?>
            </div>
            <div class="field-container">
-             <label for="Ora" lang="it" class="log-label">Orario</label>
-             <?php echo"<input type='text' id='ora' name='ora' value='".$attivita["Ore"]."' accesskey='p' readonly>";?>
+             <label for="ora" lang="it" class="log-label">Orario</label>
+             <?php echo"<input type=\"text\" id=\"ora\" name=\"ora\" value='".$attivita["Ore"]."' accesskey=\"p\" readonly>";?>
            </div>
            <div class="field-container">
-             <label for="Posti" lang="it" class="log-label">Scegli il numero di posti</label>
-             <input type='text' id='reservePosti' name='posti'  min="0" accesskey='d' />
+             <label for="reservePosti" lang="it" class="log-label">Scegli il numero di posti</label>
+             <input type="text" id="reservePosti" name="posti"  min="0" accesskey="d" />
            </div>
           <div class="button-holder"> <input type="submit" value="Andiamo!" name="registrazione" class="btn btn-primary" aria-label="Prenotati alla gita"/></div>
          </form>

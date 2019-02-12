@@ -87,17 +87,17 @@ $data = $arrayofdata[2] . "/" . $arrayofdata[1] . "/" . $arrayofdata[0];
       <li>Gestione gite </li>
       <li>Modifica dati gita</li>
     </ul>
-    <?php
-      if(isset($_GET["error"])) {
-        echo "<div class=\"alert errore\">Errore: " . $_GET["error"] . "</div>" . PHP_EOL;
-      }
-    ?>
     <div class="form">
     <form action="edit-trip-script.php" name="form-modify-trip" method="POST">
+      <?php
+        if(isset($_GET["error"])) {
+          echo "<div class=\"alert errore\">Errore: " . $_GET["error"] . "</div>" . PHP_EOL;
+        }
+      ?>
 		<div class="log-field-container">
 			<legend>Modifica gita "<?php echo $nomegita; ?>"</legend>
       <input type="hidden" name="id" value="<?php echo $id; ?>" />
-			<label for="nomegita">Titolo</label>
+			<label for="titolo">Titolo</label>
 			<input type="text" name="nomegita" id="idnomegita" value="<?php echo $nomegita; ?>" required="required" />
 		</div>
 		<div class="log-field-container">
