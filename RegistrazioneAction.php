@@ -46,7 +46,7 @@ $Password2=validaCampo($_POST["password2"]);
                                 $_POST["password"],$_POST["indirizzo"],$_POST["citta"],
                                 $_POST["civico"],$_POST["CAP"]))
   { // provo ad inserire i dati nel db
-    unset_session("Errore");
+    unset($_SESSION["Errore"]);
     $_SESSION["username"]=$_POST["email"];
     $_SESSION["login"]=true;
     header("Location: view-account.php");
