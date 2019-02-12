@@ -39,7 +39,7 @@ body {
     bottom: 0;
 }
 
-#footer {
+#footer{
     position: absolute;
     bottom: 0;
     margin: 0;
@@ -53,6 +53,10 @@ body {
 
 #footer div {
     display: table-cell;
+}
+
+#footermobile div {
+    display: none;
 }
 
 .header-title h1,
@@ -462,7 +466,7 @@ div.alert {
     font-weight: bold;
     border-radius: 0.4em;
 }
-      
+
 div.alertnojs {
     /*margin: 0 0 2% 0;*/
     display: block;
@@ -471,15 +475,15 @@ div.alertnojs {
     font-weight: bold;
     border-radius: 0.4em;
 }
-      
+
 div.alert.errore.login {
     display: block;
 }
-      
+
 .alert.errore, .alertnojs.errore {
     background: #ac1911;
 }
-      
+
 .alert.warning, .alertnojs.warning {
     background: rgb(238, 147, 0);
 }

@@ -88,10 +88,10 @@ if(!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
 				</ul>
 				</div>
 			</div>
+			<?php include_once('../footer.php'); ?>
 			</div>
 			<div>
 				<a id="scroll-top-btn" href="#top">Torna in alto</a>
 			</div>
-			<?php include_once('../footer.php'); ?>
 	</body>
 </html>
