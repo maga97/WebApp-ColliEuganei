@@ -14,7 +14,16 @@ function validaCampo($campo) {
 $dbConnection = new database();
 $dbConnection->Connect();
 $_SESSION["Errore"]=""; // sessione utilizzata per gli errori del form
-
+$_SESSION["email"]=$_POST["email"];
+$_SESSION["nome"]=$_POST["nome"];
+$_SESSION["cognome"]=$_POST["cognome"];
+$_SESSION["indirizzo"]=$_POST["indirizzo"];
+$_SESSION["CAP"]=$_POST["CAP"];
+$_SESSION["citta"]=$_POST["citta"];
+$_SESSION["cognome"]=$_POST["cognome"];
+$_SESSION["civico"]=$_POST["civico"];
+$_SESSION["password"]=$_POST["password"];
+$_SESSION["password2"]=$_POST["password2"];
 //controllo che i campi obbligatori non siano vuoti
 $email=validaCampo($_POST["email"]);
 $nome=validaCampo($_POST["nome"]);
@@ -46,7 +55,8 @@ $Password2=validaCampo($_POST["password2"]);
                                 $_POST["password"],$_POST["indirizzo"],$_POST["citta"],
                                 $_POST["civico"],$_POST["CAP"]))
   { // provo ad inserire i dati nel db
-    unset($_SESSION["Errore"]);
+    session_destroy();
+    session_start();
     $_SESSION["username"]=$_POST["email"];
     $_SESSION["login"]=true;
     header("Location: view-account.php");
