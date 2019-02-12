@@ -2,7 +2,7 @@
 require_once "../DataBase/DBConnection.php";
 if (session_status() == PHP_SESSION_NONE) { session_start(); }
 if(!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
-	header("Location: ../index.php");
+	echo "modify";
 }
 $db = new database();
 $db->connect();

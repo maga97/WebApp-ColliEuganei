@@ -3,8 +3,8 @@ require_once "../DataBase/DBConnection.php";
 if (session_status() == PHP_SESSION_NONE) {
    session_start();
   }
-if(!isset($_SESSION["username"]) or $_SESSION["admin"] != 1 or !isset($_GET['id'])) {
-    header("Location: ../index.php");
+if(!isset($_SESSION["username"]) || $_SESSION["admin"] != 1 || !isset($_GET['id'])) {
+    echo "edit";
   }
 $id = $_GET['id'];
 $db = new database();
