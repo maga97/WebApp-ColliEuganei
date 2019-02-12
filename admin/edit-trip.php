@@ -15,7 +15,11 @@ $nomegita = $gita[0]["Nome"];
 $descrizione = $gita[0]["Descrizione"];
 $prezzo = $gita[0]["Prezzo"];
 $ora = $gita[0]["Ore"];
+$ora = explode(":", $ora);
+$ora = $ora[0] . ":" . $ora[1];
 $data = $gita[0]["Data"];
+$arrayofdata = explode("-", $data);
+$data = $arrayofdata[2] . "/" . $arrayofdata[1] . "/" . $arrayofdata[0];
  ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+ARIA 1.0//EN"
  "http://www.w3.org/WAI/ARIA/schemata/xhtml-aria-1.dtd">
@@ -85,7 +89,7 @@ $data = $gita[0]["Data"];
     </ul>
     <?php
       if(isset($_GET["error"])) {
-        echo "<div class=\"alertnojs errore login\"><p>Errore: " . $_GET["error"] . "</p></div>" . PHP_EOL;
+        echo "<div class=\"alert errore\">Errore: " . $_GET["error"] . "</div>" . PHP_EOL;
       }
     ?>
     <div class="form">

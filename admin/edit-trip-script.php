@@ -12,26 +12,27 @@ $descrizione = $_POST["descrizione"];
 $data = $_POST["data"];
 $ora = $_POST["ora"];
 $prezzo = $_POST["prezzo"];
+$errore = false;
 
 if(!isset($nomegita)) {
     header("Location: edit-trip.php?error=Nome+gita+non+definito"); 
-    exit;
+    $errore = true;
 }
 if(empty($descrizione)) {
     header("Location: edit-trip.php?error=Descrizione+gita+non+definita");
-    exit;
+    $errore = true;
 }    
 if(empty($data)) { 
     header("Location: edit-trip.php?error=Data+gita+non+definita");
-    exit;
+    $errore = true;
 }
 if(empty($ora)) {
     header("Location: edit-trip.php?error=Ora+gita+non+definita");
-    exit;
+    $errore = true;
 }
 if(empty($prezzo)) {
     header("Location: edit-trip.php?error=Prezzo+gita+non+definito");
-    exit;
+    $errore = true;
 }
 
 $data_array = array();
@@ -41,8 +42,8 @@ if(substr_count($_POST["data"], "/") == 2) {
     $data_array = explode("-", $_POST["data"]);
 }
 else {
-    header("Location: edit-trip.php?error=Formato+ora+gita+non+corretto");
-    exit;
+    header("Location: edit-trip.php?error=Formato+data+gita+non+corretto");
+    $errore = true;
 }
 
 $ora_array = array();
@@ -51,37 +52,41 @@ if(substr_count($ora, ":") == 1) {
 } 
 else {
     header("Location: edit-trip.php?error=Formato+ora+gita+non+corretto");
-    exit;
+    $errore = true;
 }
 if(!is_integer($ora_array[0]) || !is_integer($ora_array[1]) || !is_integer($data_array[0]) ||
  !is_integer($data_array[1]) || !is_integer($data_array[2])) {
-     header("Locationedit-trip.php?error=Tipo+numerico+non+corretto");
+     header("Location: edit-trip.php?error=Tipo+numerico+non+corretto");
+     $errore = true;
  }
 if(intval($ora_array[0]) > 23 || intval($ora_array[0]) < 0) {
     header("Location: edit-trip.php?error=Ora+non+corretta");
-    exit;
+    $errore = true;
 } 
 if(intval($ora_array[1]) > 59 || intval($ora_array[0]) < 0) {
     header("Location: edit-trip.php?error=Ora+non+corretta");
-    exit;
+    $errore = true;
 }
 if(intval($data_array[0]) > 31 || intval($data_array[0]) < 0) {
     header("Location: edit-trip.php?error=Numero+giorno+inserito+errato");
-    exit;
+    $errore = true;
 }
 if(intval($data_array[1]) > 12 || intval($data_array[1]) < 0) {
     header("Location: edit-trip.php?error=Numero+mese+inserito+errato");
-    exit;
+    $errore = true;
 }
 if(intval($data_array[2]) < date("Y")) {
-    header("Location: edit-trip.php?error=" .urlencode("Anno inserito minore rispetto all' anno attuale."));
-    exit;
+    header("Location: edit-trip.php?error=" . urlencode("Anno inserito minore rispetto all' anno attuale."));
+    $errore = true;
 }
-$db = new database();
-$db->connect();
-$esito = $db->ModificaGita($id, $nomegita, $descrizione, $data, $ora, $prezzo);
-if($esito)
-    header("Location: select-trip-modify.php?done=true"); 
-else
-    header("Location: edit-trip.php?error=Modifica+fallita");
+if($errore == false) {
+    $db = new database();
+    $db->connect();
+    $data = $data_array[2] . "-" . $data_array[1] . "-" . $data_array[0];
+    $esito = $db->ModificaGita($id, $nomegita, $descrizione, $data, $ora, $prezzo);
+    if($esito)
+        header("Location: select-trip-modify.php?done=true"); 
+    else
+        header("Location: edit-trip.php?error=Modifica+fallita");
+}
 ?>
