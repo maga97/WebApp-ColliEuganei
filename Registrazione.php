@@ -84,41 +84,14 @@ $errore = "";
             <li><a href="Registrazione.php">Registrazione</a></li>
           </ul>
           <?php
-          if (isset($_SESSION["ErroreUtenteEsistente"]))
-              $errore = "<div id='errore-form' class='alertnojs errore' aria-live='assertive' role='alert' aria-atomic='true'>
-                            <p class='intestazione-alert'>
-                              l'email che stai provando ad inserire appartiene ad un'altro utente
-                            </p>
-                          </div>";
-          else if (isset($_SESSION["ErroreForm"]) && $_SESSION["ErroreForm"]) {
-              $errore = "<div id='errore-form'class='alertnojs errore' aria-live='assertive' role='alert' aria-atomic='true'><p class='intestazione-alert'>Errore:</p>";
-              if (isset($_SESSION["ErroreCampiVuoti"]) && $_SESSION["ErroreCampiVuoti"])
-                  $errore .= "<p>Alcuni campi obbligatori non sono stati inseriti</p>";
-              else {
-                  if (isset($_SESSION["ErroreNome"]) && $_SESSION["ErroreNome"])
-                      $errore .= "<p>Ricontrollare il nome</p>";
-                  if (isset($_SESSION["ErroreCognome"]) && $_SESSION["ErroreCognome"])
-                      $errore .= "<p>Ricontrollare il cognome</p>";
-                  if (isset($_SESSION["ErroreEmail"]) && $_SESSION["ErroreEmail"])
-                      $errore .= "<p>Inserire un email valida</p>";
-                  if (isset($_SESSION["ErrorePasswordDiverse"]) && $_SESSION["ErroreEmail"])
-                      $errore .= "<p>Le password non combaciano</p>";
-              }
-              $errore .= "</div>";
-          } else if (isset($_SESSION["ErroreInserimento"]) && $_SESSION["ErroreInserimento"])
-              $errore = "<div id='errore-form' class='alertnojs errore' aria-live='assertive' role='alert' aria-atomic='true'>
-                              <p class='intestazione-alert'>Abbiamo dei problemi interni.
-                                Ti preghiamo di riprovare più avanti
-                              </p>
-                        </div>";
+
          ?>
          <div class="form container_form" >
             <form action="RegistrazioneAction.php" method="post" class="log-form" onsubmit="return validaFormUtente(true,$('.alert.errore'),$('form'))">
              <h1>Crea <span xml:lang="en">account</span></h1>
              <?php
-             if ($errore != ""):
-               echo $errore;
-             endif;
+             if (isset($_SESSION["Errore"]))
+                 echo $_SESSION["Errore"];
              ?>
              <div class="alert errore" aria-live="assertive" role="alert" aria-atomic="true" aria-relevant="all"><p class="intestazione-alert">Errore:</p></div>
               <div id="sectionPersonalData" >
