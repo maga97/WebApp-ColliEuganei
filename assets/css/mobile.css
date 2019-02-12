@@ -91,7 +91,6 @@
     width: 100%;
   }
 
-
   #container_form{
       width:auto;
   }
@@ -109,14 +108,15 @@
   #titolo {
     text-align: center;
     margin-top: 0;
-}
-.admin-div {
-  min-width: 100%;
-  margin: 0;
-}
-.admin-div a {
-  line-height: 2.5em;
-}
+  }
+  .admin-div {
+    min-width: 100%;
+    margin: 0;
+  }
+  .admin-div a {
+    line-height: 2.5em;
+  }
+
 }
 
 @media screen and (max-width:480px) {
