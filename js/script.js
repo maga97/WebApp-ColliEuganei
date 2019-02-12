@@ -3,10 +3,12 @@ function menuMobile() {
 }
 
 function clx(str, obj) {
-	let variable = "#" + str + "-text";
+	let scroll=str+"-text";
+	let variable = "#" + scroll;
 	$('.hide').not(variable).hide();
 	$(obj).addClass("galleryframe-active");
 	$(variable).fadeToggle("slow");
+	document.getElementById(scroll).scrollIntoView();
 }
 
 $(document).ready(function() {

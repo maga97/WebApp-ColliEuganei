@@ -116,11 +116,11 @@ else if(isset($_POST["modifica_password"])) { // se schiaccio il bottone di modi
                 <?php
                       if($errore=="" && isset($_POST["conferma_modifica"])){
                         echo "<div class='alertnojs success' aria-live='assertive' role='alert' aria-atomic='true'>
-                                <p>Dati modificati con successo</p>
+                                Dati modificati con successo
                               </div>";
                       }
                       if($errore!="")
-                        echo $errore;
+                        echo '<div class="alert errore" aria-live="assertive" role="alert" aria-atomic="true" aria-relevant="all">' . $errore . '</div>' . PHP_EOL;
                 ?>
                 <div class="log-field-container">
                         <label for="email" xml:lang="en">Email: </label>
@@ -202,6 +202,7 @@ else if(isset($_POST["modifica_password"])) { // se schiaccio il bottone di modi
                     <?php endif;?>
                 </div>
               </form>
+              <?php if(!isset($_POST["modifica_dati"]) && (isset($_POST["conferma_modifica"]) && $errore=="")):?>
               <div class="titolo-form">
                         <h2>Modifica <span xml:lang="en">password</span></h2>
                     </div>
@@ -229,6 +230,7 @@ else if(isset($_POST["modifica_password"])) { // se schiaccio il bottone di modi
 
                         </div>
                     </form>
+            <?php endif;?>
           </div>
 
       </div>
