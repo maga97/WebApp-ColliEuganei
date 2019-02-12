@@ -91,9 +91,8 @@ $errore = "";
              <h1>Crea <span xml:lang="en">account</span></h1>
              <?php
              if (isset($_SESSION["Errore"]))
-                 echo $_SESSION["Errore"];
+                 echo '<div class="alert errore" aria-live="assertive" role="alert" aria-atomic="true" aria-relevant="all">' . $_SESSION["Errore"] . '</div>' . PHP_EOL;
              ?>
-             <div class="alert errore" aria-live="assertive" role="alert" aria-atomic="true" aria-relevant="all"><p class="intestazione-alert">Errore:</p></div>
               <div id="sectionPersonalData" >
                 <div class="log-field-container">
                   <label for="nome" class="log-label">Nome: (obbligatorio)</label>
