@@ -91,7 +91,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 						</div>
 					</div>
 					<div class="galleryframe">
-						<img class="pic" src="assets/img/clima.jpg" alt="Immagine dei colli euganei coperti di neve" />
+						<img class="pic" src="assets/img/clima.jpg" alt="Colli euganei ricoperti di neve" />
 						<dl>
 							<dt>Clima</dt>
 							<dd>Scopri come il territorio si presenta nel corso dell'anno.</dd>
@@ -101,7 +101,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 						</div>
 					</div>
 					<div class="galleryframe">
-						<img class="pic" src="assets/img/storia.jpg" alt="Immagine Rocca di Monselice" />
+						<img class="pic" src="assets/img/storia.jpg" alt="Rocca di Monselice" />
 						<dl>
 							<dt>Storia</dt>
 							<dd>Scopri la storia, la cultura e l'arte del territorio</dd>
@@ -126,7 +126,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 						che risultano ancora pi&ugrave; accoglienti e confortevoli.
 					</p>
 					<div class="float-right climapic">
-						<img class="pic" src="assets/img/primavera.jpg" alt="Primavera nel colli Euganei" />
+						<img class="pic" src="assets/img/primavera.jpg" alt="Primavera nei Colli Euganei" />
 					</div>
 					<h3>Primavera ed Estate</h3>
 					<p class="text">
@@ -206,7 +206,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 					</p>
 					<h3>L'arte</h3>
 					<div class="float-right">
-						<img class="pic storiapic" src="assets/img/filmfestival.jpg" alt="Festival dei film all'anfiteatro del Venda" />
+						<img class="pic storiapic" src="assets/img/filmfestival.jpg" alt="Anfiteatro del Venda" />
 					</div>
 					<p class="text">
 						Per gli amanti dell'arte, mete imperdibili sono i musei come il gi&agrave; citato Museo Nazionale Atestino di Este, ma soprattutto le ville

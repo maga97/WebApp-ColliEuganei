@@ -181,16 +181,27 @@
 	\section{Validazione con test automatici}
 	\subsection{Markup Validation Service w3.org}
 	La validazione tramite il servizio w3c ha esito positivo su tutto il sito.
-	\subsection{W3C CSS Validator w3.org} La validazione tramite il servizio w3c ha esito positivo su tutto il sito eccetto per safari ed è per questo motivo che viene segnalato il warning dal validatore.
-	\subsection{Vamola validator}
+	\subsection{W3C CSS Validator w3.org} La validazione tramite il servizio w3c ha esito positivo su tutto il sito eccetto per \texttt{Safari} ed è per questo motivo che viene segnalato il warning dal validatore.
+	\subsection{Vamola validator e Web Accessibility Toolbar (WAT)}
+	Per la verifica automatica dell'accessibilità sono stati utilizzati due strumenti: \begin{itemize}
+		\item Vamola, presente all'indirizzo \\ \url{www.validatore.it/vamola_validator/checker/
+			index.php}
+		\item WAT, purtroppo questo plugin non è aggiornato e presenta molti strumenti inutilizzabili.	La versione corrente è stata scaricata da:
+		\url{https://github.com/ThePacielloGroup/WebAccessibilityToolbar}.
+	\end{itemize}
+	Come impostazione è stato utilizzato "WCAG 2.0 (Level AAA)" in entrambi i validatori, e tutti i	potenziali problemi che vengono segnalati raccolgono tutti elementi che il
+	validatore non sa come controllare e quindi viene richiesta una supervisione umana, come ad esempio ogni \texttt{alt}. \\
+	Nessun errore è stato rilevato.
 	\subsection{WAVE Accessibility Extension}
+	Un altro strumento utilizzato per la verifica dell'accessibilità è stato WAVE,
+	disponibile per il browser Firefox all'indirizzo \\ \url{https://addons.mozilla.
+	org/it/firefox/addon/wave-accessibility-tool}. \\
+	Il plugin ha segnalato alcuni warning riguardanti gli alt, che richiedevano un
+	controllo manuale e quindi  una supervisione umana.
 	\subsection{Web Accessibility Toolbar (WAT)}
 
 	\subsection{Total Validator}
-
-	\subsection{Vischeck}
-
-	\subsection{VEGA}
+	Abbiamo utilizzato Total Validator Basic per validare ogni pagina. Gli errori incontrati sono stati risolti, ma rimane un warning sollevato in ogni pagina  e riguardante il link interno per saltare al contenuto, precisamente "W874 Add a skip navigation link as the  rst link on the page", che viene sollevato in quanto il testo non  e "Skip to main content", bensì "Vai al contenuto", in quanto il sito  e mirato ad utenti italiani. Da precisare che oltre alla presenza del link per andare al contenuto  e disponibile anche un link per tornare ad inizio pagina, inserito per facilitare la navigazione da dispositivi tascabili. Un altro warning presente è in riferimento all'immagine della tabella nella sezione geografia che presenta l'attributo alt vuoto, questo perchè l'informazione contenuta nella tabella è in realtà presente integralmente nel testo.
 
 	\section{Test su diversi dispositivi}
 	Il sito è stato testato su varie macchine e sistemi operativi. Nelle sezioni seguenti verranno elencati assieme ai browser e alle risoluzioni testate.
@@ -248,27 +259,23 @@
 	\subsection{Dispositivi mobili}
 	Di seguito sono elencati i vari dispositivi mobili sui quali il sito è stato testato
 	\begin{itemize}
-		\item Xiaomi Redmi 4X (Chinese Dev) con Miui browser, Firefox Rocket e Waterfox con una risoluzione di 720p
-		\item Amazon Kindle Touch 2 (7' generazione) con schermo e-ink in bianco e nero, con una risoluzione di 800x600 e con il browser sperimentale fornito di default.
-		\item Testato su Ipad Pro 10.5' su browser Safari versione 11.2.5 con una risoluzione di 2224x1668
+		\item Honor 9 con browser Chrome, con una risoluzione di 720p
+		\item Samsung Galaxy Tab 3 con una risoluzione di 1280x800 e con il browser fornito di default
+		\item Nexus 5x su browser Chrome, con una risoluzione di 1080p
 	\end{itemize}
-
-	In tutti i dispositivi testati il sito si adatta perfettamente alla risoluzione dello schermo e non sono presenti problemi di compatibilità, neppure con JavaScript.\\
-	L'unico appunto da fare è la mancanza di supporto degli RSS, che vengono letti come file di testo normali, ad eccezione di Waterfox che invece ne propone il download.\\
-	Anche su schermo e-ink in bianco e nero i link rimangono sufficientemente marcati rispetto al resto del testo e tutte le sezioni rimangono distinguibili.
-
-
+	In tutti i dispositivi testati il sito si adatta perfettamente alla risoluzione dello schermo e non sono presenti problemi di compatibilità, neppure con JavaScript.
 
 	\section{Test con diverse impostazioni utente}
 	Il sito è stato testato con multiple impostazioni utente, come citato nella sezione riguardante le piattaforme di testing sono state testate risoluzioni che vanno dall 600p al 2160p senza presentare problemi di visualizzazione. Oltre al test per le varie risoluzioni e dispositivi si è testata la visualizzazione del sito con dimensioni del testo di che vanno 16pt a 44pt e con uno zoom elevato mantenendo comunque una buona fruibilità del sito.\\
-	\`{E} stata presa in considerazione anche la possibilità che un utente abbia bloccato, oppure non abbia la possibilita se pur remota di non poter eseguire Javascript, e nonostante questo il sito rimane comunque egualmente navigabile in tutte le sue parti, senza far trasparire in modo palese la mancanza di Javascript.\\
+	\`{E} stata presa in considerazione anche la possibilità che un utente abbia bloccato, oppure non abbia la possibilita se pur remota di non poter eseguire Javascript, e nonostante questo il sito rimane comunque egualmente navigabile in tutte le sue parti, senza far trasparire in modo palese la mancanza di Javascript. \pagebreak
 
 	\section{Lynx e come potrebbe essere se letto}
 	Il sito è stato testato con il browser Lynx, nonostante la visualizzazione solo testuale il sito rimane comunque navigabile seppur non in modo agevole se non si è abituati al utilizzo dei browser testuali.
-
-
-
-
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=1\linewidth]{images/lynx.png}
+		\caption{Esempio di pagina del sito web su Lynx}
+	\end{figure}
 
 	\chapter{Funzionalit\`{a} desiderabili}
 	\section{Descrizione della sezione}
