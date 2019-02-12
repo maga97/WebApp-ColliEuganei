@@ -16,7 +16,6 @@ $dbConnection->Connect();
 $_SESSION["Errore"]=""; // sessione utilizzata per gli errori del form
 
 //controllo che i campi obbligatori non siano vuoti
-if(isset($_POST["email"], $_POST["nome"], $_POST["cognome"], $_POST["password"], $_POST["password2"])) {
 $email=validaCampo($_POST["email"]);
 $nome=validaCampo($_POST["nome"]);
 $cognome=validaCampo($_POST["cognome"]);
@@ -59,7 +58,6 @@ $Password2=validaCampo($_POST["password2"]);
     exit;
   }
 
-}
 
 $dbConnection->Close();
 ?>
