@@ -73,7 +73,7 @@ if(!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
     </ul>
     <?php 
         if(isset($_GET["done"]) && $_GET["done"] == true) {
-          echo '<div class="alert success" aria-live="assertive" role="alert" aria-atomic="true">Rimozione avvenuta correttamente</div>' . PHP_EOL;
+          echo '<div class="alert success" aria-live="assertive" role="alert" aria-atomic="true">Aggiunta avvenuta correttamente</div>' . PHP_EOL;
         }
         if(isset($_GET["error"])):
         ?>
