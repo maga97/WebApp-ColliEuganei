@@ -84,12 +84,12 @@ endif;
       }
       if(isset($_GET["error"])):
       ?>
-      <div class="alert errore" aria-live="assertive" role="alert" aria-atomic="true"><?php echo htmlspecialchars($_GET["error"]) ?></div> 
+      <div class="alert errore" aria-live="assertive" role="alert" aria-atomic="true"><?php echo htmlspecialchars($_GET["error"]) ?></div>
       <?php
-      endif; 
+      endif;
       $db = new database();
       $db->connect();
-      $users = $db->GetUsers("amministratore"); 
+      $users = $db->GetUsers("amministratore");
       $i = 0;
       $open = false;
       foreach($users as $user):
@@ -114,7 +114,7 @@ endif;
         echo $id;
 ?>">Rimuovi amministratore</a></td>
   <?php else: ?>
-  <div class="warning">Deve esserci almeno un amministratore.</div>
+  <div class="alert warning">Deve esserci almeno un amministratore.</div>
   <?php endif; ?>
   </div>
   <?php endforeach;

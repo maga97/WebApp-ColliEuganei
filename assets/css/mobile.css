@@ -109,14 +109,6 @@
     text-align: center;
     margin-top: 0;
   }
-  .flex-container {
-    flex-direction: column;
-    margin: 0;
-  }
-  #content {
-    margin-left: 0;
-    margin-right: 0;
-  }
   .admin-div {
     min-width: 100%;
     margin: 0;
@@ -167,10 +159,7 @@
       width: 100%;
       margin:0;
   }
-  .flex-container {
-    flex-direction: column;
-    margin: 0;
-  }
+
   .admin-div {
     width: 100%;
     margin: 0;
