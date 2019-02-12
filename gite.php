@@ -75,7 +75,10 @@ $db->connect();
     			<li><a href="gite.php">Gite</a></li>
     		</ul>
         <?php
-          $list = $db->GetListaAttivita();
+          if(isset($_SESSION['username']))
+            $list = $db->GetListaAttivita($_SESSION['username']);
+          else 
+            $list = $db->GetListaAttivita();
           $size = sizeof($list);
           if($size == 0) {
             echo "<h3>Momentaneamente non sono disponibili gite</h3>" . PHP_EOL;

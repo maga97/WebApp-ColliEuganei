@@ -16,6 +16,7 @@ $dbConnection->Connect();
 $_SESSION["Errore"]=""; // sessione utilizzata per gli errori del form
 
 //controllo che i campi obbligatori non siano vuoti
+if(isset($_POST["email"], $_POST["nome"], $_POST["cognome"], $_POST["password"], $_POST["password2"])) {
 $email=validaCampo($_POST["email"]);
 $nome=validaCampo($_POST["nome"]);
 $cognome=validaCampo($_POST["cognome"]);
@@ -33,12 +34,12 @@ $Password2=validaCampo($_POST["password2"]);
     exit;
   }
   else if($_POST["password"]!=$_POST["password2"]){ // controllo che le due password comabacino
-    $_SESSION["Errore"]="le due password inserite non coincidono";
+    $_SESSION["Errore"]="Le due password inserite non coincidono";
     header("Location: Registrazione.php");
     exit;
   }
   else if($dbConnection->user_already_exists($_POST["email"])){ // controllo che l'utente non sia già registrato con quell'email
-    $_SESSION["Errore"]="la mail inserita appartiene ad un altro utente";
+    $_SESSION["Errore"]="La mail inserita appartiene ad un altro utente";
     header("Location: Registrazione.php");
     exit;
   }
@@ -58,7 +59,7 @@ $Password2=validaCampo($_POST["password2"]);
     exit;
   }
 
-
+}
 
 $dbConnection->Close();
 ?>

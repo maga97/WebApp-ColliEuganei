@@ -104,8 +104,14 @@ class database {
 		$query->execute(array($id));
 		return $query->fetch();
 	}
-	public function GetListaAttivita() {
-		$query = $this->pdo->prepare('SELECT * FROM Attivita');
+	public function GetListaAttivita($username = NULL) {
+		$sql ='SELECT * FROM Attivita';
+		if($username != NULL) {
+			$sql = "SELECT * FROM Attivita WHERE ID_Attivita NOT IN 
+			(SELECT ID_Attivita FROM Prenotazioni WHERE ID_Utenti = (
+			SELECT ID_Utente FROM Utenti WHERE Utenti.Email = '" . $username . "'))";
+		}
+		$query = $this->pdo->prepare();
 		$query->execute();
 		return $query->fetchAll(PDO::FETCH_ASSOC);
 	}

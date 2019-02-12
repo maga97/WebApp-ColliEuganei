@@ -123,7 +123,7 @@ if(isset($_POST['email']) && isset($_POST['password']))
                   <input type="password" aria-labelledby="password" id="password" name="password" accesskey="p" />
               </div>
               <div class="button-holder"><input type="submit" value="Login" class="btn btn-primary" /></div>
-              <p id="not-registered">Non sei ancora registrato? <a href="../Registrazione.php" id="reg-sistema">Registrati</a></p>
+              <p id="not-registered">Non sei ancora registrato? <a href="Registrazione.php" id="reg-sistema">Registrati</a></p>
             </form>
           </div>
       </div>
