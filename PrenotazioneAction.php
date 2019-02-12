@@ -126,7 +126,6 @@ if(isset($_POST["cancellaPrenotazione"])){
             <?php else: echo "<div class='success'> La prenotazione &egrave; stata confermata. </div>";
                   endif;
             ?>
-
       </div>
       <?php include_once('footer.php')?>
     </div>

@@ -73,7 +73,7 @@ if(!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
 				<div>
 				 <h3>Gestione gite</h3>
 				 <p>Permette di inserire all'interno del sistema una nuova attivit&agrave; o gita disponibile agli utenti, modificarne i dati oppure rimuoverla.</p>
-				 <p>Per far ci&ograve; selezionare la rispettiva del menu "Gestione gite".</p>
+				 <p>Per far ci&ograve; selezionare la rispettiva voce del menu "Gestione gite".</p>
 				 <ul>
 				  <li>Aggiungi nuova gita</li>
 				  <li>Modifica i dati di una gita</li>
@@ -81,7 +81,7 @@ if(!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
 				</ul>
 				<h3>Gestione utente</h3>
 				 <p>Permette di inserire o rimuovere un admin.</p>
-				 <p>Per far ci&ograve; selezionare la rispettiva del menu "Gestione utente".</p>
+				 <p>Per far ci&ograve; selezionare la rispettiva voce del menu "Gestione utente".</p>
 				 <ul>
 				  <li>Aggiungi admin</li>
 				  <li>Rimuovi admin</li>
