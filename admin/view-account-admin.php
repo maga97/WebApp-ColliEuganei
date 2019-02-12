@@ -165,7 +165,7 @@ else if(isset($_POST["modifica_password"])) {
                     }
 
               ?>
-              <form id="dati-utente" method="post" action="view-account.php">
+              <form id="dati-utente" method="post" action="view-account-admin.php">
                 <?php
                       if($errore=="" && isset($_POST["conferma_modifica"])){
                         echo "<div class='alertnojs success' aria-live='assertive' role='alert' aria-atomic='true'>
@@ -259,7 +259,7 @@ else if(isset($_POST["modifica_password"])) {
               <div class="titolo-form">
                         <h2>Modifica <span xml:lang="en">password</span></h2>
                     </div>
-                    <form id="mod-pwd-form" method="post" action="view-account.php">
+                    <form id="mod-pwd-form" method="post" action="view-account-admin.php">
                         <div class="log-field-container">
                             <label for="vecchia-password" >Password corrente: (obbligatorio)</label>
                             <div class="input-container">
