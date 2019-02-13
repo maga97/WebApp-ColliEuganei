@@ -122,7 +122,7 @@
 	 Abbiamo deciso inoltre di utilizzare \texttt{JQuery} per la conferma della cancellazione delle gite perchè ...
 	\section{Accessibilità}
 	Tutte le scelte progettuali sono state prese in base al tema dell’accesibilità, seguendo le linee guida del W3C.
-	\subsection{colori}
+	\subsection{Colori}
 	Si è evitato di utilizzare combinazioni di colori che potessero creare problemi di
 	accessibilità, usabilità e comprensione del contenuto a persone affette da daltonsmo.
 	\subsection{Tag}
@@ -250,8 +250,11 @@
 	disponibile per il browser Firefox all'indirizzo \\ \url{https://addons.mozilla.
 	org/it/firefox/addon/wave-accessibility-tool}. \\
 	Il plugin ha segnalato alcuni warning riguardanti gli alt, che richiedevano un
-	controllo manuale e quindi  una supervisione umana.
-	\subsection{Web Accessibility Toolbar (WAT)}
+	controllo manuale e quindi  una supervisione umana e nessun errore di controllo di contrasto dei colori.
+	
+	\subsection{AChecker}
+	Un altro strumento utilizzato per la verifica automatica dell'accessibilità è \texttt{AChecker}, \url{https://achecker.ca/checker/}. \\
+	La validazione tramite questo servizio ha avuto esito positivo su tutto il sito.
 
 	\subsection{Total Validator}
 	Abbiamo utilizzato Total Validator Basic per validare ogni pagina. Gli errori incontrati sono stati risolti, ma rimane un warning sollevato in ogni pagina  e riguardante il link interno per saltare al contenuto, precisamente "W874 Add a skip navigation link as the  rst link on the page", che viene sollevato in quanto il testo non  e "Skip to main content", bensì "Vai al contenuto", in quanto il sito  e mirato ad utenti italiani. Da precisare che oltre alla presenza del link per andare al contenuto  e disponibile anche un link per tornare ad inizio pagina, inserito per facilitare la navigazione da dispositivi tascabili. Un altro warning presente è in riferimento all'immagine della tabella nella sezione geografia che presenta l'attributo alt vuoto, questo perchè l'informazione contenuta nella tabella è in realtà presente integralmente nel testo.
