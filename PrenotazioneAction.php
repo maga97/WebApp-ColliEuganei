@@ -127,7 +127,7 @@ if(isset($_POST["cancellaPrenotazione"])){
                 </form>
               </div>
             </div>
-            <?php else: echo "<div class='success'> La prenotazione &egrave; stata confermata. </div>";
+            <?php else: echo "<div class=\"success\"> La prenotazione &egrave; stata confermata. </div>";
                   endif;
             ?>
       </div>

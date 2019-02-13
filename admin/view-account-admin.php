@@ -138,19 +138,19 @@ else if(isset($_POST["modifica_password"])) {
                     $errore="";
                     if(isset($_POST["conferma_modifica"])){
                       if($ErroreUtenteEsistente){
-                        $errore="<div class='alertnojs errore' aria-live='assertive' role='alert' aria-atomic='true'>
-                                    <p class='intestazione-alert'>La mail che stai provando ad inserire appartiene ad un'altro utente</p>
+                        $errore="<div class=\"alertnojs errore\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\">
+                                    <p class=\"intestazione-alert\">La mail che stai provando ad inserire appartiene ad un'altro utente</p>
                                 </div>";
                       }
                       else if($ErroreCampiVuoti){
-                        $errore="<div class='alertnojs errore' aria-live='assertive' role='alert' aria-atomic='true'>
-                                    <p class='intestazione-alert'>hai lasciato dei campi obbligatori vuoti</p>
+                        $errore="<div class=\"alertnojs errore\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\">
+                                    <p class=\"intestazione-alert\">hai lasciato dei campi obbligatori vuoti</p>
                                 </div>";
                       }
                     }
                     if(isset($_POST["modifica_password"])){
                       if($pwderror || $pwdempty || $pwdNotEquals){
-                        $errore="<div class='alertnojs errore' aria-live='assertive' role='alert' aria-atomic='true'><p class='intestazione-alert'>Errore:</p>";
+                        $errore="<div class=\"alertnojs errore\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\"><p class=\"intestazione-alert\">Errore:</p>";
                         if($pwdempty){
                           $errore.="<p> Non hai compilato tutti i campi necessari alla modifica della password</p>";
                         }
@@ -168,7 +168,7 @@ else if(isset($_POST["modifica_password"])) {
               <form id="dati-utente" method="post" action="view-account-admin.php">
                 <?php
                       if($errore=="" && isset($_POST["conferma_modifica"])){
-                        echo "<div class='alertnojs success' aria-live='assertive' role='alert' aria-atomic='true'>
+                        echo "<div class=\"alertnojs success\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\">
                                 <p>Dati modificati con successo</p>
                               </div>";
                       }
