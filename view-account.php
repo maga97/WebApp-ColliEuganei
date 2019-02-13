@@ -202,7 +202,6 @@ else if(isset($_POST["modifica_password"])) { // se schiaccio il bottone di modi
                     <?php endif;?>
                 </div>
               </form>
-              <?php if(!isset($_POST["modifica_dati"]) && (isset($_POST["conferma_modifica"]) && $errore=="")):?>
               <div class="titolo-form">
                         <h2>Modifica <span xml:lang="en">password</span></h2>
                     </div>
@@ -230,7 +229,6 @@ else if(isset($_POST["modifica_password"])) { // se schiaccio il bottone di modi
 
                         </div>
                     </form>
-            <?php endif;?>
           </div>
 
       </div>
