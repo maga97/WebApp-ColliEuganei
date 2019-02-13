@@ -117,7 +117,7 @@ if(isset($_POST["cancellaPrenotazione"])){
             </div>
             <div class="field-container">
                <label for="Prezzo" lang="it" class="log-label-riep">PREZZO TOTALE </label>
-               <p> <?php  echo (float)$_SESSION["prezzo"]*(float)$_SESSION["posti"];?> </p>
+               <p> <?php  echo (float)$_SESSION["prezzo"]*(float)$_SESSION["posti"];?>€</p>
             </div>
               <div class="button-holder">
                 <form action="" method="POST">
