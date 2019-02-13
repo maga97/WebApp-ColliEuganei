@@ -101,11 +101,11 @@ $data = $arrayofdata[2] . "/" . $arrayofdata[1] . "/" . $arrayofdata[0];
 			<legend>Modifica gita "<?php echo $nomegita; ?>"</legend>
       <input type="hidden" name="id" value="<?php echo $id; ?>" />
 			<label for="titolo">Titolo</label>
-			<input type="text" name="nomegita" id="idnomegita" value="<?php echo $nomegita; ?>" required="required" />
+			<input type="text" name="nomegita" id="idnomegita" value="<?php echo $nomegita; ?>" required="required" maxlength="40"/>
 		</div>
 		<div class="log-field-container">
 			<label for="descrizione">Descrizione</label>
-			<textarea rows="5" cols="40" name="descrizione" required><?php echo $descrizione; ?></textarea>
+			<textarea rows="5" cols="40" name="descrizione" required="required" maxlength="256"><?php echo $descrizione; ?></textarea>
 		</div>
     <div class="log-field-container">
 			<label for="immagine">Immagine</label>
@@ -114,17 +114,17 @@ $data = $arrayofdata[2] . "/" . $arrayofdata[1] . "/" . $arrayofdata[0];
 		</div>
 		<div class="log-field-container">
 		  <label for="data">Data</label>
-		  <input type="text" name="data" aria-labelledby="datadesc" required="required" value="<?php echo $data; ?>" />
+		  <input type="text" name="data" aria-labelledby="datadesc" required="required" value="<?php echo $data; ?>" maxlength="10"/>
       <span id="datadesc" tabindex="0">gg/mm/aaaa</span>
 		</div>
 		<div class="log-field-container">
 			<label for="ora">Ora</label>
-			<input type="text" name="ora" aria-labelledby="oradesc" required="required" value="<?php echo $ora; ?>" />
+			<input type="text" name="ora" aria-labelledby="oradesc" required="required" value="<?php echo $ora; ?>" maxlength="5"/>
       <span id="oradesc" tabindex="0">hh:mm</span>
 		</div>
 		<div class="log-field-container">
 			<label for="prezzo">Prezzo</label>
-			<input type="text" min="0" id="prezzoAddTrip" name="prezzo" required="required" aria-labelledby="prezzodesc" value="<?php echo $prezzo; ?>" />
+			<input type="text" min="0" id="prezzoAddTrip" name="prezzo" required="required" aria-labelledby="prezzodesc" value="<?php echo $prezzo; ?>" maxlength="5"/>
       <span id="prezzodesc" tabindex="0">10.50</span>
 		</div>
 		  <div class="button-holder">
