@@ -19,6 +19,10 @@ if (!isset($nomegita)) {
     header("Location: edit-trip.php?id=" . $id . "&error=Nome+gita+non+definito");
     $errore = true;
 }
+if(!isset($_FILES['immagine']) || $_FILES['immagine']['size'] == 0) {
+    header("Location: edit-trip.php?id=" . $id . "&error=Immagine+gita+non+definita");
+    $errore = true;
+}
 if (empty($descrizione)) {
     header("Location: edit-trip.php?id=" . $id . "&error=Descrizione+gita+non+definita");
     $errore = true;

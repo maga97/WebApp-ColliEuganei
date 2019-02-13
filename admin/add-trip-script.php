@@ -22,8 +22,8 @@ if (empty($descrizione)) {
     header("Location: add-trip.php?error=Descrizione+gita+non+definita");
     exit;
 }
-if (!isset($immagine)) {
-    header("Location: add-trip.php?error=Immagine+non+definita+per+la+gita");
+if(!isset($_FILES['immagine']) || $_FILES['immagine']['size'] == 0) {
+    header("Location: edit-trip.php?id=" . $id . "&error=Immagine+gita+non+definita");
     exit;
 }
 if ($_FILES['immagine']['size'] > 2097152) {

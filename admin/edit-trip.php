@@ -35,6 +35,7 @@ $data = $arrayofdata[2] . "/" . $arrayofdata[1] . "/" . $arrayofdata[0];
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="../js/script.js"></script>
+    <script type="text/javascript" src="../hs/global.js"></script>
     <title>Modifica gita - Colli Digitali</title>
   </head>
   <body>
