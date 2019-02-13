@@ -133,6 +133,7 @@ ul.breadcrumb li+li:before {
 .gallery {
     display: flex;
 }
+
 .nascosto {
   display:none;
 }

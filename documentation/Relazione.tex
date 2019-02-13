@@ -120,7 +120,54 @@
 	 tendo, anche se disabilitato, che tutte le funzionalità rimangano accessibili e
 	 perfettamente funzionanti. \\
 	 Abbiamo deciso inoltre di utilizzare \texttt{JQuery} per la conferma della cancellazione delle gite perchè ...
-	\subsection{PHP}
+	\section{Accessibilità}
+	Tutte le scelte progettuali sono state prese in base al tema dell’accesibilità, seguendo le linee guida del W3C.
+	\subsection{colori}
+	Si è evitato di utilizzare combinazioni di colori che potessero creare problemi di
+	accessibilità, usabilità e comprensione del contenuto a persone affette da daltonsmo. 
+	\subsection{Tag}
+	Per quanto concerne i tag che migliorano l’accessibilità:
+	\begin{itemize}
+		\item Sono stati utilizzati i tag alt per le immagini seguendo le linee guida del
+		W3C.
+		\item  Le parole in lingua inglese sono state racchiuse in un tag <span xml:lang="en">
+		</span> cosi da poter garantire una lettura corretta da parte degli screen
+		reader.
+		\item  Sono stati utilizzati i tag tabindex in modo da permettere la navigazione
+		corretta del sito attraverso il tasto TAB.
+		\item \'E stato utilizzato il tag scope dove necessario seguendo i dettami del W3C.
+		Inoltre è stato evitato l'utilizzo di tabelle per realizzare il layout del sito.
+		\item Per rendere accessibili i form, sono stati utilizzati i tag label, fieldset
+		e title, assieme ad una gestione degli errori che comprende controlli di
+		validità dell’input.
+	\end{itemize}
+	\subsection{Tag WAI-ARIA}
+	Sono stati utilizzati dei tag introdotti dalle specifiche WAI-ARIA che permettono
+	di migliorare l'accessibilità per gli utenti che utilizzano uno screen reader.
+	\paragraph{div di errore per i form}
+		Per segnalare all'utente degli errori di input nei vari form è stato creato un div
+		che ha i seguenti attributi:
+		\begin{itemize}
+			\item aria-live="assertive":
+			Le tecnologie assistive (AT), come uno screen rea-
+			der, notificano immediatamente all’utente la regione dichiarata assertive,
+			in questo caso il div di errore verrà notificato e verranno letti gli errori,
+			permettendo all’utente di correggere l’input.
+			\item aria-atomic="true" Indica allo screen reader di leggere interamente la re-
+			gione di errore e non solo i suoi cambiamenti. In questo modo se l’utente
+			non ha corretto un errore segnalato in precedenza, questo viene notificato
+			nuovamente.
+		\end{itemize}
+	\subsection{Dispositivi}
+	Nella progettazione si è tenuto conto del fatto che l'utenza avrebbe acceduto al
+	sito da vari dispostivi. Alla luce di questa considerazione il sito adotta un layout
+	resposivo grazie alla creazione di file css appositi (mobile e stampa). Il sito è
+	stato testato su più dispositivi, browser e sistemi operativi possibili in modo tale
+	da avere un feedback più completo possibile sulle scelte adottate (Vedere la sezione
+	Validazione e Test per i dettagli).
+	
+	
+		
 	\section{Suddivisione di struttura, presentazione e comportamento}
 	I file relativi alla parte di amministrazione sono contenuti all'interno della cartella \texttt{admin/}, mentre i file relativi alla parte pubblica sono nella cartella principale del sito. Tuttavia alcuni file sono necessari per entrambi le parti, ed in questo
 	caso vi erano due alternative: duplicare i file e mantenere la massima indipendenza fra
@@ -150,14 +197,14 @@
 		\end{itemize}
 	\end{itemize}
 	\subsubsection{Presentazione}
-	La presentazione della pagina è realizzata tramite file css, il principale è
+	La presentazione della pagina eé realizzata tramite file css, il principale é
 	"style", che viene utilizzata per ogni pagina.
 	In caso di dispositivo mobile viene utilizzato uno stile extra, ovvero "mobile", che ha il compito di far cambiare la presentazione
 	della pagina per meglio adattarla a schermi di dimensioni inferiori.
 	
 
 	\subsubsection{Comportamento}
-	Il comportamento della pagina è stato gestito tramite JavaScript per il con-
+	Il comportamento della pagina é stato gestito tramite JavaScript per il con-
 	trollo delle form e la conferma della cancellazione di una prenotazione. Sono presenti anche controlli tramite codice PHP per garantire che il sito continui a funzionare corretamente anche in caso di assenza dell’interprete JavaScript.
 	
 
