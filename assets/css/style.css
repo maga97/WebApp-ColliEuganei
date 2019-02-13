@@ -297,7 +297,7 @@ ul#menuprincipale li.icon {
     color: white;
 }
 
-.dropdown:hover .dropdown-content, .dropdown:focus-within .dropdown-content{
+.dropdown > a:focus ~ .dropdown-content {
     display: grid;
 }
 
