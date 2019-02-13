@@ -20,7 +20,7 @@ if (!isset($nomegita)) {
     $errore = true;
 }
 
-if(isset($_FILES["immagine"]["name"]) && $_FILES["immagine"]["size"] == 0) {
+if(strlen($_FILES["immagine"]["name"]) > 0 && $_FILES["immagine"]["size"] == 0) {
     header("Location: edit-trip.php?id=" . $id . "&error=Errore+provare+con+un+altro+file.");
     $errore = true;
 }

@@ -26,7 +26,7 @@ if($_FILES['immagine']['size'] == 0) {
     header("Location: add-trip.php?id=" . $id . "&error=Immagine+gita+non+definita");
     exit;
 }
-if(isset($_FILES["immagine"]["name"]) && $_FILES["immagine"]["size"] == 0) {
+if(strlen($_FILES["immagine"]["name"]) > 0 && $_FILES["immagine"]["size"] == 0) {
     header("Location: add-trip.php?id=" . $id . "&error=Errore+provare+con+un+altro+file.");
     exit;
 }
