@@ -378,13 +378,13 @@ dd {
 }
 
 .btnTrip > a {
-    color: red;
+    color: #0067c8;
     text-transform: uppercase;
     text-decoration: underline;
 }
 
 .btnTrip>a:hover {
-    color: red;
+    color: #0067c8;
     font-weight: bolder;
     text-decoration: underline;
 }
