@@ -9,12 +9,12 @@ $dbConnection = new database();
 $dbConnection->Connect();
 $PrenotazioneOk=false;
 
-if(!isset($_SESSION["posti"]))
-  $_SESSION["posti"]=$_POST["posti"];
+$_SESSION["posti"]=$_POST["posti"];
+
 if(isset($_POST["confermaPrenotazione"])) {
-$PrenotazioneOk=$dbConnection->addPrenotazione($_SESSION["ID"],$dbConnection->GetIDUtente($_SESSION["username"]),
-                                               $_SESSION["data"],$_SESSION["ora"],$_SESSION["posti"]
-                                              );
+    $PrenotazioneOk=$dbConnection->addPrenotazione($_SESSION["ID"],$dbConnection->GetIDUtente($_SESSION["username"]),
+                                                   $_SESSION["data"],$_SESSION["ora"],$_SESSION["posti"]
+                                                  );
 }
 if(isset($_POST["cancellaPrenotazione"])){
   header("Location: gite.php");
