@@ -54,8 +54,8 @@ else {
     header("Location: edit-trip.php?id=".$id."&error=Formato+ora+gita+non+corretto");
     $errore = true;
 }
-if(!is_integer($ora_array[0]) || !is_integer($ora_array[1]) || !is_integer($data_array[0]) ||
- !is_integer($data_array[1]) || !is_integer($data_array[2])) {
+if(!is_numeric($ora_array[0]) || !is_numeric($ora_array[1]) || !is_numeric($data_array[0]) ||
+ !is_numeric($data_array[1]) || !is_numeric($data_array[2])) {
      header("Location: edit-trip.php?id=".$id."&error=Tipo+numerico+non+corretto");
      $errore = true;
  }

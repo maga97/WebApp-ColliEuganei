@@ -53,8 +53,8 @@ else {
     header("Location: add-trip.php?error=Formato+ora+gita+non+corretto");
     exit;
 }
-if(!is_integer($ora_array[0]) || !is_integer($ora_array[1]) || !is_integer($data_array[0]) ||
- !is_integer($data_array[1]) || !is_integer($data_array[2])) {
+if(!is_numeric($ora_array[0]) || !is_numeric($ora_array[1]) || !is_numeric($data_array[0]) ||
+ !is_numeric($data_array[1]) || !is_numeric($data_array[2])) {
      header("Location: add-trip.php?error=Tipo+numerico+non+corretto");
  }
 if(intval($ora_array[0]) > 23 || intval($ora_array[0]) < 0) {
