@@ -14,6 +14,7 @@ function clx(str, obj) {
 
 
 $(document).ready(function() {
+	document.getElementById("menuprincipale").classList.toggle("responsive");
 	setTimeout(function() {
 		$(".success").hide();
 	}, 10000);

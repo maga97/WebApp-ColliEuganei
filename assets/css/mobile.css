@@ -19,7 +19,7 @@
     padding: 0.25em;
   }
 
-  .place { 
+  .place {
     margin-left: 0;
   }
 
@@ -133,7 +133,6 @@
   .admin-div a {
     line-height: 2.5em;
   }
-
 }
 
 @media screen and (max-width:480px) {
