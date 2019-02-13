@@ -11,7 +11,12 @@ function clx(str, obj) {
 	document.getElementById(scroll).scrollIntoView();
 }
 
+
+
 $(document).ready(function() {
+	setTimeout(function() {
+		$(".success").hide();
+	}, 10000);
 	$("#scroll-top-btn").css("display", "none");
 	$("#mobile").click(function(e) {
 		e.preventDefault();

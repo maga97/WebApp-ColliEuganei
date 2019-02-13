@@ -20,6 +20,7 @@ $db->connect();
     <link rel="stylesheet" type="text/css"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css"/>
     <script  type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script  type="text/javascript" src="../js/script.js"></script>
+    <script  type="text/javascript" src="../js/global.js"></script>
     <title>Modifica gita - Colli Digitali</title>
   </head>
   <body>
@@ -74,7 +75,7 @@ $db->connect();
 		</ul>
     <?php
 if (isset($_GET["done"]) == true) {
-    echo "<div class=\"alertnojs success\">Modifica avvenuta correttamente</div>" . PHP_EOL;
+    echo "<div class=\"alert nojs success\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\">Modifica avvenuta correttamente</div>" . PHP_EOL;
 }
 $list = $db->GetListaAttivita();
 $size = sizeof($list);

@@ -472,18 +472,18 @@ div.alert {
     border-radius: 0.4em;
 }
 
-div.alert.errore.login, div.alert.nojs{
+div.alert.errore.login, div.alert.nojs {
     display: block;
 }
 
-.alert.errore, .alertnojs.errore {
+.alert.errore {
     background: #ac1911;
 }
 
-.alert.warning, .alertnojs.warning {
+.alert.warning  {
     background: rgb(238, 147, 0);
 }
 
-.alert.success, .alertnojs.success {
+.alert.success {
     background: #069906;
 }
