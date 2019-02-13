@@ -41,6 +41,10 @@ if (empty($prezzo)) {
     $errore = true;
 }
 
+if(substr_count($prezzo, ",") == 1) {
+    $prezzo = str_replace(",",".",$prezzo);
+  }
+
 $data_array = array();
 if (substr_count($_POST["data"], "/") == 2) {
     $data_array = explode("/", $_POST["data"]);

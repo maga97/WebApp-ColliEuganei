@@ -109,7 +109,7 @@ $data = $arrayofdata[2] . "/" . $arrayofdata[1] . "/" . $arrayofdata[0];
 		</div>
     <div class="log-field-container">
 			<label for="immagine">Immagine</label>
-      <input type="file" name="immagine" id="idimmagine" placeholder="Selezione immagine gita"/>
+      <input type="file" name="immagine" id="idimmagine" placeholder="Selezione immagine gita" accept="image/*"/>
       <span id="imgdesc" tabindex="0">Se lasciata vuota l'immagine non cambier&agrave;</span>
 		</div>
 		<div class="log-field-container">
