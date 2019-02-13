@@ -106,6 +106,7 @@
 }
 
 a.btn.red {
+  border-radius: 0.75em;
   margin: auto;
   color: white;
   background-color: #ff0000;
