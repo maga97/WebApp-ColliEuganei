@@ -14,6 +14,7 @@ $gita = $db->GetGita($id);
 $nomegita = $gita[0]["Nome"];
 $descrizione = $gita[0]["Descrizione"];
 $prezzo = $gita[0]["Prezzo"];
+$immagine = base64_encode($gita[0]["Immagine"]);
 $ora = $gita[0]["Ore"];
 $ora = explode(":", $ora);
 $ora = $ora[0] . ":" . $ora[1];
@@ -88,7 +89,8 @@ $data = $arrayofdata[2] . "/" . $arrayofdata[1] . "/" . $arrayofdata[0];
       <li>Modifica dati gita</li>
     </ul>
     <div class="form">
-    <form action="edit-trip-script.php" name="form-modify-trip" method="POST">
+    <img src="data:image/jpeg;base64,<?php echo $immagine?>" alt="Immagine <?php echo $nome ?>" class="responsive-image center-image" />
+    <form action="edit-trip-script.php"  enctype="multipart/form-data"  name="form-modify-trip" method="POST">
       <?php
 if (isset($_GET["error"])) {
     echo "<div class=\"alert errore\">Errore: " . $_GET["error"] . "</div>" . PHP_EOL;
@@ -103,6 +105,11 @@ if (isset($_GET["error"])) {
 		<div class="log-field-container">
 			<label for="descrizione">Descrizione</label>
 			<textarea rows="5" cols="40" name="descrizione" required><?php echo $descrizione; ?></textarea>
+		</div>
+    <div class="log-field-container">
+			<label for="immagine">Immagine</label>
+      <input type="file" name="immagine" id="idimmagine" placeholder="Selezione immagine gita"/>
+      <span id="imgdesc" tabindex="0">Se lasciata vuota l'immagine non cambier&agrave;</span>
 		</div>
 		<div class="log-field-container">
 		  <label for="data">Data</label>

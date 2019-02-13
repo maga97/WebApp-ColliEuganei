@@ -83,7 +83,7 @@ if (isset($_GET["error"])) {
     echo "<div class=\"alertnojs errore login\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\"><p>Errore: " . $_GET["error"] . "</p></div>" . PHP_EOL;
 }
 ?>
-    <form action="add-trip-script.php" name="form-add-trip" method="POST">
+    <form action="add-trip-script.php" enctype="multipart/form-data" name="form-add-trip" method="POST">
 		<div class="log-field-container">
 			<legend>Aggiungi nuova gita</legend>
 			<label for="nomegita">Titolo</label>
@@ -92,6 +92,10 @@ if (isset($_GET["error"])) {
 		<div class="log-field-container">
 			<label for="descrizione">Descrizione</label>
 			<textarea rows="5" cols="40" name="descrizione" required="required"></textarea>
+		</div>
+    <div class="log-field-container">
+			<label for="immagine">Immagine</label>
+      <input type="file" name="immagine" id="idimmagine" placeholder="Selezione immagine gita" required="required" />
 		</div>
 		<div class="log-field-container">
 		  <label for="data">Data</label>

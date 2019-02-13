@@ -151,23 +151,31 @@ class database {
 		return $query->execute();
 	}
 
-	public function AggiungiGita($nomegita, $descrizione, $data, $ora, $prezzo) {
-		$sql = "INSERT INTO `Attivita` (`ID_Attivita`, `Descrizione`, `Nome`, `Prezzo`, `Data`, `Ore`)
-		VALUES (NULL, ?, ?, ?, ?, ?)";
+	public function AggiungiGita($nomegita, $descrizione, $immagine, $data, $ora, $prezzo) {
+		$sql = "INSERT INTO `Attivita` (`ID_Attivita`, `Descrizione`, `Immagine`, `Nome`, `Prezzo`, `Data`, `Ore`)
+		VALUES (NULL, ?, ?, ?, ?, ?, ?)";
 		$query = $this->pdo->prepare($sql);
 		/*$query->bindParam(':nome', $nomegita, PDO::PARAM_STR);
 		$query->bindParam(':desc', $descrizione, PDO::PARAM_STR, 512);
 		$query->bindParam(':data', $data, PDO::PARAM_STR);
 		$query->bindParam(':ore', $ore, PDO::PARAM_STR);
 		$query->bindParam(':prezzo', $prezzo, PDO::PARAM_STR);*/
-		return $query->execute(array($descrizione, $nomegita, $prezzo, $data, $ora . ":00"));
+		return $query->execute(array($descrizione, $immagine, $nomegita, $prezzo, $data, $ora . ":00"));
 	}
 
-	public function ModificaGita($id, $nomegita, $descrizione, $data, $ora, $prezzo) {
-		$sql = "UPDATE Attivita SET Nome = ?, Descrizione = ?, Data = ?, Ore = ?, Prezzo = ?
-		WHERE ID_Attivita = ?";
-		$query = $this->pdo->prepare($sql);
-		return $query->execute(array($nomegita, $descrizione, $data, $ora, $prezzo, $id));
+	public function ModificaGita($id, $nomegita, $descrizione, $immagine, $data, $ora, $prezzo) {
+		if($immagine != NULL) {
+			$sql = "UPDATE Attivita SET Nome = ?, Immagine = ?, Descrizione = ?, Data = ?, Ore = ?, Prezzo = ?
+			WHERE ID_Attivita = ?";
+			$query = $this->pdo->prepare($sql);
+			return $query->execute(array($nomegita, $immagine, $descrizione, $data, $ora, $prezzo, $id));
+		}
+		else {
+			$sql = "UPDATE Attivita SET Nome = ?, Descrizione = ?, Data = ?, Ore = ?, Prezzo = ?
+			WHERE ID_Attivita = ?";
+			$query = $this->pdo->prepare($sql);
+			return $query->execute(array($nomegita, $descrizione, $data, $ora, $prezzo, $id));
+		}
 	}
 
 	public function RimuoviGita($id) {

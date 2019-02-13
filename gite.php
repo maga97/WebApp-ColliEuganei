@@ -87,8 +87,10 @@ $db->connect();
           $node['Data'] = $data[2] . "/" . $data[1] . "/" . $data[0];
         ?>
         <div class="attivita">
+        <?php $immagine = base64_encode($node["Immagine"]); ?>
+          <img src="data:image/jpeg;base64,<?php echo $immagine?>" alt="Immagine <?php echo $nome ?>" class="responsive-image gite-image" />
           <h2><?php echo $node['Nome']; ?></h2>
-          <p> <?php echo $node['Descrizione']; ?> </p>
+          <p><?php echo $node['Descrizione']; ?></p>
           <dl>
             <dt>Prezzo:</dt>
             <dd><?php echo $node['Prezzo']; ?> &euro;</dd>
@@ -104,9 +106,8 @@ $db->connect();
         <?php else: ?>
 			    <span class="btnTrip"><a href="login.php" aria-label="Accedi per prenotare la gita">Accedi</a> per poter prenotare</span>
         <?php endif ?>
-        </div>
-        <?php
-        endforeach; ?>
+          </div>
+      <?php endforeach; ?>
       </div>
       <?php include_once("footer.php"); ?>
     </div>

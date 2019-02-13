@@ -10,6 +10,7 @@ if (!isset($_SESSION['login']) || $_SESSION['login'] == false || $_SESSION['admi
 //add-trip-script.php
 $nomegita = $_POST["nomegita"];
 $descrizione = $_POST["descrizione"];
+$immagine = $_FILES["immagine"];
 $data = $_POST["data"];
 $ora = $_POST["ora"];
 $prezzo = $_POST["prezzo"];
@@ -21,6 +22,24 @@ if (empty($descrizione)) {
     header("Location: add-trip.php?error=Descrizione+gita+non+definita");
     exit;
 }
+if (!isset($immagine)) {
+    header("Location: add-trip.php?error=Immagine+non+definita+per+la+gita");
+    exit;
+}
+if ($_FILES['immagine']['size'] > 2097152) {
+    header("Location: add-trip.php?error=Immagine+troppo+grande.+Max+2+MB.");
+    exit;
+  }
+
+$ext_ok = array('jpeg', 'jpg', 'png', 'PNG', 'JPEG', 'JPG');
+$temp = explode('.', $_FILES['immagine']['name']);
+$ext = end($temp);
+if (!in_array($ext, $ext_ok)) {
+    header("Location: add-trip.php?error=Estensione+immagine+non+ammessa.");
+    exit;
+  exit;
+}
+
 if (empty($data)) {
     header("Location: add-trip.php?error=Data+gita+non+definita");
     exit;
@@ -84,7 +103,7 @@ if (strtotime($data) < strtotime(date("Y-m-d"))) {
     header("Location: add-trip.php?error=Data+inserita+antecedente+a+quella+ordierna.");
     exit;
 }
-$esito = $db->AggiungiGita($nomegita, $descrizione, $data, $ora, $prezzo);
+$esito = $db->AggiungiGita($nomegita, $descrizione, file_get_contents($_FILES['immagine']['tmp_name']), $data, $ora, $prezzo);
 
 if ($esito) {
     header("Location: add-trip.php?done=true");
