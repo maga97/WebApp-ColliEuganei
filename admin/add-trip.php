@@ -77,10 +77,10 @@ $db->connect();
     <div class="form">
     <?php
 if (isset($_GET["done"]) == true) {
-    echo "<div class=\"alertnojs success\">Inserimento avvenuto correttamente</div>" . PHP_EOL;
+    echo "<div class=\"alert nojs success\">Inserimento avvenuto correttamente</div>" . PHP_EOL;
 }
 if (isset($_GET["error"])) {
-    echo "<div class=\"alertnojs errore login\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\"><p>Errore: " . $_GET["error"] . "</p></div>" . PHP_EOL;
+    echo "<div class=\"alert errore\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\"><p>Errore: " . $_GET["error"] . "</p></div>" . PHP_EOL;
 }
 ?>
     <form action="add-trip-script.php" enctype="multipart/form-data" name="form-add-trip" method="POST">
