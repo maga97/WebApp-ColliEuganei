@@ -1,12 +1,12 @@
 function notificaErrore(targetNode, testo, divAlert, formErr) {
-    divAlert.innerHTML(testo);
+    divAlert.append("<p>"+testo+"</p>");
     divAlert.show();
     if(targetNode != null) targetNode.addClass("error");
     if(formErr != null) formErr.find(".error").first().focus();
 }
 
 function pulisciErrori(divAlert,formErr) {
-    divAlert.find("p").remove();
+    divAlert.find("p").not(".intestazione-alert").remove();
     divAlert.hide();
     if(formErr != null) formErr.find("input").removeClass("error");
 }
