@@ -74,6 +74,11 @@ if (substr_count($ora, ":") == 1) {
     header("Location: add-trip.php?error=Formato+ora+gita+non+corretto");
     exit;
 }
+
+if(substr_count($prezzo, ",") == 1) {
+  $prezzo = str_replace(",",".",$prezzo);
+}
+
 if (!is_numeric($ora_array[0]) || !is_numeric($ora_array[1]) || !is_numeric($data_array[0]) ||
     !is_numeric($data_array[1]) || !is_numeric($data_array[2])) {
     header("Location: add-trip.php?error=Tipo+numerico+non+corretto");
