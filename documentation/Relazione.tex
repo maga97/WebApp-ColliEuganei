@@ -100,6 +100,31 @@
 	 tendo, anche se disabilitato, che tutte le funzionalità rimangano accessibili e
 	 perfettamente funzionanti. \\
 	 \'E stata inoltre utilizzata la libreria esterna \texttt{JQuery} per la conferma di alcune azioni. Abbiamo deciso di utilizzarla per cercare di apprendere nuove tecnologie, con la consapevolezza comunque che si tratta di una libreria pesante e che andrebbe evitato il suo utilizzo per scopi non fondamentali.
+	 \subsection{PHP}
+	 \subsubsection{Database}
+	 \'E stata creata una classe wrapper per la connessione al database, in maniera tale da facilitare la connessione  e renderla estendibile per l'aggiunta di funzioni. Per utilizzarla è necessario creare un oggetto di tale classe che servirà per richiamare le funzioni,  utilizzate principalmente per interrogare il database e ottenere i dati necessari.
+	 \subsubsection{Dinamicità}
+	 PHP svolge un ruolo fondamentale per il funzionamento del sito, infatti grazie a
+	 questa tecnologia abbiamo realizzato un sito dinamico i cui contenuti (le gite
+	 offerte) possono essere aggiunti, modificati ed eliminati attraverso il pannello di
+	 amministrazione. le gite disponibili vengono stampate dal db tramite uno script. Le gite prenotate vengono stampate acnh'esse dal database. 
+	 Il gruppo era intenzionato a mettere un file per il menu, in maniera tale da non dover ripeterlo in ogni pagina. Tuttavia, durante lo sviluppo, sono state riscontrate delle problematiche di calcolo del path corretto dei link a causa dell'utilizzo di diversi ambienti da parte dei membri. \'E stato quindi deciso di non mettere tale file per agevolare lo sviluppo del sito.
+	 \subsection{Sicurezza}
+	 Il tema della sicurezza ha avuto un ruolo fondamentale durante la realizzazione del
+	 sito, infatti sono state create delle funzioni che permettono di garantire il controllo
+	 completo sulle operazioni che vengono richieste al server. Tale controllo consiste nel
+	 verificare quale tipologia di utente ha fatto la richiesta attraverso le informazioni
+	 contenute nella sessione; se l’utente non è un amministratore ed esso ha cercato di
+	 utilizzare delle funzionalità riservate ad un admin allora il server rigetta la richiesta.
+	 \subsection{PDO-SQL Injection}
+	 Per la connessione e l’interazione con il database è stato utilizzato PDO poichè
+	 permette di gestire con facilità la connessione con diversi DBMS (nel nostro caso
+	 abbiamo utilizzato MySQL). Inoltre grazie al meccanismo di preparazione degli
+	 statement (statement precompilati), i dati inseriti dagli utenti vengono automa-
+	 ticamente sanificati in modo da impedire qualsiasi tipo di SQL Injection, questo
+	 permette l’integrità e la sicurezza del database. Utilizzo di metodi standard come
+	 pdo ci tutela e ci solleva dall’incombenza della manutenzione correttiva. 
+	 
 	\section{Accessibilità}
 	Tutte le scelte progettuali sono state prese in base al tema dell’accesibilità, seguendo le linee guida del W3C.
 	\subsection{Colori}
