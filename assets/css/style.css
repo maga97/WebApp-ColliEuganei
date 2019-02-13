@@ -334,28 +334,28 @@ div.attivita {
 }
 
 .attivita h2 {
-  text-indent: -0.5em;
-  margin: 0;
+    text-indent: -0.5em;
+    margin: 0;
 }
 
 .attivita p {
-  margin: 0;
+    margin: 0;
 }
 
 .attivita dl{
-  margin: 0;
+    margin: 0;
 }
 
 .attivita dt {
-  color: #666;
-  float: left;
-  clear: left;
-  margin-right: 0.4em;
+    color: #666;
+    float: left;
+    clear: left;
+    margin-right: 0.4em;
 }
 
 .attivita dd {
-  font-weight: bold;
-  margin-top: 0;
+    font-weight: bold;
+    margin-top: 0;
 }
 
 dl {
@@ -414,53 +414,56 @@ dd {
 }
 
 .skip {
-        position: absolute;
-        top: -62.5em;
-        left: -62.5em;
-        height: 0.0625em;
-        width: 0.0625em;
-        text-align: left;
-        overflow: hidden;
-    }
+    position: absolute;
+    top: -62.5em;
+    left: -62.5em;
+    height: 0.0625em;
+    width: 0.0625em;
+    text-align: left;
+    overflow: hidden;
+}
 
-    a.skip:active,
-    a.skip:focus,
-    a.skip:hover {
-        left: 0;
-        top: 0;
-        width: auto;
-        height: auto;
-        overflow: visible;
-    }
+a.skip:active,
+a.skip:focus,
+a.skip:hover {
+    left: 0;
+    top: 0;
+    width: auto;
+    height: auto;
+    overflow: visible;
+}
 
-    .flex-container {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-    }
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
 
-    .admin-div {
-        width: 30%;
-        margin: 0.5em;
-        padding: 1em;
-        background: #D3D3D3;
-        border-radius: 0.3em;
-    }
-    .admin-div a {
-        background: #4CAF50;
-        color: white;
-        padding: 0 0.5% 0 0.5%;
-        text-decoration: underline;
-        text-align: center;
-        font-weight: bold;
-        display: block;
-        line-height: 3em;;
-    }
-    .admin-div a:hover {
-        color: rebeccapurple;
-        text-decoration: underline;
-        text-align: center;
-    }
+.admin-div {
+    width: 30%;
+    margin: 0.5em;
+    padding: 1em;
+    background: #D3D3D3;
+    border-radius: 0.3em;
+}
+
+.admin-div a {
+    background: #4CAF50;
+    color: white;
+    padding: 0 0.5% 0 0.5%;
+    text-decoration: underline;
+    text-align: center;
+    font-weight: bold;
+    display: block;
+    line-height: 3em;;
+}
+
+.admin-div a:hover {
+    color: rebeccapurple;
+    text-decoration: underline;
+    text-align: center;
+}
+
 .admin-div ul {
     list-style-type: none;
     margin: 0;

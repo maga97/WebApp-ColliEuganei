@@ -106,20 +106,13 @@
 }
 
 a.btn.red {
+  border-radius: 0.75em;
   margin: auto;
   color: white;
   background-color: #ff0000;
   border-bottom-color: #ff0000;
   margin-bottom: 2em;
 }
-
-/*CSS BELLO PER ALERT DI SUCCESSO
-.success {
-    color: #4F8A10;
-    background-color: #DFF2BF;
-    margin: 10px 0px;
-    padding:12px;
-} */
 
 .btn.btn-tripInsert {
   float: left;
@@ -193,6 +186,7 @@ input[type="submit"] {
   background-color: #4caf50;
   margin-left: 5%;
 }
+
 input[type="reset"] {
   background-color: #f44336;
   float: right;
