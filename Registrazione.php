@@ -123,7 +123,7 @@ $errore = "";
               <div id="sectionAccountData">
                 <div class="field-container">
                   <label for="email" xml:lang="en" class="log-label">Email: (obbligatorio)</label>
-                  <input type="text" value="<?php echo isset($_SESSION['email'])? $_SESSION['email']:""; ?>"id="email" name="email" accesskey="e" aria-required="true" aria-labelledby="email"/>
+                  <input type="text" value="<?php echo isset($_SESSION['email'])? $_SESSION['email']:""; ?>" id="email" name="email" accesskey="e" aria-required="true" aria-labelledby="email"/>
                 </div>
                 <div class="log-field-container">
                   <label for="password" class="log-label"><span xml:lang="en">Password</span>: (obbligatorio)</label>

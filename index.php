@@ -32,7 +32,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 			</div>
 		</div>
 		    <div id="menuprincipale-bar" role="menubar">
-              <ul id="menuprincipale">
+              <ul id="menuprincipale" class="responsive">
                   <li><a href="index.php" class="active" tabindex="0">Home</a></li>
                   <li class="dropdown" ><a tabindex="0" aria-haspopup="true">Luoghi</a>
                       <ul class="dropdown-content button-right" role="menu">

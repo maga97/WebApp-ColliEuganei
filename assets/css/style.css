@@ -207,13 +207,13 @@ a:visited {
 }
 
 .find-more {
-    border-bottom: solid 2px #4ca504;
+    border-bottom: solid 0.125em #4ca504;
     font-size: 1.1em !important;
     cursor: pointer;
     display: block;
     margin-right: auto;
     margin-left: auto;
-    min-width: 100px;
+    min-width: 6.25em;
     text-decoration: underline !important;
     font-weight: bold;
 }
@@ -282,6 +282,12 @@ ul#menuprincipale li.icon {
     display: none;
 }
 
+.dropdown > a:after {
+	content: "▼";
+	font-size: 75%;
+    color: #f2f2f2;
+    padding-left: 0.5em;
+}
 .dropdown-content {
     list-style-type: none;
     display: none;
@@ -297,7 +303,7 @@ ul#menuprincipale li.icon {
     color: white;
 }
 
-.dropdown:focus-within .dropdown-content{
+.dropdown:hover .dropdown-content, .dropdown:focus-within .dropdown-content{
     display: grid;
 }
 
@@ -331,23 +337,23 @@ div.attivita {
 }
 
 .attivita p {
-  margin: 0;
+    margin: 0;
 }
 
 .attivita dl{
-  margin: 0;
+    margin: 0;
 }
 
 .attivita dt {
-  color: #666;
-  float: left;
-  clear: left;
-  margin-right: 0.4em;
+    color: #666;
+    float: left;
+    clear: left;
+    margin-right: 0.4em;
 }
 
 .attivita dd {
-  font-weight: bold;
-  margin-top: 0;
+    font-weight: bold;
+    margin-top: 0;
 }
 
 dl {
@@ -370,13 +376,13 @@ dd {
 }
 
 .btnTrip > a {
-    color: red;
+    color: #0067c8;
     text-transform: uppercase;
     text-decoration: underline;
 }
 
 .btnTrip>a:hover {
-    color: red;
+    color: #0067c8;
     font-weight: bolder;
     text-decoration: underline;
 }
@@ -387,14 +393,14 @@ dd {
 
 .tabcontent {
     display: block;
-    padding: 6px 12px;
-    border: 1px solid #ccc;
+    padding: 0.375em 0.75em;
+    border: 0.0625em solid #ccc;
     border-top: none;
 }
 
 .container_form {
-    width: 700px;
-    margin-bottom: 60px;
+    width: 43.75em;
+    margin-bottom: 3.75em;
 }
 
 #riepilogo {
@@ -406,53 +412,56 @@ dd {
 }
 
 .skip {
-        position: absolute;
-        top: -1000px;
-        left: -1000px;
-        height: 1px;
-        width: 1px;
-        text-align: left;
-        overflow: hidden;
-    }
+    position: absolute;
+    top: -62.5em;
+    left: -62.5em;
+    height: 0.0625em;
+    width: 0.0625em;
+    text-align: left;
+    overflow: hidden;
+}
 
-    a.skip:active,
-    a.skip:focus,
-    a.skip:hover {
-        left: 0;
-        top: 0;
-        width: auto;
-        height: auto;
-        overflow: visible;
-    }
+a.skip:active,
+a.skip:focus,
+a.skip:hover {
+    left: 0;
+    top: 0;
+    width: auto;
+    height: auto;
+    overflow: visible;
+}
 
-    .flex-container {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-    }
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
 
-    .admin-div {
-        width: 30%;
-        margin: 0.5em;
-        padding: 1em;
-        background: #D3D3D3;
-        border-radius: 0.3em;
-    }
-    .admin-div a {
-        background: #4CAF50;
-        color: white;
-        padding: 0 0.5% 0 0.5%;
-        text-decoration: underline;
-        text-align: center;
-        font-weight: bold;
-        display: block;
-        line-height: 3em;;
-    }
-    .admin-div a:hover {
-        color: rebeccapurple;
-        text-decoration: underline;
-        text-align: center;
-    }
+.admin-div {
+    width: 30%;
+    margin: 0.5em;
+    padding: 1em;
+    background: #D3D3D3;
+    border-radius: 0.3em;
+}
+
+.admin-div a {
+    background: #4CAF50;
+    color: white;
+    padding: 0 0.5% 0 0.5%;
+    text-decoration: underline;
+    text-align: center;
+    font-weight: bold;
+    display: block;
+    line-height: 3em;;
+}
+
+.admin-div a:hover {
+    color: rebeccapurple;
+    text-decoration: underline;
+    text-align: center;
+}
+
 .admin-div ul {
     list-style-type: none;
     margin: 0;

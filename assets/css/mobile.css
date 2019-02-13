@@ -5,6 +5,11 @@
     margin-right: auto;
   }
 
+  #titolo {
+    text-align: center;
+    margin-top: 0;
+  }
+
   .gallery {
     display: block;
   }
@@ -14,7 +19,9 @@
     padding: 0.25em;
   }
 
-  .place { margin-left: 0;}
+  .place {
+    margin-left: 0;
+  }
 
   #geotab {
     display:none;
@@ -25,21 +32,35 @@
     display: block;
   }
 
-  #menuprincipale.responsive {position: relative;}
+  #menuprincipale.responsive {
+    position: relative;
+  }
+
   #menuprincipale.responsive a.icon {
     position: absolute;
     right: 0;
     top: 0;
   }
+
   #menuprincipale.responsive a {
     float: none;
     display: block;
     text-align: left;
     margin: 0 0 0 0;
   }
-  #menuprincipale.responsive .dropdown {float: none;}
-  #menuprincipale.responsive .dropdown-content {position: relative;}
-  #menuprincipale.responsive ul.dropdown-content li a{text-indent: 1em;}
+
+  #menuprincipale.responsive .dropdown {
+    float: none;
+  }
+
+  #menuprincipale.responsive .dropdown-content {
+    position: relative;
+  }
+
+  #menuprincipale.responsive ul.dropdown-content li a{
+    text-indent: 1em;
+  }
+
   #menuprincipale.responsive .dropdown .dropbtn {
     display: block;
     width: 100%;
@@ -105,10 +126,6 @@
     padding-top: 1em;
   }
 
-  #titolo {
-    text-align: center;
-    margin-top: 0;
-  }
   .admin-div {
     min-width: 100%;
     margin: 0;
@@ -119,7 +136,6 @@
   .gite-image {
     display: none;
   }
-
 }
 
 @media screen and (max-width:480px) {
@@ -127,6 +143,7 @@
   ul#menuprincipale li:not(:first-child) {
     display: none;
   }
+
   ul#menuprincipale li.icon {
     float: right;
     display: inline-block;
@@ -142,22 +159,26 @@
     right: 0;
     top: 0;
   }
+
   ul#menuprincipale.responsive li {
     float: none;
     display: inline;
   }
+
   ul#menuprincipale.responsive li a {
     display: block;
     text-align: left;
   }
+
   #scroll-top-btn {
     display: none;
   }
+
   #container_form{
     width:auto;
   }
 
-  #sectionPersonalData , #sectionAccountData {
+  #sectionPersonalData, #sectionAccountData {
       float:none;
       width: 100%;
       margin:0;

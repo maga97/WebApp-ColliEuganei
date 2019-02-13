@@ -30,7 +30,7 @@
 .disabilita:disabled {
   color: #706f6e;
     border:0;
-    border-bottom: 2px solid transparent;
+    border-bottom: 0.125em solid transparent;
 }
 
 #sectionPersonalData {
@@ -106,20 +106,13 @@
 }
 
 a.btn.red {
+  border-radius: 0.75em;
   margin: auto;
   color: white;
   background-color: #ff0000;
   border-bottom-color: #ff0000;
   margin-bottom: 2em;
 }
-
-/*CSS BELLO PER ALERT DI SUCCESSO
-.success {
-    color: #4F8A10;
-    background-color: #DFF2BF;
-    margin: 10px 0px;
-    padding:12px;
-} */
 
 .btn.btn-tripInsert {
   float: left;
@@ -193,6 +186,7 @@ input[type="submit"] {
   background-color: #4caf50;
   margin-left: 5%;
 }
+
 input[type="reset"] {
   background-color: #f44336;
   float: right;
@@ -229,13 +223,13 @@ input.error {
 #modifica {
     color:#F3F3F3;
     background-color: #16BFFF;
-    border:2px solid #1C1C1C;
+    border:0.125em solid #1C1C1C;
     padding: 0.2em 0.5em;
     cursor:pointer;
 }
 
 .tabcontent {
-    padding: 6px 12px;
+    padding: 0.375em 0.75em;
     border-top: none;
 }
 

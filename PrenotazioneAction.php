@@ -9,12 +9,13 @@ $dbConnection = new database();
 $dbConnection->Connect();
 $PrenotazioneOk=false;
 
-if(!isset($_SESSION["posti"]))
+if(isset($_POST["posti"]))
   $_SESSION["posti"]=$_POST["posti"];
+
 if(isset($_POST["confermaPrenotazione"])) {
-$PrenotazioneOk=$dbConnection->addPrenotazione($_SESSION["ID"],$dbConnection->GetIDUtente($_SESSION["username"]),
-                                               $_SESSION["data"],$_SESSION["ora"],$_SESSION["posti"]
-                                              );
+    $PrenotazioneOk=$dbConnection->addPrenotazione($_SESSION["ID"],$dbConnection->GetIDUtente($_SESSION["username"]),
+                                                   $_SESSION["data"],$_SESSION["ora"],$_SESSION["posti"]
+                                                  );
 }
 if(isset($_POST["cancellaPrenotazione"])){
   header("Location: gite.php");
@@ -29,11 +30,11 @@ if(isset($_POST["cancellaPrenotazione"])){
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" media="all">
     <link rel="stylesheet" type="text/css" href="assets/css/print.css" media="all">
-    <link rel="stylesheet" type="text/css" href="assets/css/mobile.css" media="all">
     <link rel="stylesheet" type="text/css" href="assets/css/form.css" media="all">
+    <link rel="stylesheet" type="text/css" href="assets/css/mobile.css" media="all">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="../script.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
     <title>Login - Colli Digitali</title>
   </head>
   <body>
@@ -49,44 +50,44 @@ if(isset($_POST["cancellaPrenotazione"])){
           </div>
         </div>
       </div>
-            <div id="menuprincipale-bar" role="menubar">
-              <ul id="menuprincipale">
-                  <li><a href="index.php" tabindex="0">Home</a></li>
-                  <li class="dropdown"><a aria-haspopup="true" tabindex="0">Luoghi</a>
-                      <ul class="dropdown-content button-right" role="menu">
-                          <li role="none"><a href="luoghi/chiesette.php" tabindex="0" role="menuitem">Sette Chiesette</a></li>
-                          <li role="none"><a href="luoghi/catajo.php" tabindex="0" role="menuitem">Castello del Catajo</a></li>
-                          <li role="none"><a href="luoghi/praglia.php" tabindex="0" role="menuitem">Abbazia di Praglia</a></li>
-                          <li role="none"><a href="luoghi/carrareseeste.php" tabindex="0" role="menuitem">Castello carrarese di Este</a></li>
-                          <li role="none"><a href="luoghi/lispida.php" tabindex="0" role="menuitem">Castello di Lispida</a></li>
-                          <li role="none"><a href="luoghi/pelagio.php" tabindex="0" role="menuitem">Castello San Pelagio</a></li>
-                      </ul>
-                  </li>
-                  <li><a href="gite.php" tabindex="0" class="active">Gite</a></li>
-                  <?php
-                  if (isset($_SESSION['username'])):
-                  ?>
-                     <li class="dropdown button-right"><a aria-haspopup="true" tabindex="0">Account</a>
-                          <ul class="dropdown-content" role="menu">
-                            <li><a href="view-account.php" tabindex="0" role="menuitem">Impostazioni</a></li>
-                            <li><a href="view-my-trip.php" tabindex="0" role="menuitem">Le mie gite</a></li>
-                            <li><a href="logout.php" tabindex="0" role="menuitem">Logout</a></li>
-                          </ul>
-                      </li>
+	<div id="menuprincipale-bar" role="menubar">
+	  <ul id="menuprincipale">
+		  <li><a href="index.php" class="active" tabindex="0">Home</a></li>
+		  <li class="dropdown" ><a tabindex="0" aria-haspopup="true">Luoghi</a>
+			  <ul class="dropdown-content button-right" role="menu">
+				  <li role="none"><a href="luoghi/chiesette.php" tabindex="0" role="menuitem">Sette Chiesette</a></li>
+				  <li role="none"><a href="luoghi/catajo.php" tabindex="0" role="menuitem">Castello del Catajo</a></li>
+				  <li role="none"><a href="luoghi/praglia.php" tabindex="0" role="menuitem">Abbazia di Praglia</a></li>
+				  <li role="none"><a href="luoghi/carrareseeste.php" tabindex="0" role="menuitem">Castello carrarese di Este</a></li>
+				  <li role="none"><a href="luoghi/lispida.php" tabindex="0" role="menuitem">Castello di Lispida</a></li>
+				  <li role="none"><a href="luoghi/pelagio.php" tabindex="0" role="menuitem">Castello San Pelagio</a></li>
+			  </ul>
+		  </li>
+		  <li><a href="gite.php" tabindex="0">Gite</a></li>
+		  <?php
+		  if (isset($_SESSION['username'])):
+		  ?>
+			 <li class="dropdown button-right"><a aria-haspopup="true" tabindex="0">Account</a>
+				  <ul class="dropdown-content" role="menu">
+					  <li><a href="view-account.php" tabindex="0" role="menuitem">Impostazioni</a></li>
+					  <li><a href="view-my-trip.php" tabindex="0" role="menuitem">Le mie gite</a></li>
+					  <li><a href="logout.php" tabindex="0" role="menuitem">Logout</a></li>
+				  </ul>
+			  </li>
 
-                  <?php
-                  else:
-                  ?>
-                     <li class="button-right"><a href="login.php" tabindex="0">Accedi</a></li>
-                     <li class="button-right"><a href="Registrazione.php" tabindex="0">Registrati</a></li>
-                  <?php
-                  endif;
-                  ?>
-                 <li class="icon">
-                      <a href="#" id="mobile">&#9776;</a>
-                  </li>
-              </ul>
-      </div>
+		  <?php
+		  else:
+		  ?>
+			 <li class="button-right"><a href="login.php" tabindex="0">Accedi</a></li>
+			 <li class="button-right"><a href="Registrazione.php" tabindex="0">Registrati</a></li>
+		  <?php
+		  endif;
+		  ?>
+		 <li class="icon">
+			  <a href="#" id="mobile">&#9776;</a>
+		  </li>
+	  </ul>
+	</div>
         <div id="content">
           <ul class="breadcrumb">
             <li><a href="Gite.php">Gite</a></li>
@@ -117,7 +118,7 @@ if(isset($_POST["cancellaPrenotazione"])){
             </div>
             <div class="field-container">
                <label for="Prezzo" lang="it" class="log-label-riep">PREZZO TOTALE </label>
-               <p> <?php  echo (float)$_SESSION["prezzo"]*(float)$_SESSION["posti"];?> </p>
+               <p> <?php  echo (float)$_SESSION["prezzo"]*(float)$_SESSION["posti"];?>€</p>
             </div>
               <div class="button-holder">
                 <form action="" method="POST">
