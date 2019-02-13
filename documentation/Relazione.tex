@@ -107,7 +107,7 @@
 	Come linguaggio di marcatura si è scelto di utilizzare XHTML 1.0.
 	\'E stata scelta questa tecnlogia perchè prevede un uso più restrittivo dei tag HTML mirato alla separazione tra elementi grafici del sito, specificati tramite fogli di stile esterni, e il layout della pagine. Un'altra ragione per la scelta di XHTML 1.0 risiede nella sua retrocompatibilità, nella sua diffusione e nella compatibilità con i browser più diffusi.
 	\subsection{CSS3}
-	I file necessari alla formattazione dello stile del sito e per i vari dispositivi sono collocati nella cartella \texttt{assets/css} mentre le immagini sono collocate nella 
+	I file necessari alla formattazione dello stile del sito e per i vari dispositivi sono collocati nella cartella \texttt{assets/css} mentre le immagini sono collocate nella
 	cartella \texttt{assets/img}.
 	Il sito utilizza un foglio di stile principale, denominato \texttt{style.css}, e 3 fogli di stile secondari: \begin{itemize}
 		\item mobile.css: utilizzato per adattare il sito a dispositivi più piccoli, quali tablet e smartphone
@@ -124,7 +124,7 @@
 	Tutte le scelte progettuali sono state prese in base al tema dell’accesibilità, seguendo le linee guida del W3C.
 	\subsection{colori}
 	Si è evitato di utilizzare combinazioni di colori che potessero creare problemi di
-	accessibilità, usabilità e comprensione del contenuto a persone affette da daltonsmo. 
+	accessibilità, usabilità e comprensione del contenuto a persone affette da daltonsmo.
 	\subsection{Tag}
 	Per quanto concerne i tag che migliorano l’accessibilità:
 	\begin{itemize}
@@ -165,9 +165,9 @@
 	stato testato su più dispositivi, browser e sistemi operativi possibili in modo tale
 	da avere un feedback più completo possibile sulle scelte adottate (Vedere la sezione
 	Validazione e Test per i dettagli).
-	
-	
-		
+
+
+
 	\section{Suddivisione di struttura, presentazione e comportamento}
 	I file relativi alla parte di amministrazione sono contenuti all'interno della cartella \texttt{admin/}, mentre i file relativi alla parte pubblica sono nella cartella principale del sito. Tuttavia alcuni file sono necessari per entrambi le parti, ed in questo
 	caso vi erano due alternative: duplicare i file e mantenere la massima indipendenza fra
@@ -183,16 +183,16 @@
 	\subsubsection{Struttura}
 	Consiste nell'insieme delle pagine del sito accessibili a tutti gli utenti. \begin{itemize}
 		\item Home (index.php): contiene una sezione introduttiva che spiega in che tipo di
-		sito ci si trova e che tipo di informazioni contiene. Sono presenti inoltre 3 mini-sezioni, Storia Clima e Geografia, ampliabili attraverso i bottoni "Scopri di più" predisposti. 
+		sito ci si trova e che tipo di informazioni contiene. Sono presenti inoltre 3 mini-sezioni, Storia Clima e Geografia, ampliabili attraverso i bottoni "Scopri di più" predisposti.
 		\item Luoghi (luoghi/): contiene le pagine relative ai luoghi turistici più importanti dei Colli Euganei, appronfonditamente descritti ed accompagnati da immagini simboliche.
-		\item Gite (gite.php): è la pagina dedicata alla prenotazione delle gite. Tutte le gite hanno un nome, una descrizione, l'ora e il giorno della visita turistica e un costo. Solo un utente loggato (e quindi registrato) può effettuare la prenotazione. Se non si è loggati, la pagina rimanda l'utente al form di login attraverso un link ben segnalato. Un utente può prenotare più di una gita. 
+		\item Gite (gite.php): è la pagina dedicata alla prenotazione delle gite. Tutte le gite hanno un nome, una descrizione, l'ora e il giorno della visita turistica e un costo. Solo un utente loggato (e quindi registrato) può effettuare la prenotazione. Se non si è loggati, la pagina rimanda l'utente al form di login attraverso un link ben segnalato. Un utente può prenotare più di una gita.
 		\item Accedi (login.php): questa pagina contiene il form di login in cui ogni utente può accedere al proprio account per prenotare una gita. Anche gli amministratori possono effettuare l'accesso da questa pagina per il loro account utente. \begin{itemize}
 				\item Registrazione (Registrazione.php): se l'utente non è registrato al sito, attraverso il link presente alla fine del forum, viene reindirizzato alla pagina di registrazione.
 		\end{itemize}
 		\item Registrazione (Registrazione.php): qui un nuovo utente può registrarsi al sito.
 		\item Account: una volta loggato, qui l'utente può amministrare il suo account. \'E presente un dropdown menù con tre voci: \begin{itemize}
 			\item Impostazioni: questa pagina permette di modificare i dati del proprio account (view-account.php)
-			\item Le mie gite (view-my-trip.php): questa pagina permette di vedere le gite prenotate fino a quel momento 
+			\item Le mie gite (view-my-trip.php): questa pagina permette di vedere le gite prenotate fino a quel momento
 			\item Logout (logout.php): per effettuare il logout.
 		\end{itemize}
 	\end{itemize}
@@ -201,12 +201,12 @@
 	"style", che viene utilizzata per ogni pagina.
 	In caso di dispositivo mobile viene utilizzato uno stile extra, ovvero "mobile", che ha il compito di far cambiare la presentazione
 	della pagina per meglio adattarla a schermi di dimensioni inferiori.
-	
+
 
 	\subsubsection{Comportamento}
 	Il comportamento della pagina é stato gestito tramite JavaScript per il con-
 	trollo delle form e la conferma della cancellazione di una prenotazione. Sono presenti anche controlli tramite codice PHP per garantire che il sito continui a funzionare corretamente anche in caso di assenza dell’interprete JavaScript.
-	
+
 
 	\subsection{Parte amministratore}
 
@@ -221,13 +221,13 @@
 		\end{itemize}
 		\item Account: qui l'utente può amministrare il suo account. \'E presente un dropdown menù con tre voci: \begin{itemize}
 			\item Impostazioni: questa pagina permette di modificare i dati del proprio account (view-account.php)
-			\item Le mie gite (view-my-trip.php): questa pagina permette di vedere le gite prenotate fino a quel momento 
+			\item Le mie gite (view-my-trip.php): questa pagina permette di vedere le gite prenotate fino a quel momento
 			\item Logout (logout.php): per effettuare il logout.
 		\end{itemize}
 	\end{itemize}
 	\subsubsection{Presentazione}
 	Lo stile delle pagine per l'amministrazione differisce di poco rispetto alla parte utente, in quanto dal lato amministratore sono stati solamente rimossi alcuni elementi inutili, come le pagine dei luoghi, in modo da renderla più veloce e fare spazio alle utilità necessarie all'amministrazione del sito.
-	
+
 	\subsubsection{Comportamento}
 
 
@@ -243,8 +243,7 @@
 		\item WAT, purtroppo questo plugin non è aggiornato e presenta molti strumenti inutilizzabili.	La versione corrente è stata scaricata da:
 		\url{https://github.com/ThePacielloGroup/WebAccessibilityToolbar}.
 	\end{itemize}
-	Come impostazione è stato utilizzato "WCAG 2.0 (Level AAA)" in entrambi i validatori, e tutti i	potenziali problemi che vengono segnalati raccolgono tutti elementi che il
-	validatore non sa come controllare e quindi viene richiesta una supervisione umana, come ad esempio ogni \texttt{alt}. \\
+	Come impostazione è stato utilizzato "WCAG 2.0 (Level AAA)" in entrambi i validatori, e tutti i	potenziali problemi che vengono segnalati raccolgono tutti elementi che il validatore non sa come controllare e quindi viene richiesta una supervisione umana, come ad esempio ogni \texttt{alt}. \\
 	Nessun errore è stato rilevato.
 	\subsection{WAVE Accessibility Extension}
 	Un altro strumento utilizzato per la verifica dell'accessibilità è stato WAVE,
@@ -262,53 +261,30 @@
 	\subsection{Windows 10}
 	Sono state testate le risoluzioni di 1080p e 2160p con i browsers:
 	\begin{itemize}
-		\item Chromium 64
+		\item Mozilla Firefox
 		\item Google Chrome
 		\item Edge
 		\item Internet Explorer 11
-		\item Firefox Quantum
-		\item Waterfox 57
-		\item Firefox Nightly 60a1
-		\item Mozilla Firefox 3
-		\item Netscape 7
+		\item Lynx
 	\end{itemize}
-	Si è notato che Mozilla Firefox 3 utilizza una dimensione errata dell'immagine nella testata. Questo aspetto rovina leggermente il rendimento grafico ma non ne compromette le funzionalità, in quanto tutti i contenuti risultano perfettamente fruibili dall'utente.\\
-	Un Secondo appunto riguardante Firefox 3 è l'incompatibilità con parte del codice JavaScript: solamente il controllo della compilazione dei campi di testo funziona correttamente.\\
-	Internet Explorer 11, con la modalità Explorer 9, non genera nessun problema, ed anche il problema della dimensione della testata riscontrato su Firefox 3 è assente.\\
-	Internet Explorer 5, 7 ed 8 non supportano il MIME xhtml+xml, quindi il sito non viene visualizzato ma ne viene proposto il download. Nel caso venga incorrettamente settato il MIME html allora il sito funziona perfettamente sulla versione 7 ed 8 del browser, compresa la visualizzazione del tag Ruby. In questo caso alcune funzionalità JavaScript ed alcune proprietà CSS non vengono riconosciute ma questo non compromette l'utilizzo del sito.\\
-	Con Microsoft Edge 16 (ultima versione) non sono stati riscontrati problemi. \\
-	Non sono stati rilevati ulteriori problemi o incompatibilità con i browser sopra menzionati ad esclusione di Netscape, anche variando la grandezza del font, dello zoom della pagina, della dimensione della finestra e disattivando JavaScript.\\
-	Il sito è stato provato anche su Netscape 7, soprattutto per soddisfare una curiosità personale e per comprendere meglio l'evoluzione dello sviluppo dei siti web negli anni. Il risultato è ovviamente insoddisfacente, i tag div e p sono visualizzati erroneamente, moltissime proprietà css non sono correttamente riconosciute dal browser e soprattutto le mediaquery non sono supportate, facendo caricare al sito la versione mobile.\\
-	Ovviamente non sono stati presi provvedimenti per migliorare la situazione con Netscape, in quanto il software è datato al 2002 e non è più in uso in nessun ambito.
+	Con tutti i browser utilizzati per testare
 
-	\subsection{GNU/Linux Fedora 27}
-	Sono state testate le risoluzioni di 1800p e 2160p con i browsers:
+	\subsection{GNU/Linux Manjaro}
+	Sono state testate le risoluzioni di 1080p e 2160p con i browsers:
 	\begin{itemize}
 		\item Firefox Quantum
 		\item Google Chrome
-		\item Firefox 56
+		\item Firefox
 		\item Lynx
 	\end{itemize}
-	Durante la fase di test su questa piattaforma non sono emerse problematiche a livello di compatibilità o visibilità nonstante le alte risoluzioni. Inoltre su questa piattaforma è stata testata la leggibilità del sito con l'utilizzo del browser cli Lynx.
 
-	\subsection{MacOS High Sierra}
-	Sono state testate le risoluzioni di 1800p, 2160p e 2880x1800p con i browsers:
+	\subsection{MacOS}
+	Sono state testate le risoluzioni di 1080p, 2160p con i browsers:
 	\begin{itemize}
-		\item Safari 11.0.2
+		\item Safari
 		\item Firefox Quantum
 		\item Google Chrome
 	\end{itemize}
-	Durante la fase di test su piattaforma MacOS non è emersa alcuna problematica per quanto riguarda visibilità e compatibilità. Il sito viene visualizzato correttamente in tutti e tre i browser provati, nonostante le alte risoluzioni dei display utilizzati.
-
-	\subsection{FreeBSD 11}
-	\`{E} stata testata la risoluzione 1080p sui seguenti browsers:
-	\begin{itemize}
-		\item Firefox Quantum
-		\item Lynx
-		\item Lynx da CLI
-	\end{itemize}
-	Il sito è stato testato con il browser Lynx utilizzando la console senza x11 o Wayland, quindi da terminale/CLI, e con x11, quindi da una finestra di emulazione del terminale di dimensione variabile.\\
-	In entrambi i casi il contenuto era fruibile.
 
 	\subsection{Dispositivi mobili}
 	Di seguito sono elencati i vari dispositivi mobili sui quali il sito è stato testato
@@ -317,34 +293,26 @@
 		\item Samsung Galaxy Tab 3 con una risoluzione di 1280x800 e con il browser fornito di default
 		\item Nexus 5x su browser Chrome, con una risoluzione di 1080p
 	\end{itemize}
-	In tutti i dispositivi testati il sito si adatta perfettamente alla risoluzione dello schermo e non sono presenti problemi di compatibilità, neppure con JavaScript.
+	In tutti i dispositivi testati il sito si adatta perfettamente alla risoluzione dello schermo e non si sono presentati problemi di compatibilità, neppure con JavaScript.
 
-	\section{Test con diverse impostazioni utente}
-	Il sito è stato testato con multiple impostazioni utente, come citato nella sezione riguardante le piattaforme di testing sono state testate risoluzioni che vanno dall 600p al 2160p senza presentare problemi di visualizzazione. Oltre al test per le varie risoluzioni e dispositivi si è testata la visualizzazione del sito con dimensioni del testo di che vanno 16pt a 44pt e con uno zoom elevato mantenendo comunque una buona fruibilità del sito.\\
-	\`{E} stata presa in considerazione anche la possibilità che un utente abbia bloccato, oppure non abbia la possibilita se pur remota di non poter eseguire Javascript, e nonostante questo il sito rimane comunque egualmente navigabile in tutte le sue parti, senza far trasparire in modo palese la mancanza di Javascript. \pagebreak
-
-	\section{Lynx e come potrebbe essere se letto}
-	Il sito è stato testato con il browser Lynx, nonostante la visualizzazione solo testuale il sito rimane comunque navigabile seppur non in modo agevole se non si è abituati al utilizzo dei browser testuali.
+	\section{Test tramite browser testuale Lynx}
+	Il sito è stato testato con il browser Lynx, nonostante le difficoltà d'uso di un browser testuale, il sito risulta navigabile e le informazioni sono presentate in modo chiaro e ordinato.
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=1\linewidth]{images/lynx.png}
 		\caption{Esempio di pagina del sito web su Lynx}
 	\end{figure}
 
+	\section{Test con diverse impostazioni utente}
+	Il sito è stato testato con diverse impostazioni utente abbiamo effettuato test su dispostivi con risoluzioni che vanno dal 600p al 2160p, test di visualizzazione del sito con dimensioni del testo che vanno 16pt a 44pt e visualizzato il sito con zoom fino al 300\%, in ogni caso il sito è risultato fruibile e navigabile.\\
+	Inoltre si è presa in considerazione l'eventualità che l'utente non disponga o non abiliti Javascript: il sito risulta comunque navigabile e le sue funzionalità sono inalterate. \pagebreak
+
 	\chapter{Funzionalit\`{a} desiderabili}
 	\section{Descrizione della sezione}
 	Nella seguente sezione verranno illustrate le funzionalità che nel caso di un progetto reale verrebbero inseriti ma che in questo caso non sono stati inclusi vista l'eccessiva complessita di alcuni rapportata allo scopo e al tempo previsto per questo progetto.
 
 	\section{Pagine social network di supporto al sito}
-	Nella maggior parte dei siti moderni è presente un qualche collegamento a pagina nei social network, nel nostro caso non è stata ritenito un impiego di tempo produttivo per gli scopi del progetto andare a creare queste pagine social visto che poi si sarebbe trattato di inserire i link a queste nel sito, nel nostro caso sarebbero stati inseriti nella sidebar assieme ai feed rss.
-
-	\section{Editor HTML per gli amministratori}
-	La possibilità della realizzazione di un editor HTML come quelli presenti all'interno dei CMS è stata esclusa visto il tempo che sarebbe stato necessario per realizzarlo che sarebbe stato eccessivo. Comunque nonstante non sia stato sviluppato si ritiene che l'implementazione di un editor di questo per la parte di amministrazione renderebbe molto più efficace la gestione delle funzionalità che richiedono di manipolare testo che poi verra inserito nel database come blocchi di codice html.
-
-	\section{Image picker}
-	Una ultima funzione avanzata che migliorerebbe l'utilizzo del sito da parte dell'amministratore, che si collega all'editor HTML, sarebbe quella di poter selezionare una immagine da inserire in un articolo direttamente dalla galleria delle immagini, o caricarla al momento all'interno della galleria, senza la necessità di spostarsi sulla sezione immagini, caricarla, copiare il link, tornare alla notizia che stava inserendo e compilando il tag html per l'inserimento dell'immagine.
-
-
+	Nella maggior parte dei siti moderni è presente un qualche collegamento a pagina nei social network, nel nostro caso non è stata ritenito un impiego di tempo produttivo per gli scopi del progetto andare a creare queste pagine social visto che poi si sarebbe trattato di inserire i link a queste nel sito.
 
 	\chapter{Suddivisione del lavoro}
 	\section{Suddivisione per membro del gruppo}
@@ -352,19 +320,21 @@
 	\begin{itemize}
 		\item ciao
 	\end{itemize}
-	\subsection{Magarotto Francesco - Matricola}
+	\subsection{Magarotto Francesco - Matricola INSERIRE MATRICOLA}
 	\begin{itemize}
 		\item ciao
 	\end{itemize}
 	\subsection{Marco Costantino - 1144120}
 	\begin{itemize}
-		\item Progettazione dell'aspetto visivo delle pagine: XHTML e CSS3 
+		\item Progettazione e implementazione dell'aspetto visivo delle pagine: XHTML e CSS3
 		\item Accessibilità del sito
+		\item Stesura e verifica di parte della relazione
 	\end{itemize}
-	\subsection{Davide Zilio - 1149807 }
+	\subsection{Davide Zilio - 1149807}
 	\begin{itemize}
-		\item Progettazione dell'aspetto visivo delle pagine: XHTML e CSS3 
+		\item Progettazione e implementazione dell'aspetto visivo delle pagine: XHTML e CSS3
 		\item Accessibilità del sito
+		\item Stesura e verifica di parte della relazione
 	\end{itemize}
 
 \end{document}
