@@ -79,26 +79,6 @@
 	\subsubsection{Utente che cerca gite organizzate per i colli euganei}
 	L'intento del sito è quello di fornire una procedura di prenotazione delle gite il quanto più semplice e leggera possibile.
 
-
-	\section{Progettazione della base informativa}
-	Il sito web si pone l'obiettivo di veicolare diversi contenuti, alcuni statici ed altri dinamici.
-	\subsection{Contenuti statici}
-	\subsubsection{Home}
-	%descrivere qui in breve la pagina
-	\subsubsection{Luoghi}
-	%descrivere in breve la pagina cosa visualizza
-
-	\subsection{Contenuti dinamici}
-	\subsubsection{Gite}
-	%descrizione della pagina
-	\subsubsection{Visualizzazione gite prenotate}
-
-
-	\section{Strutturazione del sito}
-	\subsection{Impaginazione}
-	Il sito utlizza un layout a tre pannelli nella versione per dispositivi desktop.\\
-	%descriverei tre div principali che abbiamo, ovvero header,content,footer
-
 	\chapter{Realizzazione}
 	In questa parte del documento si andranno ad approfondire tutti gli aspetti legati alla realizzazione del sito web.
 
@@ -125,6 +105,10 @@
 	\subsection{Colori}
 	Si è evitato di utilizzare combinazioni di colori che potessero creare problemi di
 	accessibilità, usabilità e comprensione del contenuto a persone affette da daltonsmo.
+	\subsection{Breadcrumb}
+	in ciascuna pagina è inserita una barra che ricorda all’utente in che
+	pagina si trova, da dove viene, e permette anche di tornare rapidamente alle pagine
+	precedenti;
 	\subsection{Tag}
 	Per quanto concerne i tag che migliorano l’accessibilità:
 	\begin{itemize}
@@ -149,8 +133,7 @@
 		che ha i seguenti attributi:
 		\begin{itemize}
 			\item aria-live="assertive":
-			Le tecnologie assistive (AT), come uno screen rea-
-			der, notificano immediatamente all’utente la regione dichiarata assertive,
+			Le tecnologie assistive (AT), come uno screen reader, notificano immediatamente all’utente la regione dichiarata assertive,
 			in questo caso il div di errore verrà notificato e verranno letti gli errori,
 			permettendo all’utente di correggere l’input.
 			\item aria-atomic="true" Indica allo screen reader di leggere interamente la re-
@@ -158,6 +141,13 @@
 			non ha corretto un errore segnalato in precedenza, questo viene notificato
 			nuovamente.
 		\end{itemize}
+	\subsection{JavaScript}il sito degrada correttamente nel caso il browser non permetta l’esecuzione di JavaScript. 
+	Nella parte pubblica del sito JavaScript è utilizzato per il menù mobile,per la validazione dei form e la conferma della cancellazione della gita. Nel caso non sia possibile controllare i campi compilati con JavaScript, allora saranno controllati dal server una volta che siano
+	stati confermati dall’utente. JavaScript non è utilizzato per alterare pesantemente
+	la struttura della pagina, se non nel caso della validazione dei form, in cui aggiun-
+	ge opportuni messaggi d’errore. La disabilitazione di JS non pregiudica comunque
+	l’utilizzo del sito;
+	
 	\subsection{Dispositivi}
 	Nella progettazione si è tenuto conto del fatto che l'utenza avrebbe acceduto al
 	sito da vari dispostivi. Alla luce di questa considerazione il sito adotta un layout
@@ -197,15 +187,16 @@
 		\end{itemize}
 	\end{itemize}
 	\subsubsection{Presentazione}
-	La presentazione della pagina eé realizzata tramite file css, il principale é
+	La presentazione della pagina é realizzata tramite file css, il principale é
 	"style", che viene utilizzata per ogni pagina.
 	In caso di dispositivo mobile viene utilizzato uno stile extra, ovvero "mobile", che ha il compito di far cambiare la presentazione
 	della pagina per meglio adattarla a schermi di dimensioni inferiori.
+	Per quanto riguarda la stampa è stato creato un nuovo foglio di stile, chiamato "print", che rimuove tutti i contenuti non necessari e impagina le informazioni per meglio adattarle a un foglio A4.
 
 
 	\subsubsection{Comportamento}
 	Il comportamento della pagina é stato gestito tramite JavaScript per il con-
-	trollo delle form e la conferma della cancellazione di una prenotazione. Sono presenti anche controlli tramite codice PHP per garantire che il sito continui a funzionare corretamente anche in caso di assenza dell’interprete JavaScript.
+	trollo dei form e la conferma della cancellazione di una prenotazione. Sono presenti anche controlli tramite codice PHP per garantire che il sito continui a funzionare corretamente anche in caso di assenza dell’interprete JavaScript.
 
 
 	\subsection{Parte amministratore}
