@@ -207,13 +207,13 @@ a:visited {
 }
 
 .find-more {
-    border-bottom: solid 2px #4ca504;
+    border-bottom: solid 0.125em #4ca504;
     font-size: 1.1em !important;
     cursor: pointer;
     display: block;
     margin-right: auto;
     margin-left: auto;
-    min-width: 100px;
+    min-width: 6.25em;
     text-decoration: underline !important;
     font-weight: bold;
 }
@@ -389,14 +389,14 @@ dd {
 
 .tabcontent {
     display: block;
-    padding: 6px 12px;
-    border: 1px solid #ccc;
+    padding: 0.375em 0.75em;
+    border: 0.0625em solid #ccc;
     border-top: none;
 }
 
 .container_form {
-    width: 700px;
-    margin-bottom: 60px;
+    width: 43.75em;
+    margin-bottom: 3.75em;
 }
 
 #riepilogo {
@@ -409,10 +409,10 @@ dd {
 
 .skip {
         position: absolute;
-        top: -1000px;
-        left: -1000px;
-        height: 1px;
-        width: 1px;
+        top: -62.5em;
+        left: -62.5em;
+        height: 0.0625em;
+        width: 0.0625em;
         text-align: left;
         overflow: hidden;
     }
