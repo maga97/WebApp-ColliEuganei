@@ -87,8 +87,8 @@ foreach ($list as $node):
     $node['Ore'] = substr($node['Ore'], 0, 5);
     $node['Data'] = $data[2] . "/" . $data[1] . "/" . $data[0];
     ?>
-	        <h2><?php echo $node['Nome']; ?></h2>
 	        <div class="attivita">
+          <h2><?php echo $node['Nome']; ?></h2>
 	          <dl>
 	            <dt>Descrizione</dt>
 	            <dd><?php echo $node['Descrizione']; ?></dd>

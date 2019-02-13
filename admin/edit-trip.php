@@ -14,6 +14,7 @@ $gita = $db->GetGita($id);
 $nomegita = $gita[0]["Nome"];
 $descrizione = $gita[0]["Descrizione"];
 $prezzo = $gita[0]["Prezzo"];
+$immagine = base64_encode($gita[0]["Immagine"]);
 $ora = $gita[0]["Ore"];
 $ora = explode(":", $ora);
 $ora = $ora[0] . ":" . $ora[1];
@@ -34,6 +35,7 @@ $data = $arrayofdata[2] . "/" . $arrayofdata[1] . "/" . $arrayofdata[0];
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="../js/script.js"></script>
+    <script type="text/javascript" src="../js/global.js"></script>
     <title>Modifica gita - Colli Digitali</title>
   </head>
   <body>
@@ -88,12 +90,13 @@ $data = $arrayofdata[2] . "/" . $arrayofdata[1] . "/" . $arrayofdata[0];
       <li>Modifica dati gita</li>
     </ul>
     <div class="form">
-    <form action="edit-trip-script.php" name="form-modify-trip" method="POST">
-      <?php
-if (isset($_GET["error"])) {
-    echo "<div class=\"alert errore\">Errore: " . $_GET["error"] . "</div>" . PHP_EOL;
-}
-?>
+    <?php
+      if (isset($_GET["error"])) {
+          echo "<div class=\"alert nojs errore\">Errore: " . $_GET["error"] . "</div>" . PHP_EOL;
+      }
+    ?>
+    <img src="data:image/jpeg;base64,<?php echo $immagine?>" alt="Immagine <?php echo $nome ?>" class="responsive-image center-image" />
+    <form action="edit-trip-script.php"  enctype="multipart/form-data"  name="form-modify-trip" method="POST">
 		<div class="log-field-container">
 			<legend>Modifica gita "<?php echo $nomegita; ?>"</legend>
       <input type="hidden" name="id" value="<?php echo $id; ?>" />
@@ -103,6 +106,11 @@ if (isset($_GET["error"])) {
 		<div class="log-field-container">
 			<label for="descrizione">Descrizione</label>
 			<textarea rows="5" cols="40" name="descrizione" required><?php echo $descrizione; ?></textarea>
+		</div>
+    <div class="log-field-container">
+			<label for="immagine">Immagine</label>
+      <input type="file" name="immagine" id="idimmagine" placeholder="Selezione immagine gita"/>
+      <span id="imgdesc" tabindex="0">Se lasciata vuota l'immagine non cambier&agrave;</span>
 		</div>
 		<div class="log-field-container">
 		  <label for="data">Data</label>

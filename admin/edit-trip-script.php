@@ -9,6 +9,7 @@ if (!isset($_SESSION['login']) || $_SESSION['login'] == false || $_SESSION['admi
 $id = $_POST["id"];
 $nomegita = $_POST["nomegita"];
 $descrizione = $_POST["descrizione"];
+$immagine = $_FILES["immagine"];
 $data = $_POST["data"];
 $ora = $_POST["ora"];
 $prezzo = $_POST["prezzo"];
@@ -16,6 +17,11 @@ $errore = false;
 
 if (!isset($nomegita)) {
     header("Location: edit-trip.php?id=" . $id . "&error=Nome+gita+non+definito");
+    $errore = true;
+}
+
+if(isset($_FILES["immagine"]["name"]) && $_FILES["immagine"]["size"] == 0) {
+    header("Location: edit-trip.php?id=" . $id . "&error=Errore+provare+con+un+altro+file.");
     $errore = true;
 }
 if (empty($descrizione)) {
@@ -45,6 +51,22 @@ if (substr_count($_POST["data"], "/") == 2) {
     $errore = true;
 }
 
+if ($_FILES['immagine']['size'] > 2097152) {
+    
+    header("Location: edit-trip.php?error=Immagine+troppo+grande.+Max+2+MB.");
+    exit;
+  }
+
+if($_FILES['immagine']['size'] != 0) {
+$ext_ok = array('jpeg', 'jpg', 'png', 'PNG', 'JPEG', 'JPG');
+$temp = explode('.', $_FILES['immagine']['name']);
+$ext = end($temp);
+if (!in_array($ext, $ext_ok)) {
+    header("Location: add-trip.php?error=Estensione+immagine+non+ammessa.");
+    exit;
+  exit;
+}
+}
 $ora_array = array();
 if (substr_count($ora, ":") == 1) {
     $ora_array = explode(":", $ora);
@@ -81,7 +103,7 @@ if ($errore == false) {
     $db = new database();
     $db->connect();
     $data = $data_array[2] . "-" . $data_array[1] . "-" . $data_array[0];
-    $esito = $db->ModificaGita($id, $nomegita, $descrizione, $data, $ora, $prezzo);
+    $esito = $db->ModificaGita($id, $nomegita, $descrizione, $_FILES["immagine"]['size'] != 0 ? file_get_contents($_FILES['immagine']['tmp_name']) : NULL, $data, $ora, $prezzo);
     if ($esito) {
         header("Location: select-trip-modify.php?done=true");
     } else {

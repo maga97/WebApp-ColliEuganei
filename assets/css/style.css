@@ -325,17 +325,15 @@ ul.dropdown-content li a {
 }
 
 div.attivita {
-    margin-top: .3em;
-    padding-left: .8em;
-    text-align: justify;
-    padding-bottom: 0.8em;
-    border-bottom: 0.1em solid black;
-    border-color: #000000;
+   text-align: left;
+   padding: 1em 2em 1em 2em;
+}
+#content > .attivita ~ .attivita {
+    border-top: 3px dotted rgb(25, 144, 45);
 }
 
 .attivita h2 {
-    text-indent: -0.5em;
-    margin: 0;
+  margin: 0;
 }
 
 .attivita p {
@@ -495,4 +493,22 @@ div.alert.errore.login, div.alert.nojs {
 
 .alert.success {
     background: #069906;
+}
+
+.responsive-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+}
+
+.center-image {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.gite-image {
+    max-height: 200px;
+    float: right;
+    border-radius: 1em;
 }
