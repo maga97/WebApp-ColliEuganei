@@ -117,7 +117,7 @@ else if(isset($_POST["modifica_password"])) { // se schiaccio il bottone di modi
                 <?php
                 if(isset($_POST["conferma_modifica"])){
                   if($erroredati=="")
-                        echo "<div class='alert nojs success' aria-live='assertive' role='alert' aria-atomic='true'>
+                        echo "<div class=\"alert nojs success\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\">
                           Dati modificati con successo
                         </div>";
                   else
@@ -126,7 +126,7 @@ else if(isset($_POST["modifica_password"])) { // se schiaccio il bottone di modi
 
                 else if(isset($_POST["modifica_password"])){
                   if($errorepassword=="")
-                         echo "<div class='alert nojs success' aria-live='assertive' role='alert' aria-atomic='true'>
+                         echo "<div class=\"alert nojs success\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\">
                                  Password modificata con successo
                                </div>";
                   else

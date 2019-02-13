@@ -15,7 +15,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script type="text/javascript" src="js/script.js"></script>
   <script type="text/javascript" src="js/showgallery.js"></script>
-	<title>Home - Colli Digitali</title>
+	<title>Home - Colli Euganei</title>
 </head>
 <body>
   <div>

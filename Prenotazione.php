@@ -105,7 +105,7 @@ $dbConnection->Connect();
            </div>
            <div class="field-container">
              <label for="ora" lang="it" class="log-label">Orario</label>
-             <?php echo"<input type=\"text\" id=\"ora\" name=\"ora\" value='".$attivita["Ore"]."' accesskey=\"p\" readonly>";?>
+             <?php echo"<input type=\"text\" id=\"ora\" name=\"ora\" value=\"".$attivita["Ore"]."\" accesskey=\"p\" readonly>";?>
            </div>
            <div class="field-container">
              <label for="reservePosti" lang="it" class="log-label">Scegli il numero di posti</label>

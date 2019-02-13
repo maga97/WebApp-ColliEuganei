@@ -101,7 +101,7 @@ $db->connect();
           </dl>
           <?php if(isset($_SESSION['username'])):?>
           <?php
-            echo"<span class='btnTrip'><a href='Prenotazione.php?id=".$node["ID_Attivita"]."'>Prenota la gita</a></span>";
+            echo"<span class=\"btnTrip\"><a href=\"Prenotazione.php?id=".$node["ID_Attivita"]."\">Prenota la gita</a></span>";
           ?>
         <?php else: ?>
 			    <span class="btnTrip"><a href="login.php" aria-label="Accedi per prenotare la gita">Accedi</a> per poter prenotare</span>

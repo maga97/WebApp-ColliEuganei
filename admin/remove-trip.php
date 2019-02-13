@@ -96,7 +96,7 @@ $db->connect();
             <dd><?php echo $node['Ore']?></dd>
           </dl>
           <?php
-          echo "<span class='btnTrip'><a href='remove-trip-script.php?id=".$node["ID_Attivita"]."'>Rimuovi gita</a></span>";
+          echo "<span class=\"btnTrip\"><a href=\"remove-trip-script.php?id=".$node["ID_Attivita"]."\">Rimuovi gita</a></span>";
           ?>
         </div>
         <?php
