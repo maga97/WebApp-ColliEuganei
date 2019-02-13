@@ -513,3 +513,7 @@ div.alert.errore.login, div.alert.nojs {
     float: right;
     border-radius: 1em;
 }
+
+label[for=bottoneCancella], label[for=bottoneInserisci] {
+	display: none;
+}

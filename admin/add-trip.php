@@ -75,51 +75,49 @@ $db->connect();
       <li>Aggiungi nuova gita</li>
     </ul>
     <div class="form">
-    <?php
-if (isset($_GET["done"]) == true) {
-    echo "<div class=\"alert nojs success\">Inserimento avvenuto correttamente</div>" . PHP_EOL;
-}
-if (isset($_GET["error"])) {
-    echo "<div class=\"alert errore\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\"><p>Errore: " . $_GET["error"] . "</p></div>" . PHP_EOL;
-}
-?>
-    <form action="add-trip-script.php" enctype="multipart/form-data" name="form-add-trip" method="POST">
-		<div class="log-field-container">
-			<legend>Aggiungi nuova gita</legend>
-			<label for="nomegita">Titolo</label>
-			<input type="text" name="nomegita" id="idnomegita" placeholder="Gita al castello del Catajo" required="required" />
-		</div>
-		<div class="log-field-container">
-			<label for="descrizione">Descrizione</label>
-			<textarea rows="5" cols="40" name="descrizione" required="required"></textarea>
-		</div>
-    <div class="log-field-container">
-			<label for="immagine">Immagine</label>
-      <input type="file" name="immagine" id="idimmagine" placeholder="Selezione immagine gita" required="required" />
-		</div>
-		<div class="log-field-container">
-		  <label for="data">Data</label>
-		  <input type="text" name="data" required="required" aria-labelledby="datadesc" />
-      <span id="datadesc" tabindex="0">gg/mm/aaaa</span>
-		</div>
-		<div class="log-field-container">
-			<label for="ora">Ora</label>
-			<input type="text" name="ora" required="required" aria-labelledby="oradesc" />
-      <span id="oradesc" tabindex="0">hh:mm</span>
-		</div>
-		<div class="log-field-container">
-			<label for="prezzo">Prezzo</label>
-			<input type="text" min="0" id="prezzoAddTrip" name="prezzo" required="required" aria-labelledby="prezzodesc" />
-      <span id="prezzodesc" tabindex="0">10.50</span>
-		</div>
-		  <div class="button-holder">
-			  <input type="reset" value="Cancella dati" name="cancelladati" class="btn btn-tripCancel" />
-			  <input type="submit" value="Inserisci" name="aggiungiGita" class="btn btn-tripInsert" />
-		  </div>
-		  </fieldset>
-    </form>
+            <?php
+        if (isset($_GET["done"]) == true) {
+            echo "<div class=\"alert nojs success\">Inserimento avvenuto correttamente</div>" . PHP_EOL;
+        }
+        if (isset($_GET["error"])) {
+            echo "<div class=\"alert errore\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\"><p>Errore: " . $_GET["error"] . "</p></div>" . PHP_EOL;
+        }
+        ?>
+      <form action="add-trip-script.php" enctype="multipart/form-data" name="form-add-trip" method="POST">
+    		<div class="log-field-container">
+    			<legend>Aggiungi nuova gita</legend>
+    			<label for="nomegita">Titolo</label>
+    			<input type="text" name="nomegita" id="nomegita" required="required" />
+    		</div>
+    		<div class="log-field-container">
+    			<label for="descrizione">Descrizione</label>
+    			<textarea rows="5" cols="40" name="descrizione" id="descrizione" required="required"></textarea>
+    		</div>
+        <div class="log-field-container">
+    			<label for="immagine">Immagine</label>
+          <input type="file" name="immagine" id="immagine" placeholder="Selezione immagine gita" required="required" />
+    		</div>
+    		<div class="log-field-container">
+    		  <label for="data">Data (gg/mm/aaaa)</label>
+    		  <input type="text" name="data" id="data" required="required" aria-labelledby="data" />
+    		</div>
+    		<div class="log-field-container">
+    			<label for="ora">Ora (hh:mm)</label>
+    			<input type="text" name="ora" id="ora" required="required" aria-labelledby="ora" />
+    		</div>
+    		<div class="log-field-container">
+    			<label for="prezzo">Prezzo (10.50)</label>
+    			<input type="text" aria-labelledby="prezzo" min="0" id="prezzo" name="prezzo" required="required" />
+    		</div>
+        <div class="button-holder">
+          <label for="bottoneCancella"">Cancella dati</label>
+          <input type="reset" value="Cancella dati" name="cancelladati" id="bottoneCancella" class="btn btn-tripCancel" />
+          <label for="bottoneInserisci">Inserisci</label>
+          <input type="submit" value="Inserisci" name="aggiungiGita" id="bottoneIns" class="btn btn-tripInsert" />
+        </div>
+      </form>
     </div>
-      </div>
+    </div>
       <?php echo include_once "../footer.php"; ?>
     </div>
   </body>
