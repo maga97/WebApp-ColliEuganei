@@ -157,6 +157,7 @@ ul.breadcrumb li+li:before {
 }
 
 .pic {
+	border-radius: 0.5em;
     height: auto;
     max-width: 100%;
 }
