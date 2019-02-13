@@ -19,10 +19,7 @@ if (!isset($nomegita)) {
     header("Location: edit-trip.php?id=" . $id . "&error=Nome+gita+non+definito");
     $errore = true;
 }
-if(!isset($_FILES['immagine']) || $_FILES['immagine']['size'] == 0) {
-    header("Location: edit-trip.php?id=" . $id . "&error=Immagine+gita+non+definita");
-    $errore = true;
-}
+
 if (empty($descrizione)) {
     header("Location: edit-trip.php?id=" . $id . "&error=Descrizione+gita+non+definita");
     $errore = true;
@@ -51,10 +48,11 @@ if (substr_count($_POST["data"], "/") == 2) {
 }
 
 if ($_FILES['immagine']['size'] > 2097152) {
-    header("Location: add-trip.php?error=Immagine+troppo+grande.+Max+2+MB.");
+    header("Location: edit-trip.php?error=Immagine+troppo+grande.+Max+2+MB.");
     exit;
   }
 
+if($_FILES['immagine']['size'] != 0) {
 $ext_ok = array('jpeg', 'jpg', 'png', 'PNG', 'JPEG', 'JPG');
 $temp = explode('.', $_FILES['immagine']['name']);
 $ext = end($temp);
@@ -63,7 +61,7 @@ if (!in_array($ext, $ext_ok)) {
     exit;
   exit;
 }
-
+}
 $ora_array = array();
 if (substr_count($ora, ":") == 1) {
     $ora_array = explode(":", $ora);
@@ -100,7 +98,7 @@ if ($errore == false) {
     $db = new database();
     $db->connect();
     $data = $data_array[2] . "-" . $data_array[1] . "-" . $data_array[0];
-    $esito = $db->ModificaGita($id, $nomegita, $descrizione, isset($_FILES["immagine"]) ? file_get_contents($_FILES['immagine']['tmp_name']) : NULL, $data, $ora, $prezzo);
+    $esito = $db->ModificaGita($id, $nomegita, $descrizione, $_FILES["immagine"]['size'] != 0 ? file_get_contents($_FILES['immagine']['tmp_name']) : NULL, $data, $ora, $prezzo);
     if ($esito) {
         header("Location: select-trip-modify.php?done=true");
     } else {
