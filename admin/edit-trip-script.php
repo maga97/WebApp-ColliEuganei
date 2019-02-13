@@ -20,6 +20,10 @@ if (!isset($nomegita)) {
     $errore = true;
 }
 
+if(isset($_FILES["immagine"]["name"]) && $_FILES["immagine"]["size"] == 0) {
+    header("Location: edit-trip.php?id=" . $id . "&error=Errore+provare+con+un+altro+file.");
+    $errore = true;
+}
 if (empty($descrizione)) {
     header("Location: edit-trip.php?id=" . $id . "&error=Descrizione+gita+non+definita");
     $errore = true;
@@ -48,6 +52,7 @@ if (substr_count($_POST["data"], "/") == 2) {
 }
 
 if ($_FILES['immagine']['size'] > 2097152) {
+    
     header("Location: edit-trip.php?error=Immagine+troppo+grande.+Max+2+MB.");
     exit;
   }

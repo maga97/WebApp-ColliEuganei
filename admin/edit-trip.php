@@ -35,7 +35,7 @@ $data = $arrayofdata[2] . "/" . $arrayofdata[1] . "/" . $arrayofdata[0];
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="../js/script.js"></script>
-    <script type="text/javascript" src="../hs/global.js"></script>
+    <script type="text/javascript" src="../js/global.js"></script>
     <title>Modifica gita - Colli Digitali</title>
   </head>
   <body>
@@ -90,13 +90,13 @@ $data = $arrayofdata[2] . "/" . $arrayofdata[1] . "/" . $arrayofdata[0];
       <li>Modifica dati gita</li>
     </ul>
     <div class="form">
+    <?php
+      if (isset($_GET["error"])) {
+          echo "<div class=\"alert nojs errore\">Errore: " . $_GET["error"] . "</div>" . PHP_EOL;
+      }
+    ?>
     <img src="data:image/jpeg;base64,<?php echo $immagine?>" alt="Immagine <?php echo $nome ?>" class="responsive-image center-image" />
     <form action="edit-trip-script.php"  enctype="multipart/form-data"  name="form-modify-trip" method="POST">
-      <?php
-if (isset($_GET["error"])) {
-    echo "<div class=\"alert errore\">Errore: " . $_GET["error"] . "</div>" . PHP_EOL;
-}
-?>
 		<div class="log-field-container">
 			<legend>Modifica gita "<?php echo $nomegita; ?>"</legend>
       <input type="hidden" name="id" value="<?php echo $id; ?>" />
