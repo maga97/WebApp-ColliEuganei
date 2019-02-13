@@ -517,3 +517,247 @@ div.alert.errore.login, div.alert.nojs {
 label[for=bottoneCancella], label[for=bottoneInserisci] {
 	display: none;
 }
+
+.mobile-align {
+  text-align: right;
+}
+
+.row {
+  padding: 1em;
+}
+
+.form {
+  line-height: normal;
+  width: 21.875em;
+  margin: 4% auto auto auto;
+  padding: 2em;
+  background: white;
+  color: black;
+  box-shadow: 0 1.1875em 2.375em rgba(0, 0, 0, 0.3),
+    0 0.9375em 0.9375em rgba(0, 0, 0, 0.22);
+}
+
+.container_form {
+  width: 43.75em;
+  margin-bottom: 3.75em;
+}
+
+.input-container{
+    margin-left:27%;
+    width: 70%;
+}
+
+.disabilita:disabled {
+  color: #706f6e;
+    border:0;
+    border-bottom: 0.125em solid transparent;
+}
+
+#sectionPersonalData {
+  width: 20.625em;
+  float: left;
+  margin-right: 0;
+}
+
+#sectionAccountData {
+  width: 20.625em;
+  margin-left: 21.875em;
+  margin-top: 2em;
+}
+
+#indirizzo-container,
+#citta-container {
+  float: left;
+  width: 78%;
+}
+
+#civico-container,
+#cap-container {
+  text-align: right;
+}
+
+#civico-container input,
+#cap-container input {
+  width: 4em;
+  text-align: right;
+}
+
+.log-form {
+  width: 100%;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  border-radius: 0.25em;
+}
+.log-label {
+  display: block;
+  padding-bottom: 0.3em;
+}
+
+.log-field-container {
+  margin-top: 1em;
+}
+
+.button-holder {
+  margin-top: 2em;
+  padding-bottom: 1em;
+  text-align: center;
+}
+
+.btn {
+  outline: none;
+  margin: 0;
+  cursor: pointer;
+  line-height: 100%;
+  text-decoration: none;
+  font-weight: bolder;
+  padding: 0.8em 1em;
+  color: black;
+  background: white;
+  border: 0.2em solid transparent;
+  border-bottom: 0.2em solid #808080;
+  text-transform: uppercase;
+}
+
+.btn.btn-primary {
+  margin: auto;
+  color: white;
+  background-color: #0067c8;
+  border-bottom-color: #0000c6;
+}
+
+a.btn.red {
+  border-radius: 0.75em;
+  margin: auto;
+  color: white;
+  background-color: #ff0000;
+  border-bottom-color: #ff0000;
+  margin-bottom: 2em;
+}
+
+.btn.btn-tripInsert {
+  float: left;
+  margin: auto;
+  color: white;
+  background-color: #008000;
+  border-bottom-color: #008000;
+}
+
+.btn.btn-tripCancel {
+  float: right;
+  margin: auto;
+  color: white;
+  background-color: #ff0000;
+  border-bottom-color: #ff0000;
+  }
+
+.btn.btn-riepConferma {
+  float: left;
+  margin: auto;
+  color: white;
+  background-color: #008000;
+  border-bottom-color: #008000;
+}
+
+.btn.btn-riepCancella {
+  color: white;
+  background-color: #ff0000;
+  border-bottom-color: #ff0000;
+}
+
+
+#reg-sistema {
+  color: #0057a8;
+}
+
+fieldset {
+  border: 0.1875em solid #f1f1f1;
+}
+legend {
+  text-align: center;
+  font-size: 1.5em;
+  margin-bottom: 1em;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+input[type="time"],
+textarea {
+  width: 100%;
+  height: 25pt;
+  background-color: transparent;
+  border: 0;
+  border-bottom: 0.125em solid silver;
+  outline: none;
+}
+
+.buttom-form {
+  color: white;
+  padding: 0.875em 1.25em;
+  margin: 1% 0;
+  border: none;
+  cursor: pointer;
+  width: 35%;
+  font-size: 1.1rem;
+}
+
+input[type="submit"] {
+  background-color: #4caf50;
+  margin-left: 5%;
+}
+
+input[type="reset"] {
+  background-color: #f44336;
+  float: right;
+  margin-right: 5%;
+}
+
+input.error {
+  border-bottom-color: red;
+}
+
+#error {
+  color: white;
+  background-color: red;
+  font-weight: bold;
+  border-radius: 0.5em;
+}
+
+.titolo-form {
+    width:100%;
+}
+
+#mod-pwd-form label {
+	margin-top: 0;
+  width: 25%;
+  float:left;
+  text-align: right;
+}
+
+#btn-wrapper {
+    float:right;
+    margin-top: 1em;
+}
+
+#modifica {
+    color:#F3F3F3;
+    background-color: #16BFFF;
+    border:0.125em solid #1C1C1C;
+    padding: 0.2em 0.5em;
+    cursor:pointer;
+}
+
+.tabcontent {
+    padding: 0.375em 0.75em;
+    border-top: none;
+}
+
+#dati-utente label, .imp-label{
+    float:left;
+    margin-top: 0.5em;
+    font-weight: bold;
+    width: 25%;
+    padding-bottom: 0;
+    text-align: right;
+}

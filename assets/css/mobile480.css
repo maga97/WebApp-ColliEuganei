@@ -1,0 +1,55 @@
+  ul#menuprincipale li:not(:first-child) {
+    display: none;
+  }
+
+  ul#menuprincipale li.icon {
+    float: right;
+    display: inline-block;
+    font-size: 0.9em;
+  }
+
+  ul#menuprincipale.responsive {
+    position: relative;
+  }
+
+  ul#menuprincipale.responsive li.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  ul#menuprincipale.responsive li {
+    float: none;
+    display: inline;
+  }
+
+  ul#menuprincipale.responsive li a {
+    display: block;
+    text-align: left;
+  }
+
+  #scroll-top-btn {
+    display: none;
+  }
+
+  #container_form{
+    width:auto;
+  }
+
+  #sectionPersonalData, #sectionAccountData {
+      float:none;
+      width: 100%;
+      margin:0;
+  }
+
+  .admin-div {
+    width: 100%;
+    margin: 0;
+    padding: 0.3em;
+    border-radius: 0;
+  }
+
+  .gite-image {
+    display: none;
+  }
+
