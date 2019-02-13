@@ -282,6 +282,12 @@ ul#menuprincipale li.icon {
     display: none;
 }
 
+.dropdown > a:after {
+	content: "▼";
+	font-size: 75%;
+    color: #f2f2f2;
+    padding-left: 0.5em;
+}
 .dropdown-content {
     list-style-type: none;
     display: none;
