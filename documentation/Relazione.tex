@@ -114,15 +114,15 @@
 	 sito, infatti sono state create delle funzioni che permettono di garantire il controllo
 	 completo sulle operazioni che vengono richieste al server. Tale controllo consiste nel
 	 verificare quale tipologia di utente ha fatto la richiesta attraverso le informazioni
-	 contenute nella sessione; se l’utente non è un amministratore ed esso ha cercato di
-	 utilizzare delle funzionalità riservate ad un admin allora il server rigetta la richiesta.
+	 contenute nella sessione; se l’utente non è un amministratore ed esso ha cercato di
+	 utilizzare delle funzionalità riservate ad un admin allora il server rigetta la richiesta.
 	 \subsection{PDO-SQL Injection}
-	 Per la connessione e l’interazione con il database è stato utilizzato PDO poichè
-	 permette di gestire con facilità la connessione con diversi DBMS (nel nostro caso
+	 Per la connessione e l'interazione con il database è stato utilizzato PDO poichè
+	 permette di gestire con facilità la connessione con diversi DBMS (nel nostro caso
 	 abbiamo utilizzato MySQL). Inoltre grazie al meccanismo di preparazione degli
 	 statement (statement precompilati), i dati inseriti dagli utenti vengono automa-
 	 ticamente sanificati in modo da impedire qualsiasi tipo di SQL Injection, questo
-	 permette l’integrità e la sicurezza del database. Utilizzo di metodi standard come
+	 permette l'integrità e la sicurezza del database. Utilizzo di metodi standard come
 	 pdo ci tutela e ci solleva dall’incombenza della manutenzione correttiva. 
 	 
 	\section{Accessibilità}
