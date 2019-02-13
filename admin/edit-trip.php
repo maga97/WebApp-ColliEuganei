@@ -4,8 +4,9 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 if (!isset($_SESSION["username"]) || $_SESSION["admin"] != 1 || !isset($_GET['id'])) {
-    echo "edit";
+    header("Location: ../index.php");
 }
+
 $id = $_GET['id'];
 $db = new database();
 $db->connect();
@@ -70,8 +71,7 @@ $data = $arrayofdata[2] . "/" . $arrayofdata[1] . "/" . $arrayofdata[0];
                 <?php if (isset($_SESSION['username'])): ?>
           <li class="dropdown button-right"><a aria-haspopup="true" tabindex="0">Account</a>
                       <ul class="dropdown-content" role="menu">
-                        <li><a href="../view-account.php" tabindex="0" role="menuitem">Impostazioni</a></li>
-                        <li><a href="../view-my-trip.php" tabindex="0" role="menuitem">Le mie gite</a></li>
+                        <li><a href="view-account-admin.php" tabindex="0" role="menuitem">Impostazioni</a></li>
                         <li><a href="../logout.php" tabindex="0" role="menuitem">Logout</a></li>
                       </ul>
                     </li>
