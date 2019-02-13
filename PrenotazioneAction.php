@@ -96,30 +96,18 @@ if(isset($_POST["cancellaPrenotazione"])){
           <?php if(!$PrenotazioneOk):?>
           <div id="riepilogo">
             <h2> Riepilogo prenotazione </h2>
-            <div class="field-container">
-               <label for="Nome" lang="it" class="log-label-riep">ATTIVIT&Agrave; </label>
-               <p>  </p>
-            </div>
-            <div class="field-container">
-               <label for="Descrizione" lang="it" class="log-label-riep">DESCRIZIONE </label>
-               <p> <?php  echo $_POST["descrizione"].PHP_EOL;?> </p>
-            </div>
-            <div class="field-container">
-               <label for="Data" lang="it" class="log-label-riep">DATA </label>
-               <p> <?php  echo $_POST["data"].PHP_EOL;?> </p>
-            </div>
-            <div class="field-container">
-               <label for="Ora" lang="it" class="log-label-riep">ORA </label>
-               <p> <?php  echo $_POST["ora"].PHP_EOL;?> </p>
-            </div>
-            <div class="field-container">
-               <label for="Posti" lang="it" class="log-label-riep">POSTI </label>
-               <p> <?php  echo $_POST["posti"].PHP_EOL;?> </p>
-            </div>
-            <div class="field-container">
-               <label for="Prezzo" lang="it" class="log-label-riep">PREZZO TOTALE </label>
-               <p> <?php  echo (float)$_SESSION["prezzo"]*(float)$_SESSION["posti"];?>€</p>
-            </div>
+			<div id="descrizione"><?php  echo $_POST["descrizione"].PHP_EOL;?> </div>
+            <div class="riepprenotazione">
+				<dt>DATA</dt>
+				<dd><?php  echo $_POST["data"].PHP_EOL;?> </dd>
+				<dt>ORA</dt>
+				<dd> <?php  echo $_POST["ora"].PHP_EOL;?> </dd>
+				<dt>POSTI</dt>
+				<dd> <?php  echo $_POST["posti"].PHP_EOL;?> </dd>
+				<dt>PREZZO TOTALE</dt>
+				<dd> <?php  echo (float)$_SESSION["prezzo"]*(float)$_SESSION["posti"];?>€</dd>
+				</dl>
+			</div>
               <div class="button-holder">
                 <form action="" method="POST">
                   <input type="submit" value="Conferma" name="confermaPrenotazione" class="btn btn-riepConferma" />

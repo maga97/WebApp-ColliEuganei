@@ -325,10 +325,38 @@ ul.dropdown-content li a {
     text-align: center;
 }
 
+#descrizione{
+	padding: 1em 1em 0em 1em;
+	font-weight: bold;
+}
+
+div.riepprenotazione {
+   text-align: left;
+   padding: 0.5em 2em 1em 2em;
+}
+
+.riepprenotazione dl {
+    margin: 0;
+    padding-bottom:0.5em;
+}
+
+.riepprenotazione dt {
+    color: #666;
+    float: left;
+    clear: left;
+    margin-right: 0.4em;
+}
+
+.riepprenotazione dd {
+    font-weight: bold;
+    margin-top: 0;
+}  
+
 div.attivita {
    text-align: left;
    padding: 1em 2em 1em 2em;
 }
+
 #content > .attivita ~ .attivita {
     border-top: 3px dotted rgb(25, 144, 45);
 }
@@ -343,6 +371,7 @@ div.attivita {
 
 .attivita dl{
     margin: 0;
+    padding-bottom:0.5em;
 }
 
 .attivita dt {
@@ -355,6 +384,7 @@ div.attivita {
 .attivita dd {
     font-weight: bold;
     margin-top: 0;
+    
 }
 
 dl {
