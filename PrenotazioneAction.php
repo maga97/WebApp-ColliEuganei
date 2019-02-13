@@ -9,7 +9,8 @@ $dbConnection = new database();
 $dbConnection->Connect();
 $PrenotazioneOk=false;
 
-$_SESSION["posti"]=$_POST["posti"];
+if(isset($_POST["posti"]))
+  $_SESSION["posti"]=$_POST["posti"];
 
 if(isset($_POST["confermaPrenotazione"])) {
     $PrenotazioneOk=$dbConnection->addPrenotazione($_SESSION["ID"],$dbConnection->GetIDUtente($_SESSION["username"]),
