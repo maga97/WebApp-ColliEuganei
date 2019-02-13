@@ -13,10 +13,10 @@ $db->connect();
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <link rel="stylesheet" type="text/css" href="../assets/css/style.css" media="all"/>
-    <link rel="stylesheet" type="text/css" href="../assets/css/form.css" media="all"/>
-    <link rel="stylesheet" type="text/css" href="../assets/css/print.css" media="all"/>
-    <link rel="stylesheet" type="text/css" href="../assets/css/mobile.css" media="all"/>
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css" media="handled, screen">
+    <link rel="stylesheet" type="text/css" href="../assets/css/print.css" media="print">
+    <link rel="stylesheet" type="text/css" href="../assets/css/mobile480.css" media="screen and (max-width: 460px)">
+    <link rel="stylesheet" type="text/css" href="../assets/css/mobile768.css" media="screen and (max-width: 768px)">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css"/>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="../js/script.js"></script>

@@ -61,10 +61,6 @@
 	\chapter{Abstract}
 	Il sito Colli Euganei è un sito informativo nato per facilitare la formazione della popolazione locale al fine di approfondire sul clima, la geografia e la storia dei colli. I monumenti d'interesse storico caratteristici della zona sono molto apprezzati da coloro che provengono dai paesi limitrofi per visitarli, il sito si propone di fornire un sistema di prenotazione automatica al fine di aiutare il Parco Colli a gestire delle visite e gite organizzate, che a sua volta si coordinerà con i gestori dei vari enti per la effettiva organizzazione delle gite.
 
-	\chapter{Installazione}
-	Il sito richiede un database MySql, per la creazione delle tabelle utilizzate si possono usare i due file .sql allegati, "database.sql" e "database vuoto.sql", che generano rispettivamente il database con tutti i dati inseriti nel sito web consegnato e un database con le tabelle vuote, con solo l'amministratore presente, le cui credenziali sono admin:admin.\\
-	Successivamente si dovrà modificare il file dbConnection.php, presente nella root del sito, indicando i dati per l'accesso al database (HOST\_DB, USER, PASSWD, DATABASE) e la pagina di errore dove ridirigere l'utente in caso di errore nel database  (\$connectionErrorPage).\\
-
 
 	\chapter{Progettazione}
 
@@ -78,26 +74,6 @@
 	Seguendo la filosofia dell'informazione accessibile a tutti, il sito è stato pensato per essere intuitivo da navigare e i contenuti sono stati esposti in un linguaggio semplice nei limiti della specificità imposta dai contenuti stessi.
 	\subsubsection{Utente che cerca gite organizzate per i colli euganei}
 	L'intento del sito è quello di fornire una procedura di prenotazione delle gite il quanto più semplice e leggera possibile.
-
-
-	\section{Progettazione della base informativa}
-	Il sito web si pone l'obiettivo di veicolare diversi contenuti, alcuni statici ed altri dinamici.
-	\subsection{Contenuti statici}
-	\subsubsection{Home}
-	%descrivere qui in breve la pagina
-	\subsubsection{Luoghi}
-	%descrivere in breve la pagina cosa visualizza
-
-	\subsection{Contenuti dinamici}
-	\subsubsection{Gite}
-	%descrizione della pagina
-	\subsubsection{Visualizzazione gite prenotate}
-
-
-	\section{Strutturazione del sito}
-	\subsection{Impaginazione}
-	Il sito utlizza un layout a tre pannelli nella versione per dispositivi desktop.\\
-	%descriverei tre div principali che abbiamo, ovvero header,content,footer
 
 	\chapter{Realizzazione}
 	In questa parte del documento si andranno ad approfondire tutti gli aspetti legati alla realizzazione del sito web.
@@ -120,11 +96,40 @@
 	 tendo, anche se disabilitato, che tutte le funzionalità rimangano accessibili e
 	 perfettamente funzionanti. \\
 	 \'E stata inoltre utilizzata la libreria esterna \texttt{JQuery} per la conferma di alcune azioni. Abbiamo deciso di utilizzarla per cercare di apprendere nuove tecnologie, con la consapevolezza comunque che si tratta di una libreria pesante e che andrebbe evitato il suo utilizzo per scopi non fondamentali.
+	 \subsection{PHP}
+	 \subsubsection{Database}
+	 \'E stata creata una classe wrapper per la connessione al database, in maniera tale da facilitare la connessione  e renderla estendibile per l'aggiunta di funzioni. Per utilizzarla è necessario creare un oggetto di tale classe che servirà per richiamare le funzioni,  utilizzate principalmente per interrogare il database e ottenere i dati necessari.
+	 \subsubsection{Dinamicità}
+	 PHP svolge un ruolo fondamentale per il funzionamento del sito, infatti grazie a
+	 questa tecnologia abbiamo realizzato un sito dinamico i cui contenuti (le gite
+	 offerte) possono essere aggiunti, modificati ed eliminati attraverso il pannello di
+	 amministrazione. le gite disponibili vengono stampate dal db tramite uno script. Le gite prenotate vengono stampate acnh'esse dal database. 
+	 Il gruppo era intenzionato a mettere un file per il menu, in maniera tale da non dover ripeterlo in ogni pagina. Tuttavia, durante lo sviluppo, sono state riscontrate delle problematiche di calcolo del path corretto dei link a causa dell'utilizzo di diversi ambienti da parte dei membri. \'E stato quindi deciso di non mettere tale file per agevolare lo sviluppo del sito.
+	 \subsection{Sicurezza}
+	 Il tema della sicurezza ha avuto un ruolo fondamentale durante la realizzazione del
+	 sito, infatti sono state create delle funzioni che permettono di garantire il controllo
+	 completo sulle operazioni che vengono richieste al server. Tale controllo consiste nel
+	 verificare quale tipologia di utente ha fatto la richiesta attraverso le informazioni
+	 contenute nella sessione; se l’utente non è un amministratore ed esso ha cercato di
+	 utilizzare delle funzionalità riservate ad un admin allora il server rigetta la richiesta.
+	 \subsection{PDO-SQL Injection}
+	 Per la connessione e l'interazione con il database è stato utilizzato PDO poichè
+	 permette di gestire con facilità la connessione con diversi DBMS (nel nostro caso
+	 abbiamo utilizzato MySQL). Inoltre grazie al meccanismo di preparazione degli
+	 statement (statement precompilati), i dati inseriti dagli utenti vengono automa-
+	 ticamente sanificati in modo da impedire qualsiasi tipo di SQL Injection, questo
+	 permette l'integrità e la sicurezza del database. Utilizzo di metodi standard come
+	 pdo ci tutela e ci solleva dall’incombenza della manutenzione correttiva. 
+	 
 	\section{Accessibilità}
 	Tutte le scelte progettuali sono state prese in base al tema dell’accesibilità, seguendo le linee guida del W3C.
 	\subsection{Colori}
 	Si è evitato di utilizzare combinazioni di colori che potessero creare problemi di
 	accessibilità, usabilità e comprensione del contenuto a persone affette da daltonsmo.
+	\subsection{Breadcrumb}
+	in ciascuna pagina è inserita una barra che ricorda all’utente in che
+	pagina si trova, da dove viene, e permette anche di tornare rapidamente alle pagine
+	precedenti;
 	\subsection{Tag}
 	Per quanto concerne i tag che migliorano l’accessibilità:
 	\begin{itemize}
@@ -149,8 +154,7 @@
 		che ha i seguenti attributi:
 		\begin{itemize}
 			\item aria-live="assertive":
-			Le tecnologie assistive (AT), come uno screen rea-
-			der, notificano immediatamente all’utente la regione dichiarata assertive,
+			Le tecnologie assistive (AT), come uno screen reader, notificano immediatamente all’utente la regione dichiarata assertive,
 			in questo caso il div di errore verrà notificato e verranno letti gli errori,
 			permettendo all’utente di correggere l’input.
 			\item aria-atomic="true" Indica allo screen reader di leggere interamente la re-
@@ -158,6 +162,13 @@
 			non ha corretto un errore segnalato in precedenza, questo viene notificato
 			nuovamente.
 		\end{itemize}
+	\subsection{JavaScript}il sito degrada correttamente nel caso il browser non permetta l’esecuzione di JavaScript. 
+	Nella parte pubblica del sito JavaScript è utilizzato per il menù mobile,per la validazione dei form e la conferma della cancellazione della gita. Nel caso non sia possibile controllare i campi compilati con JavaScript, allora saranno controllati dal server una volta che siano
+	stati confermati dall’utente. JavaScript non è utilizzato per alterare pesantemente
+	la struttura della pagina, se non nel caso della validazione dei form, in cui aggiun-
+	ge opportuni messaggi d’errore. La disabilitazione di JS non pregiudica comunque
+	l’utilizzo del sito;
+	
 	\subsection{Dispositivi}
 	Nella progettazione si è tenuto conto del fatto che l'utenza avrebbe acceduto al
 	sito da vari dispostivi. Alla luce di questa considerazione il sito adotta un layout
@@ -197,15 +208,16 @@
 		\end{itemize}
 	\end{itemize}
 	\subsubsection{Presentazione}
-	La presentazione della pagina eé realizzata tramite file css, il principale é
+	La presentazione della pagina é realizzata tramite file css, il principale é
 	"style", che viene utilizzata per ogni pagina.
 	In caso di dispositivo mobile viene utilizzato uno stile extra, ovvero "mobile", che ha il compito di far cambiare la presentazione
 	della pagina per meglio adattarla a schermi di dimensioni inferiori.
+	Per quanto riguarda la stampa è stato creato un nuovo foglio di stile, chiamato "print", che rimuove tutti i contenuti non necessari e impagina le informazioni per meglio adattarle a un foglio A4.
 
 
 	\subsubsection{Comportamento}
 	Il comportamento della pagina é stato gestito tramite JavaScript per il con-
-	trollo delle form e la conferma della cancellazione di una prenotazione. Sono presenti anche controlli tramite codice PHP per garantire che il sito continui a funzionare corretamente anche in caso di assenza dell’interprete JavaScript.
+	trollo dei form e la conferma della cancellazione di una prenotazione. Sono presenti anche controlli tramite codice PHP per garantire che il sito continui a funzionare corretamente anche in caso di assenza dell’interprete JavaScript.
 
 
 	\subsection{Parte amministratore}
