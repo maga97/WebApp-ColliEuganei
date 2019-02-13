@@ -47,7 +47,8 @@ if(isset($_POST['email']) && isset($_POST['password']))
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" />
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
-    <title>Login - Colli Digitali</title>
+    <script type="text/javascript" src="js/global.js"></script>
+    <title>Login - Colli Euganei</title>
   </head>
   <body>
     <div>
