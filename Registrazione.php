@@ -97,41 +97,41 @@ $errore = "";
               <div id="sectionPersonalData" >
                 <div class="log-field-container">
                   <label for="nome" class="log-label">Nome: (obbligatorio)</label>
-                  <input type="text" value="<?php echo isset($_SESSION['nome'])? $_SESSION['nome']:""; ?>" id="nome" name="nome" accesskey="n" aria-required="true" aria-labelledby="nome"/>
+                  <input type="text" value="<?php echo isset($_SESSION['nome'])? $_SESSION['nome']:""; ?>" id="nome" name="nome" accesskey="n" aria-required="true" aria-labelledby="nome" maxlength="28"/>
                 </div>
                 <div class="log-field-container">
                   <label for="cognome" class="log-label">Cognome: (obbligatorio)</label>
-                  <input type="text" value="<?php echo isset($_SESSION['cognome'])? $_SESSION['cognome']:""; ?>" id="cognome" name="cognome" accesskey="s" aria-required="true" aria-labelledby="cognome"/>
+                  <input type="text" value="<?php echo isset($_SESSION['cognome'])? $_SESSION['cognome']:""; ?>" id="cognome" name="cognome" accesskey="s" aria-required="true" aria-labelledby="cognome" maxlength="28"/>
                 </div>
                 <div class="log-field-container" id="indirizzo-container">
                   <label for="indirizzo" class="log-label">Indirizzo: </label>
-                  <input type="text" value="<?php echo isset($_SESSION['indirizzo'])? $_SESSION['indirizzo']:""; ?>" id="indirizzo" name="indirizzo" accesskey="i" aria-required="false" aria-labelledby="indirizzo"/>
+                  <input type="text" value="<?php echo isset($_SESSION['indirizzo'])? $_SESSION['indirizzo']:""; ?>" id="indirizzo" name="indirizzo" accesskey="i" aria-required="false" aria-labelledby="indirizzo" maxlength="28"/>
                 </div>
                 <div class="log-field-container" id="civico-container">
                   <label for="civico" class="log-label mobile-align">Civico: </label>
-                  <input type="text" value="<?php echo isset($_SESSION['civico'])? $_SESSION['civico']:""; ?>" size="4" id="civico" name="civico" accesskey="c" aria-required="false" aria-labelledby="civico"/>
+                  <input type="text" value="<?php echo isset($_SESSION['civico'])? $_SESSION['civico']:""; ?>" size="4" id="civico" name="civico" accesskey="c" aria-required="false" aria-labelledby="civico" maxlength="11"/>
               </div>
                 <div class="log-field-container" id="citta-container">
                   <label for="citta" class="log-label">Citt&agrave;: </label>
-                  <input type="text" value="<?php echo isset($_SESSION['citta'])? $_SESSION['citta']:""; ?>" id="citta" name="citta" accesskey="t" aria-required="false" aria-labelledby="citta"/>
+                  <input type="text" value="<?php echo isset($_SESSION['citta'])? $_SESSION['citta']:""; ?>" id="citta" name="citta" accesskey="t" aria-required="false" aria-labelledby="citta" maxlength="28"/>
                 </div>
                 <div class="log-field-container" id="cap-container">
                   <label for="CAP" class="log-label mobile-align"> <abbr title="Codice di avviamento postale">CAP</abbr>: </label>
-                  <input type="text" value="<?php echo isset($_SESSION['CAP'])? $_SESSION['CAP']:""; ?>" size="4" id="CAP" name="CAP" accesskey="a" aria-required="false" aria-labelledby="CAP"/>
+                  <input type="text" value="<?php echo isset($_SESSION['CAP'])? $_SESSION['CAP']:""; ?>" size="4" id="CAP" name="CAP" accesskey="a" aria-required="false" aria-labelledby="CAP" maxlength="6"/>
                 </div>
               </div>
               <div id="sectionAccountData">
                 <div class="field-container">
                   <label for="email" xml:lang="en" class="log-label">Email: (obbligatorio)</label>
-                  <input type="text" value="<?php echo isset($_SESSION['email'])? $_SESSION['email']:""; ?>" id="email" name="email" accesskey="e" aria-required="true" aria-labelledby="email"/>
+                  <input type="text" value="<?php echo isset($_SESSION['email'])? $_SESSION['email'] : ""; ?>" id="email" name="email" accesskey="e" aria-required="true" aria-labelledby="email" maxlength="28"/>
                 </div>
                 <div class="log-field-container">
                   <label for="password" class="log-label"><span xml:lang="en">Password</span>: (obbligatorio)</label>
-                  <input type="password" value="<?php echo isset($_SESSION['password'])? $_SESSION['password']:""; ?>" id="password" name="password" accesskey="p" aria-labelledby="password"/>
+                  <input type="password" value="<?php echo isset($_SESSION['password'])? $_SESSION['password'] : ""; ?>" id="password" name="password" accesskey="p" aria-labelledby="password" maxlength="32"/>
                 </div>
                 <div class="log-field-container">
                   <label for="password2" class="log-label">Ripeti <span xml:lang="en">password</span>: (obbligatorio)</label>
-                  <input type="password" value="<?php echo isset($_SESSION['password2'])? $_SESSION['password2']:""; ?>" id="password2" name="password2" accesskey="r" aria-labelledby="password2"/>
+                  <input type="password" value="<?php echo isset($_SESSION['password2'])? $_SESSION['password2']:""; ?>" id="password2" name="password2" accesskey="r" aria-labelledby="password2" maxlength="32"/>
                 </div>
               </div>
               <div class="button-holder">
