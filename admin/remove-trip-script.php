@@ -10,11 +10,9 @@ if(!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
         $db->connect();
         $esito = $db->RimuoviGita($_GET["id"]);
         if($esito == true) {
-            echo "OK";
             header("Location: remove-trip.php?done=true");
         }
         else {
-            echo "NO";
             header("Location: remove-trip.php?error=Cancellazione+non+riuscita");
         }
     else:

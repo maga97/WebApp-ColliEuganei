@@ -1,11 +1,11 @@
 <?php
 require_once "../DataBase/DBConnection.php";
 if (session_status() == PHP_SESSION_NONE) {
-   session_start();
-  }
-if(!isset($_SESSION["username"]) || $_SESSION["admin"] != 1 || !isset($_GET['id'])) {
+    session_start();
+}
+if (!isset($_SESSION["username"]) || $_SESSION["admin"] != 1 || !isset($_GET['id'])) {
     echo "edit";
-  }
+}
 $id = $_GET['id'];
 $db = new database();
 $db->connect();
@@ -20,7 +20,7 @@ $ora = $ora[0] . ":" . $ora[1];
 $data = $gita[0]["Data"];
 $arrayofdata = explode("-", $data);
 $data = $arrayofdata[2] . "/" . $arrayofdata[1] . "/" . $arrayofdata[0];
- ?>
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+ARIA 1.0//EN"
  "http://www.w3.org/WAI/ARIA/schemata/xhtml-aria-1.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
@@ -65,7 +65,7 @@ $data = $arrayofdata[2] . "/" . $arrayofdata[1] . "/" . $arrayofdata[0];
                       <li><a href="remove-admin.php" tabindex="0" role="menuitem">Rimuovi admin</a></li>
                     </ul>
                 </li>
-                <?php if(isset($_SESSION['username'])): ?>
+                <?php if (isset($_SESSION['username'])): ?>
           <li class="dropdown button-right"><a aria-haspopup="true" tabindex="0">Account</a>
                       <ul class="dropdown-content" role="menu">
                         <li><a href="../view-account.php" tabindex="0" role="menuitem">Impostazioni</a></li>
@@ -76,7 +76,7 @@ $data = $arrayofdata[2] . "/" . $arrayofdata[1] . "/" . $arrayofdata[0];
         <?php else: ?>
           <li><a href="../login.php" tabindex="0">Accedi</a></li>
           <li><a href="../Registrazione.php" tabindex="0">Registrati</a></li>
-        <?php endif; ?>
+        <?php endif;?>
         <li class="icon">
           <a href="#" id="mobile">&#9776;</a>
         </li>
@@ -90,10 +90,10 @@ $data = $arrayofdata[2] . "/" . $arrayofdata[1] . "/" . $arrayofdata[0];
     <div class="form">
     <form action="edit-trip-script.php" name="form-modify-trip" method="POST">
       <?php
-        if(isset($_GET["error"])) {
-          echo "<div class=\"alert errore\">Errore: " . $_GET["error"] . "</div>" . PHP_EOL;
-        }
-      ?>
+if (isset($_GET["error"])) {
+    echo "<div class=\"alert errore\">Errore: " . $_GET["error"] . "</div>" . PHP_EOL;
+}
+?>
 		<div class="log-field-container">
 			<legend>Modifica gita "<?php echo $nomegita; ?>"</legend>
       <input type="hidden" name="id" value="<?php echo $id; ?>" />
@@ -127,7 +127,7 @@ $data = $arrayofdata[2] . "/" . $arrayofdata[1] . "/" . $arrayofdata[0];
     </form>
     </div>
       </div>
-      <?php echo include_once("../footer.php"); ?>
+      <?php echo include_once "../footer.php"; ?>
     </div>
   </body>
 </html>
