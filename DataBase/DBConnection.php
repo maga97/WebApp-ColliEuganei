@@ -106,7 +106,8 @@ class database {
 	}
 
 	public function GetListaAttivita() {
-		$query = $this->pdo->prepare('SELECT * FROM Attivita');
+		$data=date('d');
+		$query = $this->pdo->prepare('SELECT * FROM Attivita WHERE DAY(Data)>'.$data);
 		$query->execute();
 		return $query->fetchAll(PDO::FETCH_ASSOC);
 	}
