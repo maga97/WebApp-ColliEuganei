@@ -52,8 +52,8 @@
   }
 
   .pic {
-    max-width: 350px;
-    max-height: 250px;
+    max-width: 21.875em;
+    max-height: 15.625em;
     page-break-inside: avoid;
     page-break-after:avoid;
   }
