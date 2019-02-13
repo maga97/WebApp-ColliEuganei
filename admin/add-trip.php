@@ -1,14 +1,14 @@
 <?php
 require_once "../DataBase/DBConnection.php";
 if (session_status() == PHP_SESSION_NONE) {
-   session_start();
-  }
-if(!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
+    session_start();
+}
+if (!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
     header("Location: ../index.php");
-  }
+}
 $db = new database();
 $db->connect();
- ?>
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+ARIA 1.0//EN"
  "http://www.w3.org/WAI/ARIA/schemata/xhtml-aria-1.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
@@ -53,7 +53,7 @@ $db->connect();
                       <li><a href="remove-admin.php" tabindex="0" role="menuitem">Rimuovi admin</a></li>
                     </ul>
                 </li>
-          <?php if(isset($_SESSION['username'])): ?>
+          <?php if (isset($_SESSION['username'])): ?>
           <li class="dropdown button-right"><a aria-haspopup="true" tabindex="0">Account</a>
                       <ul class="dropdown-content" role="menu">
                         <li><a href="view-account-admin.php" tabindex="0" role="menuitem">Impostazioni</a></li>
@@ -63,7 +63,7 @@ $db->connect();
         <?php else: ?>
           <li><a href="../login.php" tabindex="0">Accedi</a></li>
           <li><a href="../Registrazione.php" tabindex="0">Registrati</a></li>
-        <?php endif; ?>
+        <?php endif;?>
         <li class="icon">
           <a href="#" id="mobile">&#9776;</a>
         </li>
@@ -76,13 +76,13 @@ $db->connect();
     </ul>
     <div class="form">
     <?php
-      if(isset($_GET["done"]) == true) {
-        echo "<div class=\"alertnojs success\">Inserimento avvenuto correttamente</div>" . PHP_EOL;
-      }
-      if(isset($_GET["error"])) {
-        echo "<div class=\"alertnojs errore login\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\"><p>Errore: " . $_GET["error"] . "</p></div>" . PHP_EOL;
-      }
-    ?>
+if (isset($_GET["done"]) == true) {
+    echo "<div class=\"alertnojs success\">Inserimento avvenuto correttamente</div>" . PHP_EOL;
+}
+if (isset($_GET["error"])) {
+    echo "<div class=\"alertnojs errore login\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\"><p>Errore: " . $_GET["error"] . "</p></div>" . PHP_EOL;
+}
+?>
     <form action="add-trip-script.php" name="form-add-trip" method="POST">
 		<div class="log-field-container">
 			<legend>Aggiungi nuova gita</legend>
@@ -116,7 +116,7 @@ $db->connect();
     </form>
     </div>
       </div>
-      <?php echo include_once("../footer.php"); ?>
+      <?php echo include_once "../footer.php"; ?>
     </div>
   </body>
 </html>

@@ -1,7 +1,7 @@
 <?php
-if (session_status() == PHP_SESSION_NONE) { session_start(); }
-if(!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
-	header("Location: ../index.php");
+if (session_status() == PHP_SESSION_NONE) {session_start();}
+if (!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
+    header("Location: ../index.php");
 }
 ?>
 
@@ -50,7 +50,7 @@ if(!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
                       <li><a href="remove-admin.php" tabindex="0" role="menuitem">Rimuovi admin</a></li>
                   	</ul>
                 </li>
-				<?php if(isset($_SESSION['username'])): ?>
+				<?php if (isset($_SESSION['username'])): ?>
 					<li class="dropdown button-right"><a aria-haspopup="true" tabindex="0">Account</a>
 	                  	<ul class="dropdown-content" role="menu">
 	                      <li><a href="view-account-admin.php" tabindex="0" role="menuitem">Impostazioni</a></li>
@@ -60,7 +60,7 @@ if(!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
 				<?php else: ?>
 					<li><a href="../login.php" tabindex="0">Accedi</a></li>
 					<li><a href="../Registrazione.php" tabindex="0">Registrati</a></li>
-				<?php endif; ?>
+				<?php endif;?>
 				<li class="icon">
 					<a href="#" id="mobile">&#9776;</a>
 				</li>
@@ -88,7 +88,7 @@ if(!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
 				</ul>
 				</div>
 			</div>
-			<?php include_once('../footer.php'); ?>
+			<?php include_once '../footer.php';?>
 			</div>
 			<div>
 				<a id="scroll-top-btn" href="#top">Torna in alto</a>
