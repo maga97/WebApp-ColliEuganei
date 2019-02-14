@@ -122,6 +122,7 @@ if(isset($_POST['email']) && isset($_POST['password']))
               <div class="log-field-container">
                   <label for="password" xml:lang="en" class="log-label">Password: </label>
                   <input type="password" id="password" name="password" accesskey="p" aria-required="true" maxlength="32"/>
+                  <input type="password" id="password" aria-required="true" name="password" accesskey="p" maxlength="32"/>
               </div>
               <div class="button-holder"><input type="submit" value="Login" class="btn btn-primary" />
               </div>
