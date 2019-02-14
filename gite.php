@@ -98,7 +98,7 @@ $db->connect();
         }
         $size = sizeof($list);
         if($size == 0) {
-          echo "<h3>Momentaneamente non sono disponibili gite o la ricerca non ha condotto a nessun nuovo item</h3>" . PHP_EOL;
+          echo "<div class=\"alert nojs warning button-holder\" role=\"alert\">Momentaneamente non sono disponibili gite o la ricerca non ha condotto a nessun item</div>" . PHP_EOL;
         }
           foreach ($list as $node):
           $data = explode("-", $node['Data']);
