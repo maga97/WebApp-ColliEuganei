@@ -55,7 +55,9 @@
   #content > #clima-text > div:nth-of-type(2){
     page-break-before: always;
   }
-
+  #searchform {
+    display: none;
+  }
 
   /* picture settings */
   .pic {

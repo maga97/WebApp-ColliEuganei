@@ -783,6 +783,21 @@ input.error {
     border-top: none;
 }
 
+#searchform {
+    padding: 0.5em;
+    box-shadow: 0 0.5em 0.5em rgba(0, 0, 0, 0.3),
+    0 0.5em 0.5em rgba(0, 0, 0, 0.22);
+    border-radius: 0.3em;
+}
+
+#searchform  fieldset {
+    border: none;
+    padding: 0;
+}
+
+#searchform  legend {
+    margin-bottom: 0;
+}
 #dati-utente label, .imp-label{
     float:left;
     margin-top: 0.5em;

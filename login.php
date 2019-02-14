@@ -117,13 +117,14 @@ if(isset($_POST['email']) && isset($_POST['password']))
               <h1>Accedi</h1>
               <div class="log-field-container">
                   <label for="username" class="log-label">Email: </label>
-                  <input type="text" aria-labelledby="username" id="username" name="email" accesskey="n" aria-required="true" maxlength="28"/>
+                  <input type="text" id="username" name="email" accesskey="n" required="required" maxlength="28"/>
               </div>
               <div class="log-field-container">
                   <label for="password" xml:lang="en" class="log-label">Password: </label>
-                  <input type="password" aria-labelledby="password" id="password" name="password" accesskey="p" maxlength="32"/>
+                  <input type="password" id="password" required="required" name="password" accesskey="p" maxlength="32"/>
               </div>
-              <div class="button-holder"><input type="submit" value="Login" class="btn btn-primary" /></div>
+              <div class="button-holder"><input type="submit" value="Login" class="btn btn-primary" />
+              </div>
               <p id="not-registered">Non sei ancora registrato? <a href="Registrazione.php" id="reg-sistema">Registrati</a></p>
             </form>
           </div>

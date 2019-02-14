@@ -74,13 +74,32 @@ $db->connect();
     		<ul class="breadcrumb">
     			<li><a href="gite.php">Gite</a></li>
     		</ul>
+        <div class="form" id="searchform">
+        <form action="gite.php" method="POST">
+        <fieldset>
+          <legend>Modulo di ricerca delle gite</legend>
+        <div class="log-field-container">
+          <label for="idricerca" class="log-label">Ricerca gite</label>
+          <input type="text" id="idricerca" name="ricerca" accesskey="s" required="required" maxlength="20" />
+        </div>
+        <div class="log-field-container">
+          <input type="submit" value="Cerca" class="btn btn-primary" />
+        </div>
+        </fieldset>
+        </form>
+        </div>
         <?php
-
+        $list = null;
+        if(isset($_POST['ricerca'])) {
+          $list = $db->Ricerca($_POST['ricerca']);
+        }
+        else {
           $list = $db->GetListaAttivita();
-          $size = sizeof($list);
-          if($size == 0) {
-            echo "<h3>Momentaneamente non sono disponibili gite</h3>" . PHP_EOL;
-          }
+        }
+        $size = sizeof($list);
+        if($size == 0) {
+          echo "<h3>Momentaneamente non sono disponibili gite o la ricerca non ha condotto a nessun nuovo item</h3>" . PHP_EOL;
+        }
           foreach ($list as $node):
           $data = explode("-", $node['Data']);
           $node['Ore'] = substr($node['Ore'], 0, 5);

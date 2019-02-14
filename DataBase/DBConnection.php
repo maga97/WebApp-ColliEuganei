@@ -45,6 +45,14 @@ class database {
 					return true;
 				return false;
 	}
+
+	public function Ricerca($string) {
+		//$sql = "SELECT * FROM Attivita WHERE Nome LIKE \"$string\" OR Descrizione LIKE \"$string\" OR Data LIKE \"$string\" OR Ore LIKE \"$string\" AND Data > CURDATE()";
+		$sql = "SELECT * FROM Attivita WHERE Nome LIKE ? OR Descrizione LIKE ? OR Data LIKE ? OR Ore LIKE ? AND Data > CURDATE()";
+		$query = $this->pdo->prepare($sql);
+		$query->execute(array("%$string%", "%$string%", "%$string%", "%$string%"));
+		return $query->fetchAll(PDO::FETCH_ASSOC);
+	}
 	public function update_user($nome,$cognome,$email,$indirizzo,$citta,$civico,$CAP,$oldemail){
 		$update= $this->pdo->prepare('UPDATE Utenti SET Nome=?, Cognome=?, Email=?, Indirizzo=?, Citta=?, Civico=?, CAP=? WHERE Email="'.$oldemail.'"');
 		return $update->execute(array($nome,$cognome,$email,$indirizzo,$citta,$civico,$CAP));
@@ -106,8 +114,7 @@ class database {
 	}
 
 	public function GetListaAttivita() {
-		$data=date('d');
-		$query = $this->pdo->prepare('SELECT * FROM Attivita WHERE DAY(Data)>'.$data);
+		$query = $this->pdo->prepare('SELECT * FROM Attivita WHERE Data > CURDATE()');
 		$query->execute();
 		return $query->fetchAll(PDO::FETCH_ASSOC);
 	}
