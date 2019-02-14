@@ -90,14 +90,20 @@ $db->connect();
         </div>
         <?php
         $list = null;
+        $segnalato = false;
         if(isset($_POST['ricerca'])) {
+          if(strlen($_POST['ricerca']) > 0)
           $list = $db->Ricerca($_POST['ricerca']);
+          else {
+          echo "<div class=\"alert nojs errore button-holder\" role=\"alert\">Nessuna parola chiave inserita</div>" . PHP_EOL;
+          $segnalato = true;
+          }
         }
         else {
           $list = $db->GetListaAttivita();
         }
         $size = sizeof($list);
-        if($size == 0) {
+        if($size == 0 && $segnalato == false) {
           echo "<div class=\"alert nojs warning button-holder\" role=\"alert\">Momentaneamente non sono disponibili gite o la ricerca non ha condotto a nessun item</div>" . PHP_EOL;
         }
           foreach ($list as $node):
