@@ -18,6 +18,7 @@ $dbConnection->Connect();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/global.js"></script>
     <title>Prenotazione - Colli Digitali</title>
   </head>
   <body>
@@ -86,9 +87,13 @@ $dbConnection->Connect();
           $_SESSION["prezzo"]=$attivita["Prezzo"];
           $_SESSION["data"]=$attivita["Data"];
           $_SESSION["ora"]=$attivita["Ore"];
+          if(isset($_SESSION["ErroriPosti"])){
+            echo '<div class="alert errore nojs" aria-live="assertive" role="alert" aria-atomic="true" aria-relevant="all"><p>Inserire un valore corretto per i posti</p></div>';
+            unset($_SESSION["ErroriPosti"]);
+          }
           ?>
-
-         <form action="PrenotazioneAction.php" method="POST">
+          <div class="alert errore" aria-live="assertive" role="alert" aria-atomic="true" aria-relevant="all"><p>Inserire un valore corretto per i posti</p></div>
+         <form action="PrenotazioneAction.php" method="POST" onsubmit="return validaPosti($('.alert.errore'))">
            <?php echo "<input type=\"hidden\" name=\"ID\" value=\"".$_GET["id"]."\">";?>
 
            <div class="field-container">
@@ -109,7 +114,7 @@ $dbConnection->Connect();
            </div>
            <div class="field-container">
              <label for="reservePosti" lang="it" class="log-label">Scegli il numero di posti</label>
-             <input type="text" id="reservePosti" name="posti"  min="0" accesskey="d" />
+             <input type="text" id="reservePosti" name="posti" accesskey="d" />
            </div>
           <div class="button-holder"> <input type="submit" value="Andiamo!" name="registrazione" class="btn btn-primary" aria-label="Prenotati alla gita"/></div>
          </form>

@@ -33,7 +33,7 @@
 			\large GiulioPiva - 1146135 \\ Magarotto Francesco - 1143292 \\ Zilio Davide-  \\
 			Costantino-Marco
 			\vfill
-			Sito web hostato all'indirizzo: \url{http://tecweb1617.studenti.math.unipd.it/mcailott}\\
+			Sito web hostato all'indirizzo: \url{http://tecweb1819.studenti.math.unipd.it/famagarot}\\
 			{\small Credenziali per l'amministrazione:\\username: admin@admin.it, password: admin\\}
 			\vfill
 			Indirizzo email del referente: francesco.magarotto@studenti.unipd.it\\
@@ -59,7 +59,7 @@
 	%il sito deve utilizzare link relativi in modo da poter essere facilmente installato anche su server o cartelle diverse (se l'installazione necessita di operazioni particolari queste devono essere indicate chiaramente in relazione).
 
 	\chapter{Abstract}
-	Il sito Colli Euganei è un sito informativo nato per facilitare la formazione della popolazione locale al fine di approfondire sul clima, la geografia e la storia dei colli. I monumenti d'interesse storico caratteristici della zona sono molto apprezzati da coloro che provengono dai paesi limitrofi per visitarli, il sito si propone di fornire un sistema di prenotazione automatica al fine di aiutare il Parco Colli a gestire delle visite e gite organizzate, che a sua volta si coordinerà con i gestori dei vari enti per la effettiva organizzazione delle gite.
+	Il sito Colli Euganei è un sito informativo nato per facilitare la formazione della popolazione locale al fine di approfondire sul clima, la geografia e la storia dei colli. I monumenti d'interesse storico caratteristici della zona sono molto apprezzati da coloro che provengono dai paesi limitrofi per visitarli, il sito si propone di fornire un sistema di prenotazione automatica al fine di aiutare il Parco Colli a gestire delle visite e gite organizzate, che a sua volta si coordinerà con i gestori dei vari enti per la effettiva organizzazione delle gite. Il sito pertanto si propone come piattaforma di riferimento per le varie attività turistiche.
 
 
 	\chapter{Progettazione}
@@ -68,12 +68,12 @@
 	\subsection{Descrizione della sezione}
 	Questa sezione si pone come obiettivo l'analisi di tutte le tipologie di utenti che potrebbero essere interessate alla navigazione sul sito web, ponendo particolare attenzione alle informazioni che questi sono interessati a trovare.
 	\subsection{Analisi dell'utenza}
-	Il sito si rivolge principalmente ad un pubblico adulto o di giovani adulti poichè questo è il target in grado di effettuare prenotazioni per gite e/o visite guidate. La grafica del sito, quindi, cerca di essere minimalista e poichè il sito ha anche funzione informativa, il linguaggio usato è semplice per permetterne
+	Il sito si rivolge principalmente ad un pubblico adulto o di giovani adulti poiché questo è il target in grado di effettuare prenotazioni per gite e/o visite guidate. La grafica del sito, quindi, cerca di essere minimalista e poiché il sito ha anche funzione informativa, il linguaggio usato è semplice per permetterne
 	la fruibilità a chiunque e per andare in contro all'esperienza mobile che è per sua natura più leggera.
-	\subsubsection{Utente che cerca informazioni riguardanti i colli euganei}
+	\subsubsection{Utente che cerca informazioni riguardanti i Colli Euganei}
 	Seguendo la filosofia dell'informazione accessibile a tutti, il sito è stato pensato per essere intuitivo da navigare e i contenuti sono stati esposti in un linguaggio semplice nei limiti della specificità imposta dai contenuti stessi.
-	\subsubsection{Utente che cerca gite organizzate per i colli euganei}
-	L'intento del sito è quello di fornire una procedura di prenotazione delle gite il quanto più semplice e leggera possibile.
+	\subsubsection{Utente che cerca gite organizzate per i Colli Euganei}
+	L'intento del sito è quello di fornire una procedura di prenotazione delle gite il quanto più semplice e leggera possibile, in un sistema unificato che permetta agli utenti di presentarsi solamente con la presentazione.
 
 	\chapter{Realizzazione}
 	In questa parte del documento si andranno ad approfondire tutti gli aspetti legati alla realizzazione del sito web.
@@ -81,123 +81,115 @@
 	\section{Scelte tecniche}
 	\subsection{XHTML1.0}
 	Come linguaggio di marcatura si è scelto di utilizzare XHTML 1.0.
-	\'E stata scelta questa tecnlogia perchè prevede un uso più restrittivo dei tag HTML mirato alla separazione tra elementi grafici del sito, specificati tramite fogli di stile esterni, e il layout della pagine. Un'altra ragione per la scelta di XHTML 1.0 risiede nella sua retrocompatibilità, nella sua diffusione e nella compatibilità con i browser più diffusi.
-	\subsection{CSS3}
+	\'E stata scelta questa tecnologia perché prevede un uso più restrittivo dei tag HTML mirato alla separazione tra elementi grafici del sito, specificati tramite fogli di stile esterni, e il layout della pagine. Un'altra ragione per la scelta di XHTML 1.0 risiede nella sua retrocompatibilità, nella sua diffusione e nella compatibilità con i browser più diffusi.
+	\subsection{CSS}
 	I file necessari alla formattazione dello stile del sito e per i vari dispositivi sono collocati nella cartella \texttt{assets/css} mentre le immagini sono collocate nella
 	cartella \texttt{assets/img}.
 	Il sito utilizza un foglio di stile principale, denominato \texttt{style.css}, e 3 fogli di stile secondari: \begin{itemize}
 		\item mobile.css: utilizzato per adattare il sito a dispositivi più piccoli, quali tablet e smartphone
 		\item print.css: utilizzato per la stampa, rimuove tutti i contenuti non necessari e impagina le informazioni per meglio adattarle a un foglio A4.
-		\item form.css: è stato deciso di dedicare un file a parte per la grafica dei form, in modo da avantaggiarne lo sviluppo e la gestione.
 	\end{itemize}
+	 Sono state usate anche alcune regole di CSS3.0, come ad esempio i flexbox layout ai fini di apprendere nuovi metodi per la gestione dei layout oltre a quelli trattati durante le lezioni di laboratorio.
 	\subsection{JavaScript}
 	 I file contenenti gli script sono collocati nella cartella \texttt{js/}. \\
-	 Si è scelto di utilizzare JavaScript come componente marginale del sito garan-
-	 tendo, anche se disabilitato, che tutte le funzionalità rimangano accessibili e
+	 Si è scelto di utilizzare JavaScript come componente marginale del sito garantendo, anche se disabilitato, che tutte le funzionalità rimangano accessibili e
 	 perfettamente funzionanti. \\
 	 \'E stata inoltre utilizzata la libreria esterna \texttt{JQuery} per la conferma di alcune azioni. Abbiamo deciso di utilizzarla per cercare di apprendere nuove tecnologie, con la consapevolezza comunque che si tratta di una libreria pesante e che andrebbe evitato il suo utilizzo per scopi non fondamentali.
 	 \subsection{PHP}
 	 \subsubsection{Database}
-	 \'E stata creata una classe wrapper per la connessione al database, in maniera tale da facilitare la connessione  e renderla estendibile per l'aggiunta di funzioni. Per utilizzarla è necessario creare un oggetto di tale classe che servirà per richiamare le funzioni,  utilizzate principalmente per interrogare il database e ottenere i dati necessari.
+	 \'E stata creata una classe wrapper per la connessione al database, in maniera tale da facilitare la gestione delle query, essendo queste presenti solo all'interno di tale classe, sarà più facile gestire il codice sorgente. Per utilizzarla è necessario creare un oggetto di tale classe che servirà per richiamare le funzioni,  utilizzate solamente per l'interazione con il database e gestire le connessioni
+	 \paragraph{Perché i BLOB}
+	 Per l'inserimento delle immagini delle gite si è fatto uso dei BLOB, ovvero si è inserita l'immagine all'interno della base di dati. Consapevoli, che solitamente si salva solo il path del file all'interno del database e il file nel filesystem del server, abbiamo scelto di utilizzare i BLOB per non incorrere a problematiche con la scrittura e movimento di file all'interno del server ospite dell'università.
 	 \subsubsection{Dinamicità}
 	 PHP svolge un ruolo fondamentale per il funzionamento del sito, infatti grazie a
-	 questa tecnologia abbiamo realizzato un sito dinamico i cui contenuti (le gite
-	 offerte) possono essere aggiunti, modificati ed eliminati attraverso il pannello di
-	 amministrazione. le gite disponibili vengono stampate dal db tramite uno script. Le gite prenotate vengono stampate acnh'esse dal database. 
+	 questo linguaggio lato server abbiamo realizzato un sito dinamico in cui le attività (come ad esempio, le visite guidate) possono essere aggiunte, modificate ed eliminate attraverso il pannello di
+	 amministrazione. Le gite disponibili vengono stampate dalla base di dati tramite un \texttt{foreach}.
 	 Il gruppo era intenzionato a mettere un file per il menu, in maniera tale da non dover ripeterlo in ogni pagina. Tuttavia, durante lo sviluppo, sono state riscontrate delle problematiche di calcolo del path corretto dei link a causa dell'utilizzo di diversi ambienti da parte dei membri. \'E stato quindi deciso di non mettere tale file per agevolare lo sviluppo del sito.
 	 \subsection{Sicurezza}
 	 Il tema della sicurezza ha avuto un ruolo fondamentale durante la realizzazione del
 	 sito, infatti sono state create delle funzioni che permettono di garantire il controllo
-	 completo sulle operazioni che vengono richieste al server. Tale controllo consiste nel
+	 completo sulle operazioni che vengono richieste al server. Tale accertamento consiste nel
 	 verificare quale tipologia di utente ha fatto la richiesta attraverso le informazioni
 	 contenute nella sessione; se l’utente non è un amministratore ed esso ha cercato di
-	 utilizzare delle funzionalità riservate ad un admin allora il server rigetta la richiesta.
+	 utilizzare delle funzionalità riservate ad un amministratore, allora il server rigetta la richiesta reindirizzando l'utente alla pagina più appropriata.
 	 \subsection{PDO-SQL Injection}
-	 Per la connessione e l'interazione con il database è stato utilizzato PDO poichè
-	 permette di gestire con facilità la connessione con diversi DBMS (nel nostro caso
-	 abbiamo utilizzato MySQL). Inoltre grazie al meccanismo di preparazione degli
-	 statement (statement precompilati), i dati inseriti dagli utenti vengono automa-
-	 ticamente sanificati in modo da impedire qualsiasi tipo di SQL Injection, questo
-	 permette l'integrità e la sicurezza del database. Utilizzo di metodi standard come
-	 pdo ci tutela e ci solleva dall’incombenza della manutenzione correttiva. 
-	 
+	 Per la connessione e l'interazione con il database è stato utilizzato PDO poiché 	 permette di gestire con facilità la connessione con diversi DBMS (nel nostro caso abbiamo utilizzato MySQL). Inoltre grazie al meccanismo di preparazione degli
+	 statement (prepared statement), i dati inseriti dagli utenti vengono automaticamente sanificati in modo da impedire qualsiasi tipo di SQL Injection, questo permette l'integrità e la sicurezza del database. Utilizzo di metodi standard come
+	 PDO ci tutela e ci solleva dall’incombenza della manutenzione correttiva.
+	 \subsection{Database}
+	 Si è deciso di utilizzare MySQL (MariaDB) per la gestione del database contenente
+	 i dati del sito. Segue uno schema logico delle tabelle:
+	 \begin{figure}[H]
+	 	\centering
+	 	\includegraphics[width=0.9\linewidth]{images/database}
+	 \end{figure}
+ 	\noindent Il database è privo di trigger per favorire il disaccoppiamento tra il sito e il DBMS.
+ 	Si è quindi utilizzato PHP per le varie operazioni al fine di apprenderlo al meglio.
+ 
 	\section{Accessibilità}
-	Tutte le scelte progettuali sono state prese in base al tema dell’accesibilità, seguendo le linee guida del W3C.
+	Tutte le scelte progettuali sono state prese in base al tema dell’accessibilità, seguendo le linee guida del WCAG 2.0.
 	\subsection{Colori}
 	Si è evitato di utilizzare combinazioni di colori che potessero creare problemi di
-	accessibilità, usabilità e comprensione del contenuto a persone affette da daltonsmo.
+	accessibilità, usabilità e comprensione del contenuto a persone affette da daltonismo
 	\subsection{Breadcrumb}
-	in ciascuna pagina è inserita una barra che ricorda all’utente in che
-	pagina si trova, da dove viene, e permette anche di tornare rapidamente alle pagine
+	In ciascuna pagina è inserita un breadcrumb che permette all’utente di risalire la gerarchia delle pagine visitate per giungere a quella attuale, permettendogli eventualmente di ritornare rapidamente alle pagine precedentemente visitate. Il breadcrumb è stato realizzato utilizzato una unordered list disposta in linea tramite il CSS.
 	precedenti;
 	\subsection{Tag}
 	Per quanto concerne i tag che migliorano l’accessibilità:
 	\begin{itemize}
 		\item Sono stati utilizzati i tag alt per le immagini seguendo le linee guida del
 		W3C.
-		\item  Le parole in lingua inglese sono state racchiuse in un tag <span xml:lang="en">
-		</span> cosi da poter garantire una lettura corretta da parte degli screen
-		reader.
-		\item  Sono stati utilizzati i tag tabindex in modo da permettere la navigazione
-		corretta del sito attraverso il tasto TAB.
-		\item \'E stato utilizzato il tag scope dove necessario seguendo i dettami del W3C.
+		\item  Le parole in lingua inglese sono state racchiuse in un tag \\ \texttt{<span xml:lang="en">contenuto</span>}
+		cosi da poter garantire una lettura corretta da parte degli screen reader.
+		\item  Sono stati utilizzati i tag \texttt{tabindex} in modo da permettere la navigazione corretta del sito attraverso il tasto TAB.
+		\item \'E stato utilizzato il tag \texttt{role} dove necessario seguendo i dettami del W3C, per fornire un modo per identificare gli elementi in maniera più specifica ove necessario. In particolare, questa soluzione si è rivelata particolarmente utile in quanto a differenza di HTML 5 che presenta dei tag specifici, ad esempio \texttt{<nav>} per il menu di navigazione, in XHTML si può aggiungere l'attributo role garantendo l'accessibilità e contemporaneamente la retro-compatibilità con i browser meno recenti.
 		Inoltre è stato evitato l'utilizzo di tabelle per realizzare il layout del sito.
 		\item Per rendere accessibili i form, sono stati utilizzati i tag label, fieldset
 		e title, assieme ad una gestione degli errori che comprende controlli di
-		validità dell’input.
+		validità dell’input.La validazione è stata effettuata, in alcuni form, sia in JavaScript che in PHP. La validazione lato server è sempre presente.
 	\end{itemize}
 	\subsection{Tag WAI-ARIA}
 	Sono stati utilizzati dei tag introdotti dalle specifiche WAI-ARIA che permettono
-	di migliorare l'accessibilità per gli utenti che utilizzano uno screen reader.
-	\paragraph{div di errore per i form}
-		Per segnalare all'utente degli errori di input nei vari form è stato creato un div
-		che ha i seguenti attributi:
+	di migliorare l'accessibilità per gli utenti che utilizzano uno screen reader, pertanto il DTD utilizzato dai documenti non è quello standard, ma una versione XHTML1.0 con l'aggiunta dei tag aria.
+	\paragraph{Operazioni sui form}
+		Per segnalare all'utente i vari esiti che hanno avuto le operazioni nel sistema sono stati realizzati dei div che vengono gestiti tramite PHP e/o JavaScript, a seconda che questo sia utilizzato o meno. Consapevoli dei problemi che conseguono con l'introduzione di messaggi interattivi, che possono eventualmente nascosti o essere aggiunti dinamicamente, si sono applicati i seguenti attributi ai contenitori:
 		\begin{itemize}
-			\item aria-live="assertive":
-			Le tecnologie assistive (AT), come uno screen reader, notificano immediatamente all’utente la regione dichiarata assertive,
+			\item \texttt{aria-live="assertive"}: le tecnologie assistive (AT), come uno screen reader, notificano immediatamente all’utente la regione dichiarata assertive,
 			in questo caso il div di errore verrà notificato e verranno letti gli errori,
 			permettendo all’utente di correggere l’input.
-			\item aria-atomic="true" Indica allo screen reader di leggere interamente la re-
-			gione di errore e non solo i suoi cambiamenti. In questo modo se l’utente
-			non ha corretto un errore segnalato in precedenza, questo viene notificato
-			nuovamente.
+			\item \texttt{aria-atomic="true"}: indica allo screen reader di leggere interamente la regione di errore e non solo i suoi cambiamenti. In questo modo se l’utente
+			non ha corretto un errore segnalato in precedenza, questo viene notificato nuovamente.
+			\item \texttt{role="alert"}: per segnalare appunto che si tratta di un messaggio interattivo, che è frutto di un'operazione eseguita dall'utente.
+			\item \texttt{aria-relevant="all"}: attributo impiegato per segnalare la tipologia di cambiamenti che potrebbero avvenire all'interno del contenitore. In questo caso è settato ad all, poiché vogliamo che l'utente sia avvertito quando avvengono cambiamenti de testo.
 		\end{itemize}
-	\subsection{JavaScript}il sito degrada correttamente nel caso il browser non permetta l’esecuzione di JavaScript. 
-	Nella parte pubblica del sito JavaScript è utilizzato per il menù mobile,per la validazione dei form e la conferma della cancellazione della gita. Nel caso non sia possibile controllare i campi compilati con JavaScript, allora saranno controllati dal server una volta che siano
+	\subsection{JavaScript}
+	Il sito degrada correttamente nel caso il browser non permetta l’esecuzione di JavaScript.
+	Nella parte pubblica del sito JavaScript è utilizzato per il menù mobile, per la validazione dei form e la conferma della cancellazione della gita. Nel caso non sia possibile controllare i campi compilati con JavaScript, allora saranno controllati dal server una volta che siano
 	stati confermati dall’utente. JavaScript non è utilizzato per alterare pesantemente
-	la struttura della pagina, se non nel caso della validazione dei form, in cui aggiun-
-	ge opportuni messaggi d’errore. La disabilitazione di JS non pregiudica comunque
-	l’utilizzo del sito;
-	
+	la struttura della pagina, se non nel caso della validazione dei form, in cui aggiunge opportuni messaggi d’errore. Nella homepage, se JavaScript viene disabilitato, il contenuto viene mostrato garantendo l'accesso ai contenuti. La disabilitazione di JS non pregiudica comunque l’utilizzo del sito.
 	\subsection{Dispositivi}
 	Nella progettazione si è tenuto conto del fatto che l'utenza avrebbe acceduto al
-	sito da vari dispostivi. Alla luce di questa considerazione il sito adotta un layout
-	resposivo grazie alla creazione di file css appositi (mobile e stampa). Il sito è
-	stato testato su più dispositivi, browser e sistemi operativi possibili in modo tale
-	da avere un feedback più completo possibile sulle scelte adottate (Vedere la sezione
-	Validazione e Test per i dettagli).
-
+	sito da vari dispositivi. Alla luce di questa considerazione il sito adotta un layout responsive grazie alla creazione di file css appositi (mobile e stampa). Il sito è stato testato su più dispositivi, browser e sistemi operativi possibili in modo tale da avere un feedback più completo possibile sulle scelte adottate (Vedere la sezione Validazione e Test per i dettagli).
 
 
 	\section{Suddivisione di struttura, presentazione e comportamento}
-	I file relativi alla parte di amministrazione sono contenuti all'interno della cartella \texttt{admin/}, mentre i file relativi alla parte pubblica sono nella cartella principale del sito. Tuttavia alcuni file sono necessari per entrambi le parti, ed in questo
+	I file relativi alla parte di amministrazione sono contenuti all'interno della cartella \texttt{admin}, mentre i file relativi alla parte pubblica sono nella cartella principale del sito. Tuttavia alcuni file sono necessari per entrambi le parti, ed in questo
 	caso vi erano due alternative: duplicare i file e mantenere la massima indipendenza fra
 	le parti, oppure tenere un unico file che si adatta a seconda del percorso da cui è incluso
 	(ad esempio con un \texttt{<?php if ... ?>}). Abbiamo scelto di utilizzare l'una oppure l'altra strategia a seconda di quanto riteniamo probabile che una particolare funzionalità possa differire a seconda che sia utilizzata dall'amministratore, oppure da un utente standard: \begin{itemize}
-		\item Pagina di accesso: per accedere al pannello di amministrazione bisogna effettuare il login con un account amministratore. Non abbiamo ritenuto necessario separare il login per gli admin dal login per i clienti perchè non abbiamo individuato ragioni valide per farlo.
-		\item Ricerca e visualizzazione dei risultati: anche in questo caso riteniamo possibile
-		che vengano implementate funzionalità non utili ad entrambe le parti, ma solo ad
-		una delle due.
+		\item Pagina di accesso: per accedere al pannello di amministrazione bisogna effettuare il login con un account amministratore. Non abbiamo ritenuto necessario separare il login per gli admin dal login per i clienti, perché non abbiamo individuato ragioni valide per farlo, infatti entrambi gli utenti inseriscono
+		\item Ricerca e visualizzazione dei risultati: anche in questo caso riteniamo possibile che vengano implementate funzionalità non utili ad entrambe le parti, ma solo ad una delle due.
 		\item Menù di navigazione: il menù di navigazione per l'utente è diverso da quello dell'amministratore, e ciò viene gestito da	statement condizionali a cascata.
 	\end{itemize}
 	\subsection{Parte utente}
 	\subsubsection{Struttura}
 	Consiste nell'insieme delle pagine del sito accessibili a tutti gli utenti. \begin{itemize}
 		\item Home (index.php): contiene una sezione introduttiva che spiega in che tipo di
-		sito ci si trova e che tipo di informazioni contiene. Sono presenti inoltre 3 mini-sezioni, Storia Clima e Geografia, ampliabili attraverso i bottoni "Scopri di più" predisposti.
-		\item Luoghi (luoghi/): contiene le pagine relative ai luoghi turistici più importanti dei Colli Euganei, appronfonditamente descritti ed accompagnati da immagini simboliche.
-		\item Gite (gite.php): è la pagina dedicata alla prenotazione delle gite. Tutte le gite hanno un nome, una descrizione, l'ora e il giorno della visita turistica e un costo. Solo un utente loggato (e quindi registrato) può effettuare la prenotazione. Se non si è loggati, la pagina rimanda l'utente al form di login attraverso un link ben segnalato. Un utente può prenotare più di una gita.
-		\item Accedi (login.php): questa pagina contiene il form di login in cui ogni utente può accedere al proprio account per prenotare una gita. Anche gli amministratori possono effettuare l'accesso da questa pagina per il loro account utente. \begin{itemize}
+		sito ci si trova e che tipo di informazioni contiene. Sono presenti inoltre 3 mini-sezioni, Storia Clima e Geografia, espandibili attraverso i bottoni "Scopri di più" predisposti.
+		\item Luoghi (luoghi/): contiene le pagine relative ai luoghi turistici più importanti dei Colli Euganei, approfonditamente descritti ed accompagnati da immagini simboliche.
+		\item Gite (gite.php): è la pagina dedicata alla prenotazione delle gite. Tutte le gite hanno un nome, una descrizione, l'ora e il giorno della visita turistica e un costo. Solo un utente autenticato (e quindi registrato) può effettuare la prenotazione. Se non si è autenticati, la pagina rimanda l'utente al form di login attraverso un link ben segnalato. Un utente può prenotare più di una gita.
+		\item Accedi (login.php): questa pagina contiene il form di login in cui ogni utente può accedere al proprio account per prenotare una gita. Anche gli amministratori possono effettuare l'accesso da questa pagina per il loro account utente.
+		\begin{itemize}
 				\item Registrazione (Registrazione.php): se l'utente non è registrato al sito, attraverso il link presente alla fine del forum, viene reindirizzato alla pagina di registrazione.
 		\end{itemize}
 		\item Registrazione (Registrazione.php): qui un nuovo utente può registrarsi al sito.
@@ -209,45 +201,48 @@
 	\end{itemize}
 	\subsubsection{Presentazione}
 	La presentazione della pagina é realizzata tramite file css, il principale é
-	"style", che viene utilizzata per ogni pagina.
+	"style.css", che viene utilizzata per ogni pagina.
 	In caso di dispositivo mobile viene utilizzato uno stile extra, ovvero "mobile", che ha il compito di far cambiare la presentazione
 	della pagina per meglio adattarla a schermi di dimensioni inferiori.
 	Per quanto riguarda la stampa è stato creato un nuovo foglio di stile, chiamato "print", che rimuove tutti i contenuti non necessari e impagina le informazioni per meglio adattarle a un foglio A4.
-
+	Si è fatto, ovviamente uso di media query all'interno dei fogli di stile,
+	si sono realizzati due breakpoint perché si è cercato di abolire l'utilizzo dei pixel, come unità di misura all'interno dei CSS, in favore di em, che permette di adattare la dimensione a seconda del dispositivo a discapito di un minor controllo sul layout fornito dai pixel.
 
 	\subsubsection{Comportamento}
-	Il comportamento della pagina é stato gestito tramite JavaScript per il con-
-	trollo dei form e la conferma della cancellazione di una prenotazione. Sono presenti anche controlli tramite codice PHP per garantire che il sito continui a funzionare corretamente anche in caso di assenza dell’interprete JavaScript.
+	Il comportamento della pagina é stato gestito tramite JavaScript per il controllo dei form e la conferma della cancellazione di una prenotazione. Inoltre in index.php gestisce delle animazioni per far apparire del testo. Sono presenti anche controlli tramite codice PHP per garantire che il sito continui a funzionare correttamente anche in caso di assenza dell’interprete JavaScript.
 
 
 	\subsection{Parte amministratore}
 
 	\subsubsection{Struttura}
-	\'E la sezione accessibile solamente agli utenti admin. Gli admin possono aggiungere, rimuovere e modificare gite ed aggiungere e rimuovere utenti admin. Di seguito, una breve descrizione delle sezioni a cui ha accesso un amministratore del sito. \begin{itemize}
+	\'E la sezione accessibile solamente agli utenti admin. Questi possono aggiungere, rimuovere e modificare gite, aggiungere e rimuovere utenti admin. Di seguito, una breve descrizione delle sezioni a cui ha accesso un amministratore del sito.
+	\begin{itemize}
 		\item Home: schermata di benvenuto con sintetico riepilogo delle funzionalità offerte all'amministratore.
 		\item Gestione gite: è un dropdown menù con 3 voci:
 		\begin{itemize}
-			\item Aggiungi nuova gita: serve per inserire una nuova gita
-			\item Modifica dati gita: serve per modificare i dati di una determinata gita
-			\item Rimuovi gita: serve per rimuovere una gita
+			\item Aggiungi nuova gita: impiegata per inserire una nuova gita
+			\item Modifica dati gita: impiegata per modificare i dati di una determinata gita
+			\item Rimuovi gita: impiegata per rimuovere una gita
 		\end{itemize}
-		\item Account: qui l'utente può amministrare il suo account. \'E presente un dropdown menù con tre voci: \begin{itemize}
-			\item Impostazioni: questa pagina permette di modificare i dati del proprio account (view-account.php)
-			\item Le mie gite (view-my-trip.php): questa pagina permette di vedere le gite prenotate fino a quel momento
+		\item Account: qui l'utente può amministrare il suo account. \'E presente un dropdown menù con tre voci:
+		 \begin{itemize}
+			\item Impostazioni: questa pagina permette di modificare i dati del proprio account (view-account.php).
 			\item Logout (logout.php): per effettuare il logout.
 		\end{itemize}
 	\end{itemize}
 	\subsubsection{Presentazione}
 	Lo stile delle pagine per l'amministrazione differisce di poco rispetto alla parte utente, in quanto dal lato amministratore sono stati solamente rimossi alcuni elementi inutili, come le pagine dei luoghi, in modo da renderla più veloce e fare spazio alle utilità necessarie all'amministrazione del sito.
 
-	\subsubsection{Comportamento}
 
+	\subsubsection{Comportamento}
+	Per l'amministratore il comportamento è gestito prevalentemente da php.Tutto il codice relativo all’esecuzione di azioni è stato completamente
+	diviso da quello utilizzato per la visualizzazione dei contenuti,
 
 	\chapter{Validazione e test}
 	\section{Validazione con test automatici}
 	\subsection{Markup Validation Service w3.org}
-	La validazione tramite il servizio w3c ha esito positivo su tutto il sito.
-	\subsection{W3C CSS Validator w3.org} La validazione tramite il servizio w3c ha esito positivo su tutto il sito eccetto per \texttt{Safari} ed è per questo motivo che viene segnalato il warning dal validatore.
+	La validazione tramite il servizio W3C ha esito positivo su tutto il sito.
+	\subsection{W3C CSS Validator w3.org} La validazione tramite il servizio W3C ha esito positivo su tutto il sito eccetto per \texttt{Safari} ed è per questo motivo che viene segnalato il warning dal validatore. Infatti non sono state utilizzate le regole web-kit del browser in quando non venivano validate, poiché non sono specificate dallo standard W3C.
 	\subsection{Vamola validator e Web Accessibility Toolbar (WAT)}
 	Per la verifica automatica dell'accessibilità sono stati utilizzati due strumenti: \begin{itemize}
 		\item Vamola, presente all'indirizzo \\ \url{www.validatore.it/vamola_validator/checker/
@@ -261,9 +256,8 @@
 	Un altro strumento utilizzato per la verifica dell'accessibilità è stato WAVE,
 	disponibile per il browser Firefox all'indirizzo \\ \url{https://addons.mozilla.
 	org/it/firefox/addon/wave-accessibility-tool}. \\
-	Il plugin ha segnalato alcuni warning riguardanti gli alt, che richiedevano un
-	controllo manuale e quindi  una supervisione umana e nessun errore di controllo di contrasto dei colori.
-	
+	Il plugin ha segnalato alcuni warning riguardanti gli alt, che richiedevano un controllo manuale e quindi  una supervisione umana e nessun errore di controllo di contrasto dei colori.
+
 	\subsection{AChecker}
 	Un altro strumento utilizzato per la verifica automatica dell'accessibilità è \texttt{AChecker}, \url{https://achecker.ca/checker/}. \\
 	La validazione tramite questo servizio ha avuto esito positivo su tutto il sito.
@@ -304,8 +298,8 @@
 	\subsection{Dispositivi mobili}
 	Di seguito sono elencati i vari dispositivi mobili sui quali il sito è stato testato
 	\begin{itemize}
-		\item Honor 9 con browser Chrome, con una risoluzione di 720p
-		\item Samsung Galaxy Tab 3 con una risoluzione di 1280x800 e con il browser fornito di default
+		\item Honor 9 con browser Chrome, con una risoluzione di 720p.
+		\item Samsung Galaxy Tab 3 con una risoluzione di 1280x800 e con il browser fornito di default.
 		\item Nexus 5x su browser Chrome, con una risoluzione di 1080p
 	\end{itemize}
 	In tutti i dispositivi testati il sito si adatta perfettamente alla risoluzione dello schermo e non si sono presentati problemi di compatibilità, neppure con JavaScript.
@@ -319,25 +313,33 @@
 	\end{figure}
 
 	\section{Test con diverse impostazioni utente}
-	Il sito è stato testato con diverse impostazioni utente abbiamo effettuato test su dispostivi con risoluzioni che vanno dal 600p al 2160p, test di visualizzazione del sito con dimensioni del testo che vanno 16pt a 44pt e visualizzato il sito con zoom fino al 300\%, in ogni caso il sito è risultato fruibile e navigabile.\\
+	Il sito è stato testato con diverse impostazioni utente abbiamo effettuato test su dispositivi con risoluzioni che vanno dal 600p al 2160p, test di visualizzazione del sito con dimensioni del testo che vanno 16pt a 44pt e visualizzato il sito con zoom fino al 300\%, in ogni caso il sito è risultato fruibile e navigabile.\\
 	Inoltre si è presa in considerazione l'eventualità che l'utente non disponga o non abiliti Javascript: il sito risulta comunque navigabile e le sue funzionalità sono inalterate. \pagebreak
 
 	\chapter{Funzionalit\`{a} desiderabili}
 	\section{Descrizione della sezione}
-	Nella seguente sezione verranno illustrate le funzionalità che nel caso di un progetto reale verrebbero inseriti ma che in questo caso non sono stati inclusi vista l'eccessiva complessita di alcuni rapportata allo scopo e al tempo previsto per questo progetto.
+	Nella seguente sezione verranno illustrate le funzionalità che nel caso di un progetto reale verrebbero inseriti ma che in questo caso non sono stati inclusi vista l'eccessiva complessità di alcuni rapportata allo scopo e al tempo previsto per questo progetto.
 
 	\section{Pagine social network di supporto al sito}
-	Nella maggior parte dei siti moderni è presente un qualche collegamento a pagina nei social network, nel nostro caso non è stata ritenito un impiego di tempo produttivo per gli scopi del progetto andare a creare queste pagine social visto che poi si sarebbe trattato di inserire i link a queste nel sito.
+	Nella maggior parte dei siti moderni è presente un qualche collegamento a pagina nei social network, nel nostro caso non è stata ritenuto un impiego di tempo produttivo per gli scopi del progetto andare a creare queste pagine social visto che poi si sarebbe trattato di inserire i link a queste nel sito.
+
+	\section{Possibilità di gestire i diversi tipi di proponenti delle gite}
+	Introducendo un sistema più complesso è possibile inserire all'interno del sito anche la possibilità di permettere ai vari enti di creare i loro eventi e di ottenere le liste degli utenti che hanno aderito alle iniziative.
+
+	\section{Integrare un sistema di pagamento automatico}
+	Il pagamento all'interno dell'applicativo non viene gestito delegandolo quindi all'utente che ha organizzato l'attività. Sarebbe opportuno inserire un sistema di pagamento elettronico, magari integrandolo con un servizio di fatturazione elettronica in modo che l'utente scarichi direttamente la fattura.
 
 	\chapter{Suddivisione del lavoro}
 	\section{Suddivisione per membro del gruppo}
 	\subsection{Piva Giulio - Matricola 1146135}
 	\begin{itemize}
-		\item ciao
+		\item Tutto il sito
 	\end{itemize}
-	\subsection{Magarotto Francesco - Matricola INSERIRE MATRICOLA}
+	\subsection{Magarotto Francesco - Matricola 1143292}
 	\begin{itemize}
-		\item ciao
+		\item Realizzazione parte amministrazione sfruttando XHTML, PHP e CSS.
+		\item Stesura di una parte della relazione.
+		\item Realizzazione di alcune pagine statiche informative come la homepage.
 	\end{itemize}
 	\subsection{Marco Costantino - 1144120}
 	\begin{itemize}

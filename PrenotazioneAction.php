@@ -9,8 +9,17 @@ $dbConnection = new database();
 $dbConnection->Connect();
 $PrenotazioneOk=false;
 
-if(isset($_POST["posti"]))
-  $_SESSION["posti"]=$_POST["posti"];
+if(isset($_POST["posti"])){
+  if($_POST["posti"]!="")
+    $_SESSION["posti"]=$_POST["posti"];
+  else{
+    $_SESSION["ErroriPosti"]=true;
+    header("Location:".$_SERVER['HTTP_REFERER']);
+  }
+}
+else {
+  header("Location: index.php");
+}
 
 if(isset($_POST["confermaPrenotazione"])) {
     $PrenotazioneOk=$dbConnection->addPrenotazione($_SESSION["ID"],$dbConnection->GetIDUtente($_SESSION["username"]),
@@ -35,6 +44,7 @@ if(isset($_POST["cancellaPrenotazione"])){
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/global.js"></script>
     <title>Login - Colli Digitali</title>
   </head>
   <body>
@@ -95,6 +105,8 @@ if(isset($_POST["cancellaPrenotazione"])){
           </ul>
           <?php if(!$PrenotazioneOk):?>
           <div id="riepilogo">
+            <div class="alert errore" aria-live="assertive" role="alert" aria-atomic="true" aria-relevant="all"></div>
+
             <h2> Riepilogo prenotazione </h2>
 			<div id="descrizione"><?php  echo $_POST["descrizione"].PHP_EOL;?> </div>
             <div class="riepprenotazione">
@@ -110,7 +122,7 @@ if(isset($_POST["cancellaPrenotazione"])){
 			</div>
               <div class="button-holder">
                 <form action="" method="POST">
-                  <input type="submit" value="Conferma" name="confermaPrenotazione" class="btn btn-riepConferma" />
+                  <input onclick="return validaPosti()" type="submit" value="Conferma" name="confermaPrenotazione" class="btn btn-riepConferma" />
                   <input type="submit" value="Annulla" name="cancellaPrenotazione" class="btn btn-riepCancella" />
                 </form>
               </div>

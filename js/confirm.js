@@ -5,7 +5,7 @@ $("a[class*=btn]").on("click", function (e) {
                 useBootstrap: false,
                 type: 'blue',
                 title: 'Conferma',
-                content: "Procedere con l'eliminazione della prenotazione?",
+                content: "<p>Procedere con l'eliminazione della prenotazione?</p>",
                 buttons: {
                     "Procedi":function(){
                             window.location = link.href;

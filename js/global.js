@@ -12,7 +12,6 @@ function pulisciErrori(divAlert,formErr) {
 }
 
 function validaFormUtente(validazionePassword, alertErrore, form) {
-
     pulisciErrori(alertErrore,form);
     var formValido = true;
     var anagrafica = $("#nome, #cognome");
@@ -70,4 +69,13 @@ function validaPassword(password, password2, divErrore, formErrore) {
     }
 
     return passwordValide;
+}
+
+function validaPosti(alertErrore){
+  var posti = $("#reservePosti");
+  if(posti.val().length==0 || isNaN(posti.val())){
+    alertErrore.show();
+    return false;
+  }
+  return true;
 }
