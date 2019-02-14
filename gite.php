@@ -75,12 +75,12 @@ $db->connect();
     			<li><a href="gite.php">Gite</a></li>
     		</ul>
         <div class="form" id="searchform">
-        <form action="gite.php" method="POST">
+        <form action="gite.php" method="post">
         <fieldset>
           <legend>Modulo di ricerca delle gite</legend>
         <div class="log-field-container">
           <label for="idricerca" class="log-label">Ricerca gite</label>
-          <input type="text" id="idricerca" name="ricerca" accesskey="s" required="required" maxlength="20" />
+          <input type="text" id="idricerca" name="ricerca" aria-required="true" accesskey="s" maxlength="20" />
         </div>
         <div class="log-field-container">
           <input type="submit" value="Cerca" class="btn btn-primary" />
@@ -107,7 +107,7 @@ $db->connect();
         ?>
         <div class="attivita">
         <?php $immagine = base64_encode($node["Immagine"]); ?>
-          <img src="data:image/jpeg;base64,<?php echo $immagine?>" alt="Immagine <?php echo $nome ?>" class="responsive-image gite-image" />
+          <img src="data:image/jpeg;base64,<?php echo $immagine?>" alt="Immagine <?php echo $node['Nome']?>" class="responsive-image gite-image" />
           <h2><?php echo $node['Nome']; ?></h2>
           <p><?php echo $node['Descrizione']; ?></p>
           <dl>
