@@ -16,8 +16,8 @@ $db->connect();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css" media="handled, screen" />
 	<link rel="stylesheet" type="text/css" href="assets/css/print.css" media="print" />
-	<link rel="stylesheet" type="text/css" href="assets/css/mobile480.css" media="screen and (max-width: 768px)" />
-	<link rel="stylesheet" type="text/css" href="assets/css/mobile768.css" media="screen and (max-width: 480px)" />
+  <link rel="stylesheet" type="text/css" href="assets/css/mobile768.css" media="screen and (max-width: 768px)" />
+  <link rel="stylesheet" type="text/css" href="assets/css/mobile480.css" media="screen and (max-width: 480px)" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css"/>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
