@@ -20,7 +20,7 @@ if (!isset($nomegita)) {
     $errore = true;
 }
 
-if(strlen($_FILES["immagine"]["name"]) > 0 && $_FILES["immagine"]["size"] == 0) {
+if (strlen($_FILES["immagine"]["name"]) > 0 && $_FILES["immagine"]["size"] == 0) {
     header("Location: edit-trip.php?id=" . $id . "&error=Errore+provare+con+un+altro+file.");
     $errore = true;
 }
@@ -41,9 +41,9 @@ if (empty($prezzo)) {
     $errore = true;
 }
 
-if(substr_count($prezzo, ",") == 1) {
-    $prezzo = str_replace(",",".",$prezzo);
-  }
+if (substr_count($prezzo, ",") == 1) {
+    $prezzo = str_replace(",", ".", $prezzo);
+}
 
 $data_array = array();
 if (substr_count($_POST["data"], "/") == 2) {
@@ -56,20 +56,20 @@ if (substr_count($_POST["data"], "/") == 2) {
 }
 
 if ($_FILES['immagine']['size'] > 2097152) {
-    
+
     header("Location: edit-trip.php?error=Immagine+troppo+grande.+Max+2+MB.");
     exit;
-  }
-
-if($_FILES['immagine']['size'] != 0) {
-$ext_ok = array('jpeg', 'jpg', 'png', 'PNG', 'JPEG', 'JPG');
-$temp = explode('.', $_FILES['immagine']['name']);
-$ext = end($temp);
-if (!in_array($ext, $ext_ok)) {
-    header("Location: add-trip.php?error=Estensione+immagine+non+ammessa.");
-    exit;
-  exit;
 }
+
+if ($_FILES['immagine']['size'] != 0) {
+    $ext_ok = array('jpeg', 'jpg', 'png', 'PNG', 'JPEG', 'JPG');
+    $temp = explode('.', $_FILES['immagine']['name']);
+    $ext = end($temp);
+    if (!in_array($ext, $ext_ok)) {
+        header("Location: add-trip.php?error=Estensione+immagine+non+ammessa.");
+        exit;
+        exit;
+    }
 }
 $ora_array = array();
 if (substr_count($ora, ":") == 1) {

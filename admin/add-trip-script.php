@@ -22,18 +22,18 @@ if (empty($descrizione)) {
     header("Location: add-trip.php?error=Descrizione+gita+non+definita");
     exit;
 }
-if($_FILES['immagine']['size'] == 0) {
+if ($_FILES['immagine']['size'] == 0) {
     header("Location: add-trip.php?id=" . $id . "&error=Immagine+gita+non+definita");
     exit;
 }
-if(strlen($_FILES["immagine"]["name"]) > 0 && $_FILES["immagine"]["size"] == 0) {
+if (strlen($_FILES["immagine"]["name"]) > 0 && $_FILES["immagine"]["size"] == 0) {
     header("Location: add-trip.php?id=" . $id . "&error=Errore+provare+con+un+altro+file.");
     exit;
 }
 if ($_FILES['immagine']['size'] > 2097152) {
     header("Location: add-trip.php?error=Immagine+troppo+grande.+Max+2+MB.");
     exit;
-  }
+}
 
 $ext_ok = array('jpeg', 'jpg', 'png', 'PNG', 'JPEG', 'JPG');
 $temp = explode('.', $_FILES['immagine']['name']);
@@ -41,7 +41,7 @@ $ext = end($temp);
 if (!in_array($ext, $ext_ok)) {
     header("Location: add-trip.php?error=Estensione+immagine+non+ammessa.");
     exit;
-  exit;
+    exit;
 }
 
 if (empty($data)) {
@@ -75,8 +75,8 @@ if (substr_count($ora, ":") == 1) {
     exit;
 }
 
-if(substr_count($prezzo, ",") == 1) {
-  $prezzo = str_replace(",",".",$prezzo);
+if (substr_count($prezzo, ",") == 1) {
+    $prezzo = str_replace(",", ".", $prezzo);
 }
 
 if (!is_numeric($ora_array[0]) || !is_numeric($ora_array[1]) || !is_numeric($data_array[0]) ||
@@ -100,8 +100,7 @@ if (intval($data_array[1]) > 12 || intval($data_array[1]) < 0) {
     exit;
 }
 if (intval($data_array[2]) < date("Y")) {
-    header("Location: add-trip.php?error=" . urlencode("Anno inserito minore rispetto all' anno attuale."))
-    ;
+    header("Location: add-trip.php?error=" . urlencode("Anno inserito minore rispetto all' anno attuale."));
     exit;
 }
 
