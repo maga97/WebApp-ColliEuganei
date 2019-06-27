@@ -2,7 +2,7 @@
 <div id="menuprincipale-bar" role="menubar">
     <ul id="menuprincipale">
         <?php if ($nomepagina == "index.php"): ?>
-            <li><a href="/index.php" tabindex="0" class="active">Home</a></li>
+            <li class="active"><a href="/index.php" tabindex="0" >Home</a></li>
         <?php else: ?>
             <li><a href="/index.php" tabindex="0">Home</a></li>
         <?php endif; ?>
@@ -79,16 +79,15 @@
         <?php
         else:
             ?>
-            <li class="button-right"><a href="/login.php" tabindex="0">Accedi</a></li>
             <?php if ($nomepagina == "login.php"): ?>
-            <li><a href="/login.php" tabindex="0" class="active">Accedi</a></li>
+            <li class="button-right"><a href="/login.php" tabindex="0" class="active">Accedi</a></li>
         <?php else: ?>
-            <li><a href="/index.php" tabindex="0">Accedi</a></li>
+            <li class="button-right"><a href="/index.php" tabindex="0">Accedi</a></li>
         <?php endif; ?>
             <?php if ($nomepagina == "Registrazione.php"): ?>
-            <li><a href="/Registrazione.php" tabindex="0" class="active">Registrati</a></li>
+            <li class="button-right"><a href="/Registrazione.php" tabindex="0" class="active">Registrati</a></li>
         <?php else: ?>
-            <li><a href="/Registrazione.php" tabindex="0">Registrati</a></li>
+            <li class="button-right"><a href="/Registrazione.php" tabindex="0">Registrati</a></li>
         <?php endif; ?>
         <?php
         endif;
