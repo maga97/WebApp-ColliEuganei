@@ -1,50 +1,3 @@
-<?php
-require_once "DataBase/DBConnection.php";
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
-if (!isset($_SESSION["username"])) {
-    header("Location: login.php");
-    exit;
-}
-function validaCampo($campo)
-{
-    return strlen($campo) > 0;
-}
-
-$db = new database();
-$db->connect();
-$erroredati = "";
-$errorepassword = "";
-if (isset($_POST["conferma_modifica"])) { // se schiaccio il bottone di confema modifica
-    $Email = validaCampo($_POST["email"]);
-    $Nome = validaCampo($_POST["nome"]);
-    $Cognome = validaCampo($_POST["cognome"]);
-    if (!$Email || !$Nome || !$Cognome)
-        $erroredati = "Hai lasciato dei campi obbligatori vuoti";
-    else if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) // controllo che l'email sia nel formato giusto
-        $erroredati = "controllare che la mail sia nel formato giusto";
-    else if ($_POST["email"] != $_SESSION["username"] && $db->user_already_exists($_POST["email"])) // controllo che l'utente non sia già registrato con quell'email
-        $erroredati = "la nuova  mail appartiene già ad un altro utente";
-    else if ($db->update_user($_POST["nome"], $_POST["cognome"], $_POST["email"], $_POST["indirizzo"], $_POST["citta"],
-        $_POST["civico"], $_POST["CAP"], $_SESSION['username']))// provo ad aggiornare i dati nel db
-        $_SESSION["username"] = $_POST["email"];
-    else
-        $erroredati = "Abbiamo dei problemi interni. Ti preghiamo di riprovare più tardi";
-} else if (isset($_POST["modifica_password"])) { // se schiaccio il bottone di modifica password
-    $pwd = validaCampo($_POST["vecchia-password"]);
-    $newpwd = validaCampo($_POST["password"]);
-    $newpwd2 = validaCampo($_POST["password2"]);
-    if (!$pwd || !$newpwd || !$newpwd2)
-        $errorepassword = "Hai lasciato vuoti dei campi necessari alla modifica della password";
-    else if (!$db->user_login($_SESSION["username"], $_POST["vecchia-password"]))
-        $errorepassword = "La tua vecchia password inserita non è quella giusta";
-    else if ($_POST["password"] != $_POST["password2"])
-        $errorepassword = "Le due nuove password non coincidono";
-    else
-        $db->AggiornaPWDUtente($_SESSION["username"], $_POST["password"]);
-}
-?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+ARIA 1.0//EN"
         "http://www.w3.org/WAI/ARIA/schemata/xhtml-aria-1.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it">
@@ -60,6 +13,31 @@ if (isset($_POST["conferma_modifica"])) { // se schiaccio il bottone di confema 
     <script type="text/javascript" src="js/script.js"></script>
     <title>Pannello Utente - Colli Digitali</title>
 </head>
+
+<?php
+require_once "DataBase/DBConnection.php";
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+if (!isset($_SESSION["username"])) {
+    header("Location: Accedi.php");
+    exit;
+}
+function validaCampo($campo)
+{
+    return strlen($campo) > 0;
+}
+
+$db = new database();
+$db->connect();
+$erroredati = "";
+$errorepassword = "";
+if (isset($_POST["conferma_modifica"])) { // se schiaccio il bottone di confema modifica
+    include_once("PHP/funzioni/ConfermaModifica.php");
+} else if (isset($_POST["modifica_password"])) { // se schiaccio il bottone di modifica password
+    include_once("PHP/funzioni/ModificaPassword.php");
+}
+?>
 <body>
 <div>
     <a href="#content" class="skip">Vai al contenuto</a>
@@ -73,55 +51,13 @@ if (isset($_POST["conferma_modifica"])) { // se schiaccio il bottone di confema 
             </div>
         </div>
     </div>
-    <div id="menuprincipale-bar" role="menuBar">
-        <ul id="menuprincipale">
-            <li><a href="index.php" tabindex="0">Home</a></li>
-            <li class="dropdown"><a aria-haspopup="true" tabindex="0">Luoghi</a>
-                <ul class="dropdown-content button-right" role="menu">
-                    <li role="none"><a href="luoghi/chiesette.php" tabindex="0" role="menuitem">Sette Chiesette</a></li>
-                    <li role="none"><a href="luoghi/catajo.php" tabindex="0" role="menuitem">Castello del Catajo</a>
-                    </li>
-                    <li role="none"><a href="luoghi/praglia.php" tabindex="0" role="menuitem">Abbazia di Praglia</a>
-                    </li>
-                    <li role="none"><a href="luoghi/carrareseeste.php" tabindex="0" role="menuitem">Castello carrarese
-                            di Este</a></li>
-                    <li role="none"><a href="luoghi/lispida.php" tabindex="0" role="menuitem">Castello di Lispida</a>
-                    </li>
-                    <li role="none"><a href="luoghi/pelagio.php" tabindex="0" role="menuitem">Castello San Pelagio</a>
-                    </li>
-                </ul>
-            </li>
-            <li><a href="gite.php" tabindex="0">Gite</a></li>
-            <?php
-            if (isset($_SESSION['username'])):
-                ?>
-                <li class="dropdown button-right"><a aria-haspopup="true" tabindex="0" class="active">Account</a>
-                    <ul class="dropdown-content" role="menu">
-                        <li class="active"><a href="view-account.php" tabindex="0" role="menuitem">Impostazioni</a></li>
-                        <li><a href="view-my-trip.php" tabindex="0" role="menuitem">Le mie gite</a></li>
-                        <li><a href="logout.php" tabindex="0" role="menuitem">Logout</a></li>
-                    </ul>
-                </li>
-
-            <?php
-            else:
-                ?>
-                <li class="button-right"><a href="login.php" tabindex="0">Accedi</a></li>
-                <li class="button-right"><a href="Registrazione.php" tabindex="0">Registrati</a></li>
-            <?php
-            endif;
-            ?>
-            <li class="icon">
-                <a href="#" id="mobile">&#9776;</a>
-            </li>
-        </ul>
-    </div>
+    <?php include_once('menu.php'); ?>
     <div id="content">
         <div class="form container_form">
             <div class="titolo-form">
                 <h1 id="titolo">Riepilogo dati <span xml:lang="en">account</span></h1>
             </div>
-            <form id="dati-utente" method="post" action="view-account.php">
+            <form id="dati-utente" method="post" action="Impostazioni.php">
                 <?php
                 if (isset($_POST["conferma_modifica"])) {
                     if ($erroredati == "")
@@ -243,7 +179,7 @@ if (isset($_POST["conferma_modifica"])) { // se schiaccio il bottone di confema 
             <div class="titolo-form">
                 <h2>Modifica <span xml:lang="en">password</span></h2>
             </div>
-            <form id="mod-pwd-form" method="post" action="view-account.php">
+            <form id="mod-pwd-form" method="post" action="Impostazioni.php">
                 <div class="log-field-container">
                     <label for="vecchia-password">Password corrente: (obbligatorio)</label>
                     <div class="input-container">

@@ -8,7 +8,7 @@ require_once("DataBase/DBConnection.php");
 $db = new database();
 $db->connect();
 if ($db->deletePrenotazione($_GET["id"]))
-    header("Location: view-my-trip.php");
+    header("Location: MieGite.php");
 else
     echo "errore";
 

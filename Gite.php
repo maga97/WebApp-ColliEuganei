@@ -1,11 +1,3 @@
-<?php
-require_once "DataBase/DBConnection.php";
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
-$db = new database();
-$db->connect();
-?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+ARIA 1.0//EN"
         "http://www.w3.org/WAI/ARIA/schemata/xhtml-aria-1.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it">
@@ -21,6 +13,15 @@ $db->connect();
     <script type="text/javascript" src="js/script.js"></script>
     <title>Gite - Colli Digitali</title>
 </head>
+<?php
+require_once "DataBase/DBConnection.php";
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+$db = new database();
+$db->connect();
+?>
+
 <body>
 <div>
     <a href="#content" class="skip">Vai al contenuto</a>
@@ -39,35 +40,35 @@ $db->connect();
             <li><a href="index.php" tabindex="0">Home</a></li>
             <li class="dropdown"><a aria-haspopup="true" tabindex="0">Luoghi</a>
                 <ul class="dropdown-content button-right" role="menu">
-                    <li role="none"><a href="luoghi/chiesette.php" tabindex="0" role="menuitem">Sette Chiesette</a></li>
-                    <li role="none"><a href="luoghi/catajo.php" tabindex="0" role="menuitem">Castello del Catajo</a>
+                    <li role="none"><a href="chiesette.php" tabindex="0" role="menuitem">Sette Chiesette</a></li>
+                    <li role="none"><a href="catajo.php" tabindex="0" role="menuitem">Castello del Catajo</a>
                     </li>
-                    <li role="none"><a href="luoghi/praglia.php" tabindex="0" role="menuitem">Abbazia di Praglia</a>
+                    <li role="none"><a href="praglia.php" tabindex="0" role="menuitem">Abbazia di Praglia</a>
                     </li>
-                    <li role="none"><a href="luoghi/carrareseeste.php" tabindex="0" role="menuitem">Castello carrarese
+                    <li role="none"><a href="carrareseeste.php" tabindex="0" role="menuitem">Castello carrarese
                             di Este</a></li>
-                    <li role="none"><a href="luoghi/lispida.php" tabindex="0" role="menuitem">Castello di Lispida</a>
+                    <li role="none"><a href="lispida.php" tabindex="0" role="menuitem">Castello di Lispida</a>
                     </li>
-                    <li role="none"><a href="luoghi/pelagio.php" tabindex="0" role="menuitem">Castello San Pelagio</a>
+                    <li role="none"><a href="pelagio.php" tabindex="0" role="menuitem">Castello San Pelagio</a>
                     </li>
                 </ul>
             </li>
-            <li><a href="gite.php" class="active" tabindex="0">Gite</a></li>
+            <li><a href="Gite.php" class="active" tabindex="0">Gite</a></li>
             <?php
             if (isset($_SESSION['username'])):
                 ?>
                 <li class="dropdown button-right"><a aria-haspopup="true" tabindex="0">Account</a>
                     <ul class="dropdown-content" role="menu">
-                        <li><a href="view-account.php" tabindex="0" role="menuitem">Impostazioni</a></li>
-                        <li><a href="view-my-trip.php" tabindex="0" role="menuitem">Le mie gite</a></li>
-                        <li><a href="logout.php" tabindex="0" role="menuitem">Logout</a></li>
+                        <li><a href="Impostazioni.php" tabindex="0" role="menuitem">Impostazioni</a></li>
+                        <li><a href="MieGite.php" tabindex="0" role="menuitem">Le mie gite</a></li>
+                        <li><a href="PHP/funzioni/logout.php" tabindex="0" role="menuitem">Logout</a></li>
                     </ul>
                 </li>
 
             <?php
             else:
                 ?>
-                <li class="button-right"><a href="login.php" tabindex="0">Accedi</a></li>
+                <li class="button-right"><a href="Accedi.php" tabindex="0">Accedi</a></li>
                 <li class="button-right"><a href="Registrazione.php" tabindex="0">Registrati</a></li>
             <?php
             endif;
@@ -79,10 +80,10 @@ $db->connect();
     </div>
     <div id="content">
         <ul class="breadcrumb">
-            <li><a href="gite.php">Gite</a></li>
+            <li><a href="Gite.php">Gite</a></li>
         </ul>
         <div class="form" id="searchform">
-            <form action="gite.php" method="post">
+            <form action="Gite.php" method="post">
                 <fieldset>
                     <legend>Modulo di ricerca delle gite</legend>
                     <div class="log-field-container">
@@ -110,8 +111,11 @@ $db->connect();
             $list = $db->GetListaAttivita();
         }
         $size = sizeof($list);
+        if ($size == 0 && $segnalato == true) {
+            echo "<div class=\"alert nojs warning button-holder\" role=\"alert\">la ricerca non ha trovato nessuna gita con questa frase o parola chiave</div>" . PHP_EOL;
+        }
         if ($size == 0 && $segnalato == false) {
-            echo "<div class=\"alert nojs warning button-holder\" role=\"alert\">Momentaneamente non sono disponibili gite o la ricerca non ha condotto a nessun item</div>" . PHP_EOL;
+            echo "<div class=\"alert nojs warning button-holder\" role=\"alert\">Momentaneamente non sono disponibili gite</div>" . PHP_EOL;
         }
         foreach ($list as $node):
             $data = explode("-", $node['Data']);
@@ -137,7 +141,7 @@ $db->connect();
                     echo "<span class=\"btnTrip\"><a href=\"Prenotazione.php?id=" . $node["ID_Attivita"] . "\">Prenota la gita</a></span>";
                     ?>
                 <?php else: ?>
-                    <span class="btnTrip"><a href="login.php" aria-label="Accedi per prenotare la gita">Accedi</a> per poter prenotare</span>
+                    <span class="btnTrip"><a href="Accedi.php" aria-label="Accedi per prenotare la gita">Accedi</a> per poter prenotare</span>
                 <?php endif ?>
             </div>
         <?php endforeach; ?>

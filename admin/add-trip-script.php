@@ -4,7 +4,7 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 if (!isset($_SESSION['login']) || $_SESSION['login'] == false || $_SESSION['admin'] != 1) {
-    header("Location: ../login.php");
+    header("Location: ../Accedi.php");
     exit;
 }
 //add-trip-script.php

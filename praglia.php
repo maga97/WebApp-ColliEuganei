@@ -9,14 +9,14 @@ if (session_status() == PHP_SESSION_NONE) {
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <link rel="stylesheet" type="text/css" href="../assets/css/style.css" media="handled, screen"/>
-    <link rel="stylesheet" type="text/css" href="../assets/css/print.css" media="print"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" media="handled, screen"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/print.css" media="print"/>
     <link rel="stylesheet" type="text/css" href="assets/css/mobile768.css" media="screen and (max-width: 768px)"/>
     <link rel="stylesheet" type="text/css" href="assets/css/mobile480.css" media="screen and (max-width: 480px)"/>
     <link rel="stylesheet" type="text/css"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css"/>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="../js/script.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
     <title>L'Abbazia di Praglia - Colli Euganei</title>
 </head>
 <body>
@@ -33,7 +33,7 @@ if (session_status() == PHP_SESSION_NONE) {
             </div>
         </div>
     </div>
-    <?php include_once('../menu.php'); ?>
+    <?php include_once('menu.php'); ?>
     <div id="content">
         <ul class="breadcrumb">
             <li>Luoghi</li>
@@ -42,7 +42,7 @@ if (session_status() == PHP_SESSION_NONE) {
         <div class="section">
             <h2>L'Abbazia di Praglia</h2>
             <div class="float-right">
-                <img class="pic storiapic" src="../assets/img/praglia1.jpg" alt="Abbazia di Praglia"/>
+                <img class="pic storiapic" src="assets/img/praglia1.jpg" alt="Abbazia di Praglia"/>
             </div>
             <p class="text">
                 L'abbazia di Praglia è un monastero benedettino situato nel comune di Teolo, in prossimità di Abano
@@ -58,7 +58,7 @@ if (session_status() == PHP_SESSION_NONE) {
                 L'abbazia è divenuta un centro di eccellenza nel settore del restauro dei libri antichi. </p>
             <h2>I chiostri</h2>
             <div class="float-right">
-                <img class="pic storiapic" src="../assets/img/praglia2.jpg" alt="Il monastero dall'interno"/>
+                <img class="pic storiapic" src="assets/img/praglia2.jpg" alt="Il monastero dall'interno"/>
             </div>
             <p class="text">
                 All'interno della cinta muraria il monastero si divide in quattro chiostri: doppio, detto anche della

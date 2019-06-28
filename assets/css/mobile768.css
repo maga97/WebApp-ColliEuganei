@@ -1,137 +1,140 @@
-  #storia {
+#storia {
     max-width: 100%;
     margin-left: auto;
     margin-right: auto;
-  }
+}
 
-  #titolo {
+#titolo {
     text-align: center;
     margin-top: 0;
-  }
+}
 
-  .gallery {
+.gallery {
     display: block;
-  }
+}
 
-  .galleryframe {
+.galleryframe {
     flex: none;
     padding: 0.25em;
-  }
+}
 
-  .place {
+.place {
     margin-left: 0;
-  }
+}
 
-  #geotab {
-    display:none;
-  }
+#geotab {
+    display: none;
+}
 
-  #menuprincipale a.icon {
+#menuprincipale a.icon {
     float: right;
     display: block;
-  }
+}
 
-  #menuprincipale.responsive {
+#menuprincipale.responsive {
     position: relative;
-  }
+}
 
-  #menuprincipale.responsive a.icon {
+#menuprincipale.responsive a.icon {
     position: absolute;
     right: 0;
     top: 0;
-  }
+}
 
-  #menuprincipale.responsive a {
+#menuprincipale.responsive a {
     float: none;
     display: block;
     text-align: left;
     margin: 0 0 0 0;
-  }
+}
 
-  #menuprincipale.responsive .dropdown {
+#menuprincipale.responsive .dropdown {
     float: none;
-  }
+}
 
-  #menuprincipale.responsive .dropdown-content {
+#menuprincipale.responsive .dropdown-content {
     position: relative;
-  }
+}
 
-  #menuprincipale.responsive ul.dropdown-content li a{
+#menuprincipale.responsive ul.dropdown-content li a {
     text-indent: 1em;
-  }
+}
 
-  #menuprincipale.responsive .dropdown .dropbtn {
+#menuprincipale.responsive .dropdown .dropbtn {
     display: block;
     width: 100%;
     text-align: left;
-  }
+}
 
-  #footer {
+#footer {
     display: none;
-  }
+}
 
-  #footermobile{
-      position: absolute;
-      bottom: 0;
-      margin: 0;
-      width: 100%;
-      max-height: 3.75em;
-      background: #f2f2f2;
-      display: table;
-      table-layout: fixed;
-      text-align: center;
-  }
+#footermobile {
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    width: 100%;
+    max-height: 3.75em;
+    background: #f2f2f2;
+    display: table;
+    table-layout: fixed;
+    text-align: center;
+}
 
-  #footermobile div {
+#footermobile div {
     display: table-cell;
-  }
+}
 
-  #annulla_modifica{
-    margin-top:0.25em;
-  }
+#annulla_modifica {
+    margin-top: 0.25em;
+}
 
-  #sectionAccountData {
-    float:left;
-    padding-top:2em;
-    margin-left:0;
+#sectionAccountData {
+    float: left;
+    padding-top: 2em;
+    margin-left: 0;
     margin-top: auto;
-  }
+}
 
-  div.form{
-    width:auto;
+div.form {
+    width: auto;
     min-width: 19em;
-  }
+}
 
-  #dati-utente label , #mod-pwd-form label{
+#dati-utente label, #mod-pwd-form label {
     text-align: left;
     width: 40%;
-  }
-  .input-container {
-    margin-left:0;
+}
+
+.input-container {
+    margin-left: 0;
     width: 100%;
-  }
+}
 
-  #container_form {
-      width:auto;
-  }
+#container_form {
+    width: auto;
+}
 
-  #sectionPersonalData , #sectionAccountData {
-    float:none;
+#sectionPersonalData, #sectionAccountData {
+    float: none;
     width: 100%;
-    margin:0;
-  }
+    margin: 0;
+}
 
-  #sectionAccountData {
+#sectionAccountData {
     padding-top: 1em;
-  }
+}
 
-  .admin-div {
+.admin-div {
     min-width: 100%;
     margin: 0;
-  }
-  .admin-div a {
+}
+
+.admin-div a {
     line-height: 2.5em;
-  }
-  .gite-image {
+}
+
+.gite-image {
     display: none;
-  }
+}

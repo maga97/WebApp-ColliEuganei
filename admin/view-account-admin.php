@@ -4,7 +4,7 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 if (!isset($_SESSION["username"])) {
-    header("Location: ../login.php");
+    header("Location: ../Accedi.php");
     exit;
 }
 function validaCampo($campo)
@@ -115,11 +115,11 @@ if (isset($_POST["conferma_modifica"])) {
                     <ul class="dropdown-content" role="menu">
                         <li><a href="view-account-admin.php" class="active" tabindex="0"
                                role="menuitem">Impostazioni</a></li>
-                        <li><a href="../logout.php" tabindex="0" role="menuitem">Logout</a></li>
+                        <li><a href="../PHP/funzioni/logout.php" tabindex="0" role="menuitem">Logout</a></li>
                     </ul>
                 </li>
             <?php else: ?>
-                <li><a href="../login.php" tabindex="0">Accedi</a></li>
+                <li><a href="../Accedi.php" tabindex="0">Accedi</a></li>
                 <li><a href="../Registrazione.php" tabindex="0">Registrati</a></li>
             <?php endif; ?>
             <li class="icon">

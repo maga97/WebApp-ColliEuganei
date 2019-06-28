@@ -60,13 +60,13 @@ if (!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
                 <li class="dropdown button-right"><a aria-haspopup="true" tabindex="0">Account</a>
                     <ul class="dropdown-content" role="menu">
                         <li><a href="view-account-admin.php" tabindex="0" role="menuitem">Impostazioni</a></li>
-                        <li><a href="../logout.php" tabindex="0" role="menuitem">Logout</a></li>
+                        <li><a href="../PHP/funzioni/logout.php" tabindex="0" role="menuitem">Logout</a></li>
                     </ul>
                 </li>
             <?php
             else:
                 ?>
-                <li><a href="../login.php" tabindex="0">Accedi</a></li>
+                <li><a href="../Accedi.php" tabindex="0">Accedi</a></li>
                 <li><a href="../Registrazione.php" tabindex="0">Registrati</a></li>
             <?php
             endif;

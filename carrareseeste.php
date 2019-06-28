@@ -9,14 +9,14 @@ if (session_status() == PHP_SESSION_NONE) {
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <link rel="stylesheet" type="text/css" href="../assets/css/style.css" media="handled, screen"/>
-    <link rel="stylesheet" type="text/css" href="../assets/css/print.css" media="print"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" media="handled, screen"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/print.css" media="print"/>
     <link rel="stylesheet" type="text/css" href="assets/css/mobile768.css" media="screen and (max-width: 768px)"/>
     <link rel="stylesheet" type="text/css" href="assets/css/mobile480.css" media="screen and (max-width: 480px)"/>
     <link rel="stylesheet" type="text/css"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css"/>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="../js/script.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
     <title>Il Castello Carrarese di Este - Colli Euganei</title>
 </head>
 <body>
@@ -32,7 +32,7 @@ if (session_status() == PHP_SESSION_NONE) {
             <h2>Natura e storia in digitale</h2>
         </div>
     </div>
-    <?php include_once('../menu.php'); ?>
+    <?php include_once('menu.php'); ?>
     <div id="content">
         <ul class="breadcrumb">
             <li>Luoghi</li>
@@ -41,7 +41,7 @@ if (session_status() == PHP_SESSION_NONE) {
         <div class="section">
             <h2>Il Castello Carrarese di Este</h2>
             <div class="float-right">
-                <img class="pic storiapic" src="../assets/img/este1.jpg" alt="Castello Carrarese di Este"/>
+                <img class="pic storiapic" src="assets/img/este1.jpg" alt="Castello Carrarese di Este"/>
             </div>
             <p class="text">
                 Il castello di Este è stato costruito circa nel 1340, per iniziativa del signore di Padova Ubertino da
@@ -58,7 +58,7 @@ if (session_status() == PHP_SESSION_NONE) {
             </p>
             <h2>L'evoluzione del Castello</h2>
             <div class="float-right">
-                <img class="pic storiapic" src="../assets/img/este2.jpg" alt="Parco del Castello Carrarese di Este"/>
+                <img class="pic storiapic" src="assets/img/este2.jpg" alt="Parco del Castello Carrarese di Este"/>
             </div>
             <p class="text">
                 Il Castello fu utilizzato a fini difensivi fino alla spontanea dedizione della città alla Repubblica di
