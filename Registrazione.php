@@ -1,16 +1,3 @@
-<?php
-"DataBase/DBConnection.php";
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
-if (isset($_SESSION["username"])) {
-    header("Location: index.php");
-    exit;
-}
-if (isset($_POST["registrazione"])) {
-    include_once("PHP/funzioni/Registrazione.php");
-}
-?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+ARIA 1.0//EN"
         "http://www.w3.org/WAI/ARIA/schemata/xhtml-aria-1.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it">
@@ -29,6 +16,19 @@ if (isset($_POST["registrazione"])) {
     <script type="text/javascript" src="js/global.js"></script>
     <title>Registrazione - Colli Digitali</title>
 </head>
+<?php
+"DataBase/DBConnection.php";
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+if (isset($_SESSION["username"])) {
+    header("Location: index.php");
+    exit;
+}
+if (isset($_POST["registrazione"])) {
+    include_once("PHP/funzioni/Registrazione.php");
+}
+?>
 <body>
 <div>
     <a href="#content" class="skip">Vai al contenuto</a>

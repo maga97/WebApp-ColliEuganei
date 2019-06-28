@@ -97,8 +97,8 @@ $db->connect();
                 <dl>
                     <dt>ID Prenotazione</dt>
                     <dd><?php echo $node['id']; ?></dd>
-                    <dt>Prezzo</dt>
-                    <dd><?php echo $node['nome']; ?> &euro;</dd>
+                    <dt>Prezzo Totale</dt>
+                    <dd><?php echo $node['prezzo']; ?> &euro;</dd>
                     <dt>Data</dt>
                     <dd><?php echo $node['data']; ?></dd>
                     <dt>Ore</dt>

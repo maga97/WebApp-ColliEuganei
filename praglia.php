@@ -82,7 +82,7 @@ if (session_status() == PHP_SESSION_NONE) {
         </div>
     </div>
     <a id="scroll-top-btn" href="#top">Torna in alto</a>
-    <?php include_once('../footer.php'); ?>
+    <?php include_once('footer.php'); ?>
 </div>
 </body>
 </html>

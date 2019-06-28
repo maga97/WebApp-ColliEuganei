@@ -35,49 +35,7 @@ $db->connect();
             </div>
         </div>
     </div>
-    <div id="menuprincipale-bar" role="menubar">
-        <ul id="menuprincipale">
-            <li><a href="index.php" tabindex="0">Home</a></li>
-            <li class="dropdown"><a aria-haspopup="true" tabindex="0">Luoghi</a>
-                <ul class="dropdown-content button-right" role="menu">
-                    <li role="none"><a href="chiesette.php" tabindex="0" role="menuitem">Sette Chiesette</a></li>
-                    <li role="none"><a href="catajo.php" tabindex="0" role="menuitem">Castello del Catajo</a>
-                    </li>
-                    <li role="none"><a href="praglia.php" tabindex="0" role="menuitem">Abbazia di Praglia</a>
-                    </li>
-                    <li role="none"><a href="carrareseeste.php" tabindex="0" role="menuitem">Castello carrarese
-                            di Este</a></li>
-                    <li role="none"><a href="lispida.php" tabindex="0" role="menuitem">Castello di Lispida</a>
-                    </li>
-                    <li role="none"><a href="pelagio.php" tabindex="0" role="menuitem">Castello San Pelagio</a>
-                    </li>
-                </ul>
-            </li>
-            <li><a href="Gite.php" class="active" tabindex="0">Gite</a></li>
-            <?php
-            if (isset($_SESSION['username'])):
-                ?>
-                <li class="dropdown button-right"><a aria-haspopup="true" tabindex="0">Account</a>
-                    <ul class="dropdown-content" role="menu">
-                        <li><a href="Impostazioni.php" tabindex="0" role="menuitem">Impostazioni</a></li>
-                        <li><a href="MieGite.php" tabindex="0" role="menuitem">Le mie gite</a></li>
-                        <li><a href="PHP/funzioni/logout.php" tabindex="0" role="menuitem">Logout</a></li>
-                    </ul>
-                </li>
-
-            <?php
-            else:
-                ?>
-                <li class="button-right"><a href="Accedi.php" tabindex="0">Accedi</a></li>
-                <li class="button-right"><a href="Registrazione.php" tabindex="0">Registrati</a></li>
-            <?php
-            endif;
-            ?>
-            <li class="icon">
-                <a href="#" id="mobile">&#9776;</a>
-            </li>
-        </ul>
-    </div>
+    <?php include_once('menu.php'); ?>
     <div id="content">
         <ul class="breadcrumb">
             <li><a href="Gite.php">Gite</a></li>

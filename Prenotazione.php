@@ -1,10 +1,3 @@
-<?php (require_once "DataBase/DBConnection.php") or die("Impossibile connettersi al database");
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
-$dbConnection = new database();
-$dbConnection->Connect();
-?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+ARIA 1.0//EN"
         "http://www.w3.org/WAI/ARIA/schemata/xhtml-aria-1.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
@@ -21,6 +14,15 @@ $dbConnection->Connect();
     <script src="js/global.js"></script>
     <title>Prenotazione - Colli Digitali</title>
 </head>
+
+<?php (require_once "DataBase/DBConnection.php") or die("Impossibile connettersi al database");
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+$dbConnection = new database();
+$dbConnection->Connect();
+?>
+
 <body>
 <div>
     <a href="#content" class="skip">Vai al contenuto</a>
@@ -57,7 +59,7 @@ $dbConnection->Connect();
         ?>
         <div class="alert errore" aria-live="assertive" role="alert" aria-atomic="true" aria-relevant="all"><p>Inserire
                 un valore corretto per i posti</p></div>
-        <form action="PrenotazioneAction.php" method="POST" onsubmit="return validaPosti($('.alert.errore'))">
+        <form action="ConfermaPrenotazione.php" method="POST" onsubmit="return validaPosti($('.alert.errore'))">
             <?php echo "<input type=\"hidden\" name=\"ID\" value=\"" . $_GET["id"] . "\">"; ?>
 
             <div class="field-container">
