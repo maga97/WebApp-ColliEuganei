@@ -35,38 +35,7 @@ if (!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
             </div>
         </div>
     </div>
-    <div id="menuprincipale-bar">
-        <ul id="menuprincipale">
-            <li><a href="index.php" tabindex="0">Home</a></li>
-            <li class="dropdown"><a aria-haspopup="true" tabindex="0">Gestione gite</a>
-                <ul class="dropdown-content" role="menu">
-                    <li><a href="add-trip.php" tabindex="0" role="menuitem">Aggiungi nuova gita</a></li>
-                    <li><a href="select-trip-modify.php" tabindex="0" role="menuitem">Modifica dati gita</a></li>
-                    <li><a href="remove-trip.php" tabindex="0" role="menuitem">Rimuovi gita</a></li>
-                </ul>
-            </li>
-            <li class="dropdown"><a class="active" aria-haspopup="true" tabindex="0">Gestione utente</a>
-                <ul class="dropdown-content" role="menu">
-                    <li class="active"><a href="add-admin.php" tabindex="0" role="menuitem">Aggiungi admin</a></li>
-                    <li><a href="remove-admin.php" tabindex="0" role="menuitem">Rimuovi admin</a></li>
-                </ul>
-            </li>
-            <?php if (isset($_SESSION['username'])): ?>
-                <li class="dropdown button-right"><a aria-haspopup="true" tabindex="0">Account</a>
-                    <ul class="dropdown-content" role="menu">
-                        <li><a href="view-account-admin.php" tabindex="0" role="menuitem">Impostazioni</a></li>
-                        <li><a href="../PHP/funzioni/logout.php" tabindex="0" role="menuitem">Logout</a></li>
-                    </ul>
-                </li>
-            <?php else: ?>
-                <li><a href="../Accedi.php" tabindex="0">Accedi</a></li>
-                <li><a href="../Registrazione.php" tabindex="0">Registrati</a></li>
-            <?php endif; ?>
-            <li class="icon">
-                <a href="#" id="mobile">&#9776;</a>
-            </li>
-        </ul>
-    </div>
+    <?php include_once("menuAdmin.php"); ?>
     <div id="content">
         <ul class="breadcrumb">
             <li>Gestione utente</li>
@@ -108,7 +77,8 @@ if (!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
                     ?>
                 </ul>
                 <a aria-label="Aggiungi <?php echo $user["Nome"] . " " . $user["Cognome"]; ?> come amministratore"
-                   href="edit-user-role.php?action=promote&amp;id=<?php echo $id; ?>">Aggiungi amministratore</a>
+                   href="../PHP/Funzioni_Admin/edit-user-role.php?action=promote&amp;id=<?php echo $id; ?>">Aggiungi
+                    amministratore</a>
             </div>
             <?php
             if ($i % 3 == 0):

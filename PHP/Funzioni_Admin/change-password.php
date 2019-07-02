@@ -1,8 +1,4 @@
 <?php
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
-
 $databaseConnection = new database();
 $databaseConnection->Connect();
 if (isset($_POST['password'], $_POST['password-confirm'], $_SESSION['username']) and password_verify($_POST['password'], $_POST['password-verify'])):

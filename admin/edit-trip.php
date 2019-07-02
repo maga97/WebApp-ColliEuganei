@@ -7,6 +7,10 @@ if (!isset($_SESSION["username"]) || $_SESSION["admin"] != 1 || !isset($_GET['id
     header("Location: ../index.php");
 }
 
+if (isset($_POST["modificaGita"])) {
+    $errore = include_once("../PHP/Funzioni_Admin/edit-trip-script.php");
+}
+
 $id = $_GET['id'];
 $db = new database();
 $db->connect();
@@ -53,53 +57,26 @@ $data = $arrayofdata[2] . "/" . $arrayofdata[1] . "/" . $arrayofdata[0];
                     </div>
                 </div>
             </div>
-            <div id="menuprincipale-bar">
-                <ul id="menuprincipale">
-                    <li><a href="index.php" tabindex="0">Home</a></li>
-                    <li class="dropdown"><a class="active" aria-haspopup="true" tabindex="0">Gestione gite</a>
-                        <ul class="dropdown-content" role="menu">
-                            <li><a href="add-trip.php" tabindex="0" role="menuitem">Aggiungi nuova gita</a></li>
-                            <li class="active"><a href="select-trip-modify.php" tabindex="0" role="menuitem">Modifica
-                                    dati gita</a></li>
-                            <li><a href="remove-trip.php" tabindex="0" role="menuitem">Rimuovi gita</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown"><a aria-haspopup="true" tabindex="0">Gestione utente</a>
-                        <ul class="dropdown-content" role="menu">
-                            <li><a href="add-admin.php" tabindex="0" role="menuitem">Aggiungi admin</a></li>
-                            <li><a href="remove-admin.php" tabindex="0" role="menuitem">Rimuovi admin</a></li>
-                        </ul>
-                    </li>
-                    <?php if (isset($_SESSION['username'])): ?>
-                        <li class="dropdown button-right"><a aria-haspopup="true" tabindex="0">Account</a>
-                            <ul class="dropdown-content" role="menu">
-                                <li><a href="view-account-admin.php" tabindex="0" role="menuitem">Impostazioni</a></li>
-                                <li><a href="../PHP/funzioni/logout.php" tabindex="0" role="menuitem">Logout</a></li>
-                            </ul>
-                        </li>
-                    <?php else: ?>
-                        <li><a href="../Accedi.php" tabindex="0">Accedi</a></li>
-                        <li><a href="../Registrazione.php" tabindex="0">Registrati</a></li>
-                    <?php endif; ?>
-                    <li class="icon">
-                        <a href="#" id="mobile">&#9776;</a>
-                    </li>
-                </ul>
-            </div>
+            <<?php include_once("menuAdmin.php"); ?>
             <div id="content">
                 <ul class="breadcrumb">
                     <li>Gestione gite</li>
                     <li>Modifica dati gita</li>
                 </ul>
                 <div class="form">
+
                     <?php
-                    if (isset($_GET["error"])) {
-                        echo "<div class=\"alert nojs errore\">Errore: " . $_GET["error"] . "</div>" . PHP_EOL;
+                    if (isset($errore) && $errore == false) {
+                        echo "<div class=\"alert nojs success\">Modifica avvenuta correttamente</div>" . PHP_EOL;
+                    } else if (isset($errore) && $errore != false) {
+                        echo "<div class=\"alert nojs errore\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\"><p>Errore: " . $errore . "</p></div>" . PHP_EOL;
                     }
                     ?>
+
                     <img src="data:image/jpeg;base64,<?php echo $immagine ?>" alt="Immagine <?php echo $nome ?>"
                          class="responsive-image center-image"/>
-                    <form action="edit-trip-script.php" enctype="multipart/form-data" name="form-modify-trip"
+                    <form action="edit-trip.php" enctype="multipart/form-data"
+                          name="form-modify-trip"
                           method="POST">
                         <div class="log-field-container">
                             <legend>Modifica gita "<?php echo $nomegita; ?>"</legend>

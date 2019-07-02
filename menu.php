@@ -2,9 +2,9 @@
 <div id="menuprincipale-bar" role="menubar">
     <ul id="menuprincipale">
         <?php if ($nomepagina == "index.php"): ?>
-            <li class="active"><a href="/index.php" tabindex="0">Home</a></li>
+            <li class="active"><a href="index.php" tabindex="0">Home</a></li>
         <?php else: ?>
-            <li><a href="/index.php" tabindex="0">Home</a></li>
+            <li><a href="index.php" tabindex="0">Home</a></li>
         <?php endif; ?>
         <li class="dropdown"><a aria-haspopup="true" tabindex="0">Luoghi</a>
             <ul class="dropdown-content button-right" role="menu">
@@ -72,7 +72,7 @@
                     <?php else: ?>
                         <li><a href="MieGite.php" tabindex="0">Le mie gite</a></li>
                     <?php endif; ?>
-                    <li><a href="PHP/funzioni/logout.php" tabindex="0" role="menuitem">Logout</a></li>
+                    <li><a href="PHP/Funzioni_Generali/logout.php" tabindex="0" role="menuitem">Logout</a></li>
                 </ul>
             </li>
 

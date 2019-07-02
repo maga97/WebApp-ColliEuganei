@@ -26,7 +26,7 @@ if (isset($_SESSION["username"])) {
     exit;
 }
 if (isset($_POST["registrazione"])) {
-    include_once("PHP/funzioni/Registrazione.php");
+    include_once("PHP/Funzioni_Utente/Registrazione.php");
 }
 ?>
 <body>
