@@ -6,8 +6,9 @@ if (session_status() == PHP_SESSION_NONE) {
 if (!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
     header("Location: ../index.php");
 }
-$db = new database();
-$db->connect();
+if (isset($_POST["aggiungiGita"])) {
+    $errore = include_once("../PHP/Funzioni_Admin/add-trip-script.php");
+}
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+ARIA 1.0//EN"
         "http://www.w3.org/WAI/ARIA/schemata/xhtml-aria-1.dtd">
@@ -38,38 +39,7 @@ $db->connect();
             </div>
         </div>
     </div>
-    <div id="menuprincipale-bar">
-        <ul id="menuprincipale">
-            <li><a href="index.php" tabindex="0">Home</a></li>
-            <li class="dropdown"><a class="active" aria-haspopup="true" tabindex="0">Gestione gite</a>
-                <ul class="dropdown-content" role="menu">
-                    <li class="active"><a href="add-trip.php" tabindex="0" role="menuitem">Aggiungi nuova gita</a></li>
-                    <li><a href="select-trip-modify.php" tabindex="0" role="menuitem">Modifica dati gita</a></li>
-                    <li><a href="remove-trip.php" tabindex="0" role="menuitem">Rimuovi gita</a></li>
-                </ul>
-            </li>
-            <li class="dropdown"><a aria-haspopup="true" tabindex="0">Gestione utente</a>
-                <ul class="dropdown-content" role="menu">
-                    <li><a href="add-admin.php" tabindex="0" role="menuitem">Aggiungi admin</a></li>
-                    <li><a href="remove-admin.php" tabindex="0" role="menuitem">Rimuovi admin</a></li>
-                </ul>
-            </li>
-            <?php if (isset($_SESSION['username'])): ?>
-                <li class="dropdown button-right"><a aria-haspopup="true" tabindex="0">Account</a>
-                    <ul class="dropdown-content" role="menu">
-                        <li><a href="view-account-admin.php" tabindex="0" role="menuitem">Impostazioni</a></li>
-                        <li><a href="../PHP/funzioni/logout.php" tabindex="0" role="menuitem">Logout</a></li>
-                    </ul>
-                </li>
-            <?php else: ?>
-                <li><a href="../Accedi.php" tabindex="0">Accedi</a></li>
-                <li><a href="../Registrazione.php" tabindex="0">Registrati</a></li>
-            <?php endif; ?>
-            <li class="icon">
-                <a href="#" id="mobile">&#9776;</a>
-            </li>
-        </ul>
-    </div>
+    <?php include_once("menuAdmin.php"); ?>
     <div id="content">
         <ul class="breadcrumb">
             <li>Gestione gite</li>
@@ -77,14 +47,13 @@ $db->connect();
         </ul>
         <div class="form">
             <?php
-            if (isset($_GET["done"]) == true) {
+            if (isset($errore) && $errore == false) {
                 echo "<div class=\"alert nojs success\">Inserimento avvenuto correttamente</div>" . PHP_EOL;
-            }
-            if (isset($_GET["error"])) {
-                echo "<div class=\"alert errore\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\"><p>Errore: " . $_GET["error"] . "</p></div>" . PHP_EOL;
+            } else if (isset($errore) && $errore != false) {
+                echo "<div class=\"alert nojs errore\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\"><p>Errore: " . $errore . "</p></div>" . PHP_EOL;
             }
             ?>
-            <form action="add-trip-script.php" enctype="multipart/form-data" name="form-add-trip" method="POST">
+            <form action="add-trip.php" enctype="multipart/form-data" name="form-add-trip" method="POST">
                 <div class="log-field-container">
                     <legend>Aggiungi nuova gita</legend>
                     <label for="nomegita">Titolo</label>

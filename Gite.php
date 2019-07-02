@@ -18,8 +18,6 @@ require_once "DataBase/DBConnection.php";
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
-$db = new database();
-$db->connect();
 ?>
 
 <body>
@@ -56,6 +54,8 @@ $db->connect();
             </form>
         </div>
         <?php
+        $db = new database();
+        $db->connect();
         $list = null;
         $segnalato = false;
         if (isset($_POST['ricerca'])) {

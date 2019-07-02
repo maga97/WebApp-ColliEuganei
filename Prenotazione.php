@@ -19,8 +19,6 @@
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
-$dbConnection = new database();
-$dbConnection->Connect();
 ?>
 
 <body>
@@ -47,11 +45,7 @@ $dbConnection->Connect();
         if (!isset($_GET['id']) || $_GET['id'] == ""):
             echo "Si è verificato un errore. Torna alla pagina delle gite per effettuare la prenotazione";
         else:
-        $attivita = $dbConnection->GetAttivita($_GET["id"]);
-        $_SESSION["ID"] = $_GET["id"];
-        $_SESSION["prezzo"] = $attivita["Prezzo"];
-        $_SESSION["data"] = $attivita["Data"];
-        $_SESSION["ora"] = $attivita["Ore"];
+        include_once("PHP/Funzioni_Utente/DatiGita.php");
         if (isset($_SESSION["ErroriPosti"])) {
             echo '<div class="alert errore nojs" aria-live="assertive" role="alert" aria-atomic="true" aria-relevant="all"><p>Inserire un valore corretto per i posti</p></div>';
             unset($_SESSION["ErroriPosti"]);

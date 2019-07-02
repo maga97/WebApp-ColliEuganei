@@ -64,7 +64,7 @@ $db->connect();
                     <ul class="dropdown-content" role="menu">
                         <li><a href="Impostazioni.php" tabindex="0" role="menuitem">Impostazioni</a></li>
                         <li class="active"><a href="MieGite.php" tabindex="0" role="menuitem">Le mie gite</a></li>
-                        <li><a href="PHP/funzioni/logout.php" tabindex="0" role="menuitem">Logout</a></li>
+                        <li><a href="PHP/Funzioni_Generali/logout.php" tabindex="0" role="menuitem">Logout</a></li>
                     </ul>
                 </li>
             <?php
