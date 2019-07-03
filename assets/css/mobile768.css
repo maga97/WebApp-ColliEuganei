@@ -9,12 +9,11 @@
     margin-top: 0;
 }
 
-.gallery {
+.row {
     display: block;
 }
 
-.galleryframe {
-    flex: none;
+.col {
     padding: 0.25em;
 }
 

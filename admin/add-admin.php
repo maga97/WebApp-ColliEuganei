@@ -61,12 +61,12 @@ if (!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
         $open = false;
         foreach ($users as $user):
             if ($i % 3 == 0):
-                echo '<div class="flex-container">' . PHP_EOL;
+                echo '<div class="row">' . PHP_EOL;
                 $open = true;
             endif;
             $i = $i + 1;
             ?>
-            <div class="admin-div">
+            <div class="col admin-div">
                 <ul>
                     <li><?php echo $user["Nome"] ?></li>
                     <li><?php echo $user["Cognome"] ?></li>

@@ -26,7 +26,7 @@
     }
 
     /* what must not be displayed */
-    #menuprincipale-bar, #footer, #scroll-top-btn, .find-more, .breadcrumb, .galleryframe, #geotab {
+    #menuprincipale-bar, #footer, #scroll-top-btn, .find-more, .breadcrumb, .col, #geotab {
         display: none;
     }
 

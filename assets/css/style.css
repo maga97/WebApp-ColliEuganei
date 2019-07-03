@@ -131,18 +131,19 @@ ul.breadcrumb li + li:before {
     margin-right: auto;
 }
 
-.gallery {
-    display: flex;
-}
+.row:after {
+    content: "";
+    display: table;
+    clear: both;}
 
 .nascosto {
     display: none;
 }
 
-.galleryframe {
-    display: block;
-    flex: auto;
-    padding: 2%;
+.col {
+    float: left;
+    width: 30.00%;
+    padding: 1%;
 }
 
 .float-right {
@@ -188,23 +189,23 @@ a:visited {
     color: #000;
 }
 
-.galleryframe dl > dt {
+.col dl > dt {
     font-display: fallback;
     font-weight: bold;
 }
 
-.galleryframe dl > dd:first-child {
+.col dl > dd:first-child {
     font-display: fallback;
     font-weight: bold;
     font-size: 1.3em;
     text-align: center;
 }
 
-.galleryframe dl > dt:not(:first-child)::after {
+.col dl > dt:not(:first-child)::after {
     content: ":";
 }
 
-.galleryframe dl > dd {
+.col dl > dd {
     margin-left: 0;
 }
 
@@ -220,8 +221,8 @@ a:visited {
     font-weight: bold;
 }
 
-.galleryframe li:first-of-type,
-.galleryframe a {
+.col li:first-of-type,
+.col a {
     font-size: 1.5em;
 }
 
@@ -463,17 +464,8 @@ a.skip:hover {
     height: auto;
     overflow: visible;
 }
-
-.flex-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
 .admin-div {
-    width: 30%;
     margin: 0.5em;
-    padding: 1em;
     background: #D3D3D3;
     border-radius: 0.3em;
 }

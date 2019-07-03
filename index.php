@@ -50,8 +50,8 @@ if (session_status() == PHP_SESSION_NONE) {
                 vita ad un magnifico territorio.
             </p>
         </div>
-        <div id="galleria" class="gallery nascosto">
-            <div class="galleryframe">
+        <div id="galleria" class="row nascosto">
+            <div class="col">
                 <img class="pic" src="assets/img/geog.jpg" alt="Geografia del territorio"/>
                 <dl>
                     <dt>Geografia</dt>
@@ -62,7 +62,7 @@ if (session_status() == PHP_SESSION_NONE) {
                        aria-label="Scopri di pi&ugrave; sulla geografia del territorio">Scopri di più</a>
                 </div>
             </div>
-            <div class="galleryframe">
+            <div class="col">
                 <img class="pic" src="assets/img/clima.jpg" alt="Colli euganei ricoperti di neve"/>
                 <dl>
                     <dt>Clima</dt>
@@ -73,7 +73,7 @@ if (session_status() == PHP_SESSION_NONE) {
                         di più</a>
                 </div>
             </div>
-            <div class="galleryframe">
+            <div class="col">
                 <img class="pic" src="assets/img/storia.jpg" alt="Rocca di Monselice"/>
                 <dl>
                     <dt>Storia</dt>
