@@ -2,6 +2,7 @@
         "http://www.w3.org/WAI/ARIA/schemata/xhtml-aria-1.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it">
 <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=10">
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" media="handled, screen"/>

@@ -1,6 +1,6 @@
 <?php
 require_once "DataBase/DBConnection.php";
-require_once "PHP/Funzioni_Utente/ValidaCampo.php";
+require_once "PHP/Funzioni_Generali/ValidaCampo.php";
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
