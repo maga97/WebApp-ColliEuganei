@@ -47,10 +47,6 @@
     margin: 0 0 0 0;
 }
 
-#menuprincipale.responsive .dropdown {
-    float: none;
-}
-
 #menuprincipale.responsive .dropdown-content {
     position: relative;
 }
