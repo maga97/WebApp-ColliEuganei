@@ -2,6 +2,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{color}
 \usepackage{hyperref}
+\usepackage[italian]{babel} 
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{listings ,xcolor}
@@ -208,9 +209,19 @@ return password_verify($password, $pass[0]);
 	caso vi erano due alternative: duplicare i file e mantenere la massima indipendenza fra
 	le parti, oppure tenere un unico file che si adatta a seconda del percorso da cui è incluso
 	(ad esempio con un \texttt{<?php if ... ?>}). Abbiamo scelto di utilizzare l'una oppure l'altra strategia a seconda di quanto riteniamo probabile che una particolare funzionalità possa differire a seconda che sia utilizzata dall'amministratore, oppure da un utente standard: \begin{itemize}
-		\item Pagina di accesso: per accedere al pannello di amministrazione bisogna effettuare il login con un account amministratore. Non abbiamo ritenuto necessario separare il login per gli admin dal login per i clienti, perché non abbiamo individuato ragioni valide per farlo, infatti entrambi gli utenti inseriscono
+		\item Pagina di accesso: per accedere al pannello di amministrazione bisogna effettuare il login con un account amministratore. Non abbiamo ritenuto necessario separare il login per gli admin dal login per i clienti, perché non abbiamo individuato ragioni valide per farlo, infatti entrambi gli utenti inseriscono i medesimi dati: nome utente e password.
+		Pertanto, la procedura di login segue il seguente diagramma di attività:
+		\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.5]{images/Login.png}
+		\end{figure}
 		\item Ricerca e visualizzazione dei risultati: anche in questo caso riteniamo possibile che vengano implementate funzionalità non utili ad entrambe le parti, ma solo ad una delle due.
-		\item Menù di navigazione: il menù di navigazione per l'utente è diverso da quello dell'amministratore, e ciò viene gestito da	statement condizionali a cascata.
+		\item Menù di navigazione: il menù di navigazione per l'utente è diverso da quello dell'amministratore, e ciò viene gestito da	statement condizionali utilizzando la sintassi PHP che permette di utilizzare codice HTML senza fare ricorso al comando \texttt{echo}.
+		\begin{lstlisting}
+<?php if(condizione): ?>
+//codice HTML
+<?php endif; ?>
+		\end{lstlisting}
 	\end{itemize}
 	\subsection{Parte utente}
 	\subsubsection{Struttura}
@@ -219,6 +230,10 @@ return password_verify($password, $pass[0]);
 		sito ci si trova e che tipo di informazioni contiene. Sono presenti inoltre 3 mini-sezioni, Storia Clima e Geografia, espandibili attraverso i bottoni "Scopri di più" predisposti.
 		\item Luoghi (luoghi/): contiene le pagine relative ai luoghi turistici più importanti dei Colli Euganei, approfonditamente descritti ed accompagnati da immagini simboliche.
 		\item Gite (gite.php): è la pagina dedicata alla prenotazione delle gite. Tutte le gite hanno un nome, una descrizione, l'ora e il giorno della visita turistica e un costo. Solo un utente autenticato (e quindi registrato) può effettuare la prenotazione. Se non si è autenticati, la pagina rimanda l'utente al form di login attraverso un link ben segnalato. Un utente può prenotare più di una gita.
+		\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.8]{images/Trip.png}
+		\end{figure}
 		\item Accedi (login.php): questa pagina contiene il form di login in cui ogni utente può accedere al proprio account per prenotare una gita. Anche gli amministratori possono effettuare l'accesso da questa pagina per il loro account utente.
 		\begin{itemize}
 				\item Registrazione (Registrazione.php): se l'utente non è registrato al sito, attraverso il link presente alla fine del forum, viene reindirizzato alla pagina di registrazione.
@@ -238,10 +253,11 @@ return password_verify($password, $pass[0]);
 	Per quanto riguarda la stampa è stato creato un nuovo foglio di stile, chiamato "print", che rimuove tutti i contenuti non necessari e impagina le informazioni per meglio adattarle a un foglio A4.
 	Si è fatto, ovviamente uso di media query all'interno dei fogli di stile,
 	si sono realizzati due breakpoint perché si è cercato di abolire l'utilizzo dei pixel, come unità di misura all'interno dei CSS, in favore di em, che permette di adattare la dimensione a seconda del dispositivo a discapito di un minor controllo sul layout fornito dai pixel.
+	In particolare per favorire un layout responsive abbiamo cercato di fare ampio uso delle proprietà: max-width, min-width, max-height e min-height, insieme alle unità di misura sopra indicate.
 
 	\subsubsection{Comportamento}
-	Il comportamento della pagina é stato gestito tramite JavaScript per il controllo dei form e la conferma della cancellazione di una prenotazione. Inoltre in index.php gestisce delle animazioni per far apparire del testo. Sono presenti anche controlli tramite codice PHP per garantire che il sito continui a funzionare correttamente anche in caso di assenza dell’interprete JavaScript.
-
+	Il comportamento della pagina é stato gestito tramite JavaScript per il controllo dei form e la conferma della cancellazione di una prenotazione. Inoltre, index.php presenta alcune animazioni per far apparire del testo. Sono presenti anche controlli tramite codice PHP per garantire che il sito continui a funzionare correttamente anche in caso di assenza dell'interprete JavaScript.
+Anche il bottone "back-to-top" che permette di tornare all'inizio della pagina è stato realizzato tramite un'ancora per garantire la migliore navigazione in qualsiasi circostanza.
 
 	\subsection{Parte amministratore}
 
@@ -266,9 +282,8 @@ return password_verify($password, $pass[0]);
 
 
 	\subsubsection{Comportamento}
-	Per l'amministratore il comportamento è gestito prevalentemente da php.Tutto il codice relativo all’esecuzione di azioni è stato completamente
-	diviso da quello utilizzato per la visualizzazione dei contenuti,
-
+	Per l'amministratore il comportamento è gestito prevalentemente da php. Tutto il codice relativo all’esecuzione di azioni è stato completamente
+	diviso da quello utilizzato per la visualizzazione dei contenuti, questo consente di ridurre la duplicazione del codice e di ottenere pagine più leggere con un conseguente incremento di prestazioni.
 	\chapter{Validazione e test}
 	\section{Validazione con test automatici}
 	\subsection{Markup Validation Service w3.org}
@@ -345,7 +360,7 @@ return password_verify($password, $pass[0]);
 
 	\section{Test con diverse impostazioni utente}
 	Il sito è stato testato con diverse impostazioni utente abbiamo effettuato test su dispositivi con risoluzioni che vanno dal 600p al 2160p, test di visualizzazione del sito con dimensioni del testo che vanno 16pt a 44pt e visualizzato il sito con zoom fino al 300\%, in ogni caso il sito è risultato fruibile e navigabile.\\
-	Inoltre si è presa in considerazione l'eventualità che l'utente non disponga o non abiliti Javascript: il sito risulta comunque navigabile e le sue funzionalità sono inalterate. \pagebreak
+	Inoltre, si è presa in considerazione l'eventualità che l'utente non disponga o non abiliti JavaScript: il sito risulta comunque navigabile e le sue funzionalità sono inalterate. \pagebreak
 
 	\chapter{Funzionalit\`{a} desiderabili}
 	\section{Descrizione della sezione}
