@@ -1,16 +1,15 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+ARIA 1.0//EN"
-        "http://www.w3.org/WAI/ARIA/schemata/xhtml-aria-1.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it">
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css" media="handled, screen"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
     <link rel="stylesheet" type="text/css" href="assets/css/print.css" media="print"/>
     <link rel="stylesheet" type="text/css" href="assets/css/mobile768.css" media="screen and (max-width: 768px)"/>
     <link rel="stylesheet" type="text/css" href="assets/css/mobile480.css" media="screen and (max-width: 480px)"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css"/>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
     <title>Gite - Colli Digitali</title>
 </head>
 <?php
@@ -68,41 +67,40 @@ if (session_status() == PHP_SESSION_NONE) {
         } else {
             $list = $db->GetListaAttivita();
         }
-        $size = sizeof($list);
-        if ($size == 0 && $segnalato == true) {
+        $list == null ? $size = 0 : $size = sizeof($list);
+        if ($size == 0 && $segnalato == false) {
             echo "<div class=\"alert nojs warning button-holder\" role=\"alert\">la ricerca non ha trovato nessuna gita con questa frase o parola chiave</div>" . PHP_EOL;
         }
-        if ($size == 0 && $segnalato == false) {
-            echo "<div class=\"alert nojs warning button-holder\" role=\"alert\">Momentaneamente non sono disponibili gite</div>" . PHP_EOL;
-        }
-        foreach ($list as $node):
-            $data = explode("-", $node['Data']);
-            $node['Ore'] = substr($node['Ore'], 0, 5);
-            $node['Data'] = $data[2] . "/" . $data[1] . "/" . $data[0];
-            ?>
-            <div class="attivita">
-                <?php $immagine = base64_encode($node["Immagine"]); ?>
-                <img src="data:image/jpeg;base64,<?php echo $immagine ?>" alt="Immagine <?php echo $node['Nome'] ?>"
-                     class="responsive-image gite-image"/>
-                <h2><?php echo $node['Nome']; ?></h2>
-                <p><?php echo $node['Descrizione']; ?></p>
-                <dl>
-                    <dt>Prezzo:</dt>
-                    <dd><?php echo $node['Prezzo']; ?> &euro;</dd>
-                    <dt>Data:</dt>
-                    <dd><?php echo $node['Data']; ?></dd>
-                    <dt>Ora:</dt>
-                    <dd><?php echo $node['Ore'] ?></dd>
-                </dl>
-                <?php if (isset($_SESSION['username'])): ?>
-                    <?php
-                    echo "<span class=\"btnTrip\"><a href=\"Prenotazione.php?id=" . $node["ID_Attivita"] . "\">Prenota la gita</a></span>";
-                    ?>
-                <?php else: ?>
-                    <span class="btnTrip"><a href="Accedi.php" aria-label="Accedi per prenotare la gita">Accedi</a> per poter prenotare</span>
-                <?php endif ?>
-            </div>
-        <?php endforeach; ?>
+        if($size>0){
+            foreach ($list as $node):
+                $data = explode("-", $node['Data']);
+                $node['Ore'] = substr($node['Ore'], 0, 5);
+                $node['Data'] = $data[2] . "/" . $data[1] . "/" . $data[0];
+                ?>
+                <div class="attivita">
+                    <?php $immagine = base64_encode($node["Immagine"]); ?>
+                    <img src="data:image/jpeg;base64,<?php echo $immagine ?>" alt="Immagine <?php echo $node['Nome'] ?>"
+                         class="responsive-image gite-image"/>
+                    <h2><?php echo $node['Nome']; ?></h2>
+                    <p><?php echo $node['Descrizione']; ?></p>
+                    <dl>
+                        <dt>Prezzo:</dt>
+                        <dd><?php echo $node['Prezzo']; ?> &euro;</dd>
+                        <dt>Data:</dt>
+                        <dd><?php echo $node['Data']; ?></dd>
+                        <dt>Ora:</dt>
+                        <dd><?php echo $node['Ore'] ?></dd>
+                    </dl>
+                    <?php if (isset($_SESSION['username'])): ?>
+                        <?php
+                        echo "<span class=\"btnTrip\"><a href=\"Prenotazione.php?id=" . $node["ID_Attivita"] . "\">Prenota la gita</a></span>";
+                        ?>
+                    <?php else: ?>
+                        <span class="btnTrip"><a href="Accedi.php" aria-label="Accedi per prenotare la gita">Accedi</a> per poter prenotare</span>
+                    <?php endif ?>
+                </div>
+            <?php endforeach;
+        } ?>
     </div>
     <?php include_once("footer.php"); ?>
 </div>

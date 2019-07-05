@@ -1,14 +1,13 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+ARIA 1.0//EN"
-        "http://www.w3.org/WAI/ARIA/schemata/xhtml-aria-1.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css" media="handled, screen"/>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
     <link rel="stylesheet" type="text/css" href="assets/css/print.css" media="print"/>
     <link rel="stylesheet" type="text/css" href="assets/css/mobile768.css" media="screen and (max-width: 768px)"/>
     <link rel="stylesheet" type="text/css" href="assets/css/mobile480.css" media="screen and (max-width: 480px)"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/script.js"></script>
     <script src="js/global.js"></script>
@@ -53,30 +52,30 @@ if (session_status() == PHP_SESSION_NONE) {
         ?>
         <div class="alert errore" aria-live="assertive" role="alert" aria-atomic="true" aria-relevant="all"><p>Inserire
                 un valore corretto per i posti</p></div>
-        <form action="ConfermaPrenotazione.php" method="POST" onsubmit="return validaPosti($('.alert.errore'))">
-            <?php echo "<input type=\"hidden\" name=\"ID\" value=\"" . $_GET["id"] . "\">"; ?>
+        <form action="ConfermaPrenotazione.php" method="post" onsubmit="return validaPosti($('.alert.errore'))">
+            <?php echo "<input type=\"hidden\" name=\"ID\" value=\"" . $_GET["id"] . "\"/>"; ?>
 
             <div class="field-container">
                 <label for="descrizione" lang="it" class="log-label">Descrizione dell'attività</label>
-                <?php echo "<input type=\"text\" id=\"descrizione\" name=\"descrizione\" value=\"" . $attivita["Descrizione"] . "\" accesskey=\"d\" readonly>"; ?>
+                <?php echo "<input type=\"text\" id=\"descrizione\" name=\"descrizione\" value=\"" . $attivita["Descrizione"] . "\" accesskey=\"d\" readonly=\"readonly\" />"; ?>
             </div>
             <div class="field-container">
                 <label for="prezzo" lang="it" class="log-label">Prezzo(per persona)</label>
-                <?php echo "<input type=\"text\" id=\"prezzo\" name=\"prezzo\" value=\"" . $attivita["Prezzo"] . " Euro\" accesskey=\"p\" readonly>"; ?>
+                <?php echo "<input type=\"text\" id=\"prezzo\" name=\"prezzo\" value=\"" . $attivita["Prezzo"] . " Euro\" accesskey=\"p\" readonly=\"readonly\" />"; ?>
             </div>
             <div class="field-container">
                 <label for="data" lang="it" class="log-label">Data</label>
-                <?php echo "<input type=\"text\" id=\"data\" name=\"data\" value=\"" . $attivita["Data"] . "\" accesskey=\"d\" readonly>"; ?>
+                <?php echo "<input type=\"text\" id=\"data\" name=\"data\" value=\"" . $attivita["Data"] . "\" readonly=\"readonly\" />"; ?>
             </div>
             <div class="field-container">
                 <label for="ora" lang="it" class="log-label">Orario</label>
-                <?php echo "<input type=\"text\" id=\"ora\" name=\"ora\" value=\"" . $attivita["Ore"] . "\" accesskey=\"p\" readonly>"; ?>
+                <?php echo "<input type=\"text\" id=\"ora\" name=\"ora\" value=\"" . $attivita["Ore"] . "\" accesskey=\"o\" readonly=\"readonly\" />"; ?>
             </div>
             <div class="field-container">
                 <label for="reservePosti" lang="it" class="log-label">Scegli il numero di posti</label>
-                <input type="text" id="reservePosti" name="posti" accesskey="d"/>
+                <input type="text" id="reservePosti" name="posti"/>
             </div>
-            <div class="button-holder"><input type="submit" value="Andiamo!" name="registrazione"
+            <div class="button-holder"><input type="submit" value="Prenotati alla gita" name="registrazione"
                                               class="btn btn-primary" aria-label="Prenotati alla gita"/></div>
         </form>
     </div>

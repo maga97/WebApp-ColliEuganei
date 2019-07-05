@@ -1,3 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" media="handeld, screen"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/print.css" media="print"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/mobile768.css" media="screen and (max-width: 768px)"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/mobile480.css" media="screen and (max-width: 480px)"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/confirm.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+    <title>Pannello Utente - Colli Digitali</title>
+</head>
+
 <?php
 require_once "DataBase/DBConnection.php";
 if (session_status() == PHP_SESSION_NONE) {
@@ -9,24 +27,7 @@ if (!isset($_SESSION["username"])) {
 $db = new database();
 $db->connect();
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+ARIA 1.0//EN"
-        "http://www.w3.org/WAI/ARIA/schemata/xhtml-aria-1.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css" media="handled, screen"/>
-    <link rel="stylesheet" type="text/css" href="assets/css/print.css" media="print"/>
-    <link rel="stylesheet" type="text/css" href="assets/css/mobile768.css" media="screen and (max-width: 768px)"/>
-    <link rel="stylesheet" type="text/css" href="assets/css/mobile480.css" media="screen and (max-width: 480px)"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css"/>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/script.js"></script>
-    <script type="text/javascript" src="js/confirm.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
-    <title>Pannello Utente - Colli Digitali</title>
-</head>
+
 <body>
 <div>
     <a href="#content" class="skip">Vai al contenuto</a>
@@ -92,13 +93,14 @@ $db->connect();
             $node['Ore'] = substr($node['ore'], 0, 5);
             $node['Data'] = $data[2] . "/" . $data[1] . "/" . $data[0];
             ?>
-            <h2><?php echo $node['nome']; ?></h2>
+
             <div class="attivita">
+                <h2><?php echo $node['nome']; ?></h2>
                 <dl>
                     <dt>ID Prenotazione</dt>
                     <dd><?php echo $node['id']; ?></dd>
                     <dt>Prezzo Totale</dt>
-                    <dd><?php echo $node['prezzo']; ?> &euro;</dd>
+                    <dd><?php echo $node['prezzo']*$node['posti']; ?> &euro;</dd>
                     <dt>Data</dt>
                     <dd><?php echo $node['data']; ?></dd>
                     <dt>Ore</dt>

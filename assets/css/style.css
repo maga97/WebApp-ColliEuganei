@@ -361,7 +361,7 @@ div.attivita {
 }
 
 #content > .attivita ~ .attivita {
-    border-top: 3px dotted rgb(25, 144, 45);
+    border-top: 3px solid rgb(25, 144, 45);
 }
 
 .attivita h2 {

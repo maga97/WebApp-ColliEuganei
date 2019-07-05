@@ -1,16 +1,15 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+ARIA 1.0//EN"
-        "http://www.w3.org/WAI/ARIA/schemata/xhtml-aria-1.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it">
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css" media="handled, screen">
-    <link rel="stylesheet" type="text/css" href="assets/css/print.css" media="print">
-    <link rel="stylesheet" type="text/css" href="assets/css/mobile480.css" media="screen and (max-width: 460px)">
-    <link rel="stylesheet" type="text/css" href="assets/css/mobile768.css" media="screen and (max-width: 768px)">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/print.css" media="print"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/mobile480.css" media="screen and (max-width: 460px)"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/mobile768.css" media="screen and (max-width: 768px)"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css"/>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="../js/script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
     <title>Pannello Utente - Colli Digitali</title>
 </head>
 <?php
@@ -49,7 +48,7 @@ if (isset($_POST["conferma_modifica"])) {
         </ul>
         <div class="form container_form">
             <div class="titolo-form">
-                <h1 id="titolo">Riepilogo dati <span xml:lang="en">account</span></h1>
+                <h1 id="titolo">Riepilogo dati <span xml:lang="en" lang="en">account</span></h1>
             </div>
 
             <form id="dati-utente" method="post" action="Impostazioni.php">
@@ -76,7 +75,7 @@ if (isset($_POST["conferma_modifica"])) {
                 $db->connect();
                 ?>
                 <div class="log-field-container">
-                    <label for="email" xml:lang="en">Email: </label>
+                    <label for="email" xml:lang="en" lang="en">Email: </label>
                     <div class="input-container">
                         <?php if (isset($_POST["modifica_dati"]) || (isset($errore) && $errore != "")): ?>
                             <input type="text" class="disabilita" id="email" name="email"
@@ -174,8 +173,9 @@ if (isset($_POST["conferma_modifica"])) {
                     <?php endif; ?>
                 </div>
             </form>
+            <?php if(!isset($_POST["modifica_dati"]) && (!isset($_POST["conferma_modifica"]) ||  $errore="")):?>
             <div class="titolo-form">
-                <h2>Modifica <span xml:lang="en">password</span></h2>
+                <h2>Modifica <span xml:lang="en" lang="en">password</span></h2>
             </div>
             <form id="mod-pwd-form" method="post" action="Impostazioni.php">
                 <div class="log-field-container">
@@ -185,22 +185,23 @@ if (isset($_POST["conferma_modifica"])) {
                     </div>
                 </div>
                 <div class="log-field-container">
-                    <label for="password">Nuova <span xml:lang="en">password</span>: (obbligatorio)</label>
+                    <label for="password">Nuova <span xml:lang="en" lang="en">password</span>: (obbligatorio)</label>
                     <div class="input-container">
                         <input type="password" id="password" name="password" class="disabilita"/>
                     </div>
                 </div>
                 <div class="log-field-container">
-                    <label for="password2">Ripeti nuova <span xml:lang="en">password</span>: (obbligatorio)</label>
+                    <label for="password2">Ripeti nuova <span xml:lang="en" lang="en">password</span>: (obbligatorio)</label>
                     <div class="input-container">
                         <input type="password" id="password2" name="password2" class="disabilita"/>
                     </div>
                 </div>
                 <div class="button-holder">
                     <button type="submit" id="bottone-modifica-password" name="modifica_password"
-                            class="btn btn-primary">Modifica <span xml:lang="en">password</span></button>
+                            class="btn btn-primary">Modifica <span xml:lang="en" lang="en">password</span></button>
 
                 </div>
+                <?php endif;?>
             </form>
         </div>
     </div>

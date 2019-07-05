@@ -176,7 +176,7 @@ class database
     {
         $query = $this->pdo->prepare('SELECT Attivita.Nome As nome,Attivita.Data AS data,
 																				 Attivita.Ore AS ore,Prenotazioni.NumPostiPrenotati AS posti,
-																				 Prenotazioni.ID_Prenotazione AS id
+																				 Prenotazioni.ID_Prenotazione AS id, Attivita.Prezzo AS prezzo
 																	FROM Utenti JOIN Prenotazioni ON Utenti.ID_Utente=Prenotazioni.ID_Utenti
 																							JOIN Attivita ON Prenotazioni.ID_Attivita=Attivita.ID_Attivita
 			 														WHERE Utenti.Email = ?');

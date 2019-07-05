@@ -1,3 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/print.css" media="print"/>
+    <link rel="stylesheet" type="text/css" href="../assets/css/mobile480.css" media="screen and (max-width: 460px)"/>
+    <link rel="stylesheet" type="text/css" href="../assets/css/mobile768.css" media="screen and (max-width: 768px)"/>
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../js/script.js"></script>
+    <title>Aggiungi gita - Colli Digitali</title>
+</head>
 <?php
 require_once "../DataBase/DBConnection.php";
 if (session_status() == PHP_SESSION_NONE) {
@@ -10,22 +25,6 @@ if (isset($_POST["aggiungiGita"])) {
     $errore = include_once("../PHP/Funzioni_Admin/add-trip-script.php");
 }
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+ARIA 1.0//EN"
-        "http://www.w3.org/WAI/ARIA/schemata/xhtml-aria-1.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
-<head>
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <link rel="stylesheet" type="text/css" href="../assets/css/style.css" media="handled, screen">
-    <link rel="stylesheet" type="text/css" href="../assets/css/print.css" media="print">
-    <link rel="stylesheet" type="text/css" href="../assets/css/mobile480.css" media="screen and (max-width: 460px)">
-    <link rel="stylesheet" type="text/css" href="../assets/css/mobile768.css" media="screen and (max-width: 768px)">
-    <link rel="stylesheet" type="text/css"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css"/>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="../js/script.js"></script>
-    <title>Aggiungi gita - Colli Digitali</title>
-</head>
 <body>
 <div>
     <a href="#content" class="skip">Vai al contenuto</a>
@@ -65,7 +64,7 @@ if (isset($_POST["aggiungiGita"])) {
                 </div>
                 <div class="log-field-container">
                     <label for="immagine">Immagine</label>
-                    <input type="file" name="immagine" id="immagine" placeholder="Selezione immagine gita"
+                    <input type="file" name="immagine" id="immagine"
                            required="required"/>
                 </div>
                 <div class="log-field-container">
@@ -78,13 +77,13 @@ if (isset($_POST["aggiungiGita"])) {
                 </div>
                 <div class="log-field-container">
                     <label for="prezzo">Prezzo (10.50)</label>
-                    <input type="text" aria-labelledby="prezzo" min="0" id="prezzo" name="prezzo" required="required"/>
+                    <input type="text" aria-labelledby="prezzo" id="prezzo" name="prezzo" required="required"/>
                 </div>
                 <div class="button-holder">
-                    <label for="bottoneCancella"">Cancella dati</label>
+                    <label for="bottoneCancella">Cancella dati</label>
                     <input type="reset" value="Cancella dati" name="cancelladati" id="bottoneCancella"
                            class="btn btn-tripCancel"/>
-                    <label for="bottoneInserisci">Inserisci</label>
+                    <label for="bottoneIns">Inserisci</label>
                     <input type="submit" value="Inserisci" name="aggiungiGita" id="bottoneIns"
                            class="btn btn-tripInsert"/>
                 </div>
