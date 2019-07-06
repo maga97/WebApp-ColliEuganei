@@ -32,7 +32,7 @@ if (session_status() == PHP_SESSION_NONE) {
             <h2>Natura e storia in digitale</h2>
         </div>
     </div>
-    <?php include_once('menu.php'); ?>
+    <?php include_once("menu.php"); ?>
     <div id="content">
         <ul class="breadcrumb">
             <li>Luoghi</li>
@@ -85,7 +85,7 @@ if (session_status() == PHP_SESSION_NONE) {
         </div>
     </div>
     <a id="scroll-top-btn" href="#top">Torna in alto</a>
-    <?php include_once('footer.php'); ?>
+    <?php include_once("footer.php"); ?>
 </div>
 </body>
 </html>
