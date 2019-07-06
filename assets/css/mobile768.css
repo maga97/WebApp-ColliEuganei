@@ -4,18 +4,10 @@
     margin-right: auto;
 }
 
-#titolo {
-    text-align: center;
-    margin-top: 0;
-}
-
 .col {
     width: 100%;
 }
 
-.place {
-    margin-left: 0;
-}
 
 #geotab {
     display: none;
@@ -55,10 +47,6 @@
     display: block;
     width: 100%;
     text-align: left;
-}
-
-#annulla_modifica {
-    margin-top: 0.25em;
 }
 
 #dati-utente label, #mod-pwd-form label {

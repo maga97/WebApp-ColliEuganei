@@ -95,6 +95,6 @@ $esito = $db->ModificaGita($id, $nomegita, $descrizione, $_FILES["immagine"]['si
 if ($esito) {
     return false;
 } else {
-    return "la modifica non e' andata a buon fine. Ti chiediamo di riporvare piu' tardi";
+    return "La modifica non e' andata a buon fine. Ti chiediamo di riporvare piu' tardi";
 }
 

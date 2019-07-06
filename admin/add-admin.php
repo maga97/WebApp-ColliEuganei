@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css"/>
     <link rel="stylesheet" type="text/css" href="../assets/css/print.css" media="print"/>
     <link rel="stylesheet" type="text/css" href="../assets/css/mobile480.css" media="screen and (max-width: 460px)"/>
     <link rel="stylesheet" type="text/css" href="../assets/css/mobile768.css" media="screen and (max-width: 768px)"/>
@@ -65,7 +65,7 @@ if (!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
             endif;
             $i = $i + 1;
             ?>
-            <div class="col admin-div">
+            <div class="col admin-div card">
                 <ul>
                     <li><?php echo $user["Nome"] ?></li>
                     <li><?php echo $user["Cognome"] ?></li>
@@ -75,9 +75,12 @@ if (!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
                     $id = $user["ID_Utente"];
                     ?>
                 </ul>
-                <a aria-label="Aggiungi <?php echo $user["Nome"] . " " . $user["Cognome"]; ?> come amministratore"
-                   href="../PHP/Funzioni_Admin/edit-user-role.php?action=promote&amp;id=<?php echo $id; ?>">Aggiungi
-                    amministratore</a>
+                <div class="form-field">
+                    <a class="btn btn-primary center-block"
+                       aria-label="Aggiungi <?php echo $user["Nome"] . " " . $user["Cognome"]; ?> come amministratore"
+                       href="../PHP/Funzioni_Admin/edit-user-role.php?action=promote&amp;id=<?php echo $id; ?>">Aggiungi
+                        amministratore</a>
+                </div>
             </div>
             <?php
             if ($i % 3 == 0):

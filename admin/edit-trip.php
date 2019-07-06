@@ -115,8 +115,8 @@ $data = $arrayofdata[2] . "/" . $arrayofdata[1] . "/" . $arrayofdata[0];
                             <span id="prezzodesc" tabindex="0">10.50</span>
                         </div>
                         <div class="button-holder">
-                            <input type="reset" value="Cancella dati" name="cancelladati" class="btn btn-tripCancel"/>
-                            <input type="submit" value="Modifica" name="modificaGita" class="btn btn-tripInsert"/>
+                            <input type="reset" value="Cancella dati" name="cancelladati" class="btn btn-red"/>
+                            <input type="submit" value="Modifica" name="modificaGita" class="btn btn-success"/>
                         </div>
                     </form>
                 </div>

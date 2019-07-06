@@ -165,11 +165,11 @@ if (isset($_POST["conferma_modifica"])) {
                         <button type="submit" id="conferma_modifica" name="conferma_modifica" class="btn btn-primary">
                             Conferma le modifiche
                         </button>
-                        <button id="annulla_modifica" name="annulla_modifica" class="btn btn-primary">Annulla le
+                        <button id="annulla_modifica" name="annulla_modifica" class="btn btn-red">Annulla le
                             modifiche e torna indietro
                         </button>
                     <?php else: ?>
-                        <button id="bottone-modifica-dati" name="modifica_dati" class="btn btn-primary">Modifica dati
+                        <button id="bottone-modifica-dati" name="modifica_dati" class="btn btn-success">Modifica dati
                         </button>
                     <?php endif; ?>
                 </div>

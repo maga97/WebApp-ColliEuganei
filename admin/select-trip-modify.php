@@ -58,9 +58,9 @@ $db->connect();
             $node['Ore'] = substr($node['Ore'], 0, 5);
             $node['Data'] = $data[2] . "/" . $data[1] . "/" . $data[0];
             ?>
-            <div class="attivita">
+            <div class="card form-field">
                 <h2><?php echo $node['Nome']; ?></h2>
-                <dl>
+                <dl class="inline-list">
                     <dt>Descrizione</dt>
                     <dd><?php echo $node['Descrizione']; ?></dd>
                     <dt>Prezzo</dt>
@@ -71,7 +71,7 @@ $db->connect();
                     <dd><?php echo $node['Ore'] ?></dd>
                 </dl>
                 <?php
-                echo "<span class=\"btnTrip\"><a href=\"edit-trip.php?id=" . $node["ID_Attivita"] . "\">Modifica gita</a></span>";
+                echo "<a class=\"btn btn-primary\" href=\"edit-trip.php?id=" . $node["ID_Attivita"] . "\">Modifica gita</a>";
                 ?>
             </div>
         <?php

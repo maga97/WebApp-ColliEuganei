@@ -74,21 +74,22 @@ if (isset($_POST["confermaPrenotazione"])) {
                 <h2> Riepilogo prenotazione </h2>
                 <div id="descrizione"><?php echo $_POST["descrizione"] . PHP_EOL; ?> </div>
                 <div class="riepprenotazione">
-                    <dt>DATA</dt>
-                    <dd><?php echo $_POST["data"] . PHP_EOL; ?> </dd>
-                    <dt>ORA</dt>
-                    <dd> <?php echo $_POST["ora"] . PHP_EOL; ?> </dd>
-                    <dt>POSTI</dt>
-                    <dd> <?php echo $_POST["posti"] . PHP_EOL; ?> </dd>
-                    <dt>PREZZO TOTALE</dt>
-                    <dd> <?php echo (float)$_SESSION["prezzo"] * (float)$_SESSION["posti"]; ?>€</dd>
+                    <dl>
+                        <dt>Data</dt>
+                        <dd><?php echo $_POST["data"] . PHP_EOL; ?> </dd>
+                        <dt>Ora</dt>
+                        <dd> <?php echo $_POST["ora"] . PHP_EOL; ?> </dd>
+                        <dt>Posti</dt>
+                        <dd> <?php echo $_POST["posti"] . PHP_EOL; ?> </dd>
+                        <dt>Prezzo totale</dt>
+                        <dd> <?php echo (float)$_SESSION["prezzo"] * (float)$_SESSION["posti"]; ?>€</dd>
                     </dl>
                 </div>
                 <div class="button-holder">
                     <form action="" method="POST">
                         <input onclick="return validaPosti()" type="submit" value="Conferma" name="confermaPrenotazione"
-                               class="btn btn-riepConferma"/>
-                        <input type="submit" value="Annulla" name="cancellaPrenotazione" class="btn btn-riepCancella"/>
+                               class="btn btn-success"/>
+                        <input type="submit" value="Annulla" name="cancellaPrenotazione" class="btn btn-red"/>
                     </form>
                 </div>
             </div>

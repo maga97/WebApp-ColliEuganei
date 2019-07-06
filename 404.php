@@ -36,7 +36,7 @@ if (session_status() == PHP_SESSION_NONE) {
     </div>
     <?php include_once('menu.php'); ?>
     <div id="content">
-        <div class="not-found">
+        <div id="not-found-404">
          <img src="assets/img/404-min.png" class="history-picture" alt=""/>
             <div class="text">oooops, sembra che tu ti sia perso!</div>
         </div>

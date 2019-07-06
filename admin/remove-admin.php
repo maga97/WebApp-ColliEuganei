@@ -58,12 +58,12 @@ if (!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
         $open = false;
         foreach ($users as $user):
             if ($i % 3 == 0):
-                echo '<div class="flex-container">' . PHP_EOL;
+                echo '<div class="row">' . PHP_EOL;
                 $open = true;
             endif;
             $i = $i + 1;
             ?>
-            <div class="admin-div">
+            <div class="col card admin-div">
                 <ul>
                     <li><?php echo $user["Nome"] ?></li>
                     <li><?php echo $user["Cognome"] ?></li>
@@ -77,9 +77,8 @@ if (!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
                     <a aria-label="Rimuovi <?php echo $user["Nome"] . " " . $user["Cognome"]; ?> dal ruolo di amministratore"
                        href="../PHP/Funzioni_Admin/edit-user-role.php?action=remove&amp;id=<?php echo $id; ?>">Rimuovi
                         amministratore</a>
-                    </td>
                 <?php else: ?>
-                    <div class="alert warning">Deve esserci almeno un amministratore.</div>
+                    <?php echo "<div class=\"alert warning nojs\">Deve esserci almeno un amministratore.</div>" . PHP_EOL; ?>
                 <?php endif; ?>
             </div>
         <?php endforeach;

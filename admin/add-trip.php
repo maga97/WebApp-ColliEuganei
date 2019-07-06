@@ -65,27 +65,31 @@ if (isset($_POST["aggiungiGita"])) {
                                   required="required"></textarea>
                     </div>
                     <div class="form-field">
-                        <label for="immagine">Immagine</label>
+                        <label for="immagine" class="log-label">Immagine</label>
                         <input type="file" name="immagine" id="immagine"
                                required="required"/>
                     </div>
                     <div class="form-field">
-                        <label for="data">Data (gg/mm/aaaa)</label>
+                        <label for="data" class="log-label">Data (gg/mm/aaaa)</label>
                         <input type="text" name="data" id="data" required="required" aria-labelledby="data"/>
                     </div>
                     <div class="form-field">
-                        <label for="ora">Ora (hh:mm)</label>
+                        <label for="ora" class="log-label">Ora (hh:mm)</label>
                         <input type="text" name="ora" id="ora" required="required" aria-labelledby="ora"/>
                     </div>
                     <div class="form-field">
-                        <label for="prezzo">Prezzo (10.50)</label>
+                        <label for="prezzo" class="log-label">Prezzo (10.50)</label>
                         <input type="text" aria-labelledby="prezzo" id="prezzo" name="prezzo" required="required"/>
                     </div>
-                    <div class="button-holder">
-                        <input type="reset" value="Cancella dati" name="cancelladati" id="bottoneCancella"
-                               class="btn btn-tripCancel"/>
-                        <input type="submit" value="Inserisci" name="aggiungiGita" id="bottoneIns"
-                               class="btn btn-tripInsert"/>
+                    <div class="row form-field">
+                        <div class="col-6">
+                            <input type="reset" value="Cancella dati" name="cancelladati" id="bottoneCancella"
+                                   class="btn btn-red center-block"/>
+                        </div>
+                        <div class="col-6">
+                            <input type="submit" value="Inserisci" name="aggiungiGita" id="bottoneIns"
+                                   class="btn btn-success center-block"/>
+                        </div>
                     </div>
                 </form>
             </div>

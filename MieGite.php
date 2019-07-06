@@ -94,19 +94,21 @@ $db->connect();
             $node['Data'] = $data[2] . "/" . $data[1] . "/" . $data[0];
             ?>
 
-            <div class="attivita">
+            <div class="card form-field">
                 <h2><?php echo $node['nome']; ?></h2>
-                <dl>
+                <dl class="inline-list">
                     <dt>ID Prenotazione</dt>
                     <dd><?php echo $node['id']; ?></dd>
                     <dt>Prezzo Totale</dt>
-                    <dd><?php echo $node['prezzo']*$node['posti']; ?> &euro;</dd>
+                    <dd><?php echo $node['prezzo'] * $node['posti']; ?> &euro;</dd>
                     <dt>Data</dt>
                     <dd><?php echo $node['data']; ?></dd>
                     <dt>Ore</dt>
                     <dd><?php echo $node['Ore'] ?></dd>
                 </dl>
-                <?php echo "<a class=\"btn red\" href=\"delete-prenotazione.php?id=" . $node['id'] . "\">Disdici prenotazione</a>" ?>
+                <div class="form-field">
+                    <?php echo "<a class=\"btn btn-red\" href=\"delete-prenotazione.php?id=" . $node['id'] . "\">Disdici prenotazione</a>" ?>
+                </div>
             </div>
         <?php
         endforeach;

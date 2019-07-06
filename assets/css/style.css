@@ -47,7 +47,7 @@ body {
     width: 100%;
     background: #f2f2f2;
 }
-.not-found{
+#not-found-404 {
     width:auto;
     text-align:center;
 }
@@ -129,18 +129,12 @@ ul.breadcrumb li + li:before {
     margin-bottom: 1%;
 }
 
-#storia {
-    max-width: 75%;
-    margin-left: auto;
-    margin-right: auto;
-}
 
 .row:after {
     content: "";
     display: table;
     clear: both;
 }
-
 
 .col {
     float: left;
@@ -158,11 +152,6 @@ ul.breadcrumb li + li:before {
     float: right;
     padding-top: 0;
     padding-left: 2%;
-}
-
-.place {
-    margin-left: 10%;
-    margin-top: 4%;
 }
 
 .picture {
@@ -356,41 +345,6 @@ div.riepprenotazione {
     margin-top: 0;
 }
 
-div.attivita {
-    text-align: left;
-    padding: 1em 2em 1em 2em;
-}
-
-#content > .attivita ~ .attivita {
-    border-top: 3px solid rgb(25, 144, 45);
-}
-
-.attivita h2 {
-    margin: 0;
-}
-
-.attivita p {
-    margin: 0;
-}
-
-.attivita dl {
-    margin: 0;
-    padding-bottom: 0.5em;
-}
-
-.attivita dt {
-    color: #666;
-    float: left;
-    clear: left;
-    margin-right: 0.4em;
-}
-
-.attivita dd {
-    font-weight: bold;
-    margin-top: 0;
-
-}
-
 dl {
     border: 0.1em solid transparent;
 }
@@ -404,40 +358,12 @@ dd {
     width: 15em;
 }
 
-.btnTrip {
-    font-size: 1.2em;
-    border: 0.1em solid transparent;
-    color: black;
-}
-
-.btnTrip > a {
-    color: #0067c8;
-    text-transform: uppercase;
-    text-decoration: underline;
-}
-
-.btnTrip > a:hover {
-    font-weight: bolder;
-    text-decoration: underline;
-}
-
 #reservePosti {
     width: 4em;
 }
 
-.tabcontent {
-    display: block;
-    padding: 0.375em 0.75em;
-    border: 0.0625em solid #ccc;
-    border-top: none;
-}
-
 #riepilogo {
     text-align: left;
-}
-
-.log-label-riep {
-    font-weight: bolder;
 }
 
 .skip {
@@ -462,27 +388,12 @@ a.skip:hover {
 
 .admin-div {
     margin: 0.5%;
-    background: #D3D3D3;
-    border-radius: 0.3em;
+    padding: 0.7em !important;
 }
 
 .admin-div a {
-    background: #4CAF50;
-    color: white;
-    padding: 0 0.5% 0 0.5%;
-    text-decoration: underline;
-    text-align: center;
-    font-weight: bold;
-    display: block;
-    line-height: 3em;;
+    font-size: 1em;
 }
-
-.admin-div a:hover {
-    color: rebeccapurple;
-    text-decoration: underline;
-    text-align: center;
-}
-
 .admin-div ul {
     list-style-type: none;
     margin: 0;
@@ -517,8 +428,7 @@ div.alert.errore.login, div.alert.nojs {
 }
 
 .responsive-image {
-    width: 100%;
-    max-width: 400px;
+    max-width: 100%;
     height: auto;
 }
 
@@ -529,13 +439,7 @@ div.alert.errore.login, div.alert.nojs {
 }
 
 .gite-image {
-    max-height: 200px;
-    float: right;
-    border-radius: 1em;
-}
-
-label[for=bottoneCancella], label[for=bottoneInserisci] {
-    display: none;
+    max-height: 300px;
 }
 
 .mobile-align {
@@ -543,9 +447,23 @@ label[for=bottoneCancella], label[for=bottoneInserisci] {
 }
 
 .row {
-    padding: 1em;
+    padding: 0;
 }
 
+
+.col-6 {
+    float: left;
+    width: 49.00%;
+}
+
+.col-6:not(:last-child) {
+    margin-right: 1%;
+}
+
+img.same-size {
+    max-height: 350px;
+    max-width: 400px;
+}
 .form {
     line-height: normal;
     background: white;
@@ -561,7 +479,7 @@ label[for=bottoneCancella], label[for=bottoneInserisci] {
 }
 
 .form-field {
-    margin: 0 0 3% 0;
+    margin: 3% 0 0 0;
 }
 
 .input-container {
@@ -613,13 +531,13 @@ fieldset {
     cursor: pointer;
     line-height: 100%;
     text-decoration: none;
+    text-align: center;
     font-weight: bolder;
-    padding: 0.8em 1em;
+    padding: 0.6em .8em;
     color: black;
     background: white;
     border: 0.2em solid transparent;
-    border-bottom: 0.2em solid #808080;
-    text-transform: uppercase;
+    font-size: 1em;
 }
 
 .btn.btn-primary {
@@ -629,52 +547,43 @@ fieldset {
     border-bottom-color: #0000c6;
 }
 
-a.btn.red {
-    border-radius: 0.75em;
-    margin: auto;
-    color: white;
-    background-color: #ff0000;
-    border-bottom-color: #ff0000;
-    margin-bottom: 2em;
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    padding: 1em 2em 1em 2em;
+    overflow: auto;
 }
 
-.btn.btn-tripInsert {
+.inline-list {
+    margin: 0;
+    padding-bottom: 0.5em;
+}
+.inline-list dt {
+    color: #666;
     float: left;
+    clear: left;
+    margin-right: 0.4em;
+}
+
+.inline-list dd {
+    font-weight: bold;
+    margin-top: 0;
+}
+
+.btn.btn-red {
     margin: auto;
     color: white;
-    background-color: #008000;
-    border-bottom-color: #008000;
+    background-color: #943838;
 }
 
-.btn.btn-tripCancel {
-    float: right;
+.btn.btn-success  {
     margin: auto;
     color: white;
-    background-color: #ff0000;
-    border-bottom-color: #ff0000;
+    background-color: #009457;
 }
-
-.btn.btn-riepConferma {
-    float: left;
-    margin: auto;
-    color: white;
-    background-color: #008000;
-    border-bottom-color: #008000;
-}
-
-.btn.btn-riepCancella {
-    color: white;
-    background-color: #ff0000;
-    border-bottom-color: #ff0000;
-}
-
 
 #reg-sistema {
     color: #0057a8;
-}
-
-fieldset {
-    border: 0.1875em solid #f1f1f1;
 }
 
 legend {
@@ -697,36 +606,8 @@ textarea {
     outline: none;
 }
 
-.buttom-form {
-    color: white;
-    padding: 0.875em 1.25em;
-    margin: 1% 0;
-    border: none;
-    cursor: pointer;
-    width: 35%;
-    font-size: 1.1rem;
-}
-
-input[type="submit"] {
-    background-color: #4caf50;
-    margin-left: 5%;
-}
-
-input[type="reset"] {
-    background-color: #f44336;
-    float: right;
-    margin-right: 5%;
-}
-
 input.error {
     border-bottom-color: red;
-}
-
-#error {
-    color: white;
-    background-color: red;
-    font-weight: bold;
-    border-radius: 0.5em;
 }
 
 .titolo-form {
@@ -738,24 +619,6 @@ input.error {
     width: 25%;
     float: left;
     text-align: right;
-}
-
-#btn-wrapper {
-    float: right;
-    margin-top: 1em;
-}
-
-#modifica {
-    color: #F3F3F3;
-    background-color: #16BFFF;
-    border: 0.125em solid #1C1C1C;
-    padding: 0.2em 0.5em;
-    cursor: pointer;
-}
-
-.tabcontent {
-    padding: 0.375em 0.75em;
-    border-top: none;
 }
 
 #searchform {

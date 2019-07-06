@@ -62,8 +62,7 @@ if (session_status() == PHP_SESSION_NONE) {
             if (strlen($_POST['ricerca']) > 0) {
                 $list = $db->Ricerca($_POST['ricerca']);
                 $empyset = sizeof($list) > 0 ? false : true;
-            }
-            else {
+            } else {
                 echo "<div class=\"alert nojs errore button-holder\" role=\"alert\">Nessuna parola chiave inserita</div>" . PHP_EOL;
             }
         } else {
@@ -72,33 +71,42 @@ if (session_status() == PHP_SESSION_NONE) {
         if ($empyset) {
             echo "<div class=\"alert nojs warning button-holder\" role=\"alert\">La ricerca non ha trovato nessuna gita con questa frase o parola chiave</div>" . PHP_EOL;
         }
-        if(sizeof($list)>0){
+        if (sizeof($list) > 0) {
             foreach ($list as $node):
                 $data = explode("-", $node['Data']);
                 $node['Ore'] = substr($node['Ore'], 0, 5);
                 $node['Data'] = $data[2] . "/" . $data[1] . "/" . $data[0];
                 ?>
-                <div class="attivita">
+                <div class="card form-field">
                     <?php $immagine = base64_encode($node["Immagine"]); ?>
-                    <img src="data:image/jpeg;base64,<?php echo $immagine ?>" alt="Immagine <?php echo $node['Nome'] ?>"
-                         class="responsive-image gite-image"/>
-                    <h2><?php echo $node['Nome']; ?></h2>
-                    <p><?php echo $node['Descrizione']; ?></p>
-                    <dl>
-                        <dt>Prezzo:</dt>
-                        <dd><?php echo $node['Prezzo']; ?> &euro;</dd>
-                        <dt>Data:</dt>
-                        <dd><?php echo $node['Data']; ?></dd>
-                        <dt>Ora:</dt>
-                        <dd><?php echo $node['Ore'] ?></dd>
-                    </dl>
-                    <?php if (isset($_SESSION['username'])): ?>
-                        <?php
-                        echo "<span class=\"btnTrip\"><a href=\"Prenotazione.php?id=" . $node["ID_Attivita"] . "\">Prenota la gita</a></span>";
-                        ?>
-                    <?php else: ?>
-                        <span class="btnTrip"><a href="Accedi.php" aria-label="Accedi per prenotare la gita">Accedi</a> per poter prenotare</span>
-                    <?php endif ?>
+                    <div class="row">
+                        <div class="col-6">
+                            <h2><?php echo $node['Nome']; ?></h2>
+                            <p><?php echo $node['Descrizione']; ?></p>
+                            <dl class="inline-list">
+                                <dt>Prezzo:</dt>
+                                <dd><?php echo $node['Prezzo']; ?> &euro;</dd>
+                                <dt>Data:</dt>
+                                <dd><?php echo $node['Data']; ?></dd>
+                                <dt>Ora:</dt>
+                                <dd><?php echo $node['Ore'] ?></dd>
+                            </dl>
+                        </div>
+                        <div class="col-6">
+                            <img src="data:image/jpeg;base64,<?php echo $immagine ?>"
+                                 alt="Immagine <?php echo $node['Nome'] ?>"
+                                 class="responsive-image float-right same-size"/>
+                        </div>
+                    </div>
+                        <div class="form-field">
+                            <?php if (isset($_SESSION['username'])): ?>
+                                <?php
+                                echo "<a href=\"Prenotazione.php?id=" . $node["ID_Attivita"] . "\" class=\"btn btn-primary\">Prenota la gita</a></span>";
+                                ?>
+                            <?php else: ?>
+                                <a href="Accedi.php" aria-label="Accedi per prenotare la gita">Accedi</a> per poter prenotare
+                            <?php endif ?>
+                        </div>
                 </div>
             <?php endforeach;
         } ?>

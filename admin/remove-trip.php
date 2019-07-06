@@ -54,9 +54,9 @@ if (!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
             $node['Ore'] = substr($node['Ore'], 0, 5);
             $node['Data'] = $data[2] . "/" . $data[1] . "/" . $data[0];
             ?>
-            <h2><?php echo $node['Nome']; ?></h2>
-            <div class="attivita">
-                <dl>
+            <div class="card form-field">
+                <h2><?php echo $node['Nome']; ?></h2>
+                <dl class="inline-list">
                     <dt>Descrizione</dt>
                     <dd><?php echo $node['Descrizione']; ?></dd>
                     <dt>Prezzo</dt>
@@ -66,9 +66,11 @@ if (!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
                     <dt>Ore</dt>
                     <dd><?php echo $node['Ore'] ?></dd>
                 </dl>
-                <?php
-                echo "<span class=\"btnTrip\"><a href=\"../PHP/FunzioniAdmin/remove-trip-script.php?id=" . $node["ID_Attivita"] . "\">Rimuovi gita</a></span>";
-                ?>
+                <div class="row">
+                    <?php
+                    echo "<a class=\"btn btn-red\" href=\"../PHP/FunzioniAdmin/remove-trip-script.php?id=" . $node["ID_Attivita"] . "\">Rimuovi gita</a>" . PHP_EOL;
+                    ?>
+                </div>
             </div>
         <?php
         endforeach; ?>
