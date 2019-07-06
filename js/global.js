@@ -17,7 +17,7 @@ function validaFormUtente(validazionePassword, alertErrore, form) {
     var anagrafica = $("#nome, #cognome");
     anagrafica.each(function () {
         var testo = $(this).val().trim();
-        if (testo.length == 0) {
+        if (testo.length === 0) {
             notificaErrore($(this), "Campo " + $(this).attr("name") + " obbligatorio", $(".alert.errore"), $("form"));
             formValido = false;
         }
@@ -32,7 +32,7 @@ function validaFormUtente(validazionePassword, alertErrore, form) {
     var email = $("#email");
     //espressione regolare che valida un'email a grandi linee. Presa da
     //https://stackoverflow.com/questions/46155/how-to-validate-email-address-in-javascript quarta risposta
-    if (/[^\s@]+@[^\s@]+\.[^\s@]+/.test(email.val().trim()) == false) {
+    if (/[^\s@]+@[^\s@]+\.[^\s@]+/.test(email.val().trim()) === false) {
         notificaErrore(email, "Inserire un'<span xml:lang='en'> email </span> valida", alertErrore, form);
         formValido = false;
     }
@@ -54,13 +54,13 @@ function validaPassword(password, password2, divErrore, formErrore) {
 
     passwordValide = true;
 
-    if (password.val().trim().length == 0) {
+    if (password.val().trim().length === 0) {
         notificaErrore(password, "Inserire una nuova <span xml:lang=\"en\"> password </span> valida", divErrore, formErrore);
         passwordValide = false;
-    } else if (password2.val().trim().length == 0) {
+    } else if (password2.val().trim().length === 0) {
         notificaErrore(password2, "Si prega di ripetere la nuova <span xml:lang=\"en\"> password </span>", divErrore, formErrore);
         passwordValide = false;
-    } else if (password.val() != password2.val()) {
+    } else if (password.val() !== password2.val()) {
         notificaErrore(password2, "Le <span xml:lang=\"en\"> password </span> non combaciano", divErrore, formErrore);
         passwordValide = false;
     }
@@ -70,7 +70,7 @@ function validaPassword(password, password2, divErrore, formErrore) {
 
 function validaPosti(alertErrore) {
     var posti = $("#reservePosti");
-    if (posti.val().length == 0 || isNaN(posti.val())) {
+    if (posti.val().length === 0 || isNaN(posti.val())) {
         alertErrore.show();
         return false;
     }
