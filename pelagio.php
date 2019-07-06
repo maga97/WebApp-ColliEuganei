@@ -42,7 +42,7 @@ if (session_status() == PHP_SESSION_NONE) {
         <div class="section">
             <h2>Il Castello di San Pelagio</h2>
             <div class="float-right">
-                <img class="pic storiapic" src="assets/img/pelagio1.jpg" alt="Entrata del Castello di San Pelagio"/>
+                <img class="picture history-picture" src="assets/img/pelagio1.jpg" alt="Entrata del Castello di San Pelagio"/>
             </div>
             <p class="text">
                 Il Castello di San Pelagio ha origini medievali (XIV sec.) come testimonia la torre costruita dai Da
@@ -78,7 +78,7 @@ if (session_status() == PHP_SESSION_NONE) {
             </p>
             <h2>Il museo</h2>
             <div class="float-right">
-                <img class="pic storiapic" src="assets/img/pelagio2.jpg"
+                <img class="picture history-picture" src="assets/img/pelagio2.jpg"
                      alt="Museo del volo nel Castello di San Pelagio"/>
             </div>
             <p class="text">

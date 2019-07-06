@@ -46,7 +46,7 @@ if (isset($_POST["conferma_modifica"])) {
         <ul class="breadcrumb">
             <li>Impostazioni account</li>
         </ul>
-        <div class="form container_form">
+        <div class="form">
             <div class="titolo-form">
                 <h1 id="titolo">Riepilogo dati <span xml:lang="en">account</span></h1>
             </div>
@@ -75,7 +75,7 @@ if (isset($_POST["conferma_modifica"])) {
                 $db = new database();
                 $db->connect();
                 ?>
-                <div class="log-field-container">
+                <div class="form-field">
                     <label for="email" xml:lang="en">Email: </label>
                     <div class="input-container">
                         <?php if (isset($_POST["modifica_dati"]) || (isset($errore) && $errore != "")): ?>
@@ -87,7 +87,7 @@ if (isset($_POST["conferma_modifica"])) {
                         <?php endif; ?>
                     </div>
                 </div>
-                <div class="log-field-container">
+                <div class="form-field">
                     <label for="nome">Nome: </label>
                     <div class="input-container">
                         <?php if (isset($_POST["modifica_dati"]) || (isset($errore) && $errore != "")): ?>
@@ -99,7 +99,7 @@ if (isset($_POST["conferma_modifica"])) {
                         <?php endif; ?>
                     </div>
                 </div>
-                <div class="log-field-container">
+                <div class="form-field">
                     <label for="cognome">Cognome: </label>
                     <div class="input-container">
 
@@ -112,7 +112,7 @@ if (isset($_POST["conferma_modifica"])) {
                         <?php endif; ?>
                     </div>
                 </div>
-                <div class="log-field-container">
+                <div class="form-field">
                     <label for="indirizzo">Indirizzo: </label>
                     <div class="input-container">
                         <?php if (isset($_POST["modifica_dati"]) || (isset($errore) && $errore != "")): ?>
@@ -124,7 +124,7 @@ if (isset($_POST["conferma_modifica"])) {
                         <?php endif; ?>
                     </div>
                 </div>
-                <div class="log-field-container">
+                <div class="form-field">
                     <label for="civico">Civico: </label>
                     <div class="input-container">
                         <?php if (isset($_POST["modifica_dati"]) || (isset($errore) && $errore != "")): ?>
@@ -136,7 +136,7 @@ if (isset($_POST["conferma_modifica"])) {
                         <?php endif; ?>
                     </div>
                 </div>
-                <div class="log-field-container">
+                <div class="form-field">
                     <label for="citta">Citt&agrave;: </label>
                     <div class="input-container">
                         <?php if (isset($_POST["modifica_dati"]) || (isset($errore) && $errore != "")): ?>
@@ -148,7 +148,7 @@ if (isset($_POST["conferma_modifica"])) {
                         <?php endif; ?>
                     </div>
                 </div>
-                <div class="log-field-container">
+                <div class="form-field">
                     <label for="CAP"><abbr title="Codice di avviamento postale">CAP</abbr>: </label>
                     <div class="input-container">
                         <?php if (isset($_POST["modifica_dati"]) || (isset($errore) && $errore != "")): ?>
@@ -178,19 +178,19 @@ if (isset($_POST["conferma_modifica"])) {
                 <h2>Modifica <span xml:lang="en">password</span></h2>
             </div>
             <form id="mod-pwd-form" method="post" action="view-account-admin.php">
-                <div class="log-field-container">
+                <div class="form-field">
                     <label for="vecchia-password">Password corrente: (obbligatorio)</label>
                     <div class="input-container">
                         <input type="password" id="vecchia-password" name="vecchia-password" class="disabilita"/>
                     </div>
                 </div>
-                <div class="log-field-container">
+                <div class="form-field">
                     <label for="password">Nuova <span xml:lang="en">password</span>: (obbligatorio)</label>
                     <div class="input-container">
                         <input type="password" id="password" name="password" class="disabilita"/>
                     </div>
                 </div>
-                <div class="log-field-container">
+                <div class="form-field">
                     <label for="password2">Ripeti nuova <span xml:lang="en">password</span>: (obbligatorio)</label>
                     <div class="input-container">
                         <input type="password" id="password2" name="password2" class="disabilita"/>

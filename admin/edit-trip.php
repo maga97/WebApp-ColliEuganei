@@ -75,42 +75,42 @@ $data = $arrayofdata[2] . "/" . $arrayofdata[1] . "/" . $arrayofdata[0];
 
                     <img src="data:image/jpeg;base64,<?php echo $immagine ?>" alt="Immagine <?php echo $nome ?>"
                          class="responsive-image center-image"/>
+                    <h2>Modifica gita "<?php echo $nomegita; ?>"</h2>
                     <form action="edit-trip.php" enctype="multipart/form-data"
                           name="form-modify-trip"
                           method="POST">
-                        <div class="log-field-container">
-                            <legend>Modifica gita "<?php echo $nomegita; ?>"</legend>
-                            <input type="hidden" name="id" value="<?php echo $id; ?>"/>
-                            <label for="titolo">Titolo</label>
-                            <input type="text" name="nomegita" id="idnomegita" value="<?php echo $nomegita; ?>"
-                                   required="required" maxlength="40"/>
+                        <input type="hidden" name="id" value="<?php echo $id; ?>"/>
+                        <div class="form-field">
+                            <label for="nomegita">Titolo</label>
+                            <input type="text" name="nomegita" id="nomegita" value="<?php echo $nomegita; ?>"
+                                   required="required" maxlength="40" />
                         </div>
-                        <div class="log-field-container">
+                        <div class="form-field">
                             <label for="descrizione">Descrizione</label>
                             <textarea rows="5" cols="40" name="descrizione" required="required"
-                                      maxlength="256"><?php echo $descrizione; ?></textarea>
+                                      maxlength="256" id="descrizione"><?php echo $descrizione; ?></textarea>
                         </div>
-                        <div class="log-field-container">
+                        <div class="form-field">
                             <label for="immagine">Immagine</label>
                             <input type="file" name="immagine" aria-labelledby="imgdesc" id="idimmagine"
                                    placeholder="Selezione immagine gita"/>
                             <span id="imgdesc" tabindex="0">Se lasciata vuota l'immagine non cambier&agrave;</span>
                         </div>
-                        <div class="log-field-container">
+                        <div class="form-field">
                             <label for="data">Data</label>
                             <input type="text" name="data" aria-labelledby="datadesc" required="required"
-                                   value="<?php echo $data; ?>"/>
+                                   value="<?php echo $data; ?>" id="data"/>
                             <span id="datadesc" tabindex="0">gg/mm/aaaa</span>
                         </div>
-                        <div class="log-field-container">
+                        <div class="form-field">
                             <label for="ora">Ora</label>
                             <input type="text" name="ora" aria-labelledby="oradesc" required="required"
-                                   value="<?php echo $ora; ?>"/>
+                                   value="<?php echo $ora; ?>" id="ora"/>
                             <span id="oradesc" tabindex="0">hh:mm</span>
                         </div>
-                        <div class="log-field-container">
+                        <div class="form-field">
                             <label for="prezzo">Prezzo</label>
-                            <input type="text" min="0" id="prezzoAddTrip" name="prezzo" required="required"
+                            <input type="text" min="0" id="prezzo" name="prezzo" required="required"
                                    aria-labelledby="prezzodesc" value="<?php echo $prezzo; ?>"/>
                             <span id="prezzodesc" tabindex="0">10.50</span>
                         </div>
@@ -118,7 +118,6 @@ $data = $arrayofdata[2] . "/" . $arrayofdata[1] . "/" . $arrayofdata[0];
                             <input type="reset" value="Cancella dati" name="cancelladati" class="btn btn-tripCancel"/>
                             <input type="submit" value="Modifica" name="modificaGita" class="btn btn-tripInsert"/>
                         </div>
-                        </fieldset>
                     </form>
                 </div>
             </div>

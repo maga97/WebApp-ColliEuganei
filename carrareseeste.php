@@ -42,7 +42,7 @@ if (session_status() == PHP_SESSION_NONE) {
         <div class="section">
             <h2>Il Castello Carrarese di Este</h2>
             <div class="float-right">
-                <img class="pic storiapic" src="assets/img/este1.jpg" alt="Castello Carrarese di Este"/>
+                <img class="picture history-picture" src="assets/img/este1.jpg" alt="Castello Carrarese di Este"/>
             </div>
             <p class="text">
                 Il castello di Este è stato costruito circa nel 1340, per iniziativa del signore di Padova Ubertino da
@@ -59,7 +59,7 @@ if (session_status() == PHP_SESSION_NONE) {
             </p>
             <h2>L'evoluzione del Castello</h2>
             <div class="float-right">
-                <img class="pic storiapic" src="assets/img/este2.jpg" alt="Parco del Castello Carrarese di Este"/>
+                <img class="picture history-picture" src="assets/img/este2.jpg" alt="Parco del Castello Carrarese di Este"/>
             </div>
             <p class="text">
                 Il Castello fu utilizzato a fini difensivi fino alla spontanea dedizione della città alla Repubblica di

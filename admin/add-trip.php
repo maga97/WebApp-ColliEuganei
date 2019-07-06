@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css"/>
     <link rel="stylesheet" type="text/css" href="../assets/css/print.css" media="print"/>
     <link rel="stylesheet" type="text/css" href="../assets/css/mobile480.css" media="screen and (max-width: 460px)"/>
     <link rel="stylesheet" type="text/css" href="../assets/css/mobile768.css" media="screen and (max-width: 768px)"/>
@@ -44,50 +44,51 @@ if (isset($_POST["aggiungiGita"])) {
             <li>Gestione gite</li>
             <li>Aggiungi nuova gita</li>
         </ul>
+        <?php
+        if (isset($errore) && $errore == false) {
+            echo "<div class=\"alert nojs success\">Inserimento avvenuto correttamente</div>" . PHP_EOL;
+        } else if (isset($errore) && $errore != false) {
+            echo "<div class=\"alert nojs errore\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\"><p>Errore: " . $errore . "</p></div>" . PHP_EOL;
+        }
+        ?>
         <div class="form">
-            <?php
-            if (isset($errore) && $errore == false) {
-                echo "<div class=\"alert nojs success\">Inserimento avvenuto correttamente</div>" . PHP_EOL;
-            } else if (isset($errore) && $errore != false) {
-                echo "<div class=\"alert nojs errore\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\"><p>Errore: " . $errore . "</p></div>" . PHP_EOL;
-            }
-            ?>
-            <form action="add-trip.php" enctype="multipart/form-data" name="form-add-trip" method="POST">
-                <div class="log-field-container">
-                    <legend>Aggiungi nuova gita</legend>
-                    <label for="nomegita">Titolo</label>
-                    <input type="text" name="nomegita" id="nomegita" required="required"/>
-                </div>
-                <div class="log-field-container">
-                    <label for="descrizione">Descrizione</label>
-                    <textarea rows="5" cols="40" name="descrizione" id="descrizione" required="required"></textarea>
-                </div>
-                <div class="log-field-container">
-                    <label for="immagine">Immagine</label>
-                    <input type="file" name="immagine" id="immagine"
-                           required="required"/>
-                </div>
-                <div class="log-field-container">
-                    <label for="data">Data (gg/mm/aaaa)</label>
-                    <input type="text" name="data" id="data" required="required" aria-labelledby="data"/>
-                </div>
-                <div class="log-field-container">
-                    <label for="ora">Ora (hh:mm)</label>
-                    <input type="text" name="ora" id="ora" required="required" aria-labelledby="ora"/>
-                </div>
-                <div class="log-field-container">
-                    <label for="prezzo">Prezzo (10.50)</label>
-                    <input type="text" aria-labelledby="prezzo" id="prezzo" name="prezzo" required="required"/>
-                </div>
-                <div class="button-holder">
-                    <label for="bottoneCancella">Cancella dati</label>
-                    <input type="reset" value="Cancella dati" name="cancelladati" id="bottoneCancella"
-                           class="btn btn-tripCancel"/>
-                    <label for="bottoneIns">Inserisci</label>
-                    <input type="submit" value="Inserisci" name="aggiungiGita" id="bottoneIns"
-                           class="btn btn-tripInsert"/>
-                </div>
-            </form>
+            <h1>Aggiungi nuova gita</h1>
+            <div class="row">
+                <form action="add-trip.php" enctype="multipart/form-data" name="form-add-trip" method="POST">
+                    <div class="form-field">
+                        <label for="nomegita">Titolo</label>
+                        <input type="text" name="nomegita" id="nomegita" required="required"/>
+                    </div>
+                    <div class="form-field">
+                        <label for="descrizione">Descrizione</label>
+                        <textarea rows="20" cols="40" name="descrizione" id="descrizione"
+                                  required="required"></textarea>
+                    </div>
+                    <div class="form-field">
+                        <label for="immagine">Immagine</label>
+                        <input type="file" name="immagine" id="immagine"
+                               required="required"/>
+                    </div>
+                    <div class="form-field">
+                        <label for="data">Data (gg/mm/aaaa)</label>
+                        <input type="text" name="data" id="data" required="required" aria-labelledby="data"/>
+                    </div>
+                    <div class="form-field">
+                        <label for="ora">Ora (hh:mm)</label>
+                        <input type="text" name="ora" id="ora" required="required" aria-labelledby="ora"/>
+                    </div>
+                    <div class="form-field">
+                        <label for="prezzo">Prezzo (10.50)</label>
+                        <input type="text" aria-labelledby="prezzo" id="prezzo" name="prezzo" required="required"/>
+                    </div>
+                    <div class="button-holder">
+                        <input type="reset" value="Cancella dati" name="cancelladati" id="bottoneCancella"
+                               class="btn btn-tripCancel"/>
+                        <input type="submit" value="Inserisci" name="aggiungiGita" id="bottoneIns"
+                               class="btn btn-tripInsert"/>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
     <?php echo include_once "../footer.php"; ?>

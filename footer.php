@@ -1,9 +1,7 @@
 <div id="footer">
-    <div id="copyright"> &copy; 2018 Colli Euganei</div>
-    <div><p>Creato per il progetto di Tecnologie Web</p></div>
-    <div><p>Anno accademico 2018/2019</p></div>
-</div>
-<div id="footermobile">
-    <div id="copyrightMobile"> &copy; 2018 Colli Euganei</div>
-    <div><p>Creato per il progetto di Tecnologie Web 18/19</p></div>
+    <div class="row">
+        <div class="footer-col"> &copy; 2018 Colli Euganei</div>
+        <div class="footer-col">Creato per il progetto di Tecnologie Web</div>
+        <div class="footer-col">Anno accademico 2018/2019</div>
+    </div>
 </div>

@@ -7,7 +7,7 @@
             <li><a href="index.php" tabindex="0">Home</a></li>
         <?php endif; ?>
         <li class="dropdown"><a aria-haspopup="true" tabindex="0">Gestione gite</a>
-            <ul class="dropdown-content" role="menu">
+            <ul class="dropdown-content" role="menu" id="dropdown-trip">
                 <?php if ($nomepagina == "add-trip.php"): ?>
                     <li class="active"><a href="add-trip.php" tabindex="0" role="menuitem">Aggiungi gita</a></li>
                 <?php else: ?>

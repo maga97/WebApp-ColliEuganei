@@ -48,9 +48,9 @@ if (session_status() == PHP_SESSION_NONE) {
                 vita ad un magnifico territorio.
             </p>
         </div>
-        <div id="galleria" class="row nascosto">
+        <div id="galleria" class="row">
             <div class="col">
-                <img class="pic" src="assets/img/geog.jpg" alt="Geografia del territorio"/>
+                <img class="picture" src="assets/img/geog.jpg" alt="Geografia del territorio"/>
                 <dl>
                     <dt>Geografia</dt>
                     <dd>Scopri la geografia del territorio e come si &egrave; formato.</dd>
@@ -61,7 +61,7 @@ if (session_status() == PHP_SESSION_NONE) {
                 </div>
             </div>
             <div class="col">
-                <img class="pic" src="assets/img/clima.jpg" alt="Colli euganei ricoperti di neve"/>
+                <img class="picture" src="assets/img/clima.jpg" alt="Colli euganei ricoperti di neve"/>
                 <dl>
                     <dt>Clima</dt>
                     <dd>Scopri come il territorio si presenta nel corso dell'anno.</dd>
@@ -72,7 +72,7 @@ if (session_status() == PHP_SESSION_NONE) {
                 </div>
             </div>
             <div class="col">
-                <img class="pic" src="assets/img/storia.jpg" alt="Rocca di Monselice"/>
+                <img class="picture" src="assets/img/storia.jpg" alt="Rocca di Monselice"/>
                 <dl>
                     <dt>Storia</dt>
                     <dd>Scopri la storia, la cultura e l'arte del territorio</dd>
@@ -90,8 +90,8 @@ if (session_status() == PHP_SESSION_NONE) {
                 interessanti e particolari
                 e a panorami di rara bellezza.
             </p>
-            <div class="float-right climapic">
-                <img class="pic" src="assets/img/inverno.jpg" alt="Monte Ceva"/>
+            <div class="float-right clima-picture">
+                <img class="picture" src="assets/img/inverno.jpg" alt="Monte Ceva"/>
             </div>
             <h3>Autunno e Inverno</h3>
             <p class="text">
@@ -103,8 +103,8 @@ if (session_status() == PHP_SESSION_NONE) {
                 contrasta con gli interni caldi di trattorie e case
                 che risultano ancora pi&ugrave; accoglienti e confortevoli.
             </p>
-            <div class="float-right climapic">
-                <img class="pic" src="assets/img/primavera.jpg" alt="Primavera nei Colli Euganei"/>
+            <div class="float-right clima-picture">
+                <img class="picture" src="assets/img/primavera.jpg" alt="Primavera nei Colli Euganei"/>
             </div>
             <h3>Primavera ed Estate</h3>
             <p class="text">
@@ -124,7 +124,7 @@ if (session_status() == PHP_SESSION_NONE) {
             </p>
             <h3>Origine dei colli</h3>
             <div class="float-right" id="geotab" aria-hidden="true">
-                <img class="pic" src="assets/img/geotab.png" alt=""/>
+                <img class="picture" src="assets/img/geotab.png" alt=""/>
             </div>
             <p class="text">
                 I colli sono di origine vulcanica: circa 30 milioni di anni fa il territorio che oggi costituisce la
@@ -182,7 +182,7 @@ if (session_status() == PHP_SESSION_NONE) {
             </p>
             <h3>Storia di popoli</h3>
             <div class="float-right">
-                <img class="pic storiapic" src="assets/img/atestino.jpg" alt="Immagine Atestino"/>
+                <img class="picture history-picture" src="assets/img/atestino.jpg" alt="Immagine Atestino"/>
             </div>
             <p class="text">
                 Dopo gli antichi Euganei, primi abitanti della zona, fu la volta dei Veneti le cui testimonianze
@@ -212,7 +212,7 @@ if (session_status() == PHP_SESSION_NONE) {
             </p>
             <h3>L'arte</h3>
             <div class="float-right">
-                <img class="pic storiapic" src="assets/img/filmfestival.jpg" alt="Anfiteatro del Venda"/>
+                <img class="picture history-picture" src="assets/img/filmfestival.jpg" alt="Anfiteatro del Venda"/>
             </div>
             <p class="text">
                 Per gli amanti dell'arte, mete imperdibili sono i musei come il gi&agrave; citato Museo Nazionale

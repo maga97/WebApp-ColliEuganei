@@ -8,15 +8,9 @@
         margin-left: 0.5cm;
     }
 
-    .content {
-        width: 100%;
-        margin: 0;
-        float: none;
-    }
-
     /* h1 and h2 */
     h1 {
-        font-size: 18pt;
+        font-size: 	1.5em;
         margin-top: 0.3125em;
     }
 
@@ -25,9 +19,21 @@
         page-break-after: avoid;
     }
 
+    #content {
+        width: 100%;
+        margin: 0;
+        float: none;
+    }
+
+
+
     /* what must not be displayed */
     #menuprincipale-bar, #footer, #scroll-top-btn, .find-more, .breadcrumb, .col, #geotab {
         display: none;
+    }
+
+    #geografia-text, #clima-text, #storia-text {
+        display: block;
     }
 
     /* link color*/
@@ -62,7 +68,7 @@
     }
 
     /* picture settings */
-    .pic {
+    .picture {
         max-width: 21.875em;
         max-height: 15.625em;
         page-break-inside: avoid;

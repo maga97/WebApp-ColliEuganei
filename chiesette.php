@@ -42,7 +42,7 @@ if (session_status() == PHP_SESSION_NONE) {
         <div class="section">
             <h2>La via delle 7 chiesette</h2>
             <div class="float-right">
-                <img class="pic storiapic" src="assets/img/7chiesette.jpg" alt="Le 7 chiesette"/>
+                <img class="picture history-picture" src="assets/img/7chiesette.jpg" alt="Le 7 chiesette"/>
             </div>
             <p class="text">
                 La via delle sette chiesette è un breve percorso e meta di pellegrinaggio in quel di Monselice.
@@ -56,7 +56,7 @@ if (session_status() == PHP_SESSION_NONE) {
                 trovano le salme di 25 martiri cristiani e altre reliquie trasferitevi a metà del XVII secolo.
             </p>
             <div class="float-right">
-                <img class="pic storiapic" src="assets/img/santuario2.jpg" alt="Il santuario"/>
+                <img class="picture history-picture" src="assets/img/santuario2.jpg" alt="Il santuario"/>
             </div>
             <h2>Villa Duodo e il Mastio Federiciano</h2>
             <p class="text">

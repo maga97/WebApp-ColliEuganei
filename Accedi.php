@@ -48,8 +48,8 @@ if (isset($_POST["Login"])) {
         <ul class="breadcrumb">
             <li>Login</li>
         </ul>
-        <div class="form">
-            <form method="post" action="Accedi.php" class="log-form">
+        <div class="form" id="login-form-container">
+            <form method="post" action="Accedi.php">
                 <?php
                 if (isset($emptyFields)):
                     echo '
@@ -61,13 +61,13 @@ if (isset($_POST["Login"])) {
                 endif;
                 ?>
                 <h1>Accedi</h1>
-                <div class="log-field-container">
+                <div class="form-field">
                     <label for="username" class="log-label">Email: </label>
                     <input type="text" id="username" name="email"
                            value="<?php echo isset($_POST['email']) ? $_POST['email'] : ""; ?>" accesskey="n"
                            aria-required="true" maxlength="28"/>
                 </div>
-                <div class="log-field-container">
+                <div class="form-field">
                     <label for="password" xml:lang="en" class="log-label">Password: </label>
                     <input type="password" id="password"
                            value="<?php echo isset($_POST['password']) ? $_POST['password'] : ""; ?>"

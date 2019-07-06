@@ -41,12 +41,12 @@ if (session_status() == PHP_SESSION_NONE) {
             <form action="Gite.php" method="post">
                 <fieldset>
                     <legend>Modulo di ricerca delle gite</legend>
-                    <div class="log-field-container">
+                    <div class="form-field">
                         <label for="idricerca" class="log-label">Ricerca gite</label>
                         <input type="text" id="idricerca" name="ricerca" aria-required="true" accesskey="s"
                                maxlength="20"/>
                     </div>
-                    <div class="log-field-container">
+                    <div class="form-field">
                         <input type="submit" value="Cerca" class="btn btn-primary"/>
                     </div>
                 </fieldset>

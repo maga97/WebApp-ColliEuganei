@@ -32,19 +32,9 @@ ul#menuprincipale.responsive li a {
     display: none;
 }
 
-#container_form {
-    width: auto;
-}
-
-#sectionPersonalData, #sectionAccountData {
-    float: none;
-    width: 100%;
-    margin: 0;
-}
-
 .admin-div {
     width: 100%;
-    margin: 0;
+    margin: 1% 0 1% 0;
     padding: 0.3em;
     border-radius: 0;
 }
