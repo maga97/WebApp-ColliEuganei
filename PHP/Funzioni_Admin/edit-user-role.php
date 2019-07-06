@@ -1,5 +1,5 @@
 <?php
-require_once "../DataBase/DBConnection.php";
+require_once "../../DataBase/DBConnection.php";
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
@@ -15,16 +15,16 @@ if (isset($_GET["action"], $_GET["id"])) {
     switch ($action) {
         case "promote":
             if ($db->UpdateUserRole($id, "amministratore")) {
-                header("Location: add-admin.php?done=true");
+                header("Location: ../../admin/add-admin.php?done=true");
             } else {
-                header("Location: add-admin.php?error=Impossibile+completare+la+modifica");
+                header("Location: ../../admin/add-admin.php?error=Impossibile+completare+la+modifica");
             }
             break;
         case "remove":
             if ($db->UpdateUserRole($id, "utente")) {
-                header("Location: remove-admin.php?done=true");
+                header("Location: ../../admin/remove-admin.php?done=true");
             } else {
-                header("Location: remove-admin.php?error=Impossibile+completare+la+modifica");
+                header("Location: ../../admin/remove-admin.php?error=Impossibile+completare+la+modifica");
             }
             break;
     }

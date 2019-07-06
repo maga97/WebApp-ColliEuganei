@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 <head>
-    <meta http-equiv="content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
     <link rel="stylesheet" type="text/css" href="assets/css/print.css" media="print"/>
@@ -38,7 +38,6 @@ if (isset($_POST["confermaPrenotazione"])) {
         $_SESSION["ErroriPosti"] = true;
         header("Location:" . $_SERVER['HTTP_REFERER']);
         exit;
-
     }
 } else {
     header("Location: index.php");
@@ -86,7 +85,7 @@ if (isset($_POST["confermaPrenotazione"])) {
                     </dl>
                 </div>
                 <div class="button-holder">
-                    <form action="" method="POST">
+                    <form action="ConfermaPrenotazione.php" method="post">
                         <input onclick="return validaPosti()" type="submit" value="Conferma" name="confermaPrenotazione"
                                class="btn btn-success"/>
                         <input type="submit" value="Annulla" name="cancellaPrenotazione" class="btn btn-red"/>

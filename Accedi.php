@@ -71,7 +71,7 @@ if (isset($_POST["Login"])) {
                     <label for="password" xml:lang="en" class="log-label">Password: </label>
                     <input type="password" id="password"
                            value="<?php echo isset($_POST['password']) ? $_POST['password'] : ""; ?>"
-                           aria-required="true" name="password" accesskey="p"
+                            name="password" accesskey="p"
                            maxlength="32"/>
                 </div>
                 <div class="button-holder"><input type="submit" value="Login" name="Login" class="btn btn-primary"/>
