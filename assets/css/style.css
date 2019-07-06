@@ -168,6 +168,12 @@ ul.breadcrumb li + li:before {
     width: 25em;
 }
 
+.not-found {
+    width:auto;
+    text-align: center;
+
+}
+
 .clima-picture {
     width: 28em;
 }
