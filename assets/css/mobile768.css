@@ -9,12 +9,8 @@
     margin-top: 0;
 }
 
-.row {
-    display: block;
-}
-
 .col {
-    padding: 0.25em;
+    width: 100%;
 }
 
 .place {
