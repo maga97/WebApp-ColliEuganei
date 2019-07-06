@@ -83,6 +83,10 @@ ul.breadcrumb {
     list-style: none;
 }
 
+ul.breadcrumb a {
+    text-decoration: underline;
+}
+
 ul.breadcrumb li {
     display: inline;
 }
@@ -168,10 +172,9 @@ ul.breadcrumb li + li:before {
     width: 25em;
 }
 
-.clima-picture {
+.climate-picture {
     width: 28em;
 }
-
 
 a:link {
     text-decoration: none;
@@ -183,21 +186,21 @@ a:visited {
     color: #000;
 }
 
-.col dl > dt {
+.gallery-dl > dt {
     font-weight: bold;
 }
 
-.col dl > dd:first-child {
+.gallery-dl > dd:first-child {
     font-weight: bold;
     font-size: 1.3em;
     text-align: center;
 }
 
-.col dl > dt:not(:first-child)::after {
+.gallery-dl > dt:not(:first-child)::after {
     content: ":";
 }
 
-.col dl > dd {
+.gallery-dl > dd {
     margin-left: 0;
 }
 
@@ -325,7 +328,6 @@ ul.dropdown-content li a {
 }
 
 #descrizione {
-    resize: vertical;
     min-height: 4em;
 }
 
@@ -517,7 +519,7 @@ div.alert.errore.login, div.alert.nojs {
     height: auto;
 }
 
-.center-image {
+.center-block {
     display: block;
     margin-right: auto;
     margin-left: auto;

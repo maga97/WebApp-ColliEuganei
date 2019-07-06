@@ -47,7 +47,7 @@ if (session_status() == PHP_SESSION_NONE) {
                                maxlength="20"/>
                     </div>
                     <div class="form-field">
-                        <input type="submit" value="Cerca" class="btn btn-primary"/>
+                        <input type="submit" value="Cerca" class="btn btn-primary center-block"/>
                     </div>
                 </fieldset>
             </form>
@@ -57,21 +57,22 @@ if (session_status() == PHP_SESSION_NONE) {
         $db->connect();
         $list = null;
         $segnalato = false;
+        $empyset = false;
         if (isset($_POST['ricerca'])) {
-            if (strlen($_POST['ricerca']) > 0)
+            if (strlen($_POST['ricerca']) > 0) {
                 $list = $db->Ricerca($_POST['ricerca']);
+                $empyset = sizeof($list) > 0 ? false : true;
+            }
             else {
                 echo "<div class=\"alert nojs errore button-holder\" role=\"alert\">Nessuna parola chiave inserita</div>" . PHP_EOL;
-                $segnalato = true;
             }
         } else {
             $list = $db->GetListaAttivita();
+        };
+        if ($empyset) {
+            echo "<div class=\"alert nojs warning button-holder\" role=\"alert\">La ricerca non ha trovato nessuna gita con questa frase o parola chiave</div>" . PHP_EOL;
         }
-        $list == null ? $size = 0 : $size = sizeof($list);
-        if ($size == 0 && $segnalato == false) {
-            echo "<div class=\"alert nojs warning button-holder\" role=\"alert\">la ricerca non ha trovato nessuna gita con questa frase o parola chiave</div>" . PHP_EOL;
-        }
-        if($size>0){
+        if(sizeof($list)>0){
             foreach ($list as $node):
                 $data = explode("-", $node['Data']);
                 $node['Ore'] = substr($node['Ore'], 0, 5);

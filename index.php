@@ -50,8 +50,8 @@ if (session_status() == PHP_SESSION_NONE) {
         </div>
         <div id="galleria" class="row">
             <div class="col">
-                <img class="picture" src="assets/img/geog.jpg" alt="Geografia del territorio"/>
-                <dl>
+                <img class="responsive-image center-block" src="assets/img/geog.jpg" alt="Geografia del territorio"/>
+                <dl class="gallery-dl">
                     <dt>Geografia</dt>
                     <dd>Scopri la geografia del territorio e come si &egrave; formato.</dd>
                 </dl>
@@ -61,8 +61,8 @@ if (session_status() == PHP_SESSION_NONE) {
                 </div>
             </div>
             <div class="col">
-                <img class="picture" src="assets/img/clima.jpg" alt="Colli euganei ricoperti di neve"/>
-                <dl>
+                <img class="responsive-image center-block" src="assets/img/clima.jpg" alt="Colli euganei ricoperti di neve"/>
+                <dl class="gallery-dl">
                     <dt>Clima</dt>
                     <dd>Scopri come il territorio si presenta nel corso dell'anno.</dd>
                 </dl>
@@ -72,8 +72,8 @@ if (session_status() == PHP_SESSION_NONE) {
                 </div>
             </div>
             <div class="col">
-                <img class="picture" src="assets/img/storia.jpg" alt="Rocca di Monselice"/>
-                <dl>
+                <img class="responsive-image center-block" src="assets/img/storia.jpg" alt="Rocca di Monselice"/>
+                <dl class="gallery-dl">
                     <dt>Storia</dt>
                     <dd>Scopri la storia, la cultura e l'arte del territorio</dd>
                 </dl>
@@ -90,7 +90,7 @@ if (session_status() == PHP_SESSION_NONE) {
                 interessanti e particolari
                 e a panorami di rara bellezza.
             </p>
-            <div class="float-right clima-picture">
+            <div class="float-right climate-picture">
                 <img class="picture" src="assets/img/inverno.jpg" alt="Monte Ceva"/>
             </div>
             <h3>Autunno e Inverno</h3>
@@ -103,7 +103,7 @@ if (session_status() == PHP_SESSION_NONE) {
                 contrasta con gli interni caldi di trattorie e case
                 che risultano ancora pi&ugrave; accoglienti e confortevoli.
             </p>
-            <div class="float-right clima-picture">
+            <div class="float-right climate-picture">
                 <img class="picture" src="assets/img/primavera.jpg" alt="Primavera nei Colli Euganei"/>
             </div>
             <h3>Primavera ed Estate</h3>
