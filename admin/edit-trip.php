@@ -74,7 +74,7 @@ $data = $arrayofdata[2] . "/" . $arrayofdata[1] . "/" . $arrayofdata[0];
                     ?>
 
                     <img src="data:image/jpeg;base64,<?php echo $immagine ?>" alt="Immagine <?php echo $nome ?>"
-                         class="responsive-image center-image"/>
+                         class="responsive-image center-block"/>
                     <h2>Modifica gita "<?php echo $nomegita; ?>"</h2>
                     <form action="edit-trip.php" enctype="multipart/form-data"
                           name="form-modify-trip"
