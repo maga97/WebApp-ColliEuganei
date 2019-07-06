@@ -38,7 +38,6 @@ if (isset($_POST["confermaPrenotazione"])) {
         $_SESSION["ErroriPosti"] = true;
         header("Location:" . $_SERVER['HTTP_REFERER']);
         exit;
-
     }
 } else {
     header("Location: index.php");
@@ -74,6 +73,7 @@ if (isset($_POST["confermaPrenotazione"])) {
                 <h2> Riepilogo prenotazione </h2>
                 <div id="descrizione"><?php echo $_POST["descrizione"] . PHP_EOL; ?> </div>
                 <div class="riepprenotazione">
+                    <dl>
                     <dt>DATA</dt>
                     <dd><?php echo $_POST["data"] . PHP_EOL; ?> </dd>
                     <dt>ORA</dt>
@@ -85,7 +85,7 @@ if (isset($_POST["confermaPrenotazione"])) {
                     </dl>
                 </div>
                 <div class="button-holder">
-                    <form action="" method="POST">
+                    <form action="ConfermaPrenotazione.php" method="post">
                         <input onclick="return validaPosti()" type="submit" value="Conferma" name="confermaPrenotazione"
                                class="btn btn-riepConferma"/>
                         <input type="submit" value="Annulla" name="cancellaPrenotazione" class="btn btn-riepCancella"/>
