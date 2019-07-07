@@ -17,7 +17,7 @@
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
-if (isset($_SESSION["username"])) { //se apro la pagina del login ma ho già effettuato l'accesso mi porta al pannello utente
+if (isset($_SESSION["username"])) { //se apro la pagina del login ma ho gia' effettuato l'accesso mi porta al pannello utente
     if ($_SESSION["admin"] == true)
         header("Location: admin/index.php");
     else

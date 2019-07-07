@@ -56,7 +56,7 @@ if (session_status() == PHP_SESSION_NONE) {
             <?php echo "<input type=\"hidden\" name=\"ID\" value=\"" . $_GET["id"] . "\"/>"; ?>
 
             <div class="field-container">
-                <label for="descrizione" lang="it" class="log-label">Descrizione dell'attività</label>
+                <label for="descrizione" lang="it" class="log-label">Descrizione dell'attivit&agrave;</label>
                 <?php echo "<input type=\"text\" id=\"descrizione\" name=\"descrizione\" value=\"" . $attivita["Descrizione"] . "\" accesskey=\"d\" readonly=\"readonly\" />"; ?>
             </div>
             <div class="field-container">

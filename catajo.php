@@ -48,16 +48,16 @@ if (session_status() == PHP_SESSION_NONE) {
                     oggi aperto al pubblico.
                     Inizialmente una semplice villa, venne esteso largamente dal marchese Pio Enea I degli Obizzi
                     dal 1570
-                    in poi che affidò il progetto
+                    in poi che affid&ograve; il progetto
                     all'architetto Andrea Da Valle.
                     Sebbene gran parte dei lavori di espansione avvennero in pochi anni, gli ampliamenti
                     proseguirono fino a
-                    metà del XIX secolo.
+                    met&agrave; del XIX secolo.
                 </p>
                 <p class="text">
-                    L'edificio sta a metà tra il castello militare e la villa principesca, indubbiamente per volere
+                    L'edificio sta a met&agrave; tra il castello militare e la villa principesca, indubbiamente per volere
                     stesso
-                    del committente, che pensò
+                    del committente, che pens&ograve;
                     il Catajo come una grande macchina di rappresentanza dove intrattenere ospiti da tutta Europa
                     con
                     feste,
@@ -78,10 +78,10 @@ if (session_status() == PHP_SESSION_NONE) {
                      alt="Affreschi del XVIII secolo"/>
                 <p class="text">
                     La villa con le sue 350 stanze, ha l'aspetto del castello, con alte mura caratterizzate da merletti,
-                    nonostante ciò non fu mai usato come un forte, al contrario,
+                    nonostante ci&ograve; non fu mai usato come un forte, al contrario,
                     l'edificio doveva rappresentare il potere e il prestigio della famiglia, che teneva feste e riceveva
                     ospiti da tutta europa.
-                    Il piano nobile conserva uno dei più importanti esempi di pittura autocelebrativa del nord Italia,
+                    Il piano nobile conserva uno dei pi&ugrave; importanti esempi di pittura autocelebrativa del nord Italia,
                     opera
                     di Giovanni Battista Zelotti.
                 </p>

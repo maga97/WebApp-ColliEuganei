@@ -25,7 +25,7 @@ if (!$email || !$nome || !$cognome || !$Password || !$Password2) {
     $errore = "Ricontrolla che l'email inserita sia nel formato corretto";
 } else if ($_POST["password"] != $_POST["password2"]) { // controllo che le due password comabacino
     $errore = "Le due password inserite non coincidono";
-} else if ($dbConnection->user_already_exists($_POST["email"])) { // controllo che l'utente non sia già registrato con quell'email
+} else if ($dbConnection->user_already_exists($_POST["email"])) { // controllo che l'utente non sia gia' registrato con quell'email
     $errore = "La mail inserita appartiene ad un altro utente";
 } else if ($dbConnection->insert_user($_POST["nome"], $_POST["cognome"], $_POST["email"],
     $_POST["password"], $_POST["indirizzo"], $_POST["citta"],

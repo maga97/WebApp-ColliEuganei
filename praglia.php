@@ -42,13 +42,13 @@ if (session_status() == PHP_SESSION_NONE) {
             <h2>L'Abbazia di Praglia</h2>
                 <img class="responsive-image history-picture float-right" src="assets/img/praglia1.jpg" alt="Abbazia di Praglia"/>
             <p class="text">
-                L'abbazia di Praglia &egrave; un monastero benedettino situato nel comune di Teolo, in prossimità di Abano
+                L'abbazia di Praglia &egrave; un monastero benedettino situato nel comune di Teolo, in prossimit&agrave; di Abano
                 Terme. Ospita attualmente la Biblioteca nazionale, che &egrave; un monumento nazionale italiano.
-                &#200; attualmente retta dall'abate dom. Norberto Villa e la comunità conta 49 monaci.
+                &#200; attualmente retta dall'abate dom. Norberto Villa e la comunit&agrave; conta 49 monaci.
                 Si tratta di un monastero benedettino molto antico, fondato nell’XI secolo per iniziativa della nobile
-                famiglia vicentina dei Maltraversi. Il suo nome deriva dal termine medievale “pratalea” (località tenuta
+                famiglia vicentina dei Maltraversi. Il suo nome deriva dal termine medievale “pratalea” (localit&agrave; tenuta
                 a prati)
-                e si rifà probabilmente alla grande opera di bonifica e di messa a coltura di terre paludose della zona
+                e si rif&agrave; probabilmente alla grande opera di bonifica e di messa a coltura di terre paludose della zona
                 avviata proprio dai Benedettini nel Medioevo.
                 L'intera abbazia fu ricostruita a partire dal 1469 e nel 1490 i benedettini vi aggiunsero la "chiesa
                 dell'Assunta", realizzata su disegno di Tullio Lombardo (poi radicalmente trasformata da Andrea Moroni).
@@ -58,11 +58,11 @@ if (session_status() == PHP_SESSION_NONE) {
             <p class="text">
                 All'interno della cinta muraria il monastero si divide in quattro chiostri: doppio, detto anche della
                 clausura, botanico, pensile e rustico (nel quale si depositavano gli attrezzi agricoli).
-                Alla seconda metà del XV secolo risalgono il chiostro botanico, un tempo destinato alla coltivazione
+                Alla seconda met&agrave; del XV secolo risalgono il chiostro botanico, un tempo destinato alla coltivazione
                 delle piante medicinali e oggi elegante giardino, il chiostro doppio circondato dalle celle dei monaci e
                 il chiostro pensile
                 o “del Paradiso”, collocato al primo piano e caratterizzato da colonne e capitelli finemente lavorati.
-                Più tardo il chiostro rustico su cui affacciano la foresteria e il centro per conferenze e attività
+                Pi&ugrave; tardo il chiostro rustico su cui affacciano la foresteria e il centro per conferenze e attivit&agrave;
                 culturali.
             </p>
             <h2>L'abbazia oggi</h2>

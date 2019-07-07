@@ -45,17 +45,17 @@ if (session_status() == PHP_SESSION_NONE) {
                      alt="Entrata del Castello di San Pelagio"/>
             <p class="text">
                 Il Castello di San Pelagio ha origini medievali (XIV sec.) come testimonia la torre costruita dai Da
-                Carrara, Signori di Padova, nella prima metà del Trecento. L’imponente torre merlata, aveva una funzione
-                di prima difesa nei numerosi attacchi da parte degli Scaligeri, Signori di Verona. Nella metà del
-                Settecento la proprietà passa ai Conti Zaborra che ampliano notevolmente l’edificio, rimodernano l’ala
+                Carrara, Signori di Padova, nella prima met&agrave; del Trecento. L’imponente torre merlata, aveva una funzione
+                di prima difesa nei numerosi attacchi da parte degli Scaligeri, Signori di Verona. Nella met&agrave; del
+                Settecento la propriet&agrave; passa ai Conti Zaborra che ampliano notevolmente l’edificio, rimodernano l’ala
                 padronale per adattarla a residenza signorile e realizzano le barchesse a uso agricolo. Da allora la
                 famiglia dei Conti Zaborra abita il Castello ricco di memorie private e storiche.
             </p>
             <p class="text">
-                Da qui, il 9 agosto 1918, partì il poeta Gabriele d´Annunzio per il "folle" Volo su Vienna dove compì la
+                Da qui, il 9 agosto 1918, partì il poeta Gabriele d'Annunzio per il "folle" Volo su Vienna dove compì la
                 sua celebre imprese: il lancio di migliaia di volantini inneggianti alla resa sopra la capitale
                 austro-ungarica.
-                Nelle stanze del poeta tutto &egrave; rimasto come allora perché voi possiate rivivere quei momenti e
+                Nelle stanze del poeta tutto &egrave; rimasto come allora perch&eacute; voi possiate rivivere quei momenti e
                 ripercorrere la storia del volo umano in un Museo unico in Europa.
                 Dal 2018, nel centenario del Volo su Vienna, isole multimediali immersive rendono la visita
                 un’esperienza "emozionale"!
@@ -68,7 +68,7 @@ if (session_status() == PHP_SESSION_NONE) {
                 tutt’ora presenti; i due giardini della villa, nelle loro differenti tipologie,
                 sono stati arricchiti di nuove piante e soprattutto di migliaia di rose che, specie a maggio, ne fanno
                 un grande spettacolo!
-                Tra le piante più antiche una Lagestroemia Indica del 1700 e numerosi esemplari di Tilia cordata e
+                Tra le piante pi&ugrave; antiche una Lagestroemia Indica del 1700 e numerosi esemplari di Tilia cordata e
                 Carpinus betulus ultra-centenari.
                 Nel 2000 &egrave; stato creato un labirinto verde di 1200 mq, per raccontare il mito del volo di Icaro, senza
                 dimenticare la funzione dei labirinti delle ville venete.
@@ -84,7 +84,7 @@ if (session_status() == PHP_SESSION_NONE) {
                 sull’impresa dannunziana; a tale volo &egrave; dedicata la parte principale del Museo con le stanze abitate dal
                 poeta nel periodo 1917-1919. Completano il percorso museale le sale dedicate a Leonardo, ai Montgolfier,
                 ai Wright, a Ferrarin, a Lindbergh, a Nobile, a Balbo, a Forlanini, a Gagarin e Armstrong… tanti
-                protagonisti per ripercorrere la più straordinaria impresa umana: il volo!
+                protagonisti per ripercorrere la pi&ugrave; straordinaria impresa umana: il volo!
                 Dal 2018, nel centenario del Volo su Vienna, isole multimediali immersive rendono la visita
                 un’esperienza emozionale!
             </p>

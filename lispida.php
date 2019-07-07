@@ -59,8 +59,8 @@ if (session_status() == PHP_SESSION_NONE) {
             <h2>I dintorni</h2>
             <p class="text">
                 A 4 km troverete la stazione ferroviaria e il castello di Monselice, mentre con un tragitto di 2 km
-                raggiungerete la più vicina fermata dell'autobus pubblico.
-                Il personale può organizzare escursioni e gite in bicicletta nel parco.
+                raggiungerete la pi&ugrave; vicina fermata dell'autobus pubblico.
+                Il personale pu&ograve; organizzare escursioni e gite in bicicletta nel parco.
             </p>
             <h2>Descrizione</h2>
                 <img class="responsive-image history-picture float-right" src="assets/img/lispida2.jpg"
@@ -77,14 +77,14 @@ if (session_status() == PHP_SESSION_NONE) {
             <p class="text">
                 Il monastero di Lispida, sorto in posizione isolata e tranquilla, fu sempre un luogo ricco di fascino,
                 oltre che un ambiente ideale per la coltivazione della vite e dell’olivo. Nel 1485 il Doge della
-                Repubblica di Venezia Giovanni Mocenigo confisca ai monaci la proprietà : “affinché le vigne, gli olivi
+                Repubblica di Venezia Giovanni Mocenigo confisca ai monaci la propriet&agrave; : &ldquo;affinch&eacute; le vigne, gli olivi
                 e i campi non siano abbandonati, siano seminati e coltivati nella giusta stagione, e la pietra del colle
-                ci venga mandata con regolarità”. La storia monastica di Lispida si interrompe nel 1792.
+                ci venga mandata con regolarit&agrave; &rdquo;. La storia monastica di Lispida si interrompe nel 1792.
             </p>
                 <img class="responsive-image history-picture float-right" src="assets/img/lispida3.jpg"
                      alt="Vigneti del Castello di Lispida"/>
             <p class="text">
-                La proprietà viene in seguito acquistata dai conti Corinaldi, i quali sui resti del vetusto monastero
+                La propriet&agrave; viene in seguito acquistata dai conti Corinaldi, i quali sui resti del vetusto monastero
                 edificano le costruzioni che oggi vediamo, le dotano di cantine imponenti e iniziano la produzione di
                 vini rinomati in tutta Europa. Durante la prima guerra mondiale il Castello di Lispida ospita il
                 quartier generale del re Vittorio Emanuele III°. Alla fine degli anni ‘50 , con l’impianto di nuovi

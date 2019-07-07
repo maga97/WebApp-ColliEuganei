@@ -54,7 +54,7 @@ if (session_status() == PHP_SESSION_NONE) {
                     raffigurante la basilica romana a cui &egrave; dedicata. La settima chiesa &egrave; il Santuario di San Giorgio
                     nel
                     quale si
-                    trovano le salme di 25 martiri cristiani e altre reliquie trasferitevi a metà del XVII secolo.
+                    trovano le salme di 25 martiri cristiani e altre reliquie trasferitevi a met&agrave; del XVII secolo.
                 </p>
             </div>
             <div class="row">
