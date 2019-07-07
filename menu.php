@@ -63,12 +63,12 @@
             <li class="dropdown button-right"><a aria-haspopup="true" tabindex="0">Account</a>
                 <ul class="dropdown-content" role="menu">
                     <?php if ($nomepagina == "Impostazioni.php"): ?>
-                        <li><a href="Impostazioni.php" tabindex="0" class="active">Impostazioni</a></li>
+                        <li class="active"><a href="Impostazioni.php" tabindex="0">Impostazioni</a></li>
                     <?php else: ?>
                         <li><a href="Impostazioni.php" tabindex="0">impostazioni</a></li>
                     <?php endif; ?>
                     <?php if ($nomepagina == "MieGite.php"): ?>
-                        <li><a href="MieGite.php" tabindex="0" class="active">Le mie gite</a></li>
+                        <li class="active"><a href="MieGite.php" tabindex="0">Le mie gite</a></li>
                     <?php else: ?>
                         <li><a href="MieGite.php" tabindex="0">Le mie gite</a></li>
                     <?php endif; ?>
