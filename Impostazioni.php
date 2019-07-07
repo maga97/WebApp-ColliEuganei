@@ -23,7 +23,7 @@ include_once("PHP/Funzioni_Generali/ValidaCampo.php");
 if (isset($_POST["conferma_modifica"])) {
     $errore = include_once("PHP/Funzioni_Generali/ModificaDati.php");
 } else if (isset($_POST["modifica_password"])) {
-    $errore = include_once("PHP/Funzioni_Generali/ModificaPassword.php");
+    $errorepwd = include_once("PHP/Funzioni_Generali/ModificaPassword.php");
 }
 ?>
 <body>
@@ -61,9 +61,9 @@ if (isset($_POST["conferma_modifica"])) {
                               </div>";
                     }
                 }
-                if (isset($_POST["modifica_password"])) {
-                    if ($errore != "")
-                        echo "<div class=\"alert show errore\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\"><p>Errore: " . $errore . "</p></div>" . PHP_EOL;
+                else if (isset($_POST["modifica_password"])) {
+                    if ($errorepwd != "")
+                        echo "<div class=\"alert show errore\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\"><p>Errore: " . $errorepwd . "</p></div>" . PHP_EOL;
                     else {
                         echo "<div class=\"alert show success\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\">
                                 <p>Password modificata con successo</p>
@@ -174,7 +174,6 @@ if (isset($_POST["conferma_modifica"])) {
             </form>
         </div>
         <div class="row card form-field card-spaced">
-            <?php if (!isset($_POST["modifica_dati"])): ?>
             <div class="titolo-form">
                 <h2>Modifica <span xml:lang="en" lang="en">password</span></h2>
             </div>
@@ -203,7 +202,6 @@ if (isset($_POST["conferma_modifica"])) {
                             class="btn btn-primary">Modifica <span xml:lang="en" lang="en">password</span></button>
 
                 </div>
-                <?php endif; ?>
             </form>
         </div>
     </div>
