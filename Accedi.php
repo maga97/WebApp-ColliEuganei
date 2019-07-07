@@ -43,7 +43,7 @@ if (isset($_POST["Login"])) {
             </div>
         </div>
     </div>
-    <?php include_once('menu.php'); ?>
+    <?php include_once("menu.php"); ?>
     <div id="content">
         <ul class="breadcrumb">
             <li>Login</li>
@@ -71,7 +71,7 @@ if (isset($_POST["Login"])) {
                     <label for="password" xml:lang="en" class="log-label">Password: </label>
                     <input type="password" id="password"
                            value="<?php echo isset($_POST['password']) ? $_POST['password'] : ""; ?>"
-                            name="password" accesskey="p"
+                           name="password" accesskey="p"
                            maxlength="32"/>
                 </div>
                 <div class="button-holder"><input type="submit" value="Login" name="Login" class="btn btn-primary"/>
@@ -81,7 +81,7 @@ if (isset($_POST["Login"])) {
             </form>
         </div>
     </div>
-    <?php include_once('footer.php') ?>
+    <?php include_once("footer.php") ?>
 </div>
 </body>
 </html>

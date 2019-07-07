@@ -55,18 +55,18 @@ if (isset($_POST["conferma_modifica"])) {
                 <?php
                 if (isset($_POST["conferma_modifica"])) {
                     if ($errore != "")
-                        echo "<div class=\"alert nojs errore\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\"><p>Errore: " . $errore . "</p></div>" . PHP_EOL;
+                        echo "<div class=\"alert show errore\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\"><p>Errore: " . $errore . "</p></div>" . PHP_EOL;
                     else {
-                        echo "<div class=\"alert nojs success\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\">
+                        echo "<div class=\"alert show success\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\">
                                 <p>Dati modificati con successo</p>
                               </div>";
                     }
                 }
                 if (isset($_POST["modifica_password"])) {
                     if ($errore != "")
-                        echo "<div class=\"alert nojs errore\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\"><p>Errore: " . $errore . "</p></div>" . PHP_EOL;
+                        echo "<div class=\"alert show errore\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\"><p>Errore: " . $errore . "</p></div>" . PHP_EOL;
                     else {
-                        echo "<div class=\"alertnojs success\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\">
+                        echo "<div class=\"alert show success\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\">
                                 <p>Password modificata con successo</p>
                               </div>";
                     }
@@ -173,7 +173,7 @@ if (isset($_POST["conferma_modifica"])) {
                     <?php endif; ?>
                 </div>
             </form>
-            <?php if(!isset($_POST["modifica_dati"]) && (!isset($_POST["conferma_modifica"]) ||  $errore="")):?>
+            <?php if (!isset($_POST["modifica_dati"])): ?>
             <div class="titolo-form">
                 <h2>Modifica <span xml:lang="en" lang="en">password</span></h2>
             </div>
@@ -191,7 +191,8 @@ if (isset($_POST["conferma_modifica"])) {
                     </div>
                 </div>
                 <div class="form-field">
-                    <label for="password2">Ripeti nuova <span xml:lang="en" lang="en">password</span>: (obbligatorio)</label>
+                    <label for="password2">Ripeti nuova <span xml:lang="en" lang="en">password</span>:
+                        (obbligatorio)</label>
                     <div class="input-container">
                         <input type="password" id="password2" name="password2" class="disabilita"/>
                     </div>
@@ -201,7 +202,7 @@ if (isset($_POST["conferma_modifica"])) {
                             class="btn btn-primary">Modifica <span xml:lang="en" lang="en">password</span></button>
 
                 </div>
-                <?php endif;?>
+                <?php endif; ?>
             </form>
         </div>
     </div>

@@ -78,7 +78,7 @@ if (!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
                        href="../PHP/Funzioni_Admin/edit-user-role.php?action=remove&amp;id=<?php echo $id; ?>">Rimuovi
                         amministratore</a>
                 <?php else: ?>
-                    <?php echo "<div class=\"alert warning nojs\">Deve esserci almeno un amministratore.</div>" . PHP_EOL; ?>
+                    <?php echo "<div class=\"alert warning show\">Deve esserci almeno un amministratore.</div>" . PHP_EOL; ?>
                 <?php endif; ?>
             </div>
         <?php endforeach;

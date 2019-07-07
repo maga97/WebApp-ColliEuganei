@@ -1,4 +1,3 @@
-
 function menuMobile() {
     document.getElementById("menuprincipale").classList.toggle("responsive");
 }

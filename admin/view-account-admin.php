@@ -55,18 +55,18 @@ if (isset($_POST["conferma_modifica"])) {
                 <?php
                 if (isset($_POST["conferma_modifica"])) {
                     if ($errore != "")
-                        echo "<div class=\"alert nojs errore\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\"><p>Errore: " . $errore . "</p></div>" . PHP_EOL;
+                        echo "<div class=\"alert show errore\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\"><p>Errore: " . $errore . "</p></div>" . PHP_EOL;
                     else {
-                        echo "<div class=\"alert nojs success\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\">
+                        echo "<div class=\"alert show success\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\">
                                 <p>Dati modificati con successo</p>
                               </div>";
                     }
                 }
                 if (isset($_POST["modifica_password"])) {
                     if ($errore != "")
-                        echo "<div class=\"alert nojs errore\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\"><p>Errore: " . $errore . "</p></div>" . PHP_EOL;
+                        echo "<div class=\"alert show errore\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\"><p>Errore: " . $errore . "</p></div>" . PHP_EOL;
                     else {
-                        echo "<div class=\"alertnojs success\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\">
+                        echo "<div class=\"alert show success\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\">
                                 <p>Password modificata con successo</p>
                               </div>";
                     }

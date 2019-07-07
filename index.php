@@ -2,8 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 <head>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
     <link rel="stylesheet" type="text/css" href="assets/css/print.css" media="print"/>
     <link rel="stylesheet" type="text/css" href="assets/css/mobile480.css" media="screen and (max-width: 480px)"/>
     <link rel="stylesheet" type="text/css" href="assets/css/mobile768.css" media="screen and (max-width: 768px)"/>
@@ -61,7 +61,8 @@ if (session_status() == PHP_SESSION_NONE) {
                 </div>
             </div>
             <div class="col">
-                <img class="responsive-image center-block" src="assets/img/clima.jpg" alt="Colli euganei ricoperti di neve"/>
+                <img class="responsive-image center-block" src="assets/img/clima.jpg"
+                     alt="Colli euganei ricoperti di neve"/>
                 <dl class="gallery-dl">
                     <dt>Clima</dt>
                     <dd>Scopri come il territorio si presenta nel corso dell'anno.</dd>

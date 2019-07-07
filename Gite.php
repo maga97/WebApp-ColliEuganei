@@ -55,7 +55,7 @@ if (session_status() == PHP_SESSION_NONE) {
         <?php
         $db = new database();
         $db->connect();
-        $list = null;
+        $list = array();
         $segnalato = false;
         $empyset = false;
         if (isset($_POST['ricerca'])) {
@@ -63,13 +63,15 @@ if (session_status() == PHP_SESSION_NONE) {
                 $list = $db->Ricerca($_POST['ricerca']);
                 $empyset = sizeof($list) > 0 ? false : true;
             } else {
-                echo "<div class=\"alert nojs errore button-holder\" role=\"alert\">Nessuna parola chiave inserita</div>" . PHP_EOL;
+                echo "<div class=\"alert show errore button-holder\" role=\"alert\">Nessuna parola chiave inserita. Inserisci una parola chiave o torna alla 
+                    <a href=\"Gite.php\">lista delle gite</a></div>" . PHP_EOL;
             }
         } else {
             $list = $db->GetListaAttivita();
         };
         if ($empyset) {
-            echo "<div class=\"alert nojs warning button-holder\" role=\"alert\">La ricerca non ha trovato nessuna gita con questa frase o parola chiave</div>" . PHP_EOL;
+            echo "<div class=\"alert show warning button-holder\" role=\"alert\">La ricerca non ha trovato nessuna gita con questa frase o parola chiave. 
+Inserisci un'altra parola chiave o torna <a href=\"Gite.php\">lista delle gite</a></div>" . PHP_EOL;
         }
         if (sizeof($list) > 0) {
             foreach ($list as $node):
@@ -98,15 +100,16 @@ if (session_status() == PHP_SESSION_NONE) {
                                  class="responsive-image float-right same-size"/>
                         </div>
                     </div>
-                        <div class="form-field">
-                            <?php if (isset($_SESSION['username'])): ?>
-                                <?php
-                                echo "<a href=\"Prenotazione.php?id=" . $node["ID_Attivita"] . "\" class=\"btn btn-primary\">Prenota la gita</a></span>";
-                                ?>
-                            <?php else: ?>
-                                <a href="Accedi.php" aria-label="Accedi per prenotare la gita">Accedi</a> per poter prenotare
-                            <?php endif ?>
-                        </div>
+                    <div class="form-field">
+                        <?php if (isset($_SESSION['username'])): ?>
+                            <?php
+                            echo "<a href=\"Prenotazione.php?id=" . $node["ID_Attivita"] . "\" class=\"btn btn-primary\">Prenota la gita</a></span>";
+                            ?>
+                        <?php else: ?>
+                            <a href="Accedi.php"
+                               aria-label="Accedi per prenotare la gita">Accedi</a> per poter prenotare
+                        <?php endif ?>
+                    </div>
                 </div>
             <?php endforeach;
         } ?>

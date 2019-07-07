@@ -46,7 +46,7 @@ if (session_status() == PHP_SESSION_NONE) {
         else:
         include_once("PHP/Funzioni_Utente/DatiGita.php");
         if (isset($_SESSION["ErroriPosti"])) {
-            echo '<div class="alert errore nojs" aria-live="assertive" role="alert" aria-atomic="true" aria-relevant="all"><p>Inserire un valore corretto per i posti</p></div>';
+            echo '<div class="alert errore show" aria-live="assertive" role="alert" aria-atomic="true" aria-relevant="all"><p>Inserire un valore corretto per i posti</p></div>';
             unset($_SESSION["ErroriPosti"]);
         }
         ?>

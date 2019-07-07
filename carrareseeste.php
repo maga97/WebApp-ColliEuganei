@@ -59,7 +59,8 @@ if (session_status() == PHP_SESSION_NONE) {
             </p>
             <h2>L'evoluzione del Castello</h2>
             <div class="float-right">
-                <img class="picture history-picture" src="assets/img/este2.jpg" alt="Parco del Castello Carrarese di Este"/>
+                <img class="picture history-picture" src="assets/img/este2.jpg"
+                     alt="Parco del Castello Carrarese di Este"/>
             </div>
             <p class="text">
                 Il Castello fu utilizzato a fini difensivi fino alla spontanea dedizione della città alla Repubblica di

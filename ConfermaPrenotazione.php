@@ -92,7 +92,7 @@ if (isset($_POST["confermaPrenotazione"])) {
                     </form>
                 </div>
             </div>
-        <?php else: echo "<div class=\"alert nojs success\"> La prenotazione &egrave; stata confermata. </div>";
+        <?php else: echo "<div class=\"alert show success\"> La prenotazione &egrave; stata confermata. </div>";
         endif;
         ?>
     </div>

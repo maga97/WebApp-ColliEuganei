@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css"/>
     <link rel="stylesheet" type="text/css" href="../assets/css/print.css" media="print"/>
     <link rel="stylesheet" type="text/css" href="../assets/css/mobile480.css" media="screen and (max-width: 460px)"/>
     <link rel="stylesheet" type="text/css" href="../assets/css/mobile768.css" media="screen and (max-width: 768px)"/>
@@ -67,9 +67,9 @@ $data = $arrayofdata[2] . "/" . $arrayofdata[1] . "/" . $arrayofdata[0];
 
                     <?php
                     if (isset($errore) && $errore == false) {
-                        echo "<div class=\"alert nojs success\">Modifica avvenuta correttamente</div>" . PHP_EOL;
+                        echo "<div class=\"alert show success\">Modifica avvenuta correttamente</div>" . PHP_EOL;
                     } else if (isset($errore) && $errore != false) {
-                        echo "<div class=\"alert nojs errore\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\"><p>Errore: " . $errore . "</p></div>" . PHP_EOL;
+                        echo "<div class=\"alert show errore\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\"><p>Errore: " . $errore . "</p></div>" . PHP_EOL;
                     }
                     ?>
 
@@ -83,7 +83,7 @@ $data = $arrayofdata[2] . "/" . $arrayofdata[1] . "/" . $arrayofdata[0];
                         <div class="form-field">
                             <label for="nomegita">Titolo</label>
                             <input type="text" name="nomegita" id="nomegita" value="<?php echo $nomegita; ?>"
-                                   required="required" maxlength="40" />
+                                   required="required" maxlength="40"/>
                         </div>
                         <div class="form-field">
                             <label for="descrizione">Descrizione</label>

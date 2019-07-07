@@ -92,3 +92,12 @@ ul#menuprincipale.responsive li a {
 #login-form-container {
     width: auto;
 }
+
+.col-6 {
+    float: left;
+    width: auto;
+}
+
+img.same-size{
+    width: auto;
+}

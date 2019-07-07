@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
     <link rel="stylesheet" type="text/css" href="assets/css/print.css" media="print"/>
     <link rel="stylesheet" type="text/css" href="assets/css/mobile768.css" media="screen and (max-width: 768px)"/>
     <link rel="stylesheet" type="text/css" href="assets/css/mobile480.css" media="screen and (max-width: 480px)"/>
@@ -37,7 +37,7 @@ if (session_status() == PHP_SESSION_NONE) {
     <?php include_once('menu.php'); ?>
     <div id="content">
         <div id="not-found-404">
-         <img src="assets/img/404-min.png" class="history-picture" alt=""/>
+            <img src="assets/img/404-min.png" class="history-picture" alt=""/>
             <div class="text">oooops, sembra che tu ti sia perso!</div>
         </div>
     </div>

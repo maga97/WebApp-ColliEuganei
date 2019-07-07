@@ -41,7 +41,8 @@ if (session_status() == PHP_SESSION_NONE) {
         <div class="section">
             <h2>Il Castello del Catajo</h2>
             <div class="float-right">
-                <img class="picture history-picture" src="assets/img/catajo-XVIIIsec.jpg" alt="Il Castello nel XVIII secolo"/>
+                <img class="picture history-picture" src="assets/img/catajo-XVIIIsec.jpg"
+                     alt="Il Castello nel XVIII secolo"/>
             </div>
             <p class="text">
                 Il castello del Catajo, situato nei pressi di Battaglia Terme, è un imponente palazzo cinquecentesco,

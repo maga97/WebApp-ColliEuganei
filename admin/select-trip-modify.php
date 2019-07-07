@@ -46,7 +46,7 @@ $db->connect();
         </ul>
         <?php
         if (isset($_GET["done"]) == true) {
-            echo "<div class=\"alert nojs success\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\">Modifica avvenuta correttamente</div>" . PHP_EOL;
+            echo "<div class=\"alert show success\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\">Modifica avvenuta correttamente</div>" . PHP_EOL;
         }
         $list = $db->GetListaAttivita();
         $size = sizeof($list);

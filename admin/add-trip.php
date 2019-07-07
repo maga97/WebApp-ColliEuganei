@@ -46,9 +46,9 @@ if (isset($_POST["aggiungiGita"])) {
         </ul>
         <?php
         if (isset($errore) && $errore == false) {
-            echo "<div class=\"alert nojs success\">Inserimento avvenuto correttamente</div>" . PHP_EOL;
+            echo "<div class=\"alert show success\">Inserimento avvenuto correttamente</div>" . PHP_EOL;
         } else if (isset($errore) && $errore != false) {
-            echo "<div class=\"alert nojs errore\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\"><p>Errore: " . $errore . "</p></div>" . PHP_EOL;
+            echo "<div class=\"alert show errore\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\"><p>Errore: " . $errore . "</p></div>" . PHP_EOL;
         }
         ?>
         <div class="form">

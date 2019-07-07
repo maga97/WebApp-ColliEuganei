@@ -45,16 +45,13 @@ if (isset($_POST["registrazione"])) {
         <ul class="breadcrumb">
             <li><a href="Registrazione.php">Registrazione</a></li>
         </ul>
-        <?php
-
-        ?>
         <div class="form">
             <form action="Registrazione.php" method="post"
                   onsubmit="return validaFormUtente(true,$('.alert.errore'),$('form'))">
                 <h1>Crea <span xml:lang="en">account</span></h1>
                 <?php
                 if (isset($errore))
-                    echo '<div class="alert errore nojs" aria-live="assertive" role="alert" aria-atomic="true" aria-relevant="all">' . $errore . '</div>' . PHP_EOL;
+                    echo '<div class="alert errore show" aria-live="assertive" role="alert" aria-atomic="true" aria-relevant="all">' . $errore . '</div>' . PHP_EOL;
                 ?>
                 <div class="alert errore" aria-live="assertive" role="alert" aria-atomic="true" aria-relevant="all"><p
                             class="intestazione-alert">Errore:</p></div>

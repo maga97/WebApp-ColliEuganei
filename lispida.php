@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
     <link rel="stylesheet" type="text/css" href="assets/css/print.css" media="print"/>
     <link rel="stylesheet" type="text/css" href="assets/css/mobile768.css" media="screen and (max-width: 768px)"/>
     <link rel="stylesheet" type="text/css" href="assets/css/mobile480.css" media="screen and (max-width: 480px)"/>
@@ -66,7 +66,8 @@ if (session_status() == PHP_SESSION_NONE) {
             </p>
             <h2>Descrizione</h2>
             <div class="float-right">
-                <img class="picture history-picture" src="assets/img/lispida2.jpg" alt="Giardino del Castello di Lispida"/>
+                <img class="picture history-picture" src="assets/img/lispida2.jpg"
+                     alt="Giardino del Castello di Lispida"/>
             </div>
             <p class="text">
                 Custodita nel cuore del Parco Naturale dei Colli Euganei, la Tenuta di Lispida ricomprende un lago
@@ -85,7 +86,8 @@ if (session_status() == PHP_SESSION_NONE) {
                 ci venga mandata con regolarità”. La storia monastica di Lispida si interrompe nel 1792.
             </p>
             <div class="float-right">
-                <img class="picture history-picture" src="assets/img/lispida3.jpg" alt="Vigneti del Castello di Lispida"/>
+                <img class="picture history-picture" src="assets/img/lispida3.jpg"
+                     alt="Vigneti del Castello di Lispida"/>
             </div>
             <p class="text">
                 La proprietà viene in seguito acquistata dai conti Corinaldi, i quali sui resti del vetusto monastero

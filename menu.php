@@ -6,7 +6,11 @@
         <?php else: ?>
             <li><a href="index.php" tabindex="0">Home</a></li>
         <?php endif; ?>
-        <li class="dropdown"><a aria-haspopup="true" tabindex="0">Luoghi</a>
+        <?php if ($nomepagina == "chiesette.php" || $nomepagina == "catajo.php" || $nomepagina == "praglia.php" || $nomepagina == "carrareseeste.php" || $nomepagina == "lispida.php" || $nomepagina == "pelagio.php"): ?>
+    <li class="dropdown active"><a aria-haspopup="true" tabindex="0">Luoghi</a>
+    <?php else: ?>
+        <li class="dropdown "><a aria-haspopup="true" tabindex="0">Luoghi</a>
+            <?php endif; ?>
             <ul class="dropdown-content button-right" role="menu">
                 <?php if ($nomepagina == "chiesette.php"): ?>
                     <li role="none" class="active"><a href="chiesette.php" tabindex="0" role="menuitem">Sette
