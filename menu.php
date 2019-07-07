@@ -1,6 +1,6 @@
 <?php $nomepagina = basename($_SERVER['PHP_SELF']); ?>
 <div id="menuprincipale-bar" role="menubar">
-    <ul id="menuprincipale">
+    <ul id="menuprincipale" class="responsive">
         <?php if ($nomepagina == "index.php"): ?>
             <li class="active"><a href="index.php" tabindex="0">Home</a></li>
         <?php else: ?>

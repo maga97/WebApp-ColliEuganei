@@ -13,7 +13,7 @@ function clx(str, obj) {
 
 
 $(document).ready(function () {
-    document.getElementById("menuprincipale").classList.toggle("responsive");
+    document.getElementById("menuprincipale").removeAttribute("class");
     setTimeout(function () {
         $(".success").hide();
     }, 10000);
