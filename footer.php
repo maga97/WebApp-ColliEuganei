@@ -1,7 +1,5 @@
 <div id="footer">
-    <div class="row">
-        <div class="footer-col"> &copy; 2018 Colli Euganei</div>
-        <div class="footer-col">Creato per il progetto di Tecnologie Web</div>
-        <div class="footer-col">Anno accademico 2018/2019</div>
-    </div>
+        <p class="col text-center"> &#169; 2018 Colli Euganei</p>
+        <p class="col text-center">Creato per il progetto di Tecnologie Web</p>
+        <p class="col text-center">Anno accademico 2018/2019</p>
 </div>

@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" media="screen, handheld"/>
     <link rel="stylesheet" type="text/css" href="assets/css/print.css" media="print"/>
-    <link rel="stylesheet" type="text/css" href="assets/css/mobile480.css" media="screen and (max-width: 460px)"/>
-    <link rel="stylesheet" type="text/css" href="assets/css/mobile768.css" media="screen and (max-width: 768px)"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/script.js"></script>
@@ -44,9 +42,10 @@ if (isset($_POST["conferma_modifica"])) {
     <?php include_once("menu.php"); ?>
     <div id="content">
         <ul class="breadcrumb">
-            <li>Impostazioni account</li>
+            <li>Account</li>
+            <li><a href="Impostazioni.php">Impostazioni account</a></li>
         </ul>
-        <div class="form">
+        <div class="card row form-field card-spaced">
             <div class="titolo-form">
                 <h1 id="titolo">Riepilogo dati <span xml:lang="en" lang="en">account</span></h1>
             </div>
@@ -173,6 +172,8 @@ if (isset($_POST["conferma_modifica"])) {
                     <?php endif; ?>
                 </div>
             </form>
+        </div>
+        <div class="row card form-field card-spaced">
             <?php if (!isset($_POST["modifica_dati"])): ?>
             <div class="titolo-form">
                 <h2>Modifica <span xml:lang="en" lang="en">password</span></h2>

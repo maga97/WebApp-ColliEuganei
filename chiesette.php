@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" media="screen, handheld"/>
     <link rel="stylesheet" type="text/css" href="assets/css/print.css" media="print"/>
-    <link rel="stylesheet" type="text/css" href="assets/css/mobile768.css" media="screen and (max-width: 768px)"/>
-    <link rel="stylesheet" type="text/css" href="assets/css/mobile480.css" media="screen and (max-width: 480px)"/>
     <link rel="stylesheet" type="text/css"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -58,9 +56,9 @@ if (session_status() == PHP_SESSION_NONE) {
                 </p>
             </div>
             <div class="row">
-                <h2>Villa Duodo e il Mastio Federiciano</h2>
                 <img class="responsive-image history-picture float-right" src="assets/img/santuario2.jpg"
                      alt="Il santuario"/>
+                <h2>Villa Duodo e il Mastio Federiciano</h2>
                 <p class="text">
                     Al termine del percorso si trova la villa Duodo, appartenuta a Pietro Duodo, nobile di origini
                     Veneziane, il quale fece costruire

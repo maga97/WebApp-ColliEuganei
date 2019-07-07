@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" media="screen, handheld"/>
     <link rel="stylesheet" type="text/css" href="assets/css/print.css" media="print"/>
-    <link rel="stylesheet" type="text/css" href="assets/css/mobile768.css" media="screen and (max-width: 768px)"/>
-    <link rel="stylesheet" type="text/css" href="assets/css/mobile480.css" media="screen and (max-width: 480px)"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/script.js"></script>
@@ -37,7 +35,7 @@ if (session_status() == PHP_SESSION_NONE) {
         <ul class="breadcrumb">
             <li><a href="Gite.php">Gite</a></li>
         </ul>
-        <div class="form" id="searchform">
+        <div class="card" id="searchform">
             <form action="Gite.php" method="post">
                 <fieldset>
                     <legend>Modulo di ricerca delle gite</legend>
@@ -79,7 +77,7 @@ Inserisci un'altra parola chiave o torna <a href=\"Gite.php\">lista delle gite</
                 $node['Ore'] = substr($node['Ore'], 0, 5);
                 $node['Data'] = $data[2] . "/" . $data[1] . "/" . $data[0];
                 ?>
-                <div class="card form-field">
+                <div class="card form-field trip">
                     <?php $immagine = base64_encode($node["Immagine"]); ?>
                     <div class="row">
                         <div class="col-6">
@@ -103,7 +101,7 @@ Inserisci un'altra parola chiave o torna <a href=\"Gite.php\">lista delle gite</
                     <div class="form-field">
                         <?php if (isset($_SESSION['username'])): ?>
                             <?php
-                            echo "<a href=\"Prenotazione.php?id=" . $node["ID_Attivita"] . "\" class=\"btn btn-primary\">Prenota la gita</a></span>";
+                            echo "<a href=\"Prenotazione.php?id=" . $node["ID_Attivita"] . "\" class=\"btn btn-primary center-block\">Prenota la gita</a></span>";
                             ?>
                         <?php else: ?>
                             <a href="Accedi.php"
