@@ -204,7 +204,7 @@ if (isset($_POST["conferma_modifica"])) {
             </form>
         </div>
     </div>
-    <?php echo include_once("../footer.php"); ?>
+    <?php include_once("../footer.php"); ?>
 </div>
 </body>
 </html>

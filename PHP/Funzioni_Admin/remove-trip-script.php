@@ -13,9 +13,9 @@ if (isset($_GET["id"])):
     $db->connect();
     $esito = $db->RimuoviGita($_GET["id"]);
     if ($esito == true) {
-        header("Location: ../../remove-trip.php?done=true");
+        header("Location: ../../admin/remove-trip.php?done=true");
     } else {
-        header("Location: ../../remove-trip.php?error=Cancellazione+non+riuscita");
+        header("Location: ../../admin/remove-trip.php?error=Cancellazione+non+riuscita");
     }
 else:
     header("Location: ../../admin/remove-trip.php");

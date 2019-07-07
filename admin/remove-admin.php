@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 <head>
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <meta charset="UTF-8"/>
     <title>Rimozione amministratore - Colli Digitali</title>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <link rel="stylesheet" type="text/css" href="../assets/css/style.css" media="handled, screen"/>
@@ -89,7 +89,7 @@ if (!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
         ?>
     </div>
     <?php
-    echo include_once "../footer.php";
+    include_once "../footer.php";
     ?>
 </div>
 </body>

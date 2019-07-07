@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <link rel="stylesheet" type="text/css" href="../assets/css/style.css"/>
-    <link rel="stylesheet" type="text/css" href="../assets/css/print.css" media="print">
+    <link rel="stylesheet" type="text/css" href="../assets/css/print.css" media="print"/>
     <link rel="stylesheet" type="text/css" href="../assets/css/mobile480.css" media="screen and (max-width: 460px)"/>
     <link rel="stylesheet" type="text/css" href="../assets/css/mobile768.css" media="screen and (max-width: 768px)"/>
     <link rel="stylesheet" type="text/css"
@@ -77,7 +77,7 @@ $db->connect();
         <?php
         endforeach; ?>
     </div>
-    <?php echo include_once "../footer.php"; ?>
+    <?php include_once "../footer.php"; ?>
 </div>
 </body>
 </html>

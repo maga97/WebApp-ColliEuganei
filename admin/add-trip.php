@@ -54,7 +54,7 @@ if (isset($_POST["aggiungiGita"])) {
         <div class="form">
             <h1>Aggiungi nuova gita</h1>
             <div class="row">
-                <form action="add-trip.php" enctype="multipart/form-data" name="form-add-trip" method="POST">
+                <form action="add-trip.php" enctype="multipart/form-data" name="form-add-trip" method="post">
                     <div class="form-field">
                         <label for="nomegita">Titolo</label>
                         <input type="text" name="nomegita" id="nomegita" required="required"/>
@@ -95,7 +95,7 @@ if (isset($_POST["aggiungiGita"])) {
             </div>
         </div>
     </div>
-    <?php echo include_once "../footer.php"; ?>
+    <?php include_once "../footer.php"; ?>
 </div>
 </body>
 </html>

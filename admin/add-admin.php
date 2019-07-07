@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 <head>
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <link rel="stylesheet" type="text/css" href="../assets/css/style.css"/>
     <link rel="stylesheet" type="text/css" href="../assets/css/print.css" media="print"/>
@@ -54,7 +54,7 @@ if (!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
         $db->connect();
         $users = $db->GetUsers("utente");
         if (sizeof($users) == 0):
-            echo '<div class="alert warning">Nessun utente che pu&ograve; diventare amministratore.<div>' . PHP_EOL;
+            echo "<div class=\"alert warning\">Nessun utente che pu&ograve; diventare amministratore.</div>" . PHP_EOL;
         endif;
         $i = 0;
         $open = false;
@@ -93,7 +93,7 @@ if (!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
         endif;
         ?>
     </div>
-    <?php echo include_once "../footer.php"; ?>
+    <?php include_once "../footer.php"; ?>
 </div>
 </body>
 </html>
