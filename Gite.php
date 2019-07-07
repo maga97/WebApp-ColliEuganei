@@ -97,7 +97,7 @@ Inserisci un'altra parola chiave o torna <a href=\"Gite.php\">lista delle gite</
                         <div class="col-6">
                             <img src="data:image/jpeg;base64,<?php echo $immagine ?>"
                                  alt="Immagine <?php echo $node['Nome'] ?>"
-                                 class="responsive-image float-right same-size"/>
+                                 class="responsive-image same-size center-block"/>
                         </div>
                     </div>
                     <div class="form-field">

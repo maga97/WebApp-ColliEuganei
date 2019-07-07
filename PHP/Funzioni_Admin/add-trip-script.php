@@ -92,6 +92,7 @@ if (strtotime($data) < strtotime(date("Y-m-d"))) {
     ;
     return "Data inserita antecedente a quella odierna";
 }
+
 $esito = $db->AggiungiGita($nomegita, $descrizione, file_get_contents($_FILES['immagine']['tmp_name']), $data, $ora, $prezzo);
 
 if ($esito) {

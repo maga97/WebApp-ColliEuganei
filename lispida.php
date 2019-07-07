@@ -42,9 +42,7 @@ if (session_status() == PHP_SESSION_NONE) {
         </ul>
         <div class="section">
             <h2>Il Castello di Lispida</h2>
-            <div class="float-right">
-                <img class="picture history-picture" src="assets/img/lispida1.jpg" alt="Castello di Lispida dall'alto"/>
-            </div>
+                <img class="responsive-image history-picture float-right" src="assets/img/lispida1.jpg" alt="Castello di Lispida dall'alto"/>
             <p class="text">
                 Il castello di Lispida, situato nei pressi di Monselice, nel cuore del Parco Regionale dei Colli
                 Euganei,
@@ -65,10 +63,8 @@ if (session_status() == PHP_SESSION_NONE) {
                 Il personale può organizzare escursioni e gite in bicicletta nel parco.
             </p>
             <h2>Descrizione</h2>
-            <div class="float-right">
-                <img class="picture history-picture" src="assets/img/lispida2.jpg"
+                <img class="responsive-image history-picture float-right" src="assets/img/lispida2.jpg"
                      alt="Giardino del Castello di Lispida"/>
-            </div>
             <p class="text">
                 Custodita nel cuore del Parco Naturale dei Colli Euganei, la Tenuta di Lispida ricomprende un lago
                 termale con sorgenti calde e si estende per 90 ettari fra boschi, vigneti e uliveti.
@@ -85,10 +81,8 @@ if (session_status() == PHP_SESSION_NONE) {
                 e i campi non siano abbandonati, siano seminati e coltivati nella giusta stagione, e la pietra del colle
                 ci venga mandata con regolarità”. La storia monastica di Lispida si interrompe nel 1792.
             </p>
-            <div class="float-right">
-                <img class="picture history-picture" src="assets/img/lispida3.jpg"
+                <img class="responsive-image history-picture float-right" src="assets/img/lispida3.jpg"
                      alt="Vigneti del Castello di Lispida"/>
-            </div>
             <p class="text">
                 La proprietà viene in seguito acquistata dai conti Corinaldi, i quali sui resti del vetusto monastero
                 edificano le costruzioni che oggi vediamo, le dotano di cantine imponenti e iniziano la produzione di

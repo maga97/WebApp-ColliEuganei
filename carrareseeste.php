@@ -41,27 +41,24 @@ if (session_status() == PHP_SESSION_NONE) {
         </ul>
         <div class="section">
             <h2>Il Castello Carrarese di Este</h2>
-            <div class="float-right">
-                <img class="picture history-picture" src="assets/img/este1.jpg" alt="Castello Carrarese di Este"/>
-            </div>
+            <img class="responsive-image history-picture float-right" src="assets/img/este1.jpg"
+                 alt="Castello Carrarese di Este"/>
             <p class="text">
-                Il castello di Este è stato costruito circa nel 1340, per iniziativa del signore di Padova Ubertino da
+                Il castello di Este &egrave; stato costruito circa nel 1340, per iniziativa del signore di Padova Ubertino da
                 Carrara.
-                La costruzione è a pianta quadrata, circondata da una poderosa muraglia intervallata da dodici
+                La costruzione &egrave; a pianta quadrata, circondata da una poderosa muraglia intervallata da dodici
                 torresini, questo fortilizio ha di fatto soppiantato il primo castello, quello dei marchesi d’Este,
                 sorto sull’area collinare fin dal XI secolo e gravemente danneggiato dalle guerre del ‘200 e del ‘300.
             </p>
             <p class="text">
-                Il mastio è sito sul colle, in posizione di controllo sull’intero abitato; culmina con una torre
+                Il mastio &egrave; sito sul colle, in posizione di controllo sull’intero abitato; culmina con una torre
                 quadrata e presenta a nord-est un castelletto o Rocca del Soccorso, che originariamente costituiva
                 l’accesso alla fortezza.
-                Lo spazio compreso all’interno della cinta muraria è oggi adibito a giardino pubblico.
+                Lo spazio compreso all’interno della cinta muraria &egrave; oggi adibito a giardino pubblico.
             </p>
             <h2>L'evoluzione del Castello</h2>
-            <div class="float-right">
-                <img class="picture history-picture" src="assets/img/este2.jpg"
-                     alt="Parco del Castello Carrarese di Este"/>
-            </div>
+            <img class="responsive-image history-picture float-right" src="assets/img/este2.jpg"
+                 alt="Parco del Castello Carrarese di Este"/>
             <p class="text">
                 Il Castello fu utilizzato a fini difensivi fino alla spontanea dedizione della città alla Repubblica di
                 Venezia, quando l’intera struttura fu venduta ai Mocenigo: furono questi ultimi a far costruire verso la

@@ -35,7 +35,7 @@ if (!$email || !$nome || !$cognome || !$Password || !$Password2) {
     header("Location: Impostazioni.php");
     exit;
 } else {
-    $errore = "L'inserimento non è andato a buon fine. Ti preghiamo di riprovare";
+    $errore = "L'inserimento non &egrave; andato a buon fine. Ti preghiamo di riprovare";
 }
 
 

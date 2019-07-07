@@ -56,7 +56,7 @@ if (isset($_POST["Login"])) {
                   <div class="alert errore login" aria-live="assertive" role="alert" aria-atomic="true"> Non hai inserito completato tutti i campi</div>';
                 elseif (isset($wronglogin)):
                     echo '
-                  <div class="alert errore login" aria-live="assertive" role="alert" aria-atomic="true">Si è verificato un errore:
+                  <div class="alert errore login" aria-live="assertive" role="alert" aria-atomic="true">Si &egrave; verificato un errore:
                   <span xml:lang="en">email</span> o <span xml:lang="en">password</span> non corretti</div>';
                 endif;
                 ?>

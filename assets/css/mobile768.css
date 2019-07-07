@@ -8,6 +8,20 @@
     width: 100%;
 }
 
+.col-6 {
+    width: 100%;
+}
+
+.col-6:after {
+    clear: both;
+}
+.history-picture {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    float: none;
+    padding: 0;
+}
 
 #geotab {
     display: none;

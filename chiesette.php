@@ -41,31 +41,35 @@ if (session_status() == PHP_SESSION_NONE) {
         </ul>
         <div class="section">
             <h2>La via delle 7 chiesette</h2>
-            <div class="float-right">
-                <img class="picture history-picture" src="assets/img/7chiesette.jpg" alt="Le 7 chiesette"/>
+            <img class="responsive-image history-picture float-right" src="assets/img/7chiesette.jpg"
+                 alt="Le 7 chiesette"/>
+            <p class="text">
+                La via delle sette chiesette &egrave; un breve percorso e meta di pellegrinaggio in quel di Monselice.
+                Il viale, in leggera salita, &egrave; affiancato da 6 cappellette, ognuna dedicata ad una chiesa romana.
+            </p>
+            <div class="row">
+                <h2>Le chiesette</h2>
+                <p class="text">
+                    Ognuna delle cappellette, ha al suo interno una pala d'altare dipinta da Jacopo Palma il Giovane
+                    raffigurante la basilica romana a cui &egrave; dedicata. La settima chiesa &egrave; il Santuario di San Giorgio
+                    nel
+                    quale si
+                    trovano le salme di 25 martiri cristiani e altre reliquie trasferitevi a metà del XVII secolo.
+                </p>
             </div>
-            <p class="text">
-                La via delle sette chiesette è un breve percorso e meta di pellegrinaggio in quel di Monselice.
-                Il viale, in leggera salita, è affiancato da 6 cappellette, ognuna dedicata ad una chiesa romana.
-            </p>
-            <h2>Le chiesette</h2>
-            <p class="text">
-                Ognuna delle cappellette, ha al suo interno una pala d'altare dipinta da Jacopo Palma il Giovane
-                raffigurante la basilica romana a cui è dedicata. La settima chiesa è il Santuario di San Giorgio nel
-                quale si
-                trovano le salme di 25 martiri cristiani e altre reliquie trasferitevi a metà del XVII secolo.
-            </p>
-            <div class="float-right">
-                <img class="picture history-picture" src="assets/img/santuario2.jpg" alt="Il santuario"/>
+            <div class="row">
+                <h2>Villa Duodo e il Mastio Federiciano</h2>
+                <img class="responsive-image history-picture float-right" src="assets/img/santuario2.jpg"
+                     alt="Il santuario"/>
+                <p class="text">
+                    Al termine del percorso si trova la villa Duodo, appartenuta a Pietro Duodo, nobile di origini
+                    Veneziane, il quale fece costruire
+                    le 6 cappellette per complementare la cappella privata della villa.
+                    La strada prosegue verso il Mastio Federiciano, una roccaforte del XIII secolo voluta
+                    dall'imperatore
+                    Federico II ora adibita a museo con terrazza panoramica.
+                </p>
             </div>
-            <h2>Villa Duodo e il Mastio Federiciano</h2>
-            <p class="text">
-                Al termine del percorso si trova la villa Duodo, appartenuta a Pietro Duodo, nobile di origini
-                Veneziane, il quale fece costruire
-                le 6 cappellette per complementare la cappella privata della villa.
-                La strada prosegue verso il Mastio Federiciano, una roccaforte del XIII secolo voluta dall'imperatore
-                Federico II ora adibita a museo con terrazza panoramica.
-            </p>
         </div>
     </div>
     <a id="scroll-top-btn" href="#top">Torna in alto</a>

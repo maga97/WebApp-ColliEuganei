@@ -40,13 +40,11 @@ if (session_status() == PHP_SESSION_NONE) {
         </ul>
         <div class="section">
             <h2>L'Abbazia di Praglia</h2>
-            <div class="float-right">
-                <img class="picture history-picture" src="assets/img/praglia1.jpg" alt="Abbazia di Praglia"/>
-            </div>
+                <img class="responsive-image history-picture float-right" src="assets/img/praglia1.jpg" alt="Abbazia di Praglia"/>
             <p class="text">
-                L'abbazia di Praglia è un monastero benedettino situato nel comune di Teolo, in prossimità di Abano
-                Terme. Ospita attualmente la Biblioteca nazionale, che è un monumento nazionale italiano.
-                È attualmente retta dall'abate dom. Norberto Villa e la comunità conta 49 monaci.
+                L'abbazia di Praglia &egrave; un monastero benedettino situato nel comune di Teolo, in prossimità di Abano
+                Terme. Ospita attualmente la Biblioteca nazionale, che &egrave; un monumento nazionale italiano.
+                &#200; attualmente retta dall'abate dom. Norberto Villa e la comunità conta 49 monaci.
                 Si tratta di un monastero benedettino molto antico, fondato nell’XI secolo per iniziativa della nobile
                 famiglia vicentina dei Maltraversi. Il suo nome deriva dal termine medievale “pratalea” (località tenuta
                 a prati)
@@ -54,11 +52,9 @@ if (session_status() == PHP_SESSION_NONE) {
                 avviata proprio dai Benedettini nel Medioevo.
                 L'intera abbazia fu ricostruita a partire dal 1469 e nel 1490 i benedettini vi aggiunsero la "chiesa
                 dell'Assunta", realizzata su disegno di Tullio Lombardo (poi radicalmente trasformata da Andrea Moroni).
-                L'abbazia è divenuta un centro di eccellenza nel settore del restauro dei libri antichi. </p>
+                L'abbazia &egrave; divenuta un centro di eccellenza nel settore del restauro dei libri antichi. </p>
             <h2>I chiostri</h2>
-            <div class="float-right">
-                <img class="picture history-picture" src="assets/img/praglia2.jpg" alt="Il monastero dall'interno"/>
-            </div>
+                <img class="responsive-image history-picture float-right" src="assets/img/praglia2.jpg" alt="Il monastero dall'interno"/>
             <p class="text">
                 All'interno della cinta muraria il monastero si divide in quattro chiostri: doppio, detto anche della
                 clausura, botanico, pensile e rustico (nel quale si depositavano gli attrezzi agricoli).
@@ -73,10 +69,10 @@ if (session_status() == PHP_SESSION_NONE) {
             <p class="text">
                 L'Abbazia di Praglia, ancora oggi abitata da monaci benedettini e meta di un costante turismo religioso,
                 ospita al suo interno anche una Biblioteca Monumentale Nazionale, che contiene circa 100.000 volumi.
-                La sala al piano superiore è impreziosita da 17 tele di G.B. Zelotti, pittore del tardo Cinquecento,
+                La sala al piano superiore &egrave; impreziosita da 17 tele di G.B. Zelotti, pittore del tardo Cinquecento,
                 inserite negli scomparti del soffitto in legno.
                 Altre tele dello stesso artista, con temi biblici, si trovano ora nel refettorio.
-                Il laboratorio di restauro dei libri e codici antichi è un altro fiore all’occhiello dell’Abbazia.
+                Il laboratorio di restauro dei libri e codici antichi &egrave; un altro fiore all’occhiello dell’Abbazia.
             </p>
         </div>
     </div>

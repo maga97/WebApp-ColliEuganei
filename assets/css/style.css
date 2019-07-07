@@ -156,22 +156,12 @@ ul.breadcrumb li + li:before {
     padding-left: 2%;
 }
 
-.picture {
-    border-radius: 0.5em;
-    height: auto;
-    max-width: 100%;
-}
-
 .history-picture {
-    width: 25em;
-}
-
-.climate-picture {
-    width: 28em;
+    width: 35em;
 }
 
 a:link {
-    text-decoration: none;
+    text-decoration: underline;
     color: #000;
 }
 
@@ -469,7 +459,8 @@ div.alert.errore.login, div.alert.show {
 }
 
 img.same-size {
-    max-height: 350px;
+    overflow: hidden;
+    max-width: 25em;
 }
 
 .form {
