@@ -49,7 +49,7 @@ if (isset($_POST["aggiungiGita"])) {
             echo "<div class=\"alert show errore\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\"><p>Errore: " . $errore . "</p></div>" . PHP_EOL;
         }
         ?>
-        <div class="form">
+        <div class="card card-spaced form-field">
             <h1>Aggiungi nuova gita</h1>
             <div class="row">
                 <form action="add-trip.php" enctype="multipart/form-data" name="form-add-trip" method="post">

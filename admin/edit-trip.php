@@ -61,7 +61,7 @@ $data = $arrayofdata[2] . "/" . $arrayofdata[1] . "/" . $arrayofdata[0];
             <li>Gestione gite</li>
             <li>Modifica dati gita</li>
         </ul>
-        <div class="form">
+        <div class="card card-spaced form-field">
 
             <?php
             if (isset($errore) && $errore == false) {
