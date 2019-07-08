@@ -71,12 +71,12 @@ $data = $arrayofdata[2] . "/" . $arrayofdata[1] . "/" . $arrayofdata[0];
             }
             ?>
 
-            <img src="data:image/jpeg;base64,<?php echo $immagine ?>" alt="Immagine <?php echo $nome ?>"
+            <img src="data:image/jpeg;base64,<?php echo $immagine ?>" alt=""
                  class="responsive-image center-block"/>
             <h2>Modifica gita "<?php echo $nomegita; ?>"</h2>
             <form action="edit-trip.php" enctype="multipart/form-data"
                   name="form-modify-trip"
-                  method="POST">
+                  method="post">
                 <input type="hidden" name="id" value="<?php echo $id; ?>"/>
                 <div class="form-field">
                     <label for="nomegita">Titolo</label>
@@ -90,27 +90,23 @@ $data = $arrayofdata[2] . "/" . $arrayofdata[1] . "/" . $arrayofdata[0];
                 </div>
                 <div class="form-field">
                     <label for="immagine">Immagine</label>
-                    <input type="file" name="immagine" aria-labelledby="imgdesc" id="idimmagine"
-                           placeholder="Selezione immagine gita"/>
+                    <input type="file" name="immagine" id="immagine"/>
                     <span id="imgdesc" tabindex="0">Se lasciata vuota l'immagine non cambier&agrave;</span>
                 </div>
                 <div class="form-field">
-                    <label for="data">Data</label>
-                    <input type="text" name="data" aria-labelledby="datadesc" required="required"
+                    <label for="data">Data(gg/mm/aaaa)</label>
+                    <input type="text" name="data" aria-labelledby="data" required="required"
                            value="<?php echo $data; ?>" id="data"/>
-                    <span id="datadesc" tabindex="0">gg/mm/aaaa</span>
                 </div>
                 <div class="form-field">
-                    <label for="ora">Ora</label>
-                    <input type="text" name="ora" aria-labelledby="oradesc" required="required"
+                    <label for="ora">Ora(hh:mm)</label>
+                    <input placeholder="hh:mm" type="text" name="ora" aria-labelledby="ora" required="required"
                            value="<?php echo $ora; ?>" id="ora"/>
-                    <span id="oradesc" tabindex="0">hh:mm</span>
                 </div>
                 <div class="form-field">
                     <label for="prezzo">Prezzo</label>
-                    <input type="text" min="0" id="prezzo" name="prezzo" required="required"
-                           aria-labelledby="prezzodesc" value="<?php echo $prezzo; ?>"/>
-                    <span id="prezzodesc" tabindex="0">10.50</span>
+                    <input type="text" id="prezzo" name="prezzo" required="required"
+                           aria-labelledby="prezzo" value="<?php echo $prezzo; ?>"/>
                 </div>
                 <div class="button-holder">
                     <input type="reset" value="Cancella dati" name="cancelladati" class="btn btn-red"/>

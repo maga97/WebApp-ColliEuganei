@@ -42,7 +42,7 @@ if (!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
         <?php
         $db = new database();
         $db->connect();
-        $list = $db->GetListaAttivita();
+        $list = $db->GetListaAttivita(null);
         $size = sizeof($list);
         if ($size == 0) {
             echo "<h3>Momentaneamente non sono disponibili gite</h3>" . PHP_EOL;
@@ -52,7 +52,7 @@ if (!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
             $node['Ore'] = substr($node['Ore'], 0, 5);
             $node['Data'] = $data[2] . "/" . $data[1] . "/" . $data[0];
             ?>
-            <div class="card form-field">
+            <div class="card form-field card-spaced">
                 <h2><?php echo $node['Nome']; ?></h2>
                 <dl class="inline-list">
                     <dt>Descrizione</dt>

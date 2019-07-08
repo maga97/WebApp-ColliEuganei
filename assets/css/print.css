@@ -31,7 +31,7 @@
         display: none;
     }
 
-    #geografia-text, #clima-text, #storia-text {
+    #geografia-text, #clima-text, #storia-text { /**  l'utente decide cosa stamparsi. Ad esempio se vuole stampare la geografia schiaccia il relativo bottone "scopri di piu" **/
         display: block;
     }
 
