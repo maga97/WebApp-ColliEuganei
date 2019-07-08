@@ -138,10 +138,10 @@ class database
         return $query->fetch();
     }
 
-    public function GetListaAttivita()
+    public function GetListaAttivita($email)
     {
-        $query = $this->pdo->prepare('SELECT * FROM Attivita WHERE Data > CURDATE()');
-        $query->execute();
+        $query = $this->pdo->prepare('SELECT * FROM Attivita WHERE Data > CURDATE() AND ID_Attivita NOT IN (SELECT ID_Attivita FROM Prenotazioni, Utenti WHERE Email = ?) ');
+        $query->execute(array($email));
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
 
@@ -176,7 +176,7 @@ class database
     {
         $query = $this->pdo->prepare('SELECT Attivita.Nome As nome,Attivita.Data AS data,
 																				 Attivita.Ore AS ore,Prenotazioni.NumPostiPrenotati AS posti,
-																				 Prenotazioni.ID_Prenotazione AS id, Attivita.Prezzo AS prezzo
+																				 Prenotazioni.ID_Prenotazione AS id, Attivita.Prezzo AS prezzo, Immagine
 																	FROM Utenti JOIN Prenotazioni ON Utenti.ID_Utente=Prenotazioni.ID_Utenti
 																							JOIN Attivita ON Prenotazioni.ID_Attivita=Attivita.ID_Attivita
 			 														WHERE Utenti.Email = ?');

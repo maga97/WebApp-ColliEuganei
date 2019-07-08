@@ -44,7 +44,8 @@ $db->connect();
         <ul class="breadcrumb">
             <li>Le mie gite</li>
         </ul>
-        <p class="text">Qui sono raccolte tutte le prenotazioni da Lei effettuate. In questa pagina si pu&ograve; effettuare la
+        <p class="text">Qui sono raccolte tutte le prenotazioni da Lei effettuate. In questa pagina si pu&ograve;
+            effettuare la
             disdetta delle prenotazioni effettuate</p>
         <?php
         $list = $db->getListaPrenotazioni($_SESSION["username"]);
@@ -53,6 +54,7 @@ $db->connect();
             echo "<h3>Non hai nessuna gita in programma!</h3>" . PHP_EOL;
         }
         foreach ($list as $node):
+            $immagine = base64_encode($node["Immagine"]);
             $data = explode("-", $node['data']);
             $node['Ore'] = substr($node['ore'], 0, 5);
             $node['Data'] = $data[2] . "/" . $data[1] . "/" . $data[0];
@@ -60,16 +62,25 @@ $db->connect();
 
             <div class="card form-field card-spaced">
                 <h2><?php echo $node['nome']; ?></h2>
-                <dl class="inline-list">
-                    <dt>ID Prenotazione</dt>
-                    <dd><?php echo $node['id']; ?></dd>
-                    <dt>Prezzo Totale</dt>
-                    <dd><?php echo $node['prezzo'] * $node['posti']; ?> &euro;</dd>
-                    <dt>Data</dt>
-                    <dd><?php echo $node['data']; ?></dd>
-                    <dt>Ore</dt>
-                    <dd><?php echo $node['Ore'] ?></dd>
-                </dl>
+                <div class="row">
+                    <div class="col-6">
+                        <dl class="inline-list">
+                            <dt>ID Prenotazione</dt>
+                            <dd><?php echo $node['id']; ?></dd>
+                            <dt>Prezzo Totale</dt>
+                            <dd><?php echo $node['prezzo'] * $node['posti']; ?> &euro;</dd>
+                            <dt>Data</dt>
+                            <dd><?php echo $node['Data']; ?></dd>
+                            <dt>Ore</dt>
+                            <dd><?php echo $node['Ore'] ?></dd>
+                        </dl>
+                    </div>
+                    <div class="col-6">
+                        <img src="data:image/jpeg;base64,<?php echo $immagine ?>"
+                             alt="Immagine <?php echo $node['nome'] ?>"
+                             class="responsive-image same-size center-block"/>
+                    </div>
+                </div>
                 <div class="form-field">
                     <?php echo "<a class=\"btn btn-red center-block\" href=\"delete-prenotazione.php?id=" . $node['id'] . "\">Disdici</a>" ?>
                 </div>
@@ -81,7 +92,7 @@ $db->connect();
     </div>
     <?php echo include_once("footer.php"); ?>
 </div>
-<script type="text/javascript" src="js/confirm.js"></script>
+<script src="js/confirm.js"></script>
 </body>
 </html>
 <?php

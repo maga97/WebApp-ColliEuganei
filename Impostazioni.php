@@ -47,32 +47,23 @@ if (isset($_POST["conferma_modifica"])) {
         </ul>
         <div class="card row form-field card-spaced">
             <div class="titolo-form">
-                <h1 id="titolo">Riepilogo dati <span xml:lang="en" lang="en">account</span></h1>
+                <h1 id="titolo" class="text-center">Riepilogo dati <span xml:lang="en" lang="en">account</span></h1>
             </div>
-
-            <form id="dati-utente" method="post" action="Impostazioni.php">
-                <?php
-                if (isset($_POST["conferma_modifica"])) {
-                    if ($errore != "")
-                        echo "<div class=\"alert show errore\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\"><p>Errore: " . $errore . "</p></div>" . PHP_EOL;
-                    else {
-                        echo "<div class=\"alert show success\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\">
+            <?php
+            if (isset($_POST["conferma_modifica"])) {
+                if ($errore != "")
+                    echo "<div class=\"alert show errore\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\"><p>Errore: " . $errore . "</p></div>" . PHP_EOL;
+                else {
+                    echo "<div class=\"alert show success\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\">
                                 <p>Dati modificati con successo</p>
                               </div>";
-                    }
                 }
-                else if (isset($_POST["modifica_password"])) {
-                    if ($errorepwd != "")
-                        echo "<div class=\"alert show errore\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\"><p>Errore: " . $errorepwd . "</p></div>" . PHP_EOL;
-                    else {
-                        echo "<div class=\"alert show success\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\">
-                                <p>Password modificata con successo</p>
-                              </div>";
-                    }
-                }
-                $db = new database();
-                $db->connect();
-                ?>
+            }
+            $db = new database();
+            $db->connect();
+            ?>
+            <form id="dati-utente" method="post" action="Impostazioni.php">
+
                 <div class="form-field">
                     <label for="email" xml:lang="en" lang="en">Email: </label>
                     <div class="input-container">
@@ -175,8 +166,17 @@ if (isset($_POST["conferma_modifica"])) {
         </div>
         <div class="row card form-field card-spaced">
             <div class="titolo-form">
-                <h2>Modifica <span xml:lang="en" lang="en">password</span></h2>
+                <h2 class="text-center">Modifica <span xml:lang="en" lang="en">password</span></h2>
             </div>
+            <?php if (isset($_POST["modifica_password"])) {
+                if ($errorepwd != "")
+                    echo "<div class=\"alert show errore\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\"><p>Errore: " . $errorepwd . "</p></div>" . PHP_EOL;
+                else {
+                    echo "<div class=\"alert show success\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\">" . PHP_EOL .
+                            "<p>Password modificata con successo</p>" . PHP_EOL .
+                          "</div>";
+                }
+            } ?>
             <form id="mod-pwd-form" method="post" action="Impostazioni.php">
                 <div class="form-field">
                     <label for="vecchia-password">Password corrente: (obbligatorio)</label>

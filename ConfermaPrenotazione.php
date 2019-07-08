@@ -26,6 +26,7 @@ if (isset($_POST["confermaPrenotazione"])) {
     $PrenotazioneOk = $dbConnection->addPrenotazione($_SESSION["ID"], $dbConnection->GetIDUtente($_SESSION["username"]),
         $_SESSION["data"], $_SESSION["ora"], $_SESSION["posti"]
     );
+    header( "refresh:5;url=MieGite.php" );
 } else if (isset($_POST["cancellaPrenotazione"])) {
     header("Location: Gite.php");
     exit;
@@ -67,13 +68,14 @@ if (isset($_POST["confermaPrenotazione"])) {
             <div id="riepilogo">
                 <div class="alert errore" aria-live="assertive" role="alert" aria-atomic="true"
                      aria-relevant="all"></div>
-
+                <?php $data = explode("-", $_POST["data"]);
+                $data = $data[2] . "/" . $data[1] . "/" . $data[0] ?>
                 <h2> Riepilogo prenotazione </h2>
                 <div id="descrizione"><?php echo $_POST["descrizione"] . PHP_EOL; ?> </div>
                 <div class="riepprenotazione">
                     <dl>
                         <dt>Data</dt>
-                        <dd><?php echo $_POST["data"] . PHP_EOL; ?> </dd>
+                        <dd><?php echo $data . PHP_EOL; ?> </dd>
                         <dt>Ora</dt>
                         <dd> <?php echo $_POST["ora"] . PHP_EOL; ?> </dd>
                         <dt>Posti</dt>

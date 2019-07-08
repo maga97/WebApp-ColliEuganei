@@ -47,18 +47,18 @@ if (isset($_POST["Login"])) {
             <li>Login</li>
         </ul>
         <div class="card" id="login-form-container">
-            <form method="post" action="Accedi.php">
-                <?php
-                if (isset($emptyFields)):
-                    echo '
+            <h1 class="text-center">Accedi</h1>
+            <?php
+            if (isset($emptyFields)):
+                echo '
                   <div class="alert errore login" aria-live="assertive" role="alert" aria-atomic="true"> Non hai inserito completato tutti i campi</div>';
-                elseif (isset($wronglogin)):
-                    echo '
+            elseif (isset($wronglogin)):
+                echo '
                   <div class="alert errore login" aria-live="assertive" role="alert" aria-atomic="true">Si &egrave; verificato un errore:
                   <span xml:lang="en">email</span> o <span xml:lang="en">password</span> non corretti</div>';
-                endif;
-                ?>
-                <h1>Accedi</h1>
+            endif;
+            ?>
+            <form method="post" action="Accedi.php">
                 <div class="form-field">
                     <label for="username" class="log-label">Email: </label>
                     <input type="text" id="username" name="email"

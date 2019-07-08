@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/script.js"></script>
-    <!-- <script src="js/registrazione.js"></script> -->
     <script src="js/global.js"></script>
     <title>Registrazione - Colli Digitali</title>
 </head>
@@ -44,15 +43,15 @@ if (isset($_POST["registrazione"])) {
             <li><a href="Registrazione.php">Registrazione</a></li>
         </ul>
         <div class="card card-spaced row form-field">
+            <h1 class="text-center">Crea <span xml:lang="en">account</span></h1>
+            <?php
+            if (isset($errore))
+                echo '<div class="alert errore show" aria-live="assertive" role="alert" aria-atomic="true" aria-relevant="all">' . $errore . '</div>' . PHP_EOL;
+            ?>
+            <div class="alert errore" aria-live="assertive" role="alert" aria-atomic="true" aria-relevant="all"><p
+                        class="intestazione-alert">Errore:</p></div>
             <form action="Registrazione.php" method="post"
                   onsubmit="return validaFormUtente(true,$('.alert.errore'),$('form'))">
-                <h1>Crea <span xml:lang="en">account</span></h1>
-                <?php
-                if (isset($errore))
-                    echo '<div class="alert errore show" aria-live="assertive" role="alert" aria-atomic="true" aria-relevant="all">' . $errore . '</div>' . PHP_EOL;
-                ?>
-                <div class="alert errore" aria-live="assertive" role="alert" aria-atomic="true" aria-relevant="all"><p
-                            class="intestazione-alert">Errore:</p></div>
                 <div class="row">
                     <div class="col col-6">
                         <div class="form-field">

@@ -40,7 +40,7 @@ if (session_status() == PHP_SESSION_NONE) {
 
         <?php
         if (!isset($_GET['id']) || $_GET['id'] == ""):
-            echo "Si &egrave; verificato un errore. Torna alla pagina delle gite per effettuare la prenotazione";
+            header("Location: Gite.php");
         else:
         include_once("PHP/Funzioni_Utente/DatiGita.php");
         if (isset($_SESSION["ErroriPosti"])) {

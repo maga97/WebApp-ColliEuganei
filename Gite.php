@@ -65,15 +65,19 @@ if (session_status() == PHP_SESSION_NONE) {
                     <a href=\"Gite.php\">lista delle gite</a></div>" . PHP_EOL;
             }
         } else {
-            $list = $db->GetListaAttivita();
+            $list = $db->GetListaAttivita($_SESSION['username']);
         };
         if ($empyset) {
             echo "<div class=\"alert show warning button-holder\" role=\"alert\">La ricerca non ha trovato nessuna gita con questa frase o parola chiave. 
 Inserisci un'altra parola chiave o torna <a href=\"Gite.php\">lista delle gite</a></div>" . PHP_EOL;
         }
+        if(sizeof($list) == 0) {
+            echo "<h3 class='text-center'>Nessuna gita al momento disponibile, torna a trovarci!</h3>" . PHP_EOL;
+        }
         if (sizeof($list) > 0) {
             foreach ($list as $node):
                 $data = explode("-", $node['Data']);
+                $nome = $node['Nome'];
                 $node['Ore'] = substr($node['Ore'], 0, 5);
                 $node['Data'] = $data[2] . "/" . $data[1] . "/" . $data[0];
                 ?>
@@ -81,7 +85,7 @@ Inserisci un'altra parola chiave o torna <a href=\"Gite.php\">lista delle gite</
                     <?php $immagine = base64_encode($node["Immagine"]); ?>
                     <div class="row">
                         <div class="col-6">
-                            <h2><?php echo $node['Nome']; ?></h2>
+                            <h2><?php echo $nome ?></h2>
                             <p><?php echo $node['Descrizione']; ?></p>
                             <dl class="inline-list">
                                 <dt>Prezzo:</dt>
@@ -94,7 +98,7 @@ Inserisci un'altra parola chiave o torna <a href=\"Gite.php\">lista delle gite</
                         </div>
                         <div class="col-6">
                             <img src="data:image/jpeg;base64,<?php echo $immagine ?>"
-                                 alt="Immagine <?php echo $node['Nome'] ?>"
+                                 alt="Immagine <?php echo $nome ?>"
                                  class="responsive-image same-size center-block"/>
                         </div>
                     </div>

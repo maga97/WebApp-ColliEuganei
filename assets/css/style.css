@@ -410,6 +410,11 @@ div.alert.errore.login, div.alert.show {
     background: #ac1911;
 }
 
+div.alert p {
+    margin: 0;
+}
+
+
 .alert.warning {
     background: rgb(238, 147, 0);
 }
