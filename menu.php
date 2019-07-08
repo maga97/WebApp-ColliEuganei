@@ -11,50 +11,41 @@
     <?php else: ?>
         <li class="dropdown"><a aria-haspopup="true" tabindex="0">Luoghi</a>
             <?php endif; ?>
-            <ul class="dropdown-content button-right" role="menu">
+            <div class="dropdown-content button-right" role="menu">
                 <?php if ($nomepagina == "chiesette.php"): ?>
-                    <li class="active"><a href="chiesette.php" tabindex="0" role="menuitem">Sette
-                            chiesette</a></li>
+                    <a class="active" href="chiesette.php" tabindex="0" role="menuitem">Sette
+                            chiesette</a>
                 <?php else: ?>
-                    <li><a href="chiesette.php" tabindex="0" role="menuitem">Sette chiesette</a>
-                    </li>
-                <?php endif; ?>
-                <?php if ($nomepagina == "catajo.php"): ?>
-                    <li class="active"><a href="catajo.php" tabindex="0" role="menuitem">Castello
-                            del Catajo</a></li>
+                    <a href="chiesette.php" tabindex="0" role="menuitem">Sette chiesette</a>
+                <?php endif;?>
+                <?php if ($nomepagina == "catajo.php"): ?><a class="active" href="catajo.php" tabindex="0" role="menuitem">Castello
+                            del Catajo</a>
                 <?php else: ?>
-                    <li><a href="catajo.php" tabindex="0" role="menuitem">Castello del Catajo</a>
-                    </li>
+                    <a href="catajo.php" tabindex="0" role="menuitem">Castello del Catajo</a>
+
                 <?php endif; ?>
                 <?php if ($nomepagina == "praglia.php"): ?>
-                    <li class="active"><a href="praglia.php" tabindex="0" role="menuitem">Abbazia di
-                            praglia</a></li>
+                    <a class="active" href="praglia.php" tabindex="0" role="menuitem">Abbazia di
+                            praglia</a>
                 <?php else: ?>
-                    <li><a href="praglia.php" tabindex="0" role="menuitem">Abbazia di praglia</a>
-                    </li>
+                    <a href="praglia.php" tabindex="0" role="menuitem">Abbazia di praglia</a>
                 <?php endif; ?>
-                <?php if ($nomepagina == "carrareseeste.php"): ?>
-                    <li class="active"><a href="carrareseeste.php" tabindex="0" role="menuitem">Castello
-                            carrarese di Este</a></li>
-                <?php else: ?>
-                    <li><a href="carrareseeste.php" tabindex="0" role="menuitem">Castello carrarese
-                            di Este</a></li>
+                <?php if ($nomepagina == "carrareseeste.php"): ?><a class="active" href="carrareseeste.php" tabindex="0" role="menuitem">Castello
+                            carrarese di Este</a>
+                <?php else: ?><a href="carrareseeste.php" tabindex="0" role="menuitem">Castello carrarese
+                            di Este</a>
                 <?php endif; ?>
-                <?php if ($nomepagina == "lispida.php"): ?>
-                    <li class="active"><a href="lispida.php" tabindex="0" role="menuitem">Castello
-                            di Lispida</a></li>
-                <?php else: ?>
-                    <li><a href="lispida.php" tabindex="0" role="menuitem">Castello di Lispida</a>
-                    </li>
+                <?php if ($nomepagina == "lispida.php"): ?><a class="active" href="lispida.php" tabindex="0" role="menuitem">Castello
+                            di Lispida</a>
+                <?php else: ?><a href="lispida.php" tabindex="0" role="menuitem">Castello di Lispida</a>
+
                 <?php endif; ?>
-                <?php if ($nomepagina == "pelagio.php"): ?>
-                    <li class="active"><a href="pelagio.php" tabindex="0" role="menuitem">Castello
-                            San Pelagio</a></li>
-                <?php else: ?>
-                    <li><a href="pelagio.php" tabindex="0" role="menuitem">Castello San Pelagio</a>
-                    </li>
+                <?php if ($nomepagina == "pelagio.php"): ?><a class="active" href="pelagio.php" tabindex="0" role="menuitem">Castello
+                            San Pelagio</a>
+                <?php else: ?><a href="pelagio.php" tabindex="0" role="menuitem">Castello San Pelagio</a>
+
                 <?php endif; ?>
-            </ul>
+            </div>
         </li>
         <?php if ($nomepagina == "Gite.php"): ?>
             <li><a href="Gite.php" tabindex="0" class="active">Gite</a></li>
@@ -65,19 +56,19 @@
         if (isset($_SESSION["username"])):
             ?>
             <li class="dropdown button-right"><a aria-haspopup="true" tabindex="0">Account</a>
-                <ul class="dropdown-content" role="menu">
+                <div class="dropdown-content" role="menu">
                     <?php if ($nomepagina == "Impostazioni.php"): ?>
-                        <li class="active"><a href="Impostazioni.php" tabindex="0">Impostazioni</a></li>
+                        <a class="active" href="Impostazioni.php" tabindex="0">Impostazioni</a>
                     <?php else: ?>
-                        <li><a href="Impostazioni.php" tabindex="0">impostazioni</a></li>
+                        <a href="Impostazioni.php" tabindex="0">impostazioni</a>
                     <?php endif; ?>
                     <?php if ($nomepagina == "MieGite.php"): ?>
-                        <li class="active"><a href="MieGite.php" tabindex="0">Le mie gite</a></li>
+                        <a class="active" href="MieGite.php" tabindex="0">Le mie gite</a>
                     <?php else: ?>
-                        <li><a href="MieGite.php" tabindex="0">Le mie gite</a></li>
+                        <a href="MieGite.php" tabindex="0">Le mie gite</a>
                     <?php endif; ?>
-                    <li><a href="PHP/Funzioni_Generali/logout.php" tabindex="0" role="menuitem">Logout</a></li>
-                </ul>
+                    <a href="PHP/Funzioni_Generali/logout.php" tabindex="0" role="menuitem">Logout</a>
+                </div>
             </li>
 
         <?php

@@ -207,22 +207,6 @@ a:active {
 #menuprincipale-bar {
     background-color: #000;
 }
-
-ul#menuprincipale li.button-right {
-    float: right;
-}
-
-ul#menuprincipale {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    overflow: hidden;
-    max-width: 1024px;
-    margin-left: auto;
-    font-weight: bold;
-    margin-right: auto;
-}
-
 #dropdown-trip {
     min-width: 10.25em;
 }
@@ -243,13 +227,34 @@ ul#menuprincipale {
     font-size: 1.125em;
     text-decoration: underline;
 }
+ul#menuprincipale li.button-right {
+    float: right;
+}
+
+.dropdown > a:after {
+    content: "▼";
+    font-size: 75%;
+    color: #f2f2f2;
+    padding-left: 0.5em;
+}
+
+ul#menuprincipale {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    max-width: 1024px;
+    margin-left: auto;
+    font-weight: bold;
+    margin-right: auto;
+}
 
 ul#menuprincipale li {
     float: left;
 }
 
 ul#menuprincipale li a {
-    display: inline-block;
+    display: block;
     color: #f2f2f2;
     text-align: center;
     padding: 0.875em 1em;
@@ -262,15 +267,7 @@ ul#menuprincipale li.icon {
     display: none;
 }
 
-.dropdown > a:after {
-    content: "▼";
-    font-size: 75%;
-    color: #f2f2f2;
-    padding-left: 0.5em;
-}
-
 .dropdown-content {
-    list-style-type: none;
     display: none;
     margin: 0;
     position: absolute;
@@ -279,13 +276,22 @@ ul#menuprincipale li.icon {
     z-index: 1;
 }
 
-#menuprincipale li:hover, .dropdown li:hover {
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown-content a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+}
+
+#menuprincipale a:hover, .dropdown a:hover {
     background-color: #666;
     color: white;
 }
 
 .dropdown:hover .dropdown-content {
-    display: grid;
+    display: block;
 }
 
 ul.dropdown-content {
@@ -296,13 +302,6 @@ ul.dropdown-content {
 ul.dropdown-content li {
     padding: 0 0 0 0;
     margin: 0 0 0 0;
-}
-
-ul.dropdown-content li a {
-    color: white;
-    text-decoration: none;
-    display: block;
-    text-align: center;
 }
 
 #descrizione {
