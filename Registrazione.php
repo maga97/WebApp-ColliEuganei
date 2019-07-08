@@ -54,7 +54,7 @@ if (isset($_POST["registrazione"])) {
                 <div class="alert errore" aria-live="assertive" role="alert" aria-atomic="true" aria-relevant="all"><p
                             class="intestazione-alert">Errore:</p></div>
                 <div class="row">
-                    <div class="col form-column">
+                    <div class="col col-6">
                         <div class="form-field">
                             <label for="nome" class="log-label">Nome: (obbligatorio)</label>
                             <input type="text" value="<?php echo isset($_POST['nome']) ? $_POST['nome'] : ""; ?>"
@@ -97,7 +97,7 @@ if (isset($_POST["registrazione"])) {
                                    maxlength="6"/>
                         </div>
                     </div>
-                    <div class="col form-column">
+                    <div class="col col-6">
                         <div class="form-field">
                             <label for="email" xml:lang="en" class="log-label">Email: (obbligatorio)</label>
                             <input type="text" value="<?php echo isset($_POST['email']) ? $_POST['email'] : ""; ?>"
