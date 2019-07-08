@@ -51,7 +51,7 @@
 			\large GiulioPiva - 1146135 \\ Magarotto Francesco - 1143292 \\ Zilio Davide-1149807  \\
 			Costantino Marco - 1144120
 			\vfill
-			Sito web hostato all'indirizzo: \url{http://tecweb1819.studenti.math.unipd.it/famagarot}\\
+			Sito web hostato all'indirizzo: \url{http://tecweb1819.studenti.math.unipd.it/gpiva}\\
 			{\small Credenziali per l'amministrazione:\\username: admin@admin.it, password: admin\\}
 			\vfill
 			Indirizzo email del referente: francesco.magarotto@studenti.unipd.it\\
@@ -97,34 +97,49 @@
 	In questa parte del documento si andranno ad approfondire tutti gli aspetti legati alla realizzazione del sito web.
 
 	\section{Scelte tecniche}
-	\subsection{XHTML1.0}
-	Come linguaggio di marcatura si è scelto di utilizzare XHTML 1.0.
-	\'E stata scelta questa tecnologia perché prevede un uso più restrittivo dei tag HTML mirato alla separazione tra elementi grafici del sito, specificati tramite fogli di stile esterni, e il layout della pagine. Un'altra ragione per la scelta di XHTML 1.0 risiede nella sua retrocompatibilità, nella sua diffusione e nella compatibilità con i browser più diffusi.
+	\subsection{XHTML5}
+	Come linguaggio di marcatura si è scelto di utilizzare XHTML 5.
+	\'E stata scelta questa tecnologia perché prevede un uso più restrittivo dei tag HTML mirato alla separazione tra elementi grafici del sito, specificati tramite fogli di stile esterni, e il layout della pagine. Un'altra ragione per la scelta di XHTML 5 risiede nella sua compatibilità, nella sua diffusione e nella compatibilità con i browser più diffusi.
+	Pertanto i documenti creati hanno la dicitura:
+	\begin{lstlisting}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
+	\end{lstlisting}
+	Includendo così i DTD necessari per effettuare la validazione del documento.
 	\subsection{CSS}
 	I file necessari alla formattazione dello stile del sito e per i vari dispositivi sono collocati nella cartella \texttt{assets/css} mentre le immagini sono collocate nella
 	cartella \texttt{assets/img}.
-	Il sito utilizza un foglio di stile principale, denominato \texttt{style.css}, e 3 fogli di stile secondari: \begin{itemize}
-		\item mobile480.css: utilizzato per adattare il sito a dispositivi più piccoli, di dimensione massima 480 pixel
-		\item mobile768.css: utilizzato per adattare il sito a dispositivi più piccoli, di dimensione massima 768 pixel
-		\item print.css: utilizzato per la stampa, rimuove tutti i contenuti non necessari e impagina le informazioni per meglio adattarle a un foglio A4.
+	Il sito utilizza un foglio di stile principale, denominato \texttt{style.css}, che contiene 3 media query:
+	 \begin{itemize}
+		\item Schermi con massima larghezza 768px: utilizzato per adattare il sito a dispositivi più piccoli, di dimensione di un tablet;
+		\item Schermi con massima larghezza 600px: utilizzato per adattare il menu e renderlo adeguato all'utilizzo con telefoni cellulari;
+		\item Schermi con massima larghezza 480px: utilizzato per adattare il contenuto del sito a telefoni cellulari con schermi molto piccoli.
 	\end{itemize}
-	 Sono state usate anche alcune regole di CSS3.0, come ad esempio i flexbox layout ai fini di apprendere nuovi metodi per la gestione dei layout oltre a quelli trattati durante le lezioni di laboratorio.
+	Infine, è stato creato un file \texttt{print.css} utilizzato per la stampa, rimuove tutti i contenuti non necessari e impagina le informazioni per meglio adattarle a un foglio A4.
+	 \uppercase{è} stato prevalentemente utilizzato CSS3.0, facendo attenzione a non utilizzare determinate proprietà, come ad esempio i flexbox layout ai fini di garantire la massima retro-compatibilità con i browser vecchi come Internet Explorer 11.
+	 Il CSS è stato infine validato con diversi strumenti descritti successivamente che ne hanno confermato la correttezza sintattica.
+	 Particolare è stato il risultato dato dal validatore in presenza del valore "handheld" sulla proprietà "screen" del CSS, utilizzato a lezione:
+	 \begin{figure}[H]
+	 \centering
+	 \includegraphics[scale=.4]{images/handheld_error.png} 
+	 \end{figure}
+	 In relazione a questo fatto, il gruppo ha deciso di utilizzare solo il valore "screen" quando necessario.
 	\subsection{JavaScript}
 	 I file contenenti gli script sono collocati nella cartella \texttt{js/}. \\
 	 Si è scelto di utilizzare JavaScript come componente marginale del sito garantendo, anche se disabilitato, che tutte le funzionalità rimangano accessibili e
 	 perfettamente funzionanti. \\
-	 \'E stata inoltre utilizzata la libreria esterna \texttt{JQuery} per la conferma di alcune azioni. Abbiamo deciso di utilizzarla per cercare di apprendere nuove tecnologie, con la consapevolezza comunque che si tratta di una libreria pesante e che andrebbe evitato il suo utilizzo per scopi non fondamentali.
+	 \'E stata inoltre utilizzata la libreria esterna \texttt{jQuery} per la conferma di alcune azioni. Abbiamo deciso di utilizzarla per cercare di apprendere nuove tecnologie, con la consapevolezza comunque che si tratta di una libreria pesante e che andrebbe \textbf{evitato} il suo utilizzo per scopi non fondamentali.
 	 Tutti i controlli eseguiti sui form eseguiti per validare i dati prima del submit dei dati, sono poi implementati anche in PHP per garantirne lo stesso funzionamento anche con JS disabilitato.
 	 \subsection{PHP}
 	 \subsubsection{Database}
-	 \'E stata creata una classe wrapper per la connessione al database, in maniera tale da facilitare la gestione delle query, essendo queste presenti solo all'interno di tale classe, sarà più facile gestire il codice sorgente. Per utilizzarla è necessario creare un oggetto di tale classe che servirà per richiamare le funzioni,  utilizzate solamente per l'interazione con il database e gestire le connessioni.
+	 \uppercase{è} stata creata una classe wrapper per la connessione al database, in maniera tale da facilitare la gestione delle query, essendo queste presenti solo all'interno di tale classe, sarà più facile gestire il codice sorgente ed effettuare il debug del codice. Per utilizzarla è necessario creare un oggetto di tale classe che servirà per richiamare le funzioni,  utilizzate solamente per l'interazione con il database e gestire le connessioni. La connessione al database è stata effettuata utilizzando il PDO messo a disposizione nativamente da PHP.
 	 \paragraph{Perché i BLOB}
-	 Per l'inserimento delle immagini delle gite si è fatto uso dei BLOB, ovvero si è inserita l'immagine all'interno della base di dati. Consapevoli, che solitamente si salva solo il path del file all'interno del database e il file nel file-system del server, abbiamo scelto di utilizzare i BLOB per non incorrere a problematiche con la scrittura e movimento di file all'interno del server ospite dell'università.
+	 Per l'inserimento delle immagini delle gite si è fatto uso dei BLOB, ovvero si è inserita l'immagine all'interno della base di dati. Consapevoli, che solitamente si salva solo il path del file all'interno del database e il file nel file-system del server, abbiamo scelto di utilizzare i BLOB per non incorrere a problematiche con la scrittura e movimento di file all'interno del server ospite dell'università. Infatti, l'utilizzo di XAMPP per lo sviluppo su Windows presenta una cartella \texttt{htdocs} in cui è impossibile caricare i file senza i permessi di amministrazione, quindi per permettere a tutti i componenti di testare il codice scritto e evitare ulteriori problematiche.
 	 \subsubsection{Dinamicità}
 	 PHP svolge un ruolo fondamentale per il funzionamento del sito, infatti grazie a
 	 questo linguaggio lato server abbiamo realizzato un sito dinamico in cui le attività (come ad esempio, le visite guidate) possono essere aggiunte, modificate ed eliminate attraverso il pannello di
 	 amministrazione. Le gite disponibili vengono stampate dalla base di dati tramite un \texttt{foreach}.
-	 Il gruppo era intenzionato a mettere un file per il menu, in maniera tale da non dover ripeterlo in ogni pagina. Tuttavia, durante lo sviluppo, sono state riscontrate delle problematiche di calcolo del path corretto dei link a causa dell'utilizzo di diversi ambienti da parte dei membri. \'E stato quindi deciso di non mettere tale file per agevolare lo sviluppo del sito.
+	 Il gruppo ha creato un file per il menu, in maniera tale da non dover ripeterlo in ogni pagina, tale soluzione permette di ottenere un \textit{single point of failure} in caso di problemi con il menu, oltre che evitare di dover duplicare lo stesso identico codice manualmente su tutte le pagine.
 	 \subsection{Sicurezza}
 	 Il tema della sicurezza ha avuto un ruolo fondamentale durante la realizzazione del
 	 sito, infatti sono state create delle funzioni che permettono di garantire il controllo
@@ -132,8 +147,9 @@
 	 verificare quale tipologia di utente ha fatto la richiesta attraverso le informazioni
 	 contenute nella sessione; se l’utente non è un amministratore ed esso ha cercato di
 	 utilizzare delle funzionalità riservate ad un amministratore, allora il server rigetta la richiesta reindirizzando l'utente alla pagina più appropriata.
+	 Le password degli utenti sono state criptate all'interno del database utilizzando le funzioni idonee di MySQL e PHP.
 	 \subsection{PDO-SQL Injection}
-	 Per la connessione e l'interazione con il database è stato utilizzato PDO poiché 	 permette di gestire con facilità la connessione con diversi DBMS (nel nostro caso abbiamo utilizzato MySQL). Inoltre grazie al meccanismo di preparazione degli
+	 Per la connessione e l'interazione con il database è stato utilizzato PDO poiché permette di gestire con facilità la connessione con diversi DBMS (nel nostro caso abbiamo utilizzato MySQL). Inoltre grazie al meccanismo di preparazione degli
 	 statement (prepared statement), i dati inseriti dagli utenti vengono automaticamente sanificati in modo da impedire qualsiasi tipo di SQL Injection, questo permette l'integrità e la sicurezza del database. Utilizzo di metodi standard come
 	 PDO ci tutela e ci solleva dall’incombenza della manutenzione correttiva.
 	 Ad esempio:
@@ -159,30 +175,31 @@ return password_verify($password, $pass[0]);
 	Tutte le scelte progettuali sono state prese in base al tema dell’accessibilità, seguendo le linee guida del WCAG 2.0.
 	\subsection{Colori}
 	Si è evitato di utilizzare combinazioni di colori che potessero creare problemi di
-	accessibilità, usabilità e comprensione del contenuto a persone affette da daltonismo
+	accessibilità, usabilità e comprensione del contenuto a persone affette da daltonismo.
+	Si è fatto uso del plugin WCAG contrast checker e si è riscontrato un valore di almeno "AA" per tutti i colori all'interno del sito.
 	\subsection{Breadcrumb}
 	In ciascuna pagina è inserita un breadcrumb che permette all’utente di risalire la gerarchia delle pagine visitate per giungere a quella attuale, permettendogli eventualmente di ritornare rapidamente alle pagine precedentemente visitate. Il breadcrumb è stato realizzato utilizzato una unordered list disposta in linea tramite il CSS.
 	Quindi gli elementi sono stati disposti inline, privati dello \texttt{list-style-type}  e al loro interno è stato inserito un collegamento ipertestuale
 	\subsection{Barra di ricerca}
-	Abbiamo deciso di implementare la barra di ricerca soltanto nella pagina \texttt{gite.php}, per permettere agli utenti di ricercare specifiche gite nel minor tempo possibile.
+	Abbiamo deciso di implementare la barra di ricerca soltanto nella pagina \texttt{gite.php}, per permettere agli utenti di ricercare specifiche gite nel minor tempo possibile. Infatti, la funzione è veramente necessaria solo nel caso siano presenti molte gite all'interno del sistema, oltretutto abbiamo riscontrato che molti siti oggi fanno uso della ricerca di Google implementata all'interno del contenuto indicizzato del sito.
 	\subsection{Tag}
 	Per quanto concerne i tag che migliorano l'accessibilità:
 	\begin{itemize}
 		\item Sono stati utilizzati i tag \texttt{alt} per le immagini seguendo le linee guida del
 		W3C.
 		\item  Le parole in lingua inglese sono state racchiuse in un tag \\ \texttt{<span xml:lang="en">contenuto</span>}
-		cosi da poter garantire una lettura corretta da parte degli screen reader.
-		\item  Sono stati utilizzati i tag \texttt{tabindex} in modo da permettere la navigazione corretta del sito attraverso il tasto TAB.
-		\item \'E stato utilizzato il tag \texttt{role} dove necessario seguendo i dettami del W3C, per fornire un modo per identificare gli elementi in maniera più specifica ove necessario. In particolare, questa soluzione si è rivelata particolarmente utile in quanto a differenza di HTML 5 che presenta dei tag specifici, ad esempio \texttt{<nav>} per il menu di navigazione, in XHTML si può aggiungere l'attributo role garantendo l'accessibilità e contemporaneamente la retro-compatibilità con i browser meno recenti.
+		cosi da poter garantire una lettura corretta da parte degli screen reader;
+		\item  Sono stati utilizzati i tag \texttt{tabindex} in modo da permettere la navigazione corretta del sito attraverso il tasto TAB. Si è lasciato volontariamente il valore 0 a tali attributi così che venga seguito l'ordine di disposizione dei contenuti della pagina;
+		\item \'E stato utilizzato il tag \texttt{role} dove necessario seguendo i dettami del W3C, per fornire un modo per identificare gli elementi in maniera più specifica ove necessario. In particolare, questa soluzione si è rivelata particolarmente utile in quanto, nonostante l'uso di HTML 5 che presenta dei tag specifici, ad esempio \texttt{<nav>} per il menu di navigazione, l'attributo role garantisce l'accessibilità e contemporaneamente la retro-compatibilità con i browser meno recenti.
 		Inoltre è stato evitato l'utilizzo di tabelle per realizzare il layout del sito.
-		\item Per rendere accessibili i form, sono stati utilizzati i tag label, fieldset
+		\item Per rendere accessibili i form, sono stati utilizzati i tag label, tab-index
 		e title, assieme ad una gestione degli errori che comprende controlli di
-		validità dell’input.La validazione è stata effettuata, in alcuni form, sia in JavaScript che in PHP. La validazione lato server è sempre presente.
+		validità dell’input. La validazione è stata effettuata, in alcuni form, sia in JavaScript che in PHP. La validazione lato server è sempre presente.
 	\end{itemize}
 	\subsection{Tag WAI-ARIA}
 	Sono stati utilizzati dei tag introdotti dalle specifiche WAI-ARIA che permettono
-	di migliorare l'accessibilità per gli utenti che utilizzano uno screen reader, pertanto il DTD utilizzato dai documenti non è quello standard, ma una versione XHTML1.0 con l'aggiunta dei tag aria.
-	I tag aria hanno permesso di migliorare l'accessibilità del sito in particolare gli screen reader forniscono una lettura più accurata, pur mantenendo la compatibilità con XHTML 1.x utilizzando un apposito DTD.
+	di migliorare l'accessibilità per gli utenti che utilizzano uno screen reader.
+	I tag aria hanno permesso di migliorare l'accessibilità del sito in particolare gli screen reader forniscono una lettura più accurata.
 	\paragraph{Operazioni sui form}
 		Per segnalare all'utente i vari esiti che hanno avuto le operazioni nel sistema sono stati realizzati dei div che vengono gestiti tramite PHP e/o JavaScript, a seconda che questo sia utilizzato o meno. Consapevoli dei problemi che conseguono con l'introduzione di messaggi interattivi, che possono eventualmente nascosti o essere aggiunti dinamicamente, si sono applicati i seguenti attributi ai contenitori:
 		\begin{itemize}
@@ -199,6 +216,17 @@ return password_verify($password, $pass[0]);
 	Nella parte pubblica del sito JavaScript è utilizzato per il menù mobile, per la validazione dei form e la conferma della cancellazione della gita. Nel caso non sia possibile controllare i campi compilati con JavaScript, allora saranno controllati dal server una volta che siano
 	stati confermati dall’utente. JavaScript non è utilizzato per alterare pesantemente
 	la struttura della pagina, se non nel caso della validazione dei form, in cui aggiunge opportuni messaggi d’errore. Nella homepage, se JavaScript viene disabilitato, il contenuto viene mostrato garantendo l'accesso ai contenuti. La disabilitazione di JS non pregiudica comunque l’utilizzo del sito.
+	Segue una foto comparativa della pagina principale:
+	\begin{figure}[H]
+	\centering
+	\includegraphics[scale=.4]{images/homejs.png}
+	\caption{Pagina principale con JS abilitato dove il contenuto informativo è nascosto}
+	\end{figure}
+	\begin{figure}[H]
+	\centering
+	\includegraphics[scale=.4]{images/homenojs.png}
+	\caption{Pagina principale con JS disabilitato dove il contenuto informativo è mostrato (inizio parte riquadrata in nero)}
+	\end{figure}
 	\subsection{Dispositivi}
 	Nella progettazione si è tenuto conto del fatto che l'utenza avrebbe acceduto al
 	sito da vari dispositivi. Alla luce di questa considerazione il sito adotta un layout responsive grazie alla creazione di file css appositi (mobile e stampa). Il sito è stato testato su più dispositivi, browser e sistemi operativi possibili in modo tale da avere un feedback più completo possibile sulle scelte adottate (Vedere la sezione Validazione e Test per i dettagli).
@@ -222,10 +250,12 @@ return password_verify($password, $pass[0]);
 //codice HTML
 <?php endif; ?>
 		\end{lstlisting}
+		Inoltre, nel root del sito è presente una cartella \texttt{PHP} che contiene i file che definiscono le funzioni di backend per amministratore, utente e quelle generali ovvero condivise da entrambi, riducendo così la duplicazione del codice.
 	\end{itemize}
 	\subsection{Parte utente}
 	\subsubsection{Struttura}
-	Consiste nell'insieme delle pagine del sito accessibili a tutti gli utenti. \begin{itemize}
+	Consiste nell'insieme delle pagine del sito accessibili a tutti gli utenti. 
+	\begin{itemize}
 		\item Home (index.php): contiene una sezione introduttiva che spiega in che tipo di
 		sito ci si trova e che tipo di informazioni contiene. Sono presenti inoltre 3 mini-sezioni, Storia Clima e Geografia, espandibili attraverso i bottoni "Scopri di più" predisposti.
 		\item Luoghi (luoghi/): contiene le pagine relative ai luoghi turistici più importanti dei Colli Euganei, approfonditamente descritti ed accompagnati da immagini simboliche.
@@ -252,7 +282,7 @@ return password_verify($password, $pass[0]);
 	della pagina per meglio adattarla a schermi di dimensioni inferiori.
 	Per quanto riguarda la stampa è stato creato un nuovo foglio di stile, chiamato "print", che rimuove tutti i contenuti non necessari e impagina le informazioni per meglio adattarle a un foglio A4.
 	Si è fatto, ovviamente uso di media query all'interno dei fogli di stile,
-	si sono realizzati due breakpoint perché si è cercato di abolire l'utilizzo dei pixel, come unità di misura all'interno dei CSS, in favore di em, che permette di adattare la dimensione a seconda del dispositivo a discapito di un minor controllo sul layout fornito dai pixel.
+	si sono realizzati tre breakpoint e si è cercato di \textbf{abolire l'utilizzo dei pixel}, come unità di misura all'interno dei CSS, in favore di em e wv, che permette di adattare la dimensione a seconda del dispositivo a discapito di un minor controllo sul layout fornito dai pixel.
 	In particolare per favorire un layout responsive abbiamo cercato di fare ampio uso delle proprietà: max-width, min-width, max-height e min-height, insieme alle unità di misura sopra indicate.
 
 	\subsubsection{Comportamento}
@@ -279,6 +309,7 @@ Anche il bottone "back-to-top" che permette di tornare all'inizio della pagina �
 	\end{itemize}
 	\subsubsection{Presentazione}
 	Lo stile delle pagine per l'amministrazione differisce di poco rispetto alla parte utente, in quanto dal lato amministratore sono stati solamente rimossi alcuni elementi inutili, come le pagine dei luoghi, in modo da renderla più veloce e fare spazio alle utilità necessarie all'amministrazione del sito.
+	Unificare la grafica tra utente e amministratore permette a quest'ultimo di non avere difficoltà nell'uso dell'applicativo in quanto le parti sono sempre facilmente identificabili, inoltre permette agli sviluppatori una facile manutenzione in futuro.
 
 
 	\subsubsection{Comportamento}
@@ -295,8 +326,9 @@ Anche il bottone "back-to-top" che permette di tornare all'inizio della pagina �
 			index.php}
 		\item WAT, purtroppo questo plugin non è aggiornato e presenta molti strumenti inutilizzabili.	La versione corrente è stata scaricata da:
 		\url{https://github.com/ThePacielloGroup/WebAccessibilityToolbar}.
+		\item WCAG Contrast Checker, plugin per Google Chrome utilizzato per verificare che il contrasto dei colori avesse valore almeno "AA"
 	\end{itemize}
-	Come impostazione è stato utilizzato "WCAG 2.0 (Level AAA)" in entrambi i validatori, e tutti i	potenziali problemi che vengono segnalati raccolgono tutti elementi che il validatore non sa come controllare e quindi viene richiesta una supervisione umana, come ad esempio ogni \texttt{alt}. \\
+	Come impostazione è stato utilizzato "WCAG 2.0 (Level AA)" in tutti i validatori, e tutti i	potenziali problemi che vengono segnalati raccolgono tutti elementi che il validatore non sa come controllare e quindi viene richiesta una supervisione umana, come ad esempio ogni \texttt{alt}. \\
 	Nessun errore è stato rilevato.
 	\subsection{WAVE Accessibility Extension}
 	Un altro strumento utilizzato per la verifica dell'accessibilità è stato WAVE,
@@ -374,6 +406,9 @@ Anche il bottone "back-to-top" che permette di tornare all'inizio della pagina �
 
 	\section{Integrare un sistema di pagamento automatico}
 	Il pagamento all'interno dell'applicativo non viene gestito delegandolo quindi all'utente che ha organizzato l'attività. Sarebbe opportuno inserire un sistema di pagamento elettronico, magari integrandolo con un servizio di fatturazione elettronica in modo che l'utente scarichi direttamente la fattura.
+	
+		\section{Supporto multilingua}
+	Il contenuto informativo potrebbe essere tradotto in più lingue per permettere ad utenti anche stranieri di usufruire del contenuto informativo del sito, permettendogli di prenotare selezionando una guida nella loro lingua madre.
 
 	\chapter{Suddivisione del lavoro}
 	\section{Suddivisione per membro del gruppo}
@@ -381,22 +416,21 @@ Anche il bottone "back-to-top" che permette di tornare all'inizio della pagina �
 	\begin{itemize}
 		\item Realizzazione di CSS
 		\item Creazione classe DBConnection 
-		\item javascript per i form e per la gestione dell'index
+		\item JavaScript per i form e per la gestione dell'index
 		\item Registrazione e pannello utente
-		\item stesura di alcune pagine dei luoghi
+		\item Stesura di alcune pagine dei luoghi
 		
 	\end{itemize}
 	\subsection{Magarotto Francesco - Matricola 1143292}
 	\begin{itemize}
-		\item Realizzazione di CSS
+		\item Realizzazione di CSS (mobile 600px, 768px)
 		\item Realizzazione amministrazione
-		\item Realizzazione di alcune pagine statiche informative come la homepage.
+		\item Realizzazione di alcune pagine statiche informative come la homepage
+		\item Stesura pagine elenco gite, funzione di ricerca e prenotazione
 	\end{itemize}
 	\subsection{Marco Costantino - 1144120}
 	\begin{itemize}
-		\item Realizzazione di CSS
-		\item CSS per la parte Mobile e stampa
-		\item login e funzioni per il database
+		\item Login e funzioni per il database
 		\item Codice HTML e PHP per le prenotazioni
 		\item Test e Validazioni
 	\end{itemize}
@@ -404,9 +438,9 @@ Anche il bottone "back-to-top" che permette di tornare all'inizio della pagina �
 	\begin{itemize}
 		\item Realizzazione di CSS
 		\item Accessibilità del sito
-		\item alcune funzioni JQuery
-		\item Pagina delle gite con relativa parte in PHP
-		\item stesura di alcune pagine dei luoghi
+		\item Alcune funzioni jQuery
+		\item Pagina delle gite
+		\item Stesura di alcune pagine dei luoghi
 	\end{itemize}
 
 \end{document}
