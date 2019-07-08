@@ -22,7 +22,7 @@
 
                 <?php endif; ?>
                 <?php if ($nomepagina == "remove-trip.php"): ?>
-                    <a class="active" href="remove-trip.php" tabindex="0" role="menuitem">Rimuovi gita</a></li>
+                    <a class="active" href="remove-trip.php" tabindex="0" role="menuitem">Rimuovi gita</a>
                 <?php else: ?>
                     <a href="remove-trip.php" tabindex="0" role="menuitem">Rimuovi gita</a>
 
