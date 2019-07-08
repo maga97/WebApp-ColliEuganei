@@ -776,7 +776,7 @@ input.error {
 
 }
 
-@media screen, handheld and (max-width: 480px) {
+@media screen and (max-width: 480px) {
     #scroll-top-btn {
         display: none;
     }
