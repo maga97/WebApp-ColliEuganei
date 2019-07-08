@@ -49,10 +49,12 @@ if (session_status() == PHP_SESSION_NONE) {
                 <h2>Le chiesette</h2>
                 <p class="text">
                     Ognuna delle cappellette, ha al suo interno una pala d'altare dipinta da Jacopo Palma il Giovane
-                    raffigurante la basilica romana a cui &egrave; dedicata. La settima chiesa &egrave; il Santuario di San Giorgio
+                    raffigurante la basilica romana a cui &egrave; dedicata. La settima chiesa &egrave; il Santuario di
+                    San Giorgio
                     nel
                     quale si
-                    trovano le salme di 25 martiri cristiani e altre reliquie trasferitevi a met&agrave; del XVII secolo.
+                    trovano le salme di 25 martiri cristiani e altre reliquie trasferitevi a met&agrave; del XVII
+                    secolo.
                 </p>
             </div>
             <div class="row">

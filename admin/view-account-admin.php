@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <link rel="stylesheet" type="text/css" href="../assets/css/style.css" media="screen"/>
     <link rel="stylesheet" type="text/css" href="../assets/css/print.css" media="print"/>
@@ -23,7 +23,7 @@ include_once("../PHP/Funzioni_Generali/ValidaCampo.php");
 if (isset($_POST["conferma_modifica"])) {
     $errore = include_once("../PHP/Funzioni_Generali/ModificaDati.php");
 } else if (isset($_POST["modifica_password"])) {
-    $errore = include_once("../PHP/Funzioni_Generali/ModificaPassword.php");
+    $errorepwd = include_once("../PHP/Funzioni_Generali/ModificaPassword.php");
 }
 ?>
 <body>
@@ -45,6 +45,7 @@ if (isset($_POST["conferma_modifica"])) {
             <li>Impostazioni account</li>
         </ul>
         <div class="form">
+            <div class="card row form-field card-spaced">
             <div class="titolo-form">
                 <h1 id="titolo">Riepilogo dati <span xml:lang="en">account</span></h1>
             </div>
@@ -57,15 +58,6 @@ if (isset($_POST["conferma_modifica"])) {
                     else {
                         echo "<div class=\"alert show success\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\">
                                 <p>Dati modificati con successo</p>
-                              </div>";
-                    }
-                }
-                if (isset($_POST["modifica_password"])) {
-                    if ($errore != "")
-                        echo "<div class=\"alert show errore\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\"><p>Errore: " . $errore . "</p></div>" . PHP_EOL;
-                    else {
-                        echo "<div class=\"alert show success\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\">
-                                <p>Password modificata con successo</p>
                               </div>";
                     }
                 }
@@ -172,10 +164,22 @@ if (isset($_POST["conferma_modifica"])) {
                     <?php endif; ?>
                 </div>
             </form>
+            </div>
+            <div class="card row form-field card-spaced">
+                <?php if (isset($_POST["modifica_password"])) {
+                    if ($errorepwd != "")
+                        echo "<div class=\"alert show errore\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\"><p>Errore: " . $errorepwd . "</p></div>" . PHP_EOL;
+                    else {
+                        echo "<div class=\"alert show success\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\">
+                                <p>Password modificata con successo</p>
+                              </div>";
+                    }
+                }
+                ?>
             <div class="titolo-form">
                 <h2>Modifica <span xml:lang="en">password</span></h2>
             </div>
-            <form id="mod-pwd-form" method="post" action="view-account-admin.php">
+            <form id="mod-pwd-form" method="post" action="view-account-admin.php#mod-pwd-form">
                 <div class="form-field">
                     <label for="vecchia-password">Password corrente: (obbligatorio)</label>
                     <div class="input-container">
@@ -200,6 +204,7 @@ if (isset($_POST["conferma_modifica"])) {
 
                 </div>
             </form>
+            </div>
         </div>
     </div>
     <?php include_once("../footer.php"); ?>

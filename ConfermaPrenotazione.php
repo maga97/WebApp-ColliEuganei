@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" media="screen"/>
     <link rel="stylesheet" type="text/css" href="assets/css/print.css" media="print"/>
@@ -9,7 +9,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/script.js"></script>
     <script src="js/global.js"></script>
-    <title>Login - Colli Digitali</title>
+    <title>Conferma Prenotazione - Colli Digitali</title>
 </head>
 <?php (require_once "DataBase/DBConnection.php") or die("Impossibile connettersi al database");
 if (session_status() == PHP_SESSION_NONE) {
@@ -26,7 +26,7 @@ if (isset($_POST["confermaPrenotazione"])) {
     $PrenotazioneOk = $dbConnection->addPrenotazione($_SESSION["ID"], $dbConnection->GetIDUtente($_SESSION["username"]),
         $_SESSION["data"], $_SESSION["ora"], $_SESSION["posti"]
     );
-    header( "refresh:5;url=MieGite.php" );
+    header("refresh:5;url=MieGite.php");
 } else if (isset($_POST["cancellaPrenotazione"])) {
     header("Location: Gite.php");
     exit;

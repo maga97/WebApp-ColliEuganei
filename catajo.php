@@ -53,7 +53,8 @@ if (session_status() == PHP_SESSION_NONE) {
                     met&agrave; del XIX secolo.
                 </p>
                 <p class="text">
-                    L'edificio sta a met&agrave; tra il castello militare e la villa principesca, indubbiamente per volere
+                    L'edificio sta a met&agrave; tra il castello militare e la villa principesca, indubbiamente per
+                    volere
                     stesso
                     del committente, che pens&ograve;
                     il Catajo come una grande macchina di rappresentanza dove intrattenere ospiti da tutta Europa
@@ -63,7 +64,8 @@ if (session_status() == PHP_SESSION_NONE) {
             </div>
             <h2>L'origine del nome</h2>
             <p class="text">
-                L'origine del nome &egrave; incerta: mentre alcune fonti attribuiscono l'origine del nome al luogo in cui
+                L'origine del nome &egrave; incerta: mentre alcune fonti attribuiscono l'origine del nome al luogo in
+                cui
                 fu
                 costruito (vicino ad un canale), altre fanno riferimento
                 a come veniva indicata la Cina nel medioevo: "catai" e vedrebbero Pio Enea ispirato da "Il Milione"
@@ -79,7 +81,8 @@ if (session_status() == PHP_SESSION_NONE) {
                     nonostante ci&ograve; non fu mai usato come un forte, al contrario,
                     l'edificio doveva rappresentare il potere e il prestigio della famiglia, che teneva feste e riceveva
                     ospiti da tutta europa.
-                    Il piano nobile conserva uno dei pi&ugrave; importanti esempi di pittura autocelebrativa del nord Italia,
+                    Il piano nobile conserva uno dei pi&ugrave; importanti esempi di pittura autocelebrativa del nord
+                    Italia,
                     opera
                     di Giovanni Battista Zelotti.
                 </p>

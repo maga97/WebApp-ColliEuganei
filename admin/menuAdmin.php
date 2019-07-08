@@ -39,7 +39,7 @@
                 <?php endif; ?>
                 <?php if ($nomepagina == "remove-admin.php"): ?>
                     <a class="active" href="remove-admin.php" tabindex="0" role="menuitem">Rimuovi
-                            amministratore</a>
+                        amministratore</a>
                 <?php else: ?>
                     <a href="remove-admin.php" tabindex="0" role="menuitem">Rimuovi amministratore</a>
 

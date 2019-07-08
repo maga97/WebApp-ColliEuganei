@@ -140,8 +140,15 @@ class database
 
     public function GetListaAttivita($email)
     {
-        $query = $this->pdo->prepare('SELECT * FROM Attivita WHERE Data > CURDATE() AND ID_Attivita NOT IN (SELECT ID_Attivita FROM Prenotazioni, Utenti WHERE Email = ?) ');
-        $query->execute(array($email));
+        if ($email == null) {
+            $query = $this->pdo->prepare('SELECT * FROM Attivita WHERE Data > CURDATE()');
+            $query->execute();
+        }
+        else {
+            $query = $this->pdo->prepare('SELECT * FROM Attivita WHERE Data > CURDATE() AND ID_Attivita NOT IN (SELECT ID_Attivita FROM Prenotazioni, Utenti WHERE Email = ?) ');
+            $query->execute(array($email));
+        }
+
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
 

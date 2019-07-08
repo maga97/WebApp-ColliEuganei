@@ -46,7 +46,7 @@ $db->connect();
         if (isset($_GET["done"]) == true) {
             echo "<div class=\"alert show success\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\">Modifica avvenuta correttamente</div>" . PHP_EOL;
         }
-        $list = $db->GetListaAttivita();
+        $list = $db->GetListaAttivita(null);
         $size = sizeof($list);
         if ($size == 0) {
             echo "<h3>Momentaneamente non sono disponibili gite</h3>" . PHP_EOL;

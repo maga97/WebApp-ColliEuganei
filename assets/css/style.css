@@ -207,6 +207,7 @@ a:active {
 #menuprincipale-bar {
     background-color: #000;
 }
+
 #dropdown-trip {
     min-width: 10.25em;
 }
@@ -227,6 +228,7 @@ a:active {
     font-size: 1.125em;
     text-decoration: underline;
 }
+
 ul#menuprincipale li.button-right {
     float: right;
 }
@@ -276,7 +278,9 @@ ul#menuprincipale li.icon {
     z-index: 1;
 }
 
-.dropdown-content a:hover {background-color: #f1f1f1;}
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
 
 .dropdown-content a {
     color: white;
@@ -614,9 +618,11 @@ input.error {
     float: left;
     text-align: right;
 }
+
 #searchform {
     padding: 1%;
 }
+
 #searchform fieldset {
     border: none;
     padding: 0;

@@ -44,7 +44,7 @@ $db->connect();
         <ul class="breadcrumb">
             <li>Le mie gite</li>
         </ul>
-        <p class="text">Qui sono raccolte tutte le prenotazioni da Lei effettuate. In questa pagina si pu&ograve;
+        <p class="text">Qui sono raccolte tutte le prenotazioni da te effettuate. In questa pagina si pu&ograve;
             effettuare la
             disdetta delle prenotazioni effettuate</p>
         <?php

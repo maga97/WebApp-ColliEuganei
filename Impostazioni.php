@@ -173,11 +173,11 @@ if (isset($_POST["conferma_modifica"])) {
                     echo "<div class=\"alert show errore\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\"><p>Errore: " . $errorepwd . "</p></div>" . PHP_EOL;
                 else {
                     echo "<div class=\"alert show success\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\">" . PHP_EOL .
-                            "<p>Password modificata con successo</p>" . PHP_EOL .
-                          "</div>";
+                        "<p>Password modificata con successo</p>" . PHP_EOL .
+                        "</div>";
                 }
             } ?>
-            <form id="mod-pwd-form" method="post" action="Impostazioni.php">
+            <form id="mod-pwd-form" method="post" action="Impostazioni.php#mod-pwd-form">
                 <div class="form-field">
                     <label for="vecchia-password">Password corrente: (obbligatorio)</label>
                     <div class="input-container">
