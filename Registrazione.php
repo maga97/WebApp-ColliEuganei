@@ -43,7 +43,7 @@ if (isset($_POST["registrazione"])) {
         <ul class="breadcrumb">
             <li><a href="Registrazione.php">Registrazione</a></li>
         </ul>
-        <div class="form">
+        <div class="card card-spaced row form-field">
             <form action="Registrazione.php" method="post"
                   onsubmit="return validaFormUtente(true,$('.alert.errore'),$('form'))">
                 <h1>Crea <span xml:lang="en">account</span></h1>
