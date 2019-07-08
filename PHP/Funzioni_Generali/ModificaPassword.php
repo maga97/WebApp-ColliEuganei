@@ -7,12 +7,11 @@ $newpwd2 = validaCampo($_POST["password2"]);
 if ($pwd && $newpwd && $newpwd2) {
     if ($db->user_login($_SESSION["username"], $_POST["vecchia-password"])) {
         if ($_POST["password"] == $_POST["password2"]) {
-            if($db->AggiornaPWDUtente($_SESSION["username"], $_POST["password"])){
+            if ($db->AggiornaPWDUtente($_SESSION["username"], $_POST["password"])) {
                 return "";
             }
             return "Si e' verificato un errore. Ti invitiamo a riprovare piu tardi";
-        }
-        else
+        } else
             return "la due password inserite non coincidono";
     } else
         return "la tua password attuale non e' quella giusta";

@@ -40,7 +40,8 @@ if (session_status() == PHP_SESSION_NONE) {
         </ul>
         <div class="section">
             <h2>Il Castello di Lispida</h2>
-                <img class="responsive-image history-picture float-right" src="assets/img/lispida1.jpg" alt="Castello di Lispida dall'alto"/>
+            <img class="responsive-image history-picture float-right" src="assets/img/lispida1.jpg"
+                 alt="Castello di Lispida dall'alto"/>
             <p class="text">
                 Il castello di Lispida, situato nei pressi di Monselice, nel cuore del Parco Regionale dei Colli
                 Euganei,
@@ -61,8 +62,8 @@ if (session_status() == PHP_SESSION_NONE) {
                 Il personale pu&ograve; organizzare escursioni e gite in bicicletta nel parco.
             </p>
             <h2>Descrizione</h2>
-                <img class="responsive-image history-picture float-right" src="assets/img/lispida2.jpg"
-                     alt="Giardino del Castello di Lispida"/>
+            <img class="responsive-image history-picture float-right" src="assets/img/lispida2.jpg"
+                 alt="Giardino del Castello di Lispida"/>
             <p class="text">
                 Custodita nel cuore del Parco Naturale dei Colli Euganei, la Tenuta di Lispida ricomprende un lago
                 termale con sorgenti calde e si estende per 90 ettari fra boschi, vigneti e uliveti.
@@ -75,14 +76,16 @@ if (session_status() == PHP_SESSION_NONE) {
             <p class="text">
                 Il monastero di Lispida, sorto in posizione isolata e tranquilla, fu sempre un luogo ricco di fascino,
                 oltre che un ambiente ideale per la coltivazione della vite e dell’olivo. Nel 1485 il Doge della
-                Repubblica di Venezia Giovanni Mocenigo confisca ai monaci la propriet&agrave; : &ldquo;affinch&eacute; le vigne, gli olivi
+                Repubblica di Venezia Giovanni Mocenigo confisca ai monaci la propriet&agrave; : &ldquo;affinch&eacute;
+                le vigne, gli olivi
                 e i campi non siano abbandonati, siano seminati e coltivati nella giusta stagione, e la pietra del colle
                 ci venga mandata con regolarit&agrave; &rdquo;. La storia monastica di Lispida si interrompe nel 1792.
             </p>
-                <img class="responsive-image history-picture float-right" src="assets/img/lispida3.jpg"
-                     alt="Vigneti del Castello di Lispida"/>
+            <img class="responsive-image history-picture float-right" src="assets/img/lispida3.jpg"
+                 alt="Vigneti del Castello di Lispida"/>
             <p class="text">
-                La propriet&agrave; viene in seguito acquistata dai conti Corinaldi, i quali sui resti del vetusto monastero
+                La propriet&agrave; viene in seguito acquistata dai conti Corinaldi, i quali sui resti del vetusto
+                monastero
                 edificano le costruzioni che oggi vediamo, le dotano di cantine imponenti e iniziano la produzione di
                 vini rinomati in tutta Europa. Durante la prima guerra mondiale il Castello di Lispida ospita il
                 quartier generale del re Vittorio Emanuele III°. Alla fine degli anni ‘50 , con l’impianto di nuovi

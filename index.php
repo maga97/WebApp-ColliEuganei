@@ -3,7 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta charset="UTF-8"/>
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" media="screen"/>
     <link rel="stylesheet" type="text/css" href="assets/css/print.css" media="print"/>
     <link rel="stylesheet" type="text/css"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css"/>
@@ -89,7 +89,7 @@ if (session_status() == PHP_SESSION_NONE) {
                 interessanti e particolari
                 e a panorami di rara bellezza.
             </p>
-                <img class="responsive-image history-picture float-right" src="assets/img/inverno.jpg" alt="Monte Ceva"/>
+            <img class="responsive-image history-picture float-right" src="assets/img/inverno.jpg" alt="Monte Ceva"/>
             <h3>Autunno e Inverno</h3>
             <p class="text">
                 L'autunno e l'inverno dei colli euganei sono caratterizzati dalla nebbia. Poich&egrave; la nebbia
@@ -100,7 +100,8 @@ if (session_status() == PHP_SESSION_NONE) {
                 contrasta con gli interni caldi di trattorie e case
                 che risultano ancora pi&ugrave; accoglienti e confortevoli.
             </p>
-                <img class="responsive-image history-picture float-right" src="assets/img/primavera.jpg" alt="Primavera nei Colli Euganei"/>
+            <img class="responsive-image history-picture float-right" src="assets/img/primavera.jpg"
+                 alt="Primavera nei Colli Euganei"/>
             <h3>Primavera ed Estate</h3>
             <p class="text">
                 In primavera i colli si riempiono di colori: i boschi di robinia, le piante di ginestra e le rute
@@ -182,7 +183,8 @@ if (session_status() == PHP_SESSION_NONE) {
                 &egrave; possibile ammirare
                 sotto forma di reperti nel Museo Nazionale Atestino di Este, che ospita reperti tra cui vestiti,
                 utensili ed armi risalenti dalla preistoria fino all'et&agrave; Romana.
-                &Egrave; proprio all'et&agrave; Romana risalgono i primi paesi, preceduti da un villagio palustre sul lago
+                &Egrave; proprio all'et&agrave; Romana risalgono i primi paesi, preceduti da un villagio palustre sul
+                lago
                 della Costa.
                 Con il medioevo la posizione strategica dei colli venne sfruttata per la costruzione di castelli, mura,
                 fortificazioni che ancora oggi sono apprezzabili nella

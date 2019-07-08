@@ -64,14 +64,16 @@ if (session_status() == PHP_SESSION_NONE) {
                 echo "<div class=\"alert show errore button-holder\" role=\"alert\">Nessuna parola chiave inserita. Inserisci una parola chiave o torna alla 
                     <a href=\"Gite.php\">lista delle gite</a></div>" . PHP_EOL;
             }
-        } else {
+        } else if (isset($_SESSION['username'])) {
             $list = $db->GetListaAttivita($_SESSION['username']);
-        };
+        } else {
+            $list = $db->GetListaAttivita(null);
+        }
         if ($empyset) {
             echo "<div class=\"alert show warning button-holder\" role=\"alert\">La ricerca non ha trovato nessuna gita con questa frase o parola chiave. 
 Inserisci un'altra parola chiave o torna <a href=\"Gite.php\">lista delle gite</a></div>" . PHP_EOL;
         }
-        if(sizeof($list) == 0) {
+        if (sizeof($list) == 0 && !isset($_POST["ricerca"])) {
             echo "<h3 class='text-center'>Nessuna gita al momento disponibile, torna a trovarci!</h3>" . PHP_EOL;
         }
         if (sizeof($list) > 0) {
@@ -105,7 +107,7 @@ Inserisci un'altra parola chiave o torna <a href=\"Gite.php\">lista delle gite</
                     <div class="form-field">
                         <?php if (isset($_SESSION['username'])): ?>
                             <?php
-                            echo "<a href=\"Prenotazione.php?id=" . $node["ID_Attivita"] . "\" class=\"btn btn-primary center-block\">Prenota la gita</a></span>";
+                            echo "<a href=\"Prenotazione.php?id=" . $node["ID_Attivita"] . "\" class=\"btn btn-primary center-block\">Prenota la gita</a>";
                             ?>
                         <?php else: ?>
                             <a href="Accedi.php"

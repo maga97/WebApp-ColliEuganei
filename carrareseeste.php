@@ -42,7 +42,8 @@ if (session_status() == PHP_SESSION_NONE) {
             <img class="responsive-image history-picture float-right" src="assets/img/este1.jpg"
                  alt="Castello Carrarese di Este"/>
             <p class="text">
-                Il castello di Este &egrave; stato costruito circa nel 1340, per iniziativa del signore di Padova Ubertino da
+                Il castello di Este &egrave; stato costruito circa nel 1340, per iniziativa del signore di Padova
+                Ubertino da
                 Carrara.
                 La costruzione &egrave; a pianta quadrata, circondata da una poderosa muraglia intervallata da dodici
                 torresini, questo fortilizio ha di fatto soppiantato il primo castello, quello dei marchesi d’Este,
@@ -58,7 +59,8 @@ if (session_status() == PHP_SESSION_NONE) {
             <img class="responsive-image history-picture float-right" src="assets/img/este2.jpg"
                  alt="Parco del Castello Carrarese di Este"/>
             <p class="text">
-                Il Castello fu utilizzato a fini difensivi fino alla spontanea dedizione della citt&agrave; alla Repubblica di
+                Il Castello fu utilizzato a fini difensivi fino alla spontanea dedizione della citt&agrave; alla
+                Repubblica di
                 Venezia, quando l’intera struttura fu venduta ai Mocenigo: furono questi ultimi a far costruire verso la
                 fine del Cinquecento il Palazzetto,
                 dove attualmente ha sede il Museo Nazionale Atestino.
@@ -69,7 +71,8 @@ if (session_status() == PHP_SESSION_NONE) {
                 che iniziarono i lavori di costruzione del proprio palazzo sul lato meridionale della fortificazione
                 carrarese.
                 Originariamente il grandioso palazzo era composto da due edifici speculari, che richiesero la
-                demolizione di un paio delle torri medievali. L'ala orientale fu per&ograve; distrutta da un incendio nel
+                demolizione di un paio delle torri medievali. L'ala orientale fu per&ograve; distrutta da un incendio
+                nel
                 Settecento.
             </p>
         </div>
