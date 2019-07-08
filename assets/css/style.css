@@ -232,7 +232,7 @@ ul#menuprincipale li.button-right {
 }
 
 .dropdown > a:after {
-    content: "▼";
+    content: "\25BC";
     font-size: 75%;
     color: #f2f2f2;
     padding-left: 0.5em;
