@@ -243,16 +243,16 @@ ul#menuprincipale {
     margin: 0;
     overflow: hidden;
     max-width: 1024px;
-    margin-left: auto;
+    margin: 0 auto 0 auto;
     font-weight: bold;
-    margin-right: auto;
+
 }
 
 ul#menuprincipale li {
     float: left;
 }
 
-ul#menuprincipale li a {
+ul#menuprincipale li a, ul.dropdown-content.button-right li{
     display: block;
     color: #f2f2f2;
     text-align: center;
@@ -260,6 +260,15 @@ ul#menuprincipale li a {
     text-decoration: none;
     transition: 0.3s;
     font-size: 1.1em;
+}
+
+li.nonefloat a{
+    padding:0em !important;
+    margin: 0 0 0 0;
+}
+
+.nonefloat{
+    float:none !important;
 }
 
 ul#menuprincipale li.icon {
@@ -286,7 +295,7 @@ ul#menuprincipale li.icon {
     text-align: center;
 }
 
-#menuprincipale a:hover, .dropdown a:hover {
+#menuprincipale a:hover, .dropdown li:hover {
     background-color: #666;
     color: white;
 }
@@ -727,7 +736,7 @@ input.error {
 
     ul#menuprincipale.responsive li {
         float: none;
-        display: inline;
+        display: block;
     }
 
     ul#menuprincipale.responsive li a {
