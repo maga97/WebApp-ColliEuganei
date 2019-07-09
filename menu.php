@@ -13,40 +13,40 @@
             <?php endif; ?>
             <div class="dropdown-content button-right" role="menu">
                 <?php if ($nomepagina == "chiesette.php"): ?>
-                    <a class="active" href="chiesette.php" tabindex="0" role="menuitem">Sette
+                    <a class="active" href="chiesette.php" tabindex="0">Sette
                         chiesette</a>
                 <?php else: ?>
-                    <a href="chiesette.php" tabindex="0" role="menuitem">Sette chiesette</a>
+                    <a href="chiesette.php" tabindex="0" >Sette chiesette</a>
                 <?php endif; ?>
                 <?php if ($nomepagina == "catajo.php"): ?><a class="active" href="catajo.php" tabindex="0"
                                                              role="menuitem">Castello
                     del Catajo</a>
                 <?php else: ?>
-                    <a href="catajo.php" tabindex="0" role="menuitem">Castello del Catajo</a>
+                    <a href="catajo.php" tabindex="0" >Castello del Catajo</a>
 
                 <?php endif; ?>
                 <?php if ($nomepagina == "praglia.php"): ?>
-                    <a class="active" href="praglia.php" tabindex="0" role="menuitem">Abbazia di
+                    <a class="active" href="praglia.php" tabindex="0" >Abbazia di
                         praglia</a>
                 <?php else: ?>
-                    <a href="praglia.php" tabindex="0" role="menuitem">Abbazia di praglia</a>
+                    <a href="praglia.php" tabindex="0" >Abbazia di praglia</a>
                 <?php endif; ?>
                 <?php if ($nomepagina == "carrareseeste.php"): ?><a class="active" href="carrareseeste.php" tabindex="0"
-                                                                    role="menuitem">Castello
+                                                                    >Castello
                     carrarese di Este</a>
-                <?php else: ?><a href="carrareseeste.php" tabindex="0" role="menuitem">Castello carrarese
+                <?php else: ?><a href="carrareseeste.php" tabindex="0" >Castello carrarese
                     di Este</a>
                 <?php endif; ?>
                 <?php if ($nomepagina == "lispida.php"): ?><a class="active" href="lispida.php" tabindex="0"
-                                                              role="menuitem">Castello
+                                                              >Castello
                     di Lispida</a>
-                <?php else: ?><a href="lispida.php" tabindex="0" role="menuitem">Castello di Lispida</a>
+                <?php else: ?><a href="lispida.php" tabindex="0" >Castello di Lispida</a>
 
                 <?php endif; ?>
                 <?php if ($nomepagina == "pelagio.php"): ?><a class="active" href="pelagio.php" tabindex="0"
-                                                              role="menuitem">Castello
+                                                              >Castello
                     San Pelagio</a>
-                <?php else: ?><a href="pelagio.php" tabindex="0" role="menuitem">Castello San Pelagio</a>
+                <?php else: ?><a href="pelagio.php" tabindex="0" >Castello San Pelagio</a>
 
                 <?php endif; ?>
             </div>

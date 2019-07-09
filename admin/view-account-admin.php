@@ -47,7 +47,7 @@ if (isset($_POST["conferma_modifica"])) {
         <div class="form">
             <div class="card row form-field card-spaced">
             <div class="titolo-form">
-                <h1 id="titolo">Riepilogo dati <span xml:lang="en">account</span></h1>
+                <h1 id="titolo">Riepilogo dati <span xml:lang="en" lang="en">account</span></h1>
             </div>
 
             <form id="dati-utente" method="post" action="view-account-admin.php">
@@ -66,7 +66,7 @@ if (isset($_POST["conferma_modifica"])) {
                 $db->connect();
                 ?>
                 <div class="form-field">
-                    <label for="email" xml:lang="en">Email: </label>
+                    <label for="email" xml:lang="en" lang="en">Email: </label>
                     <div class="input-container">
                         <?php if (isset($_POST["modifica_dati"]) || (isset($errore) && $errore != "")): ?>
                             <input type="text" class="disabilita" id="email" name="email"
@@ -177,7 +177,7 @@ if (isset($_POST["conferma_modifica"])) {
                 }
                 ?>
             <div class="titolo-form">
-                <h2>Modifica <span xml:lang="en">password</span></h2>
+                <h2>Modifica <span xml:lang="en" lang="en">password</span></h2>
             </div>
             <form id="mod-pwd-form" method="post" action="view-account-admin.php#mod-pwd-form">
                 <div class="form-field">
@@ -187,20 +187,20 @@ if (isset($_POST["conferma_modifica"])) {
                     </div>
                 </div>
                 <div class="form-field">
-                    <label for="password">Nuova <span xml:lang="en">password</span>: (obbligatorio)</label>
+                    <label for="password">Nuova <span xml:lang="en" lang="en">password</span>: (obbligatorio)</label>
                     <div class="input-container">
                         <input type="password" id="password" name="password" class="disabilita"/>
                     </div>
                 </div>
                 <div class="form-field">
-                    <label for="password2">Ripeti nuova <span xml:lang="en">password</span>: (obbligatorio)</label>
+                    <label for="password2">Ripeti nuova <span xml:lang="en" lang="en">password</span>: (obbligatorio)</label>
                     <div class="input-container">
                         <input type="password" id="password2" name="password2" class="disabilita"/>
                     </div>
                 </div>
                 <div class="button-holder">
                     <button type="submit" id="bottone-modifica-password" name="modifica_password"
-                            class="btn btn-primary">Modifica <span xml:lang="en">password</span></button>
+                            class="btn btn-primary">Modifica <span xml:lang="en" lang="en">password</span></button>
 
                 </div>
             </form>

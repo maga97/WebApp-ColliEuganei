@@ -1,9 +1,5 @@
 <?php (require_once "DataBase/DBConnection.php") or die("Impossibile connettersi al database");
 
-
-if (!isset($_SESSION['current_page']))// per fare in modo di tornare alla pagina da cui ho schiacciato Login
-    $_SESSION['current_page'] = $_SERVER['HTTP_REFERER'];
-
 $dbConnection = new database();
 $dbConnection->Connect();
 if (isset($_POST['email']) && isset($_POST['password'])) {
