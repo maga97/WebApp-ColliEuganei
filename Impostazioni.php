@@ -158,7 +158,7 @@ if (isset($_POST["conferma_modifica"])) {
                             modifiche e torna indietro
                         </button>
                     <?php else: ?>
-                        <button id="bottone-modifica-dati" name="modifica_dati" class="btn btn-primary">Modifica dati
+                        <button id="bottone-modifica-dati" name="modifica_dati" class="btn btn-primary center-block">Modifica dati
                         </button>
                     <?php endif; ?>
                 </div>
@@ -199,7 +199,7 @@ if (isset($_POST["conferma_modifica"])) {
                 </div>
                 <div class="button-holder">
                     <button type="submit" id="bottone-modifica-password" name="modifica_password"
-                            class="btn btn-primary">Modifica <span xml:lang="en" lang="en">password</span></button>
+                            class="btn btn-primary center-block">Modifica <span xml:lang="en" lang="en">password</span></button>
 
                 </div>
             </form>
