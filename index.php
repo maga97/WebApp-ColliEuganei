@@ -54,7 +54,7 @@ if (session_status() == PHP_SESSION_NONE) {
                     <dd>Scopri la geografia del territorio e come si &egrave; formato.</dd>
                 </dl>
                 <div>
-                    <a href="javascript:clx('geografia')" class="find-more"
+                    <a href="javascript:clx('geografia')" class="find-more text-center"
                        aria-label="Scopri di pi&ugrave; sulla geografia del territorio">Scopri di pi&ugrave;</a>
                 </div>
             </div>
@@ -66,7 +66,7 @@ if (session_status() == PHP_SESSION_NONE) {
                     <dd>Scopri come il territorio si presenta nel corso dell'anno.</dd>
                 </dl>
                 <div>
-                    <a href="javascript:clx('clima')" class="find-more" aria-label="Scopri di pi&ugrave; sul clima">Scopri
+                    <a href="javascript:clx('clima')" class="find-more text-center" aria-label="Scopri di pi&ugrave; sul clima">Scopri
                         di pi&ugrave;</a>
                 </div>
             </div>
@@ -76,7 +76,7 @@ if (session_status() == PHP_SESSION_NONE) {
                     <dt>Storia</dt>
                     <dd>Scopri la storia, la cultura e l'arte del territorio</dd>
                 </dl>
-                <a href="javascript:clx('storia')" class="find-more"
+                <a href="javascript:clx('storia')" class="find-more text-center"
                    aria-label="Scopri di pi&ugrave; sulla storia, la cultura e l'arte di questo territorio">Scopri di
                     pi&ugrave;</a>
             </div>

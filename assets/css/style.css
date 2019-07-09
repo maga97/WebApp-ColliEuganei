@@ -181,13 +181,13 @@ a:visited {
 
 .find-more {
     border-bottom: solid 0.125em #4ca504;
-    font-size: 1.1em !important;
+    font-size: 1.1em;
     cursor: pointer;
     display: block;
     margin-right: auto;
     margin-left: auto;
     min-width: 6.25em;
-    text-decoration: underline !important;
+    text-decoration: underline;
     font-weight: bold;
 }
 
@@ -226,7 +226,7 @@ a:active {
     text-decoration: underline;
 }
 
-ul#menuprincipale li.button-right {
+#menuprincipale li.button-right {
     float: right;
 }
 
@@ -240,7 +240,6 @@ ul#menuprincipale li.button-right {
 ul#menuprincipale {
     list-style-type: none;
     padding: 0;
-    margin: 0;
     overflow: hidden;
     max-width: 1024px;
     margin: 0 auto 0 auto;
@@ -252,23 +251,13 @@ ul#menuprincipale li {
     float: left;
 }
 
-ul#menuprincipale li a, ul.dropdown-content.button-right li{
+ul#menuprincipale li a, #submenu li a, ul.dropdown-content.button-right li {
     display: block;
     color: #f2f2f2;
-    text-align: center;
     padding: 0.875em 1em;
     text-decoration: none;
     transition: 0.3s;
     font-size: 1.1em;
-}
-
-li.nonefloat a{
-    padding:0em !important;
-    margin: 0 0 0 0;
-}
-
-.nonefloat{
-    float:none !important;
 }
 
 ul#menuprincipale li.icon {
@@ -282,26 +271,11 @@ ul#menuprincipale li.icon {
     background-color: #333;
     box-shadow: 0 0.5em 1em 0 rgba(0, 0, 0, 0.2);
     z-index: 1;
+    list-style: none;
 }
 
 .dropdown-content a:hover {
     background-color: #f1f1f1;
-}
-
-.dropdown-content a {
-    color: white;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-}
-
-#menuprincipale a:hover, .dropdown li:hover {
-    background-color: #666;
-    color: white;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
 }
 
 ul.dropdown-content {
@@ -312,6 +286,23 @@ ul.dropdown-content {
 ul.dropdown-content li {
     padding: 0 0 0 0;
     margin: 0 0 0 0;
+    float: none !important; /* ho provato clear both ma non c'è stato cambiamento*/
+}
+
+ul.dropdown-content a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+#menuprincipale a:hover, .dropdown li:hover {
+    background-color: #666;
+    color: white;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
 #descrizione {
@@ -331,7 +322,6 @@ div.riepprenotazione {
 .riepprenotazione dt {
     color: #666;
     float: left;
-    clear: left;
     margin-right: 0.4em;
 }
 
@@ -777,7 +767,6 @@ input.error {
     #menuprincipale.responsive .dropdown .dropbtn {
         display: block;
         width: 100%;
-        text-align: left;
     }
 
     #content {
