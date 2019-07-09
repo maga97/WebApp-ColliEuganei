@@ -23,9 +23,6 @@ body {
 .header-picture {
     background-image: url("../img/background.jpg");
     background-position: center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
     background-size: cover;
     background-repeat: no-repeat;
     height: 15em;
