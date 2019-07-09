@@ -60,17 +60,17 @@ if (isset($_POST["Login"])) {
             ?>
             <form method="post" action="Accedi.php">
                 <div class="form-field">
-                    <label for="username" class="log-label">Email: </label>
+                    <label for="username" class="log-label" xml:lang="en" lang="en">Email: </label>
                     <input type="text" id="username" name="email"
                            value="<?php echo isset($_POST['email']) ? $_POST['email'] : ""; ?>" accesskey="n"
-                           aria-required="true" maxlength="28"/>
+                           aria-required="true" maxlength="28" required="required"/>
                 </div>
                 <div class="form-field">
-                    <label for="password" xml:lang="en" class="log-label">Password: </label>
+                    <label for="password" xml:lang="en" lang="en" class="log-label">Password: </label>
                     <input type="password" id="password"
                            value="<?php echo isset($_POST['password']) ? $_POST['password'] : ""; ?>"
                            name="password" accesskey="p"
-                           maxlength="32"/>
+                           maxlength="32" required="required"/>
                 </div>
                 <div class="button-holder"><input type="submit" value="Login" name="Login" class="btn btn-primary"/>
                 </div>
