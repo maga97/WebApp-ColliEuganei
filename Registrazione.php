@@ -57,14 +57,14 @@ if (isset($_POST["registrazione"])) {
                         <div class="form-field">
                             <label for="nome" class="log-label">Nome: (obbligatorio)</label>
                             <input type="text" value="<?php echo isset($_POST['nome']) ? $_POST['nome'] : ""; ?>"
-                                   id="nome" name="nome" accesskey="n" aria-required="true" aria-labelledby="nome"
+                                   id="nome" name="nome" accesskey="n" aria-labelledby="nome"
                                    maxlength="28" required="required"/>
                         </div>
                         <div class="form-field">
                             <label for="cognome" class="log-label">Cognome: (obbligatorio)</label>
                             <input type="text"
                                    value="<?php echo isset($_POST['cognome']) ? $_POST['cognome'] : ""; ?>"
-                                   id="cognome" name="cognome" accesskey="s" aria-required="true"
+                                   id="cognome" name="cognome" accesskey="s"
                                    aria-labelledby="cognome"
                                    maxlength="28" required="required"/>
                         </div>
@@ -72,26 +72,26 @@ if (isset($_POST["registrazione"])) {
                             <label for="indirizzo" class="log-label">Indirizzo: </label>
                             <input type="text"
                                    value="<?php echo isset($_POST['indirizzo']) ? $_POST['indirizzo'] : ""; ?>"
-                                   id="indirizzo" name="indirizzo" accesskey="i" aria-required="false"
+                                   id="indirizzo" name="indirizzo" accesskey="i"
                                    aria-labelledby="indirizzo" maxlength="28"/>
                         </div>
                         <div class="form-field" id="civico-container">
                             <label for="civico" class="log-label mobile-align">Civico: </label>
                             <input type="text" value="<?php echo isset($_POST['civico']) ? $_POST['civico'] : ""; ?>"
-                                   size="4" id="civico" name="civico" accesskey="c" aria-required="false"
+                                   size="4" id="civico" name="civico" accesskey="c"
                                    aria-labelledby="civico" maxlength="11"/>
                         </div>
                         <div class="form-field" id="citta-container">
                             <label for="citta" class="log-label">Citt&agrave;: </label>
                             <input type="text" value="<?php echo isset($_POST['citta']) ? $_POST['citta'] : ""; ?>"
-                                   id="citta" name="citta" accesskey="t" aria-required="false" aria-labelledby="citta"
+                                   id="citta" name="citta" accesskey="t" aria-labelledby="citta"
                                    maxlength="28"/>
                         </div>
                         <div class="form-field" id="cap-container">
                             <label for="CAP" class="log-label mobile-align"> <abbr
                                         title="Codice di avviamento postale">CAP</abbr>: </label>
                             <input type="text" value="<?php echo isset($_POST['CAP']) ? $_POST['CAP'] : ""; ?>"
-                                   size="4" id="CAP" name="CAP" accesskey="a" aria-required="false"
+                                   size="4" id="CAP" name="CAP" accesskey="a"
                                    aria-labelledby="CAP"
                                    maxlength="6"/>
                         </div>
@@ -101,7 +101,7 @@ if (isset($_POST["registrazione"])) {
                             <label for="email" class="log-label"><span xml:lang="en" lang="en">Email</span>:
                                 (obbligatorio)</label>
                             <input type="text" value="<?php echo isset($_POST['email']) ? $_POST['email'] : ""; ?>"
-                                   id="email" name="email" accesskey="e" aria-required="true" aria-labelledby="email"
+                                   id="email" name="email" accesskey="e" aria-labelledby="email"
                                    maxlength="28" required="required"/>
                         </div>
                         <div class="form-field">
