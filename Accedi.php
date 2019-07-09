@@ -66,7 +66,7 @@ if (isset($_SESSION["username"])) { //se apro la pagina del login ma ho gia' eff
                     <label for="username" class="log-label" xml:lang="en" lang="en">Email: </label>
                     <input type="text" id="username" name="email"
                            value="<?php echo isset($_POST['email']) ? $_POST['email'] : ""; ?>" accesskey="n"
-                           aria-required="true" maxlength="28" required="required"/>
+                           maxlength="28" required="required"/>
                 </div>
                 <div class="form-field">
                     <label for="password" xml:lang="en" lang="en" class="log-label">Password: </label>
