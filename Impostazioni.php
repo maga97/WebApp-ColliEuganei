@@ -42,167 +42,173 @@ if (isset($_POST["conferma_modifica"])) {
     <?php include_once("menu.php"); ?>
     <div id="content">
         <ul class="breadcrumb">
-            <li>Account</li>
-            <li><a href="Impostazioni.php">Impostazioni account</a></li>
+            <li>Impostazioni account</li>
         </ul>
-        <div class="card row form-field card-spaced">
-            <div class="titolo-form">
-                <h1 id="titolo" class="text-center">Riepilogo dati <span xml:lang="en" lang="en">account</span></h1>
-            </div>
-            <?php
-            if (isset($_POST["conferma_modifica"])) {
-                if ($errore != "")
-                    echo "<div class=\"alert show errore\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\"><p>Errore: " . $errore . "</p></div>" . PHP_EOL;
-                else {
-                    echo "<div class=\"alert show success\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\">
+        <div class="form">
+            <div class="card row form-field card-spaced">
+                <div class="titolo-form">
+                    <h1 id="titolo">Riepilogo dati <span xml:lang="en" lang="en">account</span></h1>
+                </div>
+
+                <form id="dati-utente" method="post" action="Impostazioni.php">
+                    <?php
+                    if (isset($_POST["conferma_modifica"])) {
+                        if ($errore != "")
+                            echo "<div class=\"alert show errore\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\"><p>Errore: " . $errore . "</p></div>" . PHP_EOL;
+                        else {
+                            echo "<div class=\"alert show success\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\">
                                 <p>Dati modificati con successo</p>
                               </div>";
-                }
-            }
-            $db = new database();
-            $db->connect();
-            ?>
-            <form id="dati-utente" method="post" action="Impostazioni.php">
+                        }
+                    }
 
-                <div class="form-field">
-                    <label for="email" xml:lang="en" lang="en">Email: </label>
-                    <div class="input-container">
-                        <?php if (isset($_POST["modifica_dati"]) || (isset($errore) && $errore != "")): ?>
-                            <input type="text" class="disabilita" id="email" name="email"
-                                   value="<?php echo isset($_POST['email']) ? $_POST['email'] : $_SESSION['username']; ?>"/>
-                        <?php else: ?>
-                            <input type="text" class="disabilita" disabled="disabled" id="email" name="email"
-                                   value="<?php echo $_SESSION['username']; ?>"/>
-                        <?php endif; ?>
+                    $db = new database();
+                    $db->connect();
+                    ?>
+                    <div class="form-field">
+                        <label for="email" xml:lang="en" lang="en">Email: </label>
+                        <div class="input-container">
+                            <?php if (isset($_POST["modifica_dati"]) || (isset($errore) && $errore != "")): ?>
+                                <input type="text" class="disabilita" id="email" name="email"
+                                       value="<?php echo isset($_POST['email']) ? $_POST['email'] : $_SESSION['username']; ?>"/>
+                            <?php else: ?>
+                                <input type="text" class="disabilita" disabled="disabled" id="email" name="email"
+                                       value="<?php echo $_SESSION['username']; ?>"/>
+                            <?php endif; ?>
+                        </div>
                     </div>
-                </div>
-                <div class="form-field">
-                    <label for="nome">Nome: </label>
-                    <div class="input-container">
-                        <?php if (isset($_POST["modifica_dati"]) || (isset($errore) && $errore != "")): ?>
-                            <input type="text" class="disabilita" id="nome" name="nome"
-                                   value="<?php echo isset($_POST["nome"]) ? $_POST["nome"] : $db->GetName($_SESSION['username']); ?>"/>
-                        <?php else: ?>
-                            <input type="text" class="disabilita" disabled="disabled" id="nome" name="nome"
-                                   value="<?php echo $db->GetName($_SESSION['username']); ?>"/>
-                        <?php endif; ?>
+                    <div class="form-field">
+                        <label for="nome">Nome: </label>
+                        <div class="input-container">
+                            <?php if (isset($_POST["modifica_dati"]) || (isset($errore) && $errore != "")): ?>
+                                <input type="text" class="disabilita" id="nome" name="nome"
+                                       value="<?php echo isset($_POST["nome"]) ? $_POST["nome"] : $db->GetName($_SESSION['username']); ?>"/>
+                            <?php else: ?>
+                                <input type="text" class="disabilita" disabled="disabled" id="nome" name="nome"
+                                       value="<?php echo $db->GetName($_SESSION['username']); ?>"/>
+                            <?php endif; ?>
+                        </div>
                     </div>
-                </div>
-                <div class="form-field">
-                    <label for="cognome">Cognome: </label>
-                    <div class="input-container">
+                    <div class="form-field">
+                        <label for="cognome">Cognome: </label>
+                        <div class="input-container">
 
+                            <?php if (isset($_POST["modifica_dati"]) || (isset($errore) && $errore != "")): ?>
+                                <input type="text" class="disabilita" id="cognome" name="cognome"
+                                       value="<?php echo isset($_POST["cognome"]) ? $_POST["cognome"] : $db->GetSurname($_SESSION['username']); ?>"/>
+                            <?php else: ?>
+                                <input type="text" class="disabilita" disabled="disabled" id="cognome" name="cognome"
+                                       value="<?php echo $db->GetSurname($_SESSION['username']); ?>"/>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                    <div class="form-field">
+                        <label for="indirizzo">Indirizzo: </label>
+                        <div class="input-container">
+                            <?php if (isset($_POST["modifica_dati"]) || (isset($errore) && $errore != "")): ?>
+                                <input type="text" class="disabilita" id="indirizzo" name="indirizzo"
+                                       value="<?php echo isset($_POST["indirizzo"]) ? $_POST["indirizzo"] : $db->GetAddress($_SESSION['username']); ?>"/>
+                            <?php else: ?>
+                                <input type="text" class="disabilita" disabled="disabled" id="indirizzo"
+                                       value="<?php echo $db->GetAddress($_SESSION['username']); ?>"/>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                    <div class="form-field">
+                        <label for="civico">Civico: </label>
+                        <div class="input-container">
+                            <?php if (isset($_POST["modifica_dati"]) || (isset($errore) && $errore != "")): ?>
+                                <input type="text" class="disabilita" id="civico" name="civico"
+                                       value="<?php echo isset($_POST["civico"]) ? $_POST["civico"] : $db->GetCivico($_SESSION['username']); ?>"/>
+                            <?php else: ?>
+                                <input type="text" class="disabilita" disabled="disabled" id="civico" name="civico"
+                                       value="<?php echo $db->GetCivico($_SESSION['username']); ?>"/>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                    <div class="form-field">
+                        <label for="citta">Citt&agrave;: </label>
+                        <div class="input-container">
+                            <?php if (isset($_POST["modifica_dati"]) || (isset($errore) && $errore != "")): ?>
+                                <input type="text" class="disabilita" id="citta" name="citta"
+                                       value="<?php echo isset($_POST["citta"]) ? $_POST["citta"] : $db->GetCity($_SESSION['username']); ?>"/>
+                            <?php else: ?>
+                                <input type="text" class="disabilita" disabled="disabled" id="citta" name="citta"
+                                       value="<?php echo $db->GetCity($_SESSION['username']); ?>"/>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                    <div class="form-field">
+                        <label for="CAP"><abbr title="Codice di avviamento postale">CAP</abbr>: </label>
+                        <div class="input-container">
+                            <?php if (isset($_POST["modifica_dati"]) || (isset($errore) && $errore != "")): ?>
+                                <input type="text" class="disabilita" id="CAP" name="CAP"
+                                       value="<?php echo isset($_POST["CAP"]) ? $_POST["CAP"] : $db->GetCAP($_SESSION['username']); ?>"/>
+                            <?php else: ?>
+                                <input type="text" class="disabilita" disabled="disabled" id="CAP" name="CAP"
+                                       value="<?php echo $db->GetCAP($_SESSION['username']); ?>"/>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                    <div class="button-holder row">
                         <?php if (isset($_POST["modifica_dati"]) || (isset($errore) && $errore != "")): ?>
-                            <input type="text" class="disabilita" id="cognome" name="cognome"
-                                   value="<?php echo isset($_POST["cognome"]) ? $_POST["cognome"] : $db->GetSurname($_SESSION['username']); ?>"/>
+                            <div class="col-6">
+                                <button type="submit" id="conferma_modifica" name="conferma_modifica" class="btn btn-primary center-block">
+                                    Conferma le modifiche
+                                </button>
+                            </div>
+                            <div class="col-6">
+                                <button id="annulla_modifica" name="annulla_modifica" class="btn btn-red center-block">Annulla le
+                                    modifiche e torna indietro
+                                </button>
+                            </div>
                         <?php else: ?>
-                            <input type="text" class="disabilita" disabled="disabled" id="cognome" name="cognome"
-                                   value="<?php echo $db->GetSurname($_SESSION['username']); ?>"/>
+                            <button id="bottone-modifica-dati" name="modifica_dati" class="btn btn-success center-block">Modifica dati
+                            </button>
                         <?php endif; ?>
                     </div>
-                </div>
-                <div class="form-field">
-                    <label for="indirizzo">Indirizzo: </label>
-                    <div class="input-container">
-                        <?php if (isset($_POST["modifica_dati"]) || (isset($errore) && $errore != "")): ?>
-                            <input type="text" class="disabilita" id="indirizzo" name="indirizzo"
-                                   value="<?php echo isset($_POST["indirizzo"]) ? $_POST["indirizzo"] : $db->GetAddress($_SESSION['username']); ?>"/>
-                        <?php else: ?>
-                            <input type="text" class="disabilita" disabled="disabled" id="indirizzo"
-                                   value="<?php echo $db->GetAddress($_SESSION['username']); ?>"/>
-                        <?php endif; ?>
-                    </div>
-                </div>
-                <div class="form-field">
-                    <label for="civico">Civico: </label>
-                    <div class="input-container">
-                        <?php if (isset($_POST["modifica_dati"]) || (isset($errore) && $errore != "")): ?>
-                            <input type="text" class="disabilita" id="civico" name="civico"
-                                   value="<?php echo isset($_POST["civico"]) ? $_POST["civico"] : $db->GetCivico($_SESSION['username']); ?>"/>
-                        <?php else: ?>
-                            <input type="text" class="disabilita" disabled="disabled" id="civico" name="civico"
-                                   value="<?php echo $db->GetCivico($_SESSION['username']); ?>"/>
-                        <?php endif; ?>
-                    </div>
-                </div>
-                <div class="form-field">
-                    <label for="citta">Citt&agrave;: </label>
-                    <div class="input-container">
-                        <?php if (isset($_POST["modifica_dati"]) || (isset($errore) && $errore != "")): ?>
-                            <input type="text" class="disabilita" id="citta" name="citta"
-                                   value="<?php echo isset($_POST["citta"]) ? $_POST["citta"] : $db->GetCity($_SESSION['username']); ?>"/>
-                        <?php else: ?>
-                            <input type="text" class="disabilita" disabled="disabled" id="citta" name="citta"
-                                   value="<?php echo $db->GetCity($_SESSION['username']); ?>"/>
-                        <?php endif; ?>
-                    </div>
-                </div>
-                <div class="form-field">
-                    <label for="CAP"><abbr title="Codice di avviamento postale">CAP</abbr>: </label>
-                    <div class="input-container">
-                        <?php if (isset($_POST["modifica_dati"]) || (isset($errore) && $errore != "")): ?>
-                            <input type="text" class="disabilita" id="CAP" name="CAP"
-                                   value="<?php echo isset($_POST["CAP"]) ? $_POST["CAP"] : $db->GetCAP($_SESSION['username']); ?>"/>
-                        <?php else: ?>
-                            <input type="text" class="disabilita" disabled="disabled" id="CAP" name="CAP"
-                                   value="<?php echo $db->GetCAP($_SESSION['username']); ?>"/>
-                        <?php endif; ?>
-                    </div>
-                </div>
-                <div class="button-holder">
-                    <?php if (isset($_POST["modifica_dati"]) || (isset($errore) && $errore != "")): ?>
-                        <button type="submit" id="conferma_modifica" name="conferma_modifica" class="btn btn-primary">
-                            Conferma le modifiche
-                        </button>
-                        <button id="annulla_modifica" name="annulla_modifica" class="btn btn-primary">Annulla le
-                            modifiche e torna indietro
-                        </button>
-                    <?php else: ?>
-                        <button id="bottone-modifica-dati" name="modifica_dati" class="btn btn-primary center-block">Modifica dati
-                        </button>
-                    <?php endif; ?>
-                </div>
-            </form>
-        </div>
-        <div class="row card form-field card-spaced">
-            <div class="titolo-form">
-                <h2 class="text-center">Modifica <span xml:lang="en" lang="en">password</span></h2>
+                </form>
             </div>
-            <?php if (isset($_POST["modifica_password"])) {
-                if ($errorepwd != "")
-                    echo "<div class=\"alert show errore\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\"><p>Errore: " . $errorepwd . "</p></div>" . PHP_EOL;
-                else {
-                    echo "<div class=\"alert show success\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\">" . PHP_EOL .
-                        "<p>Password modificata con successo</p>" . PHP_EOL .
-                        "</div>";
+            <div class="card row form-field card-spaced">
+                <?php if (isset($_POST["modifica_password"])) {
+                    if ($errorepwd != "")
+                        echo "<div class=\"alert show errore\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\"><p>Errore: " . $errorepwd . "</p></div>" . PHP_EOL;
+                    else {
+                        echo "<div class=\"alert show success\" aria-live=\"assertive\" role=\"alert\" aria-atomic=\"true\">
+                                <p>Password modificata con successo</p>
+                              </div>";
+                    }
                 }
-            } ?>
-            <form id="mod-pwd-form" method="post" action="Impostazioni.php#mod-pwd-form">
-                <div class="form-field">
-                    <label for="vecchia-password">Password corrente: (obbligatorio)</label>
-                    <div class="input-container">
-                        <input type="password" id="vecchia-password" name="vecchia-password" class="disabilita"/>
-                    </div>
+                ?>
+                <div class="titolo-form">
+                    <h2>Modifica <span xml:lang="en" lang="en">password</span></h2>
                 </div>
-                <div class="form-field">
-                    <label for="password">Nuova <span xml:lang="en" lang="en">password</span>: (obbligatorio)</label>
-                    <div class="input-container">
-                        <input type="password" id="password" name="password" class="disabilita"/>
+                <form id="mod-pwd-form" method="post" action="Impostazioni.php#mod-pwd-form">
+                    <div class="form-field">
+                        <label for="vecchia-password"><span xml:lang="en" lang="en">Password</span> corrente: (obbligatorio)</label>
+                        <div class="input-container">
+                            <input type="password" id="vecchia-password" name="vecchia-password" class="disabilita"/>
+                        </div>
                     </div>
-                </div>
-                <div class="form-field">
-                    <label for="password2">Ripeti nuova <span xml:lang="en" lang="en">password</span>:
-                        (obbligatorio)</label>
-                    <div class="input-container">
-                        <input type="password" id="password2" name="password2" class="disabilita"/>
+                    <div class="form-field">
+                        <label for="password">Nuova <span xml:lang="en" lang="en">password</span>: (obbligatorio)</label>
+                        <div class="input-container">
+                            <input type="password" id="password" name="password" class="disabilita"/>
+                        </div>
                     </div>
-                </div>
-                <div class="button-holder">
-                    <button type="submit" id="bottone-modifica-password" name="modifica_password"
-                            class="btn btn-primary center-block">Modifica <span xml:lang="en" lang="en">password</span></button>
+                    <div class="form-field">
+                        <label for="password2">Ripeti nuova <span xml:lang="en" lang="en">password</span>: (obbligatorio)</label>
+                        <div class="input-container">
+                            <input type="password" id="password2" name="password2" class="disabilita"/>
+                        </div>
+                    </div>
+                    <div class="button-holder">
+                        <button type="submit" id="bottone-modifica-password" name="modifica_password"
+                                class="btn btn-primary center-block">Modifica <span xml:lang="en" lang="en">password</span></button>
 
-                </div>
-            </form>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
     <?php include_once("footer.php"); ?>
