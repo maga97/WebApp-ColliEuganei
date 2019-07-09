@@ -7,51 +7,51 @@
             <li><a href="index.php" tabindex="0">Home</a></li>
         <?php endif; ?>
         <li class="dropdown"><a aria-haspopup="true" tabindex="0">Gestione gite</a>
-            <div class="dropdown-content" role="menu" id="dropdown-trip">
+            <ul class="dropdown-content" role="menu" id="dropdown-trip">
                 <?php if ($nomepagina == "add-trip.php"): ?>
-                    <a class="active" href="add-trip.php" tabindex="0" role="menuitem">Aggiungi gita</a>
+                    <li class="active"><a class="active" href="add-trip.php" tabindex="0" role="menuitem">Aggiungi gita</a></li>
                 <?php else: ?>
-                    <a href="add-trip.php" tabindex="0" role="menuitem">Aggiungi gita</a>
+                    <li><a href="add-trip.php" tabindex="0" role="menuitem">Aggiungi gita</a></li>
 
                 <?php endif; ?>
                 <?php if ($nomepagina == "select-trip-modify.php"): ?>
-                    <a class="active" href="select-trip-modify.php" tabindex="0" role="menuitem">Modifica gita</a>
+                    <li class="active"><a class="active" href="select-trip-modify.php" tabindex="0" role="menuitem">Modifica gita</a></li>
 
                 <?php else: ?>
-                    <a href="select-trip-modify.php" tabindex="0" role="menuitem">Modifica gita</a>
+                    <li><a href="select-trip-modify.php" tabindex="0" role="menuitem">Modifica gita</a></li>
 
                 <?php endif; ?>
                 <?php if ($nomepagina == "remove-trip.php"): ?>
-                    <a class="active" href="remove-trip.php" tabindex="0" role="menuitem">Rimuovi gita</a>
+                    <li class="active"><a class="active" href="remove-trip.php" tabindex="0" role="menuitem">Rimuovi gita</a></li>
                 <?php else: ?>
-                    <a href="remove-trip.php" tabindex="0" role="menuitem">Rimuovi gita</a>
+                    <li><a href="remove-trip.php" tabindex="0" role="menuitem">Rimuovi gita</a></li>
 
                 <?php endif; ?>
-            </div>
+            </ul>
         </li>
         <li class="dropdown"><a aria-haspopup="true" tabindex="0">Gestione utente</a>
-            <div class="dropdown-content" role="menu">
+            <ul class="dropdown-content" role="menu">
                 <?php if ($nomepagina == "add-admin.php"): ?>
-                    <a class="active" href="add-admin.php" tabindex="0" role="menuitem">Aggiungi amministratore</a>
+        <li class="active"><a class="active" href="add-admin.php" tabindex="0" role="menuitem">Aggiungi amministratore</a></li>
 
                 <?php else: ?>
-                    <a href="add-admin.php" tabindex="0" role="menuitem">Aggiungi amministratore</a>
+                    <li ><a href="add-admin.php" tabindex="0" role="menuitem">Aggiungi amministratore</a></li>
                 <?php endif; ?>
                 <?php if ($nomepagina == "remove-admin.php"): ?>
-                    <a class="active" href="remove-admin.php" tabindex="0" role="menuitem">Rimuovi
-                        amministratore</a>
+                <li class="active"><a class="active" href="remove-admin.php" tabindex="0" role="menuitem">Rimuovi
+                        amministratore</a></li>
                 <?php else: ?>
                     <a href="remove-admin.php" tabindex="0" role="menuitem">Rimuovi amministratore</a>
 
                 <?php endif; ?>
-            </div>
+            </ul>
         </li>
         <?php if (isset($_SESSION['username'])): ?>
             <li class="dropdown button-right"><a aria-haspopup="true" tabindex="0">Account</a>
-                <div class="dropdown-content" role="menu">
-                    <a href="view-account-admin.php" tabindex="0" role="menuitem">Impostazioni</a>
-                    <a href="../PHP/Funzioni_Generali/logout.php" tabindex="0" role="menuitem">Logout</a>
-                </div>
+                <ul class="dropdown-content" role="menu">
+                    <li><a href="view-account-admin.php" tabindex="0" role="menuitem">Impostazioni</a></li>
+                    <li><a href="../PHP/Funzioni_Generali/logout.php" tabindex="0" role="menuitem">Logout</a></li>
+                </ul>
             </li>
         <?php else: ?>
             <li><a href="../Accedi.php" tabindex="0">Accedi</a></li>
