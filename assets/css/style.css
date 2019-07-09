@@ -520,7 +520,6 @@ fieldset {
 .button-holder {
     margin-top: 2em;
     padding-bottom: 1em;
-    text-align: center;
 }
 
 .btn {
@@ -542,7 +541,6 @@ fieldset {
     margin: auto;
     color: white;
     background-color: #0067c8;
-    border-bottom-color: #0000c6;
 }
 
 .card {

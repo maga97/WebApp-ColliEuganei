@@ -43,7 +43,7 @@ if (isset($_POST["registrazione"])) {
             <li><a href="Registrazione.php">Registrazione</a></li>
         </ul>
         <div class="card card-spaced row form-field">
-            <h1 class="text-center">Crea <span xml:lang="en">account</span></h1>
+            <h1 class="text-center">Crea <span xml:lang="en" lang="en">account</span></h1>
             <?php
             if (isset($errore))
                 echo '<div class="alert errore show" aria-live="assertive" role="alert" aria-atomic="true" aria-relevant="all">' . $errore . '</div>' . PHP_EOL;
@@ -58,7 +58,7 @@ if (isset($_POST["registrazione"])) {
                             <label for="nome" class="log-label">Nome: (obbligatorio)</label>
                             <input type="text" value="<?php echo isset($_POST['nome']) ? $_POST['nome'] : ""; ?>"
                                    id="nome" name="nome" accesskey="n" aria-required="true" aria-labelledby="nome"
-                                   maxlength="28"/>
+                                   maxlength="28" required="required"/>
                         </div>
                         <div class="form-field">
                             <label for="cognome" class="log-label">Cognome: (obbligatorio)</label>
@@ -66,7 +66,7 @@ if (isset($_POST["registrazione"])) {
                                    value="<?php echo isset($_POST['cognome']) ? $_POST['cognome'] : ""; ?>"
                                    id="cognome" name="cognome" accesskey="s" aria-required="true"
                                    aria-labelledby="cognome"
-                                   maxlength="28"/>
+                                   maxlength="28" required="required"/>
                         </div>
                         <div class="form-field" id="indirizzo-container">
                             <label for="indirizzo" class="log-label">Indirizzo: </label>
@@ -98,31 +98,38 @@ if (isset($_POST["registrazione"])) {
                     </div>
                     <div class="col col-6">
                         <div class="form-field">
-                            <label for="email" xml:lang="en" class="log-label">Email: (obbligatorio)</label>
+                            <label for="email" class="log-label"><span xml:lang="en" lang="en">Email</span>:
+                                (obbligatorio)</label>
                             <input type="text" value="<?php echo isset($_POST['email']) ? $_POST['email'] : ""; ?>"
                                    id="email" name="email" accesskey="e" aria-required="true" aria-labelledby="email"
-                                   maxlength="28"/>
+                                   maxlength="28" required="required"/>
                         </div>
                         <div class="form-field">
-                            <label for="password" class="log-label"><span xml:lang="en">Password</span>:
+                            <label for="password" class="log-label"><span xml:lang="en" lang="en">Password</span>:
                                 (obbligatorio)</label>
                             <input type="password"
                                    value="<?php echo isset($_POST['password']) ? $_POST['password'] : ""; ?>"
                                    id="password" name="password" accesskey="p" aria-labelledby="password"
-                                   maxlength="32"/>
+                                   maxlength="32" required="required"/>
                         </div>
                         <div class="form-field">
-                            <label for="password2" class="log-label">Ripeti <span xml:lang="en">password</span>:
+                            <label for="password2" class="log-label">Ripeti <span xml:lang="en"
+                                                                                  lang="en">password</span>:
                                 (obbligatorio)</label>
                             <input type="password"
                                    value="<?php echo isset($_POST['password2']) ? $_POST['password2'] : ""; ?>"
                                    id="password2" name="password2" accesskey="r" aria-labelledby="password2"
-                                   maxlength="32"/>
+                                   maxlength="32" required="required"/>
                         </div>
                     </div>
                 </div>
-                <div class="button-holder">
-                    <input type="submit" value="Registrati" name="registrazione" class="btn btn-primary"/>
+                <div class="row">
+                    <div class="col-6 button-holder">
+                        <input type="submit" value="Registrati" name="registrazione" class="btn btn-primary center-block"/>
+                    </div>
+                    <div class="col-6 button-holder">
+                        <input type="reset" value="Svuota" name="svuota" class="btn btn-red center-block"/>
+                    </div>
                 </div>
             </form>
         </div>
