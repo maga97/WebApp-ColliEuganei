@@ -70,7 +70,7 @@ body {
 }
 
 .active {
-    background-color: #097a31;
+    background-color: #005533;
     color: white;
 }
 
@@ -320,7 +320,7 @@ div.riepprenotazione {
 }
 
 .riepprenotazione dt {
-    color: #666;
+    color: #353535;
     float: left;
     margin-right: 0.4em;
 }
@@ -420,7 +420,7 @@ div.alert p {
 }
 
 .alert.success {
-    background: #069906;
+    background: #00623a;
 }
 
 .responsive-image {
@@ -487,7 +487,7 @@ a.center-block {
 }
 
 .disabilita:disabled {
-    color: #706f6e;
+    color: #000;
     border: 0;
     border-bottom: 0.125em solid transparent;
 }
@@ -536,7 +536,7 @@ fieldset {
 .btn.btn-primary {
     margin: auto;
     color: white;
-    background-color: #0067c8;
+    background-color: #043ec4;
 }
 
 .card {
@@ -551,7 +551,7 @@ fieldset {
 }
 
 .inline-list dt {
-    color: #666;
+    color: #353535;
     float: left;
     clear: left;
     margin-right: 0.4em;
@@ -571,7 +571,7 @@ fieldset {
 .btn.btn-success {
     margin: auto;
     color: white;
-    background-color: #009457;
+    background-color: #00623a;
 }
 
 #reg-sistemreg-sistema {
