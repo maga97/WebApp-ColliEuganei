@@ -66,7 +66,7 @@ if (!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
                 </dl>
                 <div class="row">
                     <?php
-                    echo "<a class=\"btn btn-red\" href=\"../PHP/Funzioni_Admin/remove-trip-script.php?id=" . $node["ID_Attivita"] . "\">Rimuovi gita</a>" . PHP_EOL;
+                    echo "<a class=\"btn btn-red center-block\" href=\"../PHP/Funzioni_Admin/remove-trip-script.php?id=" . $node["ID_Attivita"] . "\">Rimuovi gita</a>" . PHP_EOL;
                     ?>
                 </div>
             </div>

@@ -150,16 +150,20 @@ if (isset($_POST["conferma_modifica"])) {
                         <?php endif; ?>
                     </div>
                 </div>
-                <div class="button-holder">
+                <div class="button-holder row">
                     <?php if (isset($_POST["modifica_dati"]) || (isset($errore) && $errore != "")): ?>
-                        <button type="submit" id="conferma_modifica" name="conferma_modifica" class="btn btn-primary">
+                    <div class="col-6">
+                        <button type="submit" id="conferma_modifica" name="conferma_modifica" class="btn btn-primary center-block">
                             Conferma le modifiche
                         </button>
-                        <button id="annulla_modifica" name="annulla_modifica" class="btn btn-red">Annulla le
+                    </div>
+                    <div class="col-6">
+                        <button id="annulla_modifica" name="annulla_modifica" class="btn btn-red center-block">Annulla le
                             modifiche e torna indietro
                         </button>
+                    </div>
                     <?php else: ?>
-                        <button id="bottone-modifica-dati" name="modifica_dati" class="btn btn-success">Modifica dati
+                        <button id="bottone-modifica-dati" name="modifica_dati" class="btn btn-success center-block">Modifica dati
                         </button>
                     <?php endif; ?>
                 </div>
@@ -181,7 +185,7 @@ if (isset($_POST["conferma_modifica"])) {
             </div>
             <form id="mod-pwd-form" method="post" action="view-account-admin.php#mod-pwd-form">
                 <div class="form-field">
-                    <label for="vecchia-password">Password corrente: (obbligatorio)</label>
+                    <label for="vecchia-password"><span xml:lang="en" lang="en">Password</span> corrente: (obbligatorio)</label>
                     <div class="input-container">
                         <input type="password" id="vecchia-password" name="vecchia-password" class="disabilita"/>
                     </div>
@@ -200,7 +204,7 @@ if (isset($_POST["conferma_modifica"])) {
                 </div>
                 <div class="button-holder">
                     <button type="submit" id="bottone-modifica-password" name="modifica_password"
-                            class="btn btn-primary">Modifica <span xml:lang="en" lang="en">password</span></button>
+                            class="btn btn-primary center-block">Modifica <span xml:lang="en" lang="en">password</span></button>
 
                 </div>
             </form>

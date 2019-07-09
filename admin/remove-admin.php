@@ -73,7 +73,7 @@ if (!isset($_SESSION["username"]) or $_SESSION["admin"] != 1) {
                 </ul>
                 <?php if (sizeof($users) > 1): ?>
                     <a aria-label="Rimuovi <?php echo $user["Nome"] . " " . $user["Cognome"]; ?> dal ruolo di amministratore"
-                       href="../PHP/Funzioni_Admin/edit-user-role.php?action=remove&amp;id=<?php echo $id; ?>">Rimuovi
+                       href="../PHP/Funzioni_Admin/edit-user-role.php?action=remove&amp;id=<?php echo $id; ?>" class="btn btn-red center-block">Rimuovi
                         amministratore</a>
                 <?php else: ?>
                     <?php echo "<div class=\"alert warning show\">Deve esserci almeno un amministratore.</div>" . PHP_EOL; ?>
