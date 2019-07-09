@@ -40,7 +40,7 @@
 			\vskip2cm
 			\Large Università di Padova\\
 			\vfill
-			\Huge ColliDigitali\\
+			\Huge Colli Euganei\\
 			\Large Progetto per il corso di tecnologie web\\
 			\vfill
 
@@ -48,13 +48,13 @@
 				\centering
 				\includegraphics[width=0.6\linewidth]{images/LogoPadova}
 			\end{figure}
-			\large GiulioPiva - 1146135 \\ Magarotto Francesco - 1143292 \\ Zilio Davide-1149807  \\
+			\large GiulioPiva - 1146135 \\ Magarotto Francesco - 1143292 \\ Zilio Davide - 1149807  \\
 			Costantino Marco - 1144120
 			\vfill
 			Sito web hostato all'indirizzo: \url{http://tecweb1819.studenti.math.unipd.it/gpiva}\\
-			{\small Credenziali per l'amministrazione:\\username: admin@admin.it, password: admin\\}
+			{\small Credenziali per l'amministrazione:\\username: admin@admin.it, password: admin\\Credenziali utente registrato: utente@utente.it, password: utente}
 			\vfill
-			Indirizzo email del referente: francesco.magarotto@studenti.unipd.it\\
+			Indirizzo email del referente: giulio.piva.1@studenti.unipd.it\\
 			\vfill
 		}
 	\end{titlepage}
@@ -106,6 +106,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 	\end{lstlisting}
 	Includendo così i DTD necessari per effettuare la validazione del documento.
+	\subsubsection{Form}
+	Gli elementi di input dei form obbligatori sono stati marcati \texttt{required="required"} questo consente ai browser recenti di verificare che il contenuto di input sia stato definito. La verifica viene sempre e comunque eseguita dal server, ogni qualvolta l'utente inserisce dei dati nell'applicazione. Inoltre, si è fatto uso solo del valore "text" per l'attributo value degli input, questo per garantire la retro-compatibilità con tutti i browser.
+	Infatti, i controlli sui tipi di dato sono effettuati da JS, se abilitato, e da PHP in qualsiasi circostanza. Si è fatta questa scelta considerata la mole di browser che non supportano questi tipi di dato ancora oggi. Ad esempio Safari sviluppato da Apple, non ha ad oggi il supporto al tag di input con valore \texttt{date}. Il gruppo ha valutato la possibilità di utilizzare un datepicker, ma tale soluzione richiede JavaScript sempre abilitato e ciò non è sempre possibile.
+	
 	\subsection{CSS}
 	I file necessari alla formattazione dello stile del sito e per i vari dispositivi sono collocati nella cartella \texttt{assets/css} mentre le immagini sono collocate nella
 	cartella \texttt{assets/img}.
@@ -124,6 +128,7 @@
 	 \includegraphics[scale=.4]{images/handheld_error.png} 
 	 \end{figure}
 	 In relazione a questo fatto, il gruppo ha deciso di utilizzare solo il valore "screen" quando necessario.
+	 Sono stati aboliti inoltre le proprietà dei vendor (webkit di Apple, -moz di Firefox e ms di Microsoft) cercando di utilizzare proprietà compatibili con tutti i browser e con lo stesso risultato.
 	\subsection{JavaScript}
 	 I file contenenti gli script sono collocati nella cartella \texttt{js/}. \\
 	 Si è scelto di utilizzare JavaScript come componente marginale del sito garantendo, anche se disabilitato, che tutte le funzionalità rimangano accessibili e
@@ -134,7 +139,7 @@
 	 \subsubsection{Database}
 	 \uppercase{è} stata creata una classe wrapper per la connessione al database, in maniera tale da facilitare la gestione delle query, essendo queste presenti solo all'interno di tale classe, sarà più facile gestire il codice sorgente ed effettuare il debug del codice. Per utilizzarla è necessario creare un oggetto di tale classe che servirà per richiamare le funzioni,  utilizzate solamente per l'interazione con il database e gestire le connessioni. La connessione al database è stata effettuata utilizzando il PDO messo a disposizione nativamente da PHP.
 	 \paragraph{Perché i BLOB}
-	 Per l'inserimento delle immagini delle gite si è fatto uso dei BLOB, ovvero si è inserita l'immagine all'interno della base di dati. Consapevoli, che solitamente si salva solo il path del file all'interno del database e il file nel file-system del server, abbiamo scelto di utilizzare i BLOB per non incorrere a problematiche con la scrittura e movimento di file all'interno del server ospite dell'università. Infatti, l'utilizzo di XAMPP per lo sviluppo su Windows presenta una cartella \texttt{htdocs} in cui è impossibile caricare i file senza i permessi di amministrazione, quindi per permettere a tutti i componenti di testare il codice scritto e evitare ulteriori problematiche.
+	 Per l'inserimento delle immagini delle gite si è fatto uso dei BLOB, ovvero si è inserita l'immagine all'interno della base di dati. Consapevoli, che solitamente si salva solo il path del file all'interno del database e il file nel file-system del server, abbiamo scelto di utilizzare i BLOB per non incorrere a problematiche con la scrittura e movimento di file all'interno del server ospite dell'università. Infatti, l'utilizzo di XAMPP per lo sviluppo su Windows presenta una cartella \texttt{htdocs} in cui è impossibile caricare i file senza i permessi di amministrazione, quindi per permettere a tutti i componenti di testare il codice scritto ed evitare ulteriori problematiche.
 	 \subsubsection{Dinamicità}
 	 PHP svolge un ruolo fondamentale per il funzionamento del sito, infatti grazie a
 	 questo linguaggio lato server abbiamo realizzato un sito dinamico in cui le attività (come ad esempio, le visite guidate) possono essere aggiunte, modificate ed eliminate attraverso il pannello di
@@ -176,7 +181,8 @@ return password_verify($password, $pass[0]);
 	\subsection{Colori}
 	Si è evitato di utilizzare combinazioni di colori che potessero creare problemi di
 	accessibilità, usabilità e comprensione del contenuto a persone affette da daltonismo.
-	Si è fatto uso del plugin WCAG contrast checker e si è riscontrato un valore di almeno "AA" per tutti i colori all'interno del sito.
+	Si è fatto uso del plugin WCAG contrast checker e si è riscontrato un valore di almeno "AAA" per tutti i colori all'interno del sito.
+	Dovrebbe essere semplice per utenti con disabilità, ad esempio affetti da daltonismo ad usufruire dei contenuti del sito in maniera semplice.
 	\subsection{Breadcrumb}
 	In ciascuna pagina è inserita un breadcrumb che permette all’utente di risalire la gerarchia delle pagine visitate per giungere a quella attuale, permettendogli eventualmente di ritornare rapidamente alle pagine precedentemente visitate. Il breadcrumb è stato realizzato utilizzato una unordered list disposta in linea tramite il CSS.
 	Quindi gli elementi sono stati disposti inline, privati dello \texttt{list-style-type}  e al loro interno è stato inserito un collegamento ipertestuale
@@ -187,11 +193,12 @@ return password_verify($password, $pass[0]);
 	\begin{itemize}
 		\item Sono stati utilizzati i tag \texttt{alt} per le immagini seguendo le linee guida del
 		W3C.
-		\item  Le parole in lingua inglese sono state racchiuse in un tag \\ \texttt{<span xml:lang="en">contenuto</span>}
+		\item  Le parole in lingua inglese sono state racchiuse in un tag \\ \texttt{<span xml:lang="en" lang="en">contenuto</span>}
 		cosi da poter garantire una lettura corretta da parte degli screen reader;
 		\item  Sono stati utilizzati i tag \texttt{tabindex} in modo da permettere la navigazione corretta del sito attraverso il tasto TAB. Si è lasciato volontariamente il valore 0 a tali attributi così che venga seguito l'ordine di disposizione dei contenuti della pagina;
-		\item \'E stato utilizzato il tag \texttt{role} dove necessario seguendo i dettami del W3C, per fornire un modo per identificare gli elementi in maniera più specifica ove necessario. In particolare, questa soluzione si è rivelata particolarmente utile in quanto, nonostante l'uso di HTML 5 che presenta dei tag specifici, ad esempio \texttt{<nav>} per il menu di navigazione, l'attributo role garantisce l'accessibilità e contemporaneamente la retro-compatibilità con i browser meno recenti.
-		Inoltre è stato evitato l'utilizzo di tabelle per realizzare il layout del sito.
+%		\item Erano stati utilizzati i tag \texttt{role} dove necessario seguendo i dettami del WCAG, per fornire un modo per identificare gli elementi in maniera più specifica ove necessario. In particolare, questa soluzione si è rivelata particolarmente utile in quanto, nonostante l'uso di HTML 5 che presenta dei tag specifici, ad esempio \texttt{<nav>} per il menu di navigazione, l'attributo role garantisce l'accessibilità e contemporaneamente la retro-compatibilità con i browser meno recenti.
+%		Inoltre è stato evitato l'utilizzo di tabelle per realizzare il layout del sito.
+		\item \uppercase{è} stato evitato l'utilizzo di tabelle per realizzare il layout del sito, e in generale all'interno del sito;
 		\item Per rendere accessibili i form, sono stati utilizzati i tag label, tab-index
 		e title, assieme ad una gestione degli errori che comprende controlli di
 		validità dell’input. La validazione è stata effettuata, in alcuni form, sia in JavaScript che in PHP. La validazione lato server è sempre presente.
@@ -208,7 +215,7 @@ return password_verify($password, $pass[0]);
 			permettendo all’utente di correggere l’input.
 			\item \texttt{aria-atomic="true"}: indica allo screen reader di leggere interamente la regione di errore e non solo i suoi cambiamenti. In questo modo se l’utente
 			non ha corretto un errore segnalato in precedenza, questo viene notificato nuovamente.
-			\item \texttt{role="alert"}: per segnalare appunto che si tratta di un messaggio interattivo, che è frutto di un'operazione eseguita dall'utente.
+%			\item \texttt{role="alert"}: per segnalare appunto che si tratta di un messaggio interattivo, che è frutto di un'operazione eseguita dall'utente.
 			\item \texttt{aria-relevant="all"}: attributo impiegato per segnalare la tipologia di cambiamenti che potrebbero avvenire all'interno del contenitore. In questo caso è settato ad all, poiché vogliamo che l'utente sia avvertito quando avvengono cambiamenti de testo.
 		\end{itemize}
 	\subsection{JavaScript}
@@ -229,8 +236,13 @@ return password_verify($password, $pass[0]);
 	\end{figure}
 	\subsection{Dispositivi}
 	Nella progettazione si è tenuto conto del fatto che l'utenza avrebbe acceduto al
-	sito da vari dispositivi. Alla luce di questa considerazione il sito adotta un layout responsive grazie alla creazione di file css appositi (mobile e stampa). Il sito è stato testato su più dispositivi, browser e sistemi operativi possibili in modo tale da avere un feedback più completo possibile sulle scelte adottate (Vedere la sezione Validazione e Test per i dettagli).
-
+	sito da vari dispositivi. Alla luce di questa considerazione il sito adotta un layout responsive grazie alla creazione di file css appositi (mobile e stampa). Il sito è stato testato su più dispositivi, browser e sistemi operativi possibili in modo tale da avere un feedback più completo possibile sulle scelte adottate (Vedere la sezione Validazione e Test per i dettagli). Un approccio non seguito all'inizio, ma che  è stato fondamentale è il \textit{mobile first}: utilizzando gli strumenti di sviluppo di Google Chrome per testare il sito prima per i telefoni cellulare, e poi adattarlo per PC desktop.
+	Per verificare che il sito si adattasse correttamente ai vari dispositivi si è fatto uso degli strumenti sviluppatore forniti dai browser. Ad esempio abbiamo controllato che il contenuto informativo fosse fruibile da un iPhone, che solitamente richiede media query con dimensioni specifiche:
+		\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.5]{images/iphone6.png} 
+		\caption{Google Chrome, strumenti sviluppatori verifica fruibilità dei contenuti su iPhone}
+		\end{figure}
 
 	\section{Suddivisione di struttura, presentazione e comportamento}
 	I file relativi alla parte di amministrazione sono contenuti all'interno della cartella \texttt{admin}, mentre i file relativi alla parte pubblica sono nella cartella principale del sito. Tuttavia alcuni file sono necessari per entrambi le parti, ed in questo
@@ -326,9 +338,9 @@ Anche il bottone "back-to-top" che permette di tornare all'inizio della pagina �
 			index.php}
 		\item WAT, purtroppo questo plugin non è aggiornato e presenta molti strumenti inutilizzabili.	La versione corrente è stata scaricata da:
 		\url{https://github.com/ThePacielloGroup/WebAccessibilityToolbar}.
-		\item WCAG Contrast Checker, plugin per Google Chrome utilizzato per verificare che il contrasto dei colori avesse valore almeno "AA"
+		\item WCAG Contrast Checker, plugin per Google Chrome utilizzato per verificare che il contrasto dei colori avesse valore "AAA".
 	\end{itemize}
-	Come impostazione è stato utilizzato "WCAG 2.0 (Level AA)" in tutti i validatori, e tutti i	potenziali problemi che vengono segnalati raccolgono tutti elementi che il validatore non sa come controllare e quindi viene richiesta una supervisione umana, come ad esempio ogni \texttt{alt}. \\
+	Come impostazione è stato utilizzato "WCAG 2.0 (Level AAA)" in tutti i validatori, e tutti i	potenziali problemi che vengono segnalati raccolgono tutti elementi che il validatore non sa come controllare e quindi viene richiesta una supervisione umana, come ad esempio ogni \texttt{alt}. \\
 	Nessun errore è stato rilevato.
 	\subsection{WAVE Accessibility Extension}
 	Un altro strumento utilizzato per la verifica dell'accessibilità è stato WAVE,
@@ -341,12 +353,12 @@ Anche il bottone "back-to-top" che permette di tornare all'inizio della pagina �
 	La validazione tramite questo servizio ha avuto esito positivo su tutto il sito.
 
 	\subsection{Total Validator}
-	Abbiamo utilizzato Total Validator Basic per validare ogni pagina. Gli errori incontrati sono stati risolti, ma rimane un warning sollevato in ogni pagina  e riguardante il link interno per saltare al contenuto, precisamente "W874 Add a skip navigation link as the  rst link on the page", che viene sollevato in quanto il testo non  e "Skip to main content", bensì "Vai al contenuto", in quanto il sito  e mirato ad utenti italiani. Da precisare che oltre alla presenza del link per andare al contenuto  e disponibile anche un link per tornare ad inizio pagina, inserito per facilitare la navigazione da dispositivi tascabili. Un altro warning presente è in riferimento all'immagine della tabella nella sezione geografia che presenta l'attributo alt vuoto, questo perchè l'informazione contenuta nella tabella è in realtà presente integralmente nel testo.
+	Abbiamo utilizzato Total Validator Basic per validare ogni pagina. Gli errori incontrati sono stati risolti, ma rimane un warning sollevato in ogni pagina  e riguardante il link interno per saltare al contenuto, precisamente "W874 Add a skip navigation link as the rst link on the page", che viene sollevato in quanto il testo non  è "Skip to main content", bensì "Vai al contenuto", in quanto il sito  e mirato ad utenti italiani. Da precisare che oltre alla presenza del link per andare al contenuto  e disponibile anche un link per tornare ad inizio pagina, inserito per facilitare la navigazione da dispositivi tascabili.
 
 	\section{Test su diversi dispositivi}
 	Il sito è stato testato su varie macchine e sistemi operativi. Nelle sezioni seguenti verranno elencati assieme ai browser e alle risoluzioni testate.
 	\subsection{Windows 10}
-	Sono state testate le risoluzioni di 1080p e 2160p con i browsers:
+	Sono state testate le risoluzioni di 1080p e 2160p con i browser:
 	\begin{itemize}
 		\item Mozilla Firefox
 		\item Google Chrome
@@ -357,7 +369,7 @@ Anche il bottone "back-to-top" che permette di tornare all'inizio della pagina �
 	Con tutti i browser utilizzati per testare
 
 	\subsection{GNU/Linux Manjaro}
-	Sono state testate le risoluzioni di 1080p e 2160p con i browsers:
+	Sono state testate le risoluzioni di 1080p e 2160p con i browser:
 	\begin{itemize}
 		\item Firefox Quantum
 		\item Google Chrome
@@ -366,7 +378,7 @@ Anche il bottone "back-to-top" che permette di tornare all'inizio della pagina �
 	\end{itemize}
 
 	\subsection{MacOS}
-	Sono state testate le risoluzioni di 1080p, 2160p con i browsers:
+	Sono state testate le risoluzioni di 1080p, 2160p con i browser:
 	\begin{itemize}
 		\item Safari
 		\item Firefox Quantum
@@ -374,7 +386,7 @@ Anche il bottone "back-to-top" che permette di tornare all'inizio della pagina �
 	\end{itemize}
 
 	\subsection{Dispositivi mobili}
-	Di seguito sono elencati i vari dispositivi mobili sui quali il sito è stato testato
+	Di seguito sono elencati i vari dispositivi mobili sui quali il sito è stato testato, oltre ad alcuni simulati da Google Chorme:
 	\begin{itemize}
 		\item Honor 9 con browser Chrome, con una risoluzione di 720p.
 		\item Samsung Galaxy Tab 3 con una risoluzione di 1280x800 e con il browser fornito di default.
