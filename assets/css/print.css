@@ -39,7 +39,9 @@
     a:link, a:visited {
         color: #000;
     }
-
+    .history-picture {
+        width: 25em;
+    }
     /* text settings */
     .text {
         page-break-inside: auto;
